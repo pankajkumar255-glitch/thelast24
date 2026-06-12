@@ -1,0 +1,14 @@
+{
+  "name": "The Last 24 — India in five minutes",
+  "short_name": "The Last 24",
+  "description": "Everything that mattered in India in the last 24 hours, curated hourly from verified publishers.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0E130E",
+  "theme_color": "#0E130E",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

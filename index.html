@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Last 24 — Everything that mattered in India, in five minutes</title>
+<meta name="description" content="Everything that mattered in India in the last 24 hours — national, world, business, tech, sports, entertainment. Curated hourly from verified publishers only, every story linked to its original source.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Last 24 — India's day in five minutes">
+<meta property="og:description" content="Updated every hour from verified publishers only. Every story sourced, linked, and answered with why it matters to you.">
+<meta property="og:site_name" content="The Last 24">
+<link rel="canonical" href="https://example.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"The Last 24","url":"https://example.com/","description":"Everything that mattered in India in the last 24 hours, curated hourly from verified publishers."}
+</script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0E130E">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+  :root{
+    --paper:#F7F7F5;--ink:#111511;--ink-soft:#454B43;--meta:#73786F;--hairline:#E6E8E2;
+    --dark:#0E130E;--paper-on-dark:#F2F4EE;--meta-on-dark:#939D8F;
+    --green:#0E7B52;--green-bright:#3BCB8D;--vermilion:#DE4A24;
+    --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;
+    --shadow-lg:0 8px 20px rgba(14,19,14,.10),0 24px 60px rgba(14,19,14,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px}
+
+  .rise{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+  .rise.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .rise{opacity:1;transform:none;transition:none}
+    *{transition:none!important;animation:none!important}
+  }
+
+  /* ============ DARK MASTHEAD BAND ============ */
+  .band{background:var(--dark);color:var(--paper-on-dark);padding:22px 0 120px}
+  .brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .brand{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em;text-decoration:none}
+  .brand span{color:var(--green-bright)}
+  .brand-meta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--meta-on-dark);text-align:right;line-height:1.7}
+  .brand-meta .v{color:var(--green-bright);font-weight:600}
+  .live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green-bright);margin-right:6px;box-shadow:0 0 8px var(--green-bright);animation:pulse 2.4s infinite;vertical-align:1px}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .ticker{overflow:hidden;margin-top:16px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
+  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 60s linear infinite;will-change:transform}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
+  .ticker-item .dot{width:4px;height:4px;border-radius:50%;flex-shrink:0}
+  @media (prefers-reduced-motion: reduce){.ticker-track{animation:none;padding-left:20px}}
+
+  /* ============ CAROUSEL ============ */
+  .car-wrap{margin-top:-96px;position:relative;z-index:2}
+  .carousel{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark)}
+  .car-track{display:flex;transition:transform .6s cubic-bezier(.3,.8,.3,1);will-change:transform}
+  .slide{position:relative;flex:0 0 100%;display:block;text-decoration:none;aspect-ratio:16/9;max-height:430px;min-height:300px}
+  .slide .media img,.slide .media svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,19,14,0) 30%,rgba(14,19,14,.55) 62%,rgba(14,19,14,.92) 100%)}
+  .slide-content{position:absolute;left:0;right:0;bottom:0;padding:22px 26px 26px;z-index:2;color:#fff}
+  .slide .kick{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:12px;align-items:center;margin-bottom:9px}
+  .slide .kick .b{color:#FF7B52}
+  .slide h2{font-family:var(--display);font-weight:800;font-size:clamp(21px,4.6vw,33px);line-height:1.1;letter-spacing:-.02em;max-width:600px}
+  .slide .dek{font-size:14px;color:rgba(255,255,255,.86);line-height:1.5;margin-top:8px;max-width:580px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  @media (max-width:560px){.slide .dek{display:none}}
+  .slide .srcline{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.75);margin-top:10px}
+  .slide .srcline b{color:#fff}
+  .car-ui{position:absolute;right:18px;bottom:20px;display:flex;gap:6px;z-index:3}
+  .car-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.35);border:none;cursor:pointer;padding:0;transition:all .3s}
+  .car-dot.on{width:26px;background:var(--green-bright)}
+  .car-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(14,19,14,.45);color:#fff;font-size:16px;cursor:pointer;backdrop-filter:blur(6px);opacity:0;transition:opacity .25s}
+  .carousel:hover .car-arrow{opacity:1}
+  .car-arrow:focus-visible{opacity:1;outline:2px solid var(--green-bright)}
+  .car-prev{left:14px}.car-next{right:14px}
+  @media (max-width:560px){.car-arrow{display:none}}
+
+  .notice{font-family:var(--mono);font-size:11px;color:var(--meta);text-align:center;padding:12px 20px 0}
+
+  /* ============ TODAY ============ */
+  .today{padding:26px 0 6px}
+  .topline{font-family:var(--display);font-size:clamp(17px,3.2vw,20px);font-weight:600;letter-spacing:-.01em;line-height:1.45;margin-bottom:18px;max-width:640px}
+  .strip-cells{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;height:10px;max-width:420px}
+  .cell{background:var(--hairline);border-radius:2px}
+  .cell.active{background:var(--green)}
+  .cell.breaking{background:var(--vermilion)}
+  .strip-caption{font-family:var(--mono);font-size:10.5px;color:var(--meta);margin-top:7px}
+
+  /* ============ NAV ============ */
+  nav{position:sticky;top:0;background:rgba(247,247,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);z-index:10}
+  .nav-inner{display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+  .nav-inner::-webkit-scrollbar{display:none}
+  .chip{font-size:13px;font-weight:600;color:var(--ink-soft);padding:7px 13px;border-radius:9px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;transition:background .18s}
+  .chip:hover{background:#EDEEE9}
+  .chip .hue{width:6px;height:6px;border-radius:50%}
+  .chip:focus-visible{outline:2px solid var(--green);outline-offset:1px}
+
+  /* ============ SECTIONS — quiet editorial ============ */
+  section{padding:34px 0 0;scroll-margin-top:58px}
+  .sec-head{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+  .sec-head .hue{width:8px;height:8px;border-radius:50%}
+  .sec-head h2{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .sec-head .count{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--meta)}
+
+  /* ============ STORY ROWS — borderless, typographic ============ */
+  .row{display:grid;grid-template-columns:1fr 112px;gap:20px;align-items:start;padding:24px 0;border-bottom:1px solid var(--hairline)}
+  .row:last-child{border-bottom:none}
+  .thumb{width:112px;height:112px;border-radius:14px;overflow:hidden}
+  .thumb img,.thumb svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+  .row:hover .thumb img,.row:hover .thumb svg{transform:scale(1.05)}
+  .kick{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:flex;gap:10px;align-items:center;margin-bottom:8px}
+  .kick .t{color:var(--meta);font-weight:400;letter-spacing:.06em}
+  .kick .b{color:var(--vermilion)}
+  .row h3{font-family:var(--display);font-weight:700;font-size:clamp(18px,4vw,21px);line-height:1.22;letter-spacing:-.015em;margin-bottom:7px}
+  .row h3 a{text-decoration:none}
+  .row h3 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+  .row .what{font-size:15px;color:var(--ink-soft);margin-bottom:10px;line-height:1.6;max-width:560px}
+  .lens{font-size:14px;line-height:1.55;color:var(--ink-soft);padding-left:12px;border-left:2px solid;margin-bottom:11px}
+  .lens b{font-weight:650}
+  .meta-line{font-family:var(--mono);font-size:11px;color:var(--meta);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .meta-line .src{text-decoration:none;color:var(--ink);font-weight:600;border-bottom:1px solid var(--hairline)}
+  .meta-line .src:hover{border-color:var(--ink)}
+  .meta-line .src .v{color:var(--green)}
+  .meta-line .read{text-decoration:none;font-weight:600}
+  @media (max-width:480px){
+    .row{grid-template-columns:1fr 84px;gap:14px}
+    .thumb{width:84px;height:84px;border-radius:12px}
+  }
+
+  .ad-slot{margin:36px 0 0;border:1px dashed #DADDD2;border-radius:14px;min-height:96px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--meta);background:rgba(255,255,255,.55)}
+
+  /* ============ NEWSLETTER ============ */
+  .nl{position:fixed;right:16px;bottom:16px;left:16px;max-width:392px;margin-left:auto;background:var(--dark);color:var(--paper-on-dark);border-radius:18px;box-shadow:0 18px 50px rgba(14,19,14,.4);padding:22px;z-index:50;transform:translateY(150%);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+  .nl.show{transform:none}
+  .nl h4{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.015em;margin-bottom:4px}
+  .nl h4 span{color:var(--green-bright)}
+  .nl .sub{font-size:12.5px;color:var(--meta-on-dark);margin-bottom:13px;line-height:1.5}
+  .nl .prefs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:13px}
+  .nl .pref{font-weight:600;font-size:12px;padding:6px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;cursor:pointer;user-select:none;transition:all .15s;color:var(--paper-on-dark)}
+  .nl .pref.on{background:var(--green-bright);border-color:var(--green-bright);color:var(--dark)}
+  .nl .row2{display:flex;gap:8px}
+  .nl input{flex:1;font-size:14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:var(--paper-on-dark);border-radius:10px;padding:11px 13px;font-family:var(--body)}
+  .nl input::placeholder{color:var(--meta-on-dark)}
+  .nl input:focus{outline:2px solid var(--green-bright)}
+  .nl button.go{font-weight:700;font-size:13.5px;background:var(--green-bright);color:var(--dark);border:none;border-radius:10px;padding:11px 17px;cursor:pointer;transition:transform .15s;font-family:var(--body)}
+  .nl button.go:hover{transform:scale(1.04)}
+  .nl .close{position:absolute;top:12px;right:15px;background:none;border:none;font-size:15px;color:var(--meta-on-dark);cursor:pointer}
+  .nl .msg{font-family:var(--mono);font-size:11px;margin-top:9px}
+
+  footer{background:var(--dark);color:var(--meta-on-dark);margin-top:56px;padding:34px 0 72px}
+  footer p{font-size:12.5px;line-height:1.8;max-width:560px}
+  footer .mark{color:var(--paper-on-dark);font-weight:700}
+  footer .v{color:var(--green-bright)}
+  .ck{position:fixed;left:16px;right:16px;bottom:16px;max-width:480px;background:#fff;border:1px solid var(--hairline);border-radius:14px;box-shadow:0 14px 40px rgba(14,19,14,.18);padding:16px 18px;z-index:60;font-size:13px;color:var(--ink-soft)}
+  .ck a{color:var(--green)}
+  .ck .b{display:flex;gap:8px;margin-top:11px}
+  .ck button{font-family:var(--body);font-weight:700;font-size:12.5px;border-radius:9px;padding:9px 14px;cursor:pointer;border:1px solid var(--hairline);background:#fff;color:var(--ink)}
+  .ck button.ok{background:var(--dark);border-color:var(--dark);color:#fff}
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap">
+    <div class="brand-row">
+      <a class="brand" href="/">The Last <span>24</span></a>
+      <div class="brand-meta"><span class="live-dot"></span>Updated hourly<br><span class="v">✓ Verified publishers only</span><br><span id="date-label">—</span></div>
+    </div>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+  </div>
+</div>
+
+<div class="wrap car-wrap">
+  <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Top stories">
+    <div class="car-track" id="car-track"></div>
+    <button class="car-arrow car-prev" id="car-prev" aria-label="Previous story">‹</button>
+    <button class="car-arrow car-next" id="car-next" aria-label="Next story">›</button>
+    <div class="car-ui" id="car-dots"></div>
+  </div>
+</div>
+
+<p class="notice" id="notice" hidden>Placeholder edition — real stories and photos populate automatically on the first pipeline run.</p>
+
+<div class="wrap today">
+  <p class="topline rise in" id="topline"></p>
+  <div class="rise in">
+    <div class="strip-cells" id="strip" aria-label="Hours when stories broke"></div>
+    <p class="strip-caption">Each lit cell: an hour something broke in the last 24.</p>
+  </div>
+</div>
+
+<nav><div class="wrap nav-inner" id="nav"></div></nav>
+
+<main class="wrap" id="main"></main>
+
+<div class="wrap"><div class="ad-slot"><!-- AD SLOT: home-footer. Paste your AdSense/ad-network snippet here. -->Ad space</div></div>
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:12px"><a href="about.html" style="color:var(--green-bright);text-decoration:none;margin-right:16px">About</a><a href="contact.html" style="color:var(--green-bright);text-decoration:none;margin-right:16px">Contact</a><a href="privacy.html" style="color:var(--green-bright);text-decoration:none">Privacy</a></p>
+    <p><span class="mark">The Last 24</span> curates exclusively from <span class="v">verified publishers</span> — PTI, Reuters, The Hindu, The Economic Times, Mint and other established newsrooms. Every story links to its original source; the "why it matters" line is our read, the reporting belongs to the publishers we cite.</p>
+    <p style="margin-top:10px">Founded by <a href="about.html" style="color:var(--paper-on-dark);font-weight:700;text-decoration:none">Pankaj</a>.</p>
+  </div>
+</footer>
+
+<div class="ck" id="ck" hidden>
+  We use cookies to remember your preferences and measure readership; with your consent we may also use them for advertising in future. See our <a href="privacy.html">privacy policy</a>.
+  <div class="b"><button class="ok" id="ck-ok">Accept all</button><button id="ck-no">Essential only</button></div>
+</div>
+
+<aside class="nl" id="nl" aria-label="Weekly newsletter signup">
+  <button class="close" id="nl-close" aria-label="Dismiss">✕</button>
+  <h4>The week, in <span>one email.</span></h4>
+  <p class="sub">Pick your topics — get a weekly curation of only what you care about. Free.</p>
+  <div class="prefs" id="nl-prefs"></div>
+  <div class="row2">
+    <input type="email" id="nl-email" placeholder="you@email.com" aria-label="Email address">
+    <button class="go" id="nl-go">Sign up</button>
+  </div>
+  <p class="msg" id="nl-msg"></p>
+</aside>
+
+<script src="data.js"></script>
+<script>
+// Fallback edition so the page always renders fully (single-file previews etc.)
+// In deployment, data.js always wins. Clearly labeled as placeholder on-page.
+window.BRIEF = window.BRIEF || {
+  "date": "Friday, 12 June 2026",
+  "edition": "12 June 2026 — Launch Edition",
+  "lensLabel": "Why it matters",
+  "topline": "Iran calls the ceasefire 'practically meaningless' and oil rattles Indian markets, Amit Shah reviews Amarnath Yatra security, and a packed OTT Friday lands led by Suriya's Karuppu.",
+  "sections": [
+    {
+      "id": "national",
+      "name": "National",
+      "stories": [
+        {
+          "hour": 8,
+          "time": "08:00 IST",
+          "headline": "Amit Shah chairs high-level review of Amarnath Yatra security today",
+          "what": "Union Home Minister Amit Shah is holding a meeting in New Delhi today to review preparedness for the Shri Amarnath Ji Yatra. The National Security Advisor, the Lieutenant Governor of Jammu & Kashmir, the Army Chief and the DG of the CRPF are among senior officials attending. The review covers security arrangements and logistics for the annual pilgrimage.",
+          "lens": "The scale of this meeting — NSA, Army Chief, CRPF chief in one room — signals how seriously the Centre is treating pilgrim security this season; expect tighter movement protocols if you're planning the Yatra.",
+          "source": "News9 Live",
+          "url": "https://www.news9live.com/india/breaking-news-headlines-today-12-06-2026-live-updates-in-english-india-world-politics-crime-president-donald-trump-israel-us-vs-iran-war-pm-narendra-modi-2979403",
+          "breaking": false
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "name": "World",
+      "stories": [
+        {
+          "hour": 22,
+          "time": "22:30 IST",
+          "headline": "Iran says ceasefire is 'practically meaningless' after US strikes; crude surges",
+          "what": "Iran's foreign ministry condemned the latest US strikes on the country, saying the ceasefire has been rendered effectively void. Crude oil prices surged on the escalation, feeding fears of imported inflation in oil-dependent economies. The flare-up dragged Asian equities lower and kept global investors in risk-off mode.",
+          "lens": "India imports most of its crude — every sustained spike shows up in your petrol bill, in inflation, and in pressure on the rupee, which opened near record lows against the dollar.",
+          "source": "Upstox News",
+          "url": "https://upstox.com/news/market-news/stocks/sensex-nifty-50-fall-for-second-straight-session-dragged-by-it-stocks/article-195190/",
+          "breaking": true
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "stories": [
+        {
+          "hour": 15,
+          "time": "15:30 IST",
+          "headline": "Sensex falls 151 points to 73,833 as IT drags; second straight losing session",
+          "what": "The Sensex ended 151 points lower at 73,833 and the Nifty 50 dropped 53 points to 23,162, falling for a second straight session. The Nifty IT index led the decline with a fall of about 1.6% as 11 of 15 major NSE sector gauges closed lower. Mahindra & Mahindra, ICICI Bank, Kotak Mahindra Bank and Bharti Airtel were among the few gainers, while market breadth stayed firmly negative.",
+          "lens": "IT — the biggest weight in many mutual fund portfolios — is bearing the brunt of global AI-spending jitters; if your SIPs are tech-heavy, expect choppiness while West Asia tensions and FII selling persist.",
+          "source": "Upstox News",
+          "url": "https://upstox.com/news/market-news/stocks/sensex-nifty-50-fall-for-second-straight-session-dragged-by-it-stocks/article-195190/",
+          "breaking": false
+        },
+        {
+          "hour": 9,
+          "time": "09:30 IST",
+          "headline": "May inflation print due today; foreign outflows hit a record $30.6 billion",
+          "what": "India's May consumer inflation data is due later today, with the annual rate expected to accelerate to around 4.0% from 3.48% in April. Foreign portfolio investors sold another $207 million of Indian equities on Thursday, taking year-to-date outflows to a record $30.6 billion. The rupee's weakness near 95.5 to the dollar adds to imported-inflation pressure from costlier crude.",
+          "lens": "A 4% print would still be within the RBI's comfort band — but the combination of rising oil, a weak rupee and record foreign selling is exactly the mix that delays rate cuts on your home loan.",
+          "source": "Trading Economics",
+          "url": "https://tradingeconomics.com/india/stock-market",
+          "breaking": false
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "stories": [
+        {
+          "hour": 11,
+          "time": "11:00 IST",
+          "headline": "TCS partners with Anthropic to build a dedicated enterprise AI unit",
+          "what": "Tata Consultancy Services has partnered with AI company Anthropic to set up a new business unit focused on scaling enterprise AI adoption. The move deepens the tie-up between India's largest IT services firm and one of the leading frontier AI labs. It comes as Indian IT majors race to convert AI demand into services revenue amid investor scrutiny of the sector.",
+          "lens": "India's IT giants are repositioning from coding shops to AI-deployment partners — that's where the next wave of tech hiring and reskilling demand will come from.",
+          "source": "Trendlyne",
+          "url": "https://trendlyne.com/markets-today/",
+          "breaking": false
+        },
+        {
+          "hour": 12,
+          "time": "12:30 IST",
+          "headline": "Lenskart shares worth Rs 1,960 crore change hands in a single block deal",
+          "what": "About 4 crore shares of Lenskart Solutions, worth roughly Rs 1,960 crore, reportedly changed hands in a block deal. Large block trades of this size typically signal an early investor paring its stake or institutional repositioning. The eyewear retailer has been among the most watched new-age listings on the exchanges.",
+          "lens": "Big block deals in new-age stocks are worth watching — early-investor exits can pressure prices short-term but also widen public float, often a precursor to index inclusion.",
+          "source": "Trendlyne",
+          "url": "https://trendlyne.com/markets-today/",
+          "breaking": false
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "stories": [
+        {
+          "hour": 7,
+          "time": "07:30 IST",
+          "headline": "Shooting legend Jaspal Rana passes away; Abhinav Bindra leads tributes",
+          "what": "Former shooting champion and celebrated coach Jaspal Rana has passed away, drawing tributes from across Indian sport. Olympic gold medallist Abhinav Bindra called him intense and gifted, crediting him as part of the generation that shaped Indian shooting. Rana later became one of the country's most influential pistol coaches, mentoring Olympic medallist Manu Bhaker.",
+          "lens": "Rana's fingerprints are on India's modern shooting success — his loss is felt from the national ranges to the Olympic podium pipeline he helped build.",
+          "source": "News9 Live",
+          "url": "https://www.news9live.com/india/breaking-news-headlines-today-12-06-2026-live-updates-in-english-india-world-politics-crime-president-donald-trump-israel-us-vs-iran-war-pm-narendra-modi-2979403",
+          "breaking": false
+        },
+        {
+          "hour": 10,
+          "time": "10:00 IST",
+          "headline": "India retain No. 1 ODI ranking in ICC annual update under Shubman Gill",
+          "what": "Shubman Gill's India remain the world's top-ranked ODI side after the ICC's annual rankings update. The team heads into preparations for the 2027 ODI World Cup as the format's benchmark side. Meanwhile India A, featuring an explosive knock from young opener Vaibhav Suryavanshi praised by R Ashwin, continued their tri-series campaign in Dambulla.",
+          "lens": "Holding No. 1 entering a World Cup cycle matters for seedings and confidence — and the Suryavanshi buzz tells you who the selectors are building the 2027 squad around.",
+          "source": "InsideSport",
+          "url": "https://www.newsnow.co.uk/h/Sport/Cricket/India",
+          "breaking": false
+        }
+      ]
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "stories": [
+        {
+          "hour": 6,
+          "time": "06:00 IST",
+          "headline": "Blockbuster OTT Friday: Suriya's Karuppu leads ten-plus releases across platforms",
+          "what": "One of the busiest streaming Fridays of 2026 lands today, headlined by Suriya's Tamil action spectacle Karuppu alongside Bhooth Bangla, Raakh, Dridam, Maa Hai Na and Sshhh Season 3. Netflix, Prime Video, ZEE5, JioHotstar, Aha and Apple TV are all dropping major titles into the same weekend. The slate spans horror-comedy, thrillers, psychological drama and true-crime documentary.",
+          "lens": "Platforms stacking a single Friday this heavily is a subscriber-retention play — your existing subscriptions just got more valuable this weekend, no theatre ticket required.",
+          "source": "The Sunday Guardian",
+          "url": "https://sundayguardianlive.com/entertainment-news/friday-ott-release-jun-12-2026-from-bhooth-bangla-karuppu-raakh-maa-hai-na-dridam-maternal-instinct-sshhh-season-3-more-on-netflix-amazon-prime-jiohotstar-zee5-more-205288/",
+          "breaking": false
+        },
+        {
+          "hour": 21,
+          "time": "21:00 IST",
+          "headline": "Hai Jawani Toh Ishq Hona Hai opens to Rs 8.5 crore on Day 1",
+          "what": "Hai Jawani Toh Ishq Hona Hai collected about Rs 8.5 crore on its opening day, with roughly 25,000 tickets sold in the national multiplex chains. Trade trackers called the opening a surprise on the upside for the comedy. The number sets up a crucial first weekend as it competes with a heavy OTT release slate.",
+          "lens": "A Rs 8.5 crore opening against a stacked streaming weekend suggests theatrical comedy still pulls crowds — watch the Saturday jump to know if word-of-mouth is real.",
+          "source": "Bollywood Hungama",
+          "url": "https://www.bollywoodhungama.com/",
+          "breaking": false
+        }
+      ]
+    }
+  ]
+};
+
+(function(){
+  var NEWSLETTER_ENDPOINT = ""; // Formspree/Buttondown endpoint. Empty = demo mode.
+  var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", sports:"#CE3D1D", entertainment:"#C2317E"};
+  var B = window.BRIEF;
+  var lensLabel = B.lensLabel || 'Why it matters';
+
+  document.getElementById('date-label').textContent = B.date;
+  document.getElementById('topline').textContent = B.topline;
+  if(/sample/i.test(B.edition||'')) document.getElementById('notice').hidden = false;
+
+  function eachStory(fn){ B.sections.forEach(function(s){ s.stories.forEach(function(st){ fn(st, s); }); }); }
+
+  function hashBytes(s){ var h=2166136261,out=[]; for(var r=0;r<32;r++){ for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=(h*16777619)>>>0; } out.push(h&255); h=(h^r)>>>0; } return out; }
+  function art(seed, hue, vw, vh){
+    vw=vw||100; vh=vh||100;
+    var b=hashBytes(seed), v=function(i,lo,hi){ return lo+(b[i%32]/255)*(hi-lo); };
+    var s='<svg viewBox="0 0 '+vw+' '+vh+'" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="'+vw+'" height="'+vh+'" fill="#EEF0EA"/>';
+    for(var i=0;i<6;i++){
+      var cx=v(i*3,vw*.05,vw*.95), cy=v(i*3+1,vh*.08,vh*.92), r=v(i*3+2,vh*.12,vh*.34), op=v(i*5+1,0.10,0.26).toFixed(2);
+      s += (b[i*2]%3===0)
+        ? '<rect x="'+(cx-r).toFixed(1)+'" y="'+(cy-r/2).toFixed(1)+'" width="'+(r*2).toFixed(1)+'" height="'+r.toFixed(1)+'" rx="'+(r/5).toFixed(1)+'" fill="'+hue+'" opacity="'+op+'"/>'
+        : '<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+hue+'" opacity="'+op+'"/>';
+    }
+    s+='<circle cx="'+v(20,vw*.18,vw*.82).toFixed(1)+'" cy="'+v(21,vh*.2,vh*.75).toFixed(1)+'" r="'+v(22,vh*.07,vh*.16).toFixed(1)+'" fill="none" stroke="'+hue+'" stroke-width="'+(vh*.02).toFixed(1)+'" opacity="0.9"/></svg>';
+    return s;
+  }
+  function media(st, hue, vw, vh, eager){
+    return st.image
+      ? '<img src="'+st.image+'" alt="" loading="'+(eager?'eager':'lazy')+'">'
+      : art(st.headline, hue, vw, vh);
+  }
+
+  // ticker
+  var tickHTML = '';
+  eachStory(function(st, s){ tickHTML += '<span class="ticker-item"><span class="dot" style="background:'+(HUES[s.id]||'#3BCB8D')+'"></span>'+st.headline+'</span>'; });
+  document.getElementById('ticker').innerHTML = tickHTML + tickHTML;
+
+  // carousel: breaking first, then first story of each section, max 5
+  var slidesData = [];
+  eachStory(function(st, s){ if(st.breaking) slidesData.push([st, s]); });
+  B.sections.forEach(function(s){
+    if(slidesData.length >= 5) return;
+    var st = s.stories[0];
+    if(st && !slidesData.some(function(x){ return x[0]===st; })) slidesData.push([st, s]);
+  });
+  slidesData = slidesData.slice(0,5);
+
+  var track = document.getElementById('car-track'), dots = document.getElementById('car-dots');
+  slidesData.forEach(function(pair, i){
+    var st = pair[0], s = pair[1], hue = HUES[s.id]||'#0E7B52';
+    var el = document.createElement(st.slug ? 'a' : 'div');
+    if(st.slug) el.href = 'articles/'+st.slug+'.html';
+    el.className = 'slide';
+    el.innerHTML = '<div class="media">'+media(st, hue, 210, 118, i===0)+'</div>'+
+      '<div class="slide-content"><div class="kick">'+
+      (st.breaking?'<span class="b">● Breaking</span>':'')+
+      '<span style="color:#3BCB8D">'+s.name+'</span><span style="opacity:.7;font-weight:400">'+st.time+'</span></div>'+
+      '<h2>'+st.headline+'</h2>'+
+      '<p class="dek">'+(st.what||'')+'</p>'+
+      '<p class="srcline">via <b>'+(st.source||'')+'</b> ✓</p></div>';
+    track.appendChild(el);
+    var d = document.createElement('button');
+    d.className = 'car-dot'+(i===0?' on':''); d.setAttribute('aria-label','Story '+(i+1));
+    d.addEventListener('click', function(){ go(i, true); });
+    dots.appendChild(d);
+  });
+
+  var cur = 0, n = slidesData.length, timer = null;
+  var noMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(i, manual){
+    cur = (i+n)%n;
+    track.style.transform = 'translateX(-'+(cur*100)+'%)';
+    dots.querySelectorAll('.car-dot').forEach(function(d,j){ d.classList.toggle('on', j===cur); });
+    if(manual) restart();
+  }
+  function restart(){ if(timer) clearInterval(timer); if(!noMotion && n>1) timer = setInterval(function(){ go(cur+1); }, 5200); }
+  document.getElementById('car-prev').addEventListener('click', function(){ go(cur-1, true); });
+  document.getElementById('car-next').addEventListener('click', function(){ go(cur+1, true); });
+  var carEl = document.getElementById('carousel');
+  carEl.addEventListener('mouseenter', function(){ if(timer) clearInterval(timer); });
+  carEl.addEventListener('mouseleave', restart);
+  var tx=null;
+  carEl.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  carEl.addEventListener('touchend', function(e){
+    if(tx===null) return;
+    var dx = e.changedTouches[0].clientX - tx; tx=null;
+    if(Math.abs(dx) > 40) go(cur + (dx<0?1:-1), true);
+  }, {passive:true});
+  restart();
+
+  // 24-hour strip
+  var strip = document.getElementById('strip'), hourMap = {};
+  eachStory(function(st){ if(!hourMap[st.hour]) hourMap[st.hour]={breaking:false}; if(st.breaking) hourMap[st.hour].breaking=true; });
+  for(var h=0; h<24; h++){
+    var cell = document.createElement('div'); cell.className='cell';
+    if(hourMap[h]) cell.classList.add(hourMap[h].breaking?'breaking':'active');
+    strip.appendChild(cell);
+  }
+
+  // nav + sections
+  var nav = document.getElementById('nav'), main = document.getElementById('main');
+  B.sections.forEach(function(s, si){
+    var hue = HUES[s.id]||'#0E7B52';
+    var a = document.createElement('a');
+    a.className='chip'; a.href='#'+s.id;
+    a.innerHTML = '<span class="hue" style="background:'+hue+'"></span>'+s.name;
+    nav.appendChild(a);
+
+    var sec = document.createElement('section');
+    sec.id = s.id;
+    sec.innerHTML = '<div class="sec-head rise"><span class="hue" style="background:'+hue+'"></span><h2>'+s.name+'</h2><span class="count">'+s.stories.length+(s.stories.length>1?' stories':' story')+'</span></div>';
+    s.stories.forEach(function(st){
+      var d = document.createElement('article');
+      d.className = 'row rise';
+      var headline = st.slug ? '<a href="articles/'+st.slug+'.html">'+st.headline+'</a>' : st.headline;
+      d.innerHTML =
+        '<div><div class="kick"><span style="color:'+hue+'">'+s.name+'</span>'+
+        (st.breaking?'<span class="b">● Breaking</span>':'')+
+        '<span class="t">'+st.time+'</span></div>'+
+        '<h3>'+headline+'</h3>'+
+        '<p class="what">'+st.what+'</p>'+
+        '<p class="lens" style="border-color:'+hue+'"><b style="color:'+hue+'">'+lensLabel+':</b> '+st.lens+'</p>'+
+        '<p class="meta-line">'+
+        (st.url ? '<a class="src" href="'+st.url+'" target="_blank" rel="noopener"><span class="v">✓</span> '+(st.source||'Source')+' ↗</a>' : '<span class="src" style="border:none">'+(st.source||'')+'</span>')+
+        (st.slug ? '<a class="read" style="color:'+hue+'" href="articles/'+st.slug+'.html">Read the brief →</a>' : '')+
+        '</p></div><div class="thumb">'+media(st, hue)+'</div>';
+      sec.appendChild(d);
+    });
+    main.appendChild(sec);
+    if(si === 1){
+      var ad = document.createElement('div');
+      ad.className = 'ad-slot';
+      ad.innerHTML = '<!-- AD SLOT: home-mid. Paste your AdSense/ad-network snippet here. -->Ad space';
+      main.appendChild(ad);
+    }
+  });
+
+  // scroll-reveal
+  if('IntersectionObserver' in window && !noMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.06});
+    document.querySelectorAll('.rise:not(.in)').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.rise').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // newsletter slide-in
+  var store = { get:function(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+                set:function(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+  var nl = document.getElementById('nl'), prefsBox = document.getElementById('nl-prefs'), chosen = {};
+  B.sections.forEach(function(s){
+    var p = document.createElement('span');
+    p.className='pref'; p.textContent=s.name; p.setAttribute('role','button'); p.tabIndex=0;
+    function toggle(){ chosen[s.id]=!chosen[s.id]; p.classList.toggle('on',chosen[s.id]); }
+    p.addEventListener('click',toggle);
+    p.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
+    prefsBox.appendChild(p);
+  });
+  // cookie consent first; newsletter only after a choice (never two overlays at once)
+  var ck = document.getElementById('ck');
+  function consentDecided(){ return !!store.get('cookie-consent'); }
+  function decide(v){ store.set('cookie-consent', v); ck.hidden = true; armNewsletter();
+    /* CONSENT HOOK: if v==='granted', load analytics/ads scripts here */ }
+  if(!consentDecided()) ck.hidden = false;
+  document.getElementById('ck-ok').addEventListener('click', function(){ decide('granted'); });
+  document.getElementById('ck-no').addEventListener('click', function(){ decide('denied'); });
+
+  var nlArmed = false;
+  function armNewsletter(){
+    if(nlArmed) return; nlArmed = true;
+    if(store.get('nl-done')==='1' || store.get('nl-snooze')===new Date().toDateString()) return;
+    var shown=false;
+    function show(){ if(!shown){ shown=true; nl.classList.add('show'); } }
+    setTimeout(show, 14000);
+    window.addEventListener('scroll', function(){ if(window.scrollY > document.body.scrollHeight*0.35) show(); }, {passive:true});
+  }
+  if(consentDecided()) armNewsletter();
+  document.getElementById('nl-close').addEventListener('click', function(){
+    nl.classList.remove('show'); store.set('nl-snooze', new Date().toDateString());
+  });
+  document.getElementById('nl-go').addEventListener('click', function(){
+    var email = document.getElementById('nl-email').value.trim();
+    var msg = document.getElementById('nl-msg');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.textContent='Enter a valid email.'; msg.style.color='var(--vermilion)'; return; }
+    var prefs = Object.keys(chosen).filter(function(k){ return chosen[k]; });
+    if(!NEWSLETTER_ENDPOINT){
+      msg.style.color='var(--green-bright)';
+      msg.textContent='Demo mode — set NEWSLETTER_ENDPOINT in index.html to start collecting.';
+      return;
+    }
+    var fd = new FormData(); fd.append('email', email); fd.append('preferences', prefs.join(','));
+    fetch(NEWSLETTER_ENDPOINT, {method:'POST', body:fd, headers:{'Accept':'application/json'}})
+      .then(function(r){ if(!r.ok) throw 0;
+        msg.style.color='var(--green-bright)'; msg.textContent='You\'re in! First curation arrives Sunday.';
+        store.set('nl-done','1'); setTimeout(function(){ nl.classList.remove('show'); }, 2200);
+      })
+      .catch(function(){ msg.style.color='var(--vermilion)'; msg.textContent='Could not sign you up — try again.'; });
+  });
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+}
+</script>
+</body>
+</html>
