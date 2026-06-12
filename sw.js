@@ -1,6 +1,6 @@
 // The Last 24 — service worker (installable PWA + offline last edition)
-const CACHE = "last24-v1";
-const SHELL = ["./", "./index.html", "./data.js", "./about.html", "./contact.html", "./privacy.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
+const CACHE = "last24-v2";
+const SHELL = ["./", "./index.html", "./data.js", "./archive.html", "./about.html", "./contact.html", "./privacy.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
