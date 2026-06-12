@@ -126,7 +126,7 @@ def write_edition(raw):
     key = os.environ.get("ANTHROPIC_API_KEY") or sys.exit("ANTHROPIC_API_KEY not set.")
     r = requests.post("https://api.anthropic.com/v1/messages",
         headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json={"model": "claude-sonnet-4-6", "max_tokens": 32000, "system": SYSTEM_RULES,
+        json={"model": "claude-sonnet-4-20250514", "max_tokens": 32000, "system": SYSTEM_RULES,
               "messages": [{"role": "user", "content":
                   f"Edition date: {NOW.strftime('%A, %d %B %Y')}\nEdition number: {NOW.strftime('%Y-%m-%d %H:%M')}\n\nRaw headlines from the last 24 hours:\n{raw}"}]},
         timeout=300)
@@ -244,7 +244,7 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-heig
 .wrap{{max-width:660px;margin:0 auto;padding:0 20px}}
 .topbar{{background:#0E130E;margin-bottom:30px}}
 .top{{font-family:var(--mono);font-size:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:660px;margin:0 auto}}
-.top a{{color:#F2F4EE;text-decoration:none;font-weight:700;font-family:var(--display);font-size:17px}}.top a span{{color:#3BCB8D}}
+.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:22px}}.top a span{{color:#3BCB8D}}
 .cat{{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);font-weight:700;background:#fff;padding:5px 12px;border-radius:999px}}
 .kick{{font-family:var(--mono);font-size:11px;color:var(--meta);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}}
 .kick b{{color:#0E7B52}}
@@ -307,18 +307,151 @@ def write_outputs(edition):
         json.dump(edition, f, ensure_ascii=False, indent=2)
     # sitemap
     arts = sorted(a for a in os.listdir("articles") if a.endswith(".html"))
-    urls = [f"<url><loc>{SITE_URL}/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>"] + \
+    urls = [f"<url><loc>{SITE_URL}/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>",
+            f"<url><loc>{SITE_URL}/archive.html</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>"] + \
            [f"<url><loc>{SITE_URL}/articles/{a}</loc></url>" for a in arts]
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                 + "".join(urls) + "</urlset>\n")
     print(f"Wrote {sum(len(s['stories']) for s in edition['sections'])} articles, data.js, archive, sitemap.")
 
+
+# ----------------------------------------------------------------- archive ---
+def build_archive():
+    """Regenerates archive.html from every saved edition: a static, crawlable
+    listing of all published stories with client-side date/category/source filters."""
+    import glob
+    e = html.escape
+    editions = []
+    for path in sorted(glob.glob("editions/*.json"), reverse=True):
+        stamp = os.path.basename(path)[:13]
+        try:
+            when = datetime.strptime(stamp, "%Y-%m-%d-%H").replace(tzinfo=IST)
+        except ValueError:
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                editions.append((when, json.load(f)))
+        except Exception:
+            continue
+    seen, dates, cats, sources = set(), [], {}, set()
+    rows_by_date = {}
+    for when, ed in editions:
+        dkey = when.strftime("%Y-%m-%d")
+        dlabel = when.strftime("%A, %d %B %Y")
+        for sec in ed.get("sections", []):
+            cats[sec["id"]] = sec["name"]
+            for st in sec.get("stories", []):
+                key = st.get("slug") or st["headline"]
+                if key in seen:
+                    continue
+                seen.add(key)
+                sources.add(st.get("source", ""))
+                if dkey not in rows_by_date:
+                    rows_by_date[dkey] = (dlabel, [])
+                    dates.append((dkey, dlabel))
+                link = (f"articles/{st['slug']}.html" if st.get("slug") else st.get("url", "#"))
+                hue = SECTION_HUES.get(sec["id"], "#0E7B52")
+                rows_by_date[dkey][1].append(
+                    f'<li class="ar" data-d="{dkey}" data-c="{sec["id"]}" data-s="{e(st.get("source",""))}">'
+                    f'<span class="tm">{e(st.get("time",""))}</span>'
+                    f'<span class="cd" style="background:{hue}" title="{e(sec["name"])}"></span>'
+                    f'<a class="hl" href="{e(link)}">{e(st["headline"])}</a>'
+                    f'<span class="so">{e(st.get("source",""))}</span></li>')
+    groups = "".join(
+        f'<div class="day" data-d="{dkey}"><h2>{e(dlabel)}</h2><ul>{"".join(rows_by_date[dkey][1])}</ul></div>'
+        for dkey, dlabel in dates)
+    date_opts = "".join(f'<option value="{d}">{l}</option>' for d, l in dates)
+    cat_opts = "".join(f'<option value="{c}">{e(n)}</option>' for c, n in sorted(cats.items(), key=lambda x: x[1]))
+    src_opts = "".join(f'<option value="{e(s)}">{e(s)}</option>' for s in sorted(x for x in sources if x))
+    total = len(seen)
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive — {SITE_NAME}</title>
+<meta name="description" content="Browse every story published by {SITE_NAME}, by date, category and source. All stories from verified publishers, each linked to the original reporting.">
+<link rel="canonical" href="{SITE_URL}/archive.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Archive — {SITE_NAME}">
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0E130E">
+<style>
+:root{{--paper:#F6F6F4;--ink:#101410;--ink-soft:#43493F;--meta:#71766C;--hairline:#E5E7E0;--dark:#0D120D;--green:#0E7B52;--green-bright:#3BCB8D;
+--display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}}
+.wrap{{max-width:900px;margin:0 auto;padding:0 24px}}
+.topbar{{background:var(--dark)}}
+.top{{font-family:var(--mono);font-size:12px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;max-width:900px;margin:0 auto}}
+.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:22px}}.top a span{{color:var(--green-bright)}}
+.top .pg{{color:#929C8E;font-size:11px;letter-spacing:.12em;text-transform:uppercase}}
+h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,38px);letter-spacing:-.02em;margin:32px 0 6px}}
+.sub{{font-family:var(--mono);font-size:12px;color:var(--meta);margin-bottom:22px}}
+.filters{{display:flex;gap:10px;flex-wrap:wrap;position:sticky;top:0;background:rgba(246,246,244,.94);backdrop-filter:blur(10px);padding:12px 0;border-bottom:1px solid var(--hairline);z-index:5}}
+select{{font-family:var(--body);font-size:13.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:10px;padding:9px 12px;cursor:pointer}}
+select:focus{{outline:2px solid var(--green)}}
+.day{{padding-top:26px}}
+.day h2{{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:4px}}
+ul{{list-style:none}}
+.ar{{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--hairline)}}
+.ar .tm{{font-family:var(--mono);font-size:11px;color:var(--meta);flex:0 0 76px}}
+.ar .cd{{width:8px;height:8px;border-radius:50%;flex-shrink:0;align-self:center}}
+.ar .hl{{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.3;text-decoration:none;flex:1}}
+.ar .hl:hover{{text-decoration:underline;text-underline-offset:3px}}
+.ar .so{{font-family:var(--mono);font-size:11px;color:var(--meta);flex-shrink:0}}
+@media (max-width:560px){{.ar{{flex-wrap:wrap}}.ar .tm{{flex:0 0 auto}}.ar .so{{width:100%;padding-left:20px}}}}
+.empty{{font-family:var(--mono);font-size:12.5px;color:var(--meta);padding:40px 0;text-align:center;display:none}}
+footer{{background:var(--dark);color:#929C8E;margin-top:48px;padding:28px 0 64px;font-size:12px;line-height:1.8}}
+footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
+</style></head>
+<body>
+<div class="topbar"><div class="top"><a href="index.html">The Last <span>24</span></a><span class="pg">Archive</span></div></div>
+<div class="wrap">
+<h1>Every story we've published.</h1>
+<p class="sub">{total} stories · all from verified publishers · each linked to its original source</p>
+<div class="filters">
+  <select id="f-d" aria-label="Filter by date"><option value="">All dates</option>{date_opts}</select>
+  <select id="f-c" aria-label="Filter by category"><option value="">All categories</option>{cat_opts}</select>
+  <select id="f-s" aria-label="Filter by source"><option value="">All sources</option>{src_opts}</select>
+</div>
+{groups}
+<p class="empty" id="empty">No stories match those filters.</p>
+</div>
+<footer><div class="wrap"><p><a href="index.html">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></p>
+<p>{SITE_NAME} — automated brief from verified publishers. Founded by Pankaj.</p></div></footer>
+<script>
+(function(){{
+  var fd=document.getElementById('f-d'),fc=document.getElementById('f-c'),fs=document.getElementById('f-s');
+  function apply(){{
+    var d=fd.value,c=fc.value,s=fs.value,any=false;
+    document.querySelectorAll('.ar').forEach(function(r){{
+      var on=(!d||r.dataset.d===d)&&(!c||r.dataset.c===c)&&(!s||r.dataset.s===s);
+      r.style.display=on?'':'none'; if(on) any=true;
+    }});
+    document.querySelectorAll('.day').forEach(function(g){{
+      g.style.display=[].some.call(g.querySelectorAll('.ar'),function(r){{return r.style.display!=='none';}})?'':'none';
+    }});
+    document.getElementById('empty').style.display=any?'none':'block';
+  }}
+  [fd,fc,fs].forEach(function(el){{el.addEventListener('change',apply);}});
+  var q=new URLSearchParams(location.search);
+  if(q.get('cat')) fc.value=q.get('cat');
+  if(q.get('date')) fd.value=q.get('date');
+  if(q.get('src')) fs.value=q.get('src');
+  if(q.get('cat')||q.get('date')||q.get('src')) apply();
+}})();
+</script>
+</body></html>"""
+    with open("archive.html", "w", encoding="utf-8") as f:
+        f.write(page)
+    print(f"archive.html rebuilt: {total} stories across {len(dates)} days.")
+
 def main():
     raw = collect_headlines()
     print(f"Collected {len(raw.splitlines())} headlines.")
     write_outputs(write_edition(raw))
+    build_archive()
 
 if __name__ == "__main__":
     main()
-
