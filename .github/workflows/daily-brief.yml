@@ -1,0 +1,41 @@
+name: Publish edition
+
+on:
+  schedule:
+    - cron: "15 * * * *"   # every hour at :15 UTC (i.e. :45 IST)
+  workflow_dispatch:
+    inputs:
+      backfill_days:
+        description: "Backfill: pull this many past days (use 7 on first run to pre-populate the site; 0 = normal hourly run)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: publish
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install feedparser requests
+      - name: Build edition + articles
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          BACKFILL_DAYS: ${{ inputs.backfill_days || '0' }}
+        run: python scripts/build_edition.py
+      - name: Commit and publish
+        run: |
+          git config user.name "edition-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data.js editions/ articles/ sitemap.xml
+          git diff --cached --quiet || git commit -m "Edition $(date -u +'%F %H:%M')"
+          git pull --rebase origin main
+          git push
