@@ -113,14 +113,20 @@
 
   /* ============ SECTIONS + CARD GRID ============ */
   section{padding:30px 0 0;scroll-margin-top:64px}
-  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
   .sec-head .hue{width:9px;height:9px;border-radius:50%}
   .sec-head h2{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase}
-  .sec-head .bar{flex:1;height:1px;background:var(--hairline)}
+  .sec-head .bar{flex:1;height:1px;background:var(--hairline);min-width:24px}
   .sec-head .count{font-family:var(--mono);font-size:10.5px;color:var(--meta)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
-  @media (max-width:380px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--hairline);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
+  .sec-actions{display:flex;align-items:center;gap:8px}
+  .sec-arrow{width:32px;height:32px;border-radius:50%;border:1px solid var(--hairline);background:#fff;color:var(--ink);font-size:14px;cursor:pointer;transition:all .18s;line-height:1}
+  .sec-arrow:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  @media (max-width:600px){.sec-arrow{display:none}}
+  .sec-more{font-family:var(--mono);font-size:11px;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:999px;border:1.5px solid;transition:all .18s;white-space:nowrap}
+  .hscroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hscroll::-webkit-scrollbar{display:none}
+  .card{flex:0 0 320px;scroll-snap-align:start;background:var(--card);border:1px solid var(--hairline);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
+  @media (max-width:600px){.card{flex:0 0 80vw}}
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
   .card .media{aspect-ratio:16/9;overflow:hidden}
   .card .media img,.card .media svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
@@ -166,11 +172,19 @@
   .ck button{font-family:var(--body);font-weight:700;font-size:12.5px;border-radius:9px;padding:9px 14px;cursor:pointer;border:1px solid var(--hairline);background:#fff;color:var(--ink)}
   .ck button.ok{background:var(--dark);border-color:var(--dark);color:#fff}
 
-  footer{background:var(--dark);color:var(--meta-on-dark);margin-top:52px;padding:32px 0 70px}
-  footer p{font-size:12.5px;line-height:1.8;max-width:640px}
-  footer .mark{color:var(--paper-on-dark);font-weight:700}
-  footer .v{color:var(--green-bright)}
-  footer a.fl{color:var(--green-bright);text-decoration:none;margin-right:16px}
+  footer{background:var(--dark);color:var(--meta-on-dark);margin-top:56px;width:100%}
+  .f-inner{max-width:var(--maxw);margin:0 auto;padding:46px 24px 30px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;align-items:start}
+  .f-logo{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;color:var(--paper-on-dark);text-decoration:none}
+  .f-logo span{color:var(--green-bright)}
+  .f-blurb{font-size:13px;line-height:1.8;margin-top:12px;max-width:380px}
+  .f-blurb .v{color:var(--green-bright)}
+  .f-col h5{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--meta-on-dark);margin-bottom:12px}
+  .f-col a{display:block;font-size:13.5px;color:var(--paper-on-dark);text-decoration:none;padding:5px 0;transition:color .15s}
+  .f-col a:hover{color:var(--green-bright)}
+  .f-bottom{border-top:1px solid rgba(255,255,255,.1)}
+  .f-bottom-inner{max-width:var(--maxw);margin:0 auto;padding:18px 24px 40px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px}
+  .f-bottom-inner a{color:var(--paper-on-dark);font-weight:600;text-decoration:none}
+  @media (max-width:720px){.f-inner{grid-template-columns:1fr;gap:28px;padding:36px 16px 24px}.f-bottom-inner{padding:16px 16px 36px}}
 </style>
 </head>
 <body>
@@ -212,10 +226,29 @@
 <div class="wrap"><div class="ad-slot"><!-- AD SLOT: home-footer. Paste your AdSense/ad-network snippet here. -->Ad space</div></div>
 
 <footer>
-  <div class="wrap">
-    <p style="margin-bottom:12px"><a class="fl" href="archive.html">Archive</a><a class="fl" href="about.html">About</a><a class="fl" href="contact.html">Contact</a><a class="fl" href="privacy.html">Privacy</a></p>
-    <p><span class="mark">The Last 24</span> curates exclusively from <span class="v">verified publishers</span> — PTI, Reuters, The Hindu, The Economic Times, Mint and other established newsrooms. Every story links to its original source; the "why it matters" line is our read, the reporting belongs to the publishers we cite.</p>
-    <p style="margin-top:10px">Founded by <a href="about.html" style="color:var(--paper-on-dark);font-weight:700;text-decoration:none">Pankaj</a>.</p>
+  <div class="f-inner">
+    <div>
+      <a class="f-logo" href="index.html">The Last <span>24</span></a>
+      <p class="f-blurb">Everything that mattered in India, every hour — curated exclusively from <span class="v">verified publishers</span> like PTI, Reuters, The Hindu, The Economic Times and Mint. Every story links to its original source.</p>
+    </div>
+    <div class="f-col">
+      <h5>Explore</h5>
+      <a href="index.html">Today's brief</a>
+      <a href="archive.html">Archive</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="f-col">
+      <h5>Connect</h5>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:support@thelast24.in">support@thelast24.in</a>
+      <a href="privacy.html">Privacy policy</a>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <div class="f-bottom-inner">
+      <span>© 2026 The Last 24 · All stories belong to their cited publishers</span>
+      <span>Founded by <a href="about.html">Pankaj</a></span>
+    </div>
   </div>
 </footer>
 
@@ -467,11 +500,17 @@ window.BRIEF = window.BRIEF || {
 (function(){
   var NEWSLETTER_ENDPOINT = ""; // Formspree/Buttondown endpoint. Empty = demo mode.
   var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", sports:"#CE3D1D", entertainment:"#C2317E"};
-  var B = window.BRIEF;
+  var B = window.BRIEF || window.EDITION || null;
+  var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
+  if(!B || !totalStories){
+    document.getElementById('main').innerHTML = '<p style="padding:60px 20px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--meta)">No stories available right now — the next hourly edition will populate this page automatically.</p>';
+    document.getElementById('carousel').style.display = 'none';
+    document.querySelector('.today').style.display = 'none';
+    return;
+  }
   var lensLabel = B.lensLabel || 'Why it matters';
-
-  document.getElementById('date-label').textContent = B.date;
-  document.getElementById('topline').textContent = B.topline;
+  document.getElementById('date-label').textContent = B.date || '';
+  document.getElementById('topline').textContent = B.topline || '';
 
   function eachStory(fn){ B.sections.forEach(function(s){ s.stories.forEach(function(st){ fn(st, s); }); }); }
 
@@ -501,14 +540,13 @@ window.BRIEF = window.BRIEF || {
   document.getElementById('ticker').innerHTML = tickHTML + tickHTML;
 
   // carousel
-  var slidesData = [];
-  eachStory(function(st, s){ if(st.breaking) slidesData.push([st, s]); });
-  B.sections.forEach(function(s){
-    if(slidesData.length >= 5) return;
-    var st = s.stories[0];
-    if(st && !slidesData.some(function(x){ return x[0]===st; })) slidesData.push([st, s]);
+  var allPairs = [];
+  eachStory(function(st, s){ allPairs.push([st, s]); });
+  allPairs.sort(function(a, b){
+    if(!!b[0].breaking !== !!a[0].breaking) return (!!b[0].breaking) - (!!a[0].breaking);
+    return (b[0].hour||0) - (a[0].hour||0);
   });
-  slidesData = slidesData.slice(0,5);
+  var slidesData = allPairs.slice(0, 5);
 
   var track = document.getElementById('car-track'), dots = document.getElementById('car-dots'), counter = document.getElementById('car-count');
   slidesData.forEach(function(pair, i){
@@ -597,9 +635,26 @@ window.BRIEF = window.BRIEF || {
 
     var sec = document.createElement('section');
     sec.id = s.id;
-    sec.innerHTML = '<div class="sec-head rise"><span class="hue" style="background:'+hue+'"></span><h2>'+s.name+'</h2><span class="bar"></span><span class="count">'+s.stories.length+(s.stories.length>1?' stories':' story')+'</span></div>';
-    var grid = document.createElement('div'); grid.className = 'grid';
-    s.stories.forEach(function(st){
+    var head = document.createElement('div');
+    head.className = 'sec-head rise';
+    head.innerHTML = '<span class="hue" style="background:'+hue+'"></span><h2>'+s.name+'</h2>'+
+      '<span class="count">'+s.stories.length+(s.stories.length>1?' stories':' story')+'</span><span class="bar"></span>';
+    var actions = document.createElement('div'); actions.className = 'sec-actions';
+    var prev = document.createElement('button'); prev.className='sec-arrow'; prev.innerHTML='‹'; prev.setAttribute('aria-label','Scroll '+s.name+' back');
+    var next = document.createElement('button'); next.className='sec-arrow'; next.innerHTML='›'; next.setAttribute('aria-label','Scroll '+s.name+' forward');
+    var more = document.createElement('a');
+    more.className = 'sec-more'; more.href = 'archive.html?cat=' + s.id;
+    more.style.color = hue; more.style.borderColor = hue;
+    more.textContent = 'View more in Archive →';
+    more.addEventListener('mouseenter', function(){ more.style.background = hue; more.style.color = '#fff'; });
+    more.addEventListener('mouseleave', function(){ more.style.background = 'transparent'; more.style.color = hue; });
+    actions.appendChild(prev); actions.appendChild(next); actions.appendChild(more);
+    head.appendChild(actions);
+    sec.appendChild(head);
+
+    var rail = document.createElement('div'); rail.className = 'hscroll';
+    var shown = s.stories.slice().sort(function(a,b){ return (b.hour||0)-(a.hour||0); }).slice(0, 5);
+    shown.forEach(function(st){
       var d = document.createElement('article');
       d.className = 'card rise';
       var headline = st.slug ? '<a href="articles/'+st.slug+'.html">'+st.headline+'</a>' : st.headline;
@@ -616,16 +671,12 @@ window.BRIEF = window.BRIEF || {
         (st.url ? '<a class="src" href="'+st.url+'" target="_blank" rel="noopener"><span class="v">✓</span> '+(st.source||'Source')+' ↗</a>' : '<span class="src" style="border:none">'+(st.source||'')+'</span>')+
         (st.slug ? '<a class="read" style="color:'+hue+'" href="articles/'+st.slug+'.html">Read →</a>' : '')+
         '</p></div>';
-      grid.appendChild(d);
+      rail.appendChild(d);
     });
-    sec.appendChild(grid);
-    var more = document.createElement('a');
-    more.href = 'archive.html?cat=' + s.id;
-    more.style.cssText = 'display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--mono);font-size:12px;font-weight:600;text-decoration:none;color:' + hue + ';border:1.5px solid ' + hue + ';padding:9px 18px;border-radius:999px;transition:all .18s';
-    more.textContent = 'More ' + s.name + ' stories in the Archive →';
-    more.addEventListener('mouseenter', function(){ more.style.background = hue; more.style.color = '#fff'; });
-    more.addEventListener('mouseleave', function(){ more.style.background = 'transparent'; more.style.color = hue; });
-    sec.appendChild(more);
+    sec.appendChild(rail);
+    var step = function(){ return (rail.firstChild ? rail.firstChild.getBoundingClientRect().width + 16 : 336); };
+    prev.addEventListener('click', function(){ rail.scrollBy({left: -step(), behavior: noMotion?'auto':'smooth'}); });
+    next.addEventListener('click', function(){ rail.scrollBy({left: step(), behavior: noMotion?'auto':'smooth'}); });
     main.appendChild(sec);
     sectionEls[s.id] = sec;
     if(si === 1){
