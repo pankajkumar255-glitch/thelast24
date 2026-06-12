@@ -449,7 +449,7 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 
 def main():
     raw = collect_headlines()
-    raw = raw[:10]
+    raw = "\n".join(raw.splitlines()[:10])
     print(f"Collected {len(raw.splitlines())} headlines.")
     write_outputs(write_edition(raw))
     build_archive()
