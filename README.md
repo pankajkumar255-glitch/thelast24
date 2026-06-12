@@ -17,7 +17,7 @@ database. Running cost ≈ a few dollars/month of Claude API usage.
 | `scripts/build_newsletter.py` | Weekly: builds one ready-to-send HTML digest per preference category (deterministic — no AI, no hallucination risk). |
 | `.github/workflows/daily-brief.yml` | Runs the publisher every 3 hours. |
 | `.github/workflows/weekly-newsletter.yml` | Runs the digest builder every Sunday 8 AM IST. |
-| `about.html`, `contact.html`, `privacy.html` | Trust pages (founder credit, corrections inbox, privacy policy) — required for AdSense/Search Console. Replace example.com emails before launch. |
+| `about.html`, `contact.html`, `privacy.html` | Trust pages (founder credit, corrections inbox, privacy policy) — required for AdSense/Search Console. Replace support@thelast24.in address before launch. |
 | `robots.txt`, `llms.txt` | SEO + GEO (generative engine optimization) files. |
 | `articles/`, `editions/`, `newsletter/`, `sitemap.xml` | Created automatically on first run. |
 
@@ -32,7 +32,7 @@ database. Running cost ≈ a few dollars/month of Claude API usage.
    fetches a commercially-licensed photo per story and credits the
    photographer; stories without a good match get generative art instead.
 4. Same page → **Variables** tab → `SITE_URL` = your live URL.
-   Also replace `https://example.com` in index.html, robots.txt, llms.txt.
+   Also replace `https://thelast24.in` in index.html, robots.txt, llms.txt.
 4. Enable hosting: Settings → Pages → deploy from main (or import to Vercel).
    Point your domain at it.
 5. **Populate the site now:** Actions tab → "Publish edition" → Run workflow,
