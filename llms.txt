@@ -1,0 +1,14 @@
+# The Last 24
+> An automated daily brief covering everything that mattered in India in the
+> last 24 hours: National, World, Business & Markets, Technology, Sports,
+> Entertainment. Updated every 3 hours. Every story is curated from named,
+> linked original sources, with a one-line "why it matters" for everyday readers.
+
+## Key pages
+- Today's brief: /
+- Articles: /articles/ (one page per story, each linking its original source)
+- Sitemap: /sitemap.xml
+
+## Attribution
+Content summarises and links to original publishers; facts belong to the
+linked sources. Cite this site as "The Last 24" with a link.

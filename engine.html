@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Last 24 — Edition Engine</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F6F7F4;--ink:#171B17;--meta:#70756D;--hairline:#E2E5DF;--green:#0E7B52;--green-soft:#E2EFE8;--vermilion:#CE3D1D;
+        --display:"Bricolage Grotesque",sans-serif;--mono:"Spline Sans Mono",monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.6}
+  .wrap{max-width:860px;margin:0 auto;padding:30px 20px 80px}
+  h1{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.02em}
+  h1 span{color:var(--green)}
+  .sub{color:var(--meta);font-size:12px;margin:6px 0 26px}
+  label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--meta);margin:18px 0 6px}
+  input,textarea{width:100%;font-family:var(--mono);font-size:13px;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:8px;padding:12px}
+  textarea{min-height:240px;resize:vertical}
+  input:focus,textarea:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+  button.run{font-family:var(--mono);font-weight:600;font-size:14px;background:var(--green);color:#fff;border:none;border-radius:8px;padding:13px 26px;margin-top:18px;cursor:pointer}
+  button.run:hover{background:#0a6443}
+  button.run:disabled{background:var(--meta);cursor:wait}
+  .status{margin-top:14px;font-size:12px;color:var(--meta)}
+  .status.err{color:var(--vermilion)}
+  .out{margin-top:34px;display:none}
+  .panel{border:1px solid var(--hairline);border-radius:10px;background:#fff;margin-bottom:20px;overflow:hidden}
+  .panel-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--hairline);background:var(--green-soft)}
+  .panel-head h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+  .copy{font-family:var(--mono);font-size:11px;border:1px solid var(--green);color:var(--green);background:transparent;border-radius:6px;padding:5px 12px;cursor:pointer}
+  .copy:hover{background:var(--green);color:#fff}
+  pre{padding:14px;font-size:12px;white-space:pre-wrap;word-break:break-word;max-height:340px;overflow:auto}
+  .hint{font-size:11.5px;color:var(--meta);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The Last <span>24</span> — Edition Engine</h1>
+  <p class="sub">Paste the morning's raw headlines below. The engine writes the full edition (your data.js file), a LinkedIn post, a 60-second video byte script, and a WhatsApp blurb.</p>
+
+  <label for="date">Edition date</label>
+  <input id="date" placeholder="e.g. Thursday, 11 June 2026">
+
+  <label for="edn">Edition number</label>
+  <input id="edn" placeholder="e.g. 001">
+
+  <label for="raw">Raw headlines & links (one per line — paste straight from your source list)</label>
+  <textarea id="raw" placeholder="06:10 IST | India-EU trade talks enter final round | Economic Times | https://...
+11:30 IST | Japanese fund commits $2B to logistics corridors | Mint | https://...
+21:50 IST | Cricket board opens media rights bidding | ESPNcricinfo | https://...
+(Times and links optional but recommended — the engine slots stories into the 24-hour strip by time.)"></textarea>
+  <p class="hint">Tip: 10–15 headlines is the sweet spot. Mix geopolitics, trade/investment, markets, sports and trends.</p>
+
+  <button class="run" id="run">Generate today's edition</button>
+  <p class="status" id="status"></p>
+
+  <div class="out" id="out">
+    <div class="panel">
+      <div class="panel-head"><h3>data.js — replace this file on the site</h3><button class="copy" data-t="datajs">Copy</button></div>
+      <pre id="datajs"></pre>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>LinkedIn post</h3><button class="copy" data-t="linkedin">Copy</button></div>
+      <pre id="linkedin"></pre>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>60-second video byte script</h3><button class="copy" data-t="video">Copy</button></div>
+      <pre id="video"></pre>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>WhatsApp broadcast blurb</h3><button class="copy" data-t="whatsapp">Copy</button></div>
+      <pre id="whatsapp"></pre>
+    </div>
+  </div>
+</div>
+
+<script>
+const SYSTEM_RULES = `You are the editor of "The Last 24", a daily brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. You receive raw headlines and produce a structured edition.
+
+EDITORIAL RULES:
+- Sort stories into these sections (use only sections that have stories): national (National), world (World), business (Business & Markets), tech (Technology), sports (Sports), entertainment (Entertainment).
+- For each story write: "what" = 1-2 factual sentences on what happened, neutral, no speculation beyond the headline given. "lens" = 1 sharp sentence answering "why this matters to you" for an everyday Indian reader — concrete impact on money, daily life, or the bigger picture, never vague.
+- "hour" = integer 0-23 from the IST time given (guess a sensible hour if missing). "time" = "HH:MM IST". "breaking" = true only for genuinely major developments (max 1-2 per edition).
+- Keep source names exactly as given; keep URLs exactly as given (use "#" if missing).
+- "topline" = one sentence capturing the day's overall arc.
+- Never invent stories, numbers, or details not present in the input. If a headline is unclear, summarise conservatively.
+
+OUTPUT: Respond with ONLY a JSON object, no markdown fences, no preamble, with this exact shape:
+{
+  "date": "...", "edition": "...", "topline": "...", "lensLabel": "Why it matters",
+  "sections": [{"id":"...","name":"...","stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","source":"...","url":"...","breaking":false}]}],
+  "linkedin_post": "A LinkedIn post (150-220 words): hook line, 4-6 of the day's sharpest items each with a one-line why-it-matters, sign-off inviting people to the daily brief. Use line breaks, max 2 emoji.",
+  "video_script": "A 60-second vertical video script: [HOOK 0-5s], then [SCENE] beats covering the top 3-4 stories with on-screen text suggestions in (parentheses), then [CTA]. Conversational Indian-English tone.",
+  "whatsapp_blurb": "A WhatsApp broadcast version: greeting, 5 bullet items with → takeaways, under 120 words, 1 emoji max."
+}`;
+
+const $ = id => document.getElementById(id);
+
+$('run').addEventListener('click', async () => {
+  const raw = $('raw').value.trim();
+  if(!raw){ $('status').textContent = 'Paste some headlines first.'; $('status').className='status err'; return; }
+  $('run').disabled = true;
+  $('status').className='status';
+  $('status').textContent = 'Writing today\'s edition… (15–30 seconds)';
+
+  const userMsg = 'Edition date: ' + ($('date').value || 'today') +
+                  '\nEdition number: ' + ($('edn').value || '—') +
+                  '\n\nRaw headlines from the last 24 hours:\n' + raw;
+  try{
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system: SYSTEM_RULES,
+        messages:[{role:'user', content:userMsg}]
+      })
+    });
+    const data = await res.json();
+    const text = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n');
+    const clean = text.replace(/```json|```/g,'').trim();
+    const ed = JSON.parse(clean);
+
+    const briefObj = { date: ed.date, edition: ed.edition, topline: ed.topline, sections: ed.sections };
+    $('datajs').textContent = '// The Last 24 — edition generated ' + new Date().toLocaleString() +
+      '\nwindow.BRIEF = ' + JSON.stringify(briefObj, null, 2) + ';\n';
+    $('linkedin').textContent = ed.linkedin_post || '—';
+    $('video').textContent = ed.video_script || '—';
+    $('whatsapp').textContent = ed.whatsapp_blurb || '—';
+    $('out').style.display = 'block';
+    $('status').textContent = 'Done. Copy data.js into your site folder, commit, and you\'re live.';
+  }catch(err){
+    console.error(err);
+    $('status').className='status err';
+    $('status').textContent = 'Something went wrong generating the edition — try again, or with fewer headlines. (' + err.message + ')';
+  }finally{
+    $('run').disabled = false;
+  }
+});
+
+document.querySelectorAll('.copy').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const txt = $(btn.dataset.t).textContent;
+    navigator.clipboard.writeText(txt).then(()=>{ btn.textContent='Copied ✓'; setTimeout(()=>btn.textContent='Copy',1500); });
+  });
+});
+</script>
+</body>
+</html>
