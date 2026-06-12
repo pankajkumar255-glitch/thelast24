@@ -18,7 +18,7 @@ from datetime import datetime, timedelta, timezone
 IST = timezone(timedelta(hours=5, minutes=30))
 NOW = datetime.now(IST)
 WEEK_AGO = NOW - timedelta(days=7)
-SITE_URL = os.environ.get("SITE_URL", "https://example.com").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
 HUES = {"national":"#0E7B52","world":"#1F5FA8","business":"#B07A1F",
         "tech":"#6A3FB5","sports":"#CE3D1D","entertainment":"#C2317E"}
 
