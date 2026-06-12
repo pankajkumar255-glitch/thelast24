@@ -126,7 +126,7 @@ def write_edition(raw):
     key = os.environ.get("ANTHROPIC_API_KEY") or sys.exit("ANTHROPIC_API_KEY not set.")
     r = requests.post("https://api.anthropic.com/v1/messages",
         headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json={"model": "claude-sonnet-4-20250514", "max_tokens": 32000, "system": SYSTEM_RULES,
+        json={"model": "claude-sonnet-4-6", "max_tokens": 32000, "system": SYSTEM_RULES,
               "messages": [{"role": "user", "content":
                   f"Edition date: {NOW.strftime('%A, %d %B %Y')}\nEdition number: {NOW.strftime('%Y-%m-%d %H:%M')}\n\nRaw headlines from the last 24 hours:\n{raw}"}]},
         timeout=300)
