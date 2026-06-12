@@ -18,7 +18,7 @@ import feedparser, requests
 IST = timezone(timedelta(hours=5, minutes=30))
 NOW = datetime.now(IST)
 CUTOFF = NOW - timedelta(hours=24)
-SITE_URL = os.environ.get("SITE_URL", "https://example.com").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
 SITE_NAME = "The Last 24"
 
 SECTION_QUERIES = {
