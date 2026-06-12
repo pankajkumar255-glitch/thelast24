@@ -126,7 +126,7 @@ def write_edition(raw):
     key = os.environ.get("ANTHROPIC_API_KEY") or sys.exit("ANTHROPIC_API_KEY not set.")
     r = requests.post("https://api.anthropic.com/v1/messages",
         headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json={"model": "claude-sonnet-4-6", "max_tokens": 12000, "system": SYSTEM_RULES,
+        json={"model": "claude-sonnet-4-6", "max_tokens": 20000, "system": SYSTEM_RULES,
               "messages": [{"role": "user", "content":
                   f"Edition date: {NOW.strftime('%A, %d %B %Y')}\nEdition number: {NOW.strftime('%Y-%m-%d %H:%M')}\n\nRaw headlines from the last 24 hours:\n{raw}"}]},
         timeout=300)
@@ -449,7 +449,7 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 
 def main():
     raw = collect_headlines()
-    raw = "\n".join(raw.splitlines()[:10])
+    raw = "\n".join(raw.splitlines()[:36])
     print(f"Collected {len(raw.splitlines())} headlines.")
     write_outputs(write_edition(raw))
     build_archive()
