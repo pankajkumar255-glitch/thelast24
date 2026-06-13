@@ -71,14 +71,19 @@
   .carousel{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark)}
   .car-track{display:flex;transition:transform .6s cubic-bezier(.3,.8,.3,1);will-change:transform}
   .slide{position:relative;flex:0 0 100%;display:block;text-decoration:none;aspect-ratio:21/9;max-height:460px;min-height:320px}
-  .slide .media img,.slide .media svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .slide .media img,.slide .media svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
   .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,18,13,0) 28%,rgba(13,18,13,.5) 58%,rgba(13,18,13,.93) 100%)}
   .slide-content{position:absolute;left:0;right:0;bottom:0;padding:24px 30px 28px;z-index:2;color:#fff;max-width:780px}
   .slide .kick{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:12px;align-items:center;margin-bottom:10px}
   .slide .kick .b{color:#FF7B52}
   .slide h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,3.4vw,36px);line-height:1.08;letter-spacing:-.02em}
   .slide .dek{font-size:14.5px;color:rgba(255,255,255,.86);line-height:1.5;margin-top:9px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  @media (max-width:600px){.slide .dek{display:none}.slide-content{padding:18px 18px 22px}}
+  @media (max-width:600px){
+    .slide{aspect-ratio:4/3;min-height:0;max-height:none}
+    .slide .dek{display:none}
+    .slide-content{padding:16px 16px 20px}
+    .slide h2{font-size:20px}
+  }
   .slide .srcline{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.75);margin-top:10px}
   .slide .srcline b{color:#fff}
   .car-ui{position:absolute;right:22px;bottom:24px;display:flex;gap:6px;align-items:center;z-index:3}
@@ -130,7 +135,7 @@
   .hscroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .hscroll::-webkit-scrollbar{display:none}
   .card{flex:0 0 320px;scroll-snap-align:start;background:var(--card);border:1px solid var(--hairline);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
-  @media (max-width:600px){.card{flex:0 0 80vw}}
+  @media (max-width:600px){.card{flex:0 0 80vw}.card .media{aspect-ratio:3/2}}
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
   .card .media{aspect-ratio:16/9;overflow:hidden}
   .card .media img,.card .media svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
@@ -196,7 +201,7 @@
 <div class="band">
   <div class="wrap">
     <div class="brand-row">
-      <a class="brand" href="index.html">The Last <span>24</span></a>
+      <a class="brand" href="/">The Last <span>24</span></a>
       <div class="brand-side">
         <a class="archive-link" href="archive.html">Archive →</a>
         <div class="brand-meta"><span class="live-dot"></span>Updated hourly<br><span class="v">✓ Verified publishers only</span><br><span id="date-label">—</span></div>
@@ -232,12 +237,12 @@
 <footer>
   <div class="f-inner">
     <div>
-      <a class="f-logo" href="index.html">The Last <span>24</span></a>
+      <a class="f-logo" href="/">The Last <span>24</span></a>
       <p class="f-blurb">Everything that mattered in India, every hour — curated exclusively from <span class="v">verified publishers</span> like PTI, Reuters, The Hindu, The Economic Times and Mint. Every story links to its original source.</p>
     </div>
     <div class="f-col">
       <h5>Explore</h5>
-      <a href="index.html">Today's brief</a>
+      <a href="/">Today's brief</a>
       <a href="archive.html">Archive</a>
       <a href="about.html">About</a>
     </div>
@@ -502,7 +507,7 @@ window.BRIEF = window.BRIEF || {
 };
 
 (function(){
-  var NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"; // Formspree/Buttondown endpoint. Empty = demo mode.
+  var NEWSLETTER_ENDPOINT = ""; // Formspree/Buttondown endpoint. Empty = demo mode.
   var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", sports:"#CE3D1D", entertainment:"#C2317E"};
   var B = window.BRIEF || window.EDITION || null;
   var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
@@ -748,7 +753,7 @@ window.BRIEF = window.BRIEF || {
     var fd = new FormData(); fd.append('email', email); fd.append('preferences', prefs.join(','));
     fetch(NEWSLETTER_ENDPOINT, {method:'POST', body:fd, headers:{'Accept':'application/json'}})
       .then(function(r){ if(!r.ok) throw 0;
-        msg.style.color='var(--green-bright)'; msg.textContent='You\'re in! First curation arrives Sunday.';
+        msg.style.color='var(--green-bright)'; msg.textContent='Thanks for signing up — you\'ll start receiving our weekly newsletter.';
         store.set('nl-done','1'); setTimeout(function(){ nl.classList.remove('show'); }, 2200);
       })
       .catch(function(){ msg.style.color='var(--vermilion)'; msg.textContent='Could not sign you up — try again.'; });
