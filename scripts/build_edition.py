@@ -385,7 +385,7 @@ footer p{{font-size:12px;line-height:1.8;max-width:560px}}
 footer a{{color:#3BCB8D;text-decoration:none}}
 </style></head>
 <body>
-<div class="topbar"><div class="top"><a href="../index.html">The Last <span>24</span></a><span class="cat">{e(section['name'])}</span></div></div>
+<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><span class="cat">{e(section['name'])}</span></div></div>
 <div class="wrap">
 <p class="kick"><b>✓ Verified source:</b> {src_name} · {e(story['time'])} · {e(edition['date'])}</p>
 <h1>{e(story['headline'])}</h1>
@@ -397,7 +397,7 @@ footer a{{color:#3BCB8D;text-decoration:none}}
 <p class="cite">This is a summary brief. Original reporting and all facts: <a href="{src_url}" rel="noopener" target="_blank">{src_name}</a>.</p>
 <div class="ad-slot"><!-- AD SLOT: article-mid. Paste your AdSense/ad-network snippet here. -->Ad space</div>
 </div>
-<footer><div class="wrap"><p><a href="../index.html">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
+<footer><div class="wrap"><p><a href="/">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
 </body></html>"""
 
 # ---------------------------------------------------------------- outputs ---
@@ -525,7 +525,7 @@ footer{{background:var(--dark);color:#929C8E;margin-top:48px;padding:28px 0 64px
 footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 </style></head>
 <body>
-<div class="topbar"><div class="top"><a href="index.html">The Last <span>24</span></a><span class="pg">Archive</span></div></div>
+<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><span class="pg">Archive</span></div></div>
 <div class="wrap">
 <h1>Every story we've published.</h1>
 <p class="sub">{total} stories · all from verified publishers · each linked to its original source</p>
@@ -537,7 +537,7 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 {groups}
 <p class="empty" id="empty">No stories match those filters.</p>
 </div>
-<footer><div class="wrap"><p><a href="index.html">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></p>
+<footer><div class="wrap"><p><a href="/">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></p>
 <p>{SITE_NAME} — automated brief from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
 <script>
 (function(){{
