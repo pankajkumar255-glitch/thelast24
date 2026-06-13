@@ -604,9 +604,12 @@ window.BRIEF = window.BRIEF || {
     return s;
   }
   function media(st, hue, eager){
-    return st.image
-      ? '<img src="'+st.image+'" alt="" loading="'+(eager?'eager':'lazy')+'">'
-      : art(st.headline, hue);
+    if(!st.image) return art(st.headline, hue);
+    // If the photo URL fails to load, fall back to editorial art instead of a blank box.
+    var fallback = art(st.headline, hue).replace(/"/g,'&quot;');
+    return '<img src="'+st.image+'" alt="" loading="'+(eager?'eager':'lazy')+'" '+
+           'onerror="this.parentNode.innerHTML=this.getAttribute(\'data-fallback\')" '+
+           'data-fallback="'+fallback+'">';
   }
 
   // ticker
