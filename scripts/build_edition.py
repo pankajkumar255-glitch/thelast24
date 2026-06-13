@@ -122,12 +122,12 @@ EDITORIAL RULES:
 - WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company" or "two platforms".
 - "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): the development precisely, the key detail, one line of immediate significance. Strictly from the headline plus universally known background.
 - "lens" = 1 sharp sentence: why this matters to an everyday Indian reader — money, daily life, or the bigger picture. Never vague.
-- Structured summary (detailed, ~450-600 words total, strictly grounded):
-  - "what_happened" = 4-6 sentences attributing the publisher by name (e.g. "The Hindu reports that..."). ONLY what the headline states plus universally known facts; NEVER invent quotes, statistics, numbers, or names.
-  - "context" = 4-6 sentences of widely-known background: history, key players, prior developments. Depth from established general knowledge, never speculation.
-  - "why_it_matters" = 3-5 sentences of concrete impact: prices, jobs, daily life, investments, the bigger picture.
-  - "whats_next" = 2-3 sentences on what to watch, framed as expectation ("expect", "likely") not fact.
-- "image_query" = a 2-4 word GENERIC stock-photo phrase (e.g. "stock market screens", "courtroom interior", "cricket stadium"). Never names of real people or brands.
+- Structured summary (concise, ~220-280 words total, strictly grounded):
+  - "what_happened" = 2-3 sentences attributing the publisher by name (e.g. "The Hindu reports that..."). ONLY what the headline states plus universally known facts; NEVER invent quotes, statistics, numbers, or names.
+  - "context" = 2-3 sentences of widely-known background: the key players and why this matters now. Depth from established general knowledge, never speculation.
+  - "why_it_matters" = 2 sentences of concrete impact: prices, jobs, daily life, investments, or the bigger picture.
+  - "whats_next" = 1 sentence on what to watch, framed as expectation ("expect", "likely") not fact.
+- "image_query" = a 3-5 word search phrase for a stock-photo library that captures the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think about what a relevant photo would actually show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers technology"; a bullet train story -> "high speed train railway". Prefer Indian or contextual terms where the story is Indian. Never names of real people or brands.
 - "image_safety" = classify the story for image handling. Use "real" if the story centres on a specific named real person OR a specific real event/incident (politics, court rulings, deaths, disasters, match results, named individuals). Use "concept" ONLY if it is an abstract/thematic story (markets, economy, technology trends, lifestyle) with no specific real person or event as its subject. When unsure, use "real".
 - "hour" = integer 0-23 from the IST time. "time" = "HH:MM IST". "breaking" = true for at most 1 story.
 - Keep source names and URLs exactly as given.
@@ -245,7 +245,7 @@ def write_edition(raw):
         ]
         for cap, user in attempts:
             try:
-                data = extract_json(call_claude(EDITORIAL_RULES, user, 9000), name)
+                data = extract_json(call_claude(EDITORIAL_RULES, user, 5000), name)
                 stories = clean_stories(data.get("stories", []), name)[:cap]
                 if stories:
                     break
@@ -295,29 +295,97 @@ def write_edition(raw):
 #         always labelled "AI illustration" on the page.
 # Tier 3: deterministic editorial art — always-available fallback.
 PEXELS_KEY = os.environ.get("PEXELS_API_KEY", "")
+UNSPLASH_KEY = os.environ.get("UNSPLASH_ACCESS_KEY", "")
+PIXABAY_KEY = os.environ.get("PIXABAY_API_KEY", "")
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-2.5-flash-image"
 
-def fetch_photo(query):
-    """Free, commercially-licensed photo from Pexels. None on any miss."""
-    if not PEXELS_KEY or not query:
-        return None
+def _score(query, text):
+    """Relevance score: how many query words appear in the candidate's own
+    title/tags/description. Higher = better match. Lets us pick across sources."""
+    q = {w for w in re.findall(r"[a-z]+", (query or "").lower()) if len(w) > 2}
+    if not q:
+        return 0
+    t = (text or "").lower()
+    return sum(1 for w in q if w in t)
+
+def _pexels(query):
+    if not PEXELS_KEY:
+        return []
     try:
         r = requests.get("https://api.pexels.com/v1/search",
                          headers={"Authorization": PEXELS_KEY},
-                         params={"query": query, "per_page": 1, "orientation": "landscape"},
+                         params={"query": query, "per_page": 5, "orientation": "landscape"},
                          timeout=20)
         r.raise_for_status()
-        photos = r.json().get("photos") or []
-        if not photos:
-            return None
-        p = photos[0]
-        return {"image": p["src"]["large"], "image_kind": "photo",
-                "image_credit": p.get("photographer", "Pexels"),
-                "image_credit_url": p.get("photographer_url", "https://www.pexels.com")}
+        out = []
+        for p in r.json().get("photos", []):
+            # Pexels exposes alt text describing the photo — use it for scoring.
+            out.append({"image": p["src"]["large"], "image_kind": "photo",
+                        "image_credit": p.get("photographer", "Pexels"),
+                        "image_credit_url": p.get("photographer_url", "https://www.pexels.com"),
+                        "_text": p.get("alt", ""), "_src": "Pexels"})
+        return out
     except Exception as exc:
         print(f"  pexels miss for '{query}': {exc}")
+        return []
+
+def _unsplash(query):
+    if not UNSPLASH_KEY:
+        return []
+    try:
+        r = requests.get("https://api.unsplash.com/search/photos",
+                         headers={"Authorization": f"Client-ID {UNSPLASH_KEY}"},
+                         params={"query": query, "per_page": 5, "orientation": "landscape"},
+                         timeout=20)
+        r.raise_for_status()
+        out = []
+        for p in r.json().get("results", []):
+            desc = p.get("description") or p.get("alt_description") or ""
+            tags = " ".join(t.get("title", "") for t in (p.get("tags") or []))
+            out.append({"image": p["urls"]["regular"], "image_kind": "photo",
+                        "image_credit": (p.get("user") or {}).get("name", "Unsplash"),
+                        "image_credit_url": ((p.get("user") or {}).get("links") or {}).get("html", "https://unsplash.com"),
+                        "_text": desc + " " + tags, "_src": "Unsplash"})
+        return out
+    except Exception as exc:
+        print(f"  unsplash miss for '{query}': {exc}")
+        return []
+
+def _pixabay(query):
+    if not PIXABAY_KEY:
+        return []
+    try:
+        r = requests.get("https://pixabay.com/api/",
+                         params={"key": PIXABAY_KEY, "q": query, "per_page": 5,
+                                 "image_type": "photo", "orientation": "horizontal",
+                                 "safesearch": "true"},
+                         timeout=20)
+        r.raise_for_status()
+        out = []
+        for p in r.json().get("hits", []):
+            out.append({"image": p.get("largeImageURL") or p.get("webformatURL"),
+                        "image_kind": "photo",
+                        "image_credit": p.get("user", "Pixabay"),
+                        "image_credit_url": f"https://pixabay.com/users/{p.get('user','')}-{p.get('user_id','')}/",
+                        "_text": p.get("tags", ""), "_src": "Pixabay"})
+        return out
+    except Exception as exc:
+        print(f"  pixabay miss for '{query}': {exc}")
+        return []
+
+def fetch_photo(query):
+    """Query Pexels, Unsplash and Pixabay, then return the single most relevant
+    photo across all three (scored against the query words). None if all empty."""
+    if not query:
         return None
+    candidates = _pexels(query) + _unsplash(query) + _pixabay(query)
+    if not candidates:
+        return None
+    # Best relevance wins; ties keep source order (Pexels, Unsplash, Pixabay).
+    best = max(candidates, key=lambda c: _score(query, c.get("_text", "")))
+    print(f"  photo: '{query}' -> {best['_src']} (matched {_score(query, best.get('_text',''))} terms, {len(candidates)} candidates)")
+    return {k: v for k, v in best.items() if not k.startswith("_")}
 
 def generate_ai_image(prompt, slug):
     """AI illustration via Gemini ('Nano Banana'). Concept stories ONLY — callers
