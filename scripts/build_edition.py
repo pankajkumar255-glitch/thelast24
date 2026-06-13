@@ -136,9 +136,13 @@ Respond with ONLY a JSON object, no markdown fences, no text before or after it:
 {"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","image_safety":"real","source":"...","url":"...","breaking":false}]}"""
 
 API_URL = "https://api.anthropic.com/v1/messages"
+# Current Sonnet. If this ever 400s with a model error, update this ONE line.
+MODEL = "claude-sonnet-4-6"
 
 def call_claude(system, user, max_tokens):
-    """One Claude call with a single retry on empty output or transient errors."""
+    """One Claude call with a single retry. On HTTP errors, surface the API's
+    actual JSON error body (which says exactly what's wrong) instead of a bare
+    status code."""
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         sys.exit("ANTHROPIC_API_KEY not set.")
@@ -148,11 +152,18 @@ def call_claude(system, user, max_tokens):
             r = requests.post(API_URL,
                 headers={"x-api-key": key, "anthropic-version": "2023-06-01",
                          "content-type": "application/json"},
-                json={"model": "claude-sonnet-4-6", "max_tokens": max_tokens,
+                json={"model": MODEL, "max_tokens": max_tokens,
                       "system": system,
                       "messages": [{"role": "user", "content": user}]},
                 timeout=240)
-            r.raise_for_status()
+            if r.status_code != 200:
+                # The body explains the real cause (bad model, token limit, etc.)
+                detail = r.text[:500]
+                print(f"Attempt {attempt}: HTTP {r.status_code} — {detail}")
+                last_err = f"HTTP {r.status_code}: {detail}"
+                if attempt == 1:
+                    print("  retrying once...")
+                continue
             data = r.json()
             if data.get("stop_reason") == "max_tokens":
                 print("WARNING: response hit the max_tokens limit; output may be truncated.")
@@ -165,7 +176,7 @@ def call_claude(system, user, max_tokens):
             last_err = "empty response"
         except Exception as exc:
             last_err = exc
-            print(f"Attempt {attempt}: API error: {exc}" +
+            print(f"Attempt {attempt}: request error: {exc}" +
                   (", retrying once..." if attempt == 1 else "."))
     raise RuntimeError(f"No usable text from Claude after 2 attempts: {last_err}")
 
