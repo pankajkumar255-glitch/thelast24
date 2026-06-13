@@ -138,7 +138,7 @@ def call_claude(system, user, max_tokens):
             r = requests.post(API_URL,
                 headers={"x-api-key": key, "anthropic-version": "2023-06-01",
                          "content-type": "application/json"},
-                json={"model": "claude-sonnet-4-20250514", "max_tokens": max_tokens,
+                json={"model": "claude-sonnet-4-6", "max_tokens": max_tokens,
                       "system": system,
                       "messages": [{"role": "user", "content": user}]},
                 timeout=240)
