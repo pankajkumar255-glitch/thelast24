@@ -221,7 +221,7 @@ def clean_stories(items, section_name):
 def write_edition(raw):
     """One small Claude call per section — short JSON outputs parse reliably."""
     backfill = int(os.environ.get("BACKFILL_DAYS", "0") or 0) > 0
-    per_cap = 6 if backfill else 3
+    per_cap = 6 if backfill else 5
     groups = {}
     for line in raw.splitlines():
         m = re.search(r"\[([^\]]+)\]", line)
@@ -236,16 +236,19 @@ def write_edition(raw):
             continue
         print(f"Writing section: {name} ({len(lines)} headlines, keep up to {per_cap})")
         stories = []
-        # Attempt 1: full request. Attempt 2 (on failure): fewer stories, simpler ask.
+        # Attempt 1: full request. Attempt 2 (on failure): same story count, but a
+        # simpler/cleaner instruction and a fresh call (handles transient failures
+        # and the occasional unparseable response without slashing the section).
         attempts = [
             (per_cap, f"Section: {name}\nKeep at most {per_cap} of the strongest stories.\n\n"
                       f"Raw headlines from the last 24 hours:\n" + "\n".join(lines)),
-            (2,       f"Section: {name}\nKeep the 2 strongest, clearest stories only. "
-                      f"Keep it simple and factual.\n\nHeadlines:\n" + "\n".join(lines[:4])),
+            (per_cap, f"Section: {name}\nSelect up to {per_cap} of the strongest, clearest stories. "
+                      f"Be factual and concise. Return valid JSON only.\n\n"
+                      f"Headlines:\n" + "\n".join(lines)),
         ]
         for cap, user in attempts:
             try:
-                data = extract_json(call_claude(EDITORIAL_RULES, user, 5000), name)
+                data = extract_json(call_claude(EDITORIAL_RULES, user, 8000), name)
                 stories = clean_stories(data.get("stories", []), name)[:cap]
                 if stories:
                     break
