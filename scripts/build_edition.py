@@ -101,38 +101,155 @@ def collect_headlines():
     return "\n".join(lines)
 
 # ------------------------------------------------------------------ write ---
-SYSTEM_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher.
+SECTION_IDS = {
+    "National": "national", "World": "world", "Business & Markets": "business",
+    "Technology": "tech", "Sports": "sports", "Entertainment": "entertainment",
+}
+
+EDITORIAL_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher. You will be given the raw headlines for ONE section and must produce that section's stories.
 
 EDITORIAL RULES:
-- Sort stories into sections (only those with stories): national (National), world (World), business (Business & Markets), tech (Technology), sports (Sports), entertainment (Entertainment). Input may suggest a section in [brackets]; re-assign if clearly wrong.
-- Pick the strongest stories per section; drop weak/duplicate ones (keep 2 per section normally; keep up to 6 per section if the input is a multi-day backfill).
-- WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company", "two platforms", or "a leading bank".
-- "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): state the development precisely, add the key detail, and close with one line of immediate significance. Built strictly from the headline plus universally known background — this is the homepage preview and must deliver real value on its own without a click.
+- Keep only the strongest stories up to the limit given; drop weak/duplicate ones.
+- WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company" or "two platforms".
+- "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): the development precisely, the key detail, one line of immediate significance. Strictly from the headline plus universally known background.
 - "lens" = 1 sharp sentence: why this matters to an everyday Indian reader — money, daily life, or the bigger picture. Never vague.
-- Structured summary (a detailed, well-developed brief of roughly 450-600 words total — citable and strictly grounded):
-  - "what_happened" = 4-6 sentences attributing the publisher by name (e.g. "The Hindu reports that..."). Restate the development fully and precisely. Use ONLY what the headline states plus universally known facts; NEVER invent quotes, statistics, numbers, or names.
-  - "context" = 4-6 sentences of widely-known background: the history of this issue, the key players and their roles, relevant prior developments, and how India typically handles such matters. Depth must come from established general knowledge, never speculation about this specific event.
-  - "why_it_matters" = 3-5 sentences of concrete impact: on prices, jobs, daily life, investments, or the bigger national picture. Specific and practical, expanding well beyond the one-line lens.
-  - "whats_next" = 2-3 sentences on the likely sequence ahead and what readers should watch for, clearly framed as expectation ("expect", "likely", "watch for") not fact.
-- "image_query" = a 2-4 word GENERIC stock-photo phrase for the story (e.g. "stock market screens", "cricket stadium floodlights"). Never names of real people or brands.
-- "hour" = integer 0-23 from the IST time. "time" = "HH:MM IST". "breaking" = true for at most 1-2 items.
+- Structured summary (detailed, ~450-600 words total, strictly grounded):
+  - "what_happened" = 4-6 sentences attributing the publisher by name (e.g. "The Hindu reports that..."). ONLY what the headline states plus universally known facts; NEVER invent quotes, statistics, numbers, or names.
+  - "context" = 4-6 sentences of widely-known background: history, key players, prior developments. Depth from established general knowledge, never speculation.
+  - "why_it_matters" = 3-5 sentences of concrete impact: prices, jobs, daily life, investments, the bigger picture.
+  - "whats_next" = 2-3 sentences on what to watch, framed as expectation ("expect", "likely") not fact.
+- "image_query" = a 2-4 word GENERIC stock-photo phrase (e.g. "stock market screens"). Never names of real people or brands.
+- "hour" = integer 0-23 from the IST time. "time" = "HH:MM IST". "breaking" = true for at most 1 story.
 - Keep source names and URLs exactly as given.
-- "topline" = one sentence capturing the day's arc, naming the biggest entities directly.
 
-Respond with ONLY a JSON object (no markdown fences):
-{"date":"...","edition":"...","topline":"...","lensLabel":"Why it matters","sections":[{"id":"...","name":"...","stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","source":"...","url":"...","breaking":false}]}]}"""
+Respond with ONLY a JSON object, no markdown fences, no text before or after it:
+{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","source":"...","url":"...","breaking":false}]}"""
+
+API_URL = "https://api.anthropic.com/v1/messages"
+
+def call_claude(system, user, max_tokens):
+    """One Claude call with a single retry on empty output or transient errors."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        sys.exit("ANTHROPIC_API_KEY not set.")
+    last_err = None
+    for attempt in (1, 2):
+        try:
+            r = requests.post(API_URL,
+                headers={"x-api-key": key, "anthropic-version": "2023-06-01",
+                         "content-type": "application/json"},
+                json={"model": "claude-sonnet-4-20250514", "max_tokens": max_tokens,
+                      "system": system,
+                      "messages": [{"role": "user", "content": user}]},
+                timeout=240)
+            r.raise_for_status()
+            data = r.json()
+            if data.get("stop_reason") == "max_tokens":
+                print("WARNING: response hit the max_tokens limit; output may be truncated.")
+            text = "".join(b.get("text", "") for b in data.get("content", [])
+                           if b.get("type") == "text").strip()
+            if text:
+                return text
+            print(f"Attempt {attempt}: Claude returned empty text" +
+                  (", retrying once..." if attempt == 1 else "."))
+            last_err = "empty response"
+        except Exception as exc:
+            last_err = exc
+            print(f"Attempt {attempt}: API error: {exc}" +
+                  (", retrying once..." if attempt == 1 else "."))
+    raise RuntimeError(f"No usable text from Claude after 2 attempts: {last_err}")
+
+def extract_json(text, context=""):
+    """Parse JSON even if Claude wraps it in fences or adds text around it.
+    On failure, print the raw response to the logs, then raise."""
+    clean = re.sub(r"```json|```", "", text).strip()
+    try:
+        return json.loads(clean)
+    except json.JSONDecodeError:
+        pass
+    start, end = clean.find("{"), clean.rfind("}")
+    if start != -1 and end > start:
+        try:
+            return json.loads(clean[start:end + 1])
+        except json.JSONDecodeError:
+            pass
+    print(f"--- RAW CLAUDE RESPONSE ({context}) START ---")
+    print(text[:3000])
+    if len(text) > 3000:
+        print(f"... [{len(text) - 3000} more characters truncated]")
+    print(f"--- RAW CLAUDE RESPONSE ({context}) END ---")
+    raise ValueError(f"Could not parse JSON from Claude response ({context}).")
+
+REQUIRED_FIELDS = ("headline", "what", "lens", "source", "url", "time")
+
+def clean_stories(items, section_name):
+    """Drop malformed stories instead of failing the run."""
+    out = []
+    for st in items if isinstance(items, list) else []:
+        if not isinstance(st, dict) or not all(st.get(f) for f in REQUIRED_FIELDS):
+            print(f"  Skipping malformed story in {section_name}: {str(st)[:120]}")
+            continue
+        try:
+            st["hour"] = max(0, min(23, int(st.get("hour", 12))))
+        except (TypeError, ValueError):
+            st["hour"] = 12
+        st["breaking"] = bool(st.get("breaking", False))
+        out.append(st)
+    return out
 
 def write_edition(raw):
-    key = os.environ.get("ANTHROPIC_API_KEY") or sys.exit("ANTHROPIC_API_KEY not set.")
-    r = requests.post("https://api.anthropic.com/v1/messages",
-        headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json={"model": "claude-sonnet-4-6", "max_tokens": 12000, "system": SYSTEM_RULES,
-              "messages": [{"role": "user", "content":
-                  f"Edition date: {NOW.strftime('%A, %d %B %Y')}\nEdition number: {NOW.strftime('%Y-%m-%d %H:%M')}\n\nRaw headlines from the last 24 hours:\n{raw}"}]},
-        timeout=300)
-    r.raise_for_status()
-    text = "".join(b.get("text", "") for b in r.json()["content"] if b["type"] == "text")
-    return json.loads(re.sub(r"```json|```", "", text).strip())
+    """One small Claude call per section — short JSON outputs parse reliably."""
+    backfill = int(os.environ.get("BACKFILL_DAYS", "0") or 0) > 0
+    per_cap = 6 if backfill else 3
+    groups = {}
+    for line in raw.splitlines():
+        m = re.search(r"\[([^\]]+)\]", line)
+        if m:
+            groups.setdefault(m.group(1), []).append(line)
+
+    sections = []
+    for name, sid in SECTION_IDS.items():
+        lines = groups.get(name)
+        if not lines:
+            continue
+        print(f"Writing section: {name} ({len(lines)} headlines, keep up to {per_cap})")
+        user = (f"Section: {name}\nKeep at most {per_cap} of the strongest stories.\n\n"
+                f"Raw headlines from the last 24 hours:\n" + "\n".join(lines))
+        try:
+            data = extract_json(call_claude(EDITORIAL_RULES, user, 9000), name)
+            stories = clean_stories(data.get("stories", []), name)[:per_cap]
+            if stories:
+                sections.append({"id": sid, "name": name, "stories": stories})
+                print(f"  -> {len(stories)} stories kept.")
+            else:
+                print(f"  -> no valid stories for {name}; section skipped.")
+        except (RuntimeError, ValueError) as exc:
+            print(f"  -> section {name} failed and was skipped: {exc}")
+
+    if not sections:
+        sys.exit("Every section failed — no edition produced this run.")
+
+    # Topline: tiny call, deterministic fallback so it can never sink the run.
+    heads = [st["headline"] for sec in sections for st in sec["stories"]][:10]
+    topline = ""
+    try:
+        t = extract_json(call_claude(
+            'Respond with ONLY this JSON, nothing else: {"topline":"..."} — one sharp sentence '
+            "capturing the day's arc across these headlines, naming the biggest entities directly.",
+            "\n".join(heads), 300), "topline")
+        topline = str(t.get("topline", "")).strip()
+    except (RuntimeError, ValueError) as exc:
+        print(f"Topline call failed, using fallback: {exc}")
+    if not topline:
+        topline = f"The {sum(len(s['stories']) for s in sections)} stories that mattered in the last 24 hours, led by: {heads[0]}"
+
+    return {
+        "date": NOW.strftime("%A, %d %B %Y"),
+        "edition": NOW.strftime("%Y-%m-%d %H:%M"),
+        "topline": topline,
+        "lensLabel": "Why it matters",
+        "sections": sections,
+    }
 
 # ---------------------------------------------------------- licensed photos ---
 PEXELS_KEY = os.environ.get("PEXELS_API_KEY", "")
@@ -449,7 +566,6 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 
 def main():
     raw = collect_headlines()
-    raw = "\n".join(raw.splitlines()[:18])
     print(f"Collected {len(raw.splitlines())} headlines.")
     write_outputs(write_edition(raw))
     build_archive()
