@@ -92,18 +92,22 @@
   @media (max-width:600px){.car-arrow{display:none}.car-count{display:none}}
 
   /* ============ TODAY ============ */
-  .today{padding:24px 0 4px;display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap}
-  .topline{font-family:var(--display);font-size:clamp(17px,2vw,20px);font-weight:600;letter-spacing:-.01em;line-height:1.45;flex:1 1 480px}
-  .strip-box{flex:0 1 340px;min-width:240px}
-  .strip-cells{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;height:10px}
-  .cell{background:var(--hairline);border-radius:2px}
+  .today{padding:30px 0 6px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+  .topline{font-family:var(--display);font-size:clamp(18px,2.1vw,22px);font-weight:600;letter-spacing:-.01em;line-height:1.5;max-width:760px}
+  .strip-box{display:block;text-decoration:none;width:100%;max-width:560px;transition:transform .2s ease}
+  .strip-box:hover{transform:translateY(-2px)}
+  .strip-cells{display:grid;grid-template-columns:repeat(24,1fr);gap:4px;height:18px}
+  .cell{background:var(--hairline);border-radius:3px}
   .cell.active{background:var(--green)}
   .cell.breaking{background:var(--vermilion)}
-  .strip-caption{font-family:var(--mono);font-size:10.5px;color:var(--meta);margin-top:7px}
+  .strip-box:hover .cell.active{box-shadow:0 0 8px rgba(14,123,82,.4)}
+  .strip-caption{font-family:var(--mono);font-size:11px;color:var(--meta);margin-top:9px}
+  .strip-box:hover .strip-caption{color:var(--green)}
 
   /* ============ FILTER NAV (sticky, switch categories anywhere) ============ */
   nav{position:sticky;top:0;background:rgba(246,246,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);z-index:10}
-  .nav-inner{display:flex;gap:6px;overflow-x:auto;padding:11px 0;scrollbar-width:none}
+  .nav-inner{display:flex;gap:6px;overflow-x:auto;padding:11px 0;scrollbar-width:none;justify-content:center}
+  @media (max-width:760px){.nav-inner{justify-content:flex-start}}
   .nav-inner::-webkit-scrollbar{display:none}
   .chip{font-size:13px;font-weight:600;color:var(--ink-soft);padding:8px 16px;border-radius:999px;border:1px solid var(--hairline);background:#fff;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;transition:all .18s;font-family:var(--body)}
   .chip .hue{width:7px;height:7px;border-radius:50%}
@@ -213,10 +217,10 @@
 
 <div class="wrap today">
   <p class="topline rise in" id="topline"></p>
-  <div class="strip-box rise in">
+  <a class="strip-box rise in" href="archive.html" aria-label="Browse the full archive">
     <div class="strip-cells" id="strip" aria-label="Hours when stories broke"></div>
-    <p class="strip-caption">Each lit cell: an hour something broke in the last 24.</p>
-  </div>
+    <p class="strip-caption">Each lit cell: an hour something broke — tap to browse the full archive →</p>
+  </a>
 </div>
 
 <nav><div class="wrap nav-inner" id="nav"></div></nav>
@@ -247,7 +251,7 @@
   <div class="f-bottom">
     <div class="f-bottom-inner">
       <span>© 2026 The Last 24 · All stories belong to their cited publishers</span>
-      <span>Founded by <a href="about.html">Pankaj</a></span>
+      <span>Founded by <a href="about.html">Pankaj Kumar</a></span>
     </div>
   </div>
 </footer>
