@@ -25,7 +25,8 @@ SECTION_QUERIES = {
     "National":           "India government OR policy OR supreme court",
     "World":              "world news OR geopolitics OR international",
     "Business & Markets": "India economy OR Sensex OR business OR trade",
-    "Technology":         "India technology OR startup OR AI",
+    "Technology":         "India technology OR startup OR software",
+    "Artificial Intelligence": "artificial intelligence OR AI model OR OpenAI OR Anthropic OR Gemini",
     "Sports":             "India cricket OR sports",
     "Entertainment":      "Bollywood OR Indian entertainment OR OTT",
 }
@@ -33,7 +34,7 @@ PER_SECTION = 4
 
 SECTION_HUES = {  # category accent colors (also used by generative art)
     "national": "#0E7B52", "world": "#1F5FA8", "business": "#B07A1F",
-    "tech": "#6A3FB5", "sports": "#CE3D1D", "entertainment": "#C2317E",
+    "tech": "#6A3FB5", "ai": "#0E8E8E", "sports": "#CE3D1D", "entertainment": "#C2317E",
 }
 
 # ---------------------------------------------------------------- collect ---
@@ -48,8 +49,16 @@ TRUSTED_PUBLISHERS = [
     "reuters", "press trust of india", "pti", "ani", "ndtv", "india today",
     "the print", "deccan herald", "telegraph india", "financial express",
     "cnbc", "bbc", "news18", "firstpost", "outlook", "frontline", "the wire",
-    "espncricinfo", "cricbuzz", "sportstar", "olympics.com",
+    "scroll", "the quint", "wion", "zee news", "republic", "dna", "abp",
+    "espncricinfo", "cricbuzz", "sportstar", "olympics.com", "espn",
+    "the bridge", "sportskeeda", "wisden",
     "bollywood hungama", "film companion", "pinkvilla", "variety", "pib",
+    "koimoi", "bollywood life", "filmfare", "indiatimes", "ott play", "ottplay",
+    "techcrunch", "the verge", "wired", "venturebeat", "analytics india",
+    "inc42", "yourstory", "medianama", "gadgets 360", "entrackr", "scroll",
+    "the quint", "wion", "zee news", "sportskeeda", "the bridge",
+    "koimoi", "bollywood life", "filmfare", "indiatimes", "hindustantimes",
+    "the indian express", "ott play", "ottplay", "screen", "rediff",
 ]
 
 def is_trusted(source_name):
@@ -103,7 +112,7 @@ def collect_headlines():
 # ------------------------------------------------------------------ write ---
 SECTION_IDS = {
     "National": "national", "World": "world", "Business & Markets": "business",
-    "Technology": "tech", "Sports": "sports", "Entertainment": "entertainment",
+    "Technology": "tech", "Artificial Intelligence": "ai", "Sports": "sports", "Entertainment": "entertainment",
 }
 
 EDITORIAL_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher. You will be given the raw headlines for ONE section and must produce that section's stories.
@@ -212,37 +221,52 @@ def write_edition(raw):
     for name, sid in SECTION_IDS.items():
         lines = groups.get(name)
         if not lines:
+            print(f"Section {name}: no headlines collected this run.")
             continue
         print(f"Writing section: {name} ({len(lines)} headlines, keep up to {per_cap})")
-        user = (f"Section: {name}\nKeep at most {per_cap} of the strongest stories.\n\n"
-                f"Raw headlines from the last 24 hours:\n" + "\n".join(lines))
-        try:
-            data = extract_json(call_claude(EDITORIAL_RULES, user, 9000), name)
-            stories = clean_stories(data.get("stories", []), name)[:per_cap]
-            if stories:
-                sections.append({"id": sid, "name": name, "stories": stories})
-                print(f"  -> {len(stories)} stories kept.")
-            else:
-                print(f"  -> no valid stories for {name}; section skipped.")
-        except (RuntimeError, ValueError) as exc:
-            print(f"  -> section {name} failed and was skipped: {exc}")
+        stories = []
+        # Attempt 1: full request. Attempt 2 (on failure): fewer stories, simpler ask.
+        attempts = [
+            (per_cap, f"Section: {name}\nKeep at most {per_cap} of the strongest stories.\n\n"
+                      f"Raw headlines from the last 24 hours:\n" + "\n".join(lines)),
+            (2,       f"Section: {name}\nKeep the 2 strongest, clearest stories only. "
+                      f"Keep it simple and factual.\n\nHeadlines:\n" + "\n".join(lines[:4])),
+        ]
+        for cap, user in attempts:
+            try:
+                data = extract_json(call_claude(EDITORIAL_RULES, user, 9000), name)
+                stories = clean_stories(data.get("stories", []), name)[:cap]
+                if stories:
+                    break
+                print(f"  -> attempt returned no valid stories; trying a simpler request...")
+            except (RuntimeError, ValueError) as exc:
+                print(f"  -> attempt failed ({exc}); trying a simpler request...")
+        if stories:
+            sections.append({"id": sid, "name": name, "stories": stories})
+            print(f"  -> {len(stories)} stories kept for {name}.")
+        else:
+            print(f"  -> {name} produced nothing after retry; section skipped this run.")
 
     if not sections:
         sys.exit("Every section failed — no edition produced this run.")
 
-    # Topline: tiny call, deterministic fallback so it can never sink the run.
+    # Topline: tiny call, with a clean natural-language fallback (never the clumsy count line).
     heads = [st["headline"] for sec in sections for st in sec["stories"]][:10]
     topline = ""
     try:
         t = extract_json(call_claude(
-            'Respond with ONLY this JSON, nothing else: {"topline":"..."} — one sharp sentence '
-            "capturing the day's arc across these headlines, naming the biggest entities directly.",
+            'Respond with ONLY this JSON, nothing else: {"topline":"..."} — one sharp, natural sentence '
+            "capturing the day's arc across these headlines, naming the biggest entities directly. "
+            "Do not mention how many stories there are.",
             "\n".join(heads), 300), "topline")
         topline = str(t.get("topline", "")).strip()
     except (RuntimeError, ValueError) as exc:
         print(f"Topline call failed, using fallback: {exc}")
-    if not topline:
-        topline = f"The {sum(len(s['stories']) for s in sections)} stories that mattered in the last 24 hours, led by: {heads[0]}"
+    if not topline and heads:
+        lead = heads[0].rstrip(".")
+        topline = f"Today's headlines, led by: {lead}."
+    elif not topline:
+        topline = "The day's most important stories from across India."
 
     return {
         "date": NOW.strftime("%A, %d %B %Y"),
@@ -404,7 +428,7 @@ def article_page(story, section, edition):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{e(story['headline'])} — {SITE_NAME}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{SITE_URL}/articles/{story['slug']}.html">
@@ -412,6 +436,7 @@ def article_page(story, section, edition):
 <meta property="og:description" content="{desc}"><meta property="og:site_name" content="{SITE_NAME}">
 <meta property="og:url" content="{SITE_URL}/articles/{story['slug']}.html">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <script type="application/ld+json">{jsonld}</script>
 <style>
 :root{{--paper:#F7F7F5;--ink:#111511;--ink-soft:#454B43;--meta:#73786F;--hairline:#E6E8E2;--hue:{hue};
@@ -554,12 +579,12 @@ def build_archive():
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Archive — {SITE_NAME}</title>
 <meta name="description" content="Browse every story published by {SITE_NAME}, by date, category and source. All stories from verified publishers, each linked to the original reporting.">
 <link rel="canonical" href="{SITE_URL}/archive.html">
 <meta property="og:type" content="website"><meta property="og:title" content="Archive — {SITE_NAME}">
-<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0E130E">
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0E130E"><link rel="icon" href="favicon.ico" sizes="any"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 :root{{--paper:#F6F6F4;--ink:#101410;--ink-soft:#43493F;--meta:#71766C;--hairline:#E5E7E0;--dark:#0D120D;--green:#0E7B52;--green-bright:#3BCB8D;
 --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
