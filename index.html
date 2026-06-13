@@ -2,6 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Default everything to DENIED until the visitor consents (GDPR-safe).
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-B1R3X3GKJ3');
+  // If the visitor already accepted in a previous visit, honour it immediately.
+  try {
+    if (localStorage.getItem('cookie-consent') === 'granted') {
+      gtag('consent', 'update', {
+        'ad_storage':'granted','ad_user_data':'granted',
+        'ad_personalization':'granted','analytics_storage':'granted'
+      });
+    }
+  } catch(e) {}
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Last 24 — Everything that mattered in India, in five minutes</title>
 <meta name="description" content="Everything that mattered in India in the last 24 hours — national, world, business, tech, sports, entertainment. Curated hourly from verified publishers only, every story linked to its original source.">
@@ -15,7 +41,11 @@
 </script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0E130E">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
@@ -59,7 +89,7 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   @media (max-width:600px){.brand-meta{display:none}}
   .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 150s linear infinite;will-change:transform}
+  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 60s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
   @keyframes scroll{to{transform:translateX(-50%)}}
   .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
@@ -285,7 +315,7 @@ window.BRIEF = window.BRIEF || {
   "date": "Friday, 12 June 2026",
   "edition": "12 June 2026 — Launch Edition",
   "lensLabel": "Why it matters",
-  "topline": "Iran calls the ceasefire 'practically meaningless' and oil rattles Indian markets, Amit Shah reviews Amarnath Yatra security, and a packed OTT Friday lands led by Suriya's Karuppu.",
+  "topline": "Today's headlines from across India, led by: Amit Shah chairs high-level review of Amarnath Yatra security today.",
   "sections": [
     {
       "id": "national",
@@ -432,6 +462,42 @@ window.BRIEF = window.BRIEF || {
       ]
     },
     {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "stories": [
+        {
+          "hour": 14,
+          "time": "14:00 IST",
+          "headline": "TCS partners with Anthropic to build an enterprise AI unit",
+          "what": "Tata Consultancy Services has partnered with AI company Anthropic to set up a new business unit focused on scaling enterprise AI adoption. The tie-up deepens links between India's largest IT services firm and a leading frontier AI lab. It comes as Indian IT majors race to turn AI demand into services revenue.",
+          "lens": "India's IT giants are repositioning from coding shops to AI-deployment partners — that's where the next wave of tech hiring and reskilling demand will come from.",
+          "source": "Trendlyne",
+          "url": "https://trendlyne.com/markets-today/",
+          "breaking": false
+        },
+        {
+          "hour": 10,
+          "time": "10:00 IST",
+          "headline": "Anthropic releases Claude Sonnet 4.6 with the same pricing as 4.5",
+          "what": "Anthropic made Claude Sonnet 4.6 its default model, holding pricing steady at $3 per million input tokens and $15 per million output tokens. The release continues rapid iteration across frontier AI labs. Enterprise adopters get an upgrade without a cost increase.",
+          "lens": "Flat pricing on a stronger model means the AI tools many Indian startups build on just got cheaper to run per unit of quality.",
+          "source": "Trendlyne",
+          "url": "https://trendlyne.com/markets-today/",
+          "breaking": false
+        },
+        {
+          "hour": 8,
+          "time": "08:00 IST",
+          "headline": "India's IndiaAI Mission opens new compute access for startups",
+          "what": "The IndiaAI Mission expanded subsidised GPU compute access for domestic startups and researchers. The programme aims to lower the cost barrier to training and deploying AI models in India. It is part of the government's push for sovereign AI capability.",
+          "lens": "Cheaper compute is the single biggest unlock for Indian AI startups — this is the kind of policy that decides whether the next model is built here or abroad.",
+          "source": "Inc42",
+          "url": "https://inc42.com/",
+          "breaking": false
+        }
+      ]
+    },
+    {
       "id": "sports",
       "name": "Sports",
       "stories": [
@@ -508,7 +574,7 @@ window.BRIEF = window.BRIEF || {
 
 (function(){
   var NEWSLETTER_ENDPOINT = ""; // Formspree/Buttondown endpoint. Empty = demo mode.
-  var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", sports:"#CE3D1D", entertainment:"#C2317E"};
+  var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", ai:"#0E8E8E", sports:"#CE3D1D", entertainment:"#C2317E"};
   var B = window.BRIEF || window.EDITION || null;
   var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
   if(!B || !totalStories){
@@ -713,7 +779,21 @@ window.BRIEF = window.BRIEF || {
   var ck = document.getElementById('ck');
   function consentDecided(){ return !!store.get('cookie-consent'); }
   function decide(v){ store.set('cookie-consent', v); ck.hidden = true; armNewsletter();
-    /* CONSENT HOOK: if v==='granted', load analytics/ads scripts here */ }
+    // Tell Google Analytics the consent decision (Consent Mode v2).
+    if (typeof gtag === 'function') {
+      if (v === 'granted') {
+        gtag('consent', 'update', {
+          'ad_storage':'granted','ad_user_data':'granted',
+          'ad_personalization':'granted','analytics_storage':'granted'
+        });
+      } else {
+        gtag('consent', 'update', {
+          'ad_storage':'denied','ad_user_data':'denied',
+          'ad_personalization':'denied','analytics_storage':'denied'
+        });
+      }
+    }
+  }
   if(!consentDecided()) ck.hidden = false;
   document.getElementById('ck-ok').addEventListener('click', function(){ decide('granted'); });
   document.getElementById('ck-no').addEventListener('click', function(){ decide('denied'); });
