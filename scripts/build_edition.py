@@ -397,7 +397,7 @@ footer a{{color:#3BCB8D;text-decoration:none}}
 <p class="cite">This is a summary brief. Original reporting and all facts: <a href="{src_url}" rel="noopener" target="_blank">{src_name}</a>.</p>
 <div class="ad-slot"><!-- AD SLOT: article-mid. Paste your AdSense/ad-network snippet here. -->Ad space</div>
 </div>
-<footer><div class="wrap"><p><a href="../index.html">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj.</p></div></footer>
+<footer><div class="wrap"><p><a href="../index.html">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
 </body></html>"""
 
 # ---------------------------------------------------------------- outputs ---
@@ -470,14 +470,16 @@ def build_archive():
                 link = (f"articles/{st['slug']}.html" if st.get("slug") else st.get("url", "#"))
                 hue = SECTION_HUES.get(sec["id"], "#0E7B52")
                 rows_by_date[dkey][1].append(
-                    f'<li class="ar" data-d="{dkey}" data-c="{sec["id"]}" data-s="{e(st.get("source",""))}">'
-                    f'<span class="tm">{e(st.get("time",""))}</span>'
-                    f'<span class="cd" style="background:{hue}" title="{e(sec["name"])}"></span>'
-                    f'<a class="hl" href="{e(link)}">{e(st["headline"])}</a>'
-                    f'<span class="so">{e(st.get("source",""))}</span></li>')
-    groups = "".join(
-        f'<div class="day" data-d="{dkey}"><h2>{e(dlabel)}</h2><ul>{"".join(rows_by_date[dkey][1])}</ul></div>'
-        for dkey, dlabel in dates)
+                    (st.get("hour", 0),
+                     f'<li class="ar" data-d="{dkey}" data-c="{sec["id"]}" data-s="{e(st.get("source",""))}">'
+                     f'<span class="tm">{e(st.get("time",""))}</span>'
+                     f'<span class="cd" style="background:{hue}" title="{e(sec["name"])}"></span>'
+                     f'<a class="hl" href="{e(link)}">{e(st["headline"])}</a>'
+                     f'<span class="so">{e(st.get("source",""))}</span></li>'))
+    def day_html(dkey, dlabel):
+        rows = [html_ for _, html_ in sorted(rows_by_date[dkey][1], key=lambda r: -r[0])]
+        return f'<div class="day" data-d="{dkey}"><h2>{e(dlabel)}</h2><ul>{"".join(rows)}</ul></div>'
+    groups = "".join(day_html(dkey, dlabel) for dkey, dlabel in dates)
     date_opts = "".join(f'<option value="{d}">{l}</option>' for d, l in dates)
     cat_opts = "".join(f'<option value="{c}">{e(n)}</option>' for c, n in sorted(cats.items(), key=lambda x: x[1]))
     src_opts = "".join(f'<option value="{e(s)}">{e(s)}</option>' for s in sorted(x for x in sources if x))
@@ -536,7 +538,7 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 <p class="empty" id="empty">No stories match those filters.</p>
 </div>
 <footer><div class="wrap"><p><a href="index.html">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></p>
-<p>{SITE_NAME} — automated brief from verified publishers. Founded by Pankaj.</p></div></footer>
+<p>{SITE_NAME} — automated brief from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
 <script>
 (function(){{
   var fd=document.getElementById('f-d'),fc=document.getElementById('f-c'),fs=document.getElementById('f-s');
