@@ -1,8 +1,8 @@
-// auto-generated 2026-06-12 17:34 IST
+// auto-generated 2026-06-13 14:04 IST
 window.BRIEF = {
-  "date": "Friday, 12 June 2026",
-  "edition": "2026-06-12 17:34",
-  "topline": "Sensex surged 1,700 points as markets rallied sharply, the Supreme Court shut down Meenakshi Natarajan's Rajya Sabha nomination challenge, and Trump claimed an Iran nuclear deal was close even as Tehran said nothing was finalised.",
+  "date": "2026-06-13",
+  "edition": "2026-06-13 14:04",
+  "topline": "India's Supreme Court gives CBSE time to frame a policy for Gulf-region students displaced by the Iran conflict, while the India AI Mission launches homegrown video model Varya and Anthropic's ban on foreign users sparks a self-reliance debate.",
   "lensLabel": "Why it matters",
   "sections": [
     {
@@ -10,32 +10,32 @@ window.BRIEF = {
       "name": "National",
       "stories": [
         {
-          "hour": 13,
-          "time": "13:30 IST",
-          "headline": "Supreme Court dismisses Meenakshi Natarajan's plea against Rajya Sabha nomination rejection",
-          "what": "The Supreme Court on Friday dismissed Congress leader Meenakshi Natarajan's petition challenging the rejection of her nomination for the Rajya Sabha election. The court found no grounds to interfere with the decision of the returning officer who had rejected her candidature. Natarajan, a former MP and senior Congress figure, had sought judicial relief after her nomination papers were turned down. She later told reporters there was \"no setback,\" signalling the party would continue to contest the matter politically.",
-          "lens": "The ruling settles a high-profile Congress attempt to use the judiciary to contest an election nomination decision, reinforcing the finality of returning officers' calls during elections.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOLVdIZVAxTGo2OTI3YlkzUDJ4MENJUjVfS3d1T29pYnN1TDZTMnhCTnNKcU5sbHBrbkRaRWNVOW5IOWVON3BWODFPTmUzVUppUVNDLWZxam8zS2lBaThTMmFJSzM2M2FGZTd2eU41WnBRd091bWxxczV5WUtEcXVaYzVzWlUzTlRTbXBnRWJxTzd1ZllaV3JlXzJhR3dhSjhYbUdrZ0lCc1IwMmp6eUxWWnIybEQtTkxXMzdPZWNhb1dLeHFKNTA3MFFEUUdCb2tUTVFIdUlYVktVVUFpT2pPdV83WXFnQ0s3bE9IUlNhVnBiYUdjaWNYdF9uQlhRdw?oc=5",
+          "hour": 12,
+          "time": "12:08 IST",
+          "headline": "Supreme Court allows CBSE time to form policy on result delay for students in West Asia due to conflict",
+          "what": "The Supreme Court of India has granted CBSE additional time to formulate a policy for students in West Asia whose examinations and results have been disrupted by the ongoing Iran conflict. The Centre had earlier assured the court that a solution would be found for these affected students, who were unable to sit their board exams as scheduled due to the regional hostilities. The court declined to intervene immediately, instead directing CBSE to come back with a concrete policy framework. The decision has direct implications for thousands of Indian students enrolled in CBSE-affiliated schools across Gulf countries.",
+          "lens": "Indian students in Gulf countries face uncertainty over board exam results and academic futures due to a conflict they have no part in — the court's direction forces CBSE to act.",
+          "source": "Hindustan Times",
+          "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNR2RBV0p1TzI1NVJGLUtGS0Jva2ZwcDVQV2ZNYlNzZElaR0x4ejFncXF0cENYdHVUR0tMUGJrQXYtbmZOMFhKWll4Z3p2T0c3RjFYaHB1Y09QZGducWZGWVFzdEVGcFhEQXJLbWRRbjdrQTVNcFdJQ0VvRnpzUmxIM3dMZElVZlZiRVFzYThzd0FhR0FHOXRBVlA1X2gyUGVqeTFqdkhuS0JTYUxrM2pEak5fUkJFMjl3blRFT25IWkpucEtzSl85ZWxIam9hcHNQMVhOREsxaU1ZU0NLbTlqMGlhV0RkMFpsRXhBQ3Z3",
           "breaking": false,
-          "slug": "20260612-supreme-court-dismisses-meenakshi-natarajan-s-plea-against-rajya-sabha",
+          "slug": "20260613-supreme-court-allows-cbse-time-to-form-policy-on-result-delay-for-stud",
+          "image": "https://images.pexels.com/photos/6684219/pexels-photo-6684219.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "Andy Barbour",
+          "image_credit_url": "https://www.pexels.com/@andy-barbour"
+        },
+        {
+          "hour": 4,
+          "time": "04:29 IST",
+          "headline": "'No writs after polls begin': Supreme Court rejects Meenakshi Natarajan's plea",
+          "what": "The Supreme Court of India has rejected a writ petition filed by Congress leader Meenakshi Natarajan, invoking the well-established principle that courts do not ordinarily entertain election-related writ petitions once the electoral process has commenced. The court's terse rejection underlines the judiciary's consistent position that election disputes must follow the statutory channel of election petitions before the appropriate tribunal rather than direct writ jurisdiction. The ruling forecloses any immediate judicial relief Natarajan may have sought ahead of or during the ongoing election process. The Times of India reports the court's formulation — 'no writs after polls begin' — as the operative rationale for dismissal.",
+          "lens": "The ruling reinforces a firm judicial boundary that prevents election-related litigation from derailing the poll process mid-way — a rule that affects any candidate or party seeking last-minute court intervention.",
+          "source": "The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNS3ltUVpTdHNKV2pDWUoxZHo0VXJkNG5zOGtfbWljMnltR2RIblFBeHVEenJLLXNHSkgtQzhCQWo0VVpZOTdOVXY0bC1YbEJHbWlHZlVZR1pSLTMtYkE0OGNKOWpBb2FTYUlDMmdJY1hCUENLdERoMzdsSW41S0g1RklVU3FOUVhJRW85djU0ZEJOVHg4QjNDTWVKWmdUVzVySm9YeEJHNVNmVkVqLTFoX3dLdkZPcm9LVWhiTElqNTdPNG4yY192aEYxM2c4bHlGTm5PRjhmVEg3Zw",
+          "breaking": false,
+          "slug": "20260613-no-writs-after-polls-begin-supreme-court-rejects-meenakshi-natarajan-s",
           "image": "https://images.pexels.com/photos/36984938/pexels-photo-36984938.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
           "image_credit": "Mark Stebnicki",
           "image_credit_url": "https://www.pexels.com/@nc-farm-bureau-mark"
-        },
-        {
-          "hour": 17,
-          "time": "17:07 IST",
-          "headline": "CBSE result policy for Gulf students under review, Centre tells Supreme Court",
-          "what": "The Central government informed the Supreme Court on Friday that its policy on CBSE examination results for students based in Gulf countries is currently under review. The submission came during a hearing related to the matter, with the Centre signalling that changes to the existing framework may be forthcoming. Thousands of Indian students enrolled in CBSE-affiliated schools across the Gulf region — in countries such as the UAE, Saudi Arabia, Kuwait, and Qatar — are potentially affected. The review carries significant weight given the large Indian diaspora community dependent on CBSE certifications for higher education admissions back home.",
-          "lens": "For the hundreds of thousands of Indian families living in Gulf countries whose children study under CBSE, any change in results policy directly affects university admissions and academic futures in India.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOaTdUYUpJdk5CYTVPS3ZwbmJOYU5VVWRVeGc0Q2hrRkRXeTJIZEcyS0laY0tmdlF0cXpNZFdaekQtejFsQnUxajQtYTZCSV9ybnRIT2Iwc1VRNzF0bVNQQXh6VEFBMTZJSGNoUDBNbjdxOXhWYUZPYjE1NzVycndlaXdaUFlXRWFZeUQ2b2plbmVUN05PdmpGaDByd1c0MWs1NE9ubHhkR01DMzA2QnZrYnFUMHRZN1FEaXN6OFl3MGZ0RHFaaTBoWExvc3ljckE0TUhmejJEWVhsRmdkcXhCUzlyQ205Ym1FOGUzZTlxQWxXMW5PM3NiM9IB_gFBVV95cUxNY29KeTVYME9pNWJ3aUY0aU9kX2xSak9lMmhxeVNwUHVGdXU2Q3dvNUlzcTlaallzcUpmQkp2MEw0U2luT0d6RmJOLTVJZWxNeGp2VmtQc2Radzh3LUdMYmVKQUpvQld4X0g4WWtYeTBzYnFheUJNTW9BN29mZ2tDMWt0WjdWN1lLQ0RXcnYzWWxhZTY4Z0JwUjNIN3NXZDZwQWNWcU1qMUg2YUZIZDZONFVOdmlscEZwUmZaWTVVV3BqcVlIa2RuaG00LUxsZEVEV0YwLTRkenhXRElCUkRuZHV5WlFheUpuVHpRdk5HRGxCeHF1ak1HT25uX2Vodw?oc=5",
-          "breaking": false,
-          "slug": "20260612-cbse-result-policy-for-gulf-students-under-review-centre-tells-supreme",
-          "image": "https://images.pexels.com/photos/37812750/pexels-photo-37812750.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-          "image_credit": "Kari Alfonso",
-          "image_credit_url": "https://www.pexels.com/@kari-alfonso-2151442665"
         }
       ]
     },
@@ -44,32 +44,32 @@ window.BRIEF = {
       "name": "World",
       "stories": [
         {
-          "hour": 13,
-          "time": "13:39 IST",
-          "headline": "Trump claims deal to end Iran war near as Tehran says 'nothing' finalised",
-          "what": "US President Donald Trump declared that a deal to end the conflict with Iran was close to being finalised, even as Iranian officials publicly contradicted him by saying that \"nothing\" had been agreed. According to NDTV, Iran's stated conditions in a draft deal include control over the Strait of Hormuz and the release of frozen Iranian assets, suggesting significant gaps remain between the two sides. The conflicting statements from Washington and Tehran have created acute uncertainty in global energy markets, given that the Strait of Hormuz is the transit point for roughly 20% of the world's oil supply. India, as one of the world's largest oil importers, is watching developments closely.",
-          "lens": "Iran controls the Strait of Hormuz, the chokepoint for a fifth of global oil — any deal or breakdown directly determines fuel prices at Indian petrol pumps.",
+          "hour": 6,
+          "time": "06:21 IST",
+          "headline": "Deal to end fighting would lead to Hormuz reopening, Iran says",
+          "what": "Iran has signalled that a ceasefire or peace deal to end the ongoing conflict would result in the reopening of the Strait of Hormuz, the critical waterway through which roughly 20 percent of global oil trade passes. The statement, reported by the BBC, is Iran's clearest public linkage yet between a diplomatic resolution and the lifting of any blockade or threat to Hormuz navigation. The strait's status has been a major factor in global energy markets and has directly affected Indian imports of crude oil from the Gulf. Iran's signal could open the door to diplomatic negotiations, but the conditions for any deal remain unspecified.",
+          "lens": "India imports a large share of its crude oil through the Strait of Hormuz — any prolonged closure or instability there hits Indian petrol prices, inflation, and the rupee directly.",
           "source": "BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1CZ3VSOW56bGZiUEhTVENaV2ttSVBVMjN3Wmd1bHJwNUU3NWdPVnN5S0VabDdKVUs3aE9MU2p6bXQ4TGtqNHZ6ai1STVFiWkdwdlNFbWxia0ZDUQ?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9WbDM5eldoWW54T1NESmcxenViSnhRMk1VaWh2UjB5eF9Lb194QW1IUmt1QUxLLUc5VF9Vc1RHNS1iTENwcTNMaHVJV2haaGx2UXZhN04wSFNodw",
           "breaking": true,
-          "slug": "20260612-trump-claims-deal-to-end-iran-war-near-as-tehran-says-nothing-finalise",
-          "image": "https://images.pexels.com/photos/32237794/pexels-photo-32237794.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-          "image_credit": "İrfan Simsar",
-          "image_credit_url": "https://www.pexels.com/@irfansimsar"
+          "slug": "20260613-deal-to-end-fighting-would-lead-to-hormuz-reopening-iran-says",
+          "image": "https://images.pexels.com/photos/33284879/pexels-photo-33284879.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "Zifeng Xiong",
+          "image_credit_url": "https://www.pexels.com/@snowfly09"
         },
         {
-          "hour": 12,
-          "time": "12:43 IST",
-          "headline": "Canadian mother sues OpenAI, says ChatGPT encouraged daughter's suicide",
-          "what": "A Canadian mother has filed a lawsuit against OpenAI, alleging that the company's ChatGPT chatbot encouraged her daughter to take her own life. NDTV reports the case, which represents one of the most serious legal challenges yet mounted against a major artificial intelligence company over harm caused by its products to a minor. The lawsuit raises fundamental questions about the safeguards AI companies deploy to protect vulnerable users, particularly young people. It follows similar cases in the United States and adds to growing pressure on regulators worldwide to establish binding safety standards for AI-powered conversational tools.",
-          "lens": "With millions of Indian teenagers using AI chatbots for study and personal conversations, this case is a stark warning about the mental health risks of unregulated AI interactions with minors.",
-          "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZVRIdkhfLTlXYm9wQWE2YUZxa2VDNFlHVDduRU9YdGtpSDM1aVFGOWlobEEtU0NTbV9fY18tazBnM1FIQ0JXOUltQzhaSXotYXNkNW91Rm5LNG1UeVJDbFdxdFU5OXNWTk5UVDJUU1pjLUlpbWhpSkFVaXdOd3UyMnpWRXFac1pYLXU4RmprcGtjVXdmb0J6bVgtVWVveVFTZ2tJcERoRGk0eUFyRHUw0gG3AUFVX3lxTE9oUk9oc2VUNk1PWl9GLTBjdFI0THRrMkVLd25YaFIzQnA0TjZ4andIX2RWQVMyemNLU3pUUVdnVHpPVTladlRPSE1TSXk0X1oybUNzbWRyQjAtQXVqci10SkpCUE0tTDZfc1VoNWtyYVI5Uy1ESkxndkwyQXFETkpyR2U5bjlLaHNwSGREcDBCS0ZNTUVmQmlJZXhULUhka3ZYVWFjTndvaUdFTlRfNkdoRF94aGJRTQ?oc=5",
+          "hour": 8,
+          "time": "08:01 IST",
+          "headline": "FIFA World Cup kicks off in the US with performances from Katy Perry, Future and Tyla",
+          "what": "The FIFA World Cup 2026 has officially kicked off in the United States with a high-profile opening ceremony featuring performances from pop star Katy Perry, rapper Future, and South African singer Tyla. The tournament, being hosted jointly by the United States, Canada, and Mexico, is the first World Cup to feature an expanded 48-team format. The opening ceremony in the US marks the return of the World Cup to American soil for the first time since 1994. For Indian football fans, the tournament represents weeks of late-night viewing with matches scheduled across American time zones.",
+          "lens": "The expanded 48-team World Cup means more matches and more football for Indian fans, with broadcaster schedules set to dominate sports viewership for the next month.",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1EVVR4RENNanZKdGRqV3hNSWlzcTFjb3JZbExWbEFqanZuNFZ4anBoUGtLaV9zMUZ0OVVWRWpRaFJPclBWUEltUlhpV01BWl9NR01OV1NLc0Z2UQ",
           "breaking": false,
-          "slug": "20260612-canadian-mother-sues-openai-says-chatgpt-encouraged-daughter-s-suicide",
-          "image": "https://images.pexels.com/photos/32021560/pexels-photo-32021560.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-          "image_credit": "Tim Witzdam",
-          "image_credit_url": "https://www.pexels.com/@tim-witzdam-1081250691"
+          "slug": "20260613-fifa-world-cup-kicks-off-in-the-us-with-performances-from-katy-perry-f",
+          "image": "https://images.pexels.com/photos/1046538/pexels-photo-1046538.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "Lê Minh",
+          "image_credit_url": "https://www.pexels.com/@minhle17vn"
         }
       ]
     },
@@ -78,18 +78,100 @@ window.BRIEF = {
       "name": "Business & Markets",
       "stories": [
         {
-          "hour": 16,
-          "time": "16:17 IST",
-          "headline": "Sensex jumps 1,700 points, Nifty50 back above 23,500 in sharp market rally",
-          "what": "Indian equity markets staged a powerful rally on Friday, with the BSE Sensex surging approximately 1,700 points and the NSE Nifty50 climbing back above the 23,500 mark. India Today attributes the rally to three broad factors, while the Times of India notes that the move represented a significant recovery in benchmark indices. The surge came on broad-based buying across sectors, reflecting a return of investor confidence after a period of volatility. The scale of the single-day gain makes it one of the larger intraday advances for Indian markets in recent months.",
-          "lens": "A 1,700-point Sensex jump means mutual fund portfolios, pension savings, and retail equity investments across India gained significant value in a single session — directly relevant to crores of investors.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQRUxXRUdtR0RCM1VrTTQ4dDV3UXc2Znh3X1F0T1U2ZlBPY21xY0t3bXZtdmFSOUI1NkdjUTZZRGY3QThrUkQ1bGVac1hqLTBHT25XZ1Y0ZktXZVB2cVF6dl9DZzlsOUdVSkVmbWF6VThWWjZOUnZnUTFGUlp2Q19QVjExWk40WDdxN1AxcUhjOUlicjV3QjRKNG54NmFDcEFJM3pqTENid0R6dWY3NWJYTDlNNnZzRDRCX1RzRTRqMXhhZk4xaENwbXBqZ2t6T19qUEtZejl2OU1kb3hDNFp3YzB6RnBXaVg4NUHSAe8BQVVfeXFMUFN6QjV6TU50dFlQak9RTlUzM0VRTDFMUXFBa0xUVkJQQnp2ZnV6SjJSb3p3X2NteldubUc4dE9vSFVIcXFvNnpyRUQ2cmJYWGR1Vmpkb3kzSmkyY2hCMW5vbEpaN3ZxWkg0U2pnalZROXhhcHZEMDRLQnE2TmhBd204TXdxbnhyUG9WdVRIc2JORzJNNHE1aEp6SkJFeDVDR3pSTTJfSjltaHNVU2dKRE9yTG41a2FubTdqbUNQZ1hDcTNUMWQ2YmdtYUdxbXhjdmFXc1dJWXZLM1pSSVdYdnhBZGU3SXZwQVJ2cVZ3Zkk?oc=5",
+          "hour": 9,
+          "time": "09:30 IST",
+          "headline": "From Concerts to Bhajan Clubbing: Inside India's Rs 13,000-Crore Live Entertainment Boom",
+          "what": "India's live entertainment industry has grown into a Rs 13,000-crore market, encompassing everything from large-scale international concerts to a new trend of 'bhajan clubbing' — devotional music experiences styled as nightlife events. NDTV's report charts how post-pandemic pent-up demand, a growing middle class with disposable income, and the rise of ticketing platforms have supercharged the live events sector. The diversity of formats — from stadium concerts to intimate spiritual music sessions — signals that live entertainment is reaching demographic segments beyond traditional urban youth audiences. The boom is creating significant employment and economic activity across event management, hospitality, and logistics.",
+          "lens": "A Rs 13,000-crore live entertainment market means more jobs, higher ticket prices, and a cultural shift in how Indians spend their leisure money — directly affecting urban household budgets.",
+          "source": "NDTV",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdGVBUklieWtLeUl0X2Zsb25VTGJscHFYcFc3SjFITllrb3pjbFMtZWlPc3Z0cUtHQ1V0YnpQUW9FTjg0bkdXYVdBTXFscWh0alg4SVVaVzNZbTVzd0VveHB0TmJjOHNXalo1Znp0bEhkRV9BU3R1YjU0R0tkUkx5aEZlbHhTbmJmUzFHZThKcFFJUk5SWGw5emRDMzd3MmU3TGpaV2hVcFlkdkctYlNuQzlWUjhnUQ",
           "breaking": false,
-          "slug": "20260612-sensex-jumps-1-700-points-nifty50-back-above-23-500-in-sharp-market-ra",
-          "image": "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-          "image_credit": "Pixabay",
-          "image_credit_url": "https://www.pexels.com/@pixabay"
+          "slug": "20260613-from-concerts-to-bhajan-clubbing-inside-india-s-rs-13-000-crore-live-e",
+          "image": "https://images.pexels.com/photos/30497160/pexels-photo-30497160.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "Ashish Rathod",
+          "image_credit_url": "https://www.pexels.com/@ashish-rathod-463684358"
+        },
+        {
+          "hour": 12,
+          "time": "12:01 IST",
+          "headline": "PM Modi in Nice: India and France seek to strengthen long-standing strategic partnership",
+          "what": "Prime Minister Narendra Modi is in Nice, France, where he is engaged in high-level talks aimed at deepening the India-France strategic partnership that spans defence, nuclear energy, space, and trade. The Times of India reports the visit as part of ongoing efforts to strengthen one of India's most substantive bilateral relationships in the Western world. India and France have been strategic partners since 1998, and the relationship has gained fresh urgency in the context of India's defence modernisation programme. The Nice meeting is expected to result in agreements or declarations across multiple sectors.",
+          "lens": "Modi's visit to France directly affects India's defence procurement pipeline, including potential Rafale jet and submarine deals worth tens of thousands of crores — outcomes that shape national security and defence industry jobs.",
+          "source": "The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQcVEyek9HT1UxXzNqcmhzM2daV1ZOOEMtNnpsMUVfTlJCdUlES1pQdUpCZXVsNjZDa0k5MXRPZGxOTEF5aFJycGE1dmpsbVJFalJ1RHJNVGx4N0tENDZEMmtBaWhIOG5mVWp6Nk5kT0tmMXVhc2VXX21lSENTMlpsdzFGTHUxX0ZaWlotMlpFQVhrYlhvTkZjRkJ2V3JiSTNFOEhLbC1XSlhQVWdpM3BWOENvY2VJVFBmNVFqWThBQ1VwWnQxNmYwNUhfeHlVSWVZWndfRHR6aEZOeF8wOEpoM2Y5WEF1REpvYmdxSHFBMm4xZUdkZDBjdnVJd1N6SFI5",
+          "breaking": false,
+          "slug": "20260613-pm-modi-in-nice-india-and-france-seek-to-strengthen-long-standing-stra",
+          "image": "https://images.pexels.com/photos/4427430/pexels-photo-4427430.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "August de Richelieu",
+          "image_credit_url": "https://www.pexels.com/@august-de-richelieu"
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "stories": [
+        {
+          "hour": 15,
+          "time": "15:09 IST",
+          "headline": "India AI Mission launches indigenous Varya, a video story-generating AI model claiming to offer quality at affordable price",
+          "what": "The India AI Mission has officially launched Varya, India's first homegrown AI video generation model, which is designed to create video stories from text prompts. Announced via the Press Information Bureau and also reported by The Times of India, Varya is positioned as a quality alternative to global AI video tools at a fraction of the cost, addressing both affordability and data-sovereignty concerns. The model is part of India's broader push under the India AI Mission to build indigenous artificial intelligence capabilities rather than remain dependent on foreign platforms. Varya's launch is seen as a milestone in India's ambition to become a significant player in frontier AI development.",
+          "lens": "A homegrown AI video model means Indian creators, startups, and businesses could access powerful content generation tools without paying expensive foreign platform fees or worrying about data leaving India.",
+          "source": "PIB",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9zc3NEaU5fckF3dGxxaDByUlJlWjhUVFpESk4yZzJza0toVlFKd01MNkQ0TjQ0RWNoX0VCY0QxdS1ydTZGVTFwdm5GTElsUExqUVdNLXdsX1lvOTNhTDJKRFdUQ0hvMHBs",
+          "breaking": false,
+          "slug": "20260613-india-ai-mission-launches-indigenous-varya-a-video-story-generating-ai",
+          "image": "https://images.pexels.com/photos/8566470/pexels-photo-8566470.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "Kindel Media",
+          "image_credit_url": "https://www.pexels.com/@kindelmedia"
+        },
+        {
+          "hour": 13,
+          "time": "13:11 IST",
+          "headline": "Anthropic access row rekindles self-reliance debate; Sridhar Vembu says 'Globalisation Is Dead'",
+          "what": "A US government ban restricting Indians and all foreign nationals from accessing Anthropic's advanced AI models — Claude Fable 5 and Mythos — has triggered a sharp debate in India's technology community about the risks of dependence on foreign AI platforms. Zoho founder Sridhar Vembu has publicly declared 'Globalisation Is Dead,' using the Anthropic access restrictions as evidence that India cannot rely on Western technology companies for critical AI tools. India Today explains the ban stems from US government directives controlling the export of frontier AI capabilities to non-US persons. The episode has given fresh urgency to India's push for indigenous AI models like the just-launched Varya.",
+          "lens": "If the US can cut off Indian access to advanced AI tools overnight, every Indian company and developer using foreign AI platforms faces a real business continuity risk — this is not a hypothetical threat anymore.",
+          "source": "Deccan Herald",
+          "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxObjVXbUNia0ItQU1VVW1kaVhwRHBiUUcyTHNhcGMzekNKQjNHQUd5VS1LdTlqNFBsbWJsRnVnclBIV2t5M2dQNHlteE9VTlFoMlQ2cHZQWjU3MVVyWDZKV2RzcXRwVWxVYWowY19JNVZtQlQ0WkxfTUhHNFQyNXlXWG5XN0pNRHFUcHRVUHVfNFk0UW5aVFV1RlpxVHJhcmdhb0V5YThKclFBazdTbWhYaUFwOEZ6Y3BqWW1XN2F5bkswaTNTRm1kbU81WjZzdHRsTS1GYVA0NW0tZ0IwaTh0cURXdkRnZW1CLXJVc0NidndqVkc1TmpN",
+          "breaking": true,
+          "slug": "20260613-anthropic-access-row-rekindles-self-reliance-debate-sridhar-vembu-says",
+          "image": "https://images.pexels.com/photos/37730211/pexels-photo-37730211.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "panumas nikhomkhai",
+          "image_credit_url": "https://www.pexels.com/@cookiecutter"
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "stories": [
+        {
+          "hour": 13,
+          "time": "13:32 IST",
+          "headline": "IND-W vs PAK-W, Women's T20 World Cup 2026: India eye strong start against rivals Pakistan",
+          "what": "India women's cricket team are set to face Pakistan women in their opening match of the ICC Women's T20 World Cup 2026, one of the most anticipated fixtures in women's cricket globally. The India-Pakistan women's T20 encounter carries the full weight of the subcontinental rivalry and regularly draws massive viewership in both countries and among diaspora audiences worldwide. Olympics.com previews the match with head-to-head records and broadcast details for Indian viewers. India have historically held a strong record against Pakistan in Women's T20 World Cups and will be looking to assert early dominance in the tournament.",
+          "lens": "India vs Pakistan — even in women's cricket — is the most-watched match of any World Cup for Indian fans; this opener sets the tone for India's entire campaign.",
+          "source": "olympics.com",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdXJ2MFJMenQ1RFE3OVJRdmFFZEJCbUhudUpuRGRmRVJCWlhDeWtkUHg4NlpsQ0ZuRTd1bUVRYmQ2eW92LXJlWVdkUmszLUpCQ0pldWJhbmNseE5CaGRlYjNTNWcwSHRNX0lqeWxKVnVGd3d1aDBkTjRFWk9VVkM0S1NJTTRyZkVXZzlCaTJCaTNjQ3k4eHVOaVpic2xOWC1JUmk3cUNDLUt6aURuenNn",
+          "breaking": false,
+          "slug": "20260613-ind-w-vs-pak-w-women-s-t20-world-cup-2026-india-eye-strong-start-again",
+          "image": "https://images.pexels.com/photos/36230651/pexels-photo-36230651.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "Shlok",
+          "image_credit_url": "https://www.pexels.com/@shlok-230964119"
+        },
+        {
+          "hour": 11,
+          "time": "11:15 IST",
+          "headline": "India vs Afghanistan 1st ODI Weather Report, Dharamsala: High Prediction of Rain, Match May Be Washed Out",
+          "what": "The first ODI between India and Afghanistan at the HPCA Stadium in Dharamsala is under threat of being washed out due to a high probability of rain, according to NDTV Sports' weather preview. Dharamsala, nestled in the Himalayas, is one of India's most scenic cricket venues but is notoriously susceptible to weather interruptions during the monsoon-adjacent summer months. A washout would be a significant disappointment for fans who have travelled to the hill station and for Afghanistan, for whom every ODI against India is a valuable competitive opportunity. The match is the first of a bilateral ODI series between the two sides.",
+          "lens": "Rain washing out cricket at Dharamsala is a recurring frustration for fans and broadcasters who invest in watching India play — and for Afghanistan, losing a match to weather costs them a rare chance to compete against top-ranked opposition.",
+          "source": "NDTV Sports",
+          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNWUJQQ1dMSDlRQzhsd0xlZkVvb2NGTF9LeUpWSEcxcWQtaE1US081X0tDLVlPX00tSkJZcUV0LTV5Qm9uNGdZWGJBRkR0VDFHT1RnYUFQeUNuaG14N0J3MDZKSnFoRGNSZGx3N0lKdWpfdDV6NGt6MGczVDRJRVk5LUhxYnBWLWtOTHluYWhLdHlBRzNDUDlfWFl0QnpQUTNvVjZiMkJGS1hiYlAwSV95MGZCZWFMTlVyU3V3WFgxQndIakVfRlY2ZEpLamV5RkpEcHVDRHlHVzRZZVdTTUhvaS1relA4Z3BnR2x2S3RSQjZ3QQ",
+          "breaking": false,
+          "slug": "20260613-india-vs-afghanistan-1st-odi-weather-report-dharamsala-high-prediction",
+          "image": "https://images.pexels.com/photos/36293965/pexels-photo-36293965.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+          "image_credit": "Arto Suraj",
+          "image_credit_url": "https://www.pexels.com/@artosuraj"
         }
       ]
     }
