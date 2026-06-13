@@ -118,12 +118,13 @@ EDITORIAL RULES:
   - "context" = 4-6 sentences of widely-known background: history, key players, prior developments. Depth from established general knowledge, never speculation.
   - "why_it_matters" = 3-5 sentences of concrete impact: prices, jobs, daily life, investments, the bigger picture.
   - "whats_next" = 2-3 sentences on what to watch, framed as expectation ("expect", "likely") not fact.
-- "image_query" = a 2-4 word GENERIC stock-photo phrase (e.g. "stock market screens"). Never names of real people or brands.
+- "image_query" = a 2-4 word GENERIC stock-photo phrase (e.g. "stock market screens", "courtroom interior", "cricket stadium"). Never names of real people or brands.
+- "image_safety" = classify the story for image handling. Use "real" if the story centres on a specific named real person OR a specific real event/incident (politics, court rulings, deaths, disasters, match results, named individuals). Use "concept" ONLY if it is an abstract/thematic story (markets, economy, technology trends, lifestyle) with no specific real person or event as its subject. When unsure, use "real".
 - "hour" = integer 0-23 from the IST time. "time" = "HH:MM IST". "breaking" = true for at most 1 story.
 - Keep source names and URLs exactly as given.
 
 Respond with ONLY a JSON object, no markdown fences, no text before or after it:
-{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","source":"...","url":"...","breaking":false}]}"""
+{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","image_safety":"real","source":"...","url":"...","breaking":false}]}"""
 
 API_URL = "https://api.anthropic.com/v1/messages"
 
@@ -251,13 +252,19 @@ def write_edition(raw):
         "sections": sections,
     }
 
-# ---------------------------------------------------------- licensed photos ---
+# ----------------------------------------------------- three-tier imagery ---
+# Tier 1: real licensed photo (Pexels) — used for real-person/real-event stories
+#         and as the first choice everywhere.
+# Tier 2: AI illustration (Gemini / "Nano Banana") — ONLY for abstract concept
+#         stories, never for a named real person or specific real event, and
+#         always labelled "AI illustration" on the page.
+# Tier 3: deterministic editorial art — always-available fallback.
 PEXELS_KEY = os.environ.get("PEXELS_API_KEY", "")
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
+GEMINI_MODEL = "gemini-2.5-flash-image"
 
 def fetch_photo(query):
-    """Free, commercially-licensed photo from Pexels. Returns None on any miss
-    (the generative art fallback takes over). Never scrape publisher images:
-    credit is not a license — that's copyright infringement."""
+    """Free, commercially-licensed photo from Pexels. None on any miss."""
     if not PEXELS_KEY or not query:
         return None
     try:
@@ -270,12 +277,63 @@ def fetch_photo(query):
         if not photos:
             return None
         p = photos[0]
-        return {"image": p["src"]["large"],
+        return {"image": p["src"]["large"], "image_kind": "photo",
                 "image_credit": p.get("photographer", "Pexels"),
                 "image_credit_url": p.get("photographer_url", "https://www.pexels.com")}
     except Exception as exc:
-        print(f"pexels miss for '{query}': {exc}")
+        print(f"  pexels miss for '{query}': {exc}")
         return None
+
+def generate_ai_image(prompt, slug):
+    """AI illustration via Gemini ('Nano Banana'). Concept stories ONLY — callers
+    must never pass a real named person or specific real event. Saves a PNG into
+    /articles/img and returns its site-relative path. None on any failure."""
+    if not GEMINI_KEY or not prompt:
+        return None
+    safe_prompt = ("A clean, abstract editorial illustration for a news brief, "
+                   "conceptual and non-photorealistic, no real people, no faces, "
+                   "no text, no logos, no flags. Subject: " + prompt)
+    try:
+        url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+               f"{GEMINI_MODEL}:generateContent?key={GEMINI_KEY}")
+        r = requests.post(url, timeout=90,
+            headers={"content-type": "application/json"},
+            json={"contents": [{"parts": [{"text": safe_prompt}]}]})
+        r.raise_for_status()
+        parts = (r.json().get("candidates") or [{}])[0].get("content", {}).get("parts", [])
+        for part in parts:
+            inline = part.get("inlineData") or part.get("inline_data")
+            if inline and inline.get("data"):
+                import base64
+                os.makedirs("articles/img", exist_ok=True)
+                path = f"articles/img/{slug}.png"
+                with open(path, "wb") as f:
+                    f.write(base64.b64decode(inline["data"]))
+                return {"image": "img/" + slug + ".png", "image_home": "articles/img/" + slug + ".png",
+                        "image_kind": "ai", "image_credit": "AI illustration",
+                        "image_credit_url": ""}
+        print("  gemini returned no image data")
+        return None
+    except Exception as exc:
+        print(f"  gemini miss for '{prompt[:40]}': {exc}")
+        return None
+
+def resolve_image(st):
+    """Three-tier resolver with the real-person/real-event guardrail."""
+    safety = (st.get("image_safety") or "real").lower()
+    query = st.get("image_query")
+    # Tier 1: real photo first, always.
+    photo = fetch_photo(query)
+    if photo:
+        return photo
+    # Tier 2: AI illustration ONLY for concept stories (never real people/events).
+    if safety == "concept":
+        ai = generate_ai_image(query or st.get("headline", ""), st["slug"])
+        if ai:
+            print(f"  AI illustration generated for concept story: {st['slug']}")
+            return ai
+    # Tier 3: editorial art fallback (handled at render time).
+    return None
 
 # -------------------------------------------------------- generative art ---
 def art_svg(seed_text, section_id, w=1200, h=560):
@@ -329,9 +387,13 @@ def article_page(story, section, edition):
         **({"image": [story["image"]]} if story.get("image") else {}),
     }, ensure_ascii=False)
     if story.get("image"):
+        if story.get("image_kind") == "ai":
+            cap = '<figcaption>⚠ AI illustration — generated for visual context, not a real photograph. The reporting belongs to the cited source.</figcaption>'
+        else:
+            cap = (f'<figcaption>Photo: <a href="{e(story.get("image_credit_url","#"))}" rel="noopener" target="_blank">'
+                   f'{e(story.get("image_credit","Pexels"))}</a> via Pexels (free license)</figcaption>')
         hero = (f'<figure class="hero"><img src="{e(story["image"])}" alt="{e(story["headline"])}" loading="eager">'
-                f'<figcaption>Photo: <a href="{e(story.get("image_credit_url","#"))}" rel="noopener" target="_blank">'
-                f'{e(story.get("image_credit","Pexels"))}</a> via Pexels (free license)</figcaption></figure>')
+                f'{cap}</figure>')
     else:
         hero = f'<div class="hero">{art_svg(story["headline"], section["id"])}</div>'
     blocks = "".join(
@@ -407,15 +469,20 @@ def write_outputs(edition):
     for sec in edition["sections"]:
         for st in sec["stories"]:
             st["slug"] = NOW.strftime("%Y%m%d") + "-" + slugify(st["headline"])
-            photo = fetch_photo(st.pop("image_query", None))
-            if photo: st.update(photo)
+            img = resolve_image(st)
+            if img: st.update(img)
+            st.pop("image_query", None); st.pop("image_safety", None)
             with open(f"articles/{st['slug']}.html", "w", encoding="utf-8") as f:
                 f.write(article_page(st, sec, edition))
     # homepage data (article text not needed client-side)
     slim = json.loads(json.dumps(edition, ensure_ascii=False))
     for sec in slim["sections"]:
         for st in sec["stories"]:
-            for k in ("article", "what_happened", "context", "why_it_matters", "whats_next"):
+            # AI images are saved under articles/img and stored relative to the
+            # article page; the homepage sits at root, so use the root-relative path.
+            if st.get("image_home"):
+                st["image"] = st["image_home"]
+            for k in ("article", "what_happened", "context", "why_it_matters", "whats_next", "image_home"):
                 st.pop(k, None)
     with open("data.js", "w", encoding="utf-8") as f:
         f.write("// auto-generated " + NOW.strftime("%Y-%m-%d %H:%M IST") +
