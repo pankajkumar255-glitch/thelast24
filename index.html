@@ -30,14 +30,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Last 24 — Everything that mattered in India, in five minutes</title>
-<meta name="description" content="Everything that mattered in India in the last 24 hours — national, world, business, tech, sports, entertainment. Curated hourly from verified publishers only, every story linked to its original source.">
+<meta name="description" content="Everything that mattered in India in the last 24 hours — national, world, business, tech, sports, entertainment. Curated from verified publishers only, every story linked to its original source.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Last 24 — India's day in five minutes">
-<meta property="og:description" content="Updated every hour from verified publishers only. Every story sourced, linked, and answered with why it matters to you.">
+<meta property="og:description" content="Up to date, from verified publishers only. Every story sourced, linked, and answered with why it matters to you.">
 <meta property="og:site_name" content="The Last 24">
 <link rel="canonical" href="https://thelast24.in/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"The Last 24","url":"https://thelast24.in/","description":"Everything that mattered in India in the last 24 hours, curated hourly from verified publishers."}
+{"@context":"https://schema.org","@type":"WebSite","name":"The Last 24","url":"https://thelast24.in/","description":"Everything that mattered in India in the last 24 hours, curated from verified publishers."}
 </script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0E130E">
@@ -89,7 +89,7 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   @media (max-width:600px){.brand-meta{display:none}}
   .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 120s linear infinite;will-change:transform}
+  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 60s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
   @keyframes scroll{to{transform:translateX(-50%)}}
   .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
@@ -234,7 +234,7 @@
       <a class="brand" href="/">The Last <span>24</span></a>
       <div class="brand-side">
         <a class="archive-link" href="archive.html">Archive →</a>
-        <div class="brand-meta"><span class="live-dot"></span>Updated hourly<br><span class="v">✓ Verified publishers only</span><br><span id="date-label">—</span></div>
+        <div class="brand-meta"><span class="live-dot"></span>Up to date<br><span class="v">✓ Verified publishers only</span><br><span id="date-label">—</span></div>
       </div>
     </div>
     <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
@@ -268,7 +268,7 @@
   <div class="f-inner">
     <div>
       <a class="f-logo" href="/">The Last <span>24</span></a>
-      <p class="f-blurb">Everything that mattered in India, every hour — curated exclusively from <span class="v">verified publishers</span> like PTI, Reuters, The Hindu, The Economic Times and Mint. Every story links to its original source.</p>
+      <p class="f-blurb">Everything that mattered in India — curated exclusively from <span class="v">verified publishers</span> like PTI, Reuters, The Hindu, The Economic Times and Mint. Every story links to its original source.</p>
     </div>
     <div class="f-col">
       <h5>Explore</h5>
@@ -578,7 +578,7 @@ window.BRIEF = window.BRIEF || {
   var B = window.BRIEF || window.EDITION || null;
   var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
   if(!B || !totalStories){
-    document.getElementById('main').innerHTML = '<p style="padding:60px 20px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--meta)">No stories available right now — the next hourly edition will populate this page automatically.</p>';
+    document.getElementById('main').innerHTML = '<p style="padding:60px 20px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--meta)">No stories available right now — the next edition will populate this page automatically.</p>';
     document.getElementById('carousel').style.display = 'none';
     document.querySelector('.today').style.display = 'none';
     return;
