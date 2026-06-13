@@ -383,6 +383,9 @@ def fetch_photo(query):
     if not query:
         return None
     candidates = _pexels(query) + _unsplash(query) + _pixabay(query)
+    # Drop any candidate without a usable https image URL (prevents blank <img>).
+    candidates = [c for c in candidates
+                  if isinstance(c.get("image"), str) and c["image"].startswith("http")]
     if not candidates:
         return None
     # Best relevance wins; ties keep source order (Pexels, Unsplash, Pixabay).
