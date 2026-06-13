@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Default everything to DENIED until the visitor consents (GDPR-safe).
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-B1R3X3GKJ3');
+  // If the visitor already accepted in a previous visit, honour it immediately.
+  try {
+    if (localStorage.getItem('cookie-consent') === 'granted') {
+      gtag('consent', 'update', {
+        'ad_storage':'granted','ad_user_data':'granted',
+        'ad_personalization':'granted','analytics_storage':'granted'
+      });
+    }
+  } catch(e) {}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — The Last 24</title>
 <meta name="description" content="Reach The Last 24 — corrections, partnerships, advertising and feedback.">
 <link rel="canonical" href="https://thelast24.in/contact.html">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0E130E">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
