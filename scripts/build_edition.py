@@ -282,13 +282,85 @@ def write_edition(raw):
     elif not topline:
         topline = "The day's most important stories from across India."
 
-    return {
+    edition = {
         "date": NOW.strftime("%A, %d %B %Y"),
         "edition": NOW.strftime("%Y-%m-%d %H:%M"),
         "topline": topline,
         "lensLabel": "Why it matters",
         "sections": sections,
     }
+    topup_and_sort(edition, target=per_cap)
+    return edition
+
+
+def _story_dt(st):
+    """Best-effort IST datetime for a story, for accurate newest-first sorting.
+    Uses the edition date the story was filed under (set during top-up) plus its
+    hour; falls back to hour-only within today."""
+    base = st.get("_edition_date")
+    try:
+        if base:
+            d = datetime.strptime(base, "%Y-%m-%d").replace(tzinfo=IST)
+        else:
+            d = NOW
+        return d.replace(hour=int(st.get("hour", 0)), minute=0, second=0, microsecond=0)
+    except Exception:
+        return NOW
+
+
+def topup_and_sort(edition, target=5, lookback_hours=48):
+    """Ensure each section shows up to `target` stories by topping up thin
+    sections with the most recent UNIQUE stories from previous editions (within
+    `lookback_hours`), then sort every section newest-first by IST timestamp.
+    Fresh stories from this run always rank above older top-ups."""
+    import glob
+    # Tag this run's stories with today's date so timestamps sort correctly.
+    today = NOW.strftime("%Y-%m-%d")
+    for sec in edition["sections"]:
+        for st in sec["stories"]:
+            st.setdefault("_edition_date", today)
+
+    # Gather recent past stories per section id, newest editions first.
+    cutoff = NOW - timedelta(hours=lookback_hours)
+    past = {}
+    for path in sorted(glob.glob("editions/*.json"), reverse=True):
+        stamp = os.path.basename(path)[:13]  # YYYY-MM-DD-HH
+        try:
+            when = datetime.strptime(stamp, "%Y-%m-%d-%H").replace(tzinfo=IST)
+        except ValueError:
+            continue
+        if when < cutoff:
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                ed = json.load(f)
+        except Exception:
+            continue
+        edate = when.strftime("%Y-%m-%d")
+        for sec in ed.get("sections", []):
+            for st in sec.get("stories", []):
+                st["_edition_date"] = st.get("_edition_date", edate)
+                past.setdefault(sec["id"], []).append(st)
+
+    have = {sec["id"]: sec for sec in edition["sections"]}
+    for sid, sec in have.items():
+        seen = {(s.get("slug") or s.get("headline")) for s in sec["stories"]}
+        if len(sec["stories"]) < target:
+            for st in past.get(sid, []):
+                key = st.get("slug") or st.get("headline")
+                if key in seen:
+                    continue
+                sec["stories"].append(st)
+                seen.add(key)
+                if len(sec["stories"]) >= target:
+                    break
+        # Newest-first by IST timestamp, then trim to target.
+        sec["stories"].sort(key=_story_dt, reverse=True)
+        sec["stories"] = sec["stories"][:target]
+        # _edition_date is internal; drop it from what ships if older than today
+        for st in sec["stories"]:
+            if st.get("_edition_date") == today:
+                st.pop("_edition_date", None)
 
 # ----------------------------------------------------- three-tier imagery ---
 # Tier 1: real licensed photo (Pexels) — used for real-person/real-event stories
@@ -592,7 +664,7 @@ def write_outputs(edition):
             # article page; the homepage sits at root, so use the root-relative path.
             if st.get("image_home"):
                 st["image"] = st["image_home"]
-            for k in ("article", "what_happened", "context", "why_it_matters", "whats_next", "image_home"):
+            for k in ("article", "what_happened", "context", "why_it_matters", "whats_next", "image_home", "_edition_date"):
                 st.pop(k, None)
     with open("data.js", "w", encoding="utf-8") as f:
         f.write("// auto-generated " + NOW.strftime("%Y-%m-%d %H:%M IST") +
