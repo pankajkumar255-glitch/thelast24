@@ -89,7 +89,7 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   @media (max-width:600px){.brand-meta{display:none}}
   .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 120s linear infinite;will-change:transform}
+  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 60s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
   @keyframes scroll{to{transform:translateX(-50%)}}
   .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
@@ -166,6 +166,56 @@
   .hscroll::-webkit-scrollbar{display:none}
   .card{flex:0 0 320px;scroll-snap-align:start;background:var(--card);border:1px solid var(--hairline);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
   @media (max-width:600px){.card{flex:0 0 80vw}.card .media{aspect-ratio:3/2}}
+
+  /* ============ COMPREHENSIVE MOBILE OPTIMISATION (phone-first) ============ */
+  @media (max-width:600px){
+    /* Tighter, consistent page gutters */
+    .wrap{padding:0 14px}
+    /* Cards: near-full-width with a peek of the next, consistent gap */
+    .hscroll{gap:12px;padding:2px 0 14px}
+    .card{flex:0 0 86vw;border-radius:16px}
+    .card .pad{padding:15px 16px 16px;gap:8px}
+    /* Headline: a touch smaller, comfortable line-height, no overflow */
+    .card h3{font-size:17.5px;line-height:1.28;letter-spacing:-.01em;word-break:break-word}
+    /* Standfirst: readable size, a little more breathing room */
+    .card .what{font-size:14px;line-height:1.6;-webkit-line-clamp:3}
+    /* "Why it matters": clearer separation from the standfirst */
+    .lens{font-size:13px;line-height:1.55;padding-left:10px;margin-top:2px}
+    /* Kicker / category label: keep crisp, avoid wrap crowding */
+    .kick{font-size:10px;gap:8px;flex-wrap:wrap}
+    /* Meta line: larger tap targets, comfortable spacing */
+    .meta-line{font-size:11px;gap:10px;padding-top:8px}
+    .meta-line .src,.meta-line .read{padding:3px 0;min-height:24px;display:inline-flex;align-items:center}
+    /* Section rhythm: more vertical separation between categories */
+    section{padding:26px 0 0;scroll-margin-top:60px}
+    .sec-head{margin-bottom:12px;gap:8px}
+    .sec-head h2{font-size:14px;letter-spacing:.1em}
+    .sec-head .count{display:none}
+    .sec-more{font-size:10.5px;padding:7px 12px}
+    /* Topline: comfortable reading measure, centered, not cramped */
+    .today{padding:22px 0 4px;gap:16px}
+    .topline{font-size:17px;line-height:1.5;padding:0 4px}
+    /* Carousel: title sits clear of the gradient, dek hidden already */
+    .slide h2{font-size:19px;line-height:1.18}
+    .slide-content{padding:14px 16px 18px}
+    .slide .kick{font-size:10px;gap:8px;margin-bottom:8px}
+    /* Filter chips: easy to tap, no crowding */
+    .chip{font-size:12.5px;padding:8px 14px}
+    .nav-inner{gap:5px;padding:10px 0}
+    /* Newsletter popup: fit small screens without edge-bleed */
+    .nl{right:10px;left:10px;bottom:10px;padding:18px}
+    .nl h4{font-size:18px}
+    /* Footer: comfortable stacked spacing */
+    .f-inner{padding:32px 14px 22px;gap:24px}
+    .f-blurb{font-size:13px;max-width:none}
+    .f-bottom-inner{padding:14px 14px 32px;flex-direction:column;gap:8px}
+  }
+  /* Very small phones */
+  @media (max-width:380px){
+    .card{flex:0 0 90vw}
+    .card h3{font-size:16.5px}
+    .brand{font-size:26px!important}
+  }
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
   .card .media{aspect-ratio:16/9;overflow:hidden}
   .card .media img,.card .media svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
