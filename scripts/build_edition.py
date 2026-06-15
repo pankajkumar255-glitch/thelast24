@@ -127,13 +127,14 @@ EDITORIAL RULES:
   - "context" = 2-3 sentences of widely-known background: the key players and why this matters now. Depth from established general knowledge, never speculation.
   - "why_it_matters" = 2 sentences of concrete impact: prices, jobs, daily life, investments, or the bigger picture.
   - "whats_next" = 1 sentence on what to watch, framed as expectation ("expect", "likely") not fact.
+- "image_subject" = the SINGLE most photographable real subject of the story for an encyclopedia image lookup — a real person's full name, a place, a landmark, or an institution exactly as it would title a Wikipedia article (e.g. "Narendra Modi", "Supreme Court of India", "Wankhede Stadium", "Reserve Bank of India", "Rohit Sharma"). Use "" (empty) if the story has no specific real named subject (pure concept/abstract stories).
 - "image_query" = a 3-5 word search phrase for a stock-photo library that captures the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think about what a relevant photo would actually show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers technology"; a bullet train story -> "high speed train railway". Prefer Indian or contextual terms where the story is Indian. Never names of real people or brands.
 - "image_safety" = classify the story for image handling. Use "real" if the story centres on a specific named real person OR a specific real event/incident (politics, court rulings, deaths, disasters, match results, named individuals). Use "concept" ONLY if it is an abstract/thematic story (markets, economy, technology trends, lifestyle) with no specific real person or event as its subject. When unsure, use "real".
 - "hour" = integer 0-23 from the IST time. "time" = "HH:MM IST". "breaking" = true for at most 1 story.
 - Keep source names and URLs exactly as given.
 
 Respond with ONLY a JSON object, no markdown fences, no text before or after it:
-{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","image_safety":"real","source":"...","url":"...","breaking":false}]}"""
+{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","image_subject":"...","image_safety":"real","source":"...","url":"...","breaking":false}]}"""
 
 API_URL = "https://api.anthropic.com/v1/messages"
 # Current Sonnet. If this ever 400s with a model error, update this ONE line.
@@ -499,21 +500,98 @@ def generate_ai_image(prompt, slug):
         print(f"  gemini miss for '{prompt[:40]}': {exc}")
         return None
 
+def fetch_wikimedia(subject):
+    """Real, freely-licensed photo of a named subject from Wikipedia/Wikimedia.
+    This is the relevance tier: a genuine photo of the actual person/place/
+    institution, legal to use WITH attribution (which we display). None on miss.
+
+    Uses the Wikipedia REST summary endpoint to get the lead image of the most
+    relevant article, plus the file's licensed author for credit."""
+    if not subject or len(subject) < 3:
+        return None
+    try:
+        # Resolve the best-matching article title first.
+        s = requests.get("https://en.wikipedia.org/w/api.php",
+                         params={"action": "query", "list": "search",
+                                 "srsearch": subject, "srlimit": 1,
+                                 "format": "json"},
+                         headers={"User-Agent": "TheLast24/1.0 (news brief; contact support@thelast24.in)"},
+                         timeout=20)
+        s.raise_for_status()
+        hits = s.json().get("query", {}).get("search", [])
+        if not hits:
+            return None
+        title = hits[0]["title"]
+        # Get the page's lead image (thumbnail) + the original file name.
+        p = requests.get("https://en.wikipedia.org/w/api.php",
+                         params={"action": "query", "titles": title,
+                                 "prop": "pageimages", "piprop": "original|name",
+                                 "format": "json"},
+                         headers={"User-Agent": "TheLast24/1.0 (news brief; contact support@thelast24.in)"},
+                         timeout=20)
+        p.raise_for_status()
+        pages = p.json().get("query", {}).get("pages", {})
+        page = next(iter(pages.values()), {})
+        original = page.get("original", {})
+        img_url = original.get("source")
+        if not img_url or not img_url.startswith("http"):
+            return None
+        # Skip SVGs/logos and tiny images — we want real photographs.
+        if img_url.lower().endswith((".svg", ".png")):
+            return None
+        # Fetch the file's attribution (artist) for a proper credit line.
+        credit = "Wikimedia Commons"
+        fname = page.get("pageimage")
+        if fname:
+            try:
+                m = requests.get("https://en.wikipedia.org/w/api.php",
+                                 params={"action": "query", "titles": "File:" + fname,
+                                         "prop": "imageinfo", "iiprop": "extmetadata",
+                                         "format": "json"},
+                                 headers={"User-Agent": "TheLast24/1.0 (support@thelast24.in)"},
+                                 timeout=20)
+                meta = next(iter(m.json().get("query", {}).get("pages", {}).values()), {})
+                ext = (meta.get("imageinfo", [{}])[0].get("extmetadata", {}))
+                artist = ext.get("Artist", {}).get("value", "")
+                # Strip any HTML tags from the artist field.
+                artist = re.sub(r"<[^>]+>", "", artist).strip()
+                if artist:
+                    credit = artist[:80]
+            except Exception:
+                pass
+        print(f"  wikimedia: '{subject}' -> {title}")
+        return {"image": img_url, "image_kind": "photo",
+                "image_credit": credit + " / Wikimedia Commons",
+                "image_credit_url": "https://en.wikipedia.org/wiki/" + title.replace(" ", "_")}
+    except Exception as exc:
+        print(f"  wikimedia miss for '{subject}': {exc}")
+        return None
+
 def resolve_image(st):
-    """Three-tier resolver with the real-person/real-event guardrail."""
+    """Relevance-first image resolver with the real-person/real-event guardrail.
+    1) Wikimedia photo of the named real subject (most relevant, legal w/ credit)
+    2) Stock photo across Pexels/Unsplash/Pixabay (generic but real)
+    3) AI illustration — concept stories only, never real people/events
+    4) Editorial art fallback (at render time)."""
     safety = (st.get("image_safety") or "real").lower()
     query = st.get("image_query")
-    # Tier 1: real photo first, always.
+    subject = st.get("image_subject")
+
+    # Tier 1: a real photo of the actual named subject (people, places, bodies).
+    wiki = fetch_wikimedia(subject)
+    if wiki:
+        return wiki
+    # Tier 2: stock photo (best match across three free libraries).
     photo = fetch_photo(query)
     if photo:
         return photo
-    # Tier 2: AI illustration ONLY for concept stories (never real people/events).
+    # Tier 3: AI illustration ONLY for concept stories (never real people/events).
     if safety == "concept":
         ai = generate_ai_image(query or st.get("headline", ""), st["slug"])
         if ai:
             print(f"  AI illustration generated for concept story: {st['slug']}")
             return ai
-    # Tier 3: editorial art fallback (handled at render time).
+    # Tier 4: editorial art fallback (handled at render time).
     return None
 
 # -------------------------------------------------------- generative art ---
@@ -653,7 +731,7 @@ def write_outputs(edition):
             st["slug"] = NOW.strftime("%Y%m%d") + "-" + slugify(st["headline"])
             img = resolve_image(st)
             if img: st.update(img)
-            st.pop("image_query", None); st.pop("image_safety", None)
+            st.pop("image_query", None); st.pop("image_safety", None); st.pop("image_subject", None)
             with open(f"articles/{st['slug']}.html", "w", encoding="utf-8") as f:
                 f.write(article_page(st, sec, edition))
     # homepage data (article text not needed client-side)
