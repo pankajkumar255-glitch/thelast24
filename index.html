@@ -89,7 +89,7 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   @media (max-width:600px){.brand-meta{display:none}}
   .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 120s linear infinite;will-change:transform}
+  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 150s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
   @keyframes scroll{to{transform:translateX(-50%)}}
   .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
@@ -173,7 +173,15 @@
     .wrap{padding:0 14px}
     /* Cards: near-full-width with a peek of the next, consistent gap */
     .hscroll{gap:12px;padding:2px 0 14px}
-    .card{flex:0 0 86vw;border-radius:16px}
+    .card{flex:0 0 82vw;border-radius:16px}
+    /* Right-edge fade overlay on each carousel = visible "more →" hint.
+       Lives on the section, sits over the scroll rail's right edge. */
+    section{position:relative}
+    .rail-wrap{position:relative}
+    .rail-wrap{--fade:1}
+    .rail-wrap::after{content:"";position:absolute;top:0;right:0;bottom:14px;width:42px;
+      background:linear-gradient(90deg,rgba(246,246,244,0),var(--paper));
+      pointer-events:none;z-index:2;opacity:var(--fade);transition:opacity .2s}
     .card .pad{padding:15px 16px 16px;gap:8px}
     /* Headline: a touch smaller, comfortable line-height, no overflow */
     .card h3{font-size:17.5px;line-height:1.28;letter-spacing:-.01em;word-break:break-word}
@@ -193,10 +201,11 @@
     .sec-head .count{display:none}
     .sec-more{font-size:10.5px;padding:7px 12px}
     /* Topline: comfortable reading measure, centered, not cramped */
-    .today{padding:20px 0 6px;gap:18px}
-    .topline{font-size:15px;line-height:1.65;padding:0 8px;font-weight:500;letter-spacing:0}
+    .today{padding:20px 10px 6px;gap:18px}
+    .topline{font-size:15px;line-height:1.65;padding:0 6px;font-weight:500;letter-spacing:0;max-width:100%}
     .strip-cells{height:14px;gap:3px}
-    .strip-caption{font-size:9.5px;line-height:1.4;margin-top:10px;padding:0 12px}
+    .strip-box{padding:0 4px}
+    .strip-caption{font-size:9.5px;line-height:1.5;margin-top:10px;padding:0 16px}
     /* Carousel: title sits clear of the gradient, dek hidden already */
     .slide h2{font-size:19px;line-height:1.18}
     .slide-content{padding:14px 16px 18px}
@@ -204,6 +213,13 @@
     /* Filter chips: easy to tap, no crowding */
     .chip{font-size:12.5px;padding:8px 14px}
     .nav-inner{gap:5px;padding:10px 0}
+    /* Filter row also gets a right-edge fade hint when scrollable */
+    nav{position:sticky;top:0}
+    .nav-fade{position:relative}
+    .nav-fade{--fade:1}
+    .nav-fade::after{content:"";position:absolute;top:0;right:0;bottom:0;width:38px;
+      background:linear-gradient(90deg,rgba(246,246,244,0),rgba(246,246,244,.95));
+      pointer-events:none;z-index:2;opacity:var(--fade);transition:opacity .2s}
     /* Newsletter popup: fit small screens without edge-bleed */
     .nl{right:10px;left:10px;bottom:10px;padding:18px}
     .nl h4{font-size:18px}
@@ -306,11 +322,11 @@
   <p class="topline rise in" id="topline"></p>
   <a class="strip-box rise in" href="archive.html" aria-label="Browse the full archive">
     <div class="strip-cells" id="strip" aria-label="Hours when stories broke"></div>
-    <p class="strip-caption">Each lit cell: an hour something broke — tap to browse the full archive →</p>
+    <p class="strip-caption">Each cell marks a major event from around the world — tap to explore all stories in our archive →</p>
   </a>
 </div>
 
-<nav><div class="wrap nav-inner" id="nav"></div></nav>
+<nav><div class="wrap nav-fade"><div class="nav-inner" id="nav"></div></div></nav>
 
 <main class="wrap" id="main"></main>
 
@@ -803,7 +819,9 @@ window.BRIEF = window.BRIEF || {
         '</p></div>';
       rail.appendChild(d);
     });
-    sec.appendChild(rail);
+    var railWrap = document.createElement('div'); railWrap.className = 'rail-wrap';
+    railWrap.appendChild(rail);
+    sec.appendChild(railWrap);
     var step = function(){ return (rail.firstChild ? rail.firstChild.getBoundingClientRect().width + 16 : 336); };
     prev.addEventListener('click', function(){ rail.scrollBy({left: -step(), behavior: noMotion?'auto':'smooth'}); });
     next.addEventListener('click', function(){ rail.scrollBy({left: step(), behavior: noMotion?'auto':'smooth'}); });
@@ -817,6 +835,23 @@ window.BRIEF = window.BRIEF || {
     }
   });
   setFilter('all');
+
+  // Honest scroll hints: hide a rail's right-edge fade once it's scrolled to the end.
+  function wireFade(scroller, wrapper){
+    function update(){
+      var atEnd = scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4;
+      var scrollable = scroller.scrollWidth > scroller.clientWidth + 4;
+      wrapper.style.setProperty('--fade', (scrollable && !atEnd) ? '1' : '0');
+    }
+    scroller.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    setTimeout(update, 100);
+  }
+  document.querySelectorAll('.rail-wrap').forEach(function(w){
+    var r = w.querySelector('.hscroll'); if(r) wireFade(r, w);
+  });
+  var navFade = document.querySelector('.nav-fade');
+  if(navFade) wireFade(document.getElementById('nav'), navFade);
 
   // scroll-reveal
   if('IntersectionObserver' in window && !noMotion){
