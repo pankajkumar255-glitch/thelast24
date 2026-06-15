@@ -89,7 +89,7 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   @media (max-width:600px){.brand-meta{display:none}}
   .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 60s linear infinite;will-change:transform}
+  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 120s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
   @keyframes scroll{to{transform:translateX(-50%)}}
   .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
@@ -193,8 +193,10 @@
     .sec-head .count{display:none}
     .sec-more{font-size:10.5px;padding:7px 12px}
     /* Topline: comfortable reading measure, centered, not cramped */
-    .today{padding:22px 0 4px;gap:16px}
-    .topline{font-size:17px;line-height:1.5;padding:0 4px}
+    .today{padding:20px 0 6px;gap:18px}
+    .topline{font-size:15px;line-height:1.65;padding:0 8px;font-weight:500;letter-spacing:0}
+    .strip-cells{height:14px;gap:3px}
+    .strip-caption{font-size:9.5px;line-height:1.4;margin-top:10px;padding:0 12px}
     /* Carousel: title sits clear of the gradient, dek hidden already */
     .slide h2{font-size:19px;line-height:1.18}
     .slide-content{padding:14px 16px 18px}
