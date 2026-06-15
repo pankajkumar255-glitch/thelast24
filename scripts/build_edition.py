@@ -899,11 +899,102 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
         f.write(page)
     print(f"archive.html rebuilt: {total} stories across {len(dates)} days.")
 
+def build_tweet_queue(edition, max_per_day=10):
+    """After each run, generate personalised reporting tweets for the most
+    important new stories and append them to tweets/queue.json (deduped, capped
+    at max_per_day per IST day). n8n reads this queue and posts to X."""
+    import glob
+    os.makedirs("tweets", exist_ok=True)
+    qpath = "tweets/queue.json"
+    today = NOW.strftime("%Y-%m-%d")
+
+    # Load existing queue; reset the day's counter if it's a new day.
+    queue = {"day": today, "posted_keys": [], "pending": []}
+    if os.path.exists(qpath):
+        try:
+            with open(qpath, encoding="utf-8") as f:
+                loaded = json.load(f)
+            if loaded.get("day") == today:
+                queue = loaded
+        except Exception:
+            pass
+
+    already = set(queue.get("posted_keys", [])) | {t["key"] for t in queue.get("pending", [])}
+    day_count = len(queue.get("posted_keys", [])) + len(queue.get("pending", []))
+    room = max_per_day - day_count
+    if room <= 0:
+        print(f"Tweet quota for {today} reached ({day_count}/{max_per_day}); none added.")
+        with open(qpath, "w", encoding="utf-8") as f:
+            json.dump(queue, f, ensure_ascii=False, indent=2)
+        return
+
+    # Rank this run's stories: breaking first, then most recent.
+    ranked = []
+    for sec in edition["sections"]:
+        for st in sec["stories"]:
+            ranked.append((sec, st))
+    ranked.sort(key=lambda p: (not p[1].get("breaking", False), -(p[1].get("hour", 0))))
+
+    site = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
+    added = 0
+    for sec, st in ranked:
+        if added >= room:
+            break
+        key = st.get("slug") or st.get("headline")
+        if key in already:
+            continue
+        link = f"{site}/articles/{st['slug']}.html" if st.get("slug") else site
+        tweet = generate_tweet(st, sec["name"], link)
+        if not tweet:
+            continue
+        queue["pending"].append({"key": key, "text": tweet, "url": link,
+                                 "section": sec["name"],
+                                 "created": NOW.strftime("%Y-%m-%d %H:%M IST")})
+        already.add(key)
+        added += 1
+
+    with open(qpath, "w", encoding="utf-8") as f:
+        json.dump(queue, f, ensure_ascii=False, indent=2)
+    print(f"Tweet queue: added {added}, pending {len(queue['pending'])}, "
+          f"day total {day_count + added}/{max_per_day}.")
+
+
+def generate_tweet(st, section_name, link):
+    """One personalised, reporting-style tweet (<=270 chars incl. link) with
+    2-3 relevant hashtags. Factual, punchy, never sensational — fits a verified
+    news brand. Returns None on failure."""
+    sys_prompt = (
+        "You write tweets for 'The Last 24', a verified Indian news brief. Voice: "
+        "a sharp, trustworthy reporter — punchy but factual, never clickbait, never "
+        "sensational, no fabricated detail. Write ONE tweet for the story below.\n"
+        "Rules: under 230 characters of text (a link is appended separately). Lead "
+        "with the news. Name the real people/places/figures. Add a crisp reason it "
+        "matters if it fits. End with 2-3 relevant hashtags (e.g. #IndiaNews plus "
+        "topical ones). No 'BREAKING' unless it truly is. No emojis except at most one. "
+        'Respond with ONLY this JSON: {"tweet":"...the tweet text with hashtags..."}')
+    user = (f"Section: {section_name}\nHeadline: {st['headline']}\n"
+            f"Summary: {st.get('what','')}\nWhy it matters: {st.get('lens','')}")
+    try:
+        data = extract_json(call_claude(sys_prompt, user, 400), "tweet")
+        text = str(data.get("tweet", "")).strip()
+        if not text:
+            return None
+        # Keep room for the link (~24 chars on X via t.co) + a space.
+        if len(text) > 250:
+            text = text[:247].rsplit(" ", 1)[0] + "…"
+        return f"{text}\n{link}"
+    except (RuntimeError, ValueError) as exc:
+        print(f"  tweet generation failed for '{st.get('headline','')[:40]}': {exc}")
+        return None
+
+
 def main():
     raw = collect_headlines()
     print(f"Collected {len(raw.splitlines())} headlines.")
-    write_outputs(write_edition(raw))
+    edition = write_edition(raw)
+    write_outputs(edition)
     build_archive()
+    build_tweet_queue(edition, max_per_day=10)
 
 if __name__ == "__main__":
     main()
