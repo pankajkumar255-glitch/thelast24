@@ -694,6 +694,12 @@ h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,40px);li
 .hero img{{display:block;width:100%;aspect-ratio:21/10;object-fit:cover}}
 .hero figcaption{{font-family:var(--mono);font-size:10.5px;color:var(--meta);padding:8px 14px;background:#fff;border-top:1px solid var(--hairline)}}
 .hero figcaption a{{color:var(--meta)}}
+@media (max-width:560px){{
+  .wrap{{padding:0 16px}}
+  .hero img{{aspect-ratio:3/2}}
+  .hero{{margin-bottom:20px;border-radius:14px}}
+  .block p{{font-size:15.5px;line-height:1.7}}
+}}
 .block{{padding:18px 0;border-bottom:1px solid var(--hairline)}}
 .block h2{{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);margin-bottom:7px}}
 .block p{{font-size:16.5px;color:var(--ink-soft)}}
