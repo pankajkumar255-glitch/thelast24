@@ -1,0 +1,40 @@
+name: Daily social assets
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # 02:30 UTC = 08:00 IST, daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  social:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: publish
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install Pillow
+      - name: Build Instagram carousels from yesterday's editions
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: python scripts/build_social.py
+      - name: Commit social assets
+        run: |
+          git config user.name "social-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add social/
+          git diff --cached --quiet && echo "No social assets to publish." && exit 0
+          git commit -m "Social assets $(date -u +'%F')"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git merge -X ours --no-edit origin/main && git push; then
+              echo "Published on attempt $attempt."; exit 0
+            fi
+            echo "retry $attempt..."; sleep 5
+          done
+          echo "Could not publish social assets." && exit 1
