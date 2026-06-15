@@ -257,6 +257,15 @@ def write_edition(raw):
             except (RuntimeError, ValueError) as exc:
                 print(f"  -> attempt failed ({exc}); trying a simpler request...")
         if stories:
+            # Drop near-duplicates within the section (same event from 2 sources).
+            deduped, fps = [], []
+            for st in stories:
+                fp = _story_fingerprint(st)
+                if _is_dupe(fp, fps):
+                    print(f"  -> dropped near-duplicate: {st.get('headline','')[:50]}")
+                    continue
+                deduped.append(st); fps.append(fp)
+            stories = deduped
             sections.append({"id": sid, "name": name, "stories": stories})
             print(f"  -> {len(stories)} stories kept for {name}.")
         else:
@@ -309,6 +318,32 @@ def _story_dt(st):
         return NOW
 
 
+def _story_fingerprint(st):
+    """A loose fingerprint that matches the SAME story even when the headline is
+    reworded. Uses the set of significant words (>3 chars, minus common filler)
+    from the headline. Two headlines about the same event share most of these."""
+    stop = {"the", "and", "for", "with", "from", "that", "this", "after", "over",
+            "into", "amid", "says", "said", "will", "your", "you", "are", "was",
+            "has", "have", "its", "his", "her", "their", "they", "them", "than",
+            "more", "most", "new", "now", "set", "get", "but", "not", "all"}
+    words = re.findall(r"[a-z0-9]+", (st.get("headline") or "").lower())
+    sig = frozenset(w for w in words if len(w) > 3 and w not in stop)
+    return sig
+
+def _is_dupe(fp, seen_fps):
+    """True if fp shares a strong majority of significant words with any seen
+    fingerprint (same event, different wording)."""
+    if not fp:
+        return False
+    for s in seen_fps:
+        if not s:
+            continue
+        overlap = len(fp & s)
+        smaller = min(len(fp), len(s))
+        if smaller and overlap / smaller >= 0.6:  # 60%+ shared significant words
+            return True
+    return False
+
 def topup_and_sort(edition, target=5, lookback_hours=48):
     """Ensure each section shows up to `target` stories by topping up thin
     sections with the most recent UNIQUE stories from previous editions (within
@@ -346,13 +381,18 @@ def topup_and_sort(edition, target=5, lookback_hours=48):
     have = {sec["id"]: sec for sec in edition["sections"]}
     for sid, sec in have.items():
         seen = {(s.get("slug") or s.get("headline")) for s in sec["stories"]}
+        seen_fps = [_story_fingerprint(s) for s in sec["stories"]]
         if len(sec["stories"]) < target:
             for st in past.get(sid, []):
                 key = st.get("slug") or st.get("headline")
                 if key in seen:
                     continue
+                fp = _story_fingerprint(st)
+                if _is_dupe(fp, seen_fps):
+                    continue
                 sec["stories"].append(st)
                 seen.add(key)
+                seen_fps.append(fp)
                 if len(sec["stories"]) >= target:
                     break
         # Newest-first by IST timestamp, then trim to target.
