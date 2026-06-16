@@ -31,7 +31,7 @@ window.BRIEF = {
           "what": "The Supreme Court of India has issued a firm ruling that clear and unambiguous court orders must be implemented unconditionally, without governments or authorities picking and choosing compliance. The ruling reinforces the foundational principle of the rule of law — that judicial directions are binding on all parties, including state institutions. The pronouncement comes amid growing instances of governments at various levels delaying or selectively following court mandates.",
           "lens": "This ruling directly strengthens every citizen's ability to enforce a court order against an uncooperative government or official — making judicial relief more meaningful in practice.",
           "source": "Deccan Herald",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbVJnX3JoUm5hQXVtT3JRNTlnSzF5VnFXQXo0QnRQYlJTMHR5UHV4M2VmVVNtVGFOMHBnYUQ2bnBoakhWQTNKaGxEbU11MTJveTlXbjFsbW4tMERhQXRyVmxzYm15dWpFaklqSHVYWnJ3d0pzc1pmT3dhcTNWcTRLMDBubGQwZnBsTGNnODJ1bTBSMjdMd2N3LUFLcFg2Z3JMcmxCNUV5clladTNIZ213VTlyVnd5ZlViVTRNTG9VVkQ?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbVJnX3JoUm5hQXVtT3JRNTlnSzF5VnFXQXo0QnRQYlJTMHR5UHV4M2VmVVNtVGFOMHBnYUQ2bnBoakhWQTNKaGxEbU11MTJveTlXbjFsbW4tMERhQXRyVmxzYm15dWpFaklqSHVYWnJ3d0pzc1pmT3dhcTNWcTRLMDBubGQwZnBsTGNnODJ1bTBSMjdMd2N3LUFLcFg2Z3JMcmxCNUV5clladTNIZ213VTlyVnd5ZlViVTRNTG9VVkQ",
           "breaking": false,
           "slug": "20260617-supreme-court-clear-court-orders-must-be-implemented-unconditionally",
           "image": "https://images.pexels.com/photos/36984938/pexels-photo-36984938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -117,8 +117,8 @@ window.BRIEF = {
           "slug": "20260617-modi-and-trump-share-g7-handshake-ahead-of-first-bilateral-in-16-month",
           "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg",
           "image_kind": "photo",
-          "image_credit": "Prime Minister's Office / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Narendra_Modi"
+          "image_credit": "Werner Pfennig",
+          "image_credit_url": "https://www.pexels.com/@werner-pfennig"
         },
         {
           "hour": 16,
@@ -157,7 +157,7 @@ window.BRIEF = {
           "what": "India publicly slammed a draft proposal circulating at the United Nations on the expansion of the UN Security Council, calling for greater clarity in the negotiation process before any text can be accepted. New Delhi has long sought a permanent seat on an expanded Security Council and has been part of the G4 bloc — alongside Germany, Japan, and Brazil — pushing for reform. India's objection signals frustration with a process it believes is being steered in a direction that may not result in genuine, equitable expansion.",
           "lens": "India's bid for a permanent UN Security Council seat is a cornerstone of its foreign policy ambitions — and any setback directly affects its standing as a rising global power.",
           "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZzdDMWxXalhsQzhfYWxvYlhvTWNJSVlybUI2V0E0d2swWUhhYVdoYmd1Mk83X1hGVXk4dk4wdmJNcXI2c3ZZbDlxNjhnc0hMVl9GTEsxZThDRl9mRWI2aHBSTEl0NGIwaXBBaWIwXzJYbUU4VUU3bjd0R2tVVi05bXlSQWsyOVgtcldtOVZ3Y2wwZk5MaEdiVGNadEdSZ2xfY01jWTc1aERmQjd0R3c?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaEJvWUpzRHJKbkRDYVZ4STFpUVliT2QwY1BTWXdYOFRvUWdTNFhRcVBJT3BmMG1fUHBjVlZWRTFMNEJNN05NQ25Na2phVXdoRURJeG9aSlFEazk5WVMzQ1JKckNoalM1cl9QdXBXRDR5Q0xhNG0zMFhDeWFGRHZXM3dVSjBJbFhENFhMLWZTLVdvdDlweHNLZmJsWkVfOURzMllfenpVaVhmeVE?oc=5",
           "breaking": false,
           "slug": "20260617-india-rejects-un-security-council-expansion-draft-demands-negotiation",
           "image": "https://images.pexels.com/photos/36207471/pexels-photo-36207471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -286,10 +286,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBvU1A3YXdwdkdEeEhvQ1lLLVhhUk9sWUdXUFdDb1F4NjUxRDlnVDFkOUNjdFVjbTBBc09kNmNkRl9UbzkyOFVvbjIxYjFoMVQ3MUNJNGFmOA?oc=5",
           "breaking": false,
           "slug": "20260617-spacex-overtakes-microsoft-and-amazon-in-market-cap-after-ipo",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/USA_-_Texas_-_Boca_Chica_-_Starbase_%2851285307187%29.jpg",
+          "image": "https://images.pexels.com/photos/586061/pexels-photo-586061.png?auto=compress&cs=tinysrgb&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Alexander Hatley from Spring, Texas, USA / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/SpaceX"
+          "image_credit": "SpaceX",
+          "image_credit_url": "https://www.pexels.com/@spacex"
         }
       ]
     },
@@ -369,8 +369,8 @@ window.BRIEF = {
           "slug": "20260617-10-years-of-smart-cities-mission-how-technology-is-transforming-urban",
           "image": "https://pixabay.com/get/g33d6303812f5b5a302289294a74e0768acc742d048cc6083e3ac40ba16ba4ce672e01aec1df5ff9743c1cbe4852dc85ee25e605589f4327da7c51a32471c7f55_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "harrywahidi",
-          "image_credit_url": "https://pixabay.com/users/harrywahidi-17829432/"
+          "image_credit": "Danielinblue / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Alibaba_Group"
         },
         {
           "hour": 0,
@@ -607,7 +607,7 @@ window.BRIEF = {
           "what": "Director Raj Nidimoru has revealed that Telugu superstar Chiranjeevi was the original choice to play the lead role in Amazon Prime Video's The Family Man, before Manoj Bajpayee was eventually cast. The spy thriller went on to become one of India's most acclaimed OTT series, with Bajpayee's portrayal of Srikant Tiwari earning widespread praise. The revelation offers a striking glimpse into how differently one of India's defining web series could have turned out.",
           "lens": "It's a rare behind-the-scenes peek at how casting decisions can completely reshape a show that millions of Indians now consider a classic.",
           "source": "The Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPT2s1ak13a25KSGhLOE16NmtmTFVzR3h3ZWt3Njg5ZENmTzdLTVNKZ1R0WU5yMF9yZEQyeUdPdm12N2ZSQWtTOFRMSWlXWUltNXNzbEhzcVd4R0duZk9ZRE9QT1hCVl9zLWMyZGJycklrUnp4MVp2WTcwRTlPSk1MOUNQNEV6X1JKMExmZGNrZzg0YVJJTTk0bWNKVUdYaThhRmh4YWlNQTdWX3M2VUFueGNhQlZMWDVVRVd3T0hQNW5yZGNCc2xRc1JDRGRjbVFR0gHXAUFVX3lxTFAwUzZjbXJRbTJGd2k3ak56SHU3VEtoa3pZV2tnYVY4OG9nUlpaM2hVcWdWdFhUdG1UVjZCdWlyeXhkTW1FcTJLSjdWMkZJNzZjLURIakdwU253YzJyUzBvaERiOWctMTQtTWNMWXlJMVRzSzg1X2NCYXBGYkpxQnllbWJfVXQxaVJFUnRLLW5COWhBMnB1VVF5WXFUb3dFZTFoVmxtMktqUXZJMTJKNjU5WF9USnRvaEM1LWtsTEhVV2wweHBtYkktYnlSMGpXbzZlTzdNNXV3",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPMlBOU2NLWXJhUGpJeGlFel9xTmxOS2V5aTlwR25aX2R6b1ZDMEE3dDU1ODM4VXlqS0NNMGprcmd1QkdXRWlWR25tX3pKVmxHSzhmbjJvbWJrSUJ1dE9Ya19uaGxMMGt4dE9rWGlIV2pyYk5fZWpmcllJSlZTc21OekYwUG5wb2VqZmdjZGRERWkwNjZCMHBQTmZuanNZWXBYelBkWEQ5a3JYN3B2SUtrblNVbDAySC1NajZ4cGd6VHlJMl9MaDBiODhSS3ZkTFNfNWd6WnY1QnN3YUtwWlHSAeQBQVVfeXFMT1U0bEVfNDhocVdSTTE4REJ2dzFoWjBqZ05CdlRiUnc2QUtjdVJtQ2dIQURGSUxic1Q5NkFUcW5KWThhVXlpV3ZDaG42ZlhDcnlUNUhpRkphMTJ2NFJCUGF3dGFINS13b1NtMVNJNF94S2NkVWdmc0RuWlRfSHJvQnBfMFFwMzYzamRBb0ZRVnp6aF94MHZBT0NTYnRIblE3akdlbmVabGhvUEZQWkNUb1NnRmtpMFhZdi1pWXdBMVdJck50WlNCZFZOWk9BaXJkanBseHVpTnJpT0lrYW1oZC13dDVD?oc=5",
           "breaking": false,
           "slug": "20260617-chiranjeevi-not-manoj-bajpayee-was-the-original-choice-for-the-family",
           "image": "https://images.pexels.com/photos/8088390/pexels-photo-8088390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -631,19 +631,34 @@ window.BRIEF = {
           "image_credit_url": "https://pixabay.com/users/Frank_Rietsch-638998/"
         },
         {
+          "hour": 16,
+          "time": "16:06 IST",
+          "headline": "Raj Nidimoru reveals Manoj Bajpayee was not the first choice for The Family Man",
+          "what": "Director Raj Nidimoru has disclosed that Manoj Bajpayee, who went on to deliver a career-defining performance as Srikant Tiwari in Amazon Prime Video's The Family Man, was not the original pick for the lead role. The revelation sheds new light on the casting process behind one of India's most celebrated web series. Bajpayee's portrayal has since won him multiple awards and is widely credited with redefining the Indian spy-thriller genre on OTT.",
+          "lens": "For fans of The Family Man, this is a fascinating glimpse into how differently one of India's most beloved shows could have turned out.",
+          "source": "NDTV",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQVNVWEJraS1hUVJwajN3Sy0xV2lTY2hsS3dJZkFScGozbnJvUHpELVhMVmQ0a0FjZzdNQU43N0RWMm45TC1iQWNic21KUnpTdDhHLWF5dFdUM3A5dWZoeTVtanB0MUYwNzJBTU9iMl9rbzVtSnJuY0VRSDktbTZSYWxJWl9JUHpZR1huRG0zUFQ4blc5Y0d2Wkk0R1V4SkhtV3BHc0JfcVNWQ1gxNDRPZGUySFJDUEp1TXZmMGZJX3V5RlNiVG93VnpLcnZxQ25UdDJZMTBkVQ?oc=5",
+          "breaking": false,
+          "slug": "20260617-raj-nidimoru-reveals-manoj-bajpayee-was-not-the-first-choice-for-the-f",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Manoj_Bajpai_at_52nd_IFFI.jpg",
+          "image_kind": "photo",
+          "image_credit": "Ministry of Information and Broadcasting / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Manoj_Bajpayee"
+        },
+        {
           "hour": 10,
           "time": "10:33 IST",
           "headline": "Drishyam 3, Athiradi and more: South Indian OTT releases to watch this week",
-          "what": "South Indian OTT offerings this week include Drishyam 3 and Athiradi, among other titles, as streaming platforms continue to expand their regional language catalogues, according to Moneycontrol. The South Indian OTT segment has grown rapidly, driven by pan-India appetite for Tamil, Telugu and Malayalam content following blockbuster crossover hits. The week's slate offers viewers a range of genres across languages.",
-          "lens": "South Indian OTT content has become must-watch viewing for audiences across the country, and this week's releases add to a catalogue that has reshaped what Indians expect from streaming entertainment.",
+          "what": "Moneycontrol reports that a fresh slate of South Indian films is arriving on OTT platforms this week, headlined by the highly anticipated Drishyam 3 alongside Athiradi and other titles. Drishyam 3, the latest instalment in the blockbuster Malayalam thriller franchise, has been one of the most talked-about upcoming releases. The weekly OTT drop gives viewers across India instant access to some of the biggest regional productions.",
+          "lens": "If you have been waiting to stream Drishyam 3 at home, this week is when it arrives — a must-watch for fans of the franchise.",
           "source": "Moneycontrol.com",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVzROV3BuRm15WjdacFhLa21Nc05HMlRaeG5USWVYV0N5U1NoQkljbVhackpYc1pER2NDOWRLeTlTWXExdTd3TzZ4U0plZ2Jzd0FNZU5vekk3SGFVVFY3SXVxaHV3MjQxaUlzQU1xeHJhQlEyMUVGZzJyQTZqQ2VxSTQxRzZzSXRkaEpKZkd0Q3RGOXlkVE5pdjN2U1ZWSXhsVWVuWFp4ZUJaSnBkbU0wWS1UYkFHdGZCVnJ2allvcHBxYlJzRjRV0gHHAUFVX3lxTE5XNE5XcG5GbXlaN1pwWEtrbU1zTkcyVFp4blRJZVhXQ3lTU2hCSWNtWFpySlhzWkRHY0M5ZEt5OVNZcTF1N3dPNnhTSmVnYnN3QU1lTm96STdIYVVUVjdJdXFodXcyNDFpSXNBTXF4cmFCUTIxRUZnMnJBNmpDZXFJNDFHNnNJdGRoSkpmR3RDdEY5eWRUTml2M3ZTVlZJeGxVZW5YWnhlQlpKcGRtTTBZLVRiQUd0ZkJWcnZqWW9wcHFiUnNGNFU",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVzROV3BuRm15WjdacFhLa21Nc05HMlRaeG5USWVYV0N5U1NoQkljbVhackpYc1pER2NDOWRLeTlTWXExdTd3TzZ4U0plZ2Jzd0FNZU5vekk3SGFVVFY3SXVxaHV3MjQxaUlzQU1xeHJhQlEyMUVGZzJyQTZqQ2VxSTQxRzZzSXRkaEpKZkd0Q3RGOXlkVE5pdjN2U1ZWSXhsVWVuWFp4ZUJaSnBkbU0wWS1UYkFHdGZCVnJ2allvcHBxYlJzRjRV0gHHAUFVX3lxTE5XNE5XcG5GbXlaN1pwWEtrbU1zTkcyVFp4blRJZVhXQ3lTU2hCSWNtWFpySlhzWkRHY0M5ZEt5OVNZcTF1N3dPNnhTSmVnYnN3QU1lTm96STdIYVVUVjdJdXFodXcyNDFpSXNBTXF4cmFCUTIxRUZnMnJBNmpDZXFJNDFHNnNJdGRoSkpmR3RDdEY5eWRUTml2M3ZTVlZJeGxVZW5YWnhlQlpKcGRtTTBZLVRiQUd0ZkJWcnZqWW9wcHFiUnNGNFU?oc=5",
           "breaking": false,
           "slug": "20260617-drishyam-3-athiradi-and-more-south-indian-ott-releases-to-watch-this-w",
-          "image": "https://pixabay.com/get/gb9ad34aca8f4ecb8f9d5775e41517330980e7940d9e70b34f8ccb05be5453cafd6fd95945bcbccaa19bfd09fc4950ceb713c6b92def8cbe818aa9e84f2b385fc_1280.jpg",
+          "image": "https://pixabay.com/get/g14fd02df09be52df21a4851e1a4a3f8403ea042ed8e57bf35534e947b7a2aa0e750a3190733223d35f37bc14a90684343f5b649a8b42791702247d48b7679c6f_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "rmsep4",
-          "image_credit_url": "https://pixabay.com/users/rmsep4-12979322/"
+          "image_credit": "Tumisu",
+          "image_credit_url": "https://pixabay.com/users/Tumisu-148124/"
         },
         {
           "hour": 9,
