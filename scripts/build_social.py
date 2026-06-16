@@ -1,26 +1,46 @@
 #!/usr/bin/env python3
 """
-The Last 24 — Instagram carousel generator.
+The Last 24 — Instagram carousel generator (v2).
 
 Runs once a day (08:00 IST). Reads YESTERDAY's saved editions and renders, per
 section, a branded Instagram carousel (1080x1080 PNG slides) summarising the
-day: a cover slide + one slide per story + an outro slide. Also writes a
-caption with hashtags per carousel. n8n picks up social/instagram/<date>/ and
-posts each section's carousel.
+day, plus a rich, Claude-written caption.
 
-Brand: dark tile, green "24", category colour accents, the 24-hour-strip motif.
-No real people are drawn; slides are typographic (headline + context on brand
-background), which is fully compliant and on-brand.
+Design (v2):
+  - Cover slide: "Everything that happened in <Category> on <Date> — flip
+    through to read more."
+  - Story slides: lighter text (headline + one tight context line). Background
+    is MIXED per story:
+      * a highly-relevant image (Wikimedia real-subject photo, or a strongly
+        scored stock photo), dimmed so text stays readable; OR
+      * a branded pattern in the category colour (24-strip motif / shapes)
+        when no strong image match exists.
+    No real-people AI images; weak matches fall back to patterns, not random
+    photos.
+  - Caption: written by Claude — varied opening, short per-story summaries,
+    warm-but-credible voice, hashtags. (~1 API call per section.)
 
 Output:
   social/instagram/<YYYY-MM-DD>/<section>/slide-01.png ...
   social/instagram/<YYYY-MM-DD>/<section>/caption.txt
-  social/instagram/<YYYY-MM-DD>/manifest.json   (for n8n: sections, files, captions)
+  social/instagram/<YYYY-MM-DD>/manifest.json
 """
-import os, json, glob, textwrap
+import os, json, glob, io
 from datetime import datetime, timedelta, timezone
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+import requests
+
+# Reuse the relevance-first image resolver + Claude helpers from the pipeline.
+import importlib.util
+_spec = importlib.util.spec_from_file_location(
+    "build_edition", os.path.join(os.path.dirname(__file__), "build_edition.py"))
+_be = importlib.util.module_from_spec(_spec)
+try:
+    _spec.loader.exec_module(_be)
+except Exception as _e:
+    print(f"warn: could not import build_edition helpers: {_e}")
+    _be = None
 
 IST = timezone(timedelta(hours=5, minutes=30))
 NOW = datetime.now(IST)
@@ -39,9 +59,9 @@ SECTION_HUES = {
     "entertainment": (194, 49, 126),
 }
 HASHTAGS = {
-    "national": ["#IndiaNews", "#India"], "world": ["#WorldNews", "#India"],
-    "business": ["#Business", "#Markets", "#India"], "tech": ["#Tech", "#India"],
-    "ai": ["#AI", "#ArtificialIntelligence"], "sports": ["#Sports", "#India"],
+    "national": ["#IndiaNews", "#India"], "world": ["#WorldNews", "#GlobalNews"],
+    "business": ["#Business", "#Markets", "#Economy"], "tech": ["#Tech", "#Technology"],
+    "ai": ["#AI", "#ArtificialIntelligence"], "sports": ["#Sports", "#Cricket"],
     "entertainment": ["#Entertainment", "#Bollywood"],
 }
 
@@ -54,8 +74,11 @@ F_BODY = "DejaVuSans.ttf"
 F_MONO = "DejaVuSansMono.ttf"
 
 
+# ----------------------------------------------------------------------------
+# Text helpers
+# ----------------------------------------------------------------------------
 def wrap(draw, text, fnt, max_w):
-    words, lines, cur = text.split(), [], ""
+    words, lines, cur = (text or "").split(), [], ""
     for w in words:
         t = (cur + " " + w).strip()
         if draw.textlength(t, font=fnt) <= max_w:
@@ -69,15 +92,14 @@ def wrap(draw, text, fnt, max_w):
     return lines
 
 
-def draw_strip(d, x, y, w, hue):
-    """The signature 24-hour cell strip."""
+def draw_strip(d, x, y, w, hue, h=12):
     n, gap = 24, 5
     cw = (w - gap * (n - 1)) / n
     lit = {2, 5, 7, 8, 11, 14, 17, 20, 22}
     for i in range(n):
         cx = x + i * (cw + gap)
         color = hue if i in lit else CELL_OFF
-        d.rounded_rectangle([cx, y, cx + cw, y + 12], radius=3, fill=color)
+        d.rounded_rectangle([cx, y, cx + cw, y + h], radius=3, fill=color)
 
 
 def logo(d, x, y, size=40):
@@ -87,92 +109,206 @@ def logo(d, x, y, size=40):
     d.text((x + w, y), "24", font=f, fill=GREEN_BRIGHT)
 
 
-def cover_slide(section_name, sid, date_label, count):
+# ----------------------------------------------------------------------------
+# Backgrounds: relevant photo (dimmed) OR branded pattern
+# ----------------------------------------------------------------------------
+def _branded_pattern(hue):
+    """Branded pattern background in the category hue: dark base, soft tonal
+    shapes, and a ring accent. Always on-brand, never blank."""
+    import random
     img = Image.new("RGB", (SIZE, SIZE), INK)
-    d = ImageDraw.Draw(img)
-    hue = SECTION_HUES.get(sid, (14, 123, 82))
-    logo(d, 70, 70, 44)
-    d.text((70, 140), "VERIFIED PUBLISHERS ONLY", font=font(F_MONO, 20), fill=META)
-    # big section label
-    d.text((70, 360), section_name.upper(), font=font(F_DISPLAY, 78), fill=PAPER)
-    d.rectangle([70, 470, 70 + 120, 478], fill=hue)
-    d.text((70, 510), "What mattered yesterday", font=font(F_BODY, 40), fill=PAPER)
-    d.text((70, 575), date_label, font=font(F_MONO, 26), fill=META)
-    draw_strip(d, 70, 880, SIZE - 140, hue)
-    d.text((70, 920), f"{count} stories  ·  swipe →", font=font(F_MONO, 24), fill=META)
+    d = ImageDraw.Draw(img, "RGBA")
+    d.rectangle([0, 0, SIZE, SIZE], fill=(hue[0], hue[1], hue[2], 26))
+    rnd = random.Random(hue[0] * 100 + hue[1])
+    for _ in range(5):
+        r = rnd.randint(140, 320)
+        cx = rnd.randint(0, SIZE); cy = rnd.randint(0, SIZE)
+        a = rnd.randint(18, 40)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(hue[0], hue[1], hue[2], a))
+    d.ellipse([SIZE - 360, -120, SIZE + 120, 360], outline=(hue[0], hue[1], hue[2], 90), width=6)
     return img
 
 
-def story_slide(st, section_name, sid, idx, total):
-    img = Image.new("RGB", (SIZE, SIZE), PAPER)
-    d = ImageDraw.Draw(img)
+def _photo_background(image_url):
+    """Download a photo and turn it into a readable dimmed background: cover-
+    cropped square, darkened, slight blur, dark scrim at the foot so white text
+    reads. Returns an Image or None on failure."""
+    try:
+        r = requests.get(image_url, timeout=20,
+                         headers={"User-Agent": "TheLast24/1.0 (support@thelast24.in)"})
+        r.raise_for_status()
+        im = Image.open(io.BytesIO(r.content)).convert("RGB")
+    except Exception as exc:
+        print(f"  bg photo failed ({exc}); using pattern")
+        return None
+    w, h = im.size
+    side = min(w, h)
+    im = im.crop(((w - side) // 2, (h - side) // 2, (w - side) // 2 + side,
+                  (h - side) // 2 + side)).resize((SIZE, SIZE))
+    im = ImageEnhance.Brightness(im).enhance(0.55)
+    im = im.filter(ImageFilter.GaussianBlur(1.2))
+    scrim = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(scrim)
+    for y in range(SIZE):
+        if y < SIZE * 0.42:
+            a = 60
+        else:
+            a = int(60 + (y - SIZE * 0.42) / (SIZE * 0.58) * 150)
+        sd.line([(0, y), (SIZE, y)], fill=(8, 11, 8, min(a, 220)))
+    im = Image.alpha_composite(im.convert("RGBA"), scrim).convert("RGB")
+    return im
+
+
+def story_background(st, hue, used_images):
+    """Per-story background: strong relevant photo (dimmed) else branded
+    pattern. Returns (image, used_url_or_None, is_photo)."""
+    if _be is not None:
+        subject = st.get("image_subject")
+        query = st.get("image_query")
+        chosen_url = None
+        # Tier 1: Wikimedia real-subject photo (highly relevant by definition)
+        try:
+            wiki = _be.fetch_wikimedia(subject) if subject else None
+        except Exception:
+            wiki = None
+        if wiki and wiki.get("image") and wiki["image"] not in used_images:
+            chosen_url = wiki["image"]
+        else:
+            # Tier 2: stock photo, only if it exists (fetch_photo already scores
+            # and returns the best unused match; None if nothing fit)
+            try:
+                photo = _be.fetch_photo(query, used_images) if query else None
+            except Exception:
+                photo = None
+            if photo and photo.get("image"):
+                chosen_url = photo["image"]
+        if chosen_url:
+            bg = _photo_background(chosen_url)
+            if bg is not None:
+                return bg, chosen_url, True
+    return _branded_pattern(hue), None, False
+
+
+# ----------------------------------------------------------------------------
+# Slides
+# ----------------------------------------------------------------------------
+def cover_slide(section_name, sid, date_label):
+    img = Image.new("RGB", (SIZE, SIZE), INK)
+    d = ImageDraw.Draw(img, "RGBA")
     hue = SECTION_HUES.get(sid, (14, 123, 82))
-    # top band
-    d.rectangle([0, 0, SIZE, 90], fill=INK)
+    d.rectangle([0, 0, SIZE, SIZE], fill=(hue[0], hue[1], hue[2], 22))
+    d.ellipse([SIZE - 380, -140, SIZE + 120, 340], fill=(hue[0], hue[1], hue[2], 40))
+    d.ellipse([-160, SIZE - 300, 240, SIZE + 120], fill=(hue[0], hue[1], hue[2], 30))
+    logo(d, 70, 72, 40)
+    y = 300
+    head_f = font(F_DISPLAY, 64)
+    for line in wrap(d, f"Everything that happened in {section_name}", head_f, SIZE - 150):
+        d.text((70, y), line, font=head_f, fill=PAPER); y += 78
+    d.rectangle([74, y + 6, 74 + 90, y + 12], fill=hue)
+    d.text((70, y + 34), f"on {date_label}", font=font(F_BODY, 36), fill=PAPER)
+    d.text((70, SIZE - 150), "Flip through to read more  \u2192",
+           font=font(F_DISPLAY, 32), fill=GREEN_BRIGHT)
+    draw_strip(d, 70, SIZE - 80, SIZE - 140, hue)
+    return img
+
+
+def story_slide(st, section_name, sid, idx, total, used_images):
+    hue = SECTION_HUES.get(sid, (14, 123, 82))
+    bg, used_url, is_photo = story_background(st, hue, used_images)
+    img = bg.copy()
+    d = ImageDraw.Draw(img, "RGBA")
+    d.rectangle([0, 0, SIZE, 88], fill=(13, 18, 13, 235))
     logo(d, 50, 26, 30)
-    d.text((SIZE - 160, 36), f"{idx}/{total}", font=font(F_MONO, 24), fill=META)
-    # kicker
+    d.text((SIZE - 150, 34), f"{idx}/{total}", font=font(F_MONO, 24), fill=META)
     d.ellipse([70, 150, 88, 168], fill=hue)
-    d.text((100, 148), section_name.upper(), font=font(F_MONO, 24), fill=hue)
+    d.text((100, 147), section_name.upper(), font=font(F_MONO, 24), fill=PAPER)
     if st.get("breaking"):
-        d.text((100 + d.textlength(section_name.upper(), font=font(F_MONO, 24)) + 30, 148),
-               "● BREAKING", font=font(F_MONO, 24), fill=VERMILION)
-    # headline
-    hl_font = font(F_DISPLAY, 54)
-    y = 230
-    for line in wrap(d, st["headline"], hl_font, SIZE - 140)[:5]:
-        d.text((70, y), line, font=hl_font, fill=INK)
-        y += 66
-    # context (the "what")
+        kw = d.textlength(section_name.upper(), font=font(F_MONO, 24))
+        d.text((100 + kw + 26, 147), "\u25cf BREAKING", font=font(F_MONO, 24), fill=VERMILION)
+    hl_font = font(F_DISPLAY, 52)
+    hl_lines = wrap(d, st["headline"], hl_font, SIZE - 140)[:5]
+    block_h = len(hl_lines) * 62
+    ctx = (st.get("what") or "").strip()
+    if ctx:
+        first = ctx.split(". ")[0].strip()
+        if not first.endswith("."):
+            first += "."
+        ctx = first
+    ctx_font = font(F_BODY, 30)
+    ctx_lines = wrap(d, ctx, ctx_font, SIZE - 140)[:2]
+    total_h = block_h + 24 + len(ctx_lines) * 42
+    y = SIZE - 150 - total_h
+    for line in hl_lines:
+        d.text((70, y), line, font=hl_font, fill=PAPER); y += 62
     y += 20
-    ctx = st.get("what", "")
-    ctx_font = font(F_BODY, 33)
-    for line in wrap(d, ctx, ctx_font, SIZE - 140)[:6]:
-        d.text((70, y), line, font=ctx_font, fill=(67, 73, 63))
-        y += 46
-    # why it matters
-    if st.get("lens"):
-        y = max(y + 20, 760)
-        d.rectangle([70, y, 76, y + 110], fill=hue)
-        d.text((96, y), "WHY IT MATTERS", font=font(F_MONO, 22), fill=hue)
-        wy = y + 36
-        for line in wrap(d, st["lens"], font(F_BODY, 28), SIZE - 200)[:3]:
-            d.text((96, wy), line, font=font(F_BODY, 28), fill=(67, 73, 63))
-            wy += 38
-    # source footer
-    d.text((70, 1000), f"via {st.get('source','')}  ✓", font=font(F_MONO, 24), fill=META)
-    return img
+    for line in ctx_lines:
+        d.text((70, y), line, font=ctx_font, fill=(214, 220, 210)); y += 42
+    d.text((70, SIZE - 70), f"via {st.get('source','')}  \u2713", font=font(F_MONO, 22), fill=META)
+    return img, used_url
 
 
 def outro_slide(sid):
-    img = Image.new("RGB", (SIZE, SIZE), INK)
-    d = ImageDraw.Draw(img)
+    img = _branded_pattern(SECTION_HUES.get(sid, (14, 123, 82)))
+    d = ImageDraw.Draw(img, "RGBA")
+    d.rectangle([0, 0, SIZE, SIZE], fill=(13, 18, 13, 150))
     hue = SECTION_HUES.get(sid, (14, 123, 82))
-    logo(d, 70, 380, 60)
-    d.text((70, 480), "Full brief, every day:", font=font(F_BODY, 40), fill=PAPER)
-    d.text((70, 540), "thelast24.in", font=font(F_DISPLAY, 52), fill=GREEN_BRIGHT)
-    d.text((70, 640), "Everything that mattered in India,", font=font(F_BODY, 30), fill=META)
-    d.text((70, 680), "in five minutes.", font=font(F_BODY, 30), fill=META)
+    logo(d, 70, 360, 56)
+    d.text((70, 460), "The full brief, every day:", font=font(F_BODY, 38), fill=PAPER)
+    d.text((70, 516), "thelast24.in", font=font(F_DISPLAY, 50), fill=GREEN_BRIGHT)
+    d.text((70, 612), "Everything that mattered in India,", font=font(F_BODY, 28), fill=(214, 220, 210))
+    d.text((70, 648), "in five minutes.", font=font(F_BODY, 28), fill=(214, 220, 210))
     draw_strip(d, 70, 880, SIZE - 140, hue)
     return img
 
 
+# ----------------------------------------------------------------------------
+# Caption (Claude-written)
+# ----------------------------------------------------------------------------
 def build_caption(section_name, sid, stories, date_label):
-    lead = stories[0]["headline"] if stories else ""
-    lines = [f"📍 {section_name} — what mattered in India yesterday ({date_label})", ""]
-    for st in stories:
-        lines.append(f"• {st['headline']}")
-    lines += ["", "Full brief → thelast24.in", "Curated from verified publishers only. ✓", ""]
-    tags = HASHTAGS.get(sid, ["#IndiaNews"]) + ["#TheLast24", "#News"]
-    lines.append(" ".join(tags))
+    """Rich, Instagram-friendly caption written by Claude: varied opening, short
+    per-story summaries, warm-but-credible voice, hashtags. Falls back to a
+    simple assembled caption if the API is unavailable."""
+    tags = HASHTAGS.get(sid, ["#IndiaNews"]) + ["#TheLast24", "#NewsIndia"]
+    tagline = " ".join(tags)
+    if _be is not None:
+        items = "\n".join(f"- {s['headline']}: {s.get('what','')}" for s in stories)
+        sys_prompt = (
+            "You write Instagram captions for 'The Last 24', a verified Indian "
+            "news brief. Voice: warm but credible — a smart friend who reads the "
+            "news so others don't have to. Not stiff, not clickbait.\n"
+            f"Write ONE caption summarising the day's {section_name} stories for "
+            f"{date_label}.\n"
+            "Structure: (1) a fresh, varied opening line that hooks — vary it, "
+            "don't always start the same way; sometimes a teaser of the biggest "
+            "story, sometimes a 'here's what you missed', sometimes a question. "
+            "(2) a short, plain-language 1-2 sentence summary of EACH story, in "
+            "flowing form (you may use a line break between stories, but keep it "
+            "natural, not rigidly bulleted). (3) a soft close pointing readers to "
+            "the full brief at thelast24.in. Keep it under 1400 characters before "
+            "hashtags. Indian English, accurate, no invented facts.\n"
+            'Respond with ONLY JSON: {"caption":"...the caption text..."}')
+        try:
+            data = _be.extract_json(
+                _be.call_claude(sys_prompt, f"Stories:\n{items}", 1500), "caption")
+            cap = str(data.get("caption", "")).strip()
+            if cap:
+                return cap + "\n\n" + tagline
+        except Exception as exc:
+            print(f"  caption generation failed ({exc}); using simple caption")
+    lines = [f"What mattered in {section_name} \u2014 {date_label}", ""]
+    for s in stories:
+        summ = (s.get("what") or "").split(". ")[0]
+        lines.append(f"\u2022 {s['headline']} \u2014 {summ}.")
+    lines += ["", "Full brief \u2192 thelast24.in", "", tagline]
     return "\n".join(lines)
 
 
+# ----------------------------------------------------------------------------
+# Read yesterday, build
+# ----------------------------------------------------------------------------
 def yesterday_sections():
-    """Collect yesterday's stories grouped by section from saved editions."""
     y = (NOW - timedelta(days=1)).strftime("%Y-%m-%d")
-    by_section = {}
-    order = []
+    by_section, order = {}, []
     for path in sorted(glob.glob("editions/*.json")):
         if not os.path.basename(path).startswith(y):
             continue
@@ -207,18 +343,22 @@ def main():
 
     for sid in order:
         sec = by_section[sid]
-        stories = sec["stories"][:5]  # up to 5 per carousel
+        stories = sec["stories"][:5]
         if not stories:
             continue
         sdir = os.path.join(base, sid)
         os.makedirs(sdir, exist_ok=True)
-        slides = []
+        slides, used_images = [], set()
 
-        cover = cover_slide(sec["name"], sid, date_label, len(stories))
+        cover = cover_slide(sec["name"], sid, date_label)
         p = os.path.join(sdir, "slide-01.png"); cover.save(p); slides.append(p)
+
         for i, st in enumerate(stories, start=1):
-            s = story_slide(st, sec["name"], sid, i, len(stories))
+            s, used_url = story_slide(st, sec["name"], sid, i, len(stories), used_images)
+            if used_url:
+                used_images.add(used_url)
             p = os.path.join(sdir, f"slide-{i+1:02d}.png"); s.save(p); slides.append(p)
+
         outro = outro_slide(sid)
         p = os.path.join(sdir, f"slide-{len(stories)+2:02d}.png"); outro.save(p); slides.append(p)
 
