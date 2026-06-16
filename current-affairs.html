@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Current Affairs for UPSC & IAS — The Last 24</title>
+<meta name="description" content="Daily exam-relevant current affairs for UPSC, IAS and State PSC aspirants — polity, economy, international relations, schemes, science & tech, environment and more. Updated through the day. Verified sources only.">
+<link rel="canonical" href="https://thelast24.in/current-affairs.html">
+<meta property="og:title" content="Current Affairs for UPSC & IAS — The Last 24">
+<meta property="og:description" content="Daily exam-relevant current affairs for UPSC/IAS aspirants. Verified sources, updated through the day.">
+<meta property="og:url" content="https://thelast24.in/current-affairs.html">
+<link rel="icon" href="favicon.ico">
+<style>
+  :root{
+    --paper:#f6f6f4;--ink:#0d120d;--meta:#5d6b5d;--hairline:#e3e6e0;--green:#0E7B52;
+    --green-bright:#3BCB8D;--display:'Georgia',serif;--body:system-ui,-apple-system,'Segoe UI',sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6}
+  a{color:inherit}
+  .masthead{background:var(--ink);color:var(--paper);padding:18px 0}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  .brand{font-family:var(--display);font-weight:800;font-size:30px;text-decoration:none;color:var(--paper)}
+  .brand b{color:var(--green-bright)}
+  .masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .back{font-family:var(--mono);font-size:12px;color:var(--paper);opacity:.8;text-decoration:none}
+  .hero{padding:34px 0 8px}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
+  .hero p{font-size:16px;color:var(--meta);max-width:640px;margin:0}
+  .updated{font-family:var(--mono);font-size:12px;color:var(--meta);margin-top:14px}
+  .updated b{color:var(--green)}
+  nav.cats{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--hairline);z-index:5}
+  .cats-row{display:flex;gap:6px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+  .cats-row::-webkit-scrollbar{display:none}
+  .ca-chip{flex:0 0 auto;font-family:var(--mono);font-size:12px;padding:8px 14px;border:1px solid var(--hairline);
+    background:#fff;border-radius:999px;cursor:pointer;white-space:nowrap;color:var(--ink)}
+  .ca-chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .items{padding:24px 0 60px}
+  .ca-card{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:22px 22px;margin-bottom:16px;border-left:4px solid var(--green)}
+  .ca-kick{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .ca-cat{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .ca-gs{font-family:var(--mono);font-size:11px;color:var(--meta);background:var(--paper);padding:3px 8px;border-radius:6px}
+  .ca-card h3{font-family:var(--display);font-size:21px;line-height:1.25;margin:0 0 10px}
+  .ca-summary{font-size:15.5px;margin:0 0 14px}
+  .ca-angle{font-size:14.5px;background:var(--paper);border-radius:10px;padding:12px 14px;margin:0 0 14px}
+  .ca-angle b{color:var(--green)}
+  .ca-facts{margin:0 0 6px;padding:0;list-style:none}
+  .ca-facts li{font-size:14px;padding:4px 0 4px 18px;position:relative}
+  .ca-facts li::before{content:"▸";position:absolute;left:0;color:var(--green)}
+  .ca-src{font-family:var(--mono);font-size:11px;color:var(--meta);margin-top:8px}
+  .empty{text-align:center;color:var(--meta);padding:60px 0;font-family:var(--mono);font-size:13px}
+  footer{border-top:1px solid var(--hairline);padding:30px 0;font-family:var(--mono);font-size:12px;color:var(--meta);text-align:center}
+  @media (max-width:600px){
+    .wrap{padding:0 14px}
+    .ca-card{padding:18px 16px}
+    .ca-card h3{font-size:19px}
+    .hero h1{font-size:26px}
+  }
+</style>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+  <a class="brand" href="/">The Last <b>24</b></a>
+  <a class="back" href="/">← Back to brief</a>
+</div></header>
+
+<div class="wrap hero">
+  <h1>Current Affairs</h1>
+  <p>Exam-relevant current affairs, curated from verified publishers and updated through the day. Polity, economy, international relations, schemes, science &amp; tech, environment and more — each with the exam angle and key facts.</p>
+  <div class="updated" id="updated"></div>
+</div>
+
+<nav class="cats"><div class="wrap"><div class="cats-row" id="cats">
+  <button class="ca-chip active" data-cat="all">All</button>
+  <button class="ca-chip" data-cat="polity">Polity & Governance</button><button class="ca-chip" data-cat="economy">Economy & Banking</button><button class="ca-chip" data-cat="ir">International Relations</button><button class="ca-chip" data-cat="environment">Environment & Ecology</button><button class="ca-chip" data-cat="scitech">Science & Technology</button><button class="ca-chip" data-cat="schemes">Govt Schemes & Policies</button><button class="ca-chip" data-cat="defence">Defence & Security</button><button class="ca-chip" data-cat="reports">Reports & Indices</button><button class="ca-chip" data-cat="persons">Persons & Awards in News</button><button class="ca-chip" data-cat="places">Places in News</button><button class="ca-chip" data-cat="culture">Art & Culture</button>
+</div></div></nav>
+
+<div class="wrap items" id="items"></div>
+
+<footer><div class="wrap">
+  The Last 24 · Verified publishers only · <a href="/">Home</a> · <a href="/archive.html">Archive</a>
+</div></footer>
+
+<script src="current-affairs.js"></script>
+<script>
+  var HUES = {"polity": "#0E7B52", "economy": "#B07A1F", "ir": "#1F5FA8", "environment": "#2E8B57", "scitech": "#6A3FB5", "schemes": "#0E8E8E", "defence": "#CE3D1D", "reports": "#9A6A00", "persons": "#C2317E", "places": "#3B7A57", "culture": "#A8432B"};
+  var CA = window.CA || {items:[],categories:[],updated_label:""};
+  var filter = 'all';
+
+  function esc(s){ return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  function render(){
+    var box = document.getElementById('items');
+    var items = CA.items.filter(function(x){ return filter==='all' || x.category===filter; });
+    if(!items.length){ box.innerHTML = '<div class="empty">No current affairs in this category right now — check back after the next update.</div>'; return; }
+    box.innerHTML = items.map(function(x){
+      var hue = HUES[x.category] || '#0E7B52';
+      var facts = (x.key_facts||[]).map(function(f){ return '<li>'+esc(f)+'</li>'; }).join('');
+      return '<article class="ca-card" style="border-left-color:'+hue+'">'
+        + '<div class="ca-kick"><span class="ca-cat" style="color:'+hue+'">'+esc(x.category_name)+'</span>'
+        + (x.gs_paper?'<span class="ca-gs">'+esc(x.gs_paper)+'</span>':'')+'</div>'
+        + '<h3>'+esc(x.title)+'</h3>'
+        + (x.summary?'<p class="ca-summary">'+esc(x.summary)+'</p>':'')
+        + (x.exam_angle?'<div class="ca-angle"><b>Why it matters for the exam:</b> '+esc(x.exam_angle)+'</div>':'')
+        + (facts?'<ul class="ca-facts">'+facts+'</ul>':'')
+        + (x.source?'<div class="ca-src">via '+esc(x.source)+' ✓</div>':'')
+        + '</article>';
+    }).join('');
+  }
+
+  function setFilter(c){
+    filter = c;
+    [].forEach.call(document.querySelectorAll('.ca-chip'), function(b){
+      b.classList.toggle('active', b.getAttribute('data-cat')===c);
+    });
+    render();
+  }
+
+  document.getElementById('cats').addEventListener('click', function(e){
+    var b = e.target.closest('.ca-chip'); if(b) setFilter(b.getAttribute('data-cat'));
+  });
+
+  var present = {};
+  CA.items.forEach(function(x){ present[x.category]=true; });
+  [].forEach.call(document.querySelectorAll('.ca-chip'), function(b){
+    var c = b.getAttribute('data-cat');
+    if(c!=='all' && !present[c]) b.style.display='none';
+  });
+
+  document.getElementById('updated').innerHTML = CA.updated_label
+    ? 'Updated <b>'+esc(CA.updated_label)+'</b> · '+CA.items.length+' items today' : '';
+  render();
+</script>
+</body>
+</html>
