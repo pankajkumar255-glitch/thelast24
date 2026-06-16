@@ -439,7 +439,12 @@ def _pexels(query):
         out = []
         for p in r.json().get("photos", []):
             # Pexels exposes alt text describing the photo — use it for scoring.
-            out.append({"image": p["src"]["large"], "image_kind": "photo",
+            # Use large2x for a reliable, well-sized hotlink-friendly URL.
+            src = p.get("src", {})
+            img_url = src.get("large2x") or src.get("large") or src.get("original")
+            if not img_url:
+                continue
+            out.append({"image": img_url, "image_kind": "photo",
                         "image_credit": p.get("photographer", "Pexels"),
                         "image_credit_url": p.get("photographer_url", "https://www.pexels.com"),
                         "_text": p.get("alt", ""), "_src": "Pexels"})
@@ -1051,6 +1056,12 @@ def main():
     write_outputs(edition)
     build_archive()
     build_tweet_queue(edition, max_per_day=10)
+    # Current Affairs (UPSC/IAS) — re-curate the same headlines, exam-framed.
+    try:
+        import build_current_affairs as bca
+        bca.build_current_affairs(raw, call_claude, extract_json)
+    except Exception as exc:
+        print(f"Current affairs step skipped: {exc}")
 
 if __name__ == "__main__":
     main()
