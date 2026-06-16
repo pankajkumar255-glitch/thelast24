@@ -331,16 +331,18 @@ def _story_fingerprint(st):
     return sig
 
 def _is_dupe(fp, seen_fps):
-    """True if fp shares a strong majority of significant words with any seen
-    fingerprint (same event, different wording)."""
-    if not fp:
-        return False
+    """True only if fp shares a strong majority of significant words with a seen
+    fingerprint AND both have enough words to be confident (same event, reworded).
+    Conservative by design: better to allow a rare dupe than drop a real story."""
+    if not fp or len(fp) < 4:
+        return False  # too few words to judge confidently
     for s in seen_fps:
-        if not s:
+        if not s or len(s) < 4:
             continue
         overlap = len(fp & s)
-        smaller = min(len(fp), len(s))
-        if smaller and overlap / smaller >= 0.6:  # 60%+ shared significant words
+        union = len(fp | s)
+        # Jaccard similarity: shared / total distinct words. 0.7+ = same story.
+        if union and overlap / union >= 0.7:
             return True
     return False
 
@@ -490,20 +492,22 @@ def _pixabay(query):
         print(f"  pixabay miss for '{query}': {exc}")
         return []
 
-def fetch_photo(query):
-    """Query Pexels, Unsplash and Pixabay, then return the single most relevant
-    photo across all three (scored against the query words). None if all empty."""
+def fetch_photo(query, used=None):
+    """Query Pexels, Unsplash and Pixabay, then return the most relevant photo
+    across all three that hasn't already been used this run. None if all empty."""
     if not query:
         return None
+    used = used or set()
     candidates = _pexels(query) + _unsplash(query) + _pixabay(query)
-    # Drop any candidate without a usable https image URL (prevents blank <img>).
+    # Drop candidates without a usable https URL, and any already used this run.
     candidates = [c for c in candidates
-                  if isinstance(c.get("image"), str) and c["image"].startswith("http")]
+                  if isinstance(c.get("image"), str) and c["image"].startswith("http")
+                  and c["image"] not in used]
     if not candidates:
         return None
     # Best relevance wins; ties keep source order (Pexels, Unsplash, Pixabay).
     best = max(candidates, key=lambda c: _score(query, c.get("_text", "")))
-    print(f"  photo: '{query}' -> {best['_src']} (matched {_score(query, best.get('_text',''))} terms, {len(candidates)} candidates)")
+    print(f"  photo: '{query}' -> {best['_src']} (matched {_score(query, best.get('_text',''))} terms, {len(candidates)} unused candidates)")
     return {k: v for k, v in best.items() if not k.startswith("_")}
 
 def generate_ai_image(prompt, slug):
@@ -607,22 +611,24 @@ def fetch_wikimedia(subject):
         print(f"  wikimedia miss for '{subject}': {exc}")
         return None
 
-def resolve_image(st):
+def resolve_image(st, used=None):
     """Relevance-first image resolver with the real-person/real-event guardrail.
+    `used` is a set of image URLs already used this run — avoid repeating them.
     1) Wikimedia photo of the named real subject (most relevant, legal w/ credit)
     2) Stock photo across Pexels/Unsplash/Pixabay (generic but real)
     3) AI illustration — concept stories only, never real people/events
     4) Editorial art fallback (at render time)."""
+    used = used or set()
     safety = (st.get("image_safety") or "real").lower()
     query = st.get("image_query")
     subject = st.get("image_subject")
 
-    # Tier 1: a real photo of the actual named subject (people, places, bodies).
+    # Tier 1: a real photo of the actual named subject (skip if already used).
     wiki = fetch_wikimedia(subject)
-    if wiki:
+    if wiki and wiki.get("image") not in used:
         return wiki
-    # Tier 2: stock photo (best match across three free libraries).
-    photo = fetch_photo(query)
+    # Tier 2: stock photo (best UNUSED match across three free libraries).
+    photo = fetch_photo(query, used)
     if photo:
         return photo
     # Tier 3: AI illustration ONLY for concept stories (never real people/events).
@@ -631,7 +637,8 @@ def resolve_image(st):
         if ai:
             print(f"  AI illustration generated for concept story: {st['slug']}")
             return ai
-    # Tier 4: editorial art fallback (handled at render time).
+    # Tier 4: editorial art fallback (handled at render time) — always unique
+    # because it is seeded from the unique headline.
     return None
 
 # -------------------------------------------------------- generative art ---
@@ -772,11 +779,15 @@ footer a{{color:#3BCB8D;text-decoration:none}}
 def write_outputs(edition):
     os.makedirs("articles", exist_ok=True)
     os.makedirs("editions", exist_ok=True)
+    used_images = set()
     for sec in edition["sections"]:
         for st in sec["stories"]:
             st["slug"] = NOW.strftime("%Y%m%d") + "-" + slugify(st["headline"])
-            img = resolve_image(st)
-            if img: st.update(img)
+            img = resolve_image(st, used_images)
+            if img:
+                st.update(img)
+                if img.get("image"):
+                    used_images.add(img["image"])
             st.pop("image_query", None); st.pop("image_safety", None); st.pop("image_subject", None)
             with open(f"articles/{st['slug']}.html", "w", encoding="utf-8") as f:
                 f.write(article_page(st, sec, edition))
@@ -825,6 +836,7 @@ def build_archive():
         except Exception:
             continue
     seen, dates, cats, sources = set(), [], {}, set()
+    seen_fps = []
     rows_by_date = {}
     for when, ed in editions:
         dkey = when.strftime("%Y-%m-%d")
@@ -835,7 +847,11 @@ def build_archive():
                 key = st.get("slug") or st["headline"]
                 if key in seen:
                     continue
+                fp = _story_fingerprint(st)
+                if _is_dupe(fp, seen_fps):
+                    continue
                 seen.add(key)
+                seen_fps.append(fp)
                 sources.add(st.get("source", ""))
                 if dkey not in rows_by_date:
                     rows_by_date[dkey] = (dlabel, [])
