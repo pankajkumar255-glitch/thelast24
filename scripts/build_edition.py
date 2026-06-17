@@ -136,11 +136,7 @@ EDITORIAL RULES:
 - CARRY THE CORE FACTS. If the story has specific concrete details that are its whole point, INCLUDE them rather than gesturing at them. Examples: a squad/team announcement -> name the key players actually picked; a budget/scheme -> the amount and who it's for; a match result -> the score and standout performers; an appointment -> who, to what post; a policy -> the specific change. A summary that says "the squad was announced" without naming anyone is a FAILURE.
 - "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): the development precisely, the key concrete details, one line of immediate significance. Strictly from the headline plus universally known background.
 - "lens" = 1 sharp, SPECIFIC sentence: why this exact story matters to an everyday Indian reader — money, daily life, or the bigger picture. It must be concrete to THIS story, not a generic platitude. If you cannot write a genuinely specific reason, write a plainer factual significance instead of a vague one. Never filler like "this is an important development".
-- Structured summary (concise, ~220-280 words total, strictly grounded):
-  - "what_happened" = 2-3 sentences attributing the publisher by name (e.g. "The Hindu reports that..."), INCLUDING the core concrete facts (names, numbers, the actual squad/figures/decision). ONLY what the headline states plus universally known facts; NEVER invent quotes, statistics, numbers, or names.
-  - "context" = 2-3 sentences of widely-known background: the key players and why this matters now. Depth from established general knowledge, never speculation.
-  - "why_it_matters" = 2 sentences of concrete, story-specific impact: prices, jobs, daily life, investments, or the bigger picture. Must be specific to this story.
-  - "whats_next" = 1 sentence on what to watch, framed as expectation ("expect", "likely") not fact.
+- Structured summary (concise, fact-rich, strictly grounded): write a single flowing "article" of 3-4 short paragraphs (~180-240 words total) that reads as one continuous brief — NOT divided into labelled sections. Open with what happened (attributing the publisher by name, e.g. "The Hindu reports..."), weave in the concrete core facts (names, numbers, the actual squad/figures/decision), give the essential widely-known context, and close with why it matters to an everyday Indian reader. Strictly the headline plus universally-known facts; NEVER invent quotes, statistics, numbers, or names. Put this in the "article" field as plain text with paragraphs separated by blank lines.
 - "key_facts" = an array of 2-5 short, concrete bullet strings capturing the HARD FACTS of the story that a reader would want at a glance — the actual specifics, not generalities. For a squad: the key players named. For a scheme/budget: the amount and beneficiaries. For a result: the score and top performers. For an appointment: who and to what role. For a deal: the parties and value. Each bullet under ~12 words, factual, drawn only from the headline + well-known facts. If the story genuinely has no hard specifics, use an empty array [].
 - "image_subject" = the SINGLE most photographable real subject of the story for an encyclopedia image lookup — a real person's full name, a place, a landmark, or an institution exactly as it would title a Wikipedia article (e.g. "Narendra Modi", "Supreme Court of India", "Wankhede Stadium", "Reserve Bank of India", "Rohit Sharma"). Use "" (empty) if the story has no specific real named subject (pure concept/abstract stories).
 - "image_query" = a 3-5 word search phrase for a stock-photo library that captures the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think about what a relevant photo would actually show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers technology"; a bullet train story -> "high speed train railway". Prefer Indian or contextual terms where the story is Indian. Never names of real people or brands.
@@ -149,7 +145,7 @@ EDITORIAL RULES:
 - Keep source names and URLs exactly as given.
 
 Respond with ONLY a JSON object, no markdown fences, no text before or after it:
-{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","key_facts":["...","..."],"image_query":"...","image_subject":"...","image_safety":"real","source":"...","url":"...","breaking":false}]}"""
+{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","article":"...","key_facts":["...","..."],"image_subject":"...","source":"...","url":"...","breaking":false}]}"""
 
 API_URL = "https://api.anthropic.com/v1/messages"
 # Current Sonnet. If this ever 400s with a model error, update this ONE line.
@@ -586,6 +582,14 @@ def fetch_wikimedia(subject):
         if not hits:
             return None
         title = hits[0]["title"]
+        # Relevance guard: the matched article title should share a significant
+        # word with the subject. This prevents a vague subject ("cricket match")
+        # from grabbing an unrelated article's image (e.g. a football photo).
+        subj_words = {w for w in re.findall(r"[a-z]+", subject.lower()) if len(w) > 3}
+        title_words = {w for w in re.findall(r"[a-z]+", title.lower()) if len(w) > 3}
+        if subj_words and not (subj_words & title_words):
+            print(f"  wikimedia: '{subject}' -> '{title}' rejected (no subject overlap)")
+            return None
         # Get the page's lead image (thumbnail) + the original file name.
         p = requests.get("https://en.wikipedia.org/w/api.php",
                          params={"action": "query", "titles": title,
@@ -632,33 +636,18 @@ def fetch_wikimedia(subject):
         return None
 
 def resolve_image(st, used=None):
-    """Relevance-first image resolver with the real-person/real-event guardrail.
-    `used` is a set of image URLs already used this run — avoid repeating them.
-    1) Wikimedia photo of the named real subject (most relevant, legal w/ credit)
-    2) Stock photo across Pexels/Unsplash/Pixabay (generic but real)
-    3) AI illustration — concept stories only, never real people/events
-    4) Editorial art fallback (at render time)."""
+    """Wikimedia-only image policy.
+    1) Wikimedia Commons photo of the named real subject — the only real-photo
+       source we use (legal with attribution, genuinely relevant).
+    2) Editorial art fallback (rendered) — silent last resort ONLY when
+       Wikimedia has no usable, unused match, so cards are never blank.
+    No stock libraries (Pexels/Unsplash/Pixabay) and no AI generation are used."""
     used = used or set()
-    safety = (st.get("image_safety") or "real").lower()
-    query = st.get("image_query")
     subject = st.get("image_subject")
-
-    # Tier 1: a real photo of the actual named subject (skip if already used).
     wiki = fetch_wikimedia(subject)
-    if wiki and wiki.get("image") not in used:
+    if wiki and wiki.get("image") and wiki["image"] not in used:
         return wiki
-    # Tier 2: stock photo (best UNUSED match across three free libraries).
-    photo = fetch_photo(query, used)
-    if photo:
-        return photo
-    # Tier 3: AI illustration ONLY for concept stories (never real people/events).
-    if safety == "concept":
-        ai = generate_ai_image(query or st.get("headline", ""), st["slug"])
-        if ai:
-            print(f"  AI illustration generated for concept story: {st['slug']}")
-            return ai
-    # Tier 4: editorial art fallback (handled at render time) — always unique
-    # because it is seeded from the unique headline.
+    # No Wikimedia match -> return None; render layer draws editorial art.
     return None
 
 # -------------------------------------------------------- generative art ---
@@ -681,21 +670,62 @@ def art_svg(seed_text, section_id, w=1200, h=560):
             f'<rect width="{w}" height="{h}" fill="#F6F7F4"/>{"".join(shapes)}{bars}'
             f'<circle cx="{v(20,0.15,0.85)*w:.0f}" cy="{v(21,0.2,0.7)*h:.0f}" r="{v(22,0.05,0.10)*w:.0f}" fill="none" stroke="{hue}" stroke-width="3" opacity="0.85"/></svg>')
 
+def masthead_css():
+    """Shared masthead CSS — identical across article, archive and CA pages,
+    matching the homepage band/brand/nav treatment (minus the ticker).
+    Returns single-brace CSS (inserted as a variable, not inside an f-string)."""
+    return """
+.band{background:var(--dark);color:#F2F4EE;padding:20px 0}
+.band .wrap{max-width:var(--mw,920px);margin:0 auto;padding:0 20px}
+.brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.brand-row .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1;color:#F2F4EE}
+.brand-row .brand span{color:var(--green-bright)}
+.brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.brand-nav{display:flex;align-items:center;gap:10px}
+.m-ca{font-family:var(--mono);font-size:12px;font-weight:600;color:#0D120D;background:var(--green-bright);text-decoration:none;padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
+.m-ca:hover{background:#fff;color:#0D120D}
+.m-link{font-family:var(--mono);font-size:12px;color:#F2F4EE;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
+.m-link:hover{border-color:var(--green-bright);color:var(--green-bright)}
+.brand-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#929C8E;text-align:right;line-height:1.7}
+.brand-meta .v{color:var(--green-bright);font-weight:600}
+@media (max-width:600px){
+  .brand-meta{display:none}
+  .brand-row{flex-wrap:wrap;gap:10px}
+  .brand-side{width:100%;justify-content:flex-start}
+  .m-ca,.m-link{font-size:11px;padding:6px 12px}
+}
+"""
+
+def masthead_html(links, date_label=""):
+    """Shared masthead markup. `links` is a list of (label, href, primary) —
+    primary=True renders the filled green button (used for Current Affairs)."""
+    btns = ""
+    for label, href, primary in links:
+        cls = "m-ca" if primary else "m-link"
+        btns += f'<a class="{cls}" href="{href}">{label}</a>'
+    meta = (f'<div class="brand-meta"><span class="v">✓ Verified publishers only</span>'
+            f'<br>{html.escape(date_label)}</div>') if date_label else \
+           '<div class="brand-meta"><span class="v">✓ Verified publishers only</span></div>'
+    return (f'<div class="band"><div class="wrap"><div class="brand-row">'
+            f'<a class="brand" href="/">The Last <span>24</span></a>'
+            f'<div class="brand-side"><div class="brand-nav">{btns}</div>{meta}'
+            f'</div></div></div></div>')
+
 def slugify(headline):
     s = re.sub(r"[^a-z0-9]+", "-", headline.lower()).strip("-")
     return s[:70].rstrip("-")
 
 # ----------------------------------------------------------- article page ---
 def summary_blocks(story):
-    """Ordered (label, text) pairs; tolerates older 'article' format."""
-    blocks = [("What happened", story.get("what_happened")),
-              ("The context", story.get("context")),
-              ("Why it matters", story.get("why_it_matters")),
-              ("What's next", story.get("whats_next"))]
-    blocks = [(l, t) for l, t in blocks if t]
-    if not blocks and story.get("article"):
-        blocks = [("The brief", p.strip()) for p in story["article"].split("\n\n") if p.strip()]
-    return blocks
+    """Render the flowing 'article' as plain paragraphs (no labelled sections).
+    Falls back to the older structured fields if an old edition is present."""
+    if story.get("article"):
+        paras = [p.strip() for p in story["article"].split("\n\n") if p.strip()]
+        return [("", p) for p in paras]
+    # Backwards-compatibility with older editions that used labelled fields.
+    blocks = [story.get("what_happened"), story.get("context"),
+              story.get("why_it_matters")]
+    return [("", t) for t in blocks if t]
 
 def article_page(story, section, edition):
     e = html.escape
@@ -723,7 +753,7 @@ def article_page(story, section, edition):
     else:
         hero = f'<div class="hero">{art_svg(story["headline"], section["id"])}</div>'
     blocks = "".join(
-        f'<div class="block"><h2>{e(label)}</h2><p>{e(text)}</p></div>'
+        (f'<div class="block">{("<h2>"+e(label)+"</h2>") if label else ""}<p>{e(text)}</p></div>')
         for label, text in summary_blocks(story))
     # Key facts box — the hard specifics (squad, figures, score) at a glance.
     kf = [f for f in (story.get("key_facts") or []) if str(f).strip()]
@@ -733,6 +763,10 @@ def article_page(story, section, edition):
         facts_box = f'<div class="facts"><h2>Key facts</h2><ul>{items}</ul></div>'
     src_name = e(story.get("source", "the original source"))
     src_url = e(story.get("url", "#"))
+    _mhead = masthead_html([("Current Affairs", "/current-affairs.html", True),
+                            ("Archive", "/archive.html", False)],
+                           date_label=edition.get("date", ""))
+    _mcss = masthead_css()
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -750,11 +784,12 @@ def article_page(story, section, edition):
 :root{{--paper:#F7F7F5;--ink:#111511;--ink-soft:#454B43;--meta:#73786F;--hairline:#E6E8E2;--hue:{hue};
 --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
---mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace}}
+--mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;--dark:#0D120D;--green-bright:#3BCB8D;--mw:660px}}
 *{{box-sizing:border-box;margin:0;padding:0}}
 body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}}
 .wrap{{max-width:660px;margin:0 auto;padding:0 20px}}
-.topbar{{background:#0E130E;margin-bottom:30px}}
+/*MASTHEAD_CSS*/
+.band{{margin-bottom:30px}}
 .top{{font-family:var(--mono);font-size:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:660px;margin:0 auto}}
 .top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:26px;letter-spacing:-.02em}}.top a span{{color:#3BCB8D}}
 .topnav{{display:flex;gap:16px;align-items:center}}
@@ -794,7 +829,7 @@ footer p{{font-size:12px;line-height:1.8;max-width:560px}}
 footer a{{color:#3BCB8D;text-decoration:none}}
 </style></head>
 <body>
-<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><nav class="topnav"><a href="/current-affairs.html">Current Affairs</a><a href="/archive.html">Archive</a></nav></div></div>
+{_mhead}
 <div class="wrap">
 <p class="kick"><b>✓ Verified source:</b> {src_name} · {e(story['time'])} · {e(edition['date'])}</p>
 <h1>{e(story['headline'])}</h1>
@@ -808,7 +843,7 @@ footer a{{color:#3BCB8D;text-decoration:none}}
 <div class="ad-slot"><!-- AD SLOT: article-mid. Paste your AdSense/ad-network snippet here. -->Ad space</div>
 </div>
 <footer><div class="wrap"><p><a href="/">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
-</body></html>"""
+</body></html>""".replace("/*MASTHEAD_CSS*/", _mcss)
 
 # ---------------------------------------------------------------- outputs ---
 def write_outputs(edition):
@@ -911,6 +946,9 @@ def build_archive():
     cat_opts = "".join(f'<option value="{c}">{e(n)}</option>' for c, n in sorted(cats.items(), key=lambda x: x[1]))
     src_opts = "".join(f'<option value="{e(s)}">{e(s)}</option>' for s in sorted(x for x in sources if x))
     total = len(seen)
+    _arch_mhead = masthead_html([("Current Affairs", "/current-affairs.html", True),
+                                 ("Home", "/", False)])
+    _arch_mcss = masthead_css()
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -924,17 +962,11 @@ def build_archive():
 :root{{--paper:#F6F6F4;--ink:#101410;--ink-soft:#43493F;--meta:#71766C;--hairline:#E5E7E0;--dark:#0D120D;--green:#0E7B52;--green-bright:#3BCB8D;
 --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
---mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace}}
+--mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;--mw:900px}}
 *{{box-sizing:border-box;margin:0;padding:0}}
 body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}}
 .wrap{{max-width:900px;margin:0 auto;padding:0 24px}}
-.topbar{{background:var(--dark)}}
-.top{{font-family:var(--mono);font-size:12px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;max-width:900px;margin:0 auto}}
-.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:26px;letter-spacing:-.02em}}.top a span{{color:var(--green-bright)}}
-.topnav{{display:flex;gap:16px;align-items:center}}
-.topnav a{{font-family:var(--mono)!important;font-size:12px!important;font-weight:600!important;color:#C9D2C5!important;letter-spacing:.04em}}
-.topnav a:hover{{color:var(--green-bright)!important}}
-.top .pg{{color:#929C8E;font-size:11px;letter-spacing:.12em;text-transform:uppercase}}
+/*MASTHEAD_CSS*/
 h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,38px);letter-spacing:-.02em;margin:32px 0 6px}}
 .sub{{font-family:var(--mono);font-size:12px;color:var(--meta);margin-bottom:22px}}
 .filters{{display:flex;gap:10px;flex-wrap:wrap;position:sticky;top:0;background:rgba(246,246,244,.94);backdrop-filter:blur(10px);padding:12px 0;border-bottom:1px solid var(--hairline);z-index:5}}
@@ -955,7 +987,7 @@ footer{{background:var(--dark);color:#929C8E;margin-top:48px;padding:28px 0 64px
 footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 </style></head>
 <body>
-<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><nav class="topnav"><a href="/current-affairs.html">Current Affairs</a><a href="/">Home</a></nav></div></div>
+{_arch_mhead}
 <div class="wrap">
 <h1>Every story we've published.</h1>
 <p class="sub">{total} stories · all from verified publishers · each linked to its original source</p>
@@ -992,6 +1024,7 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 }})();
 </script>
 </body></html>"""
+    page = page.replace("/*MASTHEAD_CSS*/", _arch_mcss)
     with open("archive.html", "w", encoding="utf-8") as f:
         f.write(page)
     print(f"archive.html rebuilt: {total} stories across {len(dates)} days.")
