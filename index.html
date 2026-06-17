@@ -625,7 +625,7 @@ window.BRIEF = window.BRIEF || {
 };
 
 (function(){
-  var NEWSLETTER_ENDPOINT = ""; // Formspree/Buttondown endpoint. Empty = demo mode.
+  var NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"; // Formspree/Buttondown endpoint. Empty = demo mode.
   var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", ai:"#0E8E8E", sports:"#CE3D1D", entertainment:"#C2317E"};
   var B = window.BRIEF || window.EDITION || null;
   var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
