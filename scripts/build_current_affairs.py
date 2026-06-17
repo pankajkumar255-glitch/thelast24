@@ -146,7 +146,7 @@ def current_affairs_page():
   a{{color:inherit}}
   .masthead{{background:var(--ink);color:var(--paper);padding:18px 0}}
   .wrap{{max-width:920px;margin:0 auto;padding:0 20px}}
-  .brand{{font-family:var(--display);font-weight:800;font-size:30px;text-decoration:none;color:var(--paper)}}
+  .brand{{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;text-decoration:none;color:var(--paper)}}
   .brand b{{color:var(--green-bright)}}
   .masthead .wrap{{display:flex;align-items:center;justify-content:space-between;gap:16px}}
   .back{{font-family:var(--mono);font-size:12px;color:var(--paper);opacity:.8;text-decoration:none}}
