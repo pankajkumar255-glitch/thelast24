@@ -1,115 +1,207 @@
-# The Last 24 — Automated Media House: Setup & Operations
+# The Last 24 — `thelast24.in`
 
-A fully automated daily news brief for India across six categories — National,
-World, Business & Markets, Technology, Sports, Entertainment. Publishes itself
-every hour from verified publishers only, generates SEO article pages, captures newsletter signups with
-preferences, and builds weekly preference-based digests. No servers, no
-database. Running cost ≈ a few dollars/month of Claude API usage.
+**Everything that mattered in India, in five minutes.**
 
-## What's in this folder
+An automated India news brief. A scheduled pipeline collects headlines from
+verified publishers, writes concise editorial summaries with Claude, sources
+relevant images, and publishes a static site to GitHub Pages — refreshed every
+6 hours. It also produces a UPSC-style Current Affairs section, a tweet queue,
+and daily Instagram carousels.
 
-| File | What it is |
-|---|---|
-| `index.html` | Homepage — animated, category-coloured, renders from data.js. Includes email capture + 2 ad slots. |
-| `data.js` | Current edition (sample placeholder until first auto-run). |
-| `engine.html` / `ENGINE_PROMPT.md` | Manual fallback engine (paste headlines → edition + socials). |
-| `scripts/build_edition.py` | The 3-hourly auto-publisher: RSS → Claude → data.js + article pages + sitemap + archive. |
-| `scripts/build_newsletter.py` | Weekly: builds one ready-to-send HTML digest per preference category (deterministic — no AI, no hallucination risk). |
-| `.github/workflows/daily-brief.yml` | Runs the publisher every 3 hours. |
-| `.github/workflows/weekly-newsletter.yml` | Runs the digest builder every Sunday 8 AM IST. |
-| `about.html`, `contact.html`, `privacy.html` | Trust pages (founder credit, corrections inbox, privacy policy) — required for AdSense/Search Console. Replace support@thelast24.in address before launch. |
-| `robots.txt`, `llms.txt` | SEO + GEO (generative engine optimization) files. |
-| `articles/`, `editions/`, `newsletter/`, `sitemap.xml` | Created automatically on first run. |
+- **Live:** https://thelast24.in
+- **Hosting:** GitHub Pages (static) + GitHub Actions (scheduled builds)
+- **Cost model:** free hosting; only the Anthropic API + (optional) image APIs
+  cost money. Tuned to ~$20/month at the 6-hour cadence.
+- **Model:** `claude-sonnet-4-6`
+- **Analytics:** Google Analytics `G-B1R3X3GKJ3` (Consent Mode v2, denied by default)
+- **Contact:** support@thelast24.in
 
-## One-time setup (≈30 minutes)
+---
 
-1. Push this entire folder (including hidden `.github/`) to a GitHub repo.
-2. Get a Claude API key from console.anthropic.com.
-   Repo → Settings → Secrets and variables → Actions → **New secret**:
-   `ANTHROPIC_API_KEY` = your key.
-3. Real photos on stories: get a free API key at pexels.com/api (2 minutes,
-   no payment ever). Add it as a second secret: `PEXELS_API_KEY`. The pipeline
-   fetches a commercially-licensed photo per story and credits the
-   photographer; stories without a good match get generative art instead.
-4. Same page → **Variables** tab → `SITE_URL` = your live URL.
-   Also replace `https://thelast24.in` in index.html, robots.txt, llms.txt.
-4. Enable hosting: Settings → Pages → deploy from main (or import to Vercel).
-   Point your domain at it.
-5. **Populate the site now:** Actions tab → "Publish edition" → Run workflow,
-   and set `backfill_days` to `7`. In a few minutes the site fills with the
-   past week's stories from verified publishers. Hourly runs take over from there.
-6. Email capture: create a free Formspree form (or Buttondown/MailerLite),
-   paste its endpoint into `NEWSLETTER_ENDPOINT` in index.html. Signups arrive
-   with a `preferences` field (e.g. "business,sports") — create matching
-   segments/tags in your email tool.
-7. Submit `sitemap.xml` in Google Search Console (free) — this is what gets
-   article pages indexed fast.
+## How it works
 
-## How it runs (no people involved — almost)
+1. **GitHub Actions** runs `daily-brief.yml` every 6 hours.
+2. It runs `scripts/build_edition.py`, which:
+   - Collects headlines (Google News RSS), filters to a **verified-publisher
+     allowlist** (agency wires like ANI/PTI and contested outlets excluded).
+   - Writes each section's stories with Claude (concise, fact-rich summaries).
+   - De-duplicates near-identical stories (even when headlines are reworded).
+   - Sources images **Wikimedia-first**, then stock (Pexels/Unsplash/Pixabay),
+     then AI illustration for concept stories, then editorial art as a last
+     resort. No two stories reuse the same image.
+   - Tops up thin sections from the last 48h of editions, sorts newest-first.
+   - Generates `data.js` (homepage), per-story article pages, `archive.html`,
+     `sitemap.xml`, a `tweets/queue.json`, and the Current Affairs page.
+3. The site is static, so readers just load the published HTML/JS.
 
-- **Every hour**: fresh headlines are pulled from Google News RSS and filtered
-  through a verified-publisher allowlist (PTI, Reuters, The Hindu, ET, Mint,
-  ESPNcricinfo and ~30 more — edit TRUSTED_PUBLISHERS in the script). Claude
-  writes the brief + a crisp structured summary per story (What happened / The
-  context / Why it matters / What's next), each citing the publisher by name
-  with a "Read the full story" link to the original source. Pages, sitemap and
-  archive update automatically; the site redeploys itself.
-- **Day-one pre-population**: run the "Publish edition" workflow manually once
-  with `backfill_days = 7` — it pulls the past week's stories from trusted
-  publishers so the site launches full, then hourly runs keep it fresh.
-- **Every Sunday 8 AM IST**: the week's archive is curated into per-category
-  digest emails in `/newsletter`. Send each to its matching preference segment
-  (manual paste at first; wire your email provider's API later).
-- **The "almost"**: spend 10 minutes a day spot-checking output. An automated
-  news site lives or dies on never publishing a wrong fact. The prompts forbid
-  invented details, but you are the editor of record.
+---
 
-## Revenue model (built in, activate when ready)
+## Repository layout
 
-- **Ad slots**: 3 placeholders exist — homepage mid, homepage footer, and
-  article mid. Each is marked `<!-- AD SLOT -->` in the code; paste an AdSense
-  or ad-network snippet there. Reality check: AdSense approval needs an
-  established site (typically 2–3+ months of consistent publishing, real
-  traffic, About/Contact/Privacy pages — add those before applying).
-- **Newsletter sponsorships**: the better early revenue. A sponsor line in the
-  weekly digest sells on audience quality, not raw traffic.
-- **Later**: category sponsorships ("Business brief presented by …"), affiliate
-  slots in relevant categories.
+```
+index.html                     Homepage (static, hand-built)
+about.html contact.html        Trust pages
+privacy.html
+archive.html                   Generated by the pipeline (4-week window)
+current-affairs.html / .js     Generated by the pipeline
+data.js                        Generated: latest edition for the homepage
+editions/                      Generated: one JSON per run (the archive source)
+articles/                      Generated: one HTML page per story
+tweets/queue.json              Generated: pending tweets for n8n -> X
+social/instagram/<date>/       Generated: daily carousels + captions
 
-## SEO / GEO checklist (already wired)
+scripts/
+  build_edition.py             THE PIPELINE (headlines -> site + tweets + CA)
+  build_current_affairs.py     UPSC-style Current Affairs page generator
+  build_social.py              Instagram carousel generator (Pillow)
+  build_newsletter.py          Weekly digest generator
 
-- Per-article pages with unique titles, meta descriptions, canonical URLs,
-  OpenGraph tags, and NewsArticle JSON-LD structured data
-- Auto-generated sitemap.xml, robots.txt, llms.txt (for AI engines)
-- Fast static pages, mobile-first, accessible focus states, reduced-motion support
-- Email capture is a slide-in, NOT a full-screen popup — Google penalizes
-  intrusive interstitials on mobile
-- Cookie consent banner included (newsletter prompt waits for the cookie choice
-  so overlays never stack). Note: if you enable AdSense with EU/UK traffic,
-  Google requires a certified consent platform — this banner covers launch and
-  India-first traffic; upgrade when you go global
-- Every article links its original source (`isBasedOn` in structured data) —
-  this transparency is also your best defence as an aggregator
+.github/workflows/
+  daily-brief.yml              Every 6h: build + publish the brief (+ tweets, CA)
+  social-daily.yml             08:00 IST daily: Instagram carousels
+  weekly-newsletter.yml        Sundays 08:00 IST: weekly digest
 
-## Honest operating notes
+manifest.json sw.js favicon.ico robots.txt llms.txt   PWA / SEO assets
+```
 
-- **Images (three-tier)**: (1) real licensed Pexels photo first; (2) for
-  ABSTRACT CONCEPT stories only, an AI illustration via Gemini ("Nano Banana"),
-  always labelled "AI illustration"; (3) generative editorial art as fallback.
-  HARD RULE enforced in code: stories about a real named person or a specific
-  real event NEVER get an AI image — only a real photo or art. This protects the
-  "verified" brand from synthetic depictions of real people/events. To enable
-  tier 2, add a GEMINI_API_KEY secret (Google AI Studio); without it, the site
-  runs on Pexels + art exactly as before. Never swap in publishers' news photos
-  — attribution is not a license.
-- **Scaled AI content**: Google penalizes mass-produced thin content. Your
-  protection: short grounded briefs (not fake 1500-word articles), original
-  "why it matters" analysis, linked sources, and a real niche audience. If
-  traffic is the goal, the newsletter and social distribution will matter far
-  more than SEO in year one.
-- **Costs**: 24 runs/day × one Claude call — still cheap (roughly $5–15/month
-  depending on story volume). Keep the repo PUBLIC: GitHub Actions minutes are
-  unlimited for public repos; a private repo's 2,000 free minutes/month would
-  run out on an hourly schedule.
-- Tune categories by editing `SECTION_QUERIES` in scripts/build_edition.py —
-  new sections appear on the site automatically.
+---
+
+## Schedules (cron, UTC)
+
+| Workflow | Cron | Meaning |
+|---|---|---|
+| `daily-brief.yml` | `15 */6 * * *` | every 6 hours |
+| `social-daily.yml` | `30 2 * * *` | 08:00 IST daily |
+| `weekly-newsletter.yml` | `30 2 * * 0` | Sundays 08:00 IST |
+
+> GitHub free-tier cron can be delayed or skipped under load; scheduled runs
+> only fire from the default branch.
+
+---
+
+## Required configuration
+
+**Repository Variables** (Settings -> Secrets and variables -> Actions -> Variables):
+- `SITE_URL` = `https://thelast24.in`
+
+**Repository Secrets** (Settings -> Secrets and variables -> Actions -> Secrets):
+- `ANTHROPIC_API_KEY` — required (summaries, captions, current affairs)
+- `PEXELS_API_KEY` — images
+- `UNSPLASH_ACCESS_KEY` — images (more sources = fewer artwork fallbacks)
+- `PIXABAY_API_KEY` — images
+- `GEMINI_API_KEY` — optional, AI illustrations for concept stories
+
+> Without the image keys, stories fall back to branded editorial artwork — it
+> won't break, you'll just see fewer photos.
+
+**Newsletter:** the Formspree endpoint is set in `index.html`
+(`NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"`).
+
+---
+
+## Editorial principles
+
+- **Verified publishers only.** Agency wires (ANI, PTI) and contested/low-rigor
+  outlets are explicitly excluded; only reputable mastheads, quality
+  international wires, and respected specialist sources are allowed.
+- **Concise + concrete.** Summaries name the real people, figures, and places,
+  and carry the *core facts* (a squad announcement lists the squad; a budget
+  states the amount). Each article page shows a **Key facts** box up top.
+- **Why it matters.** Every story includes a short, story-specific note on its
+  relevance to an everyday Indian reader.
+- **Images, responsibly.** Wikimedia real-subject photos are preferred; AI
+  images are never generated of real people/events. Each story's image is
+  unique within a run.
+
+---
+
+## Social
+
+- **Twitter/X:** `build_edition.py` writes up to **10** of the day's most
+  important stories to `tweets/queue.json` as personalised reporting tweets
+  (hashtags + link). An external n8n workflow reads the queue and posts. See
+  `SOCIAL_SETUP.md`. (Note: X's free API tier may not permit automated posting;
+  the queue also supports manual copy-paste posting.)
+- **Instagram:** `build_social.py` renders **7 carousels/day, one per section**,
+  summarising the previous day — cover + story slides + outro, with mixed
+  photo/pattern backgrounds and a Claude-written caption. Output lands in
+  `social/instagram/<date>/`; n8n posts them. See `SOCIAL_SETUP.md`.
+
+---
+
+## Current Affairs (UPSC / exam-relevant)
+
+`build_current_affairs.py` re-curates the same headlines through an exam lens,
+organised into categories aspirants study by (Polity, Economy, IR, Environment,
+Sci-Tech, Schemes, Defence, Reports & Indices, Persons, Places, Culture). Each
+item carries a summary, the exam angle, the GS paper, and key facts. Linked
+prominently from the homepage. Refreshes every 6 hours with the main run.
+
+---
+
+## Running it manually
+
+- **GitHub:** Actions -> pick a workflow -> **Run workflow**.
+- **Locally** (for testing):
+  ```bash
+  pip install feedparser requests Pillow
+  export ANTHROPIC_API_KEY=...   # plus PEXELS/UNSPLASH/PIXABAY as needed
+  export SITE_URL=https://thelast24.in
+  python scripts/build_edition.py
+  ```
+
+---
+
+## Deployment notes
+
+- GitHub Pages serves the repo root; custom domain `thelast24.in` is set in
+  Settings -> Pages with HTTPS enforced. DNS (A records + `www` CNAME) is at the
+  domain registrar; email MX records are left untouched.
+- The service worker (`sw.js`) caches aggressively — after any change, do a
+  **hard refresh (Ctrl/Cmd+Shift+R)** or use a private window to see updates.
+- Whenever the pipeline generates a file, it must be in the workflow's
+  `git add` line or it won't publish. Current line:
+  `data.js archive.html current-affairs.js current-affairs.html editions/ articles/ sitemap.xml tweets/`
+
+---
+
+## Recent changes (changelog)
+
+**Content quality**
+- Tightened the **verified-publisher allowlist**; explicitly excluded ANI, PTI
+  and contested/low-rigor outlets.
+- Stronger **de-duplication** — catches the same event even when a source
+  rewords the headline (tuned to avoid merging genuinely distinct stories).
+- Rewrote **editorial rules** to carry core facts (squads, figures, scores) and
+  to make "why it matters" specific to each story.
+- Added a **Key facts** box to every article page.
+
+**Images**
+- **Wikimedia-first** resolver; multi-source stock (Pexels/Unsplash/Pixabay)
+  with relevance scoring; AI illustration for concept stories; artwork only as
+  a last resort. No image reused across stories in a run. Pexels uses the more
+  reliable `large2x` URL; failed images fall back to artwork via `onerror`.
+
+**Structure & retention**
+- Thin sections **top up** from the last 48h; sections sorted newest-first.
+- **Archive** keeps a rolling **4 weeks**.
+- Current Affairs section added (UPSC/exam-relevant), refreshed every 6h.
+
+**UI / consistency**
+- Standardised **brand logo** (size + styling) across home, articles, archive,
+  and current affairs.
+- Inner pages (articles, archive, current affairs) now carry **nav links**
+  (Current Affairs / Archive / Home) in their slim top bars.
+- Fixed the homepage **header** (removed conflicting CSS) and the **mobile
+  carousel** (removed conflicting card-width rules; consistent peek + fade).
+- Ticker slowed to **120s**; newsletter Formspree endpoint wired in.
+
+**Social**
+- Instagram carousels v2: new cover wording, lighter slide text, mixed
+  photo/pattern backgrounds, Claude-written rich captions.
+- Tweet queue: up to 10/day, breaking-first, deduped.
+- Fixed `social-daily.yml` to install `requests` and pass the API keys.
+
+---
+
+*Built with care. Verified publishers only.*
