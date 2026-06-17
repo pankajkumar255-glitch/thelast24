@@ -150,6 +150,9 @@ def current_affairs_page():
   .brand b{{color:var(--green-bright)}}
   .masthead .wrap{{display:flex;align-items:center;justify-content:space-between;gap:16px}}
   .back{{font-family:var(--mono);font-size:12px;color:var(--paper);opacity:.8;text-decoration:none}}
+  .topnav{{display:flex;gap:16px;align-items:center}}
+  .topnav a{{font-family:var(--mono);font-size:12px;font-weight:600;color:#C9D2C5;text-decoration:none;letter-spacing:.04em}}
+  .topnav a:hover{{color:var(--green-bright)}}
   .hero{{padding:34px 0 8px}}
   .hero h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}}
   .hero p{{font-size:16px;color:var(--meta);max-width:640px;margin:0}}
@@ -187,7 +190,7 @@ def current_affairs_page():
 <body>
 <header class="masthead"><div class="wrap">
   <a class="brand" href="/">The Last <b>24</b></a>
-  <a class="back" href="/">← Back to brief</a>
+  <nav class="topnav"><a href="/archive.html">Archive</a><a href="/">Home</a></nav>
 </div></header>
 
 <div class="wrap hero">
