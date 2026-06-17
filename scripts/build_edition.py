@@ -44,25 +44,38 @@ def gnews_rss(query, window):
 
 # The moat: only stories from established, verified publishers pass this filter.
 TRUSTED_PUBLISHERS = [
-    "the hindu", "hindustan times", "indian express", "times of india",
-    "economic times", "mint", "livemint", "business standard", "moneycontrol",
-    "reuters", "press trust of india", "pti", "ani", "ndtv", "india today",
-    "the print", "deccan herald", "telegraph india", "financial express",
-    "cnbc", "bbc", "news18", "firstpost", "outlook", "frontline", "the wire",
-    "scroll", "the quint", "wion", "zee news", "republic", "dna", "abp",
-    "espncricinfo", "cricbuzz", "sportstar", "olympics.com", "espn",
-    "the bridge", "sportskeeda", "wisden",
-    "bollywood hungama", "film companion", "pinkvilla", "variety", "pib",
-    "koimoi", "bollywood life", "filmfare", "indiatimes", "ott play", "ottplay",
+    # Tier-1 Indian newspapers / business press
+    "the hindu", "hindustan times", "hindustantimes", "indian express",
+    "the indian express", "times of india", "economic times", "mint", "livemint",
+    "business standard", "moneycontrol", "the print", "deccan herald",
+    "telegraph india", "financial express", "frontline", "scroll", "the quint",
+    # International wires/quality
+    "reuters", "bbc", "cnbc", "bloomberg", "the guardian", "associated press",
+    # General Indian (reputable digital)
+    "ndtv", "india today", "news18", "firstpost", "outlook",
+    # Sports (specialist, reputable)
+    "espncricinfo", "cricbuzz", "sportstar", "olympics.com", "espn", "wisden",
+    # Entertainment (reputable trade)
+    "film companion", "variety", "pinkvilla", "filmfare", "ottplay", "ott play",
+    # Tech / business / startup (reputable)
     "techcrunch", "the verge", "wired", "venturebeat", "analytics india",
-    "inc42", "yourstory", "medianama", "gadgets 360", "entrackr", "scroll",
-    "the quint", "wion", "zee news", "sportskeeda", "the bridge",
-    "koimoi", "bollywood life", "filmfare", "indiatimes", "hindustantimes",
-    "the indian express", "ott play", "ottplay", "screen", "rediff",
+    "inc42", "yourstory", "medianama", "gadgets 360", "entrackr",
+    # Government / official
+    "pib", "press information bureau",
+]
+
+# Explicitly EXCLUDED even if they appear (agency wires that republish without
+# original reporting, and outlets widely flagged for bias / low editorial rigor).
+EXCLUDED_PUBLISHERS = [
+    "ani", "asian news international", "pti", "press trust of india",
+    "republic", "zee news", "zeenews", "dna", "abp", "rediff", "indiatimes",
+    "opindia", "tfipost", "swarajya", "koimoi", "bollywood life", "bollywood hungama",
 ]
 
 def is_trusted(source_name):
     n = (source_name or "").lower()
+    if any(x in n for x in EXCLUDED_PUBLISHERS):
+        return False
     return any(t in n for t in TRUSTED_PUBLISHERS)
 
 def resolve_url(link):
@@ -118,14 +131,15 @@ SECTION_IDS = {
 EDITORIAL_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher. You will be given the raw headlines for ONE section and must produce that section's stories.
 
 EDITORIAL RULES:
-- Keep only the strongest stories up to the limit given; drop weak/duplicate ones.
+- Keep only the strongest stories up to the limit given; drop weak/duplicate ones. Treat two items as duplicates if they report the SAME underlying event even when the headlines are worded differently — keep only the single best one.
 - WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company" or "two platforms".
-- "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): the development precisely, the key detail, one line of immediate significance. Strictly from the headline plus universally known background.
-- "lens" = 1 sharp sentence: why this matters to an everyday Indian reader — money, daily life, or the bigger picture. Never vague.
+- CARRY THE CORE FACTS. If the story has specific concrete details that are its whole point, INCLUDE them rather than gesturing at them. Examples: a squad/team announcement -> name the key players actually picked; a budget/scheme -> the amount and who it's for; a match result -> the score and standout performers; an appointment -> who, to what post; a policy -> the specific change. A summary that says "the squad was announced" without naming anyone is a FAILURE.
+- "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): the development precisely, the key concrete details, one line of immediate significance. Strictly from the headline plus universally known background.
+- "lens" = 1 sharp, SPECIFIC sentence: why this exact story matters to an everyday Indian reader — money, daily life, or the bigger picture. It must be concrete to THIS story, not a generic platitude. If you cannot write a genuinely specific reason, write a plainer factual significance instead of a vague one. Never filler like "this is an important development".
 - Structured summary (concise, ~220-280 words total, strictly grounded):
-  - "what_happened" = 2-3 sentences attributing the publisher by name (e.g. "The Hindu reports that..."). ONLY what the headline states plus universally known facts; NEVER invent quotes, statistics, numbers, or names.
+  - "what_happened" = 2-3 sentences attributing the publisher by name (e.g. "The Hindu reports that..."), INCLUDING the core concrete facts (names, numbers, the actual squad/figures/decision). ONLY what the headline states plus universally known facts; NEVER invent quotes, statistics, numbers, or names.
   - "context" = 2-3 sentences of widely-known background: the key players and why this matters now. Depth from established general knowledge, never speculation.
-  - "why_it_matters" = 2 sentences of concrete impact: prices, jobs, daily life, investments, or the bigger picture.
+  - "why_it_matters" = 2 sentences of concrete, story-specific impact: prices, jobs, daily life, investments, or the bigger picture. Must be specific to this story.
   - "whats_next" = 1 sentence on what to watch, framed as expectation ("expect", "likely") not fact.
 - "image_subject" = the SINGLE most photographable real subject of the story for an encyclopedia image lookup — a real person's full name, a place, a landmark, or an institution exactly as it would title a Wikipedia article (e.g. "Narendra Modi", "Supreme Court of India", "Wankhede Stadium", "Reserve Bank of India", "Rohit Sharma"). Use "" (empty) if the story has no specific real named subject (pure concept/abstract stories).
 - "image_query" = a 3-5 word search phrase for a stock-photo library that captures the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think about what a relevant photo would actually show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers technology"; a bullet train story -> "high speed train railway". Prefer Indian or contextual terms where the story is Indian. Never names of real people or brands.
@@ -342,7 +356,7 @@ def _is_dupe(fp, seen_fps):
         overlap = len(fp & s)
         union = len(fp | s)
         # Jaccard similarity: shared / total distinct words. 0.7+ = same story.
-        if union and overlap / union >= 0.7:
+        if union and overlap / union >= 0.65:
             return True
     return False
 
@@ -735,7 +749,7 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-heig
 .wrap{{max-width:660px;margin:0 auto;padding:0 20px}}
 .topbar{{background:#0E130E;margin-bottom:30px}}
 .top{{font-family:var(--mono);font-size:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:660px;margin:0 auto}}
-.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:22px}}.top a span{{color:#3BCB8D}}
+.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:26px;letter-spacing:-.02em}}.top a span{{color:#3BCB8D}}
 .cat{{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);font-weight:700;background:#fff;padding:5px 12px;border-radius:999px}}
 .kick{{font-family:var(--mono);font-size:11px;color:var(--meta);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}}
 .kick b{{color:#0E7B52}}
@@ -829,12 +843,15 @@ def build_archive():
     import glob
     e = html.escape
     editions = []
+    archive_cutoff = NOW - timedelta(weeks=4)  # keep at most 4 weeks in the archive
     for path in sorted(glob.glob("editions/*.json"), reverse=True):
         stamp = os.path.basename(path)[:13]
         try:
             when = datetime.strptime(stamp, "%Y-%m-%d-%H").replace(tzinfo=IST)
         except ValueError:
             continue
+        if when < archive_cutoff:
+            continue  # older than 4 weeks — excluded from the archive page
         try:
             with open(path, encoding="utf-8") as f:
                 editions.append((when, json.load(f)))
@@ -897,7 +914,7 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-heig
 .wrap{{max-width:900px;margin:0 auto;padding:0 24px}}
 .topbar{{background:var(--dark)}}
 .top{{font-family:var(--mono);font-size:12px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;max-width:900px;margin:0 auto}}
-.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:22px}}.top a span{{color:var(--green-bright)}}
+.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:26px;letter-spacing:-.02em}}.top a span{{color:var(--green-bright)}}
 .top .pg{{color:#929C8E;font-size:11px;letter-spacing:.12em;text-transform:uppercase}}
 h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,38px);letter-spacing:-.02em;margin:32px 0 6px}}
 .sub{{font-family:var(--mono);font-size:12px;color:var(--meta);margin-bottom:22px}}
