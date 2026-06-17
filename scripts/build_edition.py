@@ -141,6 +141,7 @@ EDITORIAL RULES:
   - "context" = 2-3 sentences of widely-known background: the key players and why this matters now. Depth from established general knowledge, never speculation.
   - "why_it_matters" = 2 sentences of concrete, story-specific impact: prices, jobs, daily life, investments, or the bigger picture. Must be specific to this story.
   - "whats_next" = 1 sentence on what to watch, framed as expectation ("expect", "likely") not fact.
+- "key_facts" = an array of 2-5 short, concrete bullet strings capturing the HARD FACTS of the story that a reader would want at a glance — the actual specifics, not generalities. For a squad: the key players named. For a scheme/budget: the amount and beneficiaries. For a result: the score and top performers. For an appointment: who and to what role. For a deal: the parties and value. Each bullet under ~12 words, factual, drawn only from the headline + well-known facts. If the story genuinely has no hard specifics, use an empty array [].
 - "image_subject" = the SINGLE most photographable real subject of the story for an encyclopedia image lookup — a real person's full name, a place, a landmark, or an institution exactly as it would title a Wikipedia article (e.g. "Narendra Modi", "Supreme Court of India", "Wankhede Stadium", "Reserve Bank of India", "Rohit Sharma"). Use "" (empty) if the story has no specific real named subject (pure concept/abstract stories).
 - "image_query" = a 3-5 word search phrase for a stock-photo library that captures the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think about what a relevant photo would actually show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers technology"; a bullet train story -> "high speed train railway". Prefer Indian or contextual terms where the story is Indian. Never names of real people or brands.
 - "image_safety" = classify the story for image handling. Use "real" if the story centres on a specific named real person OR a specific real event/incident (politics, court rulings, deaths, disasters, match results, named individuals). Use "concept" ONLY if it is an abstract/thematic story (markets, economy, technology trends, lifestyle) with no specific real person or event as its subject. When unsure, use "real".
@@ -148,7 +149,7 @@ EDITORIAL RULES:
 - Keep source names and URLs exactly as given.
 
 Respond with ONLY a JSON object, no markdown fences, no text before or after it:
-{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","image_query":"...","image_subject":"...","image_safety":"real","source":"...","url":"...","breaking":false}]}"""
+{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","what_happened":"...","context":"...","why_it_matters":"...","whats_next":"...","key_facts":["...","..."],"image_query":"...","image_subject":"...","image_safety":"real","source":"...","url":"...","breaking":false}]}"""
 
 API_URL = "https://api.anthropic.com/v1/messages"
 # Current Sonnet. If this ever 400s with a model error, update this ONE line.
@@ -724,6 +725,12 @@ def article_page(story, section, edition):
     blocks = "".join(
         f'<div class="block"><h2>{e(label)}</h2><p>{e(text)}</p></div>'
         for label, text in summary_blocks(story))
+    # Key facts box — the hard specifics (squad, figures, score) at a glance.
+    kf = [f for f in (story.get("key_facts") or []) if str(f).strip()]
+    facts_box = ""
+    if kf:
+        items = "".join(f"<li>{e(str(f))}</li>" for f in kf[:5])
+        facts_box = f'<div class="facts"><h2>Key facts</h2><ul>{items}</ul></div>'
     src_name = e(story.get("source", "the original source"))
     src_url = e(story.get("url", "#"))
     return f"""<!DOCTYPE html>
@@ -750,6 +757,9 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-heig
 .topbar{{background:#0E130E;margin-bottom:30px}}
 .top{{font-family:var(--mono);font-size:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:660px;margin:0 auto}}
 .top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:26px;letter-spacing:-.02em}}.top a span{{color:#3BCB8D}}
+.topnav{{display:flex;gap:16px;align-items:center}}
+.topnav a{{font-family:var(--mono)!important;font-size:12px!important;font-weight:600!important;color:#C9D2C5!important;letter-spacing:.04em;transition:color .15s}}
+.topnav a:hover{{color:#3BCB8D!important}}
 .cat{{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);font-weight:700;background:#fff;padding:5px 12px;border-radius:999px}}
 .kick{{font-family:var(--mono);font-size:11px;color:var(--meta);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}}
 .kick b{{color:#0E7B52}}
@@ -767,6 +777,11 @@ h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,40px);li
   .block p{{font-size:15.5px;line-height:1.7}}
 }}
 .block{{padding:18px 0;border-bottom:1px solid var(--hairline)}}
+.facts{{background:#fff;border:1px solid var(--hairline);border-left:4px solid var(--hue);border-radius:12px;padding:16px 18px;margin-bottom:8px}}
+.facts h2{{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);margin-bottom:10px}}
+.facts ul{{margin:0;padding:0;list-style:none}}
+.facts li{{font-size:15px;padding:5px 0 5px 20px;position:relative;line-height:1.5}}
+.facts li::before{{content:"▸";position:absolute;left:0;color:var(--hue)}}
 .block h2{{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);margin-bottom:7px}}
 .block p{{font-size:16.5px;color:var(--ink-soft)}}
 .cta{{display:block;text-align:center;margin:26px 0 8px;background:var(--hue);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;font-size:15.5px;padding:15px 20px;border-radius:13px;transition:transform .15s,box-shadow .15s}}
@@ -779,12 +794,13 @@ footer p{{font-size:12px;line-height:1.8;max-width:560px}}
 footer a{{color:#3BCB8D;text-decoration:none}}
 </style></head>
 <body>
-<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><span class="cat">{e(section['name'])}</span></div></div>
+<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><nav class="topnav"><a href="/current-affairs.html">Current Affairs</a><a href="/archive.html">Archive</a></nav></div></div>
 <div class="wrap">
 <p class="kick"><b>✓ Verified source:</b> {src_name} · {e(story['time'])} · {e(edition['date'])}</p>
 <h1>{e(story['headline'])}</h1>
 {hero}
 <article>
+{facts_box}
 {blocks}
 </article>
 <a class="cta" href="{src_url}" rel="noopener" target="_blank">Read the full story at {src_name} →</a>
@@ -818,7 +834,7 @@ def write_outputs(edition):
             # article page; the homepage sits at root, so use the root-relative path.
             if st.get("image_home"):
                 st["image"] = st["image_home"]
-            for k in ("article", "what_happened", "context", "why_it_matters", "whats_next", "image_home", "_edition_date"):
+            for k in ("article", "what_happened", "context", "why_it_matters", "whats_next", "key_facts", "image_home", "_edition_date"):
                 st.pop(k, None)
     with open("data.js", "w", encoding="utf-8") as f:
         f.write("// auto-generated " + NOW.strftime("%Y-%m-%d %H:%M IST") +
@@ -915,6 +931,9 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-heig
 .topbar{{background:var(--dark)}}
 .top{{font-family:var(--mono);font-size:12px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;max-width:900px;margin:0 auto}}
 .top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:26px;letter-spacing:-.02em}}.top a span{{color:var(--green-bright)}}
+.topnav{{display:flex;gap:16px;align-items:center}}
+.topnav a{{font-family:var(--mono)!important;font-size:12px!important;font-weight:600!important;color:#C9D2C5!important;letter-spacing:.04em}}
+.topnav a:hover{{color:var(--green-bright)!important}}
 .top .pg{{color:#929C8E;font-size:11px;letter-spacing:.12em;text-transform:uppercase}}
 h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,38px);letter-spacing:-.02em;margin:32px 0 6px}}
 .sub{{font-family:var(--mono);font-size:12px;color:var(--meta);margin-bottom:22px}}
@@ -936,7 +955,7 @@ footer{{background:var(--dark);color:#929C8E;margin-top:48px;padding:28px 0 64px
 footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 </style></head>
 <body>
-<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><span class="pg">Archive</span></div></div>
+<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><nav class="topnav"><a href="/current-affairs.html">Current Affairs</a><a href="/">Home</a></nav></div></div>
 <div class="wrap">
 <h1>Every story we've published.</h1>
 <p class="sub">{total} stories · all from verified publishers · each linked to its original source</p>
