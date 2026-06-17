@@ -78,16 +78,24 @@
   /* ============ MASTHEAD ============ */
   .band{background:var(--dark);color:var(--paper-on-dark);padding:20px 0 116px}
   .brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
-  .brand{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.5vw,40px);letter-spacing:-.025em;text-decoration:none;line-height:1}
+  .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1}
   .brand span{color:var(--green-bright)}
-  .brand-side{display:flex;align-items:center;gap:18px}
   .archive-link{font-family:var(--mono);font-size:12px;color:var(--paper-on-dark);text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;transition:all .18s}
   .archive-link:hover{border-color:var(--green-bright);color:var(--green-bright)}
+  .ca-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);background:var(--green-bright);text-decoration:none;padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
+  .ca-link:hover{background:#fff;color:var(--ink)}
+  .brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+  .brand-nav{display:flex;align-items:center;gap:10px}
   .brand-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--meta-on-dark);text-align:right;line-height:1.7}
   .brand-meta .v{color:var(--green-bright);font-weight:600}
   .live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green-bright);margin-right:6px;box-shadow:0 0 8px var(--green-bright);animation:pulse 2.4s infinite;vertical-align:1px}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  @media (max-width:600px){.brand-meta{display:none}}
+  @media (max-width:600px){
+    .brand-meta{display:none}
+    .brand-row{flex-wrap:wrap;gap:10px}
+    .brand-side{width:100%;justify-content:flex-start}
+    .ca-link,.archive-link{font-size:11px;padding:6px 12px}
+  }
   .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
   .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 120s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
@@ -165,7 +173,6 @@
   .hscroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .hscroll::-webkit-scrollbar{display:none}
   .card{flex:0 0 320px;scroll-snap-align:start;background:var(--card);border:1px solid var(--hairline);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
-  @media (max-width:600px){.card{flex:0 0 80vw}.card .media{aspect-ratio:3/2}}
 
   /* ============ COMPREHENSIVE MOBILE OPTIMISATION (phone-first) ============ */
   @media (max-width:600px){
@@ -173,7 +180,15 @@
     .wrap{padding:0 14px}
     /* Cards: near-full-width with a peek of the next, consistent gap */
     .hscroll{gap:12px;padding:2px 0 14px}
-    .card{flex:0 0 86vw;border-radius:16px}
+    .card{flex:0 0 82vw;border-radius:16px}
+    /* Right-edge fade overlay on each carousel = visible "more →" hint.
+       Lives on the section, sits over the scroll rail's right edge. */
+    section{position:relative}
+    .rail-wrap{position:relative}
+    .rail-wrap{--fade:1}
+    .rail-wrap::after{content:"";position:absolute;top:0;right:0;bottom:14px;width:42px;
+      background:linear-gradient(90deg,rgba(246,246,244,0),var(--paper));
+      pointer-events:none;z-index:2;opacity:var(--fade);transition:opacity .2s}
     .card .pad{padding:15px 16px 16px;gap:8px}
     /* Headline: a touch smaller, comfortable line-height, no overflow */
     .card h3{font-size:17.5px;line-height:1.28;letter-spacing:-.01em;word-break:break-word}
@@ -193,10 +208,11 @@
     .sec-head .count{display:none}
     .sec-more{font-size:10.5px;padding:7px 12px}
     /* Topline: comfortable reading measure, centered, not cramped */
-    .today{padding:20px 0 6px;gap:18px}
-    .topline{font-size:15px;line-height:1.65;padding:0 8px;font-weight:500;letter-spacing:0}
+    .today{padding:20px 10px 6px;gap:18px}
+    .topline{font-size:15px;line-height:1.65;padding:0 6px;font-weight:500;letter-spacing:0;max-width:100%}
     .strip-cells{height:14px;gap:3px}
-    .strip-caption{font-size:9.5px;line-height:1.4;margin-top:10px;padding:0 12px}
+    .strip-box{padding:0 4px}
+    .strip-caption{font-size:9.5px;line-height:1.5;margin-top:10px;padding:0 16px}
     /* Carousel: title sits clear of the gradient, dek hidden already */
     .slide h2{font-size:19px;line-height:1.18}
     .slide-content{padding:14px 16px 18px}
@@ -204,6 +220,13 @@
     /* Filter chips: easy to tap, no crowding */
     .chip{font-size:12.5px;padding:8px 14px}
     .nav-inner{gap:5px;padding:10px 0}
+    /* Filter row also gets a right-edge fade hint when scrollable */
+    nav{position:sticky;top:0}
+    .nav-fade{position:relative}
+    .nav-fade{--fade:1}
+    .nav-fade::after{content:"";position:absolute;top:0;right:0;bottom:0;width:38px;
+      background:linear-gradient(90deg,rgba(246,246,244,0),rgba(246,246,244,.95));
+      pointer-events:none;z-index:2;opacity:var(--fade);transition:opacity .2s}
     /* Newsletter popup: fit small screens without edge-bleed */
     .nl{right:10px;left:10px;bottom:10px;padding:18px}
     .nl h4{font-size:18px}
@@ -285,7 +308,10 @@
     <div class="brand-row">
       <a class="brand" href="/">The Last <span>24</span></a>
       <div class="brand-side">
-        <a class="archive-link" href="archive.html">Archive →</a>
+        <div class="brand-nav">
+          <a class="ca-link" href="current-affairs.html">Current Affairs →</a>
+          <a class="archive-link" href="archive.html">Archive →</a>
+        </div>
         <div class="brand-meta"><span class="live-dot"></span>Up to date<br><span class="v">✓ Verified publishers only</span><br><span id="date-label">—</span></div>
       </div>
     </div>
@@ -306,11 +332,11 @@
   <p class="topline rise in" id="topline"></p>
   <a class="strip-box rise in" href="archive.html" aria-label="Browse the full archive">
     <div class="strip-cells" id="strip" aria-label="Hours when stories broke"></div>
-    <p class="strip-caption">Each lit cell: an hour something broke — tap to browse the full archive →</p>
+    <p class="strip-caption">Each cell marks a major event from around the world — tap to explore all stories in our archive →</p>
   </a>
 </div>
 
-<nav><div class="wrap nav-inner" id="nav"></div></nav>
+<nav><div class="wrap nav-fade"><div class="nav-inner" id="nav"></div></div></nav>
 
 <main class="wrap" id="main"></main>
 
@@ -625,7 +651,7 @@ window.BRIEF = window.BRIEF || {
 };
 
 (function(){
-  var NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"; // Formspree/Buttondown endpoint. Empty = demo mode.
+  var NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"; // Formspree endpoint.
   var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", ai:"#0E8E8E", sports:"#CE3D1D", entertainment:"#C2317E"};
   var B = window.BRIEF || window.EDITION || null;
   var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
@@ -803,7 +829,9 @@ window.BRIEF = window.BRIEF || {
         '</p></div>';
       rail.appendChild(d);
     });
-    sec.appendChild(rail);
+    var railWrap = document.createElement('div'); railWrap.className = 'rail-wrap';
+    railWrap.appendChild(rail);
+    sec.appendChild(railWrap);
     var step = function(){ return (rail.firstChild ? rail.firstChild.getBoundingClientRect().width + 16 : 336); };
     prev.addEventListener('click', function(){ rail.scrollBy({left: -step(), behavior: noMotion?'auto':'smooth'}); });
     next.addEventListener('click', function(){ rail.scrollBy({left: step(), behavior: noMotion?'auto':'smooth'}); });
@@ -817,6 +845,23 @@ window.BRIEF = window.BRIEF || {
     }
   });
   setFilter('all');
+
+  // Honest scroll hints: hide a rail's right-edge fade once it's scrolled to the end.
+  function wireFade(scroller, wrapper){
+    function update(){
+      var atEnd = scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4;
+      var scrollable = scroller.scrollWidth > scroller.clientWidth + 4;
+      wrapper.style.setProperty('--fade', (scrollable && !atEnd) ? '1' : '0');
+    }
+    scroller.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    setTimeout(update, 100);
+  }
+  document.querySelectorAll('.rail-wrap').forEach(function(w){
+    var r = w.querySelector('.hscroll'); if(r) wireFade(r, w);
+  });
+  var navFade = document.querySelector('.nav-fade');
+  if(navFade) wireFade(document.getElementById('nav'), navFade);
 
   // scroll-reveal
   if('IntersectionObserver' in window && !noMotion){
