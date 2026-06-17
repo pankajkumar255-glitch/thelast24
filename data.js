@@ -1,8 +1,8 @@
-// auto-generated 2026-06-17 18:08 IST
+// auto-generated 2026-06-17 18:34 IST
 window.BRIEF = {
   "date": "Wednesday, 17 June 2026",
-  "edition": "2026-06-17 18:08",
-  "topline": "India's Supreme Court and High Court dominated the day with battles over NEET-UG, Telegram's ban, Aadhaar misuse and a registry scandal, while Trump broke with Israel at the G7 over Lebanon strikes as Iran threatened a harsh response.",
+  "edition": "2026-06-17 18:34",
+  "topline": "India's markets surged and exports hit a record $863 billion as economic optimism ran high, while courts, Telegram, and trade deal murmurs with the UK kept the country's legal and diplomatic machinery equally busy.",
   "lensLabel": "Why it matters",
   "sections": [
     {
@@ -22,6 +22,28 @@ window.BRIEF = {
         },
         {
           "hour": 16,
+          "time": "16:42 IST",
+          "headline": "Supreme Court calls cyber criminals 'parasites', denies bail and urges harsher laws",
+          "what": "The Supreme Court of India denied bail to a cyber criminal, using strong language to describe such offenders as 'parasites' on society. The bench called for stricter, harsher legislation to deal with the growing menace of cybercrime in the country. The ruling signals a toughening judicial stance at a time when digital fraud and cyber scams have surged across India, hitting ordinary citizens hardest.",
+          "lens": "With cyber fraud draining ordinary Indians of savings daily, the Supreme Court's push for harsher laws could directly shape how aggressively police and courts pursue digital criminals going forward.",
+          "source": "India Today",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNeTlIT2ZYLTNxSE5Lcm1uUWNjcWdEbFFWUDR3Ym81ZV9xelJ0NUxTS2JFa1AwNWY2VDRxNjlHX0UwNGtETHQtSFV2X1FMYV9oZWNUUlhoWDF5WHpaZWZWRGJGMUMxci1Jc2J4WWhOd2xuaTZWM2JPNTdYWXNEVklSZ1d0dk5YQWVZSnVnR0x4ZU41Zy03SmVrSmN2ZUlZM1k4SkkxcUpkbnFKbjhCcDZ5YkVLenllYnQxdjQ4azM1aWZJSXJJSndnZXdMSmFHemJx0gHWAUFVX3lxTE93bnBkYzJtemhSSEpEYlFwMGJuSUc3YkxLdTBDaU1oWVNZY2c2azNJaFFOWlBiZmJINklrYXQ3TC14SUZQM0xYYmc2RHpkamVnVmMwNjJjMnY0VW4wa0NHaEdzd3hqbFE0ZDR4OUlySXprMUpmV1NxY0dfSE5xTk82UFhPNE9RR0F0V3l2a2VFbTg5Z190ZHJEVzdnbGg4N0RGLTNoeHRkMExpaHUwQnZ4eklwbUQ1Y3czbkMzY0ZlVFFBWWtrNlRKbUhJN2VXSWUxaU04RWc?oc=5",
+          "breaking": false,
+          "slug": "20260617-supreme-court-calls-cyber-criminals-parasites-denies-bail-and-urges-ha"
+        },
+        {
+          "hour": 16,
+          "time": "16:33 IST",
+          "headline": "Supreme Court orders probe into 'serious' allegation that its own Registry misplaced case records",
+          "what": "The Supreme Court of India has ordered an internal investigation into what it described as a 'serious' allegation that the court's own Registry misplaced case records. The directive came from a bench that treated the matter with unusual gravity, given that administrative failures within the apex court's own secretariat could affect the delivery of justice. The development raises questions about internal accountability mechanisms at India's highest court.",
+          "lens": "If the Supreme Court's Registry cannot reliably maintain case records, litigants waiting years for justice face the additional risk of their cases being administratively derailed — a concern that affects anyone with a matter before the court.",
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOT3ZIQTM0TmQxTkp2Ymh1QnBTdGNkbU1Vc0xKZGNKSUdPMEFrLUE3eXJybjY0Zzc5Wk5TMFdWbEdzeGZTNERCS2o1UGJXT3ZScE9ZdTJSbkJyWFBTOGRPZWpkaDhWRG5IVW8wOFVaOE5OdUJJTWQxN0RmTGZPODJ2ZWZ0blhjRlk2MlJKWWZzeFhRTDYtWTlhaDBRMXpxSVN0b1Exb0wxcDB4SmF6NktDbUpuUk00TEpDZXdBNmNWTi1OdXVOSVp0dWwySWJZT3VNUmRDUkN30gHcAUFVX3lxTE00dUJEbVh4Z2JIRzB3ek1pOW5xblZLMkZrNllpdDh6WldLNmJ6MkZiLXM5cTB6dFlZcVlvYW9fQWtTMEtVUmhkWThpdEE5dWxSMGFmVV9pNy1KUWRua21lTUhWeXJKRDVpZ3ducVdQYVJ3eFFvT1AzZE1MdGoyaDB5TGRfUjBzNkEwNFRya2MwdmVuV0gwUXV3VVlNUDdtZW8xRXhnME5EcmRId3MxX0tFRGtzRUREWGtjcTBUNlhJRUpaSWJUN1BfWG8xQTQyaXA4MWR4aEg4bzJvQVk?oc=5",
+          "breaking": false,
+          "slug": "20260617-supreme-court-orders-probe-into-serious-allegation-that-its-own-regist"
+        },
+        {
+          "hour": 16,
           "time": "16:43 IST",
           "headline": "SC bench headed by Justice PS Narasimha to hear plea challenging NEET-UG retest order in July",
           "what": "A Supreme Court bench headed by Justice PS Narasimha is scheduled to hear a plea challenging the NEET-UG retest ordered for July. The case is part of the continuing legal fallout from the NEET-UG 2024 paper leak scandal, which has triggered multiple court petitions, student protests, and government scrutiny of the National Testing Agency. The hearing adds to a growing pile of legal challenges surrounding one of India's most consequential entrance exams.",
@@ -32,48 +54,15 @@ window.BRIEF = {
           "slug": "20260617-sc-bench-headed-by-justice-ps-narasimha-to-hear-plea-challenging-neet"
         },
         {
-          "hour": 16,
-          "time": "16:33 IST",
-          "headline": "Supreme Court orders probe into 'serious' allegation that Registry misplaced case records",
-          "what": "The Supreme Court has said a probe is needed into what it called a 'serious' allegation that its own Registry misplaced case records. The court's acknowledgment of such an allegation is highly unusual and points to potential lapses in judicial administration at the highest level. The development raises questions about record-keeping integrity within the Supreme Court itself. No further details of the specific case involved were immediately available from the headline.",
-          "lens": "If the Supreme Court's own Registry is found to have misplaced case files, it strikes at the root of judicial reliability — affecting litigants whose cases depend entirely on proper maintenance of court records.",
-          "source": "The Hindu",
-          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOT3ZIQTM0TmQxTkp2Ymh1QnBTdGNkbU1Vc0xKZGNKSUdPMEFrLUE3eXJybjY0Zzc5Wk5TMFdWbEdzeGZTNERCS2o1UGJXT3ZScE9ZdTJSbkJyWFBTOGRPZWpkaDhWRG5IVW8wOFVaOE5OdUJJTWQxN0RmTGZPODJ2ZWZ0blhjRlk2MlJKWWZzeFhRTDYtWTlhaDBRMXpxSVN0b1Exb0wxcDB4SmF6NktDbUpuUk00TEpDZXdBNmNWTi1OdXVOSVp0dWwySWJZT3VNUmRDUkN30gHcAUFVX3lxTE00dUJEbVh4Z2JIRzB3ek1pOW5xblZLMkZrNllpdDh6WldLNmJ6MkZiLXM5cTB6dFlZcVlvYW9fQWtTMEtVUmhkWThpdEE5dWxSMGFmVV9pNy1KUWRua21lTUhWeXJKRDVpZ3ducVdQYVJ3eFFvT1AzZE1MdGoyaDB5TGRfUjBzNkEwNFRya2MwdmVuV0gwUXV3VVlNUDdtZW8xRXhnME5EcmRId3MxX0tFRGtzRUREWGtjcTBUNlhJRUpaSWJUN1BfWG8xQTQyaXA4MWR4aEg4bzJvQVk",
-          "breaking": false,
-          "slug": "20260617-supreme-court-orders-probe-into-serious-allegation-that-registry-mispl"
-        },
-        {
-          "hour": 16,
-          "time": "16:42 IST",
-          "headline": "Supreme Court denies bail to cyber criminal, calls them 'parasites' and demands harsher law",
-          "what": "The Supreme Court denied bail to a cyber criminal while making strong observations, calling such offenders 'parasites' on society. The court went further to call for harsher legislation specifically targeting cyber crime. The remarks signal the judiciary's growing frustration with the scale and impunity of online financial fraud in India, and may spur legislative action. No details of the specific accused or the crime were specified in the headline.",
-          "lens": "With cyber fraud costing Indian victims thousands of crores annually and cases surging, the Supreme Court's push for harsher laws directly responds to a threat that millions of ordinary Indians increasingly face.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNeTlIT2ZYLTNxSE5Lcm1uUWNjcWdEbFFWUDR3Ym81ZV9xelJ0NUxTS2JFa1AwNWY2VDRxNjlHX0UwNGtETHQtSFV2X1FMYV9oZWNUUlhoWDF5WHpaZWZWRGJGMUMxci1Jc2J4WWhOd2xuaTZWM2JPNTdYWXNEVklSZ1d0dk5YQWVZSnVnR0x4ZU41Zy03SmVrSmN2ZUlZM1k4SkkxcUpkbnFKbjhCcDZ5YkVLenllYnQxdjQ4azM1aWZJSXJJSndnZXdMSmFHemJx0gHWAUFVX3lxTE93bnBkYzJtemhSSEpEYlFwMGJuSUc3YkxLdTBDaU1oWVNZY2c2azNJaFFOWlBiZmJINklrYXQ3TC14SUZQM0xYYmc2RHpkamVnVmMwNjJjMnY0VW4wa0NHaEdzd3hqbFE0ZDR4OUlySXprMUpmV1NxY0dfSE5xTk82UFhPNE9RR0F0V3l2a2VFbTg5Z190ZHJEVzdnbGg4N0RGLTNoeHRkMExpaHUwQnZ4eklwbUQ1Y3czbkMzY0ZlVFFBWWtrNlRKbUhJN2VXSWUxaU00RWc",
-          "breaking": false,
-          "slug": "20260617-supreme-court-denies-bail-to-cyber-criminal-calls-them-parasites-and-d"
-        },
-        {
           "hour": 12,
-          "time": "12:19 IST",
-          "headline": "Supreme Court seeks Centre and states' response on plea over Aadhaar 'misuse'",
-          "what": "The Supreme Court has issued notices to the Central government and state governments seeking their response on a plea alleging misuse of Aadhaar. The petition raises concerns about how the biometric identity system, which is linked to welfare schemes, banking, and telecom for over a billion Indians, is being used or misused. The court's decision to seek an official response signals it found the plea substantial enough to warrant a formal answer from both tiers of government.",
-          "lens": "Aadhaar is linked to bank accounts, SIM cards, and welfare benefits for over a billion Indians — any misuse of the system could expose ordinary citizens to identity theft, financial fraud, or wrongful denial of entitlements.",
-          "source": "The Hindu",
-          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNVDZ4RTRQZ2hnd0QxcDczYndJX1YyNWpNVmhOaDgxemxTNDBrdzVWZ2JfMGFiaTJZZllPcFlkQUM4UmZIVEU4cGpBOXR0S3dGS1JXM21XZmtSd0ZObklpN29raVBHWEtEYkRDT0hyZE13RkY5WUtYMDIwX0lTRmtEamY3WUJBeEpBVHcyREJGbFYyUmRDWTh6MFowYl9WOWFYSnJLQU1CMXU1Z194VFdjeXRRZzhOaHFhdk1rUUU2ZVRFb1BmeHdtZXVVd21RUTdsVXZtTE9TdGlSNlllejF3Vk1UOGFyb0tWWXJB0gHyAUFVX3lxTFB3Wi1KNURCaWRVMmtSc19UTEZXZS1QOVJlM2FRV3JiX3hFZFB1SjNUSm83V0M2cWRSSlpZTU9aczhzVzU2RVBiYmNBM01YRkxHdzVCWFhzYndXdTZBZGhLUVpPck1CNHN0R0hPbmRLTkdKR1czV2V2T1lwTV9sd2lTRDg5OTJwVU9GeUpGOHkzejhEVEp0UHZMNkFER3FQaHN1SnpWUkg3Ym14cjNfSzhCR2w0WUFBcm9GcG5nRlUydE9MUXZmenA2X1Z4ZU1DMlBuZlo0bmZJdUJmRnF2aHJpRGNoY0ZIUjJBTHhXcG9qa05B",
-          "breaking": false,
-          "slug": "20260617-supreme-court-seeks-centre-and-states-response-on-plea-over-aadhaar-mi"
-        },
-        {
-          "hour": 11,
-          "time": "11:11 IST",
-          "headline": "Telegram challenges India's temporary ban in Delhi High Court over NEET paper leak fears",
-          "what": "Telegram has moved the Delhi High Court challenging an Indian government order that temporarily blocks its use in the country. The ban is linked to fears that the platform was used to leak NEET examination papers. A hearing was scheduled for the same day. The case puts a global messaging giant directly at odds with Indian regulators over exam integrity and platform accountability.",
-          "lens": "With over 500 million users in India, a sustained Telegram ban would immediately affect millions who use it for study groups, news channels, and daily communication — making this court hearing directly consequential for everyday users.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZjlZUk90MWN0SkR6TkxxY3ktWUNBNzc4TjhpeDZLam1uOEpxTXE2OUY5X1NWRmFfN1NFMXcwaThmdDFJdnQ3aVZqak91VFd4ZUNsSzZ2TU4tajZhZnRNNXd1Tk1zTUpnR0M4Y0FRMW1OZng0VGdzRTE3S0FlTG9MZHMwdVlpNm8tTVA5QTI5NXNNRDFxNGNIR09ycEpMUlktdXg2b2xMLXJ0UzBSYUstZFNrRldISDVCNG5ZVGt5eGs1Z242anJEZkFpblF0UC1SdENvaXRvUU9yYm00RjMzSHBveXZOS3V3WlZHeTRaX0lOcmlGZG4wOGNEUnBJUdIBgwJBVV95cUxPOWl2Nm5kbnFIY3BWc2NzMDZvUmM4b19RQWtUbWNOS3JWd3huM3FUT0gzaFB5R1AxaTIwaGZUZ1lDb3RjNG5QelJRQmhXdzZxVUJraVJ3M0I0UGl6QWhWMjVsLXppQVRVNUJBNWw1TW15UVFNMmtIY0VCNHRvZ2ZpTThJaGRFM0QxbWRPRXYxaVh6dzFoS3lacm9LTnVIRHVRdG9pbVRyeXpEZldRQ1hmb3JJRThuQW5LMWJjTE94eTdVU0t2NXBoX2FhbUxyRzk4TTFiTWVuMDVPYjZjOGtWRV93TTZWaGlheW0xSmVGRDhrNmZoMTJ4YmVEY1VlcXdDUnhv",
+          "time": "12:11 IST",
+          "headline": "Telegram challenges Indian government order temporarily blocking its use over NEET paper leak fears",
+          "what": "Telegram is legally contesting an Indian government order that temporarily blocks its use in the country, reportedly issued over fears linked to the NEET examination paper leak controversy. The messaging app, which has hundreds of millions of users in India, is pushing back against the ban through official channels. The move puts the government's internet-blocking powers and the platform's accountability in the spotlight.",
+          "lens": "Millions of Indians use Telegram daily for everything from study groups to work channels — a sustained block would disrupt education, business, and civic communication at scale.",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWVl3M2ZUeE5RcmVySnY3dXhNeGhpamRPaHNGbzh2Nk00RDNBWXZMSmZzWGFIM3Z3V0VkYUtiRmJhbUwxa3ByeWQzbGs1el8xWEVELXBLWVBjdHJkSHlTNS1Dc1FrV1VlTmlQYjY5RTZrdk15SzdkaVJXU3FwX082c0FwZUhRWkdaRUk5ZVkzZ3VKYjhHZ2djYWswT0xjTGU0MmstYURKblh4OFRoV3ZnOW1UeW9uc3dnU3R3OTgtWVhsQQ?oc=5",
           "breaking": true,
-          "slug": "20260617-telegram-challenges-india-s-temporary-ban-in-delhi-high-court-over-nee"
+          "slug": "20260617-telegram-challenges-indian-government-order-temporarily-blocking-its-u"
         }
       ]
     },
@@ -81,6 +70,21 @@ window.BRIEF = {
       "id": "world",
       "name": "World",
       "stories": [
+        {
+          "hour": 16,
+          "time": "16:38 IST",
+          "headline": "Trump Warns He'll Resume Bombing Iran If Nuclear Deal Falls Through",
+          "what": "US President Donald Trump has warned that any Iran nuclear deal is not yet final, threatening to return to airstrikes if negotiations collapse. The statement came amid ongoing diplomatic efforts to reach a new agreement with Tehran over its nuclear programme. Trump's remarks underscore the fragile state of talks and the high stakes involved, with the threat of military escalation remaining explicitly on the table.",
+          "lens": "A renewed US-Iran military conflict would spike global oil prices overnight — and India, which imports a large share of its crude from the Gulf, would feel that at the petrol pump almost immediately.",
+          "source": "NDTV",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQjJUemFiMWJQcnFfcmx3azY5elV1TFVrcE1JdnJiNHFvUVpIVEpGY0piYXJUbk5kcnBYZ004VTZTODBSTWdSem1KSjVWZDdydGNrS3VMdFZqYjIxRE1BXzk2cTdSelBSSEoxZldnUm11OGtjZ0ZTUmJZV0FkOTdnOGZCNC11WF9BbFBFS0tQeWU0MkxGWFVzc0M0T1N0ekdLbmhJMjd5NkpndWtuZDNtSWJQUHA5Q0QyaEtyM182aEcxd9IBygFBVV95cUxQVmVHNUVaQmRJbjZmVUNsaUZsNkdxMWVPYmV6UGdvTm5EWlo3SHVGWmJyQk5aOXFKS1htakxMeVBSd28yUkw5bVA4cG4tMXFzbzJ1S05LNTR1UjNvWnQ3UUlqY1BaOXg0bG50WkJPVnZaeE02S1UtUzdxeTZxUEJTLWVaUWxMYmpIdlVaeFRqY0U1RlIzUzZUX2k3YlRuZ3U1VmJXS0NiZ25tWWpVZVB6Mmg4bWVuUUZza1JNaXpuczhIeFFUR0JaUmdB?oc=5",
+          "breaking": true,
+          "slug": "20260617-trump-warns-he-ll-resume-bombing-iran-if-nuclear-deal-falls-through",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg",
+          "image_kind": "photo",
+          "image_credit": "Daniel Torok / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Donald_Trump"
+        },
         {
           "hour": 16,
           "time": "16:03 IST",
@@ -115,41 +119,15 @@ window.BRIEF = {
           "slug": "20260617-what-is-the-period-tax-pakistan-is-moving-to-scrap"
         },
         {
-          "hour": 13,
-          "time": "13:27 IST",
-          "headline": "24-Year-Old Indian Techie Among 11 Skydivers Killed in Missouri Plane Crash",
-          "what": "A 24-year-old Indian technology professional was among 11 skydivers killed when a plane crashed in Missouri, United States. The accident wiped out an entire group of skydivers and is one of the deadliest skydiving-related aviation accidents in recent US history. The identity of the Indian victim underscores the large presence of young Indian tech workers in the American Midwest, and the tragedy has drawn immediate attention from the Indian diaspora community.",
-          "lens": "With hundreds of thousands of young Indians working in the US tech sector, this crash is a stark reminder of the risks faced by the diaspora far from home — and will resonate deeply with families across India.",
-          "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOdnFCdzI2MF9kNlFySFBGQjhCZE96RXhkRTVHYUh3OFZ5djd4NVpGelJ2TEVVbEpINVlfM29CQVFFVzQxYThXbnVaRGVkQ2cwSHdBdm9oTkR4TVktcGwtUWQzWXoyNjZMR0Roblc1NXdBWlNTQzRjMGpSX3J3cUkxbWNnRUJfcWxLTEQwaDhlZTFFODhkM0QwYlVhVktzYkxkNjNPWGE3eGhwS3V3Ni1fMnFad0dNYk0yM3hjcFFGcjNSdktSTUJxMWQxVUdaamNvQ253NDBzTQ",
-          "breaking": true,
-          "slug": "20260617-24-year-old-indian-techie-among-11-skydivers-killed-in-missouri-plane"
-        },
-        {
-          "hour": 6,
-          "time": "06:09 IST",
-          "headline": "Trump Slams Israeli Attacks on Lebanon at G7, Says 'Not All Hezbollah'",
-          "what": "US President Donald Trump publicly criticised Israel's military strikes on Lebanon during the G7 Summit, declaring that not all targets in Lebanon are Hezbollah fighters. The rebuke is notable given the traditionally close US-Israel relationship, and comes as global leaders gathered at the summit discussed Middle East stability. Trump's comments suggest growing American discomfort with the scale and targeting of Israeli operations in Lebanon.",
-          "lens": "A public US-Israel rift at the G7 could reshape ceasefire diplomacy in Lebanon — and reduce pressure on Iran, affecting the wider regional security picture that India watches closely.",
-          "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOaUFYdjV0S25WQnZ0S1NMVlkxNW5qcDhES0JZRlRsbGZnTUE1aUNhWkxWdDF1c0JUS3l2RUV5Y3JKMmFrOFItUllSalBueDg2Wl9rOHQxcjZtSGlUM2k5dDIyTFkyRWVxNFF3YURlYlVLeEJIS01sUW1ZS1FIQ2JFNDRLZ3RaTTN6OW5yXzFHaWIydkpMOU84dlJFWXkwUjhJ",
+          "hour": 4,
+          "time": "04:39 IST",
+          "headline": "Why India, With 1.4 Billion People, Has Never Qualified for the Football World Cup",
+          "what": "A BBC analysis examines the persistent puzzle of why India, the world's most populous country, has never qualified for a FIFA World Cup. The piece explores structural issues including underfunding of grassroots football, the dominance of cricket in the sporting ecosystem, poor infrastructure, and governance problems within Indian football. India's FIFA ranking languishes far below smaller nations that regularly compete on the global stage.",
+          "lens": "With FIFA World Cup 2026 underway and Indian fans watching from the sidelines again, this BBC piece puts a spotlight on the systemic failures — governance, funding, infrastructure — that keep 1.4 billion people out of the world's biggest sporting event.",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1sbWZHMjJySHBCRXVzMVlqU29McHVjYW01Vnl5a1JJRXlSdmtqQzMtZFV4VkppU2tlV2FqdmN0eVdyRWVQa25MSk83ODltMTNsSTk3UmtBazZPUQ?oc=5",
           "breaking": false,
-          "slug": "20260617-trump-slams-israeli-attacks-on-lebanon-at-g7-says-not-all-hezbollah",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg",
-          "image_kind": "photo",
-          "image_credit": "Daniel Torok / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Donald_Trump"
-        },
-        {
-          "hour": 0,
-          "time": "00:42 IST",
-          "headline": "Iran Threatens 'Harsh Response' to Israeli Attacks in Lebanon",
-          "what": "Iran has issued a stark warning of a \"harsh response\" to Israeli military strikes on Lebanon, escalating tensions across the Middle East. The threat comes as Israel continues operations targeting Hezbollah positions in Lebanese territory. Iran's warning signals the risk of the conflict widening beyond Lebanon's borders, drawing in regional powers and potentially destabilising an already volatile area.",
-          "lens": "An Iran-Israel escalation over Lebanon could spike global oil prices — a direct hit on India's fuel import bill and household costs.",
-          "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOclhHTk1wOThaRUIzWmprTTEydUVuN3FVUk1neUhaSXJPOEg4MkI3Nzd4VTNOMFpTdFVRV0cxM24ycDdlZE1vMkh1MlZpTGRNQldWbUZmdDJKOThRTjZwZU84ZFZhX1hoN3pDdXZaSjRIUlhyZWdyYWJaWm00anpLbTZBWVdSWWd5S09scUVaMUJxTGpmNnktcXlTS0c4c3VuZ1E",
-          "breaking": false,
-          "slug": "20260617-iran-threatens-harsh-response-to-israeli-attacks-in-lebanon"
+          "slug": "20260617-why-india-with-1-4-billion-people-has-never-qualified-for-the-football"
         }
       ]
     },
@@ -161,8 +139,8 @@ window.BRIEF = {
           "hour": 16,
           "time": "16:30 IST",
           "headline": "India's exports hit record $863 billion despite global trade shocks",
-          "what": "India's total exports — goods and services combined — have reached a record $863 billion, according to a senior government official, defying global headwinds including tariff disruptions and supply-chain shocks. The milestone marks a significant jump from previous years and signals resilience in India's external trade. The figure underscores the country's growing role as a manufacturing and services export hub.",
-          "lens": "A record export figure directly affects jobs in manufacturing, IT, and logistics — and strengthens the rupee's stability, which matters to every Indian household dealing with import-driven inflation.",
+          "what": "India's total exports — goods and services combined — reached a record $863 billion in the recently concluded financial year, according to a senior government official. The milestone was achieved despite significant global trade headwinds, including tariff disruptions and sluggish demand in key markets. The figure underscores the resilience and growing scale of India's export engine across sectors ranging from engineering goods to software services.",
+          "lens": "A record export figure means more foreign exchange earnings for India, which strengthens the rupee, helps manage the current account deficit, and supports jobs in export-linked industries that employ millions of Indians.",
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQRmZKRkgwR3lHOG5HLWdhSDBtVjNoREFTYlBvbHJaU0pZSlNnTFdJSHd3YVYycVZ4UURFRmx1YUdvY3lrVVBOWGt2U3Z0ZkZvaHI3dVc4NUtwaUs3emxlUFdSTXI4eUxvcmZ5YzdjbFVkOHlBaFhJWldjMkZNWkh3S3NpZndPQTZhUGpYbHVHNzY5MnNkNUlMSy02bXB3SGZ3bVNJZ1NNajJRMkQ2ZEtBekw0R0NHTUtjVzFucFRZOWM2UFBKbEU3SjF0V2lhRndyVzZpQkcwWdIB3AFBVV95cUxOSXR4RjVsNDhMSzRaT1hxMUxqVWV2MTh0ZV90c2FYTG16TnpZcU9KT21zaG0zUnpIbXU3dkhRN3Q4N2p3WFBNQjV0akEtRmE3ZFAwQ0tLUW9zYTI4dlBseElsZFh1OV9PSF8ybThwYU1qeURBaFB0LUNyQXZqNktlRDUtT0ZVRzFjdTliQzZ6S18zMkl6VjhtNkE3SmNNbHFlOVlNbDY2YlBCb1JCOW9aSThrWTZHSlJObmt1VDhHd19saWd3aFVhamJkUlNIUW5rSWg3T2RiTTNDUFNy",
           "breaking": false,
@@ -170,14 +148,29 @@ window.BRIEF = {
         },
         {
           "hour": 15,
+          "time": "15:35 IST",
+          "headline": "Sensex gains 347 points, Nifty reclaims 24,000; IDBI Bank surges 16%",
+          "what": "Indian equity markets ended Wednesday's session firmly in the green, with the BSE Sensex closing 347 points higher and the Nifty 50 reclaiming the psychologically important 24,000 mark. The standout performer was IDBI Bank, which surged 16% — likely on news or expectations related to its long-pending privatisation process. Broader market sentiment was supported by positive global cues and domestic optimism.",
+          "lens": "For the millions of Indians with mutual fund SIPs or direct equity portfolios, a Nifty back above 24,000 with a strong banking outlier like IDBI Bank signals renewed market confidence after weeks of volatility.",
+          "source": "India Today",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNNVMxVEZ6OC1kN3RDaEtaQ19OMG9PTGtuR2dfemxjTzk3UEVrX1V0WjFnN2xHOFRhQl9PZjJhSE1tekctYnA3cHZRR3lnZ0p5U2hyYlpOeDQ5T0FRNlE2bUZYZV90dUJYN3FObjNyV2FtQ3FCdFZTODZ3MFNLb2luRDZ6cWZRU0J2dTRJeXhtZmpVLTJfLXBvZmxUdWdnWGpWajhqS0hGSkUzWXZiXzRXSTRVUW9fQnE4R2o1U0tmYU44RHJ2eXJnQ3E5cUl5YU05U3k5ai16TWU2b2F5SHFOU0N30gHnAUFVX3lxTFBKTjdqb25rZS1vamtfZ1BlbUhCRmE5WjVIWm9LS2hWMFpoVnpacjVLR1FubU1lZ2tmR3NzTGpxamdRbF9wWWdSMGFsbUxzbGs4Y1hqeUNtYXBRZjBYRGdVcTkzS0JhNHpMeDVmTEx6ZWl2b2xkTDBNNVhiZ1RKeWNxQzJheWhzUmFyVEVsUVNZRzF1SzFwRDFaQWhLMWxNa3BYaTVoVm5RUG5ZLWlsX1poNWg5VEgyRHIyZVB6WWNPTjB1ZEttbTFXYURPbTF5NWpsU0dpZmZWMDRXWVBOa3NIZzFRdXhQaw",
+          "breaking": false,
+          "slug": "20260617-sensex-gains-347-points-nifty-reclaims-24-000-idbi-bank-surges-16",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/BSE_building_at_Dalal_Street.JPG",
+          "image_kind": "photo",
+          "image_credit": "BSEINDIA / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Bombay_Stock_Exchange"
+        },
+        {
+          "hour": 15,
           "time": "15:17 IST",
-          "headline": "Starmer hot-mic moment hints at breakthrough in India-UK trade deal talks",
-          "what": "UK Prime Minister Keir Starmer was caught on a hot microphone apparently suggesting that a resolution to a key sticking point in India-UK free trade agreement negotiations is within reach. Bloomberg reported the remarks, which indicate a breakthrough may be imminent after talks had been stalled over issues including steel tariffs and immigration-linked visas. The two countries have been negotiating an FTA since January 2022.",
-          "lens": "An India-UK free trade deal would be one of the largest bilateral agreements India has signed, directly affecting exports of textiles, pharmaceuticals, and IT services — sectors that employ millions of Indians.",
+          "headline": "Starmer hot mic hints at breakthrough in India-UK trade deal row",
+          "what": "UK Prime Minister Keir Starmer was caught on a hot microphone suggesting that a sticking point in India-UK free trade agreement negotiations may be close to resolution, according to Bloomberg. The two countries have been negotiating the trade deal for over three years, with disagreements over tariffs, mobility of workers, and market access proving difficult to resolve. A breakthrough would be significant for both economies, with India seeking better market access for goods and services.",
+          "lens": "An India-UK free trade deal could meaningfully benefit Indian professionals seeking to work in the UK and Indian exporters of textiles, pharmaceuticals, and IT services who would gain easier access to a major Western market.",
           "source": "Bloomberg.com",
           "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQY2FOU1k2TUplUk84N0gtb0VkY21aSFk0RV9ZejhyMGd3Q05rR1BJQ0EwT3duMmxMeE11Wnl4WVllUUxrZ3ZDb3Q3QW52RXdlQ3ZmRmhrS0wtcWJhRDF3UGVuLWVJOFpySVE3d1NHcV9lNnpKMm4zVmJ2Tm1LQ1ZIRDlMTGFJclQ0M3JTb0ZqSmpYRTNWak1EV0J3WW5rQWF5amJPLUlCMVlwUFBleEEyc3ZrdVQ",
           "breaking": false,
-          "slug": "20260617-starmer-hot-mic-moment-hints-at-breakthrough-in-india-uk-trade-deal-ta",
+          "slug": "20260617-starmer-hot-mic-hints-at-breakthrough-in-india-uk-trade-deal-row",
           "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Prime_Minister_Keir_Starmer_Portrait_%28cropped%29.jpg",
           "image_kind": "photo",
           "image_credit": "Prime Minister's Office / Wikimedia Commons",
@@ -196,44 +189,18 @@ window.BRIEF = {
         },
         {
           "hour": 14,
-          "time": "14:43 IST",
-          "headline": "Canada's PM Mark Carney gives 'big update' on India-Canada trade deal",
-          "what": "Canadian Prime Minister Mark Carney has publicly signalled a significant update on the status of a potential India-Canada trade deal, according to NDTV. The development comes after India-Canada relations were severely strained following the 2023 diplomatic crisis over the killing of Khalistani separatist Hardeep Singh Nijjar, which led to the suspension of trade talks. Any resumption of negotiations would mark a notable thaw in bilateral ties.",
-          "lens": "India-Canada trade talks were frozen after a major diplomatic rupture — Carney signalling a 'big update' would mean a direct revival of a relationship that affects Indian students, diaspora, and bilateral commerce worth billions of dollars.",
-          "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxONTNhYVNnMUoxOUM3ZkJOd05EMTJaVFhydWMzQWhwaHZrQnZLUGhDQm9NYURJbmoxeDVzT2M0djhIc1FyVXo4M3pyUHFWNWZHZFp4TnVVTEhjeTZtSkRiNlgwdjVUc3AyZTBVSkpJSDNvbWZZYmljNFN4TG5HdXFFREZlaVpRZnppcmhsaWZybmw2eWhudE44VzhOZEtLLUR1SzhBdlAzYkZ2WWRNLVFrR1RNU1Y",
-          "breaking": false,
-          "slug": "20260617-canada-s-pm-mark-carney-gives-big-update-on-india-canada-trade-deal",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/2025-11-14_InaugurationREM_Deux-Montagnes_Mark_Carney.jpg",
-          "image_kind": "photo",
-          "image_credit": "Lea-Kim / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Mark_Carney"
-        },
-        {
-          "hour": 14,
           "time": "14:11 IST",
-          "headline": "Motilal Oswal's Raamdeo Agrawal: India's economy 'on full fire', largecaps set to lead",
-          "what": "Veteran investor and Motilal Oswal Financial Services co-founder Raamdeo Agrawal declared that India's economy is 'on full fire' in an interview with CNBC TV18, expressing strong bullishness on the macroeconomic outlook. He specifically said that large-cap stocks could regain market leadership after a period in which mid- and small-caps have outperformed. Agrawal's views are closely tracked by retail and institutional investors given his long track record in Indian equities.",
-          "lens": "Raamdeo Agrawal is one of India's most respected long-term investors — his call that largecaps are poised to lead is a direct signal for millions of mutual fund and equity investors deciding where to allocate money.",
+          "headline": "Raamdeo Agrawal says India's economy is 'on full fire', tips largecaps for leadership",
+          "what": "Motilal Oswal co-founder Raamdeo Agrawal told CNBC TV18 that India's economy is \"on full fire\", expressing strong bullishness on the country's growth trajectory. He predicted that largecap stocks could regain market leadership over mid and smallcaps in the coming period, a notable call given that mid and smallcaps have outperformed for much of the recent bull run. Agrawal is one of India's most closely watched long-term equity investors.",
+          "lens": "For retail investors deciding where to put their SIP money, a clear call from a veteran like Raamdeo Agrawal that largecaps may lead the next leg of the rally is a concrete signal worth weighing when reviewing their mutual fund or portfolio allocation.",
           "source": "CNBC TV18",
-          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPQXJYbGQ5ek1qUDI1TExzLTJxbGkzYkZfaU1PZDl3VEsyZjZ4WVd1S0lmdnhTaVJqeVU5OUdtSkV3UHVZbkI2cFQxTzNXZjZrVHA2WmJ1STZPbC1WQi1RdVBTUHFLanVCeXVRVW1nb1dkVXlGRk5RakM4bzQtcE9idktNajVfWW8wYndmRDlyTzJrRTJHTG56ejNBQXhLR1lhcXlUOFBiTzRWN2ZRLXlCQ3EtWDNSUmlCSWpfM3I5Wlk0c3A",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQlBRZDNHMGkyNmp3V25GUmZ6SEVSUkw2WmdRb3g2M1E1TnNQbFh2SWlLQkIyTDUyX3lqUWJ4VWMyUE53aVk0VmRHdEpkejRLZGRwa2hzbHpRX2I0em9wS2tpWmNZVmdjODlPZXFVVWNvVS1PTTc4SHlYSjNjTE5vSVhfR0VsYkhwVUM3bWlmdnhxbUZkbHlKYVk0NmF1ZHlFcld6U29LTkdJNFM3N0J1SGFMUnNDNWxlZDFrRVdDRWhYX2RLLWJxVA",
           "breaking": false,
-          "slug": "20260617-motilal-oswal-s-raamdeo-agrawal-india-s-economy-on-full-fire-largecaps",
+          "slug": "20260617-raamdeo-agrawal-says-india-s-economy-is-on-full-fire-tips-largecaps-fo",
           "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Lower_Parel%2C_Mumbai%2C_Maharashtra%2C_India_-_panoramio.jpg",
           "image_kind": "photo",
           "image_credit": "Udaykumar PR / Wikimedia Commons",
           "image_credit_url": "https://en.wikipedia.org/wiki/Motilal_Oswal_Financial_Services"
-        },
-        {
-          "hour": 13,
-          "time": "13:50 IST",
-          "headline": "Paras Defence, MTAR Tech, HAL shares rally as India's defence production hits all-time high",
-          "what": "Shares of Paras Defence, MTAR Technologies, and Hindustan Aeronautics Limited (HAL) rallied sharply after the government announced that India's defence production has touched an all-time high. The milestone reflects the success of India's push to indigenise military manufacturing under the 'Make in India' and Aatmanirbhar Bharat initiatives. Increased domestic defence output reduces import dependency and boosts revenues for listed defence firms.",
-          "lens": "A record in domestic defence production means more government contracts flowing to listed Indian companies like HAL and Paras Defence — directly impacting returns for investors in this high-profile sector.",
-          "source": "NDTV Profit",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNbjF4NEk3YlcwU3dnQ3lWa3VJbXZSUnNCdUpjMW5CWDFlRlpzRzg2d1BEbmJLOC1QNFNsX1dEMGRYNFdmU2pXdE5XMmF3dHBoMkVPUU5xekwxVV85eUt3WjBWOExqZl8wMy1VMEMwWWgwdWpaTWxFcnEzcU1ETmVENGJJUURiT1pQanp3WXpNa3BWc01tOFpyZVpYaFlwdU45SGluRmlfWEF1N1FtWUhJMzFrODAzOXUtLU1ET0UyaGhMQ01NVUpwVUFTQkJNNEcza2pGdUM2VEhNSXJM",
-          "breaking": false,
-          "slug": "20260617-paras-defence-mtar-tech-hal-shares-rally-as-india-s-defence-production"
         }
       ]
     },
@@ -255,61 +222,54 @@ window.BRIEF = {
         {
           "hour": 15,
           "time": "15:00 IST",
-          "headline": "Mercedes-Benz Sees India Playing a Bigger Role in Software and Sourcing",
-          "what": "Bloomberg reports that Mercedes-Benz is looking to expand India's strategic role within its global operations, specifically in software development and supply-chain sourcing. The automaker's acknowledgement signals a broader shift among multinational manufacturers who view India not just as a sales market but as a technology and engineering capability hub. Mercedes already runs significant engineering and IT operations in India, and this signals a further deepening of that footprint.",
-          "lens": "Mercedes expanding software and sourcing work in India means more high-value engineering and tech jobs for Indian professionals — and signals that global manufacturers are treating the country as a serious R&D destination, not just a consumer market.",
+          "headline": "Mercedes-Benz Eyes Bigger Role for India in Software Development and Sourcing",
+          "what": "Bloomberg reports that Mercedes-Benz is looking to expand India's role within its global operations, particularly in software development and component sourcing. The move reflects the automaker's recognition of India's growing engineering talent pool and competitive cost base. It signals a broader shift by global automotive majors to embed India more deeply in their core technology and supply chains rather than treating it purely as a sales market.",
+          "lens": "Mercedes scaling up software and sourcing work in India means high-value automotive tech jobs — not just assembly-line roles — could grow significantly for Indian engineers.",
           "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdm05ejRvMlVyWi1MMnB0QzgydzFMTlQ3N1hMTkFTNl9ySGZGTTVhcGZGOWc4dUFISGtzT2pKLVBKQ2w0S3BZTG9tX0VVRWlkSXZKUFRJdWJSeFZuMDZ5MlptRVlhS2ZkNnNHVGNydEIzMjEwZ09kZXJ5X2hYd2FZLWk5cV9LWE5MbExlTW9TZUhiNUtkanRXZjlMV0hlSi1LWnlXcGtieTlXa0V0R1JySw",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdm01ejRvMlVyWi1MMnB0QzgydzFMTlQ3N1hMTkFTNl9ySGZGTTVhcGZGOWc4dUFISGtzT2pKLVBKQ2w0S3BZTG9tX0VVRWlkSXZKUFRJdWJSeFZuMDZ5MlptRVlhS2ZkNnNHVGNydEIzMjEwZ09kZXJ5X2hYd2FZLWk5cV9LWE5MbExlTW9TZUhiNUtkanRXZjlMV0hlSi1LWnlXcGtieTlXa0V0R1JySw?oc=5",
           "breaking": false,
-          "slug": "20260617-mercedes-benz-sees-india-playing-a-bigger-role-in-software-and-sourcin"
+          "slug": "20260617-mercedes-benz-eyes-bigger-role-for-india-in-software-development-and-s"
         },
         {
           "hour": 13,
           "time": "13:59 IST",
           "headline": "Services Drive 67% of India's Export Growth Over the Past Decade",
-          "what": "Moneycontrol reports that services — led by software, IT, and business process outsourcing — have driven 67% of India's total export growth over the past decade, dramatically outpacing merchandise exports including textiles and manufactured goods. The finding highlights a structural transformation in the Indian economy, as the country has leveraged its English-speaking engineering and knowledge workforce to dominate global services trade. India is now the world's largest exporter of IT services.",
-          "lens": "With services fuelling two-thirds of export growth, India's economic prosperity is increasingly tied to the tech and knowledge sector — meaning the health of global IT spending directly affects jobs and incomes for millions of Indian families.",
+          "what": "Moneycontrol reports that services have accounted for 67% of India's total export growth over the past ten years, marking a decisive structural shift away from goods-based exports like textiles. Software and IT services have been the principal driver of this transformation, cementing India's position as a global services powerhouse. The data highlights how the economy's engine of external earnings has fundamentally changed in a single decade.",
+          "lens": "With services driving two-thirds of India's export growth, the IT and tech sector's health directly shapes the country's foreign exchange earnings and economic resilience — affecting everything from the rupee to government revenues.",
           "source": "Moneycontrol.com",
-          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNa1BVeTE5RUVDTmRYcnNMc2k4dFlJclY0VlJDbFg5U25FN0hvX3FmSDJ5c1ZraHFwSFRSdlpQTDRhUjlrUS1wWmNEOVpjbXdnQ3BPUng3ZEhhYlRSSkp0RTFQV250Sk1VMGtGYlF6YUZ1cGIyOEYtZ3dNOGl2cTUxYlpibzNUdERoa0hqNzVUNGtQVjFpMzk2emtHelo1MVFXUUx2TzZBZERpcTkwRzYweERKTWc4a3dPU2VscFpQNVM1NXB2dVc4MElPbk8wWUZtWmI4ZTBuWFdfN25iU1FxcG1B0gHiAUFVX3lxTE1rUFV5MTlFRUNOZFhyc0xzaTh0WUlyVjRWUkNsWDlTbkU3SG9fcWZIMnlzVmtocXBIVFJ2WlBMNGFSOWtRLXBaY0Q5WmNtd2dDcE9SeDdkSGFiVFJKSnRFMVBXbnRKTVUwa0ZiUXphRnVwYjI4Ri1nd004aXZxNTFiWmJvM1R0RGhrSGo3NVQ0a1BWMWkzOTZ6a0d6WjUxUVdRTHZPNkFkRGlxOTBHNjB4REpNZzhrd09TZWxwWlA1UzU1cHZ1VzgwSU9uTzBZRm1aYjhlMG5YV183bmJTUXFwbUE",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNa1BVeTE5RUVDTmRYcnNMc2k4dFlJclY0VlJDbFg5U25FN0hvX3FmSDJ5c1ZraHFwSFRSdlpQTDRhUjlrUS1wWmNEOVpjbXdnQ3BPUng3ZEhhYlRSSkp0RTFQV250Sk1VMGtGYlF6YUZ1cGIyOEYtZ3dNOGl2cTUxYlpibzNUdERoa0hqNzVUNGtQVjFpMzk2emtHelo1MVFXUUx2TzZBZERpcTkwRzYweERKTWc4a3dPU2VscFpQNVM1NXB2dVc4MElPbk8wWUZtWmI4ZTBuWFdfN25iU1FxcG1B0gHiAUFVX3lxTE1rUFV5MTlFRUNOZFhyc0xzaTh0WUlyVjRWUkNsWDlTbkU3SG9fcWZIMnlzVmtocXBIVFJ2WlBMNGFSOWtRLXBaY0Q5WmNtd2dDcE9SeDdkSGFiVFJKSnRFMVBXbnRKTVUwa0ZiUXphRnVwYjI4Ri1nd004aXZxNTFiWmJvM1R0RGhrSGo3NVQ0a1BWMWkzOTZ6a0d6WjUxUVdRTHZPNkFkRGlxOTBHNjB4REpNZzhrd09TZWxwWlA1UzU1cHZ1VzgwSU9uTzBZRm1aYjhlMG5YV183bmJTUXFwbUE?oc=5",
           "breaking": false,
           "slug": "20260617-services-drive-67-of-india-s-export-growth-over-the-past-decade"
         },
         {
+          "hour": 13,
+          "time": "13:49 IST",
+          "headline": "India to Showcase Innovation at VivaTech Paris, ITPO Leading the Delegation",
+          "what": "India is set to present its innovation credentials at VivaTech, Europe's leading technology platform held in Paris, with the India Trade Promotion Organisation (ITPO) leading the country's representation, as reported by Deccan Herald. The showcase aims to highlight India's strengths in startups, digital infrastructure, and tech-driven sectors to a global European audience. It forms part of India's broader push to position itself as a top-tier innovation economy on the world stage.",
+          "lens": "India's presence at VivaTech gives Indian startups and tech firms direct access to European investors and partners — a concrete step toward turning domestic innovation into global business.",
+          "source": "Deccan Herald",
+          "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPd2xHZXhOZ0R3WkktTVk0Wmh1SmpiN1FWVm56aHI5US13c3J2cDBYV0RuWkREcTFQS0hUd280UThXTlZyOWJzOFJkTEo1SkxHU1ZDSVBrUThhN09ubVFhNXh0dGlVdTRzYmNfR2ZoU0RIckZra250SnI5dkRkay1wMHdEYTNHUVFsVFJreEhqOW5TYmE5MjBPTnc3V1VSS3VzcU5TNnJWVUI4NTdfMUZoU3ktbXE0U1RuQVFTSzlNYTdRdUkxRnpKZFJiejh4NlljZnhobU1IRlJEWHRaWENhVU9LWjk0RnN2NDZQY2NXdmhtdnNGX3YwZ1YweVp6clpkNmc?oc=5",
+          "breaking": false,
+          "slug": "20260617-india-to-showcase-innovation-at-vivatech-paris-itpo-leading-the-delega",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/ITPO_Logo.jpg",
+          "image_kind": "photo",
+          "image_credit": "Mr. Benoy Sarkar / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/India_Trade_Promotion_Organisation"
+        },
+        {
           "hour": 12,
           "time": "12:19 IST",
-          "headline": "Bengaluru Ranks 15th in Global Startup Index with $152.8-Billion Ecosystem Value",
-          "what": "Bengaluru has secured the 15th position in the Global Startup Index, with its startup ecosystem valued at $152.8 billion, according to Moneycontrol. The ranking underscores the city's emergence as one of the world's premier technology and innovation hubs. The figure places Bengaluru ahead of many established Western tech cities, reflecting the depth of venture capital activity, unicorn creation, and engineering talent concentrated in the city.",
-          "lens": "A $152.8-billion ecosystem valuation means Bengaluru's startups generate real economic weight — affecting jobs, salaries, and investor flows for millions of Indians directly tied to the tech economy.",
+          "headline": "Bengaluru Ranks 15th Globally With $152.8 Billion Startup Ecosystem Value",
+          "what": "Bengaluru has been ranked 15th in the Global Startup Index, with its startup ecosystem valued at $152.8 billion, according to Moneycontrol. The ranking places the city among the world's top startup hubs, ahead of many established tech centres. The figure underscores the scale and depth of India's technology entrepreneurship concentrated in its Silicon Valley.",
+          "lens": "A $152.8 billion ecosystem ranking means Bengaluru's startups are generating real global capital and jobs — making it a benchmark for India's economic future beyond traditional industries.",
           "source": "Moneycontrol.com",
-          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPcFVzcGlDN1FMWHVyVzg0TDN1RUJTWFNaeWROQ0dxZHMwUmJyMmR5U0ZJSVAtX0djLVpEOXUtaU8yUEcwY19lU1ltcENmTFhkbG1MTFYwSzc1dUpMN3IxMlBHNUdzTHVZYmx4Qzk5dmw5MXdUZENtd2tzcHZ1bTF3UFRIa3VaLXdaMFZFNEFDelhpLWF2b1dMN3gtWkhBeC1EUHJYdnJSaC1HUmt4QUUxVE1EUnBLRGUxS1JnbllaaWRsOG9kelgwdllQRVJhOF9SYXpTZ3FwU2dSamJ3bG1CM2V30gHiAUFVX3lxTE9wVXNwaUM3UUxYdXJXODRMM3VFQlNYU1p5ZE5DR3FkczBSYnIyZHlTRklJUC1fR2MtWkQ5dS1pTzJQRzBjX2VTWW1wQ2ZMWGRsbUxMVjBLNzV1Skw3cjEyUEc1R3NMdVlibHhDOTl2bDkxd1RkQ213a3NwdnVtMXdQVEhrdVotd1owVkU0QUN6WGktYXZvV0w3eC1aSEF4LURQclh2clJoLUdSa3hBRTFUTURScEtEZTFLUmduWVppZGw4b2R6WDB2WVBFUmE4X1JhelNncXBTZ1JqYndsbUIzZXc",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPcFVzcGlDN1FMWHVyVzg0TDN1RUJTWFNaeWROQ0dxZHMwUmJyMmR5U0ZJSVAtX0djLVpEOXUtaU8yUEcwY19lU1ltcENmTFhkbG1MTFYwSzc1dUpMN3IxMlBHNUdzTHVZYmx4Qzk5dmw5MXdUZENtd2tzcHZ1bTF3UFRIa3VaLXdaMFZFNEFDelhpLWF2b1dMN3gtWkhBeC1EUHJYdnJSaC1HUmt4QUUxVE1EUnBLRGUxS1JnbllaaWRsOG9kelgwdllQRVJhOF9SYXpTZ3FwU2dSamJ3bG1CM2V30gHiAUFVX3lxTE9wVXNwaUM3UUxYdXJXODRMM3VFQlNYU1p5ZE5DR3FkczBSYnIyZHlTRklJUC1fR2MtWkQ5dS1pTzJQRzBjX2VTWW1wQ2ZMWGRsbUxMVjBLNzV1Skw3cjEyUEc1R3NMdVlibHhDOTl2bDkxd1RkQ213a3NwdnVtMXdQVEhrdVotd1owVkU0QUN6WGktYXZvV0w3eC1aSEF4LURQclh2clJoLUdSa3hBRTFUTURScEtEZTFLUmduWVppZGw4b2R6WDB2WVBFUmE4X1JhelNncXBTZ1JqYndsbUIzZXc?oc=5",
           "breaking": false,
-          "slug": "20260617-bengaluru-ranks-15th-in-global-startup-index-with-152-8-billion-ecosys"
-        },
-        {
-          "hour": 10,
-          "time": "10:45 IST",
-          "headline": "From Google Intern to $60-Billion SpaceX Deal: The Story of 25-Year-Old Michael Truell",
-          "what": "India Today profiles Michael Truell, a 25-year-old who began his career as a Google intern and has since been associated with a $60-billion SpaceX deal, making him one of the most talked-about young figures in global tech. The story highlights how exceptionally young engineers and entrepreneurs are now operating at the highest levels of the global technology and space industry. Truell's trajectory reflects the compressed career timelines that have become possible in the current era of venture-backed tech.",
-          "lens": "Truell's story resonates in India because millions of young Indians aspire to careers in global tech — his arc from intern to billion-dollar deal territory is the kind of trajectory that shapes ambitions and career choices for a generation.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObEx0d25pdWRVTFZhNU92TW9HNWlfSGxBSnliWExhWXE3RnZwdnpjXzFxbDJSNmlXM2MtcUhuWlVUeF9iV0NIbjNXRDRYbC1yX0d2VEhZbjdjWnZKTXRZbWQyMTQyTEZxT3FYMzJjMXhNZHBvNldEa2Y3a2ltSjNySmFMbHR5djlZV0JPQ0Z4dDJEcWdHWjllVlQwS3dvaXF2aTU1NUxRTnRDeWtQb0JkdDg2Rk9EYUtsLVJKUkZEd3p2ZHFwUDhBRWxxOW7SAdIBQVVfeXFMTWVBZXFibEEzaHFvTTlRUjBWbUVnR0xhRXFHanJQM1RINmJabEUzR1BOaUlPNjBwdXhtUmF1MEp1YnhnSWlJOGNtTGdsU3lHQldyeW9pVGlRVGxWWE82M3lPWWZOUm02QndIMEh4a1dHaFAzOWhMclZScXduS1FMZzd3WkI0U3Z4Z0tYRkt3UEpycjg1VTZtT0JfN2V2TWVCbmVjSXVhQ2dTOHZWYVpTTzNHSzVNc2w3NUJyVU1HWHFCMGs5U2pscFJMLVpZQUU3N0VB",
-          "breaking": false,
-          "slug": "20260617-from-google-intern-to-60-billion-spacex-deal-the-story-of-25-year-old",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/USA_-_Texas_-_Boca_Chica_-_Starbase_%2851285307187%29.jpg",
+          "slug": "20260617-bengaluru-ranks-15th-globally-with-152-8-billion-startup-ecosystem-val",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/View_from_Visvesvaraya_Industrial_and_Technological_Museum_%282025%29_02.jpg",
           "image_kind": "photo",
-          "image_credit": "Alexander Hatley from Spring, Texas, USA / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/SpaceX"
-        },
-        {
-          "hour": 0,
-          "time": "00:08 IST",
-          "headline": "Technology Drives India-France Strategic Convergence",
-          "what": "The Hindu reports that technology has emerged as a central pillar of the strategic partnership between India and France, with collaboration deepening across areas including defence electronics, space, semiconductors, artificial intelligence, and clean energy tech. The convergence reflects both nations' interest in building resilient supply chains and reducing dependence on US and Chinese technology ecosystems. The relationship has gained momentum through high-level bilateral engagements in recent years.",
-          "lens": "India-France tech collaboration on semiconductors, AI, and defence electronics means India is diversifying its strategic technology partnerships — reducing single-country dependence in sectors critical to national security and industrial growth.",
-          "source": "The Hindu",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYmhOQ0E3UWlPZ2F4eDQ4cHdtdFpBWmxHblFRdTR3eWlvVnZWRXFHZ0htVGUwOS0tVkljaUdWNzRiLWtOaEtDT2pXakd2elFGZWVIV3pWOU8zMm1TeFBjUDlzVkZhZERVT1hkMkd0VkY5RkU5WEVDZWpqcDRCSjliVWQ1MGtWOF9TanQzZTBUWWMwUlpDZFh0MENFRjZEZEFydzJUTWRFQjgzOFNZTEZXStIBtwFBVV95cUxPeHFHZC11dHN5RTRlSVlWWDFrOG5HdjZSbXNxbDRnNldfTzBUZGx2ZUZEUTlBcmdqd2RNTE9oQTBxdlpJZGpGdnRwRFhCRVNHWXdwSzEzUVN3WkJ1RFdWY001ZTVNdWpBdFdDOVd3MkdVc3RxZFcwVkMyYy1XVEhYMFBlbkFaenRNd0pobDRULVVZYURVb2wzYVdPWjdMcWJjMXRCTGdGUlJ4aWI3TWJteHhrSEpKcHc",
-          "breaking": false,
-          "slug": "20260617-technology-drives-india-france-strategic-convergence"
+          "image_credit": "Gpkp / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Bengaluru"
         }
       ]
     },
@@ -318,15 +278,30 @@ window.BRIEF = {
       "name": "Artificial Intelligence",
       "stories": [
         {
+          "hour": 17,
+          "time": "17:57 IST",
+          "headline": "Macron seeks workaround to Trump's ban on Anthropic's AI models in France",
+          "what": "French President Emmanuel Macron is actively seeking a way to circumvent the Trump administration's restrictions that have blocked France's access to Anthropic's advanced AI models. The US recently imposed export controls limiting which countries can access cutting-edge American AI systems, affecting allied nations including France. Macron's intervention signals how seriously European governments are treating the strategic implications of being locked out of frontier AI.",
+          "lens": "If even close US allies like France are being denied access to top AI models, Indian companies and developers relying on US-based AI platforms could face similar access and licensing risks as geopolitical AI restrictions tighten globally.",
+          "source": "Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdU1iWTVteWN2dll5RThqYUl4TlVJMHZMTmFEdFRhSXBUN0VpRFl4MTRDV2RlbnY2M2MzUlNUc1FUckM4bmpSTFZvWGtLNHYyV3lBSGZ3UUJSQkczOTZMVUxtaUZGcGNsOVdHSU1qbTlkTndhX1EwX09GMWNGWUdnSUtucnNCNzFsaUhvLXNqdjJIc3lnOXlwWGc4VFRjUTN6TlNHZmpBaHhJaXlkNkZxaQ",
+          "breaking": false,
+          "slug": "20260617-macron-seeks-workaround-to-trump-s-ban-on-anthropic-s-ai-models-in-fra",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Emmanuel_Macron_2025_%28cropped%29.jpg",
+          "image_kind": "photo",
+          "image_credit": "Nebojša Tejić / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Emmanuel_Macron"
+        },
+        {
           "hour": 16,
           "time": "16:30 IST",
-          "headline": "ChatGPT's market share slips below 50% as Gemini and Claude gain ground",
-          "what": "ChatGPT's share of the AI assistant market has fallen below 50% for the first time, according to a report cited by Business Standard, as Google's Gemini and Anthropic's Claude make significant inroads. The erosion marks a notable shift in a market that OpenAI once dominated almost entirely, reflecting both the rapid improvement of rival models and users' growing willingness to switch between AI tools. The trend suggests the AI assistant market is maturing from a monopoly into a genuinely competitive multi-player space.",
-          "lens": "For Indian users choosing between AI assistants — and for Indian businesses deciding which AI platform to build on — a more competitive market with no dominant player means more choice but also more complexity in picking the right tool.",
+          "headline": "ChatGPT's market share falls below 50% as Gemini and Claude gain ground",
+          "what": "ChatGPT's share of the AI chatbot market has slipped below 50% for the first time, according to a new report cited by Business Standard, as rivals Google Gemini and Anthropic's Claude make significant inroads. The erosion marks a notable shift in an AI landscape that OpenAI has dominated since ChatGPT's launch in late 2022. The growing competition reflects heavy investment by Google and Anthropic in model quality, integrations, and enterprise adoption.",
+          "lens": "For the millions of Indians using AI tools for work, study, and content creation, a more competitive market means better products, lower prices, and more choices — ChatGPT no longer being the default option is a real shift in everyday digital life.",
           "source": "Business Standard",
-          "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNRThqU21Dd0F4anVvSWNaSGtWQU4yblR4cGRsQklacjNVYWtHU1FxTWt5RXFaemdtbW40UWNMa3lWdUM4eDNId0RxbnNTSDVlazlyaU82aFM0U3VRUF9zaUVsODJrclFpckIyclA0VjZyaEptOFlSVUs2VzRVWi1rWXl4Rmk1bzdEbHZfbmlzc0VCckdiTjJOT181YWlfLUJ5clRIZXN1Y29pcTFrN05SZmlsczNwakctbDFqanNYQUhxaXhqYTBuZGpDaExPUG1WV2ZZak9WVFEyc3FZYnFqMDI5UjlERXFDYzV5SFlFdUY5STJIY2R6QlNlc9IBgAJBVV95cUxQamtyU1p3VlRJTHhLeHdmTFR0a0hzbmtlOHpqQXdBZmVQRXVNbGJtblVTc3Z4c1hLejNuX1otRXc2QllkZm5hakd6djFkcE1ma0dpT2haSVFHRnk0WFFfb0VxTlRwTU1oa1lGUzZxaEVXajdPekZJV19MN0JYTEU5REVrbE9uT0NTUGlHR3BTVFpQeE9lM1hjeFBEZm5mWmdzR19tRnlBaUktNGxVbjEzcWhGRUxCSzVqdjY2bHNTUllCc3BpRUNURzRQQmoyUklZV2NtODdWWnkzLTNPQXJ2Z29mWm5HTG9scC0zZXROM0pQUHpxNlExTzZSTjNpSFgt?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQamtyU1p3VlRJTHhLeHdmTFR0a0hzbmtlOHpqQXdBZmVQRXVNbGJtblVTc3Z4c1hLejNuX1otRXc2QllkZm5hakd6djFkcE1ma0dpT2haSVFHRnk0WFFfb0VxTlRwTU1oa1lGUzZxaEVXajdPekZJV19MN0JYTEU5REVrbE9uT0NTUGlHR3BTVFpQeE9lM1hjeFBEZm5mWmdzR19tRnlBaUktNGxVbjEzcWhGRUxCSzVqdjY2bHNTUllCc3BpRUNURzRQQmoyUklZV2NtODdWWnkzLTNPQXJ2Z29mWm5HTG9scC0zZXROM0pQUHpxNlExTzZSTjNpSFgt0gGAAkFVX3lxTFBqa3JTWndWVElMeEt4d2ZMVHRrSHNua2U4empBd0FmZVBFdU1sYm1uVVNzdnhzWEt6M25fWi1FdzZCWWRmbmFqR3p2MWRwTWZrR2lPaFpJUUdGeTRYUV9vRXFOVHBNTWhrWUZTNnFoRVdqN096RklXX0w3QlhMRTlERWtsT25PQ1NQaUdHcFNUWlB4T2UzWGN4UERmbmZaZ3NHX21GeUFpSS00bFVuMTNxaEZFTEJLNWp2NjZsc1NSWUJzcGlFQ1RHNFBCajJSSVlXY204N1ZaeTMtM09BcnZnb2ZabkdMb2xwLTNldE4zSlBQenE2UTFPNlJOM2lIWC0",
           "breaking": false,
-          "slug": "20260617-chatgpt-s-market-share-slips-below-50-as-gemini-and-claude-gain-ground"
+          "slug": "20260617-chatgpt-s-market-share-falls-below-50-as-gemini-and-claude-gain-ground"
         },
         {
           "hour": 14,
@@ -351,41 +326,15 @@ window.BRIEF = {
           "slug": "20260617-europe-frets-about-us-ai-dominance-as-tech-world-flocks-to-france-for"
         },
         {
-          "hour": 12,
-          "time": "12:39 IST",
-          "headline": "OpenAI, Anthropic and Google joined Trump and world leaders at G7 — 'a signal of where power sits'",
-          "what": "The CEOs or top representatives of OpenAI, Anthropic, and Google were present alongside Donald Trump and other world leaders at the G7 summit, CNBC reports. The extraordinary presence of private tech companies at what is traditionally a heads-of-state forum is being described as a clear signal of how central AI has become to geopolitics. Observers quoted in the report called it 'a signal of where power sits' — meaning AI companies now wield influence comparable to sovereign governments.",
-          "lens": "The seating of AI company chiefs alongside heads of state at the G7 signals that the rules governing AI — which will directly shape what tools Indian companies can access and how — are being written in rooms that only a handful of US tech giants can enter.",
-          "source": "CNBC",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZE9yRkF4ZWRCUXlTM3JoR0RKVDE4Q1VfS2xNdHBZODdUTjNrcF9OVVFlMXpvZHg5REFaYy1IdGxvSkhGTGlkcWU2WjNZWEY0N0VZZWdyNWtDMG5BN3RaamlfcXlEYzl0M1Npc1ZZN0dkYXphQzVrU1RGMFk3ZE92eGZsSkJVMDd3bUJMRUhB0gGTAUFVX3lxTE9QVktTTi1feHFDS21EU2ozTTV1UTdoNS1JdEVJMURhQWxjdVVudnVMZUplWGQ5N21Yd0ZfcFZsTE9JOWxNVWNnT3JlLXRkWTU5T2R2cFdaREgwUlg2MTd3TDJjTXctRVdJRVhsX1h3NHhTYldvUzFRZUh2RUR2THpKcmJndXl1c0hWNHZRblRFVG14UQ?oc=5",
-          "breaking": false,
-          "slug": "20260617-openai-anthropic-and-google-joined-trump-and-world-leaders-at-g7-a-sig"
-        },
-        {
-          "hour": 7,
-          "time": "07:41 IST",
-          "headline": "US Commerce Secretary Howard Lutnick wrote to Anthropic warning it to limit reach of top AI models",
-          "what": "US Commerce Secretary Howard Lutnick sent a letter to Anthropic warning the company to curb the reach of its most advanced AI models, Business Standard reports. The move signals that the Trump administration is actively pressuring American AI firms to restrict access to frontier models, likely on national security or export-control grounds. The intervention marks a significant escalation of direct government involvement in how private AI companies distribute their most powerful systems.",
-          "lens": "Direct US government pressure on Anthropic to limit its AI models' reach could shrink the pool of cutting-edge AI tools available to Indian developers, businesses, and researchers who rely on Claude.",
-          "source": "Business Standard",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdFVIZENZdkNTdUZyRW5jcS10akFJWFM1ZHgxUmxZMzhfRS0zZ0daYl81WmlXOVRiZDJzcUdISkdzRWdhbEN6bVllR28teEVHd1hPNlNpbG51VTV5RFpyR1BMa3ZYQ1R6RFlDLXJmUFBiUzJNTF9Yc1UySmh5VEcwNWotSTkwTjh0YlpUWmNhOWNBemEwWVlPUG41VXp1WHdQN05aS1Q4Ym51VWFsNW9FelJiNlBIaWRCcHhPQVpvWXJVQ0VSVDdsUDZYbFJZQjTSAdQBQVVfeXFMTU5wM2FoZnVyUzlYY3RXZlZieXBpR09JT1VSMldBYlZ1cUhic01EaGhac2d1dWtlQjhUVEFiMmFvMWZVUG93bDl1bm5LcTBIbThDWl9WWkEzMmg5dEg3WWQ4emJNdW9xMmJRQUtOQ0FrZGdPcDZhOGIzd0RkVDFKbVZVRVhFLWl0R0VtVm5RbmJHTHpDZWxsY0ZBMUk3dWxHUG4tUlNLejd1TzVKWkFVN0lOTk1UMGpYTHo3WVFpRDZZVUdPUjlRaWR6R1JQVEloUTdsUGQ?oc=5",
-          "breaking": false,
-          "slug": "20260617-us-commerce-secretary-howard-lutnick-wrote-to-anthropic-warning-it-to",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Howard_Lutnick_2025.jpg",
-          "image_kind": "photo",
-          "image_credit": "Daniel Torok / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Howard_Lutnick"
-        },
-        {
           "hour": 3,
           "time": "03:21 IST",
-          "headline": "G7 leaders discuss giving 'trusted partners' exclusive access to cutting-edge US AI models",
-          "what": "G7 leaders are in discussions about allowing only designated 'trusted partners' access to the most advanced American AI models, according to sources cited by Reuters. The talks, held on the sidelines of the G7 summit in Canada, reflect Washington's push to use frontier AI as a geopolitical lever. The proposal would effectively create a two-tier global AI order, with allied nations getting preferential access to powerful models while others are locked out.",
-          "lens": "If the US restricts its most powerful AI models to 'trusted partners', Indian companies and researchers could find their access to frontier tools like GPT-5 or Claude contingent on India's geopolitical standing with Washington.",
+          "headline": "G7 leaders in talks to grant 'trusted partners' access to cutting-edge US AI models",
+          "what": "G7 leaders are in active discussions about creating a 'trusted partners' framework that would allow close US allies to access advanced American AI models, Reuters sources reveal. The talks come after the US imposed sweeping AI export controls that inadvertently blocked even allied nations from frontier AI systems. The framework would essentially create a vetted fast-track for G7 and similarly aligned countries to obtain access.",
+          "lens": "Where India lands in any 'trusted partners' AI framework will directly shape whether Indian firms, researchers, and startups can freely access the world's most powerful AI tools — or face a costly technological handicap.",
           "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOcnhHMFpZb3YtNHJoX0RuM2N2SXRaRDRFUHF4ck1sVjlVSGt3VUxud0RkSVh0alZmSTl2MFVvXzhXTzJib3hwOThDa3NxVWxnVy1mRlRNaDJoZVRqa2lybFdQMG8xVXRnSFRfUHVHckhDVncxWGdRZ1o2X3A1WnRjdW96SUJDUW1uZVl2TmdKRm9reXNOM1ZlanpXcTZGdXhXNXVmc2g3LUlIMzhlQWJ0NlNHcjZNY0xRUW0tUUswWUdFUFNnUmtUcEI1NlNudw?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOcnhHMFpZb3YtNHJoX0RuM2N2SXRaRDRFUHF4ck1sVjlVSGt3VUxud0RkSVh0alZmSTl2MFVvXzhXTzJib3hwOThDa3NxVWxnVy1mRlRNaDJoZVRqa2lybFdQMG8xVXRnSFRfUHVHckhDVncxWGdRZ1o2X3A1WnRjdW96SUJDUW1uZVl2TmdKRm9reXNOM1ZlanpXcTZGdXhXNXVmc2g3LUlIMzhlQWJ0NlNHcjZNY0xRUW0tUUswWUdFUFNnUmtUcEI1NlNudw",
           "breaking": false,
-          "slug": "20260617-g7-leaders-discuss-giving-trusted-partners-exclusive-access-to-cutting"
+          "slug": "20260617-g7-leaders-in-talks-to-grant-trusted-partners-access-to-cutting-edge-u"
         }
       ]
     },
@@ -411,9 +360,9 @@ window.BRIEF = {
         {
           "hour": 17,
           "time": "17:46 IST",
-          "headline": "Shreyas Iyer surpasses Virat Kohli to become joint second-fastest Indian to reach ODI milestone",
-          "what": "The Times of India reports that Shreyas Iyer has surpassed Virat Kohli to become the joint second-fastest Indian to reach a specific ODI batting milestone, placing him in elite company. The feat came during India's 2nd ODI against Afghanistan in Lucknow. The achievement underscores Iyer's rapid rise as a consistent ODI performer for India.",
-          "lens": "Shreyas Iyer overtaking Virat Kohli in an ODI record chart is a concrete marker of how quickly he has cemented himself as a top-order mainstay for India's 50-over side.",
+          "headline": "Shreyas Iyer surpasses Virat Kohli to become joint second-fastest Indian to an ODI milestone",
+          "what": "Shreyas Iyer has surpassed Virat Kohli to become the joint second-fastest Indian batter to reach a major ODI milestone, achieving the feat during India's second ODI against Afghanistan. The achievement places Iyer in elite company in Indian cricket history. The milestone underlines his rapid rise as a middle-order anchor in ODI cricket for India.",
+          "lens": "Iyer's record puts him ahead of Virat Kohli on a prestigious list, signalling a generational shift in India's ODI batting order that fans will be tracking closely.",
           "source": "The Times of India",
           "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPcVkwVndKaVVmcG53ZE1CQk9HWTRiNFZOd0wwTUpHWGJObjI5NndQdDI3RlFSR0hUN0dxbWFCQjJ5UEt6Vi1RU0lXLTBRZHprOWs2OXdfa1RqOXl2QkJaWFlrUVF5WEx3R0Q3eGIxSDBWTVpQR3J5cnhDTFkyc0FVM1BIUmtoN0RYb3FDRUE3NW5JbjB1cDZPeXZfeWJTZTFuMG91OWZOM1RkZ19UXzBGc0c3cm5jRklLU3IzWkJQTFNwOWRuOW05c3Z1dGE2MWp5VVJ6eEwwOHNZOGZvU2RUVkt5dFluZUNnYUh2b3k0MldZNnlVaTNBbkVxTERzYjJiRmpSY0JXaFJyeXBILUxOWkswWdIBmAJBVV95cUxPQWFvNldqVzVUb1g1VTVhc1BhMDlGNXZKOUhUYi05SzhpQUhBWEc5cnVZUmNuUks5emZhU0lTcEdxd2RZZUYwUm1fVnJsdnRscmVMUHZNQmtReUZRWkp5cWJUbjUxdDNrdVdFZ1docWlJRWVqRG5zY1hlamVncGF5ZzBOaEhYc2xwX2xvOHVyVVVKR29wN3RUOHpOLUR0RDEwWHlQTFhtU2dYb0t4M2lhRExXTnF0UFVsMWl2QUdHWU1kdUZzX1pvUmhKbUdrMzF5bVpVYjNteXUtTnFhRDZNS0J0dDlRUlIzS0M3Z3F0N21MUkRKUnpjTVZVaDBSQlp5WlRzUndvZnNfbmZWYU5sT05PNERnSjRp",
           "breaking": false,
@@ -454,30 +403,15 @@ window.BRIEF = {
           "image_credit_url": "https://en.wikipedia.org/wiki/Krunal_Pandya"
         },
         {
-          "hour": 16,
-          "time": "16:48 IST",
-          "headline": "Twin tons from Ishan Kishan and Shubman Gill power India in 2nd ODI against Afghanistan",
-          "what": "India Today reports that Ishan Kishan and Shubman Gill both scored centuries in India's 2nd ODI against Afghanistan in Lucknow, with Gill described as 'imperious as ever' and Kishan's knock thrusting him into World Cup 2027 contention. The twin hundreds gave India a commanding batting display. The performance significantly bolsters India's middle and top-order depth ahead of future ICC events.",
-          "lens": "Ishan Kishan's century strengthens his case for a World Cup 2027 berth, making this match directly relevant to how India's ODI squad shapes up over the next two years.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNSko0RGsxNGtQZEF0enlXSm1wRDMxUmE4aC1wTWNHbF9QTEh2RDVuREFnb3E1TkI5dXJRWWVnUEJNNHVERl9WdnZxV19QVFh4bjkxWGNYaTBkSDNMSjlUY3pjWm5KUkNjMEhJSkZhZlBWZkN2Wk5oTkVUTUJ3eXlVaWZ2QVk0UVBXMEZ4cnRNeVVqajhVaXJoZWowcTZ5eFFEcUFXbmhMaGVqX18yejBLYllJQTdadzNQcTN6ZHpDcTVGVE9ORUxfcHJLTlVCcnZZbFN30gHYAUFVX3lxTE9Dc292Tl9zMXF3ems4WkcycVBYRVdxSnFSLTNvb29IWnNoVk1ZUFVaTTF6ZmY2eXhLRWlwQVREd3lvLTBCUWVoNlhLZTJaU2xuZ1owWk5rTmxjZzQ4dFg0dG9pYXZqSURCMGhnQ0V2REp6ekVMS3FHUmE5U1UzLWpyTVZwSHdYQnBKaTFGeGxZQmdJcDl5Z2k3X3R6QnlNRDRNUGtvUHFBVHBvX0tSdTVXUWhOdzVaZkFlQnZIREJ0S1d0YnRLc1dJcUw0UUVtRjVYdXRFTm9yNQ",
-          "breaking": true,
-          "slug": "20260617-twin-tons-from-ishan-kishan-and-shubman-gill-power-india-in-2nd-odi-ag",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Shubman_Gill_2023_%28cropped%29.jpg",
-          "image_kind": "photo",
-          "image_credit": "Bollywood Hungama / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Shubman_Gill"
-        },
-        {
           "hour": 13,
           "time": "13:48 IST",
-          "headline": "Nitish Kumar Reddy ruled out of India's 2nd ODI against Afghanistan with injury",
-          "what": "The Times of India reports that Nitish Kumar Reddy was not included in India's playing XI for the 2nd ODI against Afghanistan in Lucknow due to an injury. Reddy had been one of India's breakout performers in recent international cricket, making his absence a notable gap in the all-rounder department. His fitness will be closely monitored ahead of upcoming matches in the series and beyond.",
-          "lens": "Reddy's injury is significant for Indian fans because he has been one of the most exciting new all-rounders in the squad, and his absence directly affects India's balance in the lower middle order.",
+          "headline": "Nitish Kumar Reddy sits out India's 2nd ODI against Afghanistan — here's why",
+          "what": "Nitish Kumar Reddy has been ruled out of the second ODI between India and Afghanistan, raising questions about his fitness ahead of the series. The Times of India explains the reasons behind his absence from the playing XI. Reddy had been a promising all-round option for India and his unavailability affects the team's balance in the middle order and bowling attack.",
+          "lens": "With India constantly managing player workloads and fitness ahead of major tournaments, Reddy's absence is a direct concern for fans who track squad selection closely.",
           "source": "The Times of India",
           "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOYVdTQldQbEM2cmU1dklkSE1yWU5kNXBsb0xfU2gzSWs1WUp0RHJBNW91bGdoQ1dDOGhHSFZGZUFka1JXNVNwWXFEZExqNjlNT1ZZTUUtclpMVlJnRDNEMjdhS2NuSkd6a3ZlbVBMYXZBZjFlSFcwbVFMbThJeHlqcmQzN3MxM0hRU3lXOVBBN3pJMlQtTzFQU2FnWEh0UjBLWmlTbWpFcGU1Z0pUaWtDOFQ1ZlAycUlBX2trOWEtTkp3WTlXbUNRTllMS1hiNVJJOGk4NkN3V1NLZWljYnF6N2UzSTVQSFhvd1JhRkJ0TmJ2UWV2TVFGNzVobks1eGkzUXlNdkswNUp1MmhfaWfSAZMCQVVfeXFMTjJ1LVZ0bFlHQ0RhRXUyZHJxN0toOGs5U0NiQzJ3a3Z0cVVDMmtPT2ZFcXZCMFBuWjJ2US1UTHdMWjFGSWQwQ0hHcjN4TmwxajdnRm9qN2RiY0ZTVXNZT2dJeU1fY1FibWFncmJzck1Pd1dPNFFMMmtUdDFnVW9oUk1jMHk0NmpZZFRRN3BwV2xUOGZHeUNPLS13TFpkN2R5MG9PMEljM2cweGNaWUR2cUtReXZibG1DQ3V0VHVGNkVFel9kOUc3NFJsUl9LYjlOdExPdnYtU3c0cTkzSlJ1WTdiTmhSMUVTUmdWU3RZbzEzNUxjbnRBMjR3TndpNVI0cE5JTE11N0NXTHk0UHo5cUNBQTQ",
           "breaking": false,
-          "slug": "20260617-nitish-kumar-reddy-ruled-out-of-india-s-2nd-odi-against-afghanistan-wi",
+          "slug": "20260617-nitish-kumar-reddy-sits-out-india-s-2nd-odi-against-afghanistan-here-s",
           "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nitish_Kumar_Reddy_BGT_2024_%28cropped%29_2.jpg",
           "image_kind": "photo",
           "image_credit": "WikiWanderer261 / Wikimedia Commons",
@@ -518,50 +452,39 @@ window.BRIEF = {
         {
           "hour": 13,
           "time": "13:10 IST",
-          "headline": "Haunted 3D Leads Weekend Box Office With Rs 13.35 Crore; Main Vaapas Aaunga and Bharat Bhhagya Viddhaata Struggle",
-          "what": "The re-release of the 2011 horror film Haunted 3D has topped the domestic box office with a collection of Rs 13.35 crore, significantly outperforming two new Bollywood releases — Main Vaapas Aaunga and Bharat Bhhagya Viddhaata — both of which struggled to find audiences. The result underscores the continued appetite for nostalgia-driven re-releases in Indian cinemas, a trend that has gained momentum over the past year.",
-          "lens": "When a 14-year-old horror film earns more than fresh Bollywood releases, it is a direct signal to producers and multiplex owners about where audience appetite — and risk — currently lies.",
+          "headline": "Haunted 3D leads box office with Rs 13.35 cr; Main Vaapas Aaunga and Bharat Bhhagya Viddhaata struggle",
+          "what": "Haunted 3D has emerged as the clear box-office leader in the latest Hindi releases, collecting Rs 13.35 crore, while fellow new releases Main Vaapas Aaunga and Bharat Bhhagya Viddhaata posted disappointing numbers. The wide gap in collections points to a decisive audience preference among the competing films. The result will shape screen allocation in the coming week.",
+          "lens": "With multiplexes still recovering post-OTT dominance, Haunted 3D's Rs 13.35 crore haul signals that horror titles in 3D remain a reliable theatrical draw for Indian audiences willing to buy tickets.",
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPQUptVk5DTmV1SVp0SWhaMWVkZzg3MDRQVmdYTFREbkh6aldkZFhPR2Roc1BtYk9iT1dLejFoRXgzN1QxclBoZUtLczBiRmJPODdBNklYY0xnSU1MaVlpSERGWkFKOHRtR0ZRMlFpR3JOWTlmcDdBWmExV0ktU0RjWk5ESGhnbDdESU9lenJzS2hzd2YwN2FoYWRLLW1wcUJXdHZlS285YTlSVy1sRkFnT1pwM1JOSURBS0NvTDJXajRNWElXcjdSd3FjUl9zUHlEbk1zMmszY1gxektfZkJKdVo2SG5yTHNDMTJtWldyRjhEWDluS2ZTbVhIbzY5Y3hhV3I40gGDAkFVX3lxTE9BSm1WTkNOZXVJWnRJaFoxZWRnODcwNFBWZ1hMVERuSHpqV2RkWE9HZGhzUG1iT2JPV0t6MWhFeDM3VDFyUGhlS0tzMGJGYk84N0E2SVhjTGdJTUxpWWlIREZaQUo4dG1HRlEyUWlHck5ZOWZwN0FaYTFXSS1TRGNaTkRIaGdsN0RJT2V6cnNLaHN3ZjA3YWhhZEstbXBxQld0dmVLbzlhOVJXLWxGQWdPWnAzUk5JREFLQ29MMldqNE1YSVdyN1J3cWNSX3NQeURuTXMyazNjWDF6S19mQkp1WjZIbnJMc0MxMm1aV3JGOERYOW5LZlNtWEhvNjljeGFXcjg",
           "breaking": false,
-          "slug": "20260617-haunted-3d-leads-weekend-box-office-with-rs-13-35-crore-main-vaapas-aa"
-        },
-        {
-          "hour": 10,
-          "time": "10:33 IST",
-          "headline": "Drishyam 3 and Athiradi Lead South Indian OTT Releases This Week",
-          "what": "A fresh wave of South Indian films is arriving on OTT platforms this week, headlined by Drishyam 3 — the third instalment of the blockbuster Malayalam thriller franchise — alongside Tamil action film Athiradi and several other regional titles. Drishyam 3 is among the most anticipated OTT releases in recent months, given the enormous success of its predecessors starring Mohanlal.",
-          "lens": "Drishyam 3 streaming is the moment millions of Malayalam film fans have been waiting for — viewers who missed it theatrically can now watch one of the most eagerly anticipated sequels in Indian cinema from home.",
-          "source": "Moneycontrol.com",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVzROV3BuRm15WjdacFhLa21Nc05HMlRaeG5USWVYV0N5U1NoQkljbVhackpYc1pER2NDOWRLeTlTWXExdTd3TzZ4U0plZ2Jzd0FNZU5vekk3SGFVVFY3SXVxaHV3MjQxaUlzQU1xeHJhQlEyMUVGZzJyQTZqQ2VxSTQxRzZzSXRkaEpKZkd0Q3RGOXlkVE5pdjN2U1ZWSXhsVWVuWFp4ZUJaSnBkbU0wWS1UYkFHdGZCVnJ2allvcHBxYlJzRjRV0gHHAUFVX3lxTE5XNE5XcG5GbXlaN1pwWEtrbU1zTkcyVFp4blRJZVhXQ3lTU2hCSWNtWFpySlhzWkRHY0M5ZEt5OVNZcTF1N3dPNnhTSmVnYnN3QU1lTm96STdIYVVUVjdJdXFodXcyNDFpSXNBTXF4cmFCUTIxRUZnMnJBNmpDZXFJNDFHNnNJdGRoSkpmR3RDdEY5eWRUTml2M3ZTVlZJeGxVZW5YWnhlQlpKcGRtTTBZLVRiQUd0ZkJWcnZqWW9wcHFiUnNGNFU",
-          "breaking": false,
-          "slug": "20260617-drishyam-3-and-athiradi-lead-south-indian-ott-releases-this-week"
-        },
-        {
-          "hour": 9,
-          "time": "09:55 IST",
-          "headline": "Sanchita Ugale's Grandfather Breaks Down: 'She Had Work, No Godfather Needed'",
-          "what": "The grandfather of Sanchita Ugale, a young actor who recently came to public attention, broke down emotionally while speaking about her journey in the entertainment industry, saying she did not have a godfather and succeeded purely through her work. The emotional statement highlights the struggles faced by outsiders trying to break into Bollywood or the broader Indian entertainment industry without established industry connections.",
-          "lens": "In an industry where the nepotism debate is perennial, a grandfather's tearful defence of his granddaughter's merit is a deeply human story that resonates with every outsider trying to make it on their own.",
-          "source": "The Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOV2QyYmVCYTNCbE0zdDd0MUVlaWNIb1FxQ1pGM1hzN2R1aXJQb3NxVkItbTAwWFF4bXduUDU1OXNQUEJmRHcwakxCOVA2eGY5TWxFbU0xU1pjODFNMXIyTDd2elh1eTZjMEJETWNBMGpydEJLUXA3SEpWZ0lUT0c2U2xLemVXWkxDLTVGcmxOd0ZDZDdTVWFMRXhDZVFTTnFtMXZHeWRJT0hNaFNTODB1a2h4LVd4Z0dfanUyM0hxTmVNMkotMi1Vejc5MmhoWmxXdFBJMHhoQlJLZG02VGM1VU9HclBNLWcxTUHSAeoBQVVfeXFMTldkMmJlQmEzQmxNM3Q3dDFFZWljSG9RcUNaRjNYczdkdWlyUG9zcVZCLW0wMFhReG13blA1NTlzUFBCZkR3MGpMQjlQNnhmOU1sRW1NMVNaYzgxTTFyMkw3dnpYdXk2YzBCRE1jQTBqcnRCS1FwN0hKVmdJVE9HNlNsS3plV1pMQy01RnJsTndGQ2Q3U1VhTEV4Q2VRU05xbTF2R3lkSU9ITWhTUzgwdWtoeC1XeGdHX2p1MjNIcU5lTTJKLTItVXo3OTJoaFpsV3RQSTB4aEJSS2RtNlRjNVVPR3JQTS1nMU1B",
-          "breaking": false,
-          "slug": "20260617-sanchita-ugale-s-grandfather-breaks-down-she-had-work-no-godfather-nee"
+          "slug": "20260617-haunted-3d-leads-box-office-with-rs-13-35-cr-main-vaapas-aaunga-and-bh"
         },
         {
           "hour": 8,
           "time": "08:17 IST",
-          "headline": "Grammy Winner Ricky Kej: 'I'd Rather Be Lesser Known for Songs That Define Me'",
-          "what": "Grammy Award-winning Indian composer Ricky Kej, speaking at the Expresso event, said he would rather remain lesser known than compromise on music that truly defines him, signalling a principled stand against chasing mainstream popularity at the cost of artistic identity. Kej, who has won three Grammy Awards, is known for his work at the intersection of world music and environmental themes.",
-          "lens": "Ricky Kej is India's most-decorated musician at the Grammys, and his frank admission that artistic integrity matters more than fame offers a rare, candid window into how India's finest musicians navigate the tension between art and commerce.",
+          "headline": "Grammy winner Ricky Kej says he'd rather stay lesser known than make music that doesn't define him",
+          "what": "Three-time Grammy Award-winning Indian composer Ricky Kej, in a candid interview with The Indian Express at the Expresso event, says he prioritises artistic identity over commercial popularity, stating he would rather be lesser known for songs that truly define him than chase mass fame. The comment reflects a philosophy that has shaped his career in ambient, world, and environmental music. Kej is one of India's most decorated musicians on the global stage.",
+          "lens": "Ricky Kej's stance is a rare public pushback against Bollywood-style commercial pressure from one of India's only three-time Grammy winners, offering a thought-provoking perspective on what success in Indian music can look like.",
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNdUhYeFFhV3VHNE9MTGtOZWFNZUVoYXpQZnhaM0dFaEZ6ZVRURUp6a2dNcFlDcjFhblFnWksxcmlOZG1rUHIyQVN5OFE4Y3JqWDQ3MzB1NXdrRFZIYkVUV3Q2NnJTSnRrN0VDSS1nRFBHOUo4YnNnQ2F6SG5aT2p3T05GWnFtZkdRUzZXNUVHS1p4cThiTlBmWk1PLUZkcjZoVTVpQmtvdFNDeklVd1pmcFNtQXJIZmxYME5BVXVOaHBaVUFKaW0xWkRwME9vUdIBzgFBVV95cUxNdUhYeFFhV3VHNE9MTGtOZWFNZUVoYXpQZnhaM0dFaEZ6ZVRURUp6a2dNcFlDcjFhblFnWksxcmlOZG1rUHIyQVN5OFE4Y3JqWDQ3MzB1NXdrRFZIYkVUV3Q2NnJTSnRrN0VDSS1nRFBHOUo4YnNnQ2F6SG5aT2p3T05GWnFtZkdRUzZXNUVHS1p4cThiTlBmWk1PLUZkcjZoVTVpQmtvdFNDeklVd1pmcFNtQXJIZmxYME5BVXVOaHBaVUFKaW0xWkRwME9vUQ",
           "breaking": false,
-          "slug": "20260617-grammy-winner-ricky-kej-i-d-rather-be-lesser-known-for-songs-that-defi",
+          "slug": "20260617-grammy-winner-ricky-kej-says-he-d-rather-stay-lesser-known-than-make-m",
           "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/3-time_Grammy%C2%AE_Award-winner%2C_Ricky_Kej.jpg",
           "image_kind": "photo",
           "image_credit": "Ricky Kej / Wikimedia Commons",
           "image_credit_url": "https://en.wikipedia.org/wiki/Ricky_Kej"
+        },
+        {
+          "hour": 6,
+          "time": "06:35 IST",
+          "headline": "Drishyam 3 leads a wave of new South Indian OTT releases across Malayalam, Tamil, Telugu and Kannada platforms",
+          "what": "A fresh batch of South Indian films and shows is now streaming across OTT platforms, headlined by Drishyam 3, the highly anticipated next chapter in the blockbuster Malayalam thriller franchise. Alongside it, titles including Kenatha Kanom are among the new Malayalam, Tamil, Telugu, and Kannada releases available for home viewing. The simultaneous multi-language drop reflects the rapid expansion of regional content on digital platforms.",
+          "lens": "For the millions of South Indian film fans who missed theatrical runs or simply prefer streaming, this week's OTT drop — anchored by the eagerly awaited Drishyam 3 — means binge-worthy content is available right now without a trip to the cinema.",
+          "source": "The Economic Times",
+          "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxQTE1odmZkb2FDek9KYkk2WnB4TWV4RDFEanR4UlpSOVUyUXd0d2NIOFdVTVpCTXJyNGpHeDBkZXAwS21xM0thZHNacTBsRjRkR2s3THJLUElCS1FZNXlvSlVXbm9vSUJiQkRMREs1ZW1xcGZzN2dhV2dPT2dlVnR2aHVmUXFhVGZqTU1WREZMeWM2UVp2YTRiU3dsemZaY1JtR1U2b052bGpZNmJCbTNoSXRYZHNVaWZFdjZ5XzhrREo4R240OTV5SEwtWTRRaC0xSnZkLWctdkZrTUF2ZWs4NDZsRjJRcWFoc3JERVl2TFRENkhieXJ6eXdYNEN3eUZfaFhmV2paejJuQ3g3LXRkS1ZPZHRXdTNtUlNMYk8xOEE2dVQxdGlHR0pVeXF0Z2xtRTFJ0gGzAkFVX3lxTFBMTWh2ZmRvYUN6T0piSTZacHhNZXhEMURqdHhSWlI5VTJRd3R3Y0g4V1VNWkJNcnI0akd4MGRlcDBLbXEzS2Fkc1pxMGxGNGRHazdMcktQSUJLUVk1eW9KVVdub29JQmJCRExESzVlbXFwZnM3Z2FXZ09PZ2VWdHZodWZRcWFUZmpNTVZERkx5YzZRWnZhNGJTd2x6ZlpjUm1HVTZvTnZsalk2YkJtM2hJdFhkc1VpZkV2NnlfOGtESjhHbjQ5NXlITC1ZNFFoLTFKdmQtZy12RmtNQXZlazg0NmxGMlFxYWhzckRFWXZMVEQ2SGJ5cnp5d1g0Q3d5Rl9oWGZXalp6Mm5DeDctdGRLVk9kdFd1M21SU0xiTzE4QTZ1VDF0aUdHSlV5cXRnbG1FMUk",
+          "breaking": false,
+          "slug": "20260617-drishyam-3-leads-a-wave-of-new-south-indian-ott-releases-across-malaya"
         }
       ]
     }
