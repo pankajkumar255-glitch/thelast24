@@ -161,12 +161,21 @@ def _photo_background(image_url):
 
 def story_background(st, hue, used_images):
     """Per-story background: strong relevant photo (dimmed) else branded
-    pattern. Returns (image, used_url_or_None, is_photo)."""
-    if _be is not None:
+    pattern. Returns (image, used_url_or_None, is_photo).
+
+    Primary source is the image the edition ALREADY resolved and stored on the
+    story (st['image']) — this guarantees the carousel shows the same photo the
+    website shows. Only if that's missing do we try a fresh lookup."""
+    chosen_url = None
+    # Primary: the photo already resolved by build_edition (website's image).
+    existing = st.get("image")
+    if existing and isinstance(existing, str) and existing.startswith("http") \
+            and existing not in used_images:
+        chosen_url = existing
+    elif _be is not None:
+        # Fallback: resolve fresh (Wikimedia subject, then stock query).
         subject = st.get("image_subject")
-        query = st.get("image_query")
-        chosen_url = None
-        # Tier 1: Wikimedia real-subject photo (highly relevant by definition)
+        query = st.get("image_query") or st.get("headline")
         try:
             wiki = _be.fetch_wikimedia(subject) if subject else None
         except Exception:
@@ -174,18 +183,16 @@ def story_background(st, hue, used_images):
         if wiki and wiki.get("image") and wiki["image"] not in used_images:
             chosen_url = wiki["image"]
         else:
-            # Tier 2: stock photo, only if it exists (fetch_photo already scores
-            # and returns the best unused match; None if nothing fit)
             try:
                 photo = _be.fetch_photo(query, used_images) if query else None
             except Exception:
                 photo = None
             if photo and photo.get("image"):
                 chosen_url = photo["image"]
-        if chosen_url:
-            bg = _photo_background(chosen_url)
-            if bg is not None:
-                return bg, chosen_url, True
+    if chosen_url:
+        bg = _photo_background(chosen_url)
+        if bg is not None:
+            return bg, chosen_url, True
     return _branded_pattern(hue), None, False
 
 
