@@ -82,7 +82,9 @@ def _create_post(channel_id, text, image_urls=None):
         "mode": "addToQueue" if SCHEDULE != "now" else "share",
     }
     if image_urls:
-        inp["assets"] = [{"type": "image", "url": u} for u in image_urls]
+        # Buffer's AssetInput: each entry specifies one of image/video/document/link.
+        # For images: {"image": {"url": "..."}} — NOT {"type","url"}.
+        inp["assets"] = [{"image": {"url": u}} for u in image_urls]
     data = _gql(_CREATE, {"input": inp})
     res = data.get("createPost", {})
     if res.get("message"):
