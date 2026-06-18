@@ -1,0 +1,37 @@
+name: Publish to Buffer
+
+# Pushes the day's queued tweets and Instagram carousels into your Buffer queue.
+# Buffer then posts them to X and Instagram (Buffer handles those logins/APIs).
+# Runs on a schedule, and can be run manually from the Actions tab.
+
+on:
+  workflow_dispatch:        # manual "Run workflow" button
+  schedule:
+    - cron: "0 3 * * *"     # 03:00 UTC = 08:30 IST daily (after the social build)
+
+permissions:
+  contents: write           # to commit the posted-tracking files
+
+jobs:
+  buffer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Push queued content to Buffer
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_X_CHANNEL_ID: ${{ secrets.BUFFER_X_CHANNEL_ID }}
+          BUFFER_IG_CHANNEL_ID: ${{ secrets.BUFFER_IG_CHANNEL_ID }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          BUFFER_SCHEDULE: queue
+        run: python scripts/buffer_publish.py
+      - name: Commit posted-tracking files
+        run: |
+          git config user.name "buffer-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add tweets/posted.json social/ 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "buffer: update posted tracking [skip ci]"
+          git pull --no-rebase -X ours origin main || true
+          git push || true
