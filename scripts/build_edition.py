@@ -139,13 +139,14 @@ EDITORIAL RULES:
 - Structured summary (concise, fact-rich, strictly grounded): write a single flowing "article" of 3-4 short paragraphs (~180-240 words total) that reads as one continuous brief — NOT divided into labelled sections. Open with what happened (attributing the publisher by name, e.g. "The Hindu reports..."), weave in the concrete core facts (names, numbers, the actual squad/figures/decision), give the essential widely-known context, and close with why it matters to an everyday Indian reader. Strictly the headline plus universally-known facts; NEVER invent quotes, statistics, numbers, or names. Put this in the "article" field as plain text with paragraphs separated by blank lines.
 - "key_facts" = an array of 2-5 short, concrete bullet strings capturing the HARD FACTS of the story that a reader would want at a glance — the actual specifics, not generalities. For a squad: the key players named. For a scheme/budget: the amount and beneficiaries. For a result: the score and top performers. For an appointment: who and to what role. For a deal: the parties and value. Each bullet under ~12 words, factual, drawn only from the headline + well-known facts. If the story genuinely has no hard specifics, use an empty array [].
 - "image_subject" = the SINGLE most photographable real subject of the story for an encyclopedia image lookup — a real person's full name, a place, a landmark, or an institution exactly as it would title a Wikipedia article (e.g. "Narendra Modi", "Supreme Court of India", "Wankhede Stadium", "Reserve Bank of India", "Rohit Sharma"). Use "" (empty) if the story has no specific real named subject (pure concept/abstract stories).
+- "image_query" = a 3-5 word search phrase for a stock-photo library capturing the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think what a relevant photo would show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers"; a bullet-train story -> "high speed train railway". Prefer Indian/contextual terms. Never real people or brand names.
 - "image_query" = a 3-5 word search phrase for a stock-photo library that captures the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think about what a relevant photo would actually show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers technology"; a bullet train story -> "high speed train railway". Prefer Indian or contextual terms where the story is Indian. Never names of real people or brands.
 - "image_safety" = classify the story for image handling. Use "real" if the story centres on a specific named real person OR a specific real event/incident (politics, court rulings, deaths, disasters, match results, named individuals). Use "concept" ONLY if it is an abstract/thematic story (markets, economy, technology trends, lifestyle) with no specific real person or event as its subject. When unsure, use "real".
 - "hour" = integer 0-23 from the IST time. "time" = "HH:MM IST". "breaking" = true for at most 1 story.
 - Keep source names and URLs exactly as given.
 
 Respond with ONLY a JSON object, no markdown fences, no text before or after it:
-{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","article":"...","key_facts":["...","..."],"image_subject":"...","source":"...","url":"...","breaking":false}]}"""
+{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","article":"...","key_facts":["...","..."],"image_subject":"...","image_query":"...","source":"...","url":"...","breaking":false}]}"""
 
 API_URL = "https://api.anthropic.com/v1/messages"
 # Current Sonnet. If this ever 400s with a model error, update this ONE line.
@@ -636,18 +637,24 @@ def fetch_wikimedia(subject):
         return None
 
 def resolve_image(st, used=None):
-    """Wikimedia-only image policy.
-    1) Wikimedia Commons photo of the named real subject — the only real-photo
-       source we use (legal with attribution, genuinely relevant).
-    2) Editorial art fallback (rendered) — silent last resort ONLY when
-       Wikimedia has no usable, unused match, so cards are never blank.
-    No stock libraries (Pexels/Unsplash/Pixabay) and no AI generation are used."""
+    """Image policy: real subject first, then stock fill for coverage.
+    1) Wikimedia Commons photo of the named real subject (most relevant).
+    2) Stock photo (Pexels + Unsplash + Pixabay), best unused relevance match —
+       provides coverage so cards aren't blank when Wikimedia has no match.
+    3) Editorial art (rendered at display time) — silent last resort only.
+    No AI generation of real people/events."""
     used = used or set()
     subject = st.get("image_subject")
+    query = st.get("image_query") or st.get("headline", "")
+    # Tier 1: real photo of the actual named subject.
     wiki = fetch_wikimedia(subject)
     if wiki and wiki.get("image") and wiki["image"] not in used:
         return wiki
-    # No Wikimedia match -> return None; render layer draws editorial art.
+    # Tier 2: stock photo for coverage (best unused match across libraries).
+    photo = fetch_photo(query, used)
+    if photo and photo.get("image"):
+        return photo
+    # Tier 3: no match -> None; render layer draws editorial art.
     return None
 
 # -------------------------------------------------------- generative art ---
