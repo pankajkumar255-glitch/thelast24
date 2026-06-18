@@ -73,8 +73,10 @@ mutation Create($input: CreatePostInput!) {
 """
 
 
-def _create_post(channel_id, text, image_urls=None):
-    """Create one Buffer post. image_urls: list of public image URLs (carousel)."""
+def _create_post(channel_id, text, image_urls=None, instagram=False):
+    """Create one Buffer post. image_urls: list of public image URLs (carousel).
+    instagram=True attaches the required Instagram metadata (type=post for a
+    feed carousel)."""
     inp = {
         "text": text,
         "channelId": channel_id,
@@ -85,6 +87,10 @@ def _create_post(channel_id, text, image_urls=None):
         # Buffer's AssetInput: each entry specifies one of image/video/document/link.
         # For images: {"image": {"url": "..."}} — NOT {"type","url"}.
         inp["assets"] = [{"image": {"url": u}} for u in image_urls]
+    if instagram:
+        # Instagram requires a post type. A multi-image carousel is a feed "post".
+        # PostType is a GraphQL enum, passed via a typed variable below.
+        inp["metadata"] = {"instagram": {"type": "post", "shouldShareToFeed": True}}
     data = _gql(_CREATE, {"input": inp})
     res = data.get("createPost", {})
     if res.get("message"):
@@ -174,7 +180,7 @@ def publish_carousels():
         if cf and os.path.exists(cf):
             caption = open(cf, encoding="utf-8").read().strip()
         try:
-            pid = _create_post(IG_CHANNEL, caption, image_urls=slide_urls)
+            pid = _create_post(IG_CHANNEL, caption, image_urls=slide_urls, instagram=True)
             done.add(sid)
             sent += 1
             print(f"  ✓ carousel '{sec['name']}' queued to Buffer "
