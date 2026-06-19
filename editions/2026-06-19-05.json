@@ -1,5 +1,4 @@
-// auto-generated 2026-06-19 05:43 IST
-window.BRIEF = {
+{
   "date": "Friday, 19 June 2026",
   "edition": "2026-06-19 05:43",
   "topline": "As Modi courts AI investment at VivaTech and pushes a final India-US trade deal with Trump, the Supreme Court turns its eye on a legal system where one in three lawyers may be fake.",
@@ -15,6 +14,13 @@ window.BRIEF = {
           "headline": "Supreme Court refuses interim stay on CBSE's three-language policy",
           "what": "The Supreme Court has declined to grant interim relief against the CBSE's three-language policy, allowing the board's framework to remain in operation while the petition against it is heard. The three-language formula — typically requiring students to study Hindi, English, and a regional or modern Indian language — has long been contentious, particularly in non-Hindi-speaking states. The court's refusal to stay the policy means millions of CBSE students will continue under the existing framework for now.",
           "lens": "For parents of CBSE school students — especially in Tamil Nadu, Karnataka, and other southern states where resistance to Hindi imposition runs deep — this ruling means the three-language policy stays in classrooms while the legal battle plays out.",
+          "article": "Business Standard reports that the Supreme Court has declined to grant interim relief to petitioners challenging CBSE's three-language policy, meaning the policy will remain in force as the case proceeds. The petitioners had sought a stay on the policy while their legal challenge was being heard, but the court refused, allowing the Central Board of Secondary Education's language framework to continue applying to its affiliated schools across the country.\n\nThe three-language formula has historically required students in CBSE schools to study three languages — typically Hindi, English, and a third regional or classical language. The policy has been a flashpoint in India's language politics, with states like Tamil Nadu and Karnataka viewing mandatory Hindi instruction as linguistic imposition by the Centre, while the formula's proponents argue it promotes national integration and multilingualism.\n\nCBSE affiliates tens of thousands of schools across India and overseas, making its language policy one of the most widely felt curriculum decisions in the country's education system.\n\nThe Supreme Court's refusal to stay the policy, even temporarily, is a significant procedural setback for the petitioners and signals that the bench does not see an immediate case for disrupting the status quo. The substantive hearing on whether the policy is constitutionally valid will continue.",
+          "key_facts": [
+            "Supreme Court refuses interim stay on CBSE three-language policy",
+            "Policy requires students to study Hindi, English, and a regional language",
+            "Petition challenges the policy; hearing to continue",
+            "Policy applies to CBSE-affiliated schools across India"
+          ],
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQ0NucHJJVWd3M2tRX2ctWlVxYjNUdlc4cjQxNWlaTGJVejczTkUyalFVT0xzQWxBdUZEc1dmdFlhNWhDS2YyZEJiME5sWnhFTlV2OFBub3FidGt1b2dyUW5ZVmQ1MHhrdzBEWmI2X1FRLXFDb1N4bmJwY1JXclFsa3NZalVFYjRjYnpLR3hPNnQ3c3lZYjlILVprV29Nd2pSekkzdnhsTVZKYkRJV3BxR1VMQXNxLVhCZWY0SHJFR3ZmcW5pTnVxZVY5d2FOR3NIUGxPejVPR2c0ZzlFWmdLa09tZFBZZw",
           "breaking": false,
@@ -30,6 +36,13 @@ window.BRIEF = {
           "headline": "Supreme Court declines interim relief against CBSE's three-language policy",
           "what": "The Supreme Court has refused to grant interim relief to petitioners challenging CBSE's three-language policy, meaning the policy will remain in force while the case is heard. The three-language formula, as applied by CBSE, requires students to study three languages — typically Hindi, English, and a regional or classical language — and has drawn objections particularly from non-Hindi speaking states that see it as imposing Hindi. The court's refusal to stay the policy is a significant interim setback for the challengers.",
           "lens": "For students enrolled in CBSE schools — especially in states like Tamil Nadu and Karnataka where language politics run deep — the policy staying in force means no immediate relief from a curriculum they or their parents may consider coercive.",
+          "article": "Business Standard reports that the Supreme Court has declined to grant interim relief against CBSE's three-language policy, allowing the policy to continue operating while the legal challenge proceeds. The petition had sought a stay on the policy, which mandates that CBSE students study three languages as part of their curriculum — a requirement that critics argue disproportionately burdens students in non-Hindi-speaking states by effectively promoting Hindi.\n\nThe three-language formula has long been a flashpoint in Indian education politics. States such as Tamil Nadu have historically resisted it, arguing that the formula imposes linguistic and cultural preferences of northern India on southern students. The controversy has resurfaced repeatedly in the context of the National Education Policy 2020, which reiterated the three-language approach.\n\nBy refusing interim relief, the Supreme Court ensures that CBSE schools across the country must continue to follow the policy during the pendency of the case. This matters to millions of students and parents in CBSE-affiliated schools who are directly subject to the curriculum requirement, and it signals that any change — if the court ultimately rules in the petitioners' favour — remains some time away.",
+          "key_facts": [
+            "Supreme Court refused to stay CBSE's three-language policy",
+            "Policy requires students to study three languages including Hindi and English",
+            "Non-Hindi states like Tamil Nadu have historically opposed the formula",
+            "Case will continue to be heard; policy remains in force"
+          ],
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQ0NucHJJVWd3M2tRX2ctWlVxYjNUdlc4cjQxNWlaTGJVejczTkUyalFVT0xzQWxBdUZEc1dmdFlhNWhDS2YyZEJiME5sWnhFTlV2OFBub3FidGt1b2dyUW5ZVmQ1MHhrdzBEWmI2X1FRLXFDb1N4bmJwY1JXclFsa3NZalVFYjRjYnpLR3hPNnQ3c3lZYjlILVprV29Nd2pSekkzdnhsTVZKYkRJV3BxR1VMQXNxLVhCZWY0SHJFR3ZmcW5pTnVxZVY5d2FOR3NIUGxPejVPR2c0ZzlFWmdLa09tZFBZZ9IB5gFBVV95cUxNQ0NucHJJVWd3M2tRX2ctWlVxYjNUdlc4cjQxNWlaTGJVejczTkUyalFVT0xzQWxBdUZEc1dmdFlhNWhDS2YyZEJiME5sWnhFTlV2OFBub3FidGt1b2dyUW5ZVmQ1MHhrdzBEWmI2X1FRLXFDb1N4bmJwY1JXclFsa25ZalVFYjRjYnpLR3hPNnQ3c3lZYjlILVprV29Nd2pSekkzdnhsTVZKYkRJV3BxR1VMQXNxLVhCZWY0SHJFR3ZmcW5pTnVxZVY5d2FOR3NIUGxPejVPR2c0ZzlFWmdLa09tZFBZZw",
           "breaking": false,
@@ -45,6 +58,13 @@ window.BRIEF = {
           "headline": "Centre tells Delhi High Court: Telegram has become the 'new dark web'",
           "what": "The Indian government has told the Delhi High Court that Telegram has effectively become the 'new dark web', flagging the messaging platform as a hotbed for illegal activity including drug trafficking, financial fraud, and circulation of illicit content. The Centre's strong characterisation signals growing scrutiny of encrypted messaging apps that operate with minimal oversight. The statement carries significant weight as it comes directly from government counsel before a constitutional court.",
           "lens": "If the government successfully pressures Telegram to comply with Indian law enforcement requests — or faces restrictions — millions of Indians who use it for news channels, group chats, and business could be directly affected.",
+          "article": "The Hindu reports that the Centre told the Delhi High Court that Telegram has become the 'new dark web', marking one of the Indian government's sharpest public condemnations of the messaging platform to date. The characterisation came during proceedings in the High Court, with the government highlighting how the platform is allegedly being used for drug trafficking, financial scams, and the spread of illegal content beyond the reach of law enforcement.\n\nTelegram, which boasts hundreds of millions of users globally and a large Indian user base, has long been criticised by governments for its resistance to sharing user data with authorities. Unlike WhatsApp or other platforms that have engaged with Indian regulators under the IT Rules 2021, Telegram has maintained a more opaque stance toward government requests.\n\nThe Centre's 'new dark web' framing before a High Court dramatically raises the stakes for how Indian regulators approach the platform. It could foreshadow demands for stricter compliance, potential restrictions, or legal action — similar to pressure that has been applied to other Big Tech firms. For everyday Indians who rely on Telegram for news channels, community groups, and even business communication, the outcome of these proceedings could have tangible consequences for access and privacy.",
+          "key_facts": [
+            "Centre told Delhi High Court Telegram is the 'new dark web'",
+            "Government flagged Telegram's use for drug trafficking and financial fraud",
+            "Telegram has historically resisted sharing user data with governments",
+            "Statement made during ongoing Delhi High Court proceedings"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOY01DaDhYaExnT0ppcW45SGVsR2lZUWZ6VGEtZUZ4a2dUQzVranU1TzhsTHJ4aDdUSV94Z2t4NEpMMVo0RWRIenRMX0RCTmdPaFhxMng5dG9nVExMN1Rkc2IzTUJzdFVYajhkZHJvcG1XVG1sMGZnYzFKTGtmLUo1d0NuUXBpRkxrYUtCLTlBR0k1dXduVklvTzRhclVFOGlhRmRfQkRmdGhVZkRzeENabzlGMWRkeDhLN0lGQtIBwwFBVV95cUxOb0JCa0FnVnBHWjBDV0tEbV9zLVh3S1NXNzJfNFZBdzEtdThRUXM5dHZ6S1pfQkl0SXB1OUJaeTdSUXBNMUQ4VFZOOGRRQl80WlJ4UUM1eU50THg1UmpvdVRmWl9Ca2J3ZHpWaWVPV2FRTVotNmJ6UHF5VTVLRDR3aEhPNnNlamV0X2JqdXNSQkxLMmZZNkxwbTJySWZIcDNRNXR1bDhpd2p0VzFqdGZQN2lyR0NhUUVyWFloRWdhSFpjaHM",
           "breaking": false,
@@ -60,6 +80,12 @@ window.BRIEF = {
           "headline": "S.D. Sanjay named Bihar's new Advocate General",
           "what": "S.D. Sanjay has been appointed as Bihar's new Advocate General, according to a report by The Hindu. The Advocate General is the state government's chief legal officer, representing the Bihar government in the High Court and advising on constitutional and legal matters. The appointment fills the state's top legal post and will shape how the Bihar government conducts its litigation going forward.",
           "lens": "As Bihar's chief legal officer, the new Advocate General will represent the state in all significant High Court cases — a role that directly affects how the state defends policies impacting millions of Bihar residents.",
+          "article": "The Hindu reports that S.D. Sanjay has been appointed as the new Advocate General of Bihar, stepping into the state's most senior legal office. The Advocate General is a constitutional post under Article 165, responsible for advising the state government on legal matters and representing it before the Patna High Court in cases of public importance.\n\nThe appointment comes in the normal course of administrative change, with the Advocate General functioning as the government's chief counsel in all significant litigation involving the state. Bihar, India's third most populous state, regularly faces high-stakes legal battles in areas ranging from land rights and development projects to law-and-order matters.\n\nS.D. Sanjay's appointment will determine the legal strategy the Nitish Kumar-led Bihar government pursues in its ongoing and future cases before the Patna High Court and, by extension, the Supreme Court of India.\n\nFor Bihar residents, the Advocate General's role is consequential because the office defends — or challenges — policies that affect public welfare, property, and rights across the state.",
+          "key_facts": [
+            "S.D. Sanjay appointed Advocate General of Bihar",
+            "Advocate General is the state's chief legal officer under Article 165",
+            "Represents Bihar government before the Patna High Court"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPaHVDTmxoUmdEWklIZE96S0FBOVZOaEYtNHhBdHpFUktIUFhNN2pKLXJ0M1BNNjVmRkk5b2ZSRlhacmlBeU1neUk1ZzlkS3JLVmhMQ3lpTGF0SkFQM1lOWl9PWXJVcUVRelNlUk5WZzUzWDlYemt0dXBxbE9ad3BhYUtaWU5fNUNfU0RCZV9OUTJ3dHZEeWg5MnlOSFJsSWp6NHR5M2FuSHBQNlQtcUZNc2N0R3ZYMS1R0gG4AUFVX3lxTE9odUNObGhSZ0RaSUhkT3pLQUE5Vk5oRi00eEF0ekVSS0hQWE03akotcnQzUE02NWZGSTlvZlJGWFpyaUF5TWd5STVnOWRLcktWaExDeWlMYXRKQVAzWU5aX09ZclVxRVF6U2VSTlZnNTNYOVh6a3R1cHFsT1p3cGFhS1pZTl81Q19TREJlX05RMnd0dkR5aDkyeU5IUmxJano0dHkzYW5IcFA2VC1xRk1zY3RHdlgxLVE",
           "breaking": false,
@@ -75,6 +101,13 @@ window.BRIEF = {
           "headline": "1 in 3 lawyers in India may be fake; Supreme Court to examine digital registry",
           "what": "The Supreme Court has agreed to examine a plea for a verified digital registry of advocates across India, after findings suggested that as many as one in three practising lawyers may be fake. The court has sought responses from the Centre and the Bar Council of India on the petition, which also calls for a social media code of conduct for lawyers. The move could fundamentally reshape how legal credentials are verified in India.",
           "lens": "If you've ever hired a lawyer, this story matters directly — a Supreme Court-backed digital registry could be your only reliable way to check whether the person representing you is actually qualified.",
+          "article": "The Times of India reports that the Supreme Court has taken up a serious petition flagging that roughly one in three lawyers practising in India may not hold valid credentials, agreeing to examine a proposal for a mandatory digital registry of all enrolled advocates. The Hindu adds that the court has formally sought responses from the Central government and the Bar Council of India on the plea, which also proposes a social media code of conduct for lawyers.\n\nThe petition points to a systemic failure in how bar councils across states verify and maintain rolls of enrolled advocates. A centralised, publicly accessible digital registry would allow courts, clients, and employers to instantly confirm whether a lawyer is genuinely enrolled and in good standing — something that currently has no reliable national mechanism.\n\nThe Bar Council of India is the apex statutory body that regulates legal education and the profession, but enrolment is managed by individual state bar councils, creating gaps that allegedly enable fraudulent practice. The Supreme Court's intervention signals judicial recognition that the problem is widespread enough to require a structural fix.\n\nFor ordinary Indians — who often engage lawyers at moments of acute vulnerability, such as property disputes, criminal cases, or family matters — a verified national registry would be a critical consumer protection tool, potentially saving them from being defrauded by unqualified impostors.",
+          "key_facts": [
+            "Up to 1 in 3 practising lawyers in India may be fake",
+            "Supreme Court to examine plea for mandatory digital advocates' registry",
+            "Centre and Bar Council of India asked to respond to the petition",
+            "Petition also seeks a social media code of conduct for lawyers"
+          ],
           "source": "The Times of India",
           "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaC1GNU15SnlEM1R2WDVFdExOQTROUG5ydURZUlZxbXJXS1pJREFvWk12VkRYbXVOWExPNTdHV0tUc01PSkJ6Uk9Pa1U1T1R3dWI0WkgwN1YyRjBKekE3V0pFdU56WTItcGQ4emd5OUFWWl9vM25hSFFPakZoVUo2Q1F0RUVSZTlyazlVWWd4NHRienRkbGo0YUJKNDRnWjNwd0ItWnRjYXZ5b2JNTVBCcS1MM3FJREhZTlHSAb8BQVVfeXFMUGJ5MXZ1MHlhRTlSUVZkRWt2UWtaNDl1TXA0Z2x4QTRDeDR5aFVlNmlNTFNHb2Z0R05KR1doTkQ5TUFkUVVzRzBTVGdSaGVCUXN2N3JGMndoaWlZUW5XMGRobWVGYkRSdmRfeEk3cWtIYU0wMDF2Qm5UclowWkdna29rMXhxeWJxWjZoelMwRGhXd1J3RUJWbUtzbloza2wtN29BM2lLOUNINk50M2NNNEFadlVWZlg3SUNOSTVRSHc",
           "breaking": false,
@@ -96,6 +129,13 @@ window.BRIEF = {
           "headline": "Mojtaba Khamenei Says 'Desperate' Trump Used All Kinds of Leverage for Iran Nuclear Deal",
           "what": "Iran's Supreme Leader Ali Khamenei's son Mojtaba Khamenei has publicly claimed that US President Donald Trump used every form of leverage available in a 'desperate' push to secure a nuclear deal with Iran. The remarks signal deep scepticism within Iran's ruling establishment about the US-Iran diplomatic process. The characterisation of Trump as 'desperate' is a pointed rebuke from one of the most influential figures in the Islamic Republic's inner circle.",
           "lens": "A potential US-Iran deal would reshape oil markets and Middle East stability, directly affecting India's energy import costs and its careful diplomatic balance between Washington and Tehran.",
+          "article": "NDTV reports that Mojtaba Khamenei, son of Iran's Supreme Leader Ali Khamenei and a highly influential figure within the Islamic Republic's power structure, has publicly described US President Donald Trump as 'desperate' in his pursuit of a nuclear deal with Iran, alleging Trump used 'all kinds of leverage' to push the negotiations forward.\n\nThe remarks reflect a significant divide between how Washington and Tehran are characterising the ongoing diplomatic process. While the Trump administration has publicly projected confidence in securing an agreement, Khamenei's son's comments suggest Iran's inner circle views the American posture as one of weakness rather than strength.\n\nIndia watches the US-Iran standoff closely: Iran is a major oil supplier to Asia, and any deal — or collapse of talks — directly affects global crude prices. India also maintains strategic ties with Iran, including its interest in the Chabahar port, making the diplomatic outcome consequential for New Delhi's foreign policy and energy security.",
+          "key_facts": [
+            "Mojtaba Khamenei called Trump 'desperate' over Iran nuclear deal push",
+            "Claimed Trump used 'all kinds of leverage' in negotiations",
+            "Mojtaba Khamenei is son of Iran's Supreme Leader Ali Khamenei",
+            "Remarks signal deep scepticism in Iran's ruling establishment"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNXzhzcU5EOUVEbURybkpFTnctSWNGOHhaOXpEcl9fVU52OHYxNnNEYVptM2NrOGdrVTR2RGZCelhzVi1EVFZONHpkbm9KbWRGNkI1U0RMNThVRldwZFZQWEJQNTV2X3BndHhEazY0TkhyZ2hlZnZlM3FhSU0ydUVFemUxZXNxR0ZELTI3ZFBTb0RoUG54RUxFM2Z5eElmc2NYYXhqX0JLUnVOSU10Z0lyLW80UTVDa0MzWThFMXpTUGJGMFXSAcsBQVVfeXFMUEdjVWVzZWRsWlVUZHl6c241anFnVFJvdk9yc0lTT1dSZzJjTDB3eHdtdF8ydm9lZTF4UFh0Q2NzY1dmWXRxX3REbV8wdVl0TW5JYjlReVpGV1R0QVhhZGhxV05vN1hTa01FUXZRUko2Qm8wamxoSjA2VUN0cmFqTk1BYUNsMkhSdkVWMjMxRjFsVXI0OVB1aGNRTTZaUldkczIzMGFuSk9xWUtmWnlDbDAwdkRzbVlhUm9SazhyZ2lzXzlwU2dDS05kWm8",
           "breaking": false,
@@ -111,6 +151,13 @@ window.BRIEF = {
           "headline": "JD Vance Tells Israel to 'Smell the Reality' After It Criticised US-Iran Nuclear Deal",
           "what": "US Vice President JD Vance has sharply rebuked Israel for publicly criticising the emerging US-Iran nuclear deal, telling the Israelis to 'smell the reality'. The unusually blunt language from a senior American official directed at a close ally underscores growing tensions between Washington and Tel Aviv over Iran diplomacy. Israel has long opposed any nuclear agreement that it believes does not permanently eliminate Iran's enrichment capacity.",
           "lens": "The public US-Israel rift over Iran is a rare and significant diplomatic rupture — if Washington proceeds over Israeli objections, it reshapes the Middle East security architecture India navigates for its own trade and diplomatic interests.",
+          "article": "NDTV reports that US Vice President JD Vance delivered a blunt public rebuke to Israel, telling it to 'smell the reality' after Israeli officials criticised the Trump administration's emerging nuclear deal with Iran. The unusually sharp language from a senior American official directed at one of Washington's closest allies marks a striking moment of open friction in the US-Israel relationship.\n\nIsrael has consistently opposed nuclear agreements with Iran that stop short of dismantling its entire enrichment infrastructure, arguing that any deal leaving Iran with enrichment capability is an existential threat. The Trump administration, however, appears determined to pursue a diplomatic settlement, and Vance's comments signal that Washington is unwilling to let Israeli pressure derail the talks.\n\nFor India, which maintains careful ties with both Israel and Iran, and which depends on Middle East stability for energy imports and the safety of millions of Indian workers in the Gulf, the public rupture between the US and Israel over Iran is a significant geopolitical development to watch closely.",
+          "key_facts": [
+            "VP JD Vance told Israel to 'smell the reality' over Iran deal criticism",
+            "Israel opposes the emerging US-Iran nuclear agreement",
+            "Marks rare public US rebuke of a close ally",
+            "Trump administration appears determined to proceed with Iran talks"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNWU95c1lWZzVFVEs4RHUxaTI1QjlhUUZ6VjhFYTZHSWFVdnpFSFhCa1hOMnd3VTFDT1gxZWRjVmNfSm1EcHFhcTlrQkwwMG9tVFd2U2dxNFMza0ZmdmhEOVVnaGNmUEc2LTN4U3poTmVvOGlBZkhMN1ZYb2lVTDRUYnlKY2kzSlBZdk1zcFhsNEh0WFRGQ1RleW4yRjh4d9IBpgFBVV95cUxQV0lRTnY3N1BFYlBlX3FoX1NXaGlxdUJONFc0YjctLU5kdHYyZUJkcHJuOVBzZDhHS2JpelZKOWkwYUotNEgzSjNXUjVLdVlwU2wxaG1vR1VteWppQUJhekcxdG55YlhMdGlfbjRwOTk4R2RfMzhzS3dWamxSWWJ1N21TMFFiOGpiZkk0WGV0Z0hKa0RoV0k0ODVneDhJUVI5VjBXX3ln",
           "breaking": false,
@@ -126,6 +173,13 @@ window.BRIEF = {
           "headline": "Lionel Messi's Father Dealing With 'Health-Related Situation' During World Cup 2026",
           "what": "BBC reports that Lionel Messi's father, Jorge Messi, is dealing with a 'health-related situation' during the FIFA World Cup 2026. The development comes as Argentina are participating in the tournament, with Messi widely expected to be playing in what could be the final World Cup of his legendary career. The nature or severity of Jorge Messi's health condition has not been specified.",
           "lens": "Messi is the world's most followed footballer and India's vast football fanbase will be closely watching whether any personal distress affects his or Argentina's World Cup campaign.",
+          "article": "BBC reports that Lionel Messi's father, Jorge Messi, is currently dealing with a 'health-related situation' during the FIFA World Cup 2026. The report did not provide specific details about the nature or severity of the condition, but the timing — mid-tournament — adds a significant personal dimension to Messi's participation in what many expect to be the final World Cup of his storied career.\n\nMessi, widely regarded as the greatest footballer of all time, led Argentina to World Cup glory in 2022 in Qatar. At World Cup 2026, he is one of the central attractions for global audiences, including India's rapidly growing football fanbase.\n\nJorge Messi has long been a key figure in his son's life and career management. Any health concern involving him during the tournament will naturally be a distraction for the Argentine captain, and fans worldwide — including millions in India — will be following developments closely as Argentina's campaign unfolds.",
+          "key_facts": [
+            "Lionel Messi's father Jorge Messi facing a 'health-related situation'",
+            "Incident occurring during FIFA World Cup 2026",
+            "Nature or severity of condition not specified by BBC",
+            "Messi is widely expected to be playing his final World Cup"
+          ],
           "source": "BBC",
           "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5UM3hlUW95cFpDSXJXaUp1YjlNZWx5enVzd2RRYWNzVkJiQzBVMnR6akVaWW8ycG0tYlRyay1IRXZoMzYySVpWbGJVUE1rNDV6eVBfbFFxSVRSUkpIU3d0NGlQU1Q5WHM",
           "breaking": false,
@@ -141,6 +195,13 @@ window.BRIEF = {
           "headline": "Inside Trump and Netanyahu's Complicated Relationship",
           "what": "Hindustan Times examines the complex and evolving personal and political relationship between US President Donald Trump and Israeli Prime Minister Benjamin Netanyahu. While the two leaders have often been portrayed as close allies — with Trump's first term delivering significant wins for Israel such as moving the US embassy to Jerusalem — the relationship is marked by tensions, competing interests, and moments of public friction. The analysis comes against the backdrop of the ongoing Gaza conflict and the newly signed US-Iran deal.",
           "lens": "The Trump-Netanyahu dynamic directly shapes US policy on Iran and Gaza — two crises that affect Indian energy security, diaspora communities, and India's own careful diplomatic balancing act in the Middle East.",
+          "article": "Hindustan Times takes an in-depth look at the layered and at times contradictory relationship between US President Donald Trump and Israeli Prime Minister Benjamin Netanyahu, two leaders who have projected a strong alliance but whose bond is more complicated beneath the surface.\n\nTrump's first term saw landmark decisions in Israel's favour — recognising Jerusalem as Israel's capital, moving the US embassy there, and brokering the Abraham Accords. Yet Netanyahu reportedly frustrated Trump at key moments, including congratulating Joe Biden on his 2020 election win before Trump had conceded. The current context — an ongoing war in Gaza and the freshly signed US-Iran agreement — adds new stress to the relationship, as Israel views any deal with Tehran through the lens of existential security concern.\n\nFor India, the Trump-Netanyahu dynamic is not merely a geopolitical curiosity. The US stance on Iran, shaped partly by this relationship, affects global oil markets and India's energy import strategy. India also maintains strong ties with both Israel and Iran, and must navigate carefully as this relationship evolves.",
+          "key_facts": [
+            "Trump-Netanyahu relationship examined amid Gaza war and Iran deal",
+            "Trump's first term included moving US embassy to Jerusalem",
+            "Netanyahu congratulated Biden in 2020, straining ties with Trump",
+            "New US-Iran agreement adds fresh tension to Israel-US dynamic"
+          ],
           "source": "Hindustan Times",
           "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWnN4anF5SUItZ1BuckY3ODNOYUY5RDhBaDFWQnA0TXVKdlByd0RWblllV3BaZ2RyM0xUWjE4M2Yxb1ZXZGRwN1VEQ05RM2ItNFI5c3ZrMWhpSDNNUFNoQVZwNjI0bVRRSy0yXzF0RlM0OHZ3R1JMc0VheTVvbFIwcEQ5dTdZYm1nczR6UV9KVTUxaGFZdk9Md2xwZ3VHUktnc2Y4Zk1aZkZReWd5Y25nRFVvcHlucDjSAbwBQVVfeXFMTlBWYUVDWHRaNjY1US15bzZlTHZhUGY3eEZqSGlxbDJaQjctV2hJdC11YUtNcmwzaWpwdlFzRVhvRGp4ZTVYSXJ4c3VfTWxqSTVyWm1peDg4emx2b2VMNFZ5OVI0Y1FtcklGaXpHajlBVVYzNU5YcXM1ellJRVJ4MWZTcHFsWVZaaWtiVnc1VnlNTzJlQTdub2dEZFNGV295Y2I4YjZieFBZMUxfMVZDUWEtaEFDaHFaeTdXbkQ?oc=5",
           "breaking": false,
@@ -148,7 +209,8 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/27135725/pexels-photo-27135725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "@ Prestige by Nature",
-          "image_credit_url": "https://www.pexels.com/@prestige-by-nature-1116200106"
+          "image_credit_url": "https://www.pexels.com/@prestige-by-nature-1116200106",
+          "_edition_date": "2026-06-18"
         },
         {
           "hour": 13,
@@ -156,6 +218,13 @@ window.BRIEF = {
           "headline": "FIFA World Cup 2026: England make winning start",
           "what": "England have kicked off their FIFA World Cup 2026 campaign with a victory, according to live updates from ESPN India. The 2026 World Cup is being co-hosted by the United States, Canada and Mexico, marking the first time the tournament features 48 teams. England's winning start puts them in a strong position in their group. Detailed scorelines and standout performers are covered in ESPN India's live blog.",
           "lens": "With cricket-mad India increasingly following football and FIFA tournaments drawing massive Indian viewership, England's campaign is one of the most-watched storylines of the 2026 World Cup.",
+          "article": "ESPN India reports that England made a winning start to their FIFA World Cup 2026 campaign on June 18, recording a victory in their opening group-stage match. The 2026 World Cup, co-hosted by the United States, Canada and Mexico, is the first edition to feature an expanded 48-team format, making it the largest World Cup in history.\n\nEngland, one of the tournament favourites, entered the competition with high expectations after strong recent performances in international football. A winning start gives them early momentum and an advantage in the race to qualify from their group for the knockout rounds.\n\nFor Indian fans, the FIFA World Cup has become a major televised event, with viewership growing significantly in recent editions. England are among the most followed international teams in India, and their progress through the tournament will be closely tracked by football fans across the country.",
+          "key_facts": [
+            "England won their opening FIFA World Cup 2026 match on June 18",
+            "2026 World Cup co-hosted by USA, Canada and Mexico",
+            "First World Cup with expanded 48-team format",
+            "England among tournament favourites"
+          ],
           "source": "ESPN India",
           "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNUVVJRy1aeF84OGZPX3NsZHZjdGhVd0dwelU3ay1GSjRSOFV5cUM3N3V0eExXb3ExN1JycExGS3ZlTEF4YWhSeGx2a3lwb0pKc3V4QzZuWXVpWjIzRVYxVC0xWTNjczI3cjFCM2duS1lkVUgzMmNlZF9KUW02YmNSUHRVTlNoMVBQa1pBNldyXzJhT29XTEFBVmJVUVVCbGlZenF4X0N2bGRnMEcxNEh1MDFJNUpKbTBocWo1aHNIZ3F5ZEpTaU9jTlBPM2NXTVk5aHFjaHN0RXdOYWc1UFZ3S3VfUnk?oc=5",
           "breaking": false,
@@ -163,7 +232,8 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/38104078/pexels-photo-38104078.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "The Six",
-          "image_credit_url": "https://www.pexels.com/@the-six-2148199655"
+          "image_credit_url": "https://www.pexels.com/@the-six-2148199655",
+          "_edition_date": "2026-06-18"
         }
       ]
     },
@@ -177,6 +247,13 @@ window.BRIEF = {
           "headline": "India-US interim trade deal in final stages after Modi-Trump push, says Foreign Secretary",
           "what": "India's Foreign Secretary has confirmed that an interim trade deal between India and the United States is in its final stages, following a push from Prime Minister Narendra Modi and President Donald Trump. The Foreign Secretary also acknowledged that trade negotiations had created uncertainty between the two nations. The development signals significant diplomatic momentum toward resolving tariff and trade tensions that have simmered since Trump's reciprocal tariff announcements earlier this year.",
           "lens": "A concluded India-US trade deal would directly affect prices of imported goods, export opportunities for Indian manufacturers, and the broader trajectory of India's largest trading relationship.",
+          "article": "India Today and Reuters report that India's Foreign Secretary has stated the interim trade deal between India and the United States is now in its final stages, with both Prime Minister Narendra Modi and President Donald Trump having personally pushed for its conclusion. The Foreign Secretary also acknowledged candidly that the prolonged negotiations had created uncertainty between the two nations — a rare admission of diplomatic friction in what is otherwise a strategically close partnership.\n\nThe push for an interim agreement comes after the United States announced sweeping reciprocal tariffs earlier in 2025 that rattled Indian exporters in sectors ranging from pharmaceuticals and textiles to IT hardware. An interim deal is seen as a stepping stone to a broader bilateral trade agreement that both governments have been working toward for several years, aiming to more than double trade to $500 billion by 2030.\n\nFor everyday Indians, the significance is concrete: a deal would shape the tariff environment for key export industries that employ millions, influence the cost of American goods in India, and determine how competitive Indian products remain in the US market. With both leaders now visibly invested in a resolution, the probability of a near-term agreement appears higher than at any previous point in negotiations.",
+          "key_facts": [
+            "India-US interim trade deal described as being in 'final stages'",
+            "PM Modi and President Trump personally pushed for the deal's conclusion",
+            "Foreign Secretary acknowledged trade talks had created uncertainty between the two nations",
+            "Deal is a stepping stone toward a broader bilateral trade agreement"
+          ],
           "source": "India Today",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQXhaR3VfUFFza1dfV3ljWnptNFNvZ2Jrc0NDZ29RdlNpV20xV0RkQjRaY25pU1NNUFNCYUJXU09ENkpIYnlDRkNoaF92X3kwS0xPQWZGbWVCZXlyb0hpdjkxcjFKWERRbkRrNnB3QTg3UE05QlJYZjU1aS0yZC1IejNXSmp1Y08tMFE5ZjlYZkNCbzd2S1VOQ1JZZkJ0RF9FeHdkdXl6ZlpRV1l6WHhBYnVnYnNwM3E1Nm15adIBwgFBVV95cUxPY1J1MjNyOVRoZF9Nc3F0NnhzSzk5WjY2TFhpUUVJbF84NUV2SzV4VWFaU2tkLXlWdUVEbFJiMFJxVEFQLVBZbXMybG9fMnk1ZHlfNUZsaGdIcXpwRjJOTlhDNE5yNzZ4TDBvaEFLUFJXTXBmcWp1NTlzYm9odzRDYUlvLWlLTUdiSnVuVEVKaTJXbXByVDFZYXNrVnk3RGUySGFDR1BhYk41cGZFQXdFekRtTjdJMzdyR0UtMG84dUxmQQ",
           "breaking": true,
@@ -192,6 +269,13 @@ window.BRIEF = {
           "headline": "Is India producing more graduates than its economy can absorb?",
           "what": "The Hindu raises a pointed question about whether India's rapidly expanding higher education output is outpacing the economy's capacity to create suitable jobs. The country produces millions of graduates annually, yet unemployment and underemployment among educated youth remain persistently high. The structural mismatch between the skills graduates possess and the roles the labour market actually demands is at the heart of the concern.",
           "lens": "For the millions of Indian families investing heavily in college education, this debate is directly about whether a degree still reliably translates into a stable, well-paying job.",
+          "article": "The Hindu examines a pressing structural challenge facing India's economy: whether the country is producing far more university graduates than the job market can meaningfully absorb. India has dramatically expanded its higher education infrastructure over the past two decades, adding hundreds of universities and engineering and management colleges, resulting in millions of new graduates entering the workforce every year.\n\nYet data on graduate unemployment and underemployment — where degree-holders take up jobs well below their qualification level — suggests a significant mismatch. Sectors that typically absorb large numbers of graduates, such as IT services, banking, and manufacturing, have seen slower hiring or, in some cases, layoffs, while the informal economy continues to dominate actual employment. The quality of graduates from many institutions is also a recurring concern raised by industry.\n\nFor an everyday Indian reader, the stakes are immediate: families across income levels sacrifice significantly to fund children's college education in the belief that it secures a better livelihood. If the economy cannot generate enough quality jobs for the educated, the return on that investment diminishes sharply, with consequences not just for individual households but for India's broader demographic dividend ambitions.",
+          "key_facts": [
+            "India produces millions of graduates annually across universities and colleges",
+            "Graduate unemployment and underemployment remain persistently high",
+            "Skills mismatch between graduates and available jobs is a core concern",
+            "Slower hiring in IT, banking, and manufacturing compounds the problem"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNkhrazFGM2F4U0FIZ1FJdkFnVXZGYjVfZ2NmbmNEeTZCTkZDT2lJWkp2U1RscXZYVktUbzdYOHVEX2VwbG9URElNVElxN0NQdExLekVsV3FERDR3SnMzYkVxangzOHJFOFBFcmx0cVBWTlJDa1F4RDVkdXRleUNJUHlMeGJBX0VhMTlMVlNnLVZILThiTk9ueENUUENib1RUQV8tbzd0RVFrXzBlY3RQdDBRazM4WWVabVVmNUFvS1BlU2vSAcoBQVVfeXFMUG5iSzVsRlpZdGdRY0ZwZ252UEdjSkRXTkhIN0xuY0RfS3hjNXltcVhzVnp3X01rV2Vqd2xGamx4RTRKajQ4QmpjQkZCSEsxRlRXa3lITzhzUzN2NXB1MWxhekM2dWZJMEtjdkdtaUh5RXpjNUhaVXNjWWdDY2twejRQZEY2c0dydWI5Ymw3SWtmSGRhZDNyMkw2RU13UVp5ZTdJdGI4T21tRWxJQS1MV0xiWFFEaThhV2VnMlNhNC1rWTJhSHN1T2d0UQ",
           "breaking": false,
@@ -207,6 +291,13 @@ window.BRIEF = {
           "headline": "Trump tells Modi at G7 he plans to visit India in the future",
           "what": "US President Donald Trump told Prime Minister Narendra Modi during a bilateral meeting on the sidelines of the G7 summit that he intends to visit India at some point in the future. The exchange came as the two leaders met to discuss trade and bilateral ties, with India and the US in the middle of ongoing tariff negotiations. No date or timeline for a Trump India visit was specified.",
           "lens": "A Trump visit to India would be a major diplomatic moment and could accelerate the pace of the stalled India-US trade deal talks that directly affect Indian exporters facing American tariffs.",
+          "article": "BBC reports that US President Donald Trump told Prime Minister Narendra Modi during their meeting on the sidelines of the G7 summit that he plans to visit India in the future. The remark came as the two leaders held bilateral talks, with trade negotiations between the two countries currently ongoing and a broader tariff framework yet to be finalised.\n\nIndia and the United States have been engaged in discussions over a bilateral trade deal since early 2025, as Trump's sweeping tariff regime placed pressure on multiple trading partners including India. Modi and Trump have met several times this year, signalling a degree of personal rapport that both governments have sought to leverage in negotiations.\n\nA formal Trump visit to India would carry significant symbolic and diplomatic weight, potentially fast-tracking trade discussions and defence cooperation. However, no date or specific timeline was announced, leaving the commitment largely aspirational for now. For Indian businesses and exporters, progress in the India-US trade relationship remains closely watched given the potential impact on sectors like pharmaceuticals, IT services, and manufacturing.",
+          "key_facts": [
+            "Trump told Modi he plans to visit India, no date given",
+            "Remarks made during bilateral meeting at G7 summit",
+            "India-US trade deal negotiations currently ongoing",
+            "No timeline specified for the visit"
+          ],
           "source": "BBC",
           "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBQN1ROZF9kRUVBVjF0Q3dzcHJTcG45OHdRNGI5UHNJZGk5VjNDZ3dMVHJuZElPUTJIR185MjJ6YzFpcWlsVy1GcXZ4LXdIMlp4VzhFZDhYNG5nUQ",
           "breaking": false,
@@ -214,7 +305,8 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/29881319/pexels-photo-29881319.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Yash Patel",
-          "image_credit_url": "https://www.pexels.com/@yash-patel-820556846"
+          "image_credit_url": "https://www.pexels.com/@yash-patel-820556846",
+          "_edition_date": "2026-06-18"
         },
         {
           "hour": 21,
@@ -222,6 +314,13 @@ window.BRIEF = {
           "headline": "India and UK set July 15 as the date to launch their historic free trade agreement",
           "what": "India and the United Kingdom have overcome a last-minute dispute over steel tariffs to formally announce July 15 as the implementation date for their long-negotiated free trade agreement. The steel hurdle — a key sticking point around import duties — was resolved through reassurances, clearing the path for what both sides are calling a landmark bilateral deal. The agreement is expected to significantly boost trade in goods and services between the two countries.",
           "lens": "The India-UK FTA could lower duties on Indian goods like textiles, leather, and pharmaceuticals entering the UK, while also shaping the cost of imported British goods for Indian consumers and businesses.",
+          "article": "The Hindu and Reuters report that India and the United Kingdom have announced July 15 as the rollout date for their free trade agreement, resolving a last-minute stumbling block over steel tariffs. The steel dispute — centred on import duty commitments — was settled after the UK provided reassurances to India, allowing both sides to finalise the implementation timeline.\n\nThe India-UK FTA has been years in the making, with negotiations that began in 2022 repeatedly delayed over sensitive issues including immigration, professional services, and tariffs on key industrial products like steel and automobiles. The deal announced earlier in 2025 is widely considered a milestone in post-Brexit British trade policy and a significant win for India's export ambitions.\n\nFor everyday Indian consumers and businesses, the agreement is expected to reduce duties on Indian exports such as textiles, garments, leather goods, gems, jewellery, and pharmaceuticals entering the UK market. On the import side, British goods including Scotch whisky and automobiles may become more accessible in India over time. The July 15 start date now gives industries on both sides a concrete deadline to prepare for the new trade regime.",
+          "key_facts": [
+            "July 15 set as implementation date for India-UK Free Trade Agreement",
+            "Last-minute steel tariff dispute resolved through UK reassurances",
+            "Deal covers goods, services; key Indian exports include textiles and pharma",
+            "Negotiations had been ongoing since 2022, delayed multiple times"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPVGtMZjFUY0dERUliaGZ2LXVUdkpsN19zenhKMG9XRFdBVDE0dktCNWs0OU90cFdTdmo4WGRqRXN6WDRRcDVGYzN2TVNaVmp3UlBwdUdCM1pXUXlMbDI4Mzg3MTFOVk9MdVBpbHpxTzZUX18wT1JPRGtUdXFxZjBZV0ZIdVMySENhTVhDV0d1U29EeXhzZm9taEdnM25NajRUQ2xjRWpocTAxa3czbjhjMlhvRkFQYURyTVVTYUcwUV82UUJVZ1U2d2s2STB3QkIzUjBhRjgtY1FOZS1MUlNJQ0V5cHR4ZnJabEhr0gHyAUFVX3lxTE51d1Z1SkhxUzE2clA3NUNZRGFMMi1EbnNub3NlTkhIUmlEbmY2VG9BTU5JdmNsSFpndHZKZmxLR2o0SHFZZUtmbTN6OU5UZmRhQWdJRjV0SGk5cFlvd0lSYnVQSTRVYlBJcTlISTF0aGJqeWp2OFZubjltNkhmMk44bXBhYmIwUko4RzM2WGZJQmlFdjIzdFphY0o5TzhrZjhWMTFIS1lsOXJ1cnQxQTZ0dGlQdXM3cHBGNTc0cC1nbXFmbVkzd282SmROYWllUkk5ak1nZ2t3NC0wT3dlV3RuTFNfZzI1X01YM2JqdFhrZnFn",
           "breaking": true,
@@ -229,7 +328,8 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/26970649/pexels-photo-26970649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Leonid Danilov",
-          "image_credit_url": "https://www.pexels.com/@infonautica"
+          "image_credit_url": "https://www.pexels.com/@infonautica",
+          "_edition_date": "2026-06-18"
         },
         {
           "hour": 17,
@@ -237,6 +337,13 @@ window.BRIEF = {
           "headline": "Revised India-U.K. Social Security Pact Could Save Indian Firms and Workers $500 Million",
           "what": "A revised social security agreement between India and the United Kingdom is expected to save Indian companies and workers up to $500 million, according to The Hindu. The pact would likely exempt Indian professionals working temporarily in the U.K. from paying into the British social security system, a major cost burden for IT and other service firms that deploy staff there. The deal comes as the broader India-U.K. Free Trade Agreement nears finalisation.",
           "lens": "For the hundreds of thousands of Indian IT professionals and their employers operating in the U.K., a $500 million saving on social security contributions would directly reduce costs and could make Indian firms more competitive in winning British contracts.",
+          "article": "The Hindu reports that a revised social security pact between India and the United Kingdom could save Indian companies and workers as much as $500 million. The agreement would most likely exempt Indian professionals on temporary deputation to the U.K. from contributing to the British National Insurance scheme, a significant overhead that has long burdened Indian IT and consulting firms sending staff there.\n\nIndia's technology services sector is the largest beneficiary of such bilateral social security agreements, as companies like TCS, Infosys, Wipro, and HCL routinely deploy thousands of employees to client sites in the United Kingdom. Without a totalization agreement, these workers effectively pay into a social security system from which they typically derive no long-term benefit, since they return to India before qualifying for British pension entitlements.\n\nThe revision is being negotiated alongside the wider India-U.K. Free Trade Agreement, which has been in the works for several years. If concluded, the combined package would represent a landmark upgrade in economic ties between the two countries, with direct financial relief for Indian businesses competing in one of their most important overseas markets.",
+          "key_facts": [
+            "Revised pact could save Indian firms and workers $500 million",
+            "Exempts Indian professionals from U.K. social security contributions",
+            "Key beneficiaries: Indian IT firms deploying staff in the U.K.",
+            "Negotiated alongside India-U.K. Free Trade Agreement"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOVm9TMkFKNFhUZncyZGtqRWg1VDRBT3paUW9JOE5WaHh0c09VSGtiR3o5cl8yQ2VyWEFWWlhxUUZhUV9RbTJUQk1IZU5TS21LYWwyWVI4S1ZCS2dxLWVmdGtmaENoOWdSVzNXMzl3bXJpN0NFZUUzOTlQU3lacTMwRWJkcmlrYS1mQXBROE9mQmVSTkFfOW13ZVhaSXJhTXp4SVI4MnE1NmVpWHJoaHFuamNaeHVQcGlnSnc4eV9pU3ZSX0tPbmRGOW5FMVJXM202WnR6MmdsUV9EM29FSnhrRC1pbi1xVEo5a1Q4",
           "breaking": false,
@@ -244,7 +351,8 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/14907378/pexels-photo-14907378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Ravi Roshan",
-          "image_credit_url": "https://www.pexels.com/@ravi-roshan-2875998"
+          "image_credit_url": "https://www.pexels.com/@ravi-roshan-2875998",
+          "_edition_date": "2026-06-18"
         }
       ]
     },
@@ -258,6 +366,13 @@ window.BRIEF = {
           "headline": "PM Modi at VivaTech 2026: 'For India, AI Means All Inclusive'",
           "what": "Prime Minister Narendra Modi addressed VivaTech 2026 in Paris, arguing that technology can drive progress only when it is democratised. He framed India's AI ambition around inclusion, coining the phrase 'AI means All Inclusive' to signal that the benefits of artificial intelligence must reach every citizen, not just the elite. Modi also highlighted India's emergence as a trusted global partner in technology and growth.",
           "lens": "Modi's framing of AI as a tool for mass inclusion — not just tech hubs — signals the policy direction that will shape India's AI spending, skilling programmes, and digital infrastructure over the next decade.",
+          "article": "NDTV and The New Indian Express report that Prime Minister Narendra Modi addressed VivaTech 2026 in Paris, one of Europe's largest technology conferences, making a pointed case for democratised artificial intelligence. His central formulation — 'For India, AI means All Inclusive' — positioned the country's AI push not as an elite or urban phenomenon but as a nationwide levelling tool. He argued that technology can lead to genuine progress only when it is accessible to all.\n\nModi also used the platform to underscore India's broader global role, stating that the country is emerging as a trusted partner in technology, trade, and innovation. The speech came as several major economies are competing to set the terms of global AI governance and investment.\n\nFor everyday Indians, the political signal matters: government AI initiatives — from agriculture to healthcare to education — are likely to be pitched and funded under an inclusion lens, which could influence how digital skilling budgets are allocated and which communities are prioritised in upcoming national AI missions.",
+          "key_facts": [
+            "Modi spoke at VivaTech 2026 in Paris",
+            "Coined phrase: 'AI means All Inclusive'",
+            "Argued technology drives progress only when democratised",
+            "Positioned India as a trusted global technology partner"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSDJ6VTh1bWJNYzhvMWFQc1U0X2VmdVhpTjhwY1BFc25lVGh2c29xWGNrLTJYa0lUWmtENnYtb3JlWUgxeGtxT0hFZTBwMmhHUl84azhRVUhBNkRIVUZtUG92X2ViV2F4Ty1Lb2NsTUxjMTJOcFdQYk9DYlp4SGVvM2ZIU3JnS0FZbHdRWEpnajltRVd6NkhrN0VIYUtJMUxaY1RKSUh3TG9zT2fSAbMBQVVfeXFMT296TVNsWXhueTI4N01pQTZaY2Rlcm8yZm9aQkJEMl81dTM1enBlcldqbUlwaTE0dGhQWFpDeGFaLXdlUFRid1pPVlpjNWlybG9ST3BRWkhiZ3cyM1BzYUFoTVlTcUw5VkVmalA3WjZQanhVc1d4dDZLZHJvX1FjQnVWWjM5ckNDMW96eGM3UVZOTWM5ZHNLTGlPWjZPeElhZmRPY29vWEdJWjZiOU9yNDh5OUU?oc=5",
           "breaking": false,
@@ -273,6 +388,13 @@ window.BRIEF = {
           "headline": "PM Modi at VivaTech 2026: India pitches itself as global technology partner, calls for democratising AI",
           "what": "Prime Minister Narendra Modi addressed VivaTech 2026 in Paris, calling for global collaboration in technology and positioning India as a trusted partner for the world. He declared that for India, AI means 'All Inclusive', emphasising that technology can drive progress only when it is democratised. Modi highlighted India's growth story and its expanding global role. The address marked a significant moment in India's diplomatic push to shape global technology governance.",
           "lens": "Modi's pitch at one of Europe's biggest tech conferences signals India is actively courting global investment and partnerships in AI and emerging tech — decisions made in Paris can directly shape jobs and digital infrastructure back home.",
+          "article": "NDTV and The Hindu report that Prime Minister Narendra Modi addressed VivaTech 2026 in Paris, one of Europe's largest technology conferences, making a high-profile pitch for India as a global technology collaborator. Modi declared that for India, AI stands for 'All Inclusive', framing artificial intelligence as a tool for broad-based social progress rather than elite adoption. He called on the world to 'work with India' and stressed that technology can lead to genuine progress only when it is democratised.\n\nModi underscored India's emergence as a trusted global partner, pointing to the country's rapid digital growth — from UPI's scale to its expanding startup ecosystem — as evidence of India's readiness to co-shape the global technology order. The address at VivaTech came amid India's active courtship of European investment and technology partnerships, with France being a key strategic ally.\n\nThe Firstpost also noted Modi's framing of India's global role, highlighting that the speech positioned India not merely as a technology consumer but as a co-creator of global digital standards. For everyday Indians, the significance lies in whether such high-level diplomacy translates into real investment in domestic AI infrastructure, jobs in the technology sector, and affordable access to emerging technologies.",
+          "key_facts": [
+            "Modi spoke at VivaTech 2026 in Paris, a major European tech conference",
+            "Declared AI for India means 'All Inclusive' — technology must be democratised",
+            "Called on global partners to 'work with India' in technology",
+            "Framed India as a trusted global technology partner with growing digital scale"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSDJ6VTh1bWJNYzhvMWFQc1U0X2VmdVhpTjhwY1BFc25lVGh2c29xWGNrLTJYa0lUWmtENnYtb3JlWUgxeGtxT0hFZTBwMmhHUl84azhRVUhBNkRIVUZtUG92X2ViV2F4Ty1Lb2NsTUxjMTJOcFdQYk9DYlp4SGVvM2ZIU3JnS0FZbHdRWEpnajltRVd6NkhrN0VIYUtJMUxaY1RKSUh3TG9zT2fSAbMBQVVfeXFMT296TVNsWXhueTI4N01pQTZaY2Rlcm8yZm9aQkJEMl81dTM1enBlcldqbUlwaTE0dGhQWFpDeGFaLXdlUFRid1pPVlpjNWlybG9ST3BRWkhiZ3cyM1BzYUFoTVlTcUw5VkVmalA3WjZQanhVc1d4dDZLZHJvX1FjQnVWWjM5ckNDMW96eGM3UVZOTWM5ZHNLTGlPWjZPeElhZmRPY29vWEdJWjZiOU9yNDh5OUU?oc=5",
           "breaking": false,
@@ -288,6 +410,13 @@ window.BRIEF = {
           "headline": "Can AI crack UPSC? How technology is disrupting India's coaching industry",
           "what": "The Hindu examines how artificial intelligence tools are beginning to reshape India's massive UPSC coaching industry, raising the question of whether AI can replicate — or even outperform — traditional classroom instruction for one of the world's most competitive examinations. The disruption spans personalised study plans, mock-test analytics, and doubt-solving bots, challenging the dominance of established coaching institutes. The trend has significant implications for the millions of aspirants who spend years and lakhs of rupees preparing for civil services.",
           "lens": "With lakhs of families spending heavily on UPSC coaching every year, AI-driven alternatives that are cheaper and more personalised could fundamentally change how — and how much — aspirants invest in their preparation.",
+          "article": "The Hindu reports on how artificial intelligence is beginning to challenge the entrenched UPSC coaching industry in India, an ecosystem worth thousands of crores and deeply woven into middle-class aspirations. AI tools are now offering personalised study schedules, performance analytics from mock tests, and instant doubt resolution — functions that traditionally required expensive classroom enrolment at institutes in cities like Delhi's Mukherjee Nagar or Rajendra Nagar.\n\nThe piece raises the provocative question of whether AI can actually 'crack' UPSC — that is, whether technology-assisted self-study can match the structured mentorship and peer environment of top coaching centres. Early adopters among aspirants report meaningful improvements in efficiency, though sceptics argue that the unpredictable, essay-heavy nature of the UPSC mains and interview stage still demands human guidance.\n\nFor the average Indian family, this shift is consequential: UPSC coaching can cost anywhere from tens of thousands to several lakhs of rupees per year, and any credible low-cost AI alternative could democratise access for aspirants from smaller towns who cannot afford to relocate to metro coaching hubs.",
+          "key_facts": [
+            "AI tools offering personalised UPSC prep, mock-test analytics, doubt-solving",
+            "Challenges established coaching institutes in cities like Delhi",
+            "UPSC coaching industry worth thousands of crores annually",
+            "Could reduce costs for aspirants from smaller towns"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE82ZjBxcUNLd3Q4bi1nNUZIRlJ0bWRKck81OHRoczJ0ZzZLcW1GLVpZX0xVMC04X1JfZ2FWSFZyRU5xME96eXBEdTh0Q21mdU5qM3BGdzFsa2w1dkhSdmlrZ1hvQ2pEb3lwZUlCbktjdjlGQdIBeEFVX3lxTFBQc09IQ2drWTFXYUh1ZC1PRUwxRjIxRFJ1OGs4ZUFxRFFuRVFoTk5iaXNpMmpXOVd3UHdrSzRHX3hsXzRMSUZUMGd0TU5FWTV2SVVLNEdTZFozY3JadTFTYV95ckltU1YzTkxWSkY2MmdWbGphVzFLLQ?oc=5",
           "breaking": false,
@@ -303,6 +432,13 @@ window.BRIEF = {
           "headline": "Startup founder's post seeking factory land sparks bidding war among 3 states",
           "what": "A startup founder's social media post announcing a search for factory land triggered an unexpected bidding war between three Indian states, each vying to attract the investment. The episode, reported by India Today, highlights how intensely state governments are now competing to woo manufacturing and startup investment. The incident went viral, illustrating a shift in how startups can leverage public platforms to negotiate with government stakeholders.",
           "lens": "This rare public bidding war between states shows that founders today can use social media as leverage to extract better land, incentives, and policy support — a tangible shift in the startup-government dynamic.",
+          "article": "India Today reports that a startup founder's social media post simply seeking factory land set off an unusual bidding war, with three Indian states stepping forward to offer land and incentives to secure the investment. The post quickly went viral, drawing official responses and outreach from state government representatives eager to attract the manufacturing facility.\n\nThe episode underscores the fierce competition among Indian states to attract startup-driven manufacturing, particularly as the country pushes to grow its industrial base. State governments have increasingly been rolling out red-carpet policies — from subsidised land to fast-tracked approvals — to woo investors.\n\nFor Indian entrepreneurs and the broader startup ecosystem, the incident signals a meaningful shift in bargaining power: a single founder's public post can now trigger institutional responses from multiple state administrations. It also highlights how transparency and social media are reshaping the way investment decisions and government negotiations play out in India.",
+          "key_facts": [
+            "Founder's social media post seeking factory land went viral",
+            "Three Indian states responded with competing offers",
+            "States competed on land and investment incentives",
+            "Highlights intensifying state-level competition for startup manufacturing"
+          ],
           "source": "India Today",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdVBiOXBXcUxsUnRDSGppczNPQmZoZU1XczdEamFGUXA4SjMybXhoSXNxM0ZUY0tDaXN1V21zbW0yQ0hLdTdHWXJlb01nODcxbS1ZZU8wTElkNEgzemo3ZjJwdVZZOG1KNmVYSkRfNnRMTURBTHRnQzhtWUdwUW5kUkkzdEo5cEstVGxhYkp4TEN3Z2tsM05KMjBsaVZaQXFWelc2TmFJdXdSdGhHV3FfX0NCVUhQR21tUTNLMUhXNlFxckt1dFZmVDlvVdIB0AFBVV95cUxQMWhXS0RJUlZQWHVhVkpRcHNpb3kwNElQRXBfZWczcWR0MkVPdS14a3h2Wi1ENnlqQkt1WW8zYlRqT0VqSnhCQ2dBS0doa0lUME1xT29PN0liNXExSDhhLWc3RUFMSG9BQW53bUZHZTI3RmhqSWt1N2dmeG9rc3JlaXlwcnlMd19FZU42MXlQbXZhUjhuMjFHMXRjZTV0OHV4UFBhbHFISGRCZDJPUXlZMFR5XzJHZ3l5ZmFUWmhuZURpbl9JZlRKbEdSSURMM2x4?oc=5",
           "breaking": false,
@@ -310,7 +446,8 @@ window.BRIEF = {
           "image": "https://pixabay.com/get/g0cc21c044b79835bb839323346161e7973a1bfb64efdfe2ca97c42d9b8d71e751050b45c2cb73dbd4ca1721d616e816f4c2465184b8e155085b5d7e16da184b4_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Giovanni_cg",
-          "image_credit_url": "https://pixabay.com/users/Giovanni_cg-1760325/"
+          "image_credit_url": "https://pixabay.com/users/Giovanni_cg-1760325/",
+          "_edition_date": "2026-06-18"
         },
         {
           "hour": 17,
@@ -318,6 +455,12 @@ window.BRIEF = {
           "headline": "Bharat Innovates 2026 Concludes in Nice, Showcasing India's Deep-Tech Ambitions on Global Stage",
           "what": "The Bharat Innovates 2026 event has concluded in Nice, France, with India using the platform to project itself as a global hub for deep-tech and innovation. The event, covered by PIB, brought together Indian innovators, startups, and policymakers before an international audience. The conclave signals India's intent to position its technology ecosystem — spanning artificial intelligence, space tech, and advanced manufacturing — as world-class and globally competitive.",
           "lens": "As India pushes its deep-tech startups and innovators onto the world stage at events like Bharat Innovates 2026, the payoff for ordinary Indians could be more global investment flowing into homegrown technology companies and more high-skill jobs.",
+          "article": "PIB reports that Bharat Innovates 2026 has concluded in Nice, France, with the event serving as a major platform to strengthen India's image as a global hub for deep-tech innovation. The conclave featured Indian startups, researchers, and policymakers presenting India's technology capabilities to an international audience.\n\nThe event is part of a sustained government push to take India's innovation ecosystem to global forums, seeking foreign partnerships, investment, and visibility for Indian deep-tech ventures in sectors such as artificial intelligence, space technology, biotechnology, and advanced manufacturing.\n\nIndia has been steadily building its deep-tech startup base, supported by government initiatives and growing private venture capital. Events like Bharat Innovates are designed to accelerate that momentum by connecting Indian innovators with global networks.\n\nFor everyday Indians, greater international recognition of India's innovation ecosystem can translate into increased foreign investment in homegrown companies, more high-value employment, and a stronger pipeline of technology-driven solutions to domestic challenges.",
+          "key_facts": [
+            "Bharat Innovates 2026 held in Nice, France",
+            "Focused on positioning India as a global deep-tech and innovation hub",
+            "PIB coverage signals strong government backing for the initiative"
+          ],
           "source": "PIB",
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oWmczeUs3cnNBNmlua1ZvRG5JczlsWGhNUGNwakJrWGRCMldjYVNWYkY4bWFja1NwVVdtdHhEX3p1NTNJV0dhNFhic1lJTHU4QmJyTy13SWFOem1FbFR6NjE4WHJHLWNr",
           "breaking": false,
@@ -325,7 +468,8 @@ window.BRIEF = {
           "image": "https://pixabay.com/get/gb1e48f74da217c3c3850b56ae66923c8619b44368e3b0f92517f0cb97a7827dc5cb9dff944c30711a8b2b3bb8d83dc4d1e13750e68ea84e80ce33227e496f341_1280.jpg",
           "image_kind": "photo",
           "image_credit": "ksreekanth6",
-          "image_credit_url": "https://pixabay.com/users/ksreekanth6-860938/"
+          "image_credit_url": "https://pixabay.com/users/ksreekanth6-860938/",
+          "_edition_date": "2026-06-18"
         }
       ]
     },
@@ -339,6 +483,13 @@ window.BRIEF = {
           "headline": "Anthropic lays out formal vision for bolstering AI safety in its models",
           "what": "AI safety company Anthropic has published a detailed vision outlining how it plans to strengthen safety mechanisms within its AI models, including its Claude family. The framework addresses how to make AI systems more reliably aligned with human values and less prone to harmful outputs, at a time when AI capabilities are advancing rapidly. Anthropic, backed by Amazon and Google, positions itself as the safety-first counterweight to faster-moving rivals like OpenAI.",
           "lens": "As AI tools become embedded in everyday Indian work and life, Anthropic's safety blueprint matters because it shapes the guardrails on Claude — one of the most widely used AI assistants globally.",
+          "article": "Moneycontrol and Bloomberg both report that Anthropic has laid out a formal vision for how to bolster the safety of its AI models, publishing a framework that details the company's approach to making its systems more reliably aligned with human intent and resistant to misuse. The announcement reflects Anthropic's core identity as a safety-focused AI lab, founded by former OpenAI researchers who prioritised caution over speed-to-market.\n\nThe vision covers technical and policy dimensions of AI safety, including how to prevent harmful outputs, improve model interpretability, and ensure that increasingly powerful AI systems remain under meaningful human oversight. Anthropic's Claude models are used by millions globally, and its safety research is closely watched by regulators and competitors alike.\n\nWith AI adoption accelerating in India — across sectors from banking and healthcare to education and customer service — the safety standards set by leading labs like Anthropic increasingly influence what protections Indian users and businesses can expect. As governments worldwide, including India, work toward AI governance frameworks, foundational safety research of this kind helps define the baseline against which regulation will be benchmarked.",
+          "key_facts": [
+            "Anthropic publishes formal framework to strengthen AI model safety",
+            "Covers alignment, interpretability, and human oversight of AI systems",
+            "Anthropic's Claude is among the most widely used AI assistants globally",
+            "Company founded by ex-OpenAI researchers focused on safety-first AI development"
+          ],
           "source": "Moneycontrol.com",
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOMnF4VXlDdFdfNW1va2luZmQ5UDZfVE1fVVJXUGZQM3V6QkFPTUhQVU1aLUFERDFtVTBoTDFETjJWd0FiSHAzcDVPdWhlVHVlc3B1UXl2dTZRd0VkckRGV2VfTVB6SC0yRFVvUXBaajNmUDNvRmllblZMaXVBa2JRMmRLVlNtYk8ta2VrcER6NjREZVRiblBDN1JjRjRCeFFpRHZndE1XNzlGd0NxcHpHbk4zRTRRdGhYUlpvS2NBQnFPMW9vMlk0S1Z6b3VNUdIB1wFBVV95cUxQMEUwUzFqMFczYUZNdFlWY0pFRVVyYkNGUEtKdTBkbE9mdFRWZE9rV1JhajJZRWRZN1Z3cjJ4S05HMDQ0SXlJMWFMbXRIX2EyYUJoQzY4VXBXb2pXZURRb0hVYU90OHhjRDBKakp3eWlwREI3eEdIV29XMS1Ockwwa3M0VzZxWV91NFFGaGoxOWJFMWZRQ3hNOWxWMzFlZWNxc1VvcEU2Y3czWGNZY1p4RFR6RzJua3ktSGJ2LU1lQ3JNMkUzemhucFYyUDgzTzRZa0xodWdobw",
           "breaking": false,
@@ -354,6 +505,13 @@ window.BRIEF = {
           "headline": "AI reshaping entry-level jobs as employers increasingly prize adaptability over fixed skills: Study",
           "what": "A new study reported by Business Standard finds that as AI automates routine tasks traditionally handled by entry-level workers, employers are now placing a premium on adaptability, critical thinking, and the ability to learn new tools quickly over pre-existing technical skills. The shift is redefining what it takes to land and hold a first job, with AI acting as a disruptive force across industries including IT, finance, and services — sectors that are among India's largest employers of fresh graduates.",
           "lens": "For millions of Indian students and fresh graduates entering the job market each year, this study signals a direct and urgent change in what employers will actually hire and retain them for.",
+          "article": "Business Standard reports on a new study finding that AI is fundamentally reshaping entry-level employment, with employers increasingly seeking workers who are adaptable and capable of learning on the fly rather than those with fixed, pre-trained skill sets. As AI tools take over repetitive and process-driven tasks that once defined junior roles — data entry, basic coding, document processing, customer query handling — the value of rigid technical specialisation at entry level is declining.\n\nThe study highlights that the premium is now on workers who can collaborate with AI systems, pivot between tasks, and continuously update their capabilities. Soft skills such as problem-solving, communication, and cross-functional flexibility are becoming as important as — or more important than — domain knowledge for landing a first job.\n\nThis finding carries particular weight for India, which produces millions of graduates annually and depends heavily on entry-level IT and services jobs for youth employment. Industries from banking to business process outsourcing are already integrating AI into workflows, and the study suggests that fresh entrants who cannot demonstrate adaptability risk being left behind. It adds urgency to calls for overhauling vocational training and university curricula to focus on AI literacy and flexible skill development alongside traditional subjects.",
+          "key_facts": [
+            "AI automating routine tasks that define most entry-level roles",
+            "Employers now prioritise adaptability and AI collaboration over fixed skills",
+            "Affects IT, finance, and services — India's largest graduate employers",
+            "Study signals need for curriculum overhaul to include AI literacy"
+          ],
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPYTNUbnd3VGxySDdVYktzZkowVUQ4SWxWbEpnR0hiMWFPWldmbzZBWXBHdFZxbnJkdThmN0ZEc0xEM3RDLVI4S01lb0I1a0dVRUY0VlFteW80NHpGem5uU0xpakF1dGVBZDBzYkhvOHNzYXlVYjhhS0tKUzV1TERPQWttelJFVUh0c05WS1JQYnM1THNEdEgyZkNDdTE3eFNCSlhWbElVaHgxRXdfZjdudWU0TmFjSGdRVWtxOEloeGZQTHA3VktiWlN6UlFkV201bUs4Nm1wTHVHeUJody0yM3RaMDFSRHdfd2lacFRPOFfSAfYBQVVfeXFMT0VaNzhPeVU4UUI4SVFrMGNGQW56dVBGb2RwSkxVQ2t0ejlmNHpiTFVQZ1NhMEhXOW5QTTNBOElrUUtXdXV3VHZpcmszbm55R3NDdFNZVWRrcmtScHJHOTNuRnBHdU5menZXcWZ2WW9zVUtIS2IwWE9kRGZFQ3FPSk5uUF92NXBXZU5SZW4yekFaX1FMTC1LSFVYOGZHZTNJRFpabFl5VHlaX0tlNkZqejk5eU1Ub2NEMkJVaW1tZDM5M2NncElONUJyendld3Q1Q3lvS2JKVUxNQThKYXBQVGM1NVZFWmZZNEdTZkpWRXpOdWZYTzdn",
           "breaking": false,
@@ -369,6 +527,13 @@ window.BRIEF = {
           "headline": "AI is reshaping entry-level jobs — and employers now want adaptable workers above all else",
           "what": "A new study reported by Business Standard finds that employers are increasingly prioritising adaptability over specific technical skills as artificial intelligence reshapes entry-level roles. AI is automating routine tasks that once defined junior positions, forcing companies to rethink hiring criteria. The shift is particularly significant for fresh graduates and early-career workers who traditionally entered the workforce through these now-disrupted roles.",
           "lens": "For lakhs of Indian graduates entering the job market each year, this signals that a degree or fixed skill set may no longer be enough — the ability to learn and pivot as AI tools change the workplace is fast becoming the baseline expectation.",
+          "article": "Business Standard reports on a new study finding that employers are actively seeking adaptable workers as artificial intelligence continues to reshape entry-level jobs across industries. The research highlights a fundamental shift in hiring priorities: rather than looking for candidates with a fixed set of skills, companies now want people who can continuously learn, retrain, and adjust as AI tools automate tasks that once defined junior roles.\n\nEntry-level positions in sectors such as data entry, customer support, basic coding, and administrative work are among those most exposed to AI-driven automation. The study suggests that the traditional pathway — where a fresher enters a role, learns on the job, and climbs the ladder — is being disrupted at its very foundation.\n\nFor India, where millions of graduates enter the workforce annually, the implications are considerable. Adaptability, critical thinking, and the ability to work alongside AI systems are emerging as the new baseline requirements. Employers are increasingly factoring these qualities into recruitment, onboarding, and training programmes, signalling a broader structural change in how Indian companies build their entry-level talent pipelines.",
+          "key_facts": [
+            "Study finds employers now prioritise adaptability over fixed skill sets",
+            "AI is automating routine tasks that define entry-level roles",
+            "Affects fresh graduates and early-career job seekers most directly",
+            "Hiring criteria shifting toward continuous learning and AI collaboration"
+          ],
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPYTNUbnd3VGxySDdVYktzZkowVUQ4SWxWbEpnR0hiMWFPWldmbzZBWXBHdFZxbnJkdThmN0ZEc0xEM3RDLVI4S01lb0I1a0dVRUY0VlFteW80NHpGem5uU0xpakF1dGVBZDBzYkhvOHNzYXlVYjhhS0tKUzV1TERPQWttelJFVUh0c05WS1JQYnM1THNEdEgyZkNDdTE3eFNCSlhWbElVaHgxRXdfZjdudWU0TmFjSGdRVWtxOEloeGZQTHA3VktiWlN6UlFkV201bUs4Nm1wTHVHeUJody0yM3RaMDFSRHdfd2lacFRPOFfSAfYBQVVfeXFMT0VaNzhPeVU4UUI4SVFrMGNGQW56dVBGb2RwSkxVQ2t0ejlmNHpiTFVQZ1NhMEhXOW5QTTNBOElrUUtXdXV3VHZpcmszbm55R3NDdFNZVWRrcmtScHJHOTNuRnBHdU5menZXcWZ2WW9zVUtIS2IwWE9kRGZFQ3FPSk5uUF92NXBXZU5SZW4yekFaX1FMTC1LSFVYOGZHZTNJRFpabFl5VHlaX0tlNkZqejk5eU1Ub2NEMkJVaW1tZDM5M2NncElONUJyendld3Q1Q3lvS2JKVUxNQThKYXBQVGM1NVZFWmZZNEdTZkpWRXpOdWZYTzdn",
           "breaking": false,
@@ -384,6 +549,13 @@ window.BRIEF = {
           "headline": "OpenAI poaches Gemini co-lead Noam Shazeer from Google in major AI talent coup",
           "what": "OpenAI has hired Noam Shazeer, who co-led the development of Google's Gemini AI model, marking one of the most significant talent poachings in the ongoing AI arms race. Shazeer is a legendary figure in AI research, co-authoring the landmark 2017 'Attention Is All You Need' paper that introduced the transformer architecture underpinning virtually all modern large language models. His move to OpenAI is a direct blow to Google's flagship AI effort.",
           "lens": "The man who helped build the transformer — the engine behind ChatGPT, Gemini, and every major AI tool Indians use daily — has switched sides, tilting the AI race further toward OpenAI.",
+          "article": "NDTV reports that OpenAI has poached Noam Shazeer, the co-lead of Google's Gemini AI model, in what is being described as a major coup in the fiercely competitive global AI talent war. Shazeer is one of the most consequential researchers in the field — he was among the co-authors of the 2017 paper 'Attention Is All You Need', which introduced the transformer architecture that forms the backbone of virtually every powerful AI system in use today, including ChatGPT and Gemini itself.\n\nHis departure is a significant blow to Google DeepMind, which had positioned Gemini as its primary weapon against OpenAI's ChatGPT and Microsoft's AI push. Shazeer had previously left Google, co-founded the AI startup Character.AI, and returned to Google — making this latest move to a direct rival all the more striking.\n\nFor Indian users and businesses rapidly adopting AI tools — from Google's Gemini integrated into Android phones to ChatGPT powering customer service and coding assistants — this shift in talent could accelerate OpenAI's lead in developing next-generation models. It signals that the war for foundational AI expertise remains the single most important battleground in determining which platforms will shape the future of technology.",
+          "key_facts": [
+            "Noam Shazeer, Gemini co-lead at Google, joins OpenAI",
+            "Shazeer co-authored 'Attention Is All You Need', the 2017 transformer paper",
+            "His move is a direct talent blow to Google's flagship AI model effort",
+            "Shazeer previously co-founded Character.AI before returning to Google"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZVhtbUtlM3FncE0xUXFDMnF4X1B2ajFLLVlRdGpPQnJUMHlIVktkZXZEMkNaVkpGRXU3UGxxX1dENS1vY0xVMjFheUFEWGRiU09IOVR5aEt2N3dvcFkwYzg5WWNhV2JMdkpZQ1pDRTdoTTN6LWtjWVg3UFczZ0NNSm9Ia2VRN3JnbDB0R0N3MXV1TnVHUUFOa2kzcDVMX0hxVTAtcC1OSFpHbDl6RklZZDBjbjc2TnctcEHSAcIBQVVfeXFMTzF2MFBjZFM2LUhDSDBUVDF2Qk5jcmx5cUNRYzFCZkMxQkd4ODE4c1NQNGVmTG01T2Mwc0QwdXphcThiQjZiZWxDVnp5d21RRlZ5VkxxR3FZQVRvN29HTWY4ZDdOQW1GUHRaNE1Kd2I0TU5IQWd6RVpfVUJyVXVXR0RMM09ta1JNaURPMTJiY0RuREFmc25GalpXNGo0TlppTG45c1lsS0MzcTE0UkZIUFd1cGFNdGdmTU9WdkNJVzNHNlE",
           "breaking": false,
@@ -399,6 +571,13 @@ window.BRIEF = {
           "headline": "Anthropic's AI safety curbs spark debate in India — critics say efforts are 'too slow, way too small'",
           "what": "CNBC's Inside India newsletter reports that Anthropic's recently announced measures to bolster AI model safety have ignited a sharp debate in India, with critics arguing the steps are insufficient given the pace of AI deployment. Anthropic, the US-based AI safety company behind the Claude family of models, laid out a vision for making its systems more robust and trustworthy. Indian voices in the AI ecosystem are pushing back, contending that the industry's self-regulatory approach is inadequate.",
           "lens": "As India rapidly expands its AI adoption across government services, fintech, and healthcare, the question of whether global AI companies are doing enough on safety directly affects the millions of Indians who interact with these systems daily.",
+          "article": "CNBC's Inside India newsletter reports that Anthropic's announcement of a new safety framework for its AI models has ignited a pointed debate within India's technology and policy circles. Critics quoted in the newsletter describe the company's efforts as 'too slow, way too small,' reflecting frustration that voluntary safety commitments by major AI labs are not keeping pace with the speed at which these tools are being deployed globally and in India.\n\nBloomberg and Moneycontrol separately reported on Anthropic's vision, which focuses on making its Claude AI models more interpretable and resistant to misuse. The company is among the most prominent voices in the global AI safety movement, and its framework is being watched as a potential benchmark for the broader industry.\n\nThe Indian dimension of this debate is significant. India has no comprehensive AI regulation in place yet, and the government has largely encouraged industry self-governance. With AI tools increasingly embedded in sectors such as banking, healthcare, education, and public service delivery, the adequacy of safety measures developed by foreign AI companies has direct consequences for Indian users. The debate underscores growing pressure on both global AI labs and Indian policymakers to move faster on governance frameworks.",
+          "key_facts": [
+            "Anthropic released a new AI safety vision for its Claude models",
+            "Indian critics call the effort 'too slow, way too small'",
+            "India has no comprehensive AI regulation currently in place",
+            "AI safety debate has direct implications for Indian users across key sectors"
+          ],
           "source": "CNBC",
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMWNXVmxMWFdBV1k1dUJnSlZwdmpMY25OYlEtNDZOeURFamNfbUpDM3JBQUEzR282aWR4cFZsRi1yTWZ0b1JMOUFSOUMtUHpObEtNU3ZWaDFSYkQteW1zMmtKVVFjbmVGcC02VG95d05BUDdna3B3dGlaT0pfbU04UllaX3bSAYoBQVVfeXFMUC1yM2FaN1huOU9uLW1fYnJBMHhHZjduNXZ2bXo2RkRKY2NrUjltb0E2cDhrd2lNWEtMS3BSTG9SMk12U3NialBUMzA1c3B6ZWdOUmhPMXd5ZHBETjJhNm1VbTd1QnlMV1ppUXExWklTaWgzSUZfbU4tQ0txVmNxcDdsYUFRQjJkSEVR",
           "breaking": false,
@@ -420,6 +599,12 @@ window.BRIEF = {
           "headline": "Sangakkara returns to cricket wearing India helmet gifted by Yashasvi Jaiswal, gesture goes viral",
           "what": "Former Sri Lanka captain Kumar Sangakkara was seen returning to cricket wearing an Indian cricket helmet that was gifted to him by young Indian opener Yashasvi Jaiswal. The heartwarming gesture between a legend of the game and a rising Indian star has gone viral on social media, drawing widespread appreciation. Sangakkara, one of cricket's greatest batsmen, continues to be involved in the sport in various capacities.",
           "lens": "The viral moment captures the cross-generational goodwill that makes cricket a shared passion across South Asia, and puts Yashasvi Jaiswal's growing stature in the sport on display.",
+          "article": "News18 reports that legendary former Sri Lanka captain Kumar Sangakkara was spotted back at cricket wearing a helmet gifted to him by India's young opening batsman Yashasvi Jaiswal. The gesture, which saw one of cricket's all-time greats don gear from a rising Indian star, quickly went viral across social media platforms.\n\nSangakkara, widely regarded as one of the finest batsmen in cricket history, has remained closely connected to the game after retirement through various administrative and mentoring roles. Jaiswal, who has rapidly established himself as one of India's most exciting batting talents, presented the helmet to Sangakkara in what appears to have been a personal gesture of respect and admiration.\n\nFor Indian fans, the moment is a charming reminder of cricket's ability to bridge generations and nations. Jaiswal's growing profile — both on the field and in moments like these — underlines why he is considered one of India's brightest batting prospects for the years ahead.",
+          "key_facts": [
+            "Yashasvi Jaiswal gifted a cricket helmet to Kumar Sangakkara",
+            "Sangakkara seen wearing the Indian helmet on his return to cricket",
+            "The gesture went viral on social media"
+          ],
           "source": "News18",
           "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNaGUwSXZTY2haX21YS3hnV3V6QVdXdWdaYkRLQkRaZHBZS0QtZ0duN1ZQcEFHbXM2cFAxeG9Eb2R4R1ZIOHJZZktTRVlqNFhCZUlOOHFmaV93cFQ0Z3BsYkxMaC1Ra05YdmtDQ0RuTlFNU0J1SFZQLTVJN0hPbU5Hb1VTUVptaHBjdThod2NIRHJKUGd1QXNxTzAzMURsMWZfWnd6TkVZdFNsNmMtQnZ6SWJ6d3ZKazRNV3o2V09mTzRiWVZLZ3Jkd2toWEZvSkk3YzhRUl9pdTFoZkxXT1HSAd4BQVVfeXFMTWhlMEl2U2NoWl9tWEt4Z1d1ekFXV3VnWmJES0JEWmRwWUtELWdHbjdWUHBBR21zNnBQMXhvRG9keEdWSDhyWWZLU0VZajRYQmVJTjhxZmlfd3BUNGdwbGJMTGgtUWtOWHZrQ0NEbk5RTVNCdUhWUC01STdIT21OR29VU1FabWhwY3U4aHdjSERySlBndUFzcU8wMzFEbDFmX1p3ek5FWXRTbDZjLUJ2ekliend2Sms0TVd6NldPZk80YllWS2dyZHdraFhGb0pJN2M4UVJfaXUxaGZMV09R",
           "breaking": false,
@@ -435,6 +620,12 @@ window.BRIEF = {
           "headline": "Gurnoor validates selectors' decision to fast-track him into national side",
           "what": "Gurnoor Brar, the young Indian pacer who was fast-tracked into the national side by selectors, has delivered a strong performance that appears to justify the faith shown in him. The Hindu's report highlights that his display validated the selectors' bold call to elevate him ahead of more experienced alternatives. Gurnoor's emergence adds to India's pace-bowling resources at a time when the team is looking to build depth in that department.",
           "lens": "Every time a fast-tracked young Indian pace bowler performs at the highest level, it signals the health of India's cricketing pipeline — directly relevant to fans who follow the national team's long-term prospects.",
+          "article": "The Hindu reports that Gurnoor Brar has put in a performance that vindicates the selectors' decision to fast-track the young pacer into India's national side, bypassing the conventional waiting queue of domestic cricket. The left-arm seamer impressed with his showing, suggesting the selectors' instinct to accelerate his path to international cricket was well-founded.\n\nGurnoor's promotion had raised eyebrows given the competition for pace-bowling slots in the Indian set-up, but his on-field display has silenced early sceptics. India's selectors have shown a willingness in recent times to back promising fast bowlers early, a policy that has paid dividends with other young pacers in the past.\n\nFor Indian cricket followers, the emergence of a validated young pacer is significant as it deepens the national team's bowling attack and reduces the over-reliance on established senior names. Gurnoor's continued development will be closely watched as India plan their cricketing calendar ahead.",
+          "key_facts": [
+            "Gurnoor Brar fast-tracked directly into India's national cricket side",
+            "His performance validated selectors' bold early-promotion decision",
+            "Adds to India's pace-bowling depth at international level"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQS3Q5R2pNU3RaS0s4RE1GcFF4Q3RJMThkTzR6SVM0WW55bFkxeGRSV2E5QkU2ZDhJS0J1Qjh3NjROeEFNaFI2RlJDRFFFWmVndFNyMmU5V0IyZlVhNklZTjU2ck0wQlRZY0ZZUUxpV1hTT3VmWHJqT1htbEktY1h5VjAyTHU0dEd3Ynp2OHNiRk10VkNyY0dDWDVrcnNsNVlrM284MGtjUG5oeTZzaEtjVGtPWHNTYmNacXpEbGRKNm8xUmRpUmxZV2dtamp6T1FlemJ5SFpMRE5JODlsalHSAd4BQVVfeXFMUEt0OUdqTVN0WktLOERNRnBReEN0STE4ZE80eklTNFlueWxZMXhkUldhOUJFNmQ4SUtCdUI4dzY0TnhBTWhSNkZSQ0RRRVplZ3RTcjJlOVdCMmZVYTZJWU41NnJNMEJUWWNGWVFMaVdYU091Zlhyak9YbWxJLWNYeVYwMkx1NHRHd2J6djhzYkZNdFZDcmNHQ1g1a3JzbDVZazNvODBrY1BuaHk2c2hLY1RrT1hzU2JjWnF6RGxkSjZvMVJkaVJsWVdnbWpqek9RZXpieUhaTEROSTg5bGpR",
           "breaking": false,
@@ -450,6 +641,12 @@ window.BRIEF = {
           "headline": "England Women unveil squad for India Test, three players left out",
           "what": "England Women have announced their squad for the upcoming Test match against India, with three players notably left out of the selection. The Times of India reports the squad announcement ahead of what will be a marquee red-ball fixture between two of the leading women's cricket nations. The omissions signal selection decisions that could spark debate around England's team composition for the one-off Test.",
           "lens": "With India women's Test cricket drawing growing fan interest domestically, England's squad choices will directly shape which contest Indian supporters witness when the two sides meet.",
+          "article": "The Times of India reports that England Women have unveiled their squad for the Test match against India, with the notable exclusion of three players from the group. The squad announcement sets the stage for what promises to be a high-profile red-ball encounter between two of women's cricket's top nations.\n\nThe three omissions are the talking point around England's selection, with the dropped players' absence likely to influence the balance and experience within England's line-up. Women's Test cricket between India and England has historically attracted significant attention, with the format enjoying a revival in recent years as cricket boards commit to scheduling more red-ball fixtures for women.\n\nFor Indian fans, the match represents a rare opportunity to watch their women's team compete in the longest format of the game. England's squad composition will give India's coaching staff and selectors valuable intelligence about the opposition's plans as both teams prepare for a Test that carries considerable prestige in the women's game.",
+          "key_facts": [
+            "England Women named squad for Test match against India",
+            "Three players left out of England's Test squad",
+            "Match is a marquee women's Test fixture between top nations"
+          ],
           "source": "The Times of India",
           "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOMG5vS3RwZ0lMU0hHZS1xLWtlclJxR3ktSV9RWFg1REgyY0lDemxKRVNtRFZzZHM1aWtnM3ZjT1hBdnNKbl91d3pvUklPUGRoVGhrcEpsSmdXMGlqTFhpLWNGdlhHel9zeGRpRWJscG1UV2FBWjFhS0dZaG52WXZwNVlncmNxVHUycTBrWTZLU2ZKN3lRVEd1YXRpTEs0cm90WWp1WFNweUFTTTBlODVLSUdRZ2x0Uk9sMmJ2dHh3aFJLdFF6VTBCTGdJbDRQek5OWERYYmxnd0lrQU9INkpn0gHkAUFVX3lxTE5xZXJCdlZfS21mcVVuSFRFanAyQno2YVFVWElyWTdVcHpQZFh6bXBVblk2bDQ2RGhYRXhWZkpZdjhFWXdIRkpDZWtpWG5wSVhsRDVfeWJUdExXLXNIR1hoM1J1bHgwQUpzUnZtb3pYS2x3YjlwVG9HSVo5MnNyUWxkbWVaY1h2a202WXl0d0JTbTF0TEpLTWlDVWV6QVVpTVlWMm04RWt1RlAzbDhhUU1scGdLNVAzemx1TEJMMnMxOU1TMkFINGtDWTVFRVdsRDcyRzI3VDZvUjhPNjR0bm5CUTV1Ng",
           "breaking": false,
@@ -465,6 +662,12 @@ window.BRIEF = {
           "headline": "Glenn Phillips completes century treble against England as New Zealand make history",
           "what": "New Zealand's Glenn Phillips has scored a third consecutive century against England, completing a remarkable century treble that makes New Zealand history. India Today reports that his innings came at the expense of England pacer Jofra Archer, who was among those to suffer at Phillips' hands. The feat is unprecedented in New Zealand cricket and underlines Phillips' exceptional form against England's bowling attack.",
           "lens": "For Indian cricket fans tracking the global game, Phillips' historic treble is a reminder of the kind of match-winning consistency that middle-order batters aspire to — and a benchmark as India prepares for its own upcoming assignments.",
+          "article": "India Today reports that New Zealand's Glenn Phillips has achieved a historic feat by completing a century treble — three consecutive hundreds — against England, a record in New Zealand cricket. The innings saw England pacer Jofra Archer among the bowlers who came off second best, with the headline noting \"shades for Archer\" in a nod to the one-sided contest.\n\nPhillips, known as a dynamic middle-order batter and part-time off-spinner, has been in exceptional touch against England across this series. His ability to score big repeatedly against the same opposition speaks to both his technical consistency and England's struggles to find a plan to dismiss him.\n\nThe achievement sets a new benchmark in New Zealand cricketing history and will be closely watched by teams preparing to face New Zealand in upcoming fixtures. For Indian fans, it highlights the depth of talent in world cricket's middle-order landscape and the kind of century-making form that can single-handedly swing a series.",
+          "key_facts": [
+            "Glenn Phillips scored three consecutive centuries against England",
+            "The feat is historic for New Zealand cricket",
+            "Jofra Archer was among the bowlers Phillips dominated"
+          ],
           "source": "India Today",
           "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVDJiMVRER19GMjFPNTJxM0YyMVk1SHNQVzlRc2NaNURRSW1lQzk5WEpjWlJ5amRNcjUtVEwzM3JQU3p4dzJQTk1YNGtMYkt1UkdIZXU3WWREX2l0dHFQQk1iclRtWGJ4aXo3cURiSWhJcTZpNDR4UGhpb3E4ZVA1VlJrSVNHY1dIZHM4Q3p3cnVQNmE3bWVZdnRtN1kxV1NlcnFSekV2SkUzcFhpSzZlc0JWckhDMGI0alNHWng1RThpZ1lIcExUeUZoMEtDX2xLemQtSNIB2gFBVV95cUxPRE8zRFZjNVlCMGNlLWQ3WjJuUGMzd0RsN29pSjZwN0d2Y0FqcjI2X0h3dk5jamJwZWt6SkNaSjZVZkJTbTBpLWwzalZtaUNNVXJFb2VZUmpERVNTdTF2ekx4YVRMZnRLVHg4N203eG8zMlhHMndDNm96Rlp2bzhzekhVZVctdzFSYmhCXzFhUjRvaGxrZm51bHdoWU9Ka3dfcTNMSFBoa1ZxN2RoaldJRHhwWEtMbmxIZlhYVUQzcE9fRlp6a1ltYU5DY1FxOWVxTTA1anBtbVU4QQ",
           "breaking": false,
@@ -480,6 +683,12 @@ window.BRIEF = {
           "headline": "Shreyanka Patil ruled out of T20 World Cup, India name leg-spinner as replacement",
           "what": "Shreyanka Patil has been ruled out of the Women's T20 World Cup due to injury, forcing the Board of Control for Cricket in India to name a replacement in the squad. The selectors have turned to a leg-spinner to fill the slot vacated by Patil, who herself is an off-spin bowling all-rounder. The development is a blow to India's campaign at the tournament, losing a key spin option ahead of a major ICC event.",
           "lens": "India's T20 World Cup squad has been disrupted by injury before the tournament even begins, potentially affecting the team's spin-bowling balance in crunch knockout matches.",
+          "article": "India Today reports that Shreyanka Patil has been ruled out of the Women's T20 World Cup after picking up an injury, with Indian selectors moving quickly to name a leg-spinner as her replacement in the squad. Patil, who had established herself as a key spin-bowling option for the Indian women's team, will miss what would have been a significant ICC tournament appearance.\n\nThe selectors' decision to bring in a leg-spinner as cover reflects a desire to maintain variety in India's bowling attack. The replacement adds a different dimension to the spin department compared to Patil's off-spin.\n\nFor Indian cricket fans, squad disruptions ahead of a major ICC event are always concerning. India's women's team has been among the contenders at the T20 World Cup, and losing an established player to injury puts pressure on the squad's depth and forces tactical adjustments before the first ball is even bowled.",
+          "key_facts": [
+            "Shreyanka Patil ruled out of Women's T20 World Cup due to injury",
+            "A leg-spinner named as her replacement in India's squad",
+            "Patil is an off-spin bowling all-rounder for India women"
+          ],
           "source": "India Today",
           "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQUZoeHl6NHVUX3FjVGJOdEVSWnZKalhuVnBrdkZZUnVuWU1tT0dIc0VJU1lkei05WVR4TlBsRkJRR3MxbWlhV2hSZjNrb1dMejhCOXkyVU9JVTVqWldsNG1nd25ldURxeGtWN1ZhWmFnOHZyeDdJMFdydF9xMnFuc05JU21Remtxb09ya2ZaMmxtVzEwTHp5bzFUeHNKTWs5b21YV0QySjFVaFpFcHZFZmVESGlMS1hDRm9FMEpQZmlUeU1PQ25sbzVkcF96d1lZRnNtcldB0gHbAUFVX3lxTE1xTFVYM2s3Nm1IRUJfQU5XZVZfWlZDYzhoLVExV2FFanpnYk1iOThrQ1ItWTJtSXQyVFNRVkdPOW91czNEdEluRlFqVUUzZy1SN21UYWNta1pZdi1iVEJ5dVpMNFRVaFlMbEpIdUtGdlh0el9KVUppWHlYSnJFLTdEX0ZlWkdGemw5YzVReHc2SXV6TXZfVkdKQ1hrSnNVUURBb1E5allwTUx5RkZyc1pCTDd5NWE5X2VvQ3hzSUZfaVZLeTNMemRHMEhHZ0hrVUp1bC1pY3plSXZqNA",
           "breaking": false,
@@ -501,6 +710,13 @@ window.BRIEF = {
           "headline": "Sara Ali Khan meets Henry Cavill at Royal Ascot; fans go wild over 'Pataudi princess x Superman' moment",
           "what": "Bollywood actor Sara Ali Khan was spotted meeting Hollywood star Henry Cavill at the prestigious Royal Ascot horse racing event in England. The Indian Express reports the chance encounter, which quickly went viral on social media, with fans dubbing it the 'Pataudi princess x Superman' crossover. The meeting brought together two prominent celebrities from very different entertainment worlds at one of Britain's most glamorous sporting occasions.",
           "lens": "For Indian fans who follow both Bollywood and Hollywood closely, a Sara Ali Khan–Henry Cavill crossover at Royal Ascot is the kind of feel-good celebrity moment that lights up social media timelines.",
+          "article": "The Indian Express reports that Sara Ali Khan met Hollywood actor Henry Cavill at Royal Ascot, the iconic British horse racing event attended by royalty and global celebrities. The encounter was captured and shared widely, with fans on social media gleefully dubbing it the 'Pataudi princess x Superman' moment — a nod to Sara's lineage as the granddaughter of cricketing legend Mansoor Ali Khan Pataudi, and to Cavill's most famous role as Superman in the DC films.\n\nRoyal Ascot, held annually at Ascot Racecourse in Berkshire, England, is one of the world's most prestigious sporting and social events, known for its strict dress code and high-profile attendees. Sara Ali Khan's presence there placed her among international celebrities at a marquee global gathering.\n\nThe viral moment underscores the growing visibility of Indian celebrities at global A-list events and the enthusiastic fan culture that instantly amplifies such cross-cultural celebrity encounters on platforms like Instagram and X.",
+          "key_facts": [
+            "Sara Ali Khan met Henry Cavill at Royal Ascot in England",
+            "Fans called it 'Pataudi princess x Superman' moment",
+            "Royal Ascot is a top-tier British celebrity and royalty event",
+            "The encounter went viral on Indian social media"
+          ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPSmxETDBHcXB4MzBob1lpLXk3UmFfUXlzVWFIR1JqQ0NzS09ndHo4OG5nTlBwalhUeWdsenFwUmppSF9YZ2t4VlZremxacVpOZzFPRmFjeGV1RVltbzlDQXRRb3FNSjBKN1dwWHNuYlRwckxiUS1FRU9hVnJoV2lmYzhLWmNHeG5QOS1JQTlEc1VLbGZrNHQxX2pnX0RGaUQxWG5aYW1kX2x0MFI0cTktWUpodThvSkZtQ21kbndXZ25wTHlRNWfSAcwBQVVfeXFMTU44MS1FVEJSQ1FTd1VOd1ZhZTRQRVdGelp1ZmRES1B2V0xaOHFTUjJqOWl3YkxlaUFfYmM3dkRJWlJCRmJtZi1nTENuMXJDdVJCdXFrSmxlZ2JiMnRnV0lDbkEwZENYRzdGVkF2a2NWTWRUYVNreGFtZk02SlNGSkJfSUF1WUpUdDY0ZEpCcTJlRkd4NF9yMklMSGlEOVBVWW5VQUFIekdtbFZ4MkRrYW1sczBGUkF1cUo0cW5DaEdJSzRxN29rbGJzQ1R6",
           "breaking": false,
@@ -516,6 +732,13 @@ window.BRIEF = {
           "headline": "Drishyam 3 to Kenatha Kanom: New South Indian OTT Releases This Week",
           "what": "The Economic Times rounds up the latest OTT arrivals across Malayalam, Tamil, Telugu, and Kannada languages, with Drishyam 3 headlining the week's releases alongside titles such as Kenatha Kanom. The roundup covers new movies and shows streaming across major platforms. Drishyam 3, the next chapter in the hugely popular Malayalam thriller franchise, is among the most anticipated South Indian OTT drops in recent months.",
           "lens": "South Indian cinema fans get a packed OTT week, with the Drishyam franchise's third instalment — one of Malayalam cinema's biggest — now available to stream at home.",
+          "article": "The Economic Times reports a strong week for South Indian content on OTT, with Drishyam 3 headlining new Malayalam, Tamil, Telugu, and Kannada releases alongside films and shows including Kenatha Kanom. The roundup covers multiple platforms and represents one of the busier weeks for regional language streaming content.\n\nDrishyam 3 is the most high-profile arrival, being the third entry in the Mohanlal-led Malayalam thriller franchise that has been a cultural phenomenon in India and spawned remakes in multiple languages. The original Drishyam and its sequel were among the biggest Malayalam films of their respective eras, and the third instalment carries considerable audience anticipation.\n\nFor everyday viewers across India — particularly those who follow Malayalam and South Indian cinema — the week's OTT slate offers significant new watching options without requiring a trip to the cinema, reinforcing how regional language content has become a primary driver of streaming platform engagement in India.",
+          "key_facts": [
+            "Drishyam 3 now streaming on OTT",
+            "Kenatha Kanom among other new releases",
+            "Covers Malayalam, Tamil, Telugu, and Kannada titles",
+            "Multiple platforms featured in the new release slate"
+          ],
           "source": "The Economic Times",
           "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxQZk9reHVuRWRqWk12blptVUtldWN5QmNkNDJPUEpYRU1pYWtCMlhqU0x4YmVxZ05HY0I1cVpYWUZ6U2JGckZlcFkzaFlXdWRyd1pJYVhkbERKNXo0MVpPUWZ4TE9XMWhHYVRxajBPQ3l6SEhSZHkwUmVhR2UzRGxzWDMyd0hxRUpFSkh6RDdOVXVQRjBMUHZ5UGJJd1VkVGVoQkI4TnFMV1RDbjhuM2h3VGxNLTctaUktUFEwQmYyLXRUVFp5T3BRLS1qelVwUDRHZVhTcF9SejRueXRIeHllSlhSdl9Cd1p0bjB1SEhzemo3WkdzOGlXYklCNE93UGtJMU12ZldMV015TTE4YVFaLWs5UXJFYnRLbkFOMUlFbzczRjdLVm5rQ0FhT0NMUdIBswJBVV95cUxQTE1odmZkb2FDek9KYkk2WnB4TWV4RDFEanR4UlpSOVUyUXd0d2NIOFdVTVpCTXJyNGpHeDBkZXAwS21xM0thZHNacTBsRjRkR2s3THJLUElCS1FZNXlvSlVXbm9vSUJiQkRMREs1ZW1xcGZzN2dhV2dPT2dlVnR2aHVmUXFhVGZqTU1WREZMeWM2UVp2YTRiU3dsemZaY1JtR1U2b052bGpZNmJCbTNoSXRYZHNVaWZFdjZ5XzhrREo4R240OTV5SEwtWTRRaC0xSnZkLWctdkZrTUF2ZWs4NDZsRjJRcWFoc3JERVl2TFRENkhieXJ6eXdYNEN3eUZfaFhmV2paejJuQ3g3LXRkS1ZPZHRXdTNtUlNMYk8xOEE2dVQxdGlHR0pVeXF0Z2xtRTFJ",
           "breaking": false,
@@ -531,6 +754,12 @@ window.BRIEF = {
           "headline": "Brett Lee Calls Mohanlal Co-Star Madhavan 'A Genuinely Top Bloke' After Dubai Golf Outing",
           "what": "The Indian Express reports that former Australian fast bowler Brett Lee has praised Bollywood and Tamil actor R. Madhavan, calling him 'a genuinely top bloke' after the two spent time together on a golf course in Dubai. Lee shared pictures from the outing on social media, giving fans a glimpse of the unlikely cross-cultural friendship. The warm exchange highlights the social world that unites Indian cinema stars and international sports personalities.",
           "lens": "The Brett Lee–Madhavan Dubai golf meetup is a feel-good cross-over moment that fans of both Indian cricket and Bollywood will enjoy seeing.",
+          "article": "The Indian Express reports that former Australian cricket fast bowler Brett Lee has publicly praised actor R. Madhavan after the two met for a golf outing in Dubai. Lee shared photographs from the meet-up and described Madhavan as 'a genuinely top bloke', a warm endorsement that quickly attracted attention on social media.\n\nMadhavan is one of Indian cinema's most recognisable faces, known for his work in Tamil blockbusters as well as Hindi films including the 3 Idiots franchise, and more recently for Rocketry: The Nambi Effect. Brett Lee, meanwhile, has long maintained a close association with India — having played in the IPL and being widely loved by Indian cricket fans — making this pairing particularly resonant for Indian audiences.\n\nThe friendly exchange is a lighthearted celebrity moment that crosses the worlds of international cricket and Indian cinema, two of the country's biggest cultural passions.",
+          "key_facts": [
+            "Brett Lee called Madhavan 'a genuinely top bloke'",
+            "The two met for a golf outing in Dubai",
+            "Lee shared pictures from the meeting on social media"
+          ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNVVh4d2JkQXplSzg5RklCVTlNUEdEV2dRODZmdjJZT2pRaDhuTGM2akxsQXZtaFJpSGJVcjZPX1hRSXZrcU9nSXJRNTlsSmRtdFVzY1lSNjB2RTNOV1B3RG5QY3FXUG1BUEFLU01VMGtLcW9WNFVHSnZvTktEZzF4NkpkaHFBQ0JfcnJWZ3JSbjM4VUYxSGhNRUVheEgtSmxvbTFXN1lpSWtXbE15VVhsSXJTbFByWUlsZVpXR1E5d2xvRW1CUkh3MHlfQVZ5MGVvVTk2ZnBwWG5UblQtdXRPWjRR0gHoAUFVX3lxTFAyZExRdzBsYUhSWENzQTlUTTdDNy1CcVNncFJ2c3pZWEUybm1qdDNSM0Uwb1JjektyVDZxVWc3aktHT3pQTm0wT1o1bFlHeW11c2t5blVjNzBoQ3VhcFNVbDRXcjB5VGFtUjgzX2JKd2JvVWcwSm1zOHJnX25CUGJER05Zd2ZScXVsZExYOGRkSWh6TmJOblMtWl94QTVNSXl5UnJoeWhGb3JlRGZDbERobFpnb1Y3VzdSRG8xTmNVQno1N19mSXcwR2ltS2phX3hubnpqNWQ1OVJVWE5ONjdQbFZtcVBUZV8",
           "breaking": false,
@@ -546,6 +775,13 @@ window.BRIEF = {
           "headline": "Dhurandhar 2: Unmuted international cut of Ranveer Singh film gets OTT release update",
           "what": "The unmuted international cut of Dhurandhar 2, starring Ranveer Singh, is set to release on OTT, the Times of India reports. The international version of the film, which features content that was muted or altered for the domestic theatrical release, will now be available for streaming audiences. This update follows the film's theatrical run and marks a new phase of its digital life.",
           "lens": "For fans of Ranveer Singh who felt the domestic cut of Dhurandhar 2 was sanitised, the unmuted international version on OTT offers the unfiltered experience they were waiting for.",
+          "article": "The Times of India reports that the international cut of Dhurandhar 2, starring Ranveer Singh, is set to arrive on OTT platforms. Unlike the version screened in Indian theatres, this cut is unmuted — meaning dialogue and content that was silenced or toned down for the domestic release will be restored in full.\n\nThe development is significant for a film that generated considerable buzz around its edgier content. The international cut had been available in select overseas markets but had not yet reached Indian OTT viewers in its original form.\n\nFor Ranveer Singh fans and cinephiles who follow the growing trend of director's cuts and unedited versions reaching streaming platforms, this release adds another dimension to how Indian films are now consumed beyond the theatre. It also reflects a broader shift where OTT platforms are willing to host content with fewer restrictions than traditional theatrical releases in India.",
+          "key_facts": [
+            "Unmuted international cut of Dhurandhar 2 to release on OTT",
+            "Stars Ranveer Singh",
+            "Domestic theatrical cut had muted certain dialogue/content",
+            "International version restores the original, unaltered content"
+          ],
           "source": "The Times of India",
           "url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxQa3JYY21UVmxvQnpZX3FxRnhlVGVTc2RZajNmNTFyeVVnNUJZYk9iamFLcVlCaWVGajFxMVlRTUVCYmZlNzNOX2w5UmhKZENFSWxIVVlQZW9sX1FyNTNPQ0JGNi16c2R4cS1GVVc2VVNUSjdobGRPdTBlbWpYR1ROaEN3TzZGaGVXZm1VekVuSlJZZEU2TlF6Y3FLOG1TcXh3QUxsSEFyVzN3X1AybFh2UG1pUUlNVGhBQVNnQzUyd2VCaTVUNUpzbFlDdkRTLWtuQ0VvQ1VHMTVLUzBkdzQxbENPMlk0QXczamNPd1hNSVh6RmU4M0JMOEpsMklnWi1QSW5QcFEwOUMwM2NXNVRBN3dIaWllWGZDZnBjSElkcjRZTXN0TXROUHhKSUJoSG5vQlpvcEIxZG5IR1M5S21HTm5lOTdoT2laZkw3M3gtOUQ1azVSdmRZYVdmUXFMcThz0gHmAkFVX3lxTE80MFRsSmV0TXdhekljWTRfWFR2ZHFzdE91aG5MaWMwc0ZJSmV2UTZlaTRHMnRQbW0yeFN3TkRqdW9qM1p3MV9jdG9MQVFUOWdKaC1uUkZWOU1hdG5heGZGaHBNLU9QbENXcXZOMmhpTERqdWNMaTdLcll2V2YwZDVZSi1QLVpmcHRjamZLcGFfam5WS3F3U00tWDR4SW9TNEJUalktX29MLWg2Zk5tOURlMHNZb3R1TEw5MGRZaUZaTzFFQWdUMkdVRW1UR2swVGo5UHRUeVNSaUp1LWJHTDNGb290TWpLMjkzLXlOelhGdjUxaFJDblFzRGZVOGFKTGtteVlaaVdYOVdBd2s2ZHdNSFA1T1oxNmR5c1l3MTcyQ0kxX2JwSEFnMlhSVmNMQnlnUWg1RTViLXZwQVNHV2tCY3I5WWNaYmhucGVBcno3XzFpc3FOSDViY1EwSG93OUk1RnllUVE",
           "breaking": false,
@@ -561,6 +797,13 @@ window.BRIEF = {
           "headline": "Grammy Winner Ricky Kej on Rejecting Mainstream: 'Your Art Defines You as a Person'",
           "what": "Grammy Award-winning Indian composer Ricky Kej has spoken to The Indian Express about his conscious decision to stay away from mainstream commercial music. Kej, who has won multiple Grammys for his genre-blending environmental and world music, says artistic identity is inseparable from personal identity. His comments offer a rare insight into how India's most globally decorated musician navigates commercial pressure while staying true to an unconventional creative vision.",
           "lens": "For aspiring Indian musicians and artists under pressure to go commercial, Kej's stance — backed by Grammy wins — offers a powerful counter-argument that artistic integrity can coexist with global recognition.",
+          "article": "The Indian Express reports that Ricky Kej, one of India's most celebrated composers and a multiple Grammy Award winner, has opened up about his deliberate choice to remain outside the mainstream music industry. In the interview, Kej articulates his philosophy with the line 'Your art defines you as a person,' underlining his belief that creative choices are fundamentally expressions of character and values, not just commercial decisions.\n\nKej has built his career on world music and environmentally conscious compositions, a path far removed from Bollywood or commercial pop. His Grammy wins — rare achievements for any Indian artist — have validated this approach on the global stage, even as he remains a relatively niche figure within India's mainstream music scene.\n\nFor young Indian musicians navigating an industry dominated by film music and algorithm-driven streaming hits, Kej's perspective carries weight. His success story challenges the assumption that commercial appeal is a prerequisite for recognition, and raises broader questions about how India values and rewards artistic originality over market-driven output.",
+          "key_facts": [
+            "Ricky Kej is a multiple Grammy Award-winning Indian composer",
+            "Kej has consciously stayed away from mainstream commercial music",
+            "Quotes: 'Your art defines you as a person'",
+            "Known for world music and environmentally themed compositions"
+          ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOOGRkRWZzajV6ekNqQjRYeHp6djhkLTNqUjlDM21RV0tneXMzdGowRklsOXpia2xMZ19VM05meVZfSTZUbEljMXhOLVlpTFpqTUZyT1FTNl9fTVBSTEs4RXVsTEc5Mm8ydHZFVnZyU3IyRWVsR2k0R2dTd3h5dXVoLXRjc3NhS21ISmR5Sk5hcmZBQkJrbFNHMHBCVFpJd194TU51Zll2UFZ3c09vS0k0aHJfV2lxUUUwV1RnWmw5bktYaG5YanRHc21kWXVtTHNhTXJnSHhqMHBZUV9PMTFuQ3RR0gHoAUFVX3lxTE1rQ2UtRzhMdkFieTZQbXNzb2Y5WTFMcGR3emozQzkwWGE1MHYwM3ZkSG02VEZ3SUVJZmJZUDRPZVN6WllpNF9zaUdQSU5jVVlJWVc1WFEzU1U5YTU3SVFLYXpIaUhLYWFkT2NBOTBsbUhTV1B0LTYxa0FWeGhTaG44WVNValRLam5IeTN4SXhpNEJWdWpEWEVqMVVmV2FZLXNEUFZRVmlUc0tVT3dsWGY1eTlBSmZlUm82Mnh4Um0xeXlBS0lWVW1GZjZKWjFLU0thSkI5QlU3WFJpd0JORzVHQnliYnlXTGE?oc=5",
           "breaking": false,
@@ -568,9 +811,10 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/4692164/pexels-photo-4692164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Nataliya Vaitkevich",
-          "image_credit_url": "https://www.pexels.com/@n-voitkevich"
+          "image_credit_url": "https://www.pexels.com/@n-voitkevich",
+          "_edition_date": "2026-06-18"
         }
       ]
     }
   ]
-};
+}
