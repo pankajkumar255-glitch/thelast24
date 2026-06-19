@@ -654,7 +654,7 @@ window.BRIEF = window.BRIEF || {
 (function(){
   var NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"; // Formspree endpoint.
   var HUES = {national:"#3D7A5C", world:"#3E6088", business:"#A07A3C", tech:"#6A5C9A", ai:"#3C8585", sports:"#B5573F", entertainment:"#A65478"};
-  var B = window.BRIEF || window.EDITION || null;
+  var B = window.EDITION  || window.BRIEF || null;
   var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
   if(!B || !totalStories){
     document.getElementById('main').innerHTML = '<p style="padding:60px 20px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--meta)">No stories available right now — the next edition will populate this page automatically.</p>';
