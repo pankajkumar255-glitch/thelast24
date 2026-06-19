@@ -99,6 +99,24 @@ def _create_post(channel_id, text, image_urls=None, instagram=False):
 
 
 # ----------------------------------------------------------------- tweets ---
+def _section_cover_urls():
+    """Map section name -> public URL of its Instagram cover slide (slide-01),
+    used as a ready-made branded image for tweets that lack their own photo."""
+    out = {}
+    manifests = sorted(glob.glob("social/instagram/*/manifest.json"))
+    if not manifests:
+        return out
+    try:
+        manifest = json.load(open(manifests[-1], encoding="utf-8"))
+    except Exception:
+        return out
+    for sec in manifest.get("sections", []):
+        slides = sec.get("slides", [])
+        if slides:
+            out[sec.get("name", "")] = f"{SITE_URL}/{slides[0]}"
+    return out
+
+
 def publish_tweets():
     if not X_CHANNEL:
         print("No BUFFER_X_CHANNEL_ID set — skipping tweets.")
@@ -119,18 +137,29 @@ def publish_tweets():
             pass
     done = set(posted.get("keys", []))
 
+    # Map section name -> its Instagram cover slide URL (a ready-made branded
+    # card), used as the tweet image when a story has no photo of its own.
+    covers = _section_cover_urls()
+
     pending = queue.get("pending", [])
     sent = 0
     for item in pending:
         key = item.get("key")
         if not key or key in done:
             continue
+        # Image priority: the story's own photo -> the section's branded cover
+        # slide -> nothing. Ensures a tweet is essentially never imageless.
+        img = (item.get("image") or "").strip()
+        if not img:
+            img = covers.get(item.get("section", ""), "")
+        imgs = [img] if img else None
         try:
-            pid = _create_post(X_CHANNEL, item["text"])
+            pid = _create_post(X_CHANNEL, item["text"], image_urls=imgs)
             done.add(key)
             sent += 1
-            print(f"  ✓ tweet queued to Buffer ({key[:40]}) id={pid}")
-            time.sleep(1)  # be gentle on rate limits
+            tag = "with image" if imgs else "text only"
+            print(f"  ✓ tweet queued to Buffer ({tag}) ({key[:40]}) id={pid}")
+            time.sleep(1)
         except Exception as exc:
             print(f"  ✗ tweet failed ({key[:40]}): {exc}")
 
