@@ -756,16 +756,18 @@ def article_page(story, section, edition):
             cap = (f'<figcaption>Photo: <a href="{e(story.get("image_credit_url","#"))}" rel="noopener" target="_blank">'
                    f'{e(story.get("image_credit","Pexels"))}</a> via Pexels (free license)</figcaption>')
         _art_fb = art_svg(story["headline"], section["id"]).replace('"', '&quot;')
-        _onerr = ("var r=this.getAttribute('data-retry')|0;"
-                  "if(r&lt;2){this.setAttribute('data-retry',r+1);"
-                  "var u=this.getAttribute('data-src');"
-                  "this.src=u+(u.indexOf('?')&lt;0?'?':'&amp;')+'r='+(r+1);}"
+        _onok = "this.onerror=null;this.setAttribute('data-ok','1');"
+        _onerr = ("if(this.getAttribute('data-ok')){return;}"
+                  "var r=(this.getAttribute('data-retry')|0)+1;"
+                  "this.setAttribute('data-retry',r);"
+                  "if(r&lt;=4){var s=this.getAttribute('data-src');var self=this;"
+                  "setTimeout(function(){self.src=s;},400*r);}"
                   "else{this.onerror=null;"
                   "this.parentNode.innerHTML=this.getAttribute('data-fallback');}")
         hero = (f'<figure class="hero"><img src="{e(story["image"])}" '
                 f'data-src="{e(story["image"])}" alt="{e(story["headline"])}" '
                 f'loading="eager" decoding="async" data-retry="0" '
-                f'onerror="{_onerr}" data-fallback="{_art_fb}">'
+                f'onload="{_onok}" onerror="{_onerr}" data-fallback="{_art_fb}">'
                 f'{cap}</figure>')
     else:
         hero = f'<div class="hero">{art_svg(story["headline"], section["id"])}</div>'
@@ -1112,28 +1114,37 @@ def build_tweet_queue(edition, max_per_day=10):
 
 
 def generate_tweet(st, section_name, link):
-    """One personalised, reporting-style tweet (<=270 chars incl. link) with
-    2-3 relevant hashtags. Factual, punchy, never sensational — fits a verified
-    news brand. Returns None on failure."""
+    """One concise, free-tier tweet (well under 280 incl. link) with 2-3
+    relevant hashtags. Factual, punchy, never sensational. Returns None on fail."""
     sys_prompt = (
         "You write tweets for 'The Last 24', a verified Indian news brief. Voice: "
-        "a sharp, trustworthy reporter — punchy but factual, never clickbait, never "
-        "sensational, no fabricated detail. Write ONE tweet for the story below.\n"
-        "Rules: under 230 characters of text (a link is appended separately). Lead "
-        "with the news. Name the real people/places/figures. Add a crisp reason it "
-        "matters if it fits. End with 2-3 relevant hashtags (e.g. #IndiaNews plus "
-        "topical ones). No 'BREAKING' unless it truly is. No emojis except at most one. "
-        'Respond with ONLY this JSON: {"tweet":"...the tweet text with hashtags..."}')
+        "a sharp, trustworthy reporter — punchy, factual, never clickbait or "
+        "sensational. Write ONE short tweet for the story below.\n"
+        "HARD rules: the tweet TEXT must be UNDER 180 characters (a link is added "
+        "separately and eats ~23 more). Be tight — lead with the news, name the key "
+        "real people/places/figures, skip filler. End with exactly 2-3 relevant "
+        "hashtags (always include #IndiaNews, plus 1-2 topical ones like #Cricket, "
+        "#RBI, #UPSC, #Markets as fits). No 'BREAKING' unless it truly is. No emojis. "
+        'Respond with ONLY this JSON: {"tweet":"...tweet text incl hashtags..."}')
     user = (f"Section: {section_name}\nHeadline: {st['headline']}\n"
             f"Summary: {st.get('what','')}\nWhy it matters: {st.get('lens','')}")
     try:
-        data = extract_json(call_claude(sys_prompt, user, 400), "tweet")
+        data = extract_json(call_claude(sys_prompt, user, 300), "tweet")
         text = str(data.get("tweet", "")).strip()
         if not text:
             return None
-        # Keep room for the link (~24 chars on X via t.co) + a space.
-        if len(text) > 250:
-            text = text[:247].rsplit(" ", 1)[0] + "…"
+        # Free tier = 280 chars; X counts any link as 23. Keep text <= 180 so
+        # text + space + link stays comfortably within limit. If trimming is
+        # needed, preserve the trailing hashtags (they carry reach).
+        if len(text) > 180:
+            import re as _re
+            tags = _re.findall(r"#\w+", text)
+            tag_str = (" " + " ".join(tags[:3])) if tags else ""
+            body = _re.sub(r"\s*#\w+\s*$", "", text).strip()
+            budget = 180 - len(tag_str) - 1
+            if len(body) > budget:
+                body = body[:budget].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+            text = body + tag_str
         return f"{text}\n{link}"
     except (RuntimeError, ValueError) as exc:
         print(f"  tweet generation failed for '{st.get('headline','')[:40]}': {exc}")
