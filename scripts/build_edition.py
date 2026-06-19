@@ -756,18 +756,11 @@ def article_page(story, section, edition):
             cap = (f'<figcaption>Photo: <a href="{e(story.get("image_credit_url","#"))}" rel="noopener" target="_blank">'
                    f'{e(story.get("image_credit","Pexels"))}</a> via Pexels (free license)</figcaption>')
         _art_fb = art_svg(story["headline"], section["id"]).replace('"', '&quot;')
-        _onok = "this.onerror=null;this.setAttribute('data-ok','1');"
-        _onerr = ("if(this.getAttribute('data-ok')){return;}"
-                  "var r=(this.getAttribute('data-retry')|0)+1;"
-                  "this.setAttribute('data-retry',r);"
-                  "if(r&lt;=4){var s=this.getAttribute('data-src');var self=this;"
-                  "setTimeout(function(){self.src=s;},400*r);}"
-                  "else{this.onerror=null;"
-                  "this.parentNode.innerHTML=this.getAttribute('data-fallback');}")
         hero = (f'<figure class="hero"><img src="{e(story["image"])}" '
-                f'data-src="{e(story["image"])}" alt="{e(story["headline"])}" '
-                f'loading="eager" decoding="async" data-retry="0" '
-                f'onload="{_onok}" onerror="{_onerr}" data-fallback="{_art_fb}">'
+                f'alt="{e(story["headline"])}" loading="eager" decoding="async" '
+                f'onload="this.setAttribute(&quot;data-ok&quot;,1)" '
+                f'onerror="if(!this.getAttribute(&quot;data-ok&quot;)){{this.parentNode.innerHTML=this.getAttribute(&quot;data-fallback&quot;)}}" '
+                f'data-fallback="{_art_fb}">'
                 f'{cap}</figure>')
     else:
         hero = f'<div class="hero">{art_svg(story["headline"], section["id"])}</div>'
@@ -782,7 +775,8 @@ def article_page(story, section, edition):
         facts_box = f'<div class="facts"><h2>Key facts</h2><ul>{items}</ul></div>'
     src_name = e(story.get("source", "the original source"))
     src_url = e(story.get("url", "#"))
-    _mhead = masthead_html([("Current Affairs", "/current-affairs.html", True),
+    _mhead = masthead_html([("Trending", "/trending.html", False),
+                            ("Current Affairs", "/current-affairs.html", True),
                             ("Archive", "/archive.html", False)],
                            date_label=edition.get("date", ""))
     _mcss = masthead_css()
@@ -965,7 +959,8 @@ def build_archive():
     cat_opts = "".join(f'<option value="{c}">{e(n)}</option>' for c, n in sorted(cats.items(), key=lambda x: x[1]))
     src_opts = "".join(f'<option value="{e(s)}">{e(s)}</option>' for s in sorted(x for x in sources if x))
     total = len(seen)
-    _arch_mhead = masthead_html([("Current Affairs", "/current-affairs.html", True),
+    _arch_mhead = masthead_html([("Trending", "/trending.html", False),
+                                 ("Current Affairs", "/current-affairs.html", True),
                                  ("Home", "/", False)])
     _arch_mcss = masthead_css()
     page = f"""<!DOCTYPE html>
@@ -1151,12 +1146,136 @@ def generate_tweet(st, section_name, link):
         return None
 
 
+def build_trending(edition):
+    """Trending = the stories rising to the top across all sections right now:
+    breaking items first, then the most recent, deduped. Free signal derived
+    from the edition we already built (no paid trends API). Writes trending.js
+    (window.TRENDING) + trending.html."""
+    items = []
+    for sec in edition["sections"]:
+        for st in sec["stories"]:
+            items.append({
+                "headline": st.get("headline", ""),
+                "section": sec.get("name", ""),
+                "section_id": sec.get("id", ""),
+                "time": st.get("time", ""),
+                "hour": st.get("hour", 0),
+                "breaking": bool(st.get("breaking", False)),
+                "image": st.get("image", ""),
+                "lens": st.get("lens", ""),
+                "slug": st.get("slug", ""),
+                "source": st.get("source", ""),
+            })
+    # Rank: breaking first, then newest by hour.
+    items.sort(key=lambda x: (not x["breaking"], -(x["hour"] or 0)))
+    items = items[:12]  # the top 12 trending
+
+    trending = {
+        "date": NOW.strftime("%A, %d %B %Y"),
+        "updated_label": NOW.strftime("%d %b %Y, %H:%M IST"),
+        "items": items,
+    }
+    with open("trending.js", "w", encoding="utf-8") as f:
+        f.write("window.TRENDING = " + json.dumps(trending, ensure_ascii=False) + ";")
+
+    _mhead = masthead_html([("Current Affairs", "/current-affairs.html", True),
+                            ("Archive", "/archive.html", False),
+                            ("Home", "/", False)],
+                           date_label=edition.get("date", ""))
+    _mcss = masthead_css()
+    hue_map = json.dumps(SECTION_HUES)
+    page = TRENDING_PAGE.replace("/*MASTHEAD_CSS*/", _mcss) \
+                        .replace("<!--MASTHEAD-->", _mhead) \
+                        .replace("/*HUES*/", hue_map) \
+                        .replace("SITE_URL_REPLACE", SITE_URL)
+    with open("trending.html", "w", encoding="utf-8") as f:
+        f.write(page)
+    print(f"Trending: {len(items)} stories ({sum(1 for i in items if i['breaking'])} breaking).")
+
+
+TRENDING_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trending in India — The Last 24</title>
+<meta name="description" content="What's trending across India right now — the stories rising to the top from verified publishers, updated through the day.">
+<link rel="canonical" href="SITE_URL_REPLACE/trending.html">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{--paper:#F7F6F2;--card:#FFFFFF;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--dark:#0C110C;--green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;
+--display:Georgia,'Times New Roman',serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--mw:920px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+/*MASTHEAD_CSS*/
+a{color:inherit}
+.hero{padding:34px 0 8px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px}
+.hero p{font-size:16px;color:var(--meta);max-width:620px}
+.updated{font-family:var(--mono);font-size:12px;color:var(--meta);margin-top:14px}
+.updated b{color:var(--green)}
+.tlist{padding:26px 0 60px;display:flex;flex-direction:column;gap:2px}
+.trow{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--hairline);text-decoration:none;transition:background .15s}
+.trow:hover{background:#fff}
+.trank{font-family:var(--display);font-weight:800;font-size:30px;color:var(--hue,#27B97C);min-width:42px;line-height:1}
+.tbody{flex:1}
+.tkick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.tcat{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--hue,#27B97C)}
+.tbreak{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#CE3D1D;padding:2px 7px;border-radius:5px}
+.ttime{font-family:var(--mono);font-size:11px;color:var(--meta)}
+.trow h3{font-family:var(--display);font-size:20px;line-height:1.25;font-weight:700;margin:0 0 4px}
+.tlens{font-size:14px;color:var(--meta)}
+.empty{text-align:center;color:var(--meta);padding:60px 0;font-family:var(--mono);font-size:13px}
+footer{border-top:1px solid var(--hairline);padding:30px 0;font-family:var(--mono);font-size:12px;color:var(--meta);text-align:center}
+@media(max-width:600px){.wrap{padding:0 14px}.trank{font-size:24px;min-width:32px}.trow h3{font-size:18px}}
+</style>
+</head>
+<body>
+<!--MASTHEAD-->
+<div class="wrap hero">
+  <h1>Trending in India</h1>
+  <p>The stories rising to the top across India right now — drawn from verified publishers and refreshed through the day.</p>
+  <div class="updated" id="updated"></div>
+</div>
+<div class="wrap tlist" id="tlist"></div>
+<footer><div class="wrap">The Last 24 · Verified publishers only · <a href="/">Home</a> · <a href="/current-affairs.html">Current Affairs</a> · <a href="/archive.html">Archive</a></div></footer>
+<script src="trending.js"></script>
+<script>
+var HUES=/*HUES*/;
+var T=window.TRENDING||{items:[],updated_label:""};
+function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function render(){
+  var box=document.getElementById('tlist');
+  if(!T.items.length){box.innerHTML='<div class="empty">No trending stories right now — check back after the next update.</div>';return;}
+  box.innerHTML=T.items.map(function(x,i){
+    var hue=HUES[x.section_id]||'#27B97C';
+    var href=x.slug?('/articles/'+x.slug+'.html'):'/';
+    return '<a class="trow" href="'+href+'" style="--hue:'+hue+'">'
+      +'<div class="trank">'+(i+1)+'</div>'
+      +'<div class="tbody"><div class="tkick">'
+      +'<span class="tcat">'+esc(x.section)+'</span>'
+      +(x.breaking?'<span class="tbreak">Breaking</span>':'')
+      +(x.time?'<span class="ttime">'+esc(x.time)+'</span>':'')+'</div>'
+      +'<h3>'+esc(x.headline)+'</h3>'
+      +(x.lens?'<div class="tlens">'+esc(x.lens)+'</div>':'')
+      +'</div></a>';
+  }).join('');
+}
+document.getElementById('updated').innerHTML=T.updated_label?'Updated <b>'+esc(T.updated_label)+'</b> · '+T.items.length+' stories':'';
+render();
+</script>
+</body>
+</html>"""
+
+
 def main():
     raw = collect_headlines()
     print(f"Collected {len(raw.splitlines())} headlines.")
     edition = write_edition(raw)
     write_outputs(edition)
     build_archive()
+    build_trending(edition)
     build_tweet_queue(edition, max_per_day=10)
     # Current Affairs (UPSC/IAS) — re-curate the same headlines, exam-framed.
     try:
