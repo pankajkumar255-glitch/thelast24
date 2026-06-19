@@ -15,7 +15,7 @@ Outputs:
   current-affairs.js     (window.CA — latest curated current affairs)
   current-affairs.html   (the dedicated, prominently-linked page)
 """
-import os, json, html
+import os, json, html, glob
 from datetime import datetime, timedelta, timezone
 
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -101,34 +101,34 @@ def build_current_affairs(raw_headlines, call_claude, extract_json, write_page=T
         it["day"] = today_iso
         it["day_label"] = NOW.strftime("%d %b")
 
-    # Merge with the previous 3 days: load existing current-affairs.js, keep
-    # items from the last 3 days, then add today's (dedup by title).
-    prior = []
-    if os.path.exists("current-affairs.js"):
+    # ROBUST 3-day retention via dated daily snapshots. Each run saves today's
+    # items to ca_daily/<date>.json (overwriting today's, accumulating prior
+    # days). The window is then rebuilt by reading the last 3 days of snapshots.
+    # This survives any single run's main-file going stale, unlike reading back
+    # current-affairs.js.
+    os.makedirs("ca_daily", exist_ok=True)
+    with open(f"ca_daily/{today_iso}.json", "w", encoding="utf-8") as f:
+        json.dump(clean, f, ensure_ascii=False)
+
+    cutoff_day = (NOW - timedelta(days=2)).strftime("%Y-%m-%d")  # keep today + 2 prior = 3 days
+    merged = []
+    seen_titles = set()
+    # newest day first so the freshest copy of a duplicate wins
+    for snap in sorted(glob.glob("ca_daily/*.json"), reverse=True):
+        day = os.path.basename(snap)[:-5]  # strip .json
+        if day < cutoff_day:
+            os.remove(snap)  # older than 3 days — prune the snapshot file
+            continue
         try:
-            import re as _re
-            txt = open("current-affairs.js", encoding="utf-8").read()
-            m = _re.search(r"window\.CA\s*=\s*(\{.*\});?\s*$", txt, _re.S)
-            if m:
-                prior = (json.loads(m.group(1)) or {}).get("items", [])
-        except Exception:
-            prior = []
-    cutoff = NOW - timedelta(days=3)
-    seen_titles = {it["title"].lower()[:60] for it in clean}
-    merged = list(clean)
-    for it in prior:
-        d = it.get("day", "")
-        try:
-            when = datetime.strptime(d, "%Y-%m-%d").replace(tzinfo=IST)
+            items = json.load(open(snap, encoding="utf-8"))
         except Exception:
             continue
-        if when < cutoff:
-            continue  # older than 3 days
-        key = (it.get("title") or "").lower()[:60]
-        if key in seen_titles:
-            continue  # already have a fresher copy
-        seen_titles.add(key)
-        merged.append(it)
+        for it in items:
+            key = (it.get("title") or "").lower()[:60]
+            if key in seen_titles:
+                continue
+            seen_titles.add(key)
+            merged.append(it)
 
     ca = {
         "date": NOW.strftime("%A, %d %B %Y"),
