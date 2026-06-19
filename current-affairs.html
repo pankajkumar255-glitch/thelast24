@@ -12,8 +12,8 @@
 <link rel="icon" href="favicon.ico">
 <style>
   :root{
-    --paper:#f6f6f4;--ink:#0d120d;--meta:#5d6b5d;--hairline:#e3e6e0;--green:#0E7B52;
-    --green-bright:#3BCB8D;--display:'Georgia',serif;--body:system-ui,-apple-system,'Segoe UI',sans-serif;
+    --paper:#F7F6F2;--ink:#0F140F;--meta:#5d6b5d;--hairline:#E9EAE3;--green:#0C6E49;
+    --green-bright:#27B97C;--display:'Georgia',serif;--body:system-ui,-apple-system,'Segoe UI',sans-serif;
     --mono:ui-monospace,'SF Mono',Menlo,monospace;
   }
   *{box-sizing:border-box}
@@ -46,6 +46,7 @@
   .ca-kick{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
   .ca-cat{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
   .ca-gs{font-family:var(--mono);font-size:11px;color:var(--meta);background:var(--paper);padding:3px 8px;border-radius:6px}
+  .ca-day{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--green);background:rgba(15,122,82,.08);padding:3px 8px;border-radius:6px}
   .ca-card h3{font-family:var(--display);font-size:21px;line-height:1.25;margin:0 0 10px}
   .ca-summary{font-size:15.5px;margin:0 0 14px}
   .ca-angle{font-size:14.5px;background:var(--paper);border-radius:10px;padding:12px 14px;margin:0 0 14px}
@@ -93,7 +94,7 @@
 
 <script src="current-affairs.js"></script>
 <script>
-  var HUES = {"polity": "#0E7B52", "economy": "#B07A1F", "ir": "#1F5FA8", "environment": "#2E8B57", "scitech": "#6A3FB5", "schemes": "#0E8E8E", "defence": "#CE3D1D", "reports": "#9A6A00", "persons": "#C2317E", "places": "#3B7A57", "culture": "#A8432B"};
+  var HUES = {"polity": "#3D7A5C", "economy": "#A07A3C", "ir": "#3E6088", "environment": "#4A8462", "scitech": "#6A5C9A", "schemes": "#3C8585", "defence": "#B5573F", "reports": "#8C6A33", "persons": "#A65478", "places": "#4A8167", "culture": "#A65340"};
   var CA = window.CA || {items:[],categories:[],updated_label:""};
   var filter = 'all';
 
@@ -108,6 +109,7 @@
       var facts = (x.key_facts||[]).map(function(f){ return '<li>'+esc(f)+'</li>'; }).join('');
       return '<article class="ca-card" style="border-left-color:'+hue+'">'
         + '<div class="ca-kick"><span class="ca-cat" style="color:'+hue+'">'+esc(x.category_name)+'</span>'
+        + (x.day_label?'<span class="ca-day">'+esc(x.day_label)+'</span>':'')
         + (x.gs_paper?'<span class="ca-gs">'+esc(x.gs_paper)+'</span>':'')+'</div>'
         + '<h3>'+esc(x.title)+'</h3>'
         + (x.summary?'<p class="ca-summary">'+esc(x.summary)+'</p>':'')
