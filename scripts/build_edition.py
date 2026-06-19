@@ -33,8 +33,8 @@ SECTION_QUERIES = {
 PER_SECTION = 4
 
 SECTION_HUES = {  # category accent colors (also used by generative art)
-    "national": "#0E7B52", "world": "#1F5FA8", "business": "#B07A1F",
-    "tech": "#6A3FB5", "ai": "#0E8E8E", "sports": "#CE3D1D", "entertainment": "#C2317E",
+    "national": "#3D7A5C", "world": "#3E6088", "business": "#A07A3C",
+    "tech": "#6A5C9A", "ai": "#3C8585", "sports": "#B5573F", "entertainment": "#A65478",
 }
 
 # ---------------------------------------------------------------- collect ---
@@ -755,7 +755,17 @@ def article_page(story, section, edition):
         else:
             cap = (f'<figcaption>Photo: <a href="{e(story.get("image_credit_url","#"))}" rel="noopener" target="_blank">'
                    f'{e(story.get("image_credit","Pexels"))}</a> via Pexels (free license)</figcaption>')
-        hero = (f'<figure class="hero"><img src="{e(story["image"])}" alt="{e(story["headline"])}" loading="eager">'
+        _art_fb = art_svg(story["headline"], section["id"]).replace('"', '&quot;')
+        _onerr = ("var r=this.getAttribute('data-retry')|0;"
+                  "if(r&lt;2){this.setAttribute('data-retry',r+1);"
+                  "var u=this.getAttribute('data-src');"
+                  "this.src=u+(u.indexOf('?')&lt;0?'?':'&amp;')+'r='+(r+1);}"
+                  "else{this.onerror=null;"
+                  "this.parentNode.innerHTML=this.getAttribute('data-fallback');}")
+        hero = (f'<figure class="hero"><img src="{e(story["image"])}" '
+                f'data-src="{e(story["image"])}" alt="{e(story["headline"])}" '
+                f'loading="eager" decoding="async" data-retry="0" '
+                f'onerror="{_onerr}" data-fallback="{_art_fb}">'
                 f'{cap}</figure>')
     else:
         hero = f'<div class="hero">{art_svg(story["headline"], section["id"])}</div>'
@@ -788,10 +798,10 @@ def article_page(story, section, edition):
 <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <script type="application/ld+json">{jsonld}</script>
 <style>
-:root{{--paper:#F7F7F5;--ink:#111511;--ink-soft:#454B43;--meta:#73786F;--hairline:#E6E8E2;--hue:{hue};
+:root{{--paper:#F7F6F2;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--hue:{hue};
 --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
---mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;--dark:#0D120D;--green-bright:#3BCB8D;--mw:660px}}
+--mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;--dark:#0C110C;--green-bright:#27B97C;--green-soft:#0F7A52;--mw:660px}}
 *{{box-sizing:border-box;margin:0;padding:0}}
 body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}}
 .wrap{{max-width:660px;margin:0 auto;padding:0 20px}}
@@ -966,7 +976,7 @@ def build_archive():
 <meta property="og:type" content="website"><meta property="og:title" content="Archive — {SITE_NAME}">
 <link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0E130E"><link rel="icon" href="favicon.ico" sizes="any"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-:root{{--paper:#F6F6F4;--ink:#101410;--ink-soft:#43493F;--meta:#71766C;--hairline:#E5E7E0;--dark:#0D120D;--green:#0E7B52;--green-bright:#3BCB8D;
+:root{{--paper:#F7F6F2;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--dark:#0C110C;--green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;
 --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 --mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;--mw:900px}}
@@ -1084,8 +1094,13 @@ def build_tweet_queue(edition, max_per_day=10):
         tweet = generate_tweet(st, sec["name"], link)
         if not tweet:
             continue
+        # Attach the story's image to the tweet (Pexels/Wikimedia already
+        # resolved onto st["image"]). If absent, leave empty — the Buffer
+        # publisher will generate a text card so the tweet is never imageless.
+        img = st.get("image") or ""
         queue["pending"].append({"key": key, "text": tweet, "url": link,
-                                 "section": sec["name"],
+                                 "section": sec["name"], "image": img,
+                                 "headline": st.get("headline", ""),
                                  "created": NOW.strftime("%Y-%m-%d %H:%M IST")})
         already.add(key)
         added += 1
