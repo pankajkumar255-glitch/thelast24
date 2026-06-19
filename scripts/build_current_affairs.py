@@ -24,17 +24,17 @@ SITE_URL = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
 
 # UPSC-style categories (mirrors how aspirants study; inspired by standard CA taxonomy)
 CA_CATEGORIES = [
-    ("polity", "Polity & Governance", "#0E7B52"),
-    ("economy", "Economy & Banking", "#B07A1F"),
-    ("ir", "International Relations", "#1F5FA8"),
-    ("environment", "Environment & Ecology", "#2E8B57"),
-    ("scitech", "Science & Technology", "#6A3FB5"),
-    ("schemes", "Govt Schemes & Policies", "#0E8E8E"),
-    ("defence", "Defence & Security", "#CE3D1D"),
-    ("reports", "Reports & Indices", "#9A6A00"),
-    ("persons", "Persons & Awards in News", "#C2317E"),
-    ("places", "Places in News", "#3B7A57"),
-    ("culture", "Art & Culture", "#A8432B"),
+    ("polity", "Polity & Governance", "#3D7A5C"),
+    ("economy", "Economy & Banking", "#A07A3C"),
+    ("ir", "International Relations", "#3E6088"),
+    ("environment", "Environment & Ecology", "#4A8462"),
+    ("scitech", "Science & Technology", "#6A5C9A"),
+    ("schemes", "Govt Schemes & Policies", "#3C8585"),
+    ("defence", "Defence & Security", "#B5573F"),
+    ("reports", "Reports & Indices", "#8C6A33"),
+    ("persons", "Persons & Awards in News", "#A65478"),
+    ("places", "Places in News", "#4A8167"),
+    ("culture", "Art & Culture", "#A65340"),
 ]
 CA_HUES = {cid: hue for cid, name, hue in CA_CATEGORIES}
 CA_NAMES = {cid: name for cid, name, hue in CA_CATEGORIES}
@@ -95,19 +95,54 @@ def build_current_affairs(raw_headlines, call_claude, extract_json, write_page=T
             "source": (it.get("source") or "").strip(),
         })
 
+    # Stamp today's items with the current date+time so we can age them out.
+    today_iso = NOW.strftime("%Y-%m-%d")
+    for it in clean:
+        it["day"] = today_iso
+        it["day_label"] = NOW.strftime("%d %b")
+
+    # Merge with the previous 3 days: load existing current-affairs.js, keep
+    # items from the last 3 days, then add today's (dedup by title).
+    prior = []
+    if os.path.exists("current-affairs.js"):
+        try:
+            import re as _re
+            txt = open("current-affairs.js", encoding="utf-8").read()
+            m = _re.search(r"window\.CA\s*=\s*(\{.*\});?\s*$", txt, _re.S)
+            if m:
+                prior = (json.loads(m.group(1)) or {}).get("items", [])
+        except Exception:
+            prior = []
+    cutoff = NOW - timedelta(days=3)
+    seen_titles = {it["title"].lower()[:60] for it in clean}
+    merged = list(clean)
+    for it in prior:
+        d = it.get("day", "")
+        try:
+            when = datetime.strptime(d, "%Y-%m-%d").replace(tzinfo=IST)
+        except Exception:
+            continue
+        if when < cutoff:
+            continue  # older than 3 days
+        key = (it.get("title") or "").lower()[:60]
+        if key in seen_titles:
+            continue  # already have a fresher copy
+        seen_titles.add(key)
+        merged.append(it)
+
     ca = {
         "date": NOW.strftime("%A, %d %B %Y"),
         "updated": NOW.strftime("%Y-%m-%d %H:%M"),
         "updated_label": NOW.strftime("%d %b %Y, %H:%M IST"),
-        "items": clean,
+        "items": merged,
         "categories": [{"id": c, "name": n} for c, n, h in CA_CATEGORIES
-                       if any(x["category"] == c for x in clean)],
+                       if any(x["category"] == c for x in merged)],
     }
 
     with open("current-affairs.js", "w", encoding="utf-8") as f:
         f.write("window.CA = " + json.dumps(ca, ensure_ascii=False) + ";")
-    print(f"Current affairs: {len(clean)} exam-relevant items across "
-          f"{len(ca['categories'])} categories.")
+    print(f"Current affairs: {len(clean)} new, {len(merged)} total over 3 days, "
+          f"across {len(ca['categories'])} categories.")
 
     if write_page:
         with open("current-affairs.html", "w", encoding="utf-8") as f:
@@ -137,8 +172,8 @@ def current_affairs_page():
 <link rel="icon" href="favicon.ico">
 <style>
   :root{{
-    --paper:#f6f6f4;--ink:#0d120d;--meta:#5d6b5d;--hairline:#e3e6e0;--green:#0E7B52;
-    --green-bright:#3BCB8D;--display:'Georgia',serif;--body:system-ui,-apple-system,'Segoe UI',sans-serif;
+    --paper:#F7F6F2;--ink:#0F140F;--meta:#5d6b5d;--hairline:#E9EAE3;--green:#0C6E49;
+    --green-bright:#27B97C;--display:'Georgia',serif;--body:system-ui,-apple-system,'Segoe UI',sans-serif;
     --mono:ui-monospace,'SF Mono',Menlo,monospace;
   }}
   *{{box-sizing:border-box}}
@@ -171,6 +206,7 @@ def current_affairs_page():
   .ca-kick{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}}
   .ca-cat{{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}}
   .ca-gs{{font-family:var(--mono);font-size:11px;color:var(--meta);background:var(--paper);padding:3px 8px;border-radius:6px}}
+  .ca-day{{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--green);background:rgba(15,122,82,.08);padding:3px 8px;border-radius:6px}}
   .ca-card h3{{font-family:var(--display);font-size:21px;line-height:1.25;margin:0 0 10px}}
   .ca-summary{{font-size:15.5px;margin:0 0 14px}}
   .ca-angle{{font-size:14.5px;background:var(--paper);border-radius:10px;padding:12px 14px;margin:0 0 14px}}
@@ -233,6 +269,7 @@ def current_affairs_page():
       var facts = (x.key_facts||[]).map(function(f){{ return '<li>'+esc(f)+'</li>'; }}).join('');
       return '<article class="ca-card" style="border-left-color:'+hue+'">'
         + '<div class="ca-kick"><span class="ca-cat" style="color:'+hue+'">'+esc(x.category_name)+'</span>'
+        + (x.day_label?'<span class="ca-day">'+esc(x.day_label)+'</span>':'')
         + (x.gs_paper?'<span class="ca-gs">'+esc(x.gs_paper)+'</span>':'')+'</div>'
         + '<h3>'+esc(x.title)+'</h3>'
         + (x.summary?'<p class="ca-summary">'+esc(x.summary)+'</p>':'')
