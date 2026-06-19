@@ -50,9 +50,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
   :root{
-    --paper:#F6F6F4;--card:#FFFFFF;--ink:#101410;--ink-soft:#43493F;--meta:#71766C;--hairline:#E5E7E0;
-    --dark:#0D120D;--paper-on-dark:#F2F4EE;--meta-on-dark:#929C8E;
-    --green:#0E7B52;--green-bright:#3BCB8D;--vermilion:#DE4A24;
+    --paper:#F7F6F2;--card:#FFFFFF;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;
+    --dark:#0C110C;--paper-on-dark:#F1F3ED;--meta-on-dark:#8C968A;
+    --green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;--vermilion:#DE4A24;
     --maxw:1100px;
     --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -81,13 +81,13 @@
   .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1}
   .brand span{color:var(--green-bright)}
   .archive-link{font-family:var(--mono);font-size:12px;color:var(--paper-on-dark);text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;transition:all .18s}
-  .archive-link:hover{border-color:var(--green-bright);color:var(--green-bright)}
+  .archive-link:hover{border-color:var(--green-soft);color:var(--green-soft)}
   .ca-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);background:var(--green-bright);text-decoration:none;padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
   .ca-link:hover{background:#fff;color:var(--ink)}
   .brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
   .brand-nav{display:flex;align-items:center;gap:10px}
   .brand-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--meta-on-dark);text-align:right;line-height:1.7}
-  .brand-meta .v{color:var(--green-bright);font-weight:600}
+  .brand-meta .v{color:var(--green-soft);font-weight:600}
   .live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green-bright);margin-right:6px;box-shadow:0 0 8px var(--green-bright);animation:pulse 2.4s infinite;vertical-align:1px}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   @media (max-width:600px){
@@ -291,10 +291,10 @@
   .f-logo{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;color:var(--paper-on-dark);text-decoration:none}
   .f-logo span{color:var(--green-bright)}
   .f-blurb{font-size:13px;line-height:1.8;margin-top:12px;max-width:380px}
-  .f-blurb .v{color:var(--green-bright)}
+  .f-blurb .v{color:var(--green-soft)}
   .f-col h5{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--meta-on-dark);margin-bottom:12px}
   .f-col a{display:block;font-size:13.5px;color:var(--paper-on-dark);text-decoration:none;padding:5px 0;transition:color .15s}
-  .f-col a:hover{color:var(--green-bright)}
+  .f-col a:hover{color:var(--green-soft)}
   .f-bottom{border-top:1px solid rgba(255,255,255,.1)}
   .f-bottom-inner{max-width:var(--maxw);margin:0 auto;padding:18px 24px 40px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px}
   .f-bottom-inner a{color:var(--paper-on-dark);font-weight:600;text-decoration:none}
@@ -652,7 +652,7 @@ window.BRIEF = window.BRIEF || {
 
 (function(){
   var NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"; // Formspree endpoint.
-  var HUES = {national:"#0E7B52", world:"#1F5FA8", business:"#B07A1F", tech:"#6A3FB5", ai:"#0E8E8E", sports:"#CE3D1D", entertainment:"#C2317E"};
+  var HUES = {national:"#3D7A5C", world:"#3E6088", business:"#A07A3C", tech:"#6A5C9A", ai:"#3C8585", sports:"#B5573F", entertainment:"#A65478"};
   var B = window.BRIEF || window.EDITION || null;
   var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
   if(!B || !totalStories){
@@ -683,11 +683,19 @@ window.BRIEF = window.BRIEF || {
   }
   function media(st, hue, eager){
     if(!st.image) return art(st.headline, hue);
-    // If the photo URL fails to load, fall back to editorial art instead of a blank box.
+    // Resilient loader: a transient hiccup (slow byte, lazy-load blip) can fire
+    // onerror even on a valid URL. Retry a couple of times with a cache-busting
+    // query before giving up to the art fallback — fixes "loads after refresh".
     var fallback = art(st.headline, hue).replace(/"/g,'&quot;');
-    return '<img src="'+st.image+'" alt="" loading="'+(eager?'eager':'lazy')+'" '+
-           'onerror="this.parentNode.innerHTML=this.getAttribute(\'data-fallback\')" '+
-           'data-fallback="'+fallback+'">';
+    var onerr = "var r=this.getAttribute('data-retry')|0;"
+              + "if(r<2){this.setAttribute('data-retry',r+1);"
+              + "var u=this.getAttribute('data-src');"
+              + "this.src=u+(u.indexOf('?')<0?'?':'&')+'r='+(r+1);}"
+              + "else{this.onerror=null;this.parentNode.innerHTML=this.getAttribute('data-fallback');}";
+    return '<img src="'+st.image+'" data-src="'+st.image+'" alt="" '
+         + 'loading="'+(eager?'eager':'lazy')+'" decoding="async" '
+         + 'data-retry="0" onerror="'+onerr.replace(/"/g,'&quot;')+'" '
+         + 'data-fallback="'+fallback+'">';
   }
 
   // ticker
