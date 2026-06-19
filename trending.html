@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trending in India — The Last 24</title>
+<meta name="description" content="What's trending across India right now — the stories rising to the top from verified publishers, updated through the day.">
+<link rel="canonical" href="https://thelast24.in/trending.html">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{--paper:#F7F6F2;--card:#FFFFFF;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--dark:#0C110C;--green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;
+--display:Georgia,'Times New Roman',serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--mw:920px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+.band{background:var(--dark);color:#F2F4EE;padding:20px 0}
+.band .wrap{max-width:var(--mw,920px);margin:0 auto;padding:0 20px}
+.brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.brand-row .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1;color:#F2F4EE}
+.brand-row .brand span{color:var(--green-bright)}
+.brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.brand-nav{display:flex;align-items:center;gap:10px}
+.m-ca{font-family:var(--mono);font-size:12px;font-weight:600;color:#0D120D;background:var(--green-bright);text-decoration:none;padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
+.m-ca:hover{background:#fff;color:#0D120D}
+.m-link{font-family:var(--mono);font-size:12px;color:#F2F4EE;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
+.m-link:hover{border-color:var(--green-bright);color:var(--green-bright)}
+.brand-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#929C8E;text-align:right;line-height:1.7}
+.brand-meta .v{color:var(--green-bright);font-weight:600}
+@media (max-width:600px){
+  .brand-meta{display:none}
+  .brand-row{flex-wrap:wrap;gap:10px}
+  .brand-side{width:100%;justify-content:flex-start}
+  .m-ca,.m-link{font-size:11px;padding:6px 12px}
+}
+
+a{color:inherit}
+.hero{padding:34px 0 8px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px}
+.hero p{font-size:16px;color:var(--meta);max-width:620px}
+.updated{font-family:var(--mono);font-size:12px;color:var(--meta);margin-top:14px}
+.updated b{color:var(--green)}
+.tlist{padding:26px 0 60px;display:flex;flex-direction:column;gap:2px}
+.trow{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--hairline);text-decoration:none;transition:background .15s}
+.trow:hover{background:#fff}
+.trank{font-family:var(--display);font-weight:800;font-size:30px;color:var(--hue,#27B97C);min-width:42px;line-height:1}
+.tbody{flex:1}
+.tkick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.tcat{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--hue,#27B97C)}
+.tbreak{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#CE3D1D;padding:2px 7px;border-radius:5px}
+.ttime{font-family:var(--mono);font-size:11px;color:var(--meta)}
+.trow h3{font-family:var(--display);font-size:20px;line-height:1.25;font-weight:700;margin:0 0 4px}
+.tlens{font-size:14px;color:var(--meta)}
+.empty{text-align:center;color:var(--meta);padding:60px 0;font-family:var(--mono);font-size:13px}
+footer{border-top:1px solid var(--hairline);padding:30px 0;font-family:var(--mono);font-size:12px;color:var(--meta);text-align:center}
+@media(max-width:600px){.wrap{padding:0 14px}.trank{font-size:24px;min-width:32px}.trow h3{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="band"><div class="wrap"><div class="brand-row"><a class="brand" href="/">The Last <span>24</span></a><div class="brand-side"><div class="brand-nav"><a class="m-ca" href="/current-affairs.html">Current Affairs</a><a class="m-link" href="/archive.html">Archive</a><a class="m-link" href="/">Home</a></div><div class="brand-meta"><span class="v">✓ Verified publishers only</span><br>Friday, 19 June 2026</div></div></div></div></div>
+<div class="wrap hero">
+  <h1>Trending in India</h1>
+  <p>The stories rising to the top across India right now — drawn from verified publishers and refreshed through the day.</p>
+  <div class="updated" id="updated"></div>
+</div>
+<div class="wrap tlist" id="tlist"></div>
+<footer><div class="wrap">The Last 24 · Verified publishers only · <a href="/">Home</a> · <a href="/current-affairs.html">Current Affairs</a> · <a href="/archive.html">Archive</a></div></footer>
+<script src="trending.js"></script>
+<script>
+var HUES={"national": "#3D7A5C", "world": "#3E6088", "business": "#A07A3C", "tech": "#6A5C9A", "ai": "#3C8585", "sports": "#B5573F", "entertainment": "#A65478"};
+var T=window.TRENDING||{items:[],updated_label:""};
+function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function render(){
+  var box=document.getElementById('tlist');
+  if(!T.items.length){box.innerHTML='<div class="empty">No trending stories right now — check back after the next update.</div>';return;}
+  box.innerHTML=T.items.map(function(x,i){
+    var hue=HUES[x.section_id]||'#27B97C';
+    var href=x.slug?('/articles/'+x.slug+'.html'):'/';
+    return '<a class="trow" href="'+href+'" style="--hue:'+hue+'">'
+      +'<div class="trank">'+(i+1)+'</div>'
+      +'<div class="tbody"><div class="tkick">'
+      +'<span class="tcat">'+esc(x.section)+'</span>'
+      +(x.breaking?'<span class="tbreak">Breaking</span>':'')
+      +(x.time?'<span class="ttime">'+esc(x.time)+'</span>':'')+'</div>'
+      +'<h3>'+esc(x.headline)+'</h3>'
+      +(x.lens?'<div class="tlens">'+esc(x.lens)+'</div>':'')
+      +'</div></a>';
+  }).join('');
+}
+document.getElementById('updated').innerHTML=T.updated_label?'Updated <b>'+esc(T.updated_label)+'</b> · '+T.items.length+' stories':'';
+render();
+</script>
+</body>
+</html>
