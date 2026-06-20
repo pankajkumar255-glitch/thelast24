@@ -173,7 +173,7 @@ def current_affairs_page():
 <style>
   :root{{
     --paper:#F7F6F2;--ink:#0F140F;--meta:#5d6b5d;--hairline:#E9EAE3;--green:#0C6E49;
-    --green-bright:#27B97C;--display:'Georgia',serif;--body:system-ui,-apple-system,'Segoe UI',sans-serif;
+    --green-bright:#27B97C;--display:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--body:system-ui,-apple-system,'Segoe UI',sans-serif;
     --mono:ui-monospace,'SF Mono',Menlo,monospace;
   }}
   *{{box-sizing:border-box}}
