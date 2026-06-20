@@ -861,7 +861,7 @@ body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-heig
 /*MASTHEAD_CSS*/
 .band{{margin-bottom:30px}}
 .top{{font-family:var(--mono);font-size:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:660px;margin:0 auto}}
-.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:26px;letter-spacing:-.02em}}.top a span{{color:#3BCB8D}}
+.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:clamp(28px,4vw,34px);letter-spacing:-.02em}}.top a span{{color:var(--green-bright)}}
 .topnav{{display:flex;gap:16px;align-items:center}}
 .topnav a{{font-family:var(--mono)!important;font-size:12px!important;font-weight:600!important;color:#C9D2C5!important;letter-spacing:.04em;transition:color .15s}}
 .topnav a:hover{{color:#3BCB8D!important}}
