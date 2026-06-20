@@ -44,7 +44,8 @@ except Exception as _e:
 
 IST = timezone(timedelta(hours=5, minutes=30))
 NOW = datetime.now(IST)
-SIZE = 1080
+SIZE = 1080         # width
+HEIGHT = 1350       # height — Instagram 4:5 portrait (1080x1350)
 
 INK = (13, 18, 13)
 PAPER = (242, 244, 238)
@@ -116,13 +117,13 @@ def _branded_pattern(hue):
     """Branded pattern background in the category hue: dark base, soft tonal
     shapes, and a ring accent. Always on-brand, never blank."""
     import random
-    img = Image.new("RGB", (SIZE, SIZE), INK)
+    img = Image.new("RGB", (SIZE, HEIGHT), INK)
     d = ImageDraw.Draw(img, "RGBA")
-    d.rectangle([0, 0, SIZE, SIZE], fill=(hue[0], hue[1], hue[2], 26))
+    d.rectangle([0, 0, SIZE, HEIGHT], fill=(hue[0], hue[1], hue[2], 26))
     rnd = random.Random(hue[0] * 100 + hue[1])
     for _ in range(5):
         r = rnd.randint(140, 320)
-        cx = rnd.randint(0, SIZE); cy = rnd.randint(0, SIZE)
+        cx = rnd.randint(0, SIZE); cy = rnd.randint(0, HEIGHT)
         a = rnd.randint(18, 40)
         d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(hue[0], hue[1], hue[2], a))
     d.ellipse([SIZE - 360, -120, SIZE + 120, 360], outline=(hue[0], hue[1], hue[2], 90), width=6)
@@ -142,18 +143,26 @@ def _photo_background(image_url):
         print(f"  bg photo failed ({exc}); using pattern")
         return None
     w, h = im.size
-    side = min(w, h)
-    im = im.crop(((w - side) // 2, (h - side) // 2, (w - side) // 2 + side,
-                  (h - side) // 2 + side)).resize((SIZE, SIZE))
+    # cover-crop to 4:5 portrait (1080x1350)
+    target_ratio = SIZE / HEIGHT
+    if w / h > target_ratio:
+        new_w = int(h * target_ratio)
+        x0 = (w - new_w) // 2
+        im = im.crop((x0, 0, x0 + new_w, h))
+    else:
+        new_h = int(w / target_ratio)
+        y0 = (h - new_h) // 2
+        im = im.crop((0, y0, w, y0 + new_h))
+    im = im.resize((SIZE, HEIGHT))
     im = ImageEnhance.Brightness(im).enhance(0.55)
     im = im.filter(ImageFilter.GaussianBlur(1.2))
-    scrim = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    scrim = Image.new("RGBA", (SIZE, HEIGHT), (0, 0, 0, 0))
     sd = ImageDraw.Draw(scrim)
-    for y in range(SIZE):
-        if y < SIZE * 0.42:
+    for y in range(HEIGHT):
+        if y < HEIGHT * 0.42:
             a = 60
         else:
-            a = int(60 + (y - SIZE * 0.42) / (SIZE * 0.58) * 150)
+            a = int(60 + (y - HEIGHT * 0.42) / (HEIGHT * 0.58) * 150)
         sd.line([(0, y), (SIZE, y)], fill=(8, 11, 8, min(a, 220)))
     im = Image.alpha_composite(im.convert("RGBA"), scrim).convert("RGB")
     return im
@@ -200,22 +209,22 @@ def story_background(st, hue, used_images):
 # Slides
 # ----------------------------------------------------------------------------
 def cover_slide(section_name, sid, date_label):
-    img = Image.new("RGB", (SIZE, SIZE), INK)
+    img = Image.new("RGB", (SIZE, HEIGHT), INK)
     d = ImageDraw.Draw(img, "RGBA")
     hue = SECTION_HUES.get(sid, (14, 123, 82))
-    d.rectangle([0, 0, SIZE, SIZE], fill=(hue[0], hue[1], hue[2], 22))
+    d.rectangle([0, 0, SIZE, HEIGHT], fill=(hue[0], hue[1], hue[2], 22))
     d.ellipse([SIZE - 380, -140, SIZE + 120, 340], fill=(hue[0], hue[1], hue[2], 40))
-    d.ellipse([-160, SIZE - 300, 240, SIZE + 120], fill=(hue[0], hue[1], hue[2], 30))
+    d.ellipse([-160, HEIGHT - 300, 240, HEIGHT + 120], fill=(hue[0], hue[1], hue[2], 30))
     logo(d, 70, 72, 40)
-    y = 300
+    y = 360
     head_f = font(F_DISPLAY, 64)
     for line in wrap(d, f"Everything that happened in {section_name}", head_f, SIZE - 150):
         d.text((70, y), line, font=head_f, fill=PAPER); y += 78
     d.rectangle([74, y + 6, 74 + 90, y + 12], fill=hue)
     d.text((70, y + 34), f"on {date_label}", font=font(F_BODY, 36), fill=PAPER)
-    d.text((70, SIZE - 150), "Flip through to read more  \u2192",
+    d.text((70, HEIGHT - 150), "Flip through to read more  \u2192",
            font=font(F_DISPLAY, 32), fill=GREEN_BRIGHT)
-    draw_strip(d, 70, SIZE - 80, SIZE - 140, hue)
+    draw_strip(d, 70, HEIGHT - 80, SIZE - 140, hue)
     return img
 
 
@@ -244,27 +253,27 @@ def story_slide(st, section_name, sid, idx, total, used_images):
     ctx_font = font(F_BODY, 30)
     ctx_lines = wrap(d, ctx, ctx_font, SIZE - 140)[:2]
     total_h = block_h + 24 + len(ctx_lines) * 42
-    y = SIZE - 150 - total_h
+    y = HEIGHT - 150 - total_h
     for line in hl_lines:
         d.text((70, y), line, font=hl_font, fill=PAPER); y += 62
     y += 20
     for line in ctx_lines:
         d.text((70, y), line, font=ctx_font, fill=(214, 220, 210)); y += 42
-    d.text((70, SIZE - 70), f"via {st.get('source','')}  \u2713", font=font(F_MONO, 22), fill=META)
+    d.text((70, HEIGHT - 70), f"via {st.get('source','')}  \u2713", font=font(F_MONO, 22), fill=META)
     return img, used_url
 
 
 def outro_slide(sid):
     img = _branded_pattern(SECTION_HUES.get(sid, (14, 123, 82)))
     d = ImageDraw.Draw(img, "RGBA")
-    d.rectangle([0, 0, SIZE, SIZE], fill=(13, 18, 13, 150))
+    d.rectangle([0, 0, SIZE, HEIGHT], fill=(13, 18, 13, 150))
     hue = SECTION_HUES.get(sid, (14, 123, 82))
-    logo(d, 70, 360, 56)
-    d.text((70, 460), "The full brief, every day:", font=font(F_BODY, 38), fill=PAPER)
-    d.text((70, 516), "thelast24.in", font=font(F_DISPLAY, 50), fill=GREEN_BRIGHT)
-    d.text((70, 612), "Everything that mattered in India,", font=font(F_BODY, 28), fill=(214, 220, 210))
-    d.text((70, 648), "in five minutes.", font=font(F_BODY, 28), fill=(214, 220, 210))
-    draw_strip(d, 70, 880, SIZE - 140, hue)
+    logo(d, 70, 480, 56)
+    d.text((70, 580), "The full brief, every day:", font=font(F_BODY, 38), fill=PAPER)
+    d.text((70, 636), "thelast24.in", font=font(F_DISPLAY, 50), fill=GREEN_BRIGHT)
+    d.text((70, 732), "Everything that mattered in India,", font=font(F_BODY, 28), fill=(214, 220, 210))
+    d.text((70, 768), "in five minutes.", font=font(F_BODY, 28), fill=(214, 220, 210))
+    draw_strip(d, 70, HEIGHT - 130, SIZE - 140, hue)
     return img
 
 
@@ -338,6 +347,91 @@ def yesterday_sections():
     return y, order, by_section
 
 
+def _wc_font(bold=True, size=48):
+    return font("DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf", size)
+
+
+def build_worldcup_carousel(base):
+    """Generate a World Cup daily Instagram carousel: cover + scores + standings.
+    Pulls data via build_worldcup. Returns a manifest section dict or None."""
+    try:
+        import build_worldcup as bwc
+        if not bwc.ENABLED:
+            return None
+        data = bwc._fetch()
+    except Exception as exc:
+        print(f"World Cup IG: data fetch failed ({exc}); skipping.")
+        return None
+    recent, today, upcoming = bwc._matches_view(data.get("matches", []))
+    standings = bwc._compute_standings(data.get("matches", []))
+    if not recent and not standings:
+        return None
+
+    WC = (22, 135, 107)
+    sdir = os.path.join(base, "worldcup")
+    os.makedirs(sdir, exist_ok=True)
+    slides = []
+    date_label = NOW.strftime("%A, %d %B %Y")
+
+    # --- Slide 1: cover ---
+    img = Image.new("RGB", (SIZE, HEIGHT), INK); d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, SIZE, 12], fill=WC)
+    d.text((80, 440), "FIFA WORLD CUP", font=_wc_font(True, 86), fill=PAPER)
+    d.text((80, 550), "2026", font=_wc_font(True, 120), fill=GREEN_BRIGHT)
+    d.text((80, 740), "Daily scores & standings", font=_wc_font(False, 46), fill=PAPER)
+    d.text((80, 800), date_label, font=_wc_font(False, 38), fill=META)
+    d.text((80, HEIGHT - 80), "THE LAST 24  ·  times in IST", font=_wc_font(False, 30), fill=META)
+    p = os.path.join(sdir, "slide-01.png"); img.save(p); slides.append(p)
+
+    # --- Slide 2: latest scores ---
+    if recent:
+        img = Image.new("RGB", (SIZE, HEIGHT), PAPER); d = ImageDraw.Draw(img)
+        d.rectangle([0, 0, SIZE, 110], fill=WC)
+        d.text((70, 32), "LATEST RESULTS", font=_wc_font(True, 50), fill=PAPER)
+        y = 190
+        for m in recent[:6]:
+            d.text((70, y), f"{m['team1']}", font=_wc_font(True, 44), fill=INK)
+            d.text((SIZE - 70, y), m["score"], font=_wc_font(True, 52), fill=WC, anchor="ra")
+            d.text((70, y + 56), f"{m['team2']}", font=_wc_font(True, 44), fill=INK)
+            d.text((70, y + 112), m["group"], font=_wc_font(False, 28), fill=META)
+            y += 200
+            if y > HEIGHT - 160:
+                break
+        p = os.path.join(sdir, "slide-02.png"); img.save(p); slides.append(p)
+
+    # --- Slide 3+: standings (2 groups per slide) ---
+    grp_items = list(standings.items())
+    slide_no = len(slides) + 1
+    for i in range(0, min(len(grp_items), 8), 2):
+        img = Image.new("RGB", (SIZE, HEIGHT), PAPER); d = ImageDraw.Draw(img)
+        d.rectangle([0, 0, SIZE, 110], fill=WC)
+        d.text((70, 32), "GROUP STANDINGS", font=_wc_font(True, 50), fill=PAPER)
+        y = 180
+        for grp, rows in grp_items[i:i + 2]:
+            d.text((70, y), grp, font=_wc_font(True, 40), fill=WC); y += 64
+            for pos, r in enumerate(rows, 1):
+                col = INK if pos <= 2 else META
+                d.text((80, y), f"{pos}", font=_wc_font(True, 32), fill=col)
+                d.text((140, y), r["team"], font=_wc_font(pos <= 2, 34), fill=col)
+                d.text((SIZE - 80, y), str(r["Pts"]), font=_wc_font(True, 36),
+                       fill=WC if pos <= 2 else META, anchor="ra")
+                y += 52
+            y += 40
+        p = os.path.join(sdir, f"slide-{slide_no:02d}.png"); img.save(p)
+        slides.append(p); slide_no += 1
+
+    # caption
+    top = "; ".join(f"{m['team1']} {m['score']} {m['team2']}" for m in recent[:3])
+    caption = (f"FIFA World Cup 2026 — daily scores & standings ({date_label}).\n\n"
+               f"{top}\n\nFull tables and fixtures (in IST) on our World Cup page.\n\n"
+               "#FIFAWorldCup #WorldCup2026 #Football #IndiaNews #TheLast24")
+    with open(os.path.join(sdir, "caption.txt"), "w", encoding="utf-8") as f:
+        f.write(caption)
+    print(f"World Cup IG carousel: {len(slides)} slides.")
+    return {"id": "worldcup", "name": "World Cup", "slides": slides,
+            "caption_file": os.path.join(sdir, "caption.txt"), "slide_count": len(slides)}
+
+
 def main():
     date_str, order, by_section = yesterday_sections()
     if not order:
@@ -379,6 +473,15 @@ def main():
             "slide_count": len(slides),
         })
         print(f"  {sec['name']}: {len(slides)} slides")
+
+    # World Cup daily carousel (scores + standings), if the tournament is on.
+    try:
+        wc_sec = build_worldcup_carousel(base)
+        if wc_sec:
+            manifest["sections"].append(wc_sec)
+            print(f"  World Cup: {wc_sec['slide_count']} slides")
+    except Exception as exc:
+        print(f"  World Cup IG carousel skipped: {exc}")
 
     with open(os.path.join(base, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
