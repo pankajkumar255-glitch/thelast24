@@ -33,7 +33,12 @@ import requests
 
 # Reuse the relevance-first image resolver + Claude helpers from the pipeline.
 import importlib.util
-import ig_design as ig
+# ig_design (new dynamic layouts) kept available but not used by default;
+# the previous slide design is the active one. Import made safe/optional.
+try:
+    import ig_design as ig
+except Exception:
+    ig = None
 _spec = importlib.util.spec_from_file_location(
     "build_edition", os.path.join(os.path.dirname(__file__), "build_edition.py"))
 _be = importlib.util.module_from_spec(_spec)
@@ -476,38 +481,19 @@ def main():
             continue
         sdir = os.path.join(base, sid)
         os.makedirs(sdir, exist_ok=True)
-        slides = []
+        slides, used_images = [], set()
 
-        total = len(stories) + 2  # cover + stories + outro
-        # Cover — keep the established design language, lead with the section.
-        lead = stories[0].get("headline", sec["name"])
-        cover_img = ig.cover(sec["name"], sid, date_label,
-                             f"Everything that happened in {sec['name'].lower()} today",
-                             source=stories[0].get("source"))
-        p = os.path.join(sdir, "slide-01.png"); cover_img.save(p); slides.append(p)
+        cover = cover_slide(sec["name"], sid, date_label)
+        p = os.path.join(sdir, "slide-01.png"); cover.save(p); slides.append(p)
 
-        # Body slides — ALTERNATE light / dark to break monotony; weave images in.
         for i, st in enumerate(stories, start=1):
-            kicker = f"{i:02d} — {'the brief' if i == 1 else 'story ' + str(i)}"
-            heading = st.get("headline", "")
-            # points: prefer key_facts; fall back to splitting 'what'
-            pts = [f for f in (st.get("key_facts") or []) if str(f).strip()]
-            if not pts:
-                whatx = (st.get("what") or "").replace("\n", " ")
-                pts = [s.strip() + "." for s in whatx.split(". ") if s.strip()][:3]
-            src = st.get("source", "")
-            source_line = f"Source: {src}" if src else None
-            photo = st.get("image") if st.get("image", "").startswith("http") else None
-            if i % 2 == 1:
-                s_img = ig.light_slide(kicker, heading, pts, i + 1, total,
-                                       source_line=source_line, photo_url=photo)
-            else:
-                s_img = ig.dark_slide(kicker, heading, pts, i + 1, total,
-                                      source_line=source_line, photo_url=photo)
-            p = os.path.join(sdir, f"slide-{i+1:02d}.png"); s_img.save(p); slides.append(p)
+            s, used_url = story_slide(st, sec["name"], sid, i, len(stories), used_images)
+            if used_url:
+                used_images.add(used_url)
+            p = os.path.join(sdir, f"slide-{i+1:02d}.png"); s.save(p); slides.append(p)
 
-        outro_img = ig.outro(sid)
-        p = os.path.join(sdir, f"slide-{len(stories)+2:02d}.png"); outro_img.save(p); slides.append(p)
+        outro = outro_slide(sid)
+        p = os.path.join(sdir, f"slide-{len(stories)+2:02d}.png"); outro.save(p); slides.append(p)
 
         caption = build_caption(sec["name"], sid, stories, date_label)
         with open(os.path.join(sdir, "caption.txt"), "w", encoding="utf-8") as f:
