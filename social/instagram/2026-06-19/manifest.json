@@ -106,6 +106,20 @@
       ],
       "caption_file": "social/instagram/2026-06-19/entertainment/caption.txt",
       "slide_count": 7
+    },
+    {
+      "id": "worldcup",
+      "name": "World Cup",
+      "slides": [
+        "social/instagram/2026-06-19/worldcup/slide-01.png",
+        "social/instagram/2026-06-19/worldcup/slide-02.png",
+        "social/instagram/2026-06-19/worldcup/slide-03.png",
+        "social/instagram/2026-06-19/worldcup/slide-04.png",
+        "social/instagram/2026-06-19/worldcup/slide-05.png",
+        "social/instagram/2026-06-19/worldcup/slide-06.png"
+      ],
+      "caption_file": "social/instagram/2026-06-19/worldcup/caption.txt",
+      "slide_count": 6
     }
   ]
 }
