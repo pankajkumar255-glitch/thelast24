@@ -2,149 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Last 24 — Edition Engine</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--paper:#F6F7F4;--ink:#171B17;--meta:#70756D;--hairline:#E2E5DF;--green:#0E7B52;--green-soft:#E2EFE8;--vermilion:#CE3D1D;
-        --display:"Bricolage Grotesque",sans-serif;--mono:"Spline Sans Mono",monospace}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.6}
-  .wrap{max-width:860px;margin:0 auto;padding:30px 20px 80px}
-  h1{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.02em}
-  h1 span{color:var(--green)}
-  .sub{color:var(--meta);font-size:12px;margin:6px 0 26px}
-  label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--meta);margin:18px 0 6px}
-  input,textarea{width:100%;font-family:var(--mono);font-size:13px;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:8px;padding:12px}
-  textarea{min-height:240px;resize:vertical}
-  input:focus,textarea:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
-  button.run{font-family:var(--mono);font-weight:600;font-size:14px;background:var(--green);color:#fff;border:none;border-radius:8px;padding:13px 26px;margin-top:18px;cursor:pointer}
-  button.run:hover{background:#0a6443}
-  button.run:disabled{background:var(--meta);cursor:wait}
-  .status{margin-top:14px;font-size:12px;color:var(--meta)}
-  .status.err{color:var(--vermilion)}
-  .out{margin-top:34px;display:none}
-  .panel{border:1px solid var(--hairline);border-radius:10px;background:#fff;margin-bottom:20px;overflow:hidden}
-  .panel-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--hairline);background:var(--green-soft)}
-  .panel-head h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
-  .copy{font-family:var(--mono);font-size:11px;border:1px solid var(--green);color:var(--green);background:transparent;border-radius:6px;padding:5px 12px;cursor:pointer}
-  .copy:hover{background:var(--green);color:#fff}
-  pre{padding:14px;font-size:12px;white-space:pre-wrap;word-break:break-word;max-height:340px;overflow:auto}
-  .hint{font-size:11.5px;color:var(--meta);margin-top:4px}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <h1>The Last <span>24</span> — Edition Engine</h1>
-  <p class="sub">Paste the morning's raw headlines below. The engine writes the full edition (your data.js file), a LinkedIn post, a 60-second video byte script, and a WhatsApp blurb.</p>
-
-  <label for="date">Edition date</label>
-  <input id="date" placeholder="e.g. Thursday, 11 June 2026">
-
-  <label for="edn">Edition number</label>
-  <input id="edn" placeholder="e.g. 001">
-
-  <label for="raw">Raw headlines & links (one per line — paste straight from your source list)</label>
-  <textarea id="raw" placeholder="06:10 IST | India-EU trade talks enter final round | Economic Times | https://...
-11:30 IST | Japanese fund commits $2B to logistics corridors | Mint | https://...
-21:50 IST | Cricket board opens media rights bidding | ESPNcricinfo | https://...
-(Times and links optional but recommended — the engine slots stories into the 24-hour strip by time.)"></textarea>
-  <p class="hint">Tip: 10–15 headlines is the sweet spot. Mix geopolitics, trade/investment, markets, sports and trends.</p>
-
-  <button class="run" id="run">Generate today's edition</button>
-  <p class="status" id="status"></p>
-
-  <div class="out" id="out">
-    <div class="panel">
-      <div class="panel-head"><h3>data.js — replace this file on the site</h3><button class="copy" data-t="datajs">Copy</button></div>
-      <pre id="datajs"></pre>
-    </div>
-    <div class="panel">
-      <div class="panel-head"><h3>LinkedIn post</h3><button class="copy" data-t="linkedin">Copy</button></div>
-      <pre id="linkedin"></pre>
-    </div>
-    <div class="panel">
-      <div class="panel-head"><h3>60-second video byte script</h3><button class="copy" data-t="video">Copy</button></div>
-      <pre id="video"></pre>
-    </div>
-    <div class="panel">
-      <div class="panel-head"><h3>WhatsApp broadcast blurb</h3><button class="copy" data-t="whatsapp">Copy</button></div>
-      <pre id="whatsapp"></pre>
-    </div>
-  </div>
-</div>
-
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script>
 <script>
-const SYSTEM_RULES = `You are the editor of "The Last 24", a daily brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. You receive raw headlines and produce a structured edition.
-
-EDITORIAL RULES:
-- Sort stories into these sections (use only sections that have stories): national (National), world (World), business (Business & Markets), tech (Technology), sports (Sports), entertainment (Entertainment).
-- For each story write: "what" = 1-2 factual sentences on what happened, neutral, no speculation beyond the headline given. "lens" = 1 sharp sentence answering "why this matters to you" for an everyday Indian reader — concrete impact on money, daily life, or the bigger picture, never vague.
-- "hour" = integer 0-23 from the IST time given (guess a sensible hour if missing). "time" = "HH:MM IST". "breaking" = true only for genuinely major developments (max 1-2 per edition).
-- Keep source names exactly as given; keep URLs exactly as given (use "#" if missing).
-- "topline" = one sentence capturing the day's overall arc.
-- Never invent stories, numbers, or details not present in the input. If a headline is unclear, summarise conservatively.
-
-OUTPUT: Respond with ONLY a JSON object, no markdown fences, no preamble, with this exact shape:
-{
-  "date": "...", "edition": "...", "topline": "...", "lensLabel": "Why it matters",
-  "sections": [{"id":"...","name":"...","stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","source":"...","url":"...","breaking":false}]}],
-  "linkedin_post": "A LinkedIn post (150-220 words): hook line, 4-6 of the day's sharpest items each with a one-line why-it-matters, sign-off inviting people to the daily brief. Use line breaks, max 2 emoji.",
-  "video_script": "A 60-second vertical video script: [HOOK 0-5s], then [SCENE] beats covering the top 3-4 stories with on-screen text suggestions in (parentheses), then [CTA]. Conversational Indian-English tone.",
-  "whatsapp_blurb": "A WhatsApp broadcast version: greeting, 5 bullet items with → takeaways, under 120 words, 1 emoji max."
-}`;
-
-const $ = id => document.getElementById(id);
-
-$('run').addEventListener('click', async () => {
-  const raw = $('raw').value.trim();
-  if(!raw){ $('status').textContent = 'Paste some headlines first.'; $('status').className='status err'; return; }
-  $('run').disabled = true;
-  $('status').className='status';
-  $('status').textContent = 'Writing today\'s edition… (15–30 seconds)';
-
-  const userMsg = 'Edition date: ' + ($('date').value || 'today') +
-                  '\nEdition number: ' + ($('edn').value || '—') +
-                  '\n\nRaw headlines from the last 24 hours:\n' + raw;
-  try{
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        model:'claude-sonnet-4-6',
-        max_tokens:1000,
-        system: SYSTEM_RULES,
-        messages:[{role:'user', content:userMsg}]
-      })
-    });
-    const data = await res.json();
-    const text = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n');
-    const clean = text.replace(/```json|```/g,'').trim();
-    const ed = JSON.parse(clean);
-
-    const briefObj = { date: ed.date, edition: ed.edition, topline: ed.topline, sections: ed.sections };
-    $('datajs').textContent = '// The Last 24 — edition generated ' + new Date().toLocaleString() +
-      '\nwindow.BRIEF = ' + JSON.stringify(briefObj, null, 2) + ';\n';
-    $('linkedin').textContent = ed.linkedin_post || '—';
-    $('video').textContent = ed.video_script || '—';
-    $('whatsapp').textContent = ed.whatsapp_blurb || '—';
-    $('out').style.display = 'block';
-    $('status').textContent = 'Done. Copy data.js into your site folder, commit, and you\'re live.';
-  }catch(err){
-    console.error(err);
-    $('status').className='status err';
-    $('status').textContent = 'Something went wrong generating the edition — try again, or with fewer headlines. (' + err.message + ')';
-  }finally{
-    $('run').disabled = false;
-  }
-});
-
-document.querySelectorAll('.copy').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const txt = $(btn.dataset.t).textContent;
-    navigator.clipboard.writeText(txt).then(()=>{ btn.textContent='Copied ✓'; setTimeout(()=>btn.textContent='Copy',1500); });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Default everything to DENIED until the visitor consents (GDPR-safe).
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
   });
-});
+  gtag('js', new Date());
+  gtag('config', 'G-B1R3X3GKJ3');
+  // If the visitor already accepted in a previous visit, honour it immediately.
+  try {
+    if (localStorage.getItem('cookie-consent') === 'granted') {
+      gtag('consent', 'update', {
+        'ad_storage':'granted','ad_user_data':'granted',
+        'ad_personalization':'granted','analytics_storage':'granted'
+      });
+    }
+  } catch(e) {}
 </script>
-</body>
-</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — The Last 24</title>
+<meta name="description" content="Reach The Last 24 — corrections, partnerships, advertising and feedback.">
+<link rel="canonical" href="https://thelast24.in/contact.html">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0E130E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+:root{--paper:#F7F7F5;--ink:#111511;--ink-soft:#454B43;--meta:#73786F;--hairline:#E6E8E2;--dark:#0E130E;--green:#0E7B52;--green-bright:#3BCB8D;
+--display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:660px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--dark)}
+.top{font-family:var(--mono);font-size:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:660px;margin:0 auto}
+.top a{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:22px}.top a span{color:var(--green-bright)}
+.top .pg{color:#939D8F;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,6vw,42px);letter-spacing:-.02em;line-height:1.08;margin:38px 0 18px}
+h2{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em;margin:30px 0 10px}
+p,li{font-size:16px;color:var(--ink-soft);margin-bottom:14px}
+ul{padding-left:22px;margin-bottom:14px} li{margin-bottom:6px}
+.lede{font-size:18.5px;color:var(--ink)}
+.founder{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:18px 20px;margin:24px 0}
+.founder .av{width:52px;height:52px;border-radius:50%;background:var(--dark);color:var(--green-bright);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:20px;flex-shrink:0}
+.founder p{margin:0;font-size:14.5px}
+.founder b{color:var(--ink)}
+a{color:var(--green)}
+.note{font-family:var(--mono);font-size:12px;color:var(--meta);background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:14px 16px;margin:20px 0}
+footer{background:var(--dark);color:#939D8F;margin-top:54px;padding:28px 0 64px}
+footer p{font-size:12px;line-height:1.8}
+footer a{color:var(--green-bright);text-decoration:none;margin-right:14px}
+.ck{position:fixed;left:16px;right:16px;bottom:16px;max-width:480px;background:#fff;border:1px solid var(--hairline);border-radius:14px;box-shadow:0 14px 40px rgba(14,19,14,.18);padding:16px 18px;z-index:60;font-size:13px;color:var(--ink-soft)}
+.ck .b{display:flex;gap:8px;margin-top:11px}
+.ck button{font-family:var(--body);font-weight:700;font-size:12.5px;border-radius:9px;padding:9px 14px;cursor:pointer;border:1px solid var(--hairline);background:#fff;color:var(--ink)}
+.ck button.ok{background:var(--dark);border-color:var(--dark);color:#fff}
+</style></head>
+<body>
+<div class="topbar"><div class="top"><a href="/">The Last <span>24</span></a><span class="pg">Contact</span></div></div>
+<div class="wrap">
+
+<h1>Get in touch.</h1>
+<p class="lede">Corrections get priority. Everything else gets answered too.</p>
+<h2>Corrections</h2>
+<p>Spotted something wrong in a brief? Email us with the story link and what's inaccurate — corrections are reviewed first and fixed fast: <a href="mailto:support@thelast24.in?subject=Correction">support@thelast24.in</a></p>
+<h2>Advertising &amp; sponsorships</h2>
+<p>We offer ad placements on the site and sponsorship slots in our weekly preference-based newsletter: <a href="mailto:support@thelast24.in?subject=Advertising">support@thelast24.in</a></p>
+<h2>Everything else</h2>
+<p>Feedback, partnerships, press: <a href="mailto:support@thelast24.in">support@thelast24.in</a></p>
+<p class="note">All mail goes to support@thelast24.in — corrections arrive pre-tagged with a subject line so they jump the queue.</p>
+</div>
+<footer><div class="wrap"><p><a href="/">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></p>
+<p>The Last 24 curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
+<div class="ck" id="ck" hidden>
+  We use cookies to remember your preferences and measure readership; with your consent we may also use them for advertising in future. See our <a href="privacy.html">privacy policy</a>.
+  <div class="b"><button class="ok" id="ck-ok">Accept all</button><button id="ck-no">Essential only</button></div>
+</div>
+<script>
+(function(){
+  var S={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  var ck=document.getElementById('ck');
+  function done(v){S.set('cookie-consent',v);ck.hidden=true;window.__consentDecided=true;document.dispatchEvent(new Event('consent-done'));
+    /* CONSENT HOOK: if v==='granted', load analytics/ads scripts here */}
+  if(!S.get('cookie-consent')){ck.hidden=false;}else{window.__consentDecided=true;}
+  document.getElementById('ck-ok').addEventListener('click',function(){done('granted')});
+  document.getElementById('ck-no').addEventListener('click',function(){done('denied')});
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+}
+</script>
+</body></html>
