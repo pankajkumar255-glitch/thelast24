@@ -134,9 +134,15 @@ EDITORIAL RULES:
 - Keep only the strongest stories up to the limit given; drop weak/duplicate ones. Treat two items as duplicates if they report the SAME underlying event even when the headlines are worded differently — keep only the single best one.
 - WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company" or "two platforms".
 - CARRY THE CORE FACTS. If the story has specific concrete details that are its whole point, INCLUDE them rather than gesturing at them. Examples: a squad/team announcement -> name the key players actually picked; a budget/scheme -> the amount and who it's for; a match result -> the score and standout performers; an appointment -> who, to what post; a policy -> the specific change. A summary that says "the squad was announced" without naming anyone is a FAILURE.
-- "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): the development precisely, the key concrete details, one line of immediate significance. Strictly from the headline plus universally known background.
+- "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): lead with the development itself and its key concrete details, then one line of immediate significance. Do NOT open with "According to" or a publisher name — state the news directly. Strictly from the headline plus universally known background.
 - "lens" = 1 sharp, SPECIFIC sentence: why this exact story matters to an everyday Indian reader — money, daily life, or the bigger picture. It must be concrete to THIS story, not a generic platitude. If you cannot write a genuinely specific reason, write a plainer factual significance instead of a vague one. Never filler like "this is an important development".
-- Structured summary (concise, fact-rich, strictly grounded): write a single flowing "article" of 3-4 short paragraphs (~180-240 words total) that reads as one continuous brief — NOT divided into labelled sections. Open with what happened (attributing the publisher by name, e.g. "The Hindu reports..."), weave in the concrete core facts (names, numbers, the actual squad/figures/decision), give the essential widely-known context, and close with why it matters to an everyday Indian reader. Strictly the headline plus universally-known facts; NEVER invent quotes, statistics, numbers, or names. Put this in the "article" field as plain text with paragraphs separated by blank lines.
+- Editorial article (write like a news editor, NOT a summariser): write a polished "article" of 4-5 short paragraphs (~200-280 words) that reads like real journalism. CRITICAL RULES:
+  * LEAD WITH THE NEWS ITSELF, not with attribution. Open with the actual development and its hardest, most concrete facts — exactly as a front-page lede would. NEVER begin with "According to...", "X reports...", "In a report by...", or "As per...". The opening sentence must state what actually happened, with specifics.
+  * DELIVER THE DETAILS, don't gesture at them. If a squad was named, name the actual players in the squad. If a match finished, give the score, scorers, and key moments as a match report would. If a budget/scheme was announced, state the actual amounts and beneficiaries. If a verdict came down, state what was actually ruled. The reader should finish knowing the real specifics, not just that an announcement happened.
+  * PARAGRAPH IT LIKE AN EDITOR: a strong factual lede paragraph; then 2-3 body paragraphs developing the detail, context and reactions; a closing paragraph on what it means or what comes next. Each paragraph 2-4 sentences, flowing prose.
+  * Attribution belongs woven in naturally LATER (e.g. "The selectors confirmed..." or a mid-article "as reported by The Hindu"), or simply via the source link — never as the opening crutch.
+  * GROUNDING: use the headline, the provided context, and widely-established facts. Be specific and detailed, but NEVER invent quotes, exact statistics, scorelines, or full name-lists you don't actually have — if a precise detail isn't available, write authoritatively around what IS known rather than fabricating. Accuracy outranks completeness.
+  Put this in the "article" field as plain text, paragraphs separated by blank lines.
 - "key_facts" = an array of 2-5 short, concrete bullet strings capturing the HARD FACTS of the story that a reader would want at a glance — the actual specifics, not generalities. For a squad: the key players named. For a scheme/budget: the amount and beneficiaries. For a result: the score and top performers. For an appointment: who and to what role. For a deal: the parties and value. Each bullet under ~12 words, factual, drawn only from the headline + well-known facts. If the story genuinely has no hard specifics, use an empty array [].
 - "image_subject" = the SINGLE most photographable real subject of the story for an encyclopedia image lookup — a real person's full name, a place, a landmark, or an institution exactly as it would title a Wikipedia article (e.g. "Narendra Modi", "Supreme Court of India", "Wankhede Stadium", "Reserve Bank of India", "Rohit Sharma"). Use "" (empty) if the story has no specific real named subject (pure concept/abstract stories).
 - "image_query" = a 3-5 word search phrase for a stock-photo library capturing the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think what a relevant photo would show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers"; a bullet-train story -> "high speed train railway". Prefer Indian/contextual terms. Never real people or brand names.
@@ -1174,17 +1180,26 @@ def build_tweet_queue(edition, max_per_day=10):
 
 
 def generate_tweet(st, section_name, link):
-    """One concise, free-tier tweet (well under 280 incl. link) with 2-3
-    relevant hashtags. Factual, punchy, never sensational. Returns None on fail."""
+    """One opinion-style tweet (well under 280 incl. link) with 2-3 relevant
+    hashtags. Reads like a sharp person sharing their take. Returns None on fail."""
     sys_prompt = (
-        "You write tweets for 'The Last 24', a verified Indian news brief. Voice: "
-        "a sharp, trustworthy reporter — punchy, factual, never clickbait or "
-        "sensational. Write ONE short tweet for the story below.\n"
-        "HARD rules: the tweet TEXT must be UNDER 180 characters (a link is added "
-        "separately and eats ~23 more). Be tight — lead with the news, name the key "
-        "real people/places/figures, skip filler. End with exactly 2-3 relevant "
-        "hashtags (always include #IndiaNews, plus 1-2 topical ones like #Cricket, "
-        "#RBI, #UPSC, #Markets as fits). No 'BREAKING' unless it truly is. No emojis. "
+        "You write tweets for 'The Last 24', a verified Indian news brief — but "
+        "these tweets read like a SHARP, OPINIONATED PERSON sharing their take, "
+        "not a dry news bulletin. Think of a clued-in commentator reacting to the "
+        "news with a point of view: a reaction, an angle, a 'here's what this "
+        "really means', a bit of wit or a pointed observation. Human and "
+        "conversational, never a press-release headline.\n"
+        "Write ONE tweet for the story below.\n"
+        "STYLE: lead with YOUR take or a hook, not just the facts. You can react "
+        "('Big if true', 'This changes the math for...', 'Finally.'), pose the "
+        "sharp question everyone's thinking, or point out what others are missing. "
+        "Still grounded in the real story — name the real people/figures — but the "
+        "FRAMING is opinion/commentary, not a wire report. Light wit is welcome; "
+        "avoid being mean, partisan, or sensational.\n"
+        "HARD rules: tweet TEXT must be UNDER 200 characters (a link is added "
+        "separately, ~23 chars). End with exactly 2-3 relevant hashtags (include "
+        "#IndiaNews plus 1-2 topical like #Cricket, #RBI, #Markets as fits). No "
+        "emojis. Don't fabricate facts.\n"
         'Respond with ONLY this JSON: {"tweet":"...tweet text incl hashtags..."}')
     user = (f"Section: {section_name}\nHeadline: {st['headline']}\n"
             f"Summary: {st.get('what','')}\nWhy it matters: {st.get('lens','')}")
@@ -1193,15 +1208,15 @@ def generate_tweet(st, section_name, link):
         text = str(data.get("tweet", "")).strip()
         if not text:
             return None
-        # Free tier = 280 chars; X counts any link as 23. Keep text <= 180 so
-        # text + space + link stays comfortably within limit. If trimming is
-        # needed, preserve the trailing hashtags (they carry reach).
-        if len(text) > 180:
+        # Free tier = 280 chars; X counts any link as 23. Keep text <= 200 so
+        # text + space + link stays within limit. If trimming is needed,
+        # preserve the trailing hashtags (they carry reach).
+        if len(text) > 200:
             import re as _re
             tags = _re.findall(r"#\w+", text)
             tag_str = (" " + " ".join(tags[:3])) if tags else ""
             body = _re.sub(r"\s*#\w+\s*$", "", text).strip()
-            budget = 180 - len(tag_str) - 1
+            budget = 200 - len(tag_str) - 1
             if len(body) > budget:
                 body = body[:budget].rsplit(" ", 1)[0].rstrip(",;:") + "…"
             text = body + tag_str
