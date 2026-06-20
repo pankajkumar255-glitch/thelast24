@@ -756,7 +756,9 @@ def masthead_css():
   .brand-meta{display:none}
   .brand-row{flex-wrap:wrap;gap:10px}
   .brand-side{width:100%;justify-content:flex-start}
-  .m-ca,.m-link{font-size:11px;padding:6px 12px}
+  .brand-nav{width:100%;overflow-x:auto;flex-wrap:nowrap;gap:8px;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .brand-nav::-webkit-scrollbar{display:none}
+  .m-ca,.m-link{font-size:11px;padding:6px 11px;flex-shrink:0}
 }
 """
 
@@ -1353,9 +1355,18 @@ def main():
     # World Cup standings/scores/fixtures page.
     try:
         import build_worldcup as bwc
-        bwc.build_worldcup(write_page=True)
+        result = bwc.build_worldcup(write_page=True)
+        if result is None:
+            print("WARNING: World Cup page not written (fetch failed or disabled). "
+                  "Check WORLDCUP_ENABLED and network access to raw.githubusercontent.com.")
+        elif not os.path.exists("worldcup.html"):
+            print("WARNING: build_worldcup ran but worldcup.html is missing.")
+        else:
+            print("World Cup page written OK.")
     except Exception as exc:
-        print(f"World Cup page step skipped: {exc}")
+        import traceback
+        print(f"World Cup page step FAILED: {exc}")
+        traceback.print_exc()
     # Current Affairs (UPSC/IAS) — re-curate the same headlines, exam-framed.
     try:
         import build_current_affairs as bca
