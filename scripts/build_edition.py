@@ -231,6 +231,30 @@ def clean_stories(items, section_name):
         out.append(st)
     return out
 
+def _carry_forward_sections(needed_ids):
+    """For each section id in needed_ids, find its most recent stories from the
+    saved editions (newest first). Returns {sid: [stories]}. Used so a section
+    that pulled nothing this run still appears, populated with its last-known
+    stories, rather than disappearing from the homepage."""
+    import glob
+    found = {}
+    for path in sorted(glob.glob("editions/*.json"), reverse=True):
+        if len(found) >= len(needed_ids):
+            break
+        try:
+            with open(path, encoding="utf-8") as f:
+                ed = json.load(f)
+        except Exception:
+            continue
+        for sec in ed.get("sections", []):
+            sid = sec.get("id")
+            if sid in needed_ids and sid not in found:
+                sts = sec.get("stories", [])
+                if sts:
+                    found[sid] = sts[:5]
+    return found
+
+
 def write_edition(raw):
     """One small Claude call per section — short JSON outputs parse reliably."""
     backfill = int(os.environ.get("BACKFILL_DAYS", "0") or 0) > 0
@@ -285,6 +309,32 @@ def write_edition(raw):
 
     if not sections:
         sys.exit("Every section failed — no edition produced this run.")
+
+    # Guarantee all seven sections always appear on the homepage, in order.
+    # If a section pulled nothing this run, carry forward its most recent
+    # stories from previous editions so it never vanishes (e.g. Tech/Entertainment
+    # disappearing on a quiet run). A section is only ever empty if it has never
+    # had stories at all.
+    present = {s["id"] for s in sections}
+    missing = [(name, sid) for name, sid in SECTION_IDS.items() if sid not in present]
+    if missing:
+        carry = _carry_forward_sections({sid for _, sid in missing})
+        for name, sid in missing:
+            cf = carry.get(sid)
+            if cf:
+                print(f"  -> {name}: no fresh stories; carried forward "
+                      f"{len(cf)} from a recent edition.")
+                for _st in cf:
+                    _st["carried"] = True
+                sections.append({"id": sid, "name": name, "stories": cf,
+                                 "carried": True})
+            else:
+                print(f"  -> {name}: no fresh or archived stories; kept empty.")
+                sections.append({"id": sid, "name": name, "stories": []})
+
+    # Re-order sections to the canonical homepage order.
+    order = {sid: i for i, (_, sid) in enumerate(SECTION_IDS.items())}
+    sections.sort(key=lambda s: order.get(s["id"], 99))
 
     # Topline: tiny call, with a clean natural-language fallback (never the clumsy count line).
     heads = [st["headline"] for sec in sections for st in sec["stories"]][:10]
@@ -644,6 +694,13 @@ def resolve_image(st, used=None):
     3) Editorial art (rendered at display time) — silent last resort only.
     No AI generation of real people/events."""
     used = used or set()
+    # Carried-forward stories already carry a resolved image but have had their
+    # query fields stripped — keep their existing image rather than re-resolving
+    # (which would find nothing and blank the card).
+    if st.get("carried") and st.get("image"):
+        return {"image": st["image"], "image_credit": st.get("image_credit", ""),
+                "image_credit_url": st.get("image_credit_url", ""),
+                "image_kind": st.get("image_kind", "photo")}
     subject = st.get("image_subject")
     query = st.get("image_query") or st.get("headline", "")
     # Tier 1: real photo of the actual named subject.
