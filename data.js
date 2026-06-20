@@ -124,10 +124,10 @@ window.BRIEF = {
           "hour": 20,
           "time": "20:08 IST",
           "headline": "Iran Negotiators Head to Switzerland for Peace Talks with US",
-          "what": "Iranian negotiators have departed for Switzerland to hold discussions with the United States aimed at reaching a peace deal. The talks represent a significant diplomatic development as the two countries attempt to resolve long-standing tensions. Switzerland, a traditional neutral ground for international diplomacy, is hosting the negotiations. The outcome could have major implications for regional stability and global energy markets.",
-          "lens": "A US-Iran deal could ease global oil supply tensions, directly affecting petrol prices in India, which imports significant crude from the region.",
+          "what": "Iranian negotiators have departed for Switzerland to engage in discussions with the United States over a potential peace deal, marking a significant diplomatic development in the long-running standoff over Iran's nuclear programme. The talks come amid intense pressure from Washington on Tehran, including sanctions and threats of military action. Switzerland, a neutral country, is serving as the venue for these high-stakes negotiations.",
+          "lens": "A US-Iran deal could directly affect global oil prices and, in turn, fuel and inflation costs for everyday Indians.",
           "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdWVmemZWOTBSM09uTmo2T21GTDRKYXFONy1UTDZTdktZWUhEMk9hLUI1c0RzQ2pHYV9sTnZySHdmeTFWUXpsd2VKdXZUNWZxaWdhZGU4RC1TbkFraFJtOTVmQnA4cHFJLW9xUHlHTlJvMF9TdElFVk9WZ0dxYWhYZ2Fib0lFc1VzTlF6UmZnZE1ocEpyMUNlY2RabGE5S1FwdVJMQ0liejZFZU9fOVHSAbYBQVVfeXFMTXpVVmdPUUpJNjhMZHpVekFyaGVvWjJWWUJxVlhkbVJTVGs2VEI0azYzejFmR0QwTkxDR0t0QUYyYmFpVm1ZaHJfTjBOQ05rWUR3SnAzSjZFNUFTMUh5WVFONklGTmxYWUx4WUlJdFQySmszWVM0dm5VczZJWU9hZ1JxSEtHam82aUdfVzk1YWdRNklnYy1ZNHotYnhCbE81SG1xcUMxZXBSQkZUak14UmFqS1ZEUXc",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNelVWZ09RSkk2OExkelV6QXJoZW9aMlZZQnFWWGRtUlNUazZUQjRrNjN6MWZHRDBOTENHS3RBRjJiYWlWbVlocl9OME5DTmtZRHdKcDNKNkU1QVMxSHlZUU42SUZObFhZTHhZSUl0VDJKazNZUzR2blVzNklZT2FnUnFIS0dqbzZpR19XOTVhZ1E2SWdjLVk0ei1ieEJsTzVIbXFxQzFlcFJCRlRqTXhSYWpLVkRRd9IBtgFBVV95cUxNelVWZ09RSkk2OExkelV6QXJoZW9aMlZZQnFWWGRtUlNUazZUQjRrNjN6MWZHRDBOTENHS3RBRjJiYWlWbVlocl9OME5DTmtZRHdKcDNKNkU1QVMxSHlZUU42SUZObFhZTHhZSUl0VDJKazNZUzR2blVzNklZT2FnUnFIS0dqbzZpR19XOTVhZ1E2SWdjLVk0ei1ieEJsTzVIbXFxQzFlcFJCRlRqTXhSYWpLVkRRdw?oc=5",
           "breaking": false,
           "slug": "20260620-iran-negotiators-head-to-switzerland-for-peace-talks-with-us",
           "image": "https://pixabay.com/get/ga4e0f4506f6cbea02574a6f145bc67f2aea5059bb8eb6b801e6017756a1597aa8f5dd0fc058a49b92c3b2574e5e5179f67898d755a10be03d3749866f6f4df0c_1280.jpg",
@@ -372,7 +372,7 @@ window.BRIEF = {
           "what": "The Times of India reports that tech giants Amazon, Google, and Microsoft have acknowledged Anthropic's lead in frontier AI development, yet none appear particularly alarmed. The piece examines the strategic logic behind this apparent complacency: all three are either investors in Anthropic or have equivalent large language models of their own, meaning Anthropic's advances still benefit their cloud and investment ecosystems. The dynamic reveals a complex web of competition and cooperation reshaping the global AI industry.",
           "lens": "For Indian developers and businesses choosing between AWS, Azure, and Google Cloud for AI services, understanding that these giants see Anthropic's lead as complementary rather than threatening explains why all three platforms are likely to keep offering — and improving — access to frontier AI tools.",
           "source": "The Times of India",
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUEFOX3ZnVGVQMXUxMlN1cjFkV0FCM1BqMG1kR0pOUnBVN2ZkaEcwNlhqa1l0UlBjRHZ3bkJ0dEJqN2tldTJiN3MtSjZrZUZMalh4ZjRDRmd2WWxVLTVnbXNIQ0RYQjFwcnRxNjB1OXozdk1fbnhFTVNCMW01Z3RLRERMSjdMS2VNOVlZNWdkejdodnFtaEVCQjl2ZHEyQXdMMmxhNlFMcGFmWEZpNU95ZmlNUC1uVXNjY19HNXRqV3U2VUVMT3FFQXN1ZkZvZm9vWmo4dy1qOXlBTG95cWxnOUs2RXhEejZQMm9rdjI2YjV6LWZXd01sMNIB_gFBVV95cUxPWEoyODlxTE9VbWhnR0xHNTZXSmtjM2diYWtmbm9oSWFlM3FTOEEwZFNMemRiazBEeHViNnZ6TmJpRVhDY0Z5N25YZEI2eXpkRTV1anZ0M095Vmp3OTZMWi1WQWxyU2lWUEp4UVRLREZaVHN0OUhMTTRYWWtvSzVrUnI1UzU0LXRQRUhZbGk3U0k0dXBJalQ4aHFVci05Z2hyQl9UbmFULUlub1AySTRjMDZNS3hWOWFsWExZbHJtMk9EdU1pUUxzMGZYVnlkaTZpOWVjY2VFaWhsR0cxeWhlYlBoQ2lMTTVYVlp0WkFxNE9ZZU5zbGc4bzB5UDBCZw",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUEFOX3ZnVGVQMXUxMlN1cjFkV0FCM1BqMG1kR0pOUnBVN2ZkaEcwNlhqa1l0UlBjRHZ3bkJ0dEJqN2tldTJiN3MtSjZrZUZMalh4ZjRDRmd2WWxVLTVnbXNIQ0RYQjFwcnRxNjB1OXozdk1fbnhFTVNCMW01Z3RLRERMSjdMS2VNOVlZNWdkejdodnFtaEVCQjl2ZHEyQXdMMmxhNlFMcGFmWEZpNU95ZmlNUC1uVXNjY19HNXRqV3U2VUVMT3FFQXN1ZkZvZm9vWmo4dy1qOXlBTG95cWxnOUs2RXhEejZQMm9rdjI2YjV6LWZXd01sMNIB_gFBVV95cUxPWEoyODlxTE9VbWhnR0xHNTZXSmtjM2diYWtmbm9oSWFlM3FTOEEwZFNMemRiazBEeHViNnZ6TmJpRVhDY0Z5N25ZZEI2eXpkRTV1anZ0M095Vmp3OTZMWi1WQWxyU2lWUEp4UVRLREZaVHN0OUhMTTRYWWtvSzVrUnI1UzU0LXRQRUhZbGk3U0k0dXBJalQ4aHFVci05Z2hyQl9UbmFULUlub1AySTRjMDZNS3hWOWFsWExZbHJtMk9EdU1pUUxzMGZYVnlkaTZpOWVjY2VFaWhsR0cxeWhlYlBoQ2lMTTVYVlp0WkFxNE9ZZU5zbGc4bzB5UDBCZw",
           "breaking": false,
           "slug": "20260620-amazon-google-and-microsoft-agree-anthropic-is-ahead-but-why-they-are",
           "image": "https://images.pexels.com/photos/11022633/pexels-photo-11022633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -407,8 +407,8 @@ window.BRIEF = {
           "slug": "20260620-trump-dismisses-security-concerns-over-anthropic-calls-it-no-threat",
           "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg",
           "image_kind": "photo",
-          "image_credit": "Daniel Torok / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Donald_Trump"
+          "image_credit": "thekurupi",
+          "image_credit_url": "https://pixabay.com/users/thekurupi-3657708/"
         }
       ]
     },
@@ -489,8 +489,8 @@ window.BRIEF = {
           "slug": "20260620-india-women-face-south-africa-in-t20-world-cup-2026-clash",
           "image": "https://images.pexels.com/photos/36230651/pexels-photo-36230651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Shlok",
-          "image_credit_url": "https://www.pexels.com/@shlok-230964119"
+          "image_credit": "Anil  Sharma",
+          "image_credit_url": "https://www.pexels.com/@shootsaga"
         }
       ]
     },
