@@ -257,11 +257,12 @@ a{color:inherit}
 .panel.show{display:block}
 .section-title{font-family:var(--display);font-weight:800;font-size:18px;margin:22px 0 12px;letter-spacing:-.01em}
 /* scores */
-.match{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:13px 16px;margin-bottom:9px}
-.match .teams{display:flex;flex-direction:column;gap:3px;font-size:15px}
-.match .vs{font-family:var(--mono);font-size:11px;color:var(--meta)}
-.match .sc{font-family:var(--display);font-weight:800;font-size:22px;color:var(--wc);min-width:54px;text-align:center}
-.match .meta{font-family:var(--mono);font-size:11px;color:var(--meta);text-align:right;min-width:120px}
+.match{display:grid;grid-template-columns:1fr 64px 130px;align-items:center;gap:14px;background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:14px 16px;margin-bottom:9px}
+.match .teams{display:flex;flex-direction:column;gap:4px;font-size:15px;font-weight:600;min-width:0}
+.match .teams span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.match .vs{font-family:var(--mono);font-size:11px;color:var(--meta);font-weight:400}
+.match .sc{font-family:var(--display);font-weight:800;font-size:22px;color:var(--wc);text-align:center}
+.match .meta{font-family:var(--mono);font-size:11px;color:var(--meta);text-align:right;line-height:1.4}
 .match.up .sc{color:var(--meta);font-size:13px;font-family:var(--mono);font-weight:600}
 /* standings table */
 .grp{margin-bottom:26px}
@@ -278,7 +279,7 @@ td.pts{font-weight:800;color:var(--wc)}
 .empty{text-align:center;color:var(--meta);padding:50px 0;font-family:var(--mono);font-size:13px}
 .note{font-family:var(--mono);font-size:11px;color:var(--meta);margin-top:8px}
 footer{border-top:1px solid var(--hairline);padding:28px 0;font-family:var(--mono);font-size:12px;color:var(--meta);text-align:center}
-@media(max-width:600px){.wrap{padding:0 14px}.match .meta{min-width:0;font-size:10px}th,td{padding:7px 5px;font-size:12.5px}}
+@media(max-width:600px){.wrap{padding:0 14px}.match{grid-template-columns:1fr 50px 92px;gap:8px;padding:12px 13px}.match .teams{font-size:13.5px}.match .sc{font-size:19px}.match .meta{font-size:9.5px}th,td{padding:7px 5px;font-size:12.5px}}
 </style>
 </head>
 <body>
