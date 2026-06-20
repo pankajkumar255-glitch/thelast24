@@ -832,7 +832,8 @@ def article_page(story, section, edition):
         facts_box = f'<div class="facts"><h2>Key facts</h2><ul>{items}</ul></div>'
     src_name = e(story.get("source", "the original source"))
     src_url = e(story.get("url", "#"))
-    _mhead = masthead_html([("Trending", "/trending.html", False),
+    _mhead = masthead_html([("World Cup", "/worldcup.html", False),
+                            ("Trending", "/trending.html", False),
                             ("Current Affairs", "/current-affairs.html", True),
                             ("Archive", "/archive.html", False)],
                            date_label=edition.get("date", ""))
@@ -840,7 +841,7 @@ def article_page(story, section, edition):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{e(story['headline'])} — {SITE_NAME}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{SITE_URL}/articles/{story['slug']}.html">
@@ -1016,14 +1017,15 @@ def build_archive():
     cat_opts = "".join(f'<option value="{c}">{e(n)}</option>' for c, n in sorted(cats.items(), key=lambda x: x[1]))
     src_opts = "".join(f'<option value="{e(s)}">{e(s)}</option>' for s in sorted(x for x in sources if x))
     total = len(seen)
-    _arch_mhead = masthead_html([("Trending", "/trending.html", False),
+    _arch_mhead = masthead_html([("World Cup", "/worldcup.html", False),
+                            ("Trending", "/trending.html", False),
                                  ("Current Affairs", "/current-affairs.html", True),
                                  ("Home", "/", False)])
     _arch_mcss = masthead_css()
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Archive — {SITE_NAME}</title>
 <meta name="description" content="Browse every story published by {SITE_NAME}, by date, category and source. All stories from verified publishers, each linked to the original reporting.">
 <link rel="canonical" href="{SITE_URL}/archive.html">
@@ -1253,7 +1255,7 @@ def build_trending(edition):
 TRENDING_PAGE = """<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trending in India — The Last 24</title>
 <meta name="description" content="What's trending across India right now — the stories rising to the top from verified publishers, updated through the day.">
@@ -1330,10 +1332,30 @@ def main():
     raw = collect_headlines()
     print(f"Collected {len(raw.splitlines())} headlines.")
     edition = write_edition(raw)
+
+    # World Cup 2026: inject the daily scores story at the front of the Sports
+    # section (so it's the first carousel card), and build the dedicated page.
+    try:
+        import build_worldcup as bwc
+        wc_story = bwc.daily_scores_story()
+        if wc_story:
+            for sec in edition["sections"]:
+                if sec["id"] == "sports":
+                    sec["stories"].insert(0, wc_story)
+                    break
+    except Exception as exc:
+        print(f"World Cup Sports-card step skipped: {exc}")
+
     write_outputs(edition)
     build_archive()
     build_trending(edition)
     build_tweet_queue(edition, max_per_day=10)
+    # World Cup standings/scores/fixtures page.
+    try:
+        import build_worldcup as bwc
+        bwc.build_worldcup(write_page=True)
+    except Exception as exc:
+        print(f"World Cup page step skipped: {exc}")
     # Current Affairs (UPSC/IAS) — re-curate the same headlines, exam-framed.
     try:
         import build_current_affairs as bca
