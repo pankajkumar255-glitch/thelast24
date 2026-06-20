@@ -250,6 +250,10 @@ def _carry_forward_sections(needed_ids):
             sid = sec.get("id")
             if sid in needed_ids and sid not in found:
                 sts = sec.get("stories", [])
+                # Never carry forward a World Cup scores card — it's regenerated
+                # fresh each run; carrying it would duplicate/stale it.
+                sts = [s for s in sts if not s.get("worldcup")
+                       and "World Cup 2026: latest scores" not in s.get("headline", "")]
                 if sts:
                     found[sid] = sts[:5]
     return found
@@ -1265,7 +1269,7 @@ TRENDING_PAGE = """<!DOCTYPE html>
 <link rel="icon" href="favicon.ico">
 <style>
 :root{--paper:#F7F6F2;--card:#FFFFFF;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--dark:#0C110C;--green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;
---display:Georgia,'Times New Roman',serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--mw:920px}
+--display:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--mw:920px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:920px;margin:0 auto;padding:0 20px}
@@ -1335,16 +1339,20 @@ def main():
     print(f"Collected {len(raw.splitlines())} headlines.")
     edition = write_edition(raw)
 
-    # World Cup 2026: inject the daily scores story at the front of the Sports
-    # section (so it's the first carousel card), and build the dedicated page.
+    # World Cup 2026: inject the daily scores story as the FIRST Sports card.
+    # Idempotent — strip any existing World Cup card(s) first (from carry-forward
+    # or a prior run) so we never accumulate duplicates, then insert exactly one.
     try:
         import build_worldcup as bwc
         wc_story = bwc.daily_scores_story()
-        if wc_story:
-            for sec in edition["sections"]:
-                if sec["id"] == "sports":
+        for sec in edition["sections"]:
+            if sec["id"] == "sports":
+                sec["stories"] = [s for s in sec["stories"]
+                                  if not s.get("worldcup")
+                                  and "World Cup 2026: latest scores" not in s.get("headline", "")]
+                if wc_story:
                     sec["stories"].insert(0, wc_story)
-                    break
+                break
     except Exception as exc:
         print(f"World Cup Sports-card step skipped: {exc}")
 
