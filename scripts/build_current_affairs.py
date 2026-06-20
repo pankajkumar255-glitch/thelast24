@@ -161,7 +161,7 @@ def current_affairs_page():
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Current Affairs for UPSC & IAS — The Last 24</title>
 <meta name="description" content="Daily exam-relevant current affairs for UPSC, IAS and State PSC aspirants — polity, economy, international relations, schemes, science & tech, environment and more. Updated through the day. Verified sources only.">
@@ -232,7 +232,7 @@ def current_affairs_page():
 <body>
 <header class="masthead"><div class="wrap">
   <a class="brand" href="/">The Last <b>24</b></a>
-  <div class="brand-side"><div class="brand-nav"><a class="m-link" href="/trending.html">Trending</a><a class="m-link" href="/archive.html">Archive</a><a class="m-link" href="/">Home</a></div><div class="brand-meta"><span class="v">✓ Verified publishers only</span></div></div>
+  <div class="brand-side"><div class="brand-nav"><a class="m-link" href="/worldcup.html">World Cup</a><a class="m-link" href="/trending.html">Trending</a><a class="m-link" href="/archive.html">Archive</a><a class="m-link" href="/">Home</a></div><div class="brand-meta"><span class="v">✓ Verified publishers only</span></div></div>
 </div></header>
 
 <div class="wrap hero">
