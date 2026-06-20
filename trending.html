@@ -31,7 +31,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);line-heigh
   .brand-meta{display:none}
   .brand-row{flex-wrap:wrap;gap:10px}
   .brand-side{width:100%;justify-content:flex-start}
-  .m-ca,.m-link{font-size:11px;padding:6px 12px}
+  .brand-nav{width:100%;overflow-x:auto;flex-wrap:nowrap;gap:8px;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .brand-nav::-webkit-scrollbar{display:none}
+  .m-ca,.m-link{font-size:11px;padding:6px 11px;flex-shrink:0}
 }
 
 a{color:inherit}
