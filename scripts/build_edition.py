@@ -1,960 +1,1378 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+The Last 24 — automatic media-house builder.
+
+Runs every 3 hours via GitHub Actions:
+  1. Pulls fresh headlines from Google News RSS across all categories
+  2. Claude writes the edition: brief + a short grounded article per story
+  3. Writes: data.js (homepage), articles/*.html (SEO article pages),
+     editions/*.json (archive for the newsletter), sitemap.xml
+
+Requires env: ANTHROPIC_API_KEY. Optional env: SITE_URL.
+"""
+
+import os, json, re, sys, html, hashlib
+from datetime import datetime, timedelta, timezone
+import feedparser, requests
+
+IST = timezone(timedelta(hours=5, minutes=30))
+NOW = datetime.now(IST)
+CUTOFF = NOW - timedelta(hours=24)
+SITE_URL = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
+SITE_NAME = "The Last 24"
+
+SECTION_QUERIES = {
+    "National":           "India government OR policy OR supreme court",
+    "World":              "world news OR geopolitics OR international",
+    "Business & Markets": "India economy OR Sensex OR business OR trade",
+    "Technology":         "India technology OR startup OR software",
+    "Artificial Intelligence": "artificial intelligence OR AI model OR OpenAI OR Anthropic OR Gemini",
+    "Sports":             "India cricket OR sports",
+    "Entertainment":      "Bollywood OR Indian entertainment OR OTT",
+}
+PER_SECTION = 4
+
+SECTION_HUES = {  # category accent colors (also used by generative art)
+    "national": "#3D7A5C", "world": "#3E6088", "business": "#A07A3C",
+    "tech": "#6A5C9A", "ai": "#3C8585", "sports": "#B5573F", "entertainment": "#A65478",
+}
+
+# ---------------------------------------------------------------- collect ---
+def gnews_rss(query, window):
+    q = requests.utils.quote(f"{query} {window}")
+    return f"https://news.google.com/rss/search?q={q}&hl=en-IN&gl=IN&ceid=IN:en"
+
+# The moat: only stories from established, verified publishers pass this filter.
+TRUSTED_PUBLISHERS = [
+    # Tier-1 Indian newspapers / business press
+    "the hindu", "hindustan times", "hindustantimes", "indian express",
+    "the indian express", "times of india", "economic times", "mint", "livemint",
+    "business standard", "moneycontrol", "the print", "deccan herald",
+    "telegraph india", "financial express", "frontline", "scroll", "the quint",
+    # International wires/quality
+    "reuters", "bbc", "cnbc", "bloomberg", "the guardian", "associated press",
+    # General Indian (reputable digital)
+    "ndtv", "india today", "news18", "firstpost", "outlook",
+    # Sports (specialist, reputable)
+    "espncricinfo", "cricbuzz", "sportstar", "olympics.com", "espn", "wisden",
+    # Entertainment (reputable trade)
+    "film companion", "variety", "pinkvilla", "filmfare", "ottplay", "ott play",
+    # Tech / business / startup (reputable)
+    "techcrunch", "the verge", "wired", "venturebeat", "analytics india",
+    "inc42", "yourstory", "medianama", "gadgets 360", "entrackr",
+    # Government / official
+    "pib", "press information bureau",
+]
+
+# Explicitly EXCLUDED even if they appear (agency wires that republish without
+# original reporting, and outlets widely flagged for bias / low editorial rigor).
+EXCLUDED_PUBLISHERS = [
+    "ani", "asian news international", "pti", "press trust of india",
+    "republic", "zee news", "zeenews", "dna", "abp", "rediff", "indiatimes",
+    "opindia", "tfipost", "swarajya", "koimoi", "bollywood life", "bollywood hungama",
+]
+
+def is_trusted(source_name):
+    n = (source_name or "").lower()
+    if any(x in n for x in EXCLUDED_PUBLISHERS):
+        return False
+    return any(t in n for t in TRUSTED_PUBLISHERS)
+
+def resolve_url(link):
+    """Try to resolve Google News redirect to the publisher's own URL so the
+    'Read more' link lands on the original source. Falls back to the feed link."""
+    try:
+        r = requests.get(link, timeout=12, allow_redirects=True, stream=True,
+                         headers={"User-Agent": "Mozilla/5.0 (compatible; TheLast24/1.0)"})
+        final = r.url
+        r.close()
+        if "news.google" not in final:
+            return final
+    except Exception:
+        pass
+    return link
+
+def collect_headlines():
+    backfill_days = int(os.environ.get("BACKFILL_DAYS", "0") or 0)
+    window = f"when:{backfill_days}d" if backfill_days > 0 else "when:1d"
+    cutoff = NOW - timedelta(days=backfill_days) if backfill_days > 0 else CUTOFF
+    per_section = 8 if backfill_days > 0 else PER_SECTION
+    lines, skipped = [], 0
+    for section, query in SECTION_QUERIES.items():
+        feed = feedparser.parse(gnews_rss(query, window))
+        count = 0
+        for e in feed.entries:
+            if count >= per_section: break
+            try:
+                pub = datetime(*e.published_parsed[:6], tzinfo=timezone.utc).astimezone(IST)
+            except Exception:
+                pub = NOW
+            if pub < cutoff: continue
+            src = getattr(e, "source", None)
+            src = src.title if src and hasattr(src, "title") else ""
+            if not is_trusted(src):
+                skipped += 1
+                continue
+            title = re.sub(r"\s+-\s+[^-]+$", "", e.title).strip()
+            url = resolve_url(e.link)
+            lines.append(f"{pub.strftime('%H:%M')} IST | [{section}] {title} | {src} | {url}")
+            count += 1
+    print(f"Filtered out {skipped} items from non-allowlisted sources.")
+    if not lines:
+        sys.exit("No headlines collected from trusted publishers.")
+    return "\n".join(lines)
+
+# ------------------------------------------------------------------ write ---
+SECTION_IDS = {
+    "National": "national", "World": "world", "Business & Markets": "business",
+    "Technology": "tech", "Artificial Intelligence": "ai", "Sports": "sports", "Entertainment": "entertainment",
+}
+
+EDITORIAL_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher. You will be given the raw headlines for ONE section and must produce that section's stories.
+
+EDITORIAL RULES:
+- Keep only the strongest stories up to the limit given; drop weak/duplicate ones. Treat two items as duplicates if they report the SAME underlying event even when the headlines are worded differently — keep only the single best one.
+- WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company" or "two platforms".
+- CARRY THE CORE FACTS. If the story has specific concrete details that are its whole point, INCLUDE them rather than gesturing at them. Examples: a squad/team announcement -> name the key players actually picked; a budget/scheme -> the amount and who it's for; a match result -> the score and standout performers; an appointment -> who, to what post; a policy -> the specific change. A summary that says "the squad was announced" without naming anyone is a FAILURE.
+- "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): the development precisely, the key concrete details, one line of immediate significance. Strictly from the headline plus universally known background.
+- "lens" = 1 sharp, SPECIFIC sentence: why this exact story matters to an everyday Indian reader — money, daily life, or the bigger picture. It must be concrete to THIS story, not a generic platitude. If you cannot write a genuinely specific reason, write a plainer factual significance instead of a vague one. Never filler like "this is an important development".
+- Structured summary (concise, fact-rich, strictly grounded): write a single flowing "article" of 3-4 short paragraphs (~180-240 words total) that reads as one continuous brief — NOT divided into labelled sections. Open with what happened (attributing the publisher by name, e.g. "The Hindu reports..."), weave in the concrete core facts (names, numbers, the actual squad/figures/decision), give the essential widely-known context, and close with why it matters to an everyday Indian reader. Strictly the headline plus universally-known facts; NEVER invent quotes, statistics, numbers, or names. Put this in the "article" field as plain text with paragraphs separated by blank lines.
+- "key_facts" = an array of 2-5 short, concrete bullet strings capturing the HARD FACTS of the story that a reader would want at a glance — the actual specifics, not generalities. For a squad: the key players named. For a scheme/budget: the amount and beneficiaries. For a result: the score and top performers. For an appointment: who and to what role. For a deal: the parties and value. Each bullet under ~12 words, factual, drawn only from the headline + well-known facts. If the story genuinely has no hard specifics, use an empty array [].
+- "image_subject" = the SINGLE most photographable real subject of the story for an encyclopedia image lookup — a real person's full name, a place, a landmark, or an institution exactly as it would title a Wikipedia article (e.g. "Narendra Modi", "Supreme Court of India", "Wankhede Stadium", "Reserve Bank of India", "Rohit Sharma"). Use "" (empty) if the story has no specific real named subject (pure concept/abstract stories).
+- "image_query" = a 3-5 word search phrase for a stock-photo library capturing the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think what a relevant photo would show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers"; a bullet-train story -> "high speed train railway". Prefer Indian/contextual terms. Never real people or brand names.
+- "image_query" = a 3-5 word search phrase for a stock-photo library that captures the VISUAL SUBJECT of the story as specifically as possible WITHOUT naming real people or brands. Think about what a relevant photo would actually show. Examples: a Supreme Court ruling -> "indian courtroom justice gavel"; a cricket ODI -> "cricket batsman stadium india"; a startup-jobs story -> "indian office workers technology"; a bullet train story -> "high speed train railway". Prefer Indian or contextual terms where the story is Indian. Never names of real people or brands.
+- "image_safety" = classify the story for image handling. Use "real" if the story centres on a specific named real person OR a specific real event/incident (politics, court rulings, deaths, disasters, match results, named individuals). Use "concept" ONLY if it is an abstract/thematic story (markets, economy, technology trends, lifestyle) with no specific real person or event as its subject. When unsure, use "real".
+- "hour" = integer 0-23 from the IST time. "time" = "HH:MM IST". "breaking" = true for at most 1 story.
+- Keep source names and URLs exactly as given.
+
+Respond with ONLY a JSON object, no markdown fences, no text before or after it:
+{"stories":[{"hour":0,"time":"...","headline":"...","what":"...","lens":"...","article":"...","key_facts":["...","..."],"image_subject":"...","image_query":"...","source":"...","url":"...","breaking":false}]}"""
+
+API_URL = "https://api.anthropic.com/v1/messages"
+# Current Sonnet. If this ever 400s with a model error, update this ONE line.
+MODEL = "claude-sonnet-4-6"
+
+def call_claude(system, user, max_tokens):
+    """One Claude call with a single retry. On HTTP errors, surface the API's
+    actual JSON error body (which says exactly what's wrong) instead of a bare
+    status code."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        sys.exit("ANTHROPIC_API_KEY not set.")
+    last_err = None
+    for attempt in (1, 2):
+        try:
+            r = requests.post(API_URL,
+                headers={"x-api-key": key, "anthropic-version": "2023-06-01",
+                         "content-type": "application/json"},
+                json={"model": MODEL, "max_tokens": max_tokens,
+                      "system": system,
+                      "messages": [{"role": "user", "content": user}]},
+                timeout=240)
+            if r.status_code != 200:
+                # The body explains the real cause (bad model, token limit, etc.)
+                detail = r.text[:500]
+                print(f"Attempt {attempt}: HTTP {r.status_code} — {detail}")
+                last_err = f"HTTP {r.status_code}: {detail}"
+                if attempt == 1:
+                    print("  retrying once...")
+                continue
+            data = r.json()
+            if data.get("stop_reason") == "max_tokens":
+                print("WARNING: response hit the max_tokens limit; output may be truncated.")
+            text = "".join(b.get("text", "") for b in data.get("content", [])
+                           if b.get("type") == "text").strip()
+            if text:
+                return text
+            print(f"Attempt {attempt}: Claude returned empty text" +
+                  (", retrying once..." if attempt == 1 else "."))
+            last_err = "empty response"
+        except Exception as exc:
+            last_err = exc
+            print(f"Attempt {attempt}: request error: {exc}" +
+                  (", retrying once..." if attempt == 1 else "."))
+    raise RuntimeError(f"No usable text from Claude after 2 attempts: {last_err}")
+
+def extract_json(text, context=""):
+    """Parse JSON even if Claude wraps it in fences or adds text around it.
+    On failure, print the raw response to the logs, then raise."""
+    clean = re.sub(r"```json|```", "", text).strip()
+    try:
+        return json.loads(clean)
+    except json.JSONDecodeError:
+        pass
+    start, end = clean.find("{"), clean.rfind("}")
+    if start != -1 and end > start:
+        try:
+            return json.loads(clean[start:end + 1])
+        except json.JSONDecodeError:
+            pass
+    print(f"--- RAW CLAUDE RESPONSE ({context}) START ---")
+    print(text[:3000])
+    if len(text) > 3000:
+        print(f"... [{len(text) - 3000} more characters truncated]")
+    print(f"--- RAW CLAUDE RESPONSE ({context}) END ---")
+    raise ValueError(f"Could not parse JSON from Claude response ({context}).")
+
+REQUIRED_FIELDS = ("headline", "what", "lens", "source", "url", "time")
+
+def clean_stories(items, section_name):
+    """Drop malformed stories instead of failing the run."""
+    out = []
+    for st in items if isinstance(items, list) else []:
+        if not isinstance(st, dict) or not all(st.get(f) for f in REQUIRED_FIELDS):
+            print(f"  Skipping malformed story in {section_name}: {str(st)[:120]}")
+            continue
+        try:
+            st["hour"] = max(0, min(23, int(st.get("hour", 12))))
+        except (TypeError, ValueError):
+            st["hour"] = 12
+        st["breaking"] = bool(st.get("breaking", False))
+        out.append(st)
+    return out
+
+def _carry_forward_sections(needed_ids):
+    """For each section id in needed_ids, find its most recent stories from the
+    saved editions (newest first). Returns {sid: [stories]}. Used so a section
+    that pulled nothing this run still appears, populated with its last-known
+    stories, rather than disappearing from the homepage."""
+    import glob
+    found = {}
+    for path in sorted(glob.glob("editions/*.json"), reverse=True):
+        if len(found) >= len(needed_ids):
+            break
+        try:
+            with open(path, encoding="utf-8") as f:
+                ed = json.load(f)
+        except Exception:
+            continue
+        for sec in ed.get("sections", []):
+            sid = sec.get("id")
+            if sid in needed_ids and sid not in found:
+                sts = sec.get("stories", [])
+                if sts:
+                    found[sid] = sts[:5]
+    return found
+
+
+def write_edition(raw):
+    """One small Claude call per section — short JSON outputs parse reliably."""
+    backfill = int(os.environ.get("BACKFILL_DAYS", "0") or 0) > 0
+    per_cap = 6 if backfill else 5
+    groups = {}
+    for line in raw.splitlines():
+        m = re.search(r"\[([^\]]+)\]", line)
+        if m:
+            groups.setdefault(m.group(1), []).append(line)
+
+    sections = []
+    for name, sid in SECTION_IDS.items():
+        lines = groups.get(name)
+        if not lines:
+            print(f"Section {name}: no headlines collected this run.")
+            continue
+        print(f"Writing section: {name} ({len(lines)} headlines, keep up to {per_cap})")
+        stories = []
+        # Attempt 1: full request. Attempt 2 (on failure): same story count, but a
+        # simpler/cleaner instruction and a fresh call (handles transient failures
+        # and the occasional unparseable response without slashing the section).
+        attempts = [
+            (per_cap, f"Section: {name}\nKeep at most {per_cap} of the strongest stories.\n\n"
+                      f"Raw headlines from the last 24 hours:\n" + "\n".join(lines)),
+            (per_cap, f"Section: {name}\nSelect up to {per_cap} of the strongest, clearest stories. "
+                      f"Be factual and concise. Return valid JSON only.\n\n"
+                      f"Headlines:\n" + "\n".join(lines)),
+        ]
+        for cap, user in attempts:
+            try:
+                data = extract_json(call_claude(EDITORIAL_RULES, user, 8000), name)
+                stories = clean_stories(data.get("stories", []), name)[:cap]
+                if stories:
+                    break
+                print(f"  -> attempt returned no valid stories; trying a simpler request...")
+            except (RuntimeError, ValueError) as exc:
+                print(f"  -> attempt failed ({exc}); trying a simpler request...")
+        if stories:
+            # Drop near-duplicates within the section (same event from 2 sources).
+            deduped, fps = [], []
+            for st in stories:
+                fp = _story_fingerprint(st)
+                if _is_dupe(fp, fps):
+                    print(f"  -> dropped near-duplicate: {st.get('headline','')[:50]}")
+                    continue
+                deduped.append(st); fps.append(fp)
+            stories = deduped
+            sections.append({"id": sid, "name": name, "stories": stories})
+            print(f"  -> {len(stories)} stories kept for {name}.")
+        else:
+            print(f"  -> {name} produced nothing after retry; section skipped this run.")
+
+    if not sections:
+        sys.exit("Every section failed — no edition produced this run.")
+
+    # Guarantee all seven sections always appear on the homepage, in order.
+    # If a section pulled nothing this run, carry forward its most recent
+    # stories from previous editions so it never vanishes (e.g. Tech/Entertainment
+    # disappearing on a quiet run). A section is only ever empty if it has never
+    # had stories at all.
+    present = {s["id"] for s in sections}
+    missing = [(name, sid) for name, sid in SECTION_IDS.items() if sid not in present]
+    if missing:
+        carry = _carry_forward_sections({sid for _, sid in missing})
+        for name, sid in missing:
+            cf = carry.get(sid)
+            if cf:
+                print(f"  -> {name}: no fresh stories; carried forward "
+                      f"{len(cf)} from a recent edition.")
+                for _st in cf:
+                    _st["carried"] = True
+                sections.append({"id": sid, "name": name, "stories": cf,
+                                 "carried": True})
+            else:
+                print(f"  -> {name}: no fresh or archived stories; kept empty.")
+                sections.append({"id": sid, "name": name, "stories": []})
+
+    # Re-order sections to the canonical homepage order.
+    order = {sid: i for i, (_, sid) in enumerate(SECTION_IDS.items())}
+    sections.sort(key=lambda s: order.get(s["id"], 99))
+
+    # Topline: tiny call, with a clean natural-language fallback (never the clumsy count line).
+    heads = [st["headline"] for sec in sections for st in sec["stories"]][:10]
+    topline = ""
+    try:
+        t = extract_json(call_claude(
+            'Respond with ONLY this JSON, nothing else: {"topline":"..."} — one sharp, natural sentence '
+            "capturing the day's arc across these headlines, naming the biggest entities directly. "
+            "Do not mention how many stories there are.",
+            "\n".join(heads), 300), "topline")
+        topline = str(t.get("topline", "")).strip()
+    except (RuntimeError, ValueError) as exc:
+        print(f"Topline call failed, using fallback: {exc}")
+    if not topline and heads:
+        lead = heads[0].rstrip(".")
+        topline = f"Today's headlines, led by: {lead}."
+    elif not topline:
+        topline = "The day's most important stories from across India."
+
+    edition = {
+        "date": NOW.strftime("%A, %d %B %Y"),
+        "edition": NOW.strftime("%Y-%m-%d %H:%M"),
+        "topline": topline,
+        "lensLabel": "Why it matters",
+        "sections": sections,
+    }
+    topup_and_sort(edition, target=per_cap)
+    return edition
+
+
+def _story_dt(st):
+    """Best-effort IST datetime for a story, for accurate newest-first sorting.
+    Uses the edition date the story was filed under (set during top-up) plus its
+    hour; falls back to hour-only within today."""
+    base = st.get("_edition_date")
+    try:
+        if base:
+            d = datetime.strptime(base, "%Y-%m-%d").replace(tzinfo=IST)
+        else:
+            d = NOW
+        return d.replace(hour=int(st.get("hour", 0)), minute=0, second=0, microsecond=0)
+    except Exception:
+        return NOW
+
+
+def _story_fingerprint(st):
+    """A loose fingerprint that matches the SAME story even when the headline is
+    reworded. Uses the set of significant words (>3 chars, minus common filler)
+    from the headline. Two headlines about the same event share most of these."""
+    stop = {"the", "and", "for", "with", "from", "that", "this", "after", "over",
+            "into", "amid", "says", "said", "will", "your", "you", "are", "was",
+            "has", "have", "its", "his", "her", "their", "they", "them", "than",
+            "more", "most", "new", "now", "set", "get", "but", "not", "all"}
+    words = re.findall(r"[a-z0-9]+", (st.get("headline") or "").lower())
+    sig = frozenset(w for w in words if len(w) > 3 and w not in stop)
+    return sig
+
+def _is_dupe(fp, seen_fps):
+    """True only if fp shares a strong majority of significant words with a seen
+    fingerprint AND both have enough words to be confident (same event, reworded).
+    Conservative by design: better to allow a rare dupe than drop a real story."""
+    if not fp or len(fp) < 4:
+        return False  # too few words to judge confidently
+    for s in seen_fps:
+        if not s or len(s) < 4:
+            continue
+        overlap = len(fp & s)
+        union = len(fp | s)
+        # Jaccard similarity: shared / total distinct words. 0.7+ = same story.
+        if union and overlap / union >= 0.65:
+            return True
+    return False
+
+def topup_and_sort(edition, target=5, lookback_hours=48):
+    """Ensure each section shows up to `target` stories by topping up thin
+    sections with the most recent UNIQUE stories from previous editions (within
+    `lookback_hours`), then sort every section newest-first by IST timestamp.
+    Fresh stories from this run always rank above older top-ups."""
+    import glob
+    # Tag this run's stories with today's date so timestamps sort correctly.
+    today = NOW.strftime("%Y-%m-%d")
+    for sec in edition["sections"]:
+        for st in sec["stories"]:
+            st.setdefault("_edition_date", today)
+
+    # Gather recent past stories per section id, newest editions first.
+    cutoff = NOW - timedelta(hours=lookback_hours)
+    past = {}
+    for path in sorted(glob.glob("editions/*.json"), reverse=True):
+        stamp = os.path.basename(path)[:13]  # YYYY-MM-DD-HH
+        try:
+            when = datetime.strptime(stamp, "%Y-%m-%d-%H").replace(tzinfo=IST)
+        except ValueError:
+            continue
+        if when < cutoff:
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                ed = json.load(f)
+        except Exception:
+            continue
+        edate = when.strftime("%Y-%m-%d")
+        for sec in ed.get("sections", []):
+            for st in sec.get("stories", []):
+                st["_edition_date"] = st.get("_edition_date", edate)
+                past.setdefault(sec["id"], []).append(st)
+
+    have = {sec["id"]: sec for sec in edition["sections"]}
+    for sid, sec in have.items():
+        seen = {(s.get("slug") or s.get("headline")) for s in sec["stories"]}
+        seen_fps = [_story_fingerprint(s) for s in sec["stories"]]
+        if len(sec["stories"]) < target:
+            for st in past.get(sid, []):
+                key = st.get("slug") or st.get("headline")
+                if key in seen:
+                    continue
+                fp = _story_fingerprint(st)
+                if _is_dupe(fp, seen_fps):
+                    continue
+                sec["stories"].append(st)
+                seen.add(key)
+                seen_fps.append(fp)
+                if len(sec["stories"]) >= target:
+                    break
+        # Newest-first by IST timestamp, then trim to target.
+        sec["stories"].sort(key=_story_dt, reverse=True)
+        sec["stories"] = sec["stories"][:target]
+        # _edition_date is internal; drop it from what ships if older than today
+        for st in sec["stories"]:
+            if st.get("_edition_date") == today:
+                st.pop("_edition_date", None)
+
+# ----------------------------------------------------- three-tier imagery ---
+# Tier 1: real licensed photo (Pexels) — used for real-person/real-event stories
+#         and as the first choice everywhere.
+# Tier 2: AI illustration (Gemini / "Nano Banana") — ONLY for abstract concept
+#         stories, never for a named real person or specific real event, and
+#         always labelled "AI illustration" on the page.
+# Tier 3: deterministic editorial art — always-available fallback.
+PEXELS_KEY = os.environ.get("PEXELS_API_KEY", "")
+UNSPLASH_KEY = os.environ.get("UNSPLASH_ACCESS_KEY", "")
+PIXABAY_KEY = os.environ.get("PIXABAY_API_KEY", "")
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
+GEMINI_MODEL = "gemini-2.5-flash-image"
+
+def _score(query, text):
+    """Relevance score: how many query words appear in the candidate's own
+    title/tags/description. Higher = better match. Lets us pick across sources."""
+    q = {w for w in re.findall(r"[a-z]+", (query or "").lower()) if len(w) > 2}
+    if not q:
+        return 0
+    t = (text or "").lower()
+    return sum(1 for w in q if w in t)
+
+def _pexels(query):
+    if not PEXELS_KEY:
+        return []
+    try:
+        r = requests.get("https://api.pexels.com/v1/search",
+                         headers={"Authorization": PEXELS_KEY},
+                         params={"query": query, "per_page": 5, "orientation": "landscape"},
+                         timeout=20)
+        r.raise_for_status()
+        out = []
+        for p in r.json().get("photos", []):
+            # Pexels exposes alt text describing the photo — use it for scoring.
+            # Use large2x for a reliable, well-sized hotlink-friendly URL.
+            src = p.get("src", {})
+            img_url = src.get("large2x") or src.get("large") or src.get("original")
+            if not img_url:
+                continue
+            out.append({"image": img_url, "image_kind": "photo",
+                        "image_credit": p.get("photographer", "Pexels"),
+                        "image_credit_url": p.get("photographer_url", "https://www.pexels.com"),
+                        "_text": p.get("alt", ""), "_src": "Pexels"})
+        return out
+    except Exception as exc:
+        print(f"  pexels miss for '{query}': {exc}")
+        return []
+
+def _unsplash(query):
+    if not UNSPLASH_KEY:
+        return []
+    try:
+        r = requests.get("https://api.unsplash.com/search/photos",
+                         headers={"Authorization": f"Client-ID {UNSPLASH_KEY}"},
+                         params={"query": query, "per_page": 5, "orientation": "landscape"},
+                         timeout=20)
+        r.raise_for_status()
+        out = []
+        for p in r.json().get("results", []):
+            desc = p.get("description") or p.get("alt_description") or ""
+            tags = " ".join(t.get("title", "") for t in (p.get("tags") or []))
+            out.append({"image": p["urls"]["regular"], "image_kind": "photo",
+                        "image_credit": (p.get("user") or {}).get("name", "Unsplash"),
+                        "image_credit_url": ((p.get("user") or {}).get("links") or {}).get("html", "https://unsplash.com"),
+                        "_text": desc + " " + tags, "_src": "Unsplash"})
+        return out
+    except Exception as exc:
+        print(f"  unsplash miss for '{query}': {exc}")
+        return []
+
+def _pixabay(query):
+    if not PIXABAY_KEY:
+        return []
+    try:
+        r = requests.get("https://pixabay.com/api/",
+                         params={"key": PIXABAY_KEY, "q": query, "per_page": 5,
+                                 "image_type": "photo", "orientation": "horizontal",
+                                 "safesearch": "true"},
+                         timeout=20)
+        r.raise_for_status()
+        out = []
+        for p in r.json().get("hits", []):
+            out.append({"image": p.get("largeImageURL") or p.get("webformatURL"),
+                        "image_kind": "photo",
+                        "image_credit": p.get("user", "Pixabay"),
+                        "image_credit_url": f"https://pixabay.com/users/{p.get('user','')}-{p.get('user_id','')}/",
+                        "_text": p.get("tags", ""), "_src": "Pixabay"})
+        return out
+    except Exception as exc:
+        print(f"  pixabay miss for '{query}': {exc}")
+        return []
+
+def fetch_photo(query, used=None):
+    """Query Pexels, Unsplash and Pixabay, then return the most relevant photo
+    across all three that hasn't already been used this run. None if all empty."""
+    if not query:
+        return None
+    used = used or set()
+    candidates = _pexels(query) + _unsplash(query) + _pixabay(query)
+    # Drop candidates without a usable https URL, and any already used this run.
+    candidates = [c for c in candidates
+                  if isinstance(c.get("image"), str) and c["image"].startswith("http")
+                  and c["image"] not in used]
+    if not candidates:
+        return None
+    # Best relevance wins; ties keep source order (Pexels, Unsplash, Pixabay).
+    best = max(candidates, key=lambda c: _score(query, c.get("_text", "")))
+    print(f"  photo: '{query}' -> {best['_src']} (matched {_score(query, best.get('_text',''))} terms, {len(candidates)} unused candidates)")
+    return {k: v for k, v in best.items() if not k.startswith("_")}
+
+def generate_ai_image(prompt, slug):
+    """AI illustration via Gemini ('Nano Banana'). Concept stories ONLY — callers
+    must never pass a real named person or specific real event. Saves a PNG into
+    /articles/img and returns its site-relative path. None on any failure."""
+    if not GEMINI_KEY or not prompt:
+        return None
+    safe_prompt = ("A clean, abstract editorial illustration for a news brief, "
+                   "conceptual and non-photorealistic, no real people, no faces, "
+                   "no text, no logos, no flags. Subject: " + prompt)
+    try:
+        url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+               f"{GEMINI_MODEL}:generateContent?key={GEMINI_KEY}")
+        r = requests.post(url, timeout=90,
+            headers={"content-type": "application/json"},
+            json={"contents": [{"parts": [{"text": safe_prompt}]}]})
+        r.raise_for_status()
+        parts = (r.json().get("candidates") or [{}])[0].get("content", {}).get("parts", [])
+        for part in parts:
+            inline = part.get("inlineData") or part.get("inline_data")
+            if inline and inline.get("data"):
+                import base64
+                os.makedirs("articles/img", exist_ok=True)
+                path = f"articles/img/{slug}.png"
+                with open(path, "wb") as f:
+                    f.write(base64.b64decode(inline["data"]))
+                return {"image": "img/" + slug + ".png", "image_home": "articles/img/" + slug + ".png",
+                        "image_kind": "ai", "image_credit": "AI illustration",
+                        "image_credit_url": ""}
+        print("  gemini returned no image data")
+        return None
+    except Exception as exc:
+        print(f"  gemini miss for '{prompt[:40]}': {exc}")
+        return None
+
+def fetch_wikimedia(subject):
+    """Real, freely-licensed photo of a named subject from Wikipedia/Wikimedia.
+    This is the relevance tier: a genuine photo of the actual person/place/
+    institution, legal to use WITH attribution (which we display). None on miss.
+
+    Uses the Wikipedia REST summary endpoint to get the lead image of the most
+    relevant article, plus the file's licensed author for credit."""
+    if not subject or len(subject) < 3:
+        return None
+    try:
+        # Resolve the best-matching article title first.
+        s = requests.get("https://en.wikipedia.org/w/api.php",
+                         params={"action": "query", "list": "search",
+                                 "srsearch": subject, "srlimit": 1,
+                                 "format": "json"},
+                         headers={"User-Agent": "TheLast24/1.0 (news brief; contact support@thelast24.in)"},
+                         timeout=20)
+        s.raise_for_status()
+        hits = s.json().get("query", {}).get("search", [])
+        if not hits:
+            return None
+        title = hits[0]["title"]
+        # Relevance guard: the matched article title should share a significant
+        # word with the subject. This prevents a vague subject ("cricket match")
+        # from grabbing an unrelated article's image (e.g. a football photo).
+        subj_words = {w for w in re.findall(r"[a-z]+", subject.lower()) if len(w) > 3}
+        title_words = {w for w in re.findall(r"[a-z]+", title.lower()) if len(w) > 3}
+        if subj_words and not (subj_words & title_words):
+            print(f"  wikimedia: '{subject}' -> '{title}' rejected (no subject overlap)")
+            return None
+        # Get the page's lead image (thumbnail) + the original file name.
+        p = requests.get("https://en.wikipedia.org/w/api.php",
+                         params={"action": "query", "titles": title,
+                                 "prop": "pageimages", "piprop": "original|name",
+                                 "format": "json"},
+                         headers={"User-Agent": "TheLast24/1.0 (news brief; contact support@thelast24.in)"},
+                         timeout=20)
+        p.raise_for_status()
+        pages = p.json().get("query", {}).get("pages", {})
+        page = next(iter(pages.values()), {})
+        original = page.get("original", {})
+        img_url = original.get("source")
+        if not img_url or not img_url.startswith("http"):
+            return None
+        # Skip SVGs/logos and tiny images — we want real photographs.
+        if img_url.lower().endswith((".svg", ".png")):
+            return None
+        # Fetch the file's attribution (artist) for a proper credit line.
+        credit = "Wikimedia Commons"
+        fname = page.get("pageimage")
+        if fname:
+            try:
+                m = requests.get("https://en.wikipedia.org/w/api.php",
+                                 params={"action": "query", "titles": "File:" + fname,
+                                         "prop": "imageinfo", "iiprop": "extmetadata",
+                                         "format": "json"},
+                                 headers={"User-Agent": "TheLast24/1.0 (support@thelast24.in)"},
+                                 timeout=20)
+                meta = next(iter(m.json().get("query", {}).get("pages", {}).values()), {})
+                ext = (meta.get("imageinfo", [{}])[0].get("extmetadata", {}))
+                artist = ext.get("Artist", {}).get("value", "")
+                # Strip any HTML tags from the artist field.
+                artist = re.sub(r"<[^>]+>", "", artist).strip()
+                if artist:
+                    credit = artist[:80]
+            except Exception:
+                pass
+        print(f"  wikimedia: '{subject}' -> {title}")
+        return {"image": img_url, "image_kind": "photo",
+                "image_credit": credit + " / Wikimedia Commons",
+                "image_credit_url": "https://en.wikipedia.org/wiki/" + title.replace(" ", "_")}
+    except Exception as exc:
+        print(f"  wikimedia miss for '{subject}': {exc}")
+        return None
+
+def resolve_image(st, used=None):
+    """Image policy: real subject first, then stock fill for coverage.
+    1) Wikimedia Commons photo of the named real subject (most relevant).
+    2) Stock photo (Pexels + Unsplash + Pixabay), best unused relevance match —
+       provides coverage so cards aren't blank when Wikimedia has no match.
+    3) Editorial art (rendered at display time) — silent last resort only.
+    No AI generation of real people/events."""
+    used = used or set()
+    # Carried-forward stories already carry a resolved image but have had their
+    # query fields stripped — keep their existing image rather than re-resolving
+    # (which would find nothing and blank the card).
+    if st.get("carried") and st.get("image"):
+        return {"image": st["image"], "image_credit": st.get("image_credit", ""),
+                "image_credit_url": st.get("image_credit_url", ""),
+                "image_kind": st.get("image_kind", "photo")}
+    subject = st.get("image_subject")
+    query = st.get("image_query") or st.get("headline", "")
+    # Tier 1: real photo of the actual named subject.
+    wiki = fetch_wikimedia(subject)
+    if wiki and wiki.get("image") and wiki["image"] not in used:
+        return wiki
+    # Tier 2: stock photo for coverage (best unused match across libraries).
+    photo = fetch_photo(query, used)
+    if photo and photo.get("image"):
+        return photo
+    # Tier 3: no match -> None; render layer draws editorial art.
+    return None
+
+# -------------------------------------------------------- generative art ---
+def art_svg(seed_text, section_id, w=1200, h=560):
+    """Deterministic editorial art per story — unique, legal, zero-cost."""
+    hue = SECTION_HUES.get(section_id, "#0E7B52")
+    hsh = hashlib.sha256(seed_text.encode()).digest()
+    v = lambda i, lo, hi: lo + (hsh[i % 32] / 255) * (hi - lo)
+    shapes = []
+    for i in range(6):
+        cx, cy = v(i*3, 0.05, 0.95)*w, v(i*3+1, 0.1, 0.9)*h
+        r = v(i*3+2, 0.04, 0.22)*w
+        op = round(v(i*5+1, 0.06, 0.20), 2)
+        if hsh[i*2] % 3 == 0:
+            shapes.append(f'<rect x="{cx-r:.0f}" y="{cy-r/2:.0f}" width="{r*2:.0f}" height="{r:.0f}" rx="{r/5:.0f}" fill="{hue}" opacity="{op}" transform="rotate({v(i,-20,20):.0f} {cx:.0f} {cy:.0f})"/>')
+        else:
+            shapes.append(f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="{r:.0f}" fill="{hue}" opacity="{op}"/>')
+    bars = "".join(f'<rect x="{60+i*((w-120)/24):.0f}" y="{h-44}" width="{(w-120)/24-4:.0f}" height="10" rx="3" fill="{hue}" opacity="{0.9 if hsh[i] % 4 == 0 else 0.15}"/>' for i in range(24))
+    return (f'<svg viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Editorial art">'
+            f'<rect width="{w}" height="{h}" fill="#F6F7F4"/>{"".join(shapes)}{bars}'
+            f'<circle cx="{v(20,0.15,0.85)*w:.0f}" cy="{v(21,0.2,0.7)*h:.0f}" r="{v(22,0.05,0.10)*w:.0f}" fill="none" stroke="{hue}" stroke-width="3" opacity="0.85"/></svg>')
+
+def masthead_css():
+    """Shared masthead CSS — identical across article, archive and CA pages,
+    matching the homepage band/brand/nav treatment (minus the ticker).
+    Returns single-brace CSS (inserted as a variable, not inside an f-string)."""
+    return """
+.band{background:var(--dark);color:#F2F4EE;padding:20px 0}
+.band .wrap{max-width:var(--mw,920px);margin:0 auto;padding:0 20px}
+.brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.brand-row .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1;color:#F2F4EE}
+.brand-row .brand span{color:var(--green-bright)}
+.brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.brand-nav{display:flex;align-items:center;gap:10px}
+.m-ca{font-family:var(--mono);font-size:12px;font-weight:600;color:#0D120D;background:var(--green-bright);text-decoration:none;padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
+.m-ca:hover{background:#fff;color:#0D120D}
+.m-link{font-family:var(--mono);font-size:12px;color:#F2F4EE;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
+.m-link:hover{border-color:var(--green-bright);color:var(--green-bright)}
+.brand-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#929C8E;text-align:right;line-height:1.7}
+.brand-meta .v{color:var(--green-bright);font-weight:600}
+@media (max-width:600px){
+  .brand-meta{display:none}
+  .brand-row{flex-wrap:wrap;gap:10px}
+  .brand-side{width:100%;justify-content:flex-start}
+  .brand-nav{width:100%;overflow-x:auto;flex-wrap:nowrap;gap:8px;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .brand-nav::-webkit-scrollbar{display:none}
+  .m-ca,.m-link{font-size:11px;padding:6px 11px;flex-shrink:0}
+}
+"""
+
+def masthead_html(links, date_label=""):
+    """Shared masthead markup. `links` is a list of (label, href, primary) —
+    primary=True renders the filled green button (used for Current Affairs)."""
+    btns = ""
+    for label, href, primary in links:
+        cls = "m-ca" if primary else "m-link"
+        btns += f'<a class="{cls}" href="{href}">{label}</a>'
+    meta = (f'<div class="brand-meta"><span class="v">✓ Verified publishers only</span>'
+            f'<br>{html.escape(date_label)}</div>') if date_label else \
+           '<div class="brand-meta"><span class="v">✓ Verified publishers only</span></div>'
+    return (f'<div class="band"><div class="wrap"><div class="brand-row">'
+            f'<a class="brand" href="/">The Last <span>24</span></a>'
+            f'<div class="brand-side"><div class="brand-nav">{btns}</div>{meta}'
+            f'</div></div></div></div>')
+
+def slugify(headline):
+    s = re.sub(r"[^a-z0-9]+", "-", headline.lower()).strip("-")
+    return s[:70].rstrip("-")
+
+# ----------------------------------------------------------- article page ---
+def summary_blocks(story):
+    """Render the flowing 'article' as plain paragraphs (no labelled sections).
+    Falls back to the older structured fields if an old edition is present."""
+    if story.get("article"):
+        paras = [p.strip() for p in story["article"].split("\n\n") if p.strip()]
+        return [("", p) for p in paras]
+    # Backwards-compatibility with older editions that used labelled fields.
+    blocks = [story.get("what_happened"), story.get("context"),
+              story.get("why_it_matters")]
+    return [("", t) for t in blocks if t]
+
+def article_page(story, section, edition):
+    e = html.escape
+    hue = SECTION_HUES.get(section["id"], "#0E7B52")
+    desc = e(story["what"][:155])
+    jsonld = json.dumps({
+        "@context": "https://schema.org", "@type": "NewsArticle",
+        "headline": story["headline"], "description": story["what"],
+        "datePublished": NOW.isoformat(), "dateModified": NOW.isoformat(),
+        "articleSection": section["name"],
+        "author": {"@type": "Organization", "name": SITE_NAME},
+        "publisher": {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL},
+        "mainEntityOfPage": f"{SITE_URL}/articles/{story['slug']}.html",
+        "isBasedOn": story.get("url", ""),
+        **({"image": [story["image"]]} if story.get("image") else {}),
+    }, ensure_ascii=False)
+    if story.get("image"):
+        if story.get("image_kind") == "ai":
+            cap = '<figcaption>⚠ AI illustration — generated for visual context, not a real photograph. The reporting belongs to the cited source.</figcaption>'
+        else:
+            cap = (f'<figcaption>Photo: <a href="{e(story.get("image_credit_url","#"))}" rel="noopener" target="_blank">'
+                   f'{e(story.get("image_credit","Pexels"))}</a> via Pexels (free license)</figcaption>')
+        _art_fb = art_svg(story["headline"], section["id"]).replace('"', '&quot;')
+        hero = (f'<figure class="hero"><img src="{e(story["image"])}" '
+                f'alt="{e(story["headline"])}" loading="eager" decoding="async" '
+                f'onload="this.setAttribute(&quot;data-ok&quot;,1)" '
+                f'onerror="if(!this.getAttribute(&quot;data-ok&quot;)){{this.parentNode.innerHTML=this.getAttribute(&quot;data-fallback&quot;)}}" '
+                f'data-fallback="{_art_fb}">'
+                f'{cap}</figure>')
+    else:
+        hero = f'<div class="hero">{art_svg(story["headline"], section["id"])}</div>'
+    blocks = "".join(
+        (f'<div class="block">{("<h2>"+e(label)+"</h2>") if label else ""}<p>{e(text)}</p></div>')
+        for label, text in summary_blocks(story))
+    # Key facts box — the hard specifics (squad, figures, score) at a glance.
+    kf = [f for f in (story.get("key_facts") or []) if str(f).strip()]
+    facts_box = ""
+    if kf:
+        items = "".join(f"<li>{e(str(f))}</li>" for f in kf[:5])
+        facts_box = f'<div class="facts"><h2>Key facts</h2><ul>{items}</ul></div>'
+    src_name = e(story.get("source", "the original source"))
+    src_url = e(story.get("url", "#"))
+    _mhead = masthead_html([("World Cup", "/worldcup.html", False),
+                            ("Trending", "/trending.html", False),
+                            ("Current Affairs", "/current-affairs.html", True),
+                            ("Archive", "/archive.html", False)],
+                           date_label=edition.get("date", ""))
+    _mcss = masthead_css()
+    return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script>
-<!-- Google tag (gtag.js) with Consent Mode v2 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  // Default everything to DENIED until the visitor consents (GDPR-safe).
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-  gtag('js', new Date());
-  gtag('config', 'G-B1R3X3GKJ3');
-  // If the visitor already accepted in a previous visit, honour it immediately.
-  try {
-    if (localStorage.getItem('cookie-consent') === 'granted') {
-      gtag('consent', 'update', {
-        'ad_storage':'granted','ad_user_data':'granted',
-        'ad_personalization':'granted','analytics_storage':'granted'
-      });
-    }
-  } catch(e) {}
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Last 24 — Everything that mattered in India, in five minutes</title>
-<meta name="description" content="Everything that mattered in India in the last 24 hours — national, world, business, tech, sports, entertainment. Curated from verified publishers only, every story linked to its original source.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The Last 24 — India's day in five minutes">
-<meta property="og:description" content="Up to date, from verified publishers only. Every story sourced, linked, and answered with why it matters to you.">
-<meta property="og:site_name" content="The Last 24">
-<link rel="canonical" href="https://thelast24.in/">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"The Last 24","url":"https://thelast24.in/","description":"Everything that mattered in India in the last 24 hours, curated from verified publishers."}
-</script>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0E130E">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta charset="UTF-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{e(story['headline'])} — {SITE_NAME}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{SITE_URL}/articles/{story['slug']}.html">
+<meta property="og:type" content="article"><meta property="og:title" content="{e(story['headline'])}">
+<meta property="og:description" content="{desc}"><meta property="og:site_name" content="{SITE_NAME}">
+<meta property="og:url" content="{SITE_URL}/articles/{story['slug']}.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<script type="application/ld+json">{jsonld}</script>
 <style>
-  :root{
-    --paper:#F7F6F2;--card:#FFFFFF;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;
-    --dark:#0C110C;--paper-on-dark:#F1F3ED;--meta-on-dark:#8C968A;
-    --green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;--vermilion:#DE4A24;
-    --maxw:1100px;
-    --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;
-    --shadow-sm:0 1px 2px rgba(13,18,13,.05),0 3px 10px rgba(13,18,13,.05);
-    --shadow-lg:0 10px 24px rgba(13,18,13,.10),0 26px 64px rgba(13,18,13,.13);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  @media (max-width:600px){.wrap{padding:0 16px}}
+:root{{--paper:#F7F6F2;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--hue:{hue};
+--display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;--dark:#0C110C;--green-bright:#27B97C;--green-soft:#0F7A52;--mw:660px}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}}
+.wrap{{max-width:660px;margin:0 auto;padding:0 20px}}
+/*MASTHEAD_CSS*/
+.band{{margin-bottom:30px}}
+.top{{font-family:var(--mono);font-size:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:660px;margin:0 auto}}
+.top a{{color:#F2F4EE;text-decoration:none;font-weight:800;font-family:var(--display);font-size:clamp(28px,4vw,34px);letter-spacing:-.02em}}.top a span{{color:var(--green-bright)}}
+.topnav{{display:flex;gap:16px;align-items:center}}
+.topnav a{{font-family:var(--mono)!important;font-size:12px!important;font-weight:600!important;color:#C9D2C5!important;letter-spacing:.04em;transition:color .15s}}
+.topnav a:hover{{color:#3BCB8D!important}}
+.cat{{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);font-weight:700;background:#fff;padding:5px 12px;border-radius:999px}}
+.kick{{font-family:var(--mono);font-size:11px;color:var(--meta);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}}
+.kick b{{color:#0E7B52}}
+h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,40px);line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}}
+.meta{{font-family:var(--mono);font-size:12px;color:var(--meta);margin-bottom:20px}}
+.hero{{border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(14,19,14,.10);margin-bottom:26px}}
+.hero svg{{display:block;width:100%;height:auto}}
+.hero img{{display:block;width:100%;aspect-ratio:21/10;object-fit:cover}}
+.hero figcaption{{font-family:var(--mono);font-size:10.5px;color:var(--meta);padding:8px 14px;background:#fff;border-top:1px solid var(--hairline)}}
+.hero figcaption a{{color:var(--meta)}}
+@media (max-width:560px){{
+  .wrap{{padding:0 16px}}
+  .hero img{{aspect-ratio:3/2}}
+  .hero{{margin-bottom:20px;border-radius:14px}}
+  .block p{{font-size:15.5px;line-height:1.7}}
+}}
+.block{{padding:18px 0;border-bottom:1px solid var(--hairline)}}
+.facts{{background:#fff;border:1px solid var(--hairline);border-left:4px solid var(--hue);border-radius:12px;padding:16px 18px;margin-bottom:8px}}
+.facts h2{{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);margin-bottom:10px}}
+.facts ul{{margin:0;padding:0;list-style:none}}
+.facts li{{font-size:15px;padding:5px 0 5px 20px;position:relative;line-height:1.5}}
+.facts li::before{{content:"▸";position:absolute;left:0;color:var(--hue)}}
+.block h2{{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hue);margin-bottom:7px}}
+.block p{{font-size:16.5px;color:var(--ink-soft)}}
+.cta{{display:block;text-align:center;margin:26px 0 8px;background:var(--hue);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;font-size:15.5px;padding:15px 20px;border-radius:13px;transition:transform .15s,box-shadow .15s}}
+.cta:hover{{transform:translateY(-2px);box-shadow:0 10px 26px rgba(14,19,14,.18)}}
+.cite{{font-family:var(--mono);font-size:11px;color:var(--meta);text-align:center;line-height:1.7;margin-bottom:8px}}
+.cite a{{color:var(--hue)}}
+.ad-slot{{margin:28px 0;border:1px dashed #DADDD2;border-radius:12px;min-height:90px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--meta)}}
+footer{{background:#0E130E;color:#939D8F;margin-top:40px;padding:26px 0 64px}}
+footer p{{font-size:12px;line-height:1.8;max-width:560px}}
+footer a{{color:#3BCB8D;text-decoration:none}}
+</style></head>
+<body>
+{_mhead}
+<div class="wrap">
+<p class="kick"><b>✓ Verified source:</b> {src_name} · {e(story['time'])} · {e(edition['date'])}</p>
+<h1>{e(story['headline'])}</h1>
+{hero}
+<article>
+{facts_box}
+{blocks}
+</article>
+<a class="cta" href="{src_url}" rel="noopener" target="_blank">Read the full story at {src_name} →</a>
+<p class="cite">This is a summary brief. Original reporting and all facts: <a href="{src_url}" rel="noopener" target="_blank">{src_name}</a>.</p>
+<div class="ad-slot"><!-- AD SLOT: article-mid. Paste your AdSense/ad-network snippet here. -->Ad space</div>
+</div>
+<footer><div class="wrap"><p><a href="/">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
+</body></html>""".replace("/*MASTHEAD_CSS*/", _mcss)
 
-  .rise{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
-  .rise.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto}
-    .rise{opacity:1;transform:none;transition:none}
-    *{transition:none!important;animation:none!important}
-  }
+# ---------------------------------------------------------------- outputs ---
+def write_outputs(edition):
+    os.makedirs("articles", exist_ok=True)
+    os.makedirs("editions", exist_ok=True)
+    used_images = set()
+    for sec in edition["sections"]:
+        for st in sec["stories"]:
+            st["slug"] = NOW.strftime("%Y%m%d") + "-" + slugify(st["headline"])
+            img = resolve_image(st, used_images)
+            if img:
+                st.update(img)
+                if img.get("image"):
+                    used_images.add(img["image"])
+            st.pop("image_query", None); st.pop("image_safety", None); st.pop("image_subject", None)
+            with open(f"articles/{st['slug']}.html", "w", encoding="utf-8") as f:
+                f.write(article_page(st, sec, edition))
+    # homepage data (article text not needed client-side)
+    slim = json.loads(json.dumps(edition, ensure_ascii=False))
+    for sec in slim["sections"]:
+        for st in sec["stories"]:
+            # AI images are saved under articles/img and stored relative to the
+            # article page; the homepage sits at root, so use the root-relative path.
+            if st.get("image_home"):
+                st["image"] = st["image_home"]
+            for k in ("article", "what_happened", "context", "why_it_matters", "whats_next", "key_facts", "image_home", "_edition_date"):
+                st.pop(k, None)
+    with open("data.js", "w", encoding="utf-8") as f:
+        f.write("// auto-generated " + NOW.strftime("%Y-%m-%d %H:%M IST") +
+                "\nwindow.BRIEF = " + json.dumps(slim, indent=2, ensure_ascii=False) + ";\n")
+    with open(f"editions/{NOW.strftime('%Y-%m-%d-%H')}.json", "w", encoding="utf-8") as f:
+        json.dump(edition, f, ensure_ascii=False, indent=2)
+    # sitemap
+    arts = sorted(a for a in os.listdir("articles") if a.endswith(".html"))
+    urls = [f"<url><loc>{SITE_URL}/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>",
+            f"<url><loc>{SITE_URL}/archive.html</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>"] + \
+           [f"<url><loc>{SITE_URL}/articles/{a}</loc></url>" for a in arts]
+    with open("sitemap.xml", "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                + "".join(urls) + "</urlset>\n")
+    print(f"Wrote {sum(len(s['stories']) for s in edition['sections'])} articles, data.js, archive, sitemap.")
 
-  /* ============ MASTHEAD ============ */
-  .band{background:var(--dark);color:var(--paper-on-dark);padding:20px 0 116px}
-  .brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
-  .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1}
-  .brand span{color:var(--green-bright)}
-  .archive-link{font-family:var(--mono);font-size:12px;color:var(--paper-on-dark);text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;transition:all .18s}
-  .archive-link:hover{border-color:var(--green-soft);color:var(--green-soft)}
-  .ca-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);background:var(--green-bright);text-decoration:none;padding:7px 14px;border-radius:999px;transition:all .18s;white-space:nowrap}
-  .ca-link:hover{background:#fff;color:var(--ink)}
-  .brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-  .brand-nav{display:flex;align-items:center;gap:10px}
-  .brand-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--meta-on-dark);text-align:right;line-height:1.7}
-  .brand-meta .v{color:var(--green-soft);font-weight:600}
-  .live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green-bright);margin-right:6px;box-shadow:0 0 8px var(--green-bright);animation:pulse 2.4s infinite;vertical-align:1px}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  @media (max-width:600px){
-    .brand-meta{display:none}
-    .brand-row{flex-wrap:wrap;gap:10px}
-    .brand-side{width:100%}
-    /* nav links scroll horizontally in one tidy row instead of cramming/wrapping */
-    .brand-nav{width:100%;overflow-x:auto;flex-wrap:nowrap;gap:8px;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-    .brand-nav::-webkit-scrollbar{display:none}
-    .ca-link,.archive-link{font-size:11px;padding:6px 11px;white-space:nowrap;flex-shrink:0}
-  }
-  .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 150s linear infinite;will-change:transform}
-  .ticker:hover .ticker-track{animation-play-state:paused}
-  @keyframes scroll{to{transform:translateX(-50%)}}
-  .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
-  .ticker-item .dot{width:4px;height:4px;border-radius:50%;flex-shrink:0}
-  @media (prefers-reduced-motion: reduce){.ticker-track{animation:none;padding-left:20px}}
 
-  /* ============ CAROUSEL ============ */
-  .car-wrap{margin-top:-92px;position:relative;z-index:2}
-  .carousel{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark)}
-  .car-track{display:flex;transition:transform .6s cubic-bezier(.3,.8,.3,1);will-change:transform}
-  .slide{position:relative;flex:0 0 100%;display:block;text-decoration:none;aspect-ratio:21/9;max-height:460px;min-height:320px}
-  .slide .media img,.slide .media svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-  .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,18,13,0) 28%,rgba(13,18,13,.5) 58%,rgba(13,18,13,.93) 100%)}
-  .slide-content{position:absolute;left:0;right:0;bottom:0;padding:24px 30px 28px;z-index:2;color:#fff;max-width:780px}
-  .slide .kick{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:12px;align-items:center;margin-bottom:10px}
-  .slide .kick .b{color:#FF7B52}
-  .slide h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,3.4vw,36px);line-height:1.08;letter-spacing:-.02em}
-  .slide .dek{font-size:14.5px;color:rgba(255,255,255,.86);line-height:1.5;margin-top:9px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  @media (max-width:600px){
-    .slide{aspect-ratio:4/3;min-height:0;max-height:none}
-    .slide .dek{display:none}
-    .slide-content{padding:16px 16px 20px}
-    .slide h2{font-size:20px}
-  }
-  .slide .srcline{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.75);margin-top:10px}
-  .slide .srcline b{color:#fff}
-  .car-ui{position:absolute;right:22px;bottom:24px;display:flex;gap:6px;align-items:center;z-index:3}
-  .car-count{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.7);margin-right:8px}
-  .car-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.35);border:none;cursor:pointer;padding:0;transition:all .3s}
-  .car-dot.on{width:28px;background:var(--green-bright)}
-  .car-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:none;background:rgba(13,18,13,.45);color:#fff;font-size:17px;cursor:pointer;backdrop-filter:blur(6px);opacity:0;transition:opacity .25s}
-  .carousel:hover .car-arrow{opacity:1}
-  .car-arrow:focus-visible{opacity:1;outline:2px solid var(--green-bright)}
-  .car-prev{left:16px}.car-next{right:16px}
-  @media (max-width:600px){.car-arrow{display:none}.car-count{display:none}}
+# ----------------------------------------------------------------- archive ---
+def build_archive():
+    """Regenerates archive.html from every saved edition: a static, crawlable
+    listing of all published stories with client-side date/category/source filters."""
+    import glob
+    e = html.escape
+    editions = []
+    archive_cutoff = NOW - timedelta(weeks=4)  # keep at most 4 weeks in the archive
+    for path in sorted(glob.glob("editions/*.json"), reverse=True):
+        stamp = os.path.basename(path)[:13]
+        try:
+            when = datetime.strptime(stamp, "%Y-%m-%d-%H").replace(tzinfo=IST)
+        except ValueError:
+            continue
+        if when < archive_cutoff:
+            continue  # older than 4 weeks — excluded from the archive page
+        try:
+            with open(path, encoding="utf-8") as f:
+                editions.append((when, json.load(f)))
+        except Exception:
+            continue
+    seen, dates, cats, sources = set(), [], {}, set()
+    seen_fps = []
+    rows_by_date = {}
+    for when, ed in editions:
+        dkey = when.strftime("%Y-%m-%d")
+        dlabel = when.strftime("%A, %d %B %Y")
+        for sec in ed.get("sections", []):
+            cats[sec["id"]] = sec["name"]
+            for st in sec.get("stories", []):
+                key = st.get("slug") or st["headline"]
+                if key in seen:
+                    continue
+                fp = _story_fingerprint(st)
+                if _is_dupe(fp, seen_fps):
+                    continue
+                seen.add(key)
+                seen_fps.append(fp)
+                sources.add(st.get("source", ""))
+                if dkey not in rows_by_date:
+                    rows_by_date[dkey] = (dlabel, [])
+                    dates.append((dkey, dlabel))
+                link = (f"articles/{st['slug']}.html" if st.get("slug") else st.get("url", "#"))
+                hue = SECTION_HUES.get(sec["id"], "#0E7B52")
+                rows_by_date[dkey][1].append(
+                    (st.get("hour", 0),
+                     f'<li class="ar" data-d="{dkey}" data-c="{sec["id"]}" data-s="{e(st.get("source",""))}">'
+                     f'<span class="tm">{e(st.get("time",""))}</span>'
+                     f'<span class="cd" style="background:{hue}" title="{e(sec["name"])}"></span>'
+                     f'<a class="hl" href="{e(link)}">{e(st["headline"])}</a>'
+                     f'<span class="so">{e(st.get("source",""))}</span></li>'))
+    def day_html(dkey, dlabel):
+        rows = [html_ for _, html_ in sorted(rows_by_date[dkey][1], key=lambda r: -r[0])]
+        return f'<div class="day" data-d="{dkey}"><h2>{e(dlabel)}</h2><ul>{"".join(rows)}</ul></div>'
+    groups = "".join(day_html(dkey, dlabel) for dkey, dlabel in dates)
+    date_opts = "".join(f'<option value="{d}">{l}</option>' for d, l in dates)
+    cat_opts = "".join(f'<option value="{c}">{e(n)}</option>' for c, n in sorted(cats.items(), key=lambda x: x[1]))
+    src_opts = "".join(f'<option value="{e(s)}">{e(s)}</option>' for s in sorted(x for x in sources if x))
+    total = len(seen)
+    _arch_mhead = masthead_html([("World Cup", "/worldcup.html", False),
+                            ("Trending", "/trending.html", False),
+                                 ("Current Affairs", "/current-affairs.html", True),
+                                 ("Home", "/", False)])
+    _arch_mcss = masthead_css()
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script><!-- Google tag (gtag.js) with Consent Mode v2 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1R3X3GKJ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500}});gtag('js',new Date());gtag('config','G-B1R3X3GKJ3');try{{if(localStorage.getItem('cookie-consent')==='granted'){{gtag('consent','update',{{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}});}}}}catch(e){{}}</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive — {SITE_NAME}</title>
+<meta name="description" content="Browse every story published by {SITE_NAME}, by date, category and source. All stories from verified publishers, each linked to the original reporting.">
+<link rel="canonical" href="{SITE_URL}/archive.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Archive — {SITE_NAME}">
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0E130E"><link rel="icon" href="favicon.ico" sizes="any"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{{--paper:#F7F6F2;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--dark:#0C110C;--green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;
+--display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+--mono:ui-monospace,"SF Mono",SFMono-Regular,"Roboto Mono",Menlo,Consolas,monospace;--mw:900px}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}}
+.wrap{{max-width:900px;margin:0 auto;padding:0 24px}}
+/*MASTHEAD_CSS*/
+h1{{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,38px);letter-spacing:-.02em;margin:32px 0 6px}}
+.sub{{font-family:var(--mono);font-size:12px;color:var(--meta);margin-bottom:22px}}
+.filters{{display:flex;gap:10px;flex-wrap:wrap;position:sticky;top:0;background:rgba(246,246,244,.94);backdrop-filter:blur(10px);padding:12px 0;border-bottom:1px solid var(--hairline);z-index:5}}
+select{{font-family:var(--body);font-size:13.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:10px;padding:9px 12px;cursor:pointer}}
+select:focus{{outline:2px solid var(--green)}}
+.day{{padding-top:26px}}
+.day h2{{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:4px}}
+ul{{list-style:none}}
+.ar{{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--hairline)}}
+.ar .tm{{font-family:var(--mono);font-size:11px;color:var(--meta);flex:0 0 76px}}
+.ar .cd{{width:8px;height:8px;border-radius:50%;flex-shrink:0;align-self:center}}
+.ar .hl{{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.3;text-decoration:none;flex:1}}
+.ar .hl:hover{{text-decoration:underline;text-underline-offset:3px}}
+.ar .so{{font-family:var(--mono);font-size:11px;color:var(--meta);flex-shrink:0}}
+@media (max-width:560px){{.ar{{flex-wrap:wrap}}.ar .tm{{flex:0 0 auto}}.ar .so{{width:100%;padding-left:20px}}}}
+.empty{{font-family:var(--mono);font-size:12.5px;color:var(--meta);padding:40px 0;text-align:center;display:none}}
+footer{{background:var(--dark);color:#929C8E;margin-top:48px;padding:28px 0 64px;font-size:12px;line-height:1.8}}
+footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
+</style></head>
+<body>
+{_arch_mhead}
+<div class="wrap">
+<h1>Every story we've published.</h1>
+<p class="sub">{total} stories · all from verified publishers · each linked to its original source</p>
+<div class="filters">
+  <select id="f-d" aria-label="Filter by date"><option value="">All dates</option>{date_opts}</select>
+  <select id="f-c" aria-label="Filter by category"><option value="">All categories</option>{cat_opts}</select>
+  <select id="f-s" aria-label="Filter by source"><option value="">All sources</option>{src_opts}</select>
+</div>
+{groups}
+<p class="empty" id="empty">No stories match those filters.</p>
+</div>
+<footer><div class="wrap"><p><a href="/">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></p>
+<p>{SITE_NAME} — automated brief from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
+<script>
+(function(){{
+  var fd=document.getElementById('f-d'),fc=document.getElementById('f-c'),fs=document.getElementById('f-s');
+  function apply(){{
+    var d=fd.value,c=fc.value,s=fs.value,any=false;
+    document.querySelectorAll('.ar').forEach(function(r){{
+      var on=(!d||r.dataset.d===d)&&(!c||r.dataset.c===c)&&(!s||r.dataset.s===s);
+      r.style.display=on?'':'none'; if(on) any=true;
+    }});
+    document.querySelectorAll('.day').forEach(function(g){{
+      g.style.display=[].some.call(g.querySelectorAll('.ar'),function(r){{return r.style.display!=='none';}})?'':'none';
+    }});
+    document.getElementById('empty').style.display=any?'none':'block';
+  }}
+  [fd,fc,fs].forEach(function(el){{el.addEventListener('change',apply);}});
+  var q=new URLSearchParams(location.search);
+  if(q.get('cat')) fc.value=q.get('cat');
+  if(q.get('date')) fd.value=q.get('date');
+  if(q.get('src')) fs.value=q.get('src');
+  if(q.get('cat')||q.get('date')||q.get('src')) apply();
+}})();
+</script>
+</body></html>"""
+    page = page.replace("/*MASTHEAD_CSS*/", _arch_mcss)
+    with open("archive.html", "w", encoding="utf-8") as f:
+        f.write(page)
+    print(f"archive.html rebuilt: {total} stories across {len(dates)} days.")
 
-  /* ============ TODAY ============ */
-  .today{padding:30px 0 6px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
-  .topline{font-family:var(--display);font-size:clamp(18px,2.1vw,22px);font-weight:600;letter-spacing:-.01em;line-height:1.5;max-width:760px}
-  .strip-box{display:block;text-decoration:none;width:100%;max-width:560px;transition:transform .2s ease}
-  .strip-box:hover{transform:translateY(-2px)}
-  .strip-cells{display:grid;grid-template-columns:repeat(24,1fr);gap:4px;height:18px}
-  .cell{background:var(--hairline);border-radius:3px}
-  .cell.active{background:var(--green)}
-  .cell.breaking{background:var(--vermilion)}
-  .strip-box:hover .cell.active{box-shadow:0 0 8px rgba(14,123,82,.4)}
-  .strip-caption{font-family:var(--mono);font-size:11px;color:var(--meta);margin-top:9px}
-  .strip-box:hover .strip-caption{color:var(--green)}
+def build_tweet_queue(edition, max_per_day=10):
+    """After each run, generate personalised reporting tweets for the most
+    important new stories and append them to tweets/queue.json (deduped, capped
+    at max_per_day per IST day). n8n reads this queue and posts to X."""
+    import glob
+    os.makedirs("tweets", exist_ok=True)
+    qpath = "tweets/queue.json"
+    today = NOW.strftime("%Y-%m-%d")
 
-  /* ============ FILTER NAV (sticky, switch categories anywhere) ============ */
-  nav{position:sticky;top:0;background:rgba(246,246,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);z-index:10}
-  .nav-inner{display:flex;gap:6px;overflow-x:auto;padding:11px 0;scrollbar-width:none;justify-content:center}
-  @media (max-width:760px){.nav-inner{justify-content:flex-start}}
-  .nav-inner::-webkit-scrollbar{display:none}
-  .chip{font-size:13px;font-weight:600;color:var(--ink-soft);padding:8px 16px;border-radius:999px;border:1px solid var(--hairline);background:#fff;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;transition:all .18s;font-family:var(--body)}
-  .chip .hue{width:7px;height:7px;border-radius:50%}
-  .chip:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
-  .chip.on{color:#fff;border-color:transparent}
-  .chip:focus-visible{outline:2px solid var(--green);outline-offset:1px}
+    # Load existing queue; reset the day's counter if it's a new day.
+    queue = {"day": today, "posted_keys": [], "pending": []}
+    if os.path.exists(qpath):
+        try:
+            with open(qpath, encoding="utf-8") as f:
+                loaded = json.load(f)
+            if loaded.get("day") == today:
+                queue = loaded
+        except Exception:
+            pass
 
-  /* ============ SECTIONS + CARD GRID ============ */
-  section{padding:30px 0 0;scroll-margin-top:64px}
-  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
-  .sec-head .hue{width:9px;height:9px;border-radius:50%}
-  .sec-head h2{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase}
-  .sec-head .bar{flex:1;height:1px;background:var(--hairline);min-width:24px}
-  .sec-head .count{font-family:var(--mono);font-size:10.5px;color:var(--meta)}
-  .sec-actions{display:flex;align-items:center;gap:8px}
-  .sec-arrow{width:32px;height:32px;border-radius:50%;border:1px solid var(--hairline);background:#fff;color:var(--ink);font-size:14px;cursor:pointer;transition:all .18s;line-height:1}
-  .sec-arrow:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-  @media (max-width:600px){.sec-arrow{display:none}}
-  .sec-more{font-family:var(--mono);font-size:11px;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:999px;border:1.5px solid;transition:all .18s;white-space:nowrap}
-  .hscroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .hscroll::-webkit-scrollbar{display:none}
-  .card{flex:0 0 320px;scroll-snap-align:start;background:var(--card);border:1px solid var(--hairline);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
+    already = set(queue.get("posted_keys", [])) | {t["key"] for t in queue.get("pending", [])}
+    day_count = len(queue.get("posted_keys", [])) + len(queue.get("pending", []))
+    room = max_per_day - day_count
+    if room <= 0:
+        print(f"Tweet quota for {today} reached ({day_count}/{max_per_day}); none added.")
+        with open(qpath, "w", encoding="utf-8") as f:
+            json.dump(queue, f, ensure_ascii=False, indent=2)
+        return
 
-  /* ============ COMPREHENSIVE MOBILE OPTIMISATION (phone-first) ============ */
-  @media (max-width:600px){
-    /* Tighter, consistent page gutters */
-    .wrap{padding:0 14px}
-    /* Cards: near-full-width with a peek of the next, consistent gap */
-    .hscroll{gap:12px;padding:2px 0 14px}
-    .card{flex:0 0 82vw;border-radius:16px}
-    /* Right-edge fade overlay on each carousel = visible "more →" hint.
-       Lives on the section, sits over the scroll rail's right edge. */
-    section{position:relative}
-    .rail-wrap{position:relative}
-    .rail-wrap{--fade:1}
-    .rail-wrap::after{content:"";position:absolute;top:0;right:0;bottom:14px;width:42px;
-      background:linear-gradient(90deg,rgba(246,246,244,0),var(--paper));
-      pointer-events:none;z-index:2;opacity:var(--fade);transition:opacity .2s}
-    .card .pad{padding:15px 16px 16px;gap:8px}
-    /* Headline: a touch smaller, comfortable line-height, no overflow */
-    .card h3{font-size:17.5px;line-height:1.28;letter-spacing:-.01em;word-break:break-word}
-    /* Standfirst: readable size, a little more breathing room */
-    .card .what{font-size:14px;line-height:1.6;-webkit-line-clamp:3}
-    /* "Why it matters": clearer separation from the standfirst */
-    .lens{font-size:13px;line-height:1.55;padding-left:10px;margin-top:2px}
-    /* Kicker / category label: keep crisp, avoid wrap crowding */
-    .kick{font-size:10px;gap:8px;flex-wrap:wrap}
-    /* Meta line: larger tap targets, comfortable spacing */
-    .meta-line{font-size:11px;gap:10px;padding-top:8px}
-    .meta-line .src,.meta-line .read{padding:3px 0;min-height:24px;display:inline-flex;align-items:center}
-    /* Section rhythm: more vertical separation between categories */
-    section{padding:26px 0 0;scroll-margin-top:60px}
-    .sec-head{margin-bottom:12px;gap:8px}
-    .sec-head h2{font-size:14px;letter-spacing:.1em}
-    .sec-head .count{display:none}
-    .sec-more{font-size:10.5px;padding:7px 12px}
-    /* Topline: comfortable reading measure, centered, not cramped */
-    .today{padding:20px 10px 6px;gap:18px}
-    .topline{font-size:15px;line-height:1.65;padding:0 6px;font-weight:500;letter-spacing:0;max-width:100%}
-    .strip-cells{height:14px;gap:3px}
-    .strip-box{padding:0 4px}
-    .strip-caption{font-size:9.5px;line-height:1.5;margin-top:10px;padding:0 16px}
-    /* Carousel: title sits clear of the gradient, dek hidden already */
-    .slide h2{font-size:19px;line-height:1.18}
-    .slide-content{padding:14px 16px 18px}
-    .slide .kick{font-size:10px;gap:8px;margin-bottom:8px}
-    /* Filter chips: easy to tap, no crowding */
-    .chip{font-size:12.5px;padding:8px 14px}
-    .nav-inner{gap:5px;padding:10px 0}
-    /* Filter row also gets a right-edge fade hint when scrollable */
-    nav{position:sticky;top:0}
-    .nav-fade{position:relative}
-    .nav-fade{--fade:1}
-    .nav-fade::after{content:"";position:absolute;top:0;right:0;bottom:0;width:38px;
-      background:linear-gradient(90deg,rgba(246,246,244,0),rgba(246,246,244,.95));
-      pointer-events:none;z-index:2;opacity:var(--fade);transition:opacity .2s}
-    /* Newsletter popup: fit small screens without edge-bleed */
-    .nl{right:10px;left:10px;bottom:10px;padding:18px}
-    .nl h4{font-size:18px}
-    /* Footer: comfortable stacked spacing */
-    .f-inner{padding:32px 14px 22px;gap:24px}
-    .f-blurb{font-size:13px;max-width:none}
-    .f-bottom-inner{padding:14px 14px 32px;flex-direction:column;gap:8px}
-  }
-  /* Very small phones */
-  @media (max-width:380px){
-    .card{flex:0 0 90vw}
-    .card h3{font-size:16.5px}
-    .brand{font-size:26px!important}
-  }
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-  .card .media{aspect-ratio:16/9;overflow:hidden}
-  .card .media img,.card .media svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-  .card:hover .media img,.card:hover .media svg{transform:scale(1.05)}
-  .card .pad{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
-  .kick{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:flex;gap:10px;align-items:center}
-  .kick .t{color:var(--meta);font-weight:400;letter-spacing:.05em}
-  .kick .b{color:var(--vermilion)}
-  .card h3{font-family:var(--display);font-weight:700;font-size:18.5px;line-height:1.22;letter-spacing:-.015em}
-  .card h3 a{text-decoration:none}
-  .card h3 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
-  .card .what{font-size:14.5px;color:var(--ink-soft);line-height:1.55;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-  .lens{font-size:13.5px;line-height:1.5;color:var(--ink-soft);padding-left:11px;border-left:2px solid}
-  .lens b{font-weight:650}
-  .meta-line{font-family:var(--mono);font-size:11px;color:var(--meta);display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:auto;padding-top:4px}
-  .meta-line .src{text-decoration:none;color:var(--ink);font-weight:600;border-bottom:1px solid var(--hairline)}
-  .meta-line .src:hover{border-color:var(--ink)}
-  .meta-line .src .v{color:var(--green)}
-  .meta-line .read{text-decoration:none;font-weight:600;margin-left:auto}
+    # Rank this run's stories: breaking first, then most recent.
+    ranked = []
+    for sec in edition["sections"]:
+        for st in sec["stories"]:
+            ranked.append((sec, st))
+    ranked.sort(key=lambda p: (not p[1].get("breaking", False), -(p[1].get("hour", 0))))
 
-  .ad-slot{margin:30px 0 0;border:1px dashed #D9DCD0;border-radius:16px;min-height:110px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--meta);background:rgba(255,255,255,.6)}
+    site = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
+    added = 0
+    for sec, st in ranked:
+        if added >= room:
+            break
+        key = st.get("slug") or st.get("headline")
+        if key in already:
+            continue
+        link = f"{site}/articles/{st['slug']}.html" if st.get("slug") else site
+        tweet = generate_tweet(st, sec["name"], link)
+        if not tweet:
+            continue
+        # Attach the story's image to the tweet (Pexels/Wikimedia already
+        # resolved onto st["image"]). If absent, leave empty — the Buffer
+        # publisher will generate a text card so the tweet is never imageless.
+        img = st.get("image") or ""
+        queue["pending"].append({"key": key, "text": tweet, "url": link,
+                                 "section": sec["name"], "image": img,
+                                 "headline": st.get("headline", ""),
+                                 "created": NOW.strftime("%Y-%m-%d %H:%M IST")})
+        already.add(key)
+        added += 1
 
-  /* ============ NEWSLETTER + COOKIE ============ */
-  .nl{position:fixed;right:16px;bottom:16px;left:16px;max-width:392px;margin-left:auto;background:var(--dark);color:var(--paper-on-dark);border-radius:18px;box-shadow:0 18px 50px rgba(13,18,13,.4);padding:22px;z-index:50;transform:translateY(150%);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
-  .nl.show{transform:none}
-  .nl h4{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.015em;margin-bottom:4px}
-  .nl h4 span{color:var(--green-bright)}
-  .nl .sub{font-size:12.5px;color:var(--meta-on-dark);margin-bottom:13px;line-height:1.5}
-  .nl .prefs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:13px}
-  .nl .pref{font-weight:600;font-size:12px;padding:6px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;cursor:pointer;user-select:none;transition:all .15s;color:var(--paper-on-dark)}
-  .nl .pref.on{background:var(--green-bright);border-color:var(--green-bright);color:var(--dark)}
-  .nl .row2{display:flex;gap:8px}
-  .nl input{flex:1;font-size:14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:var(--paper-on-dark);border-radius:10px;padding:11px 13px;font-family:var(--body)}
-  .nl input::placeholder{color:var(--meta-on-dark)}
-  .nl input:focus{outline:2px solid var(--green-bright)}
-  .nl button.go{font-weight:700;font-size:13.5px;background:var(--green-bright);color:var(--dark);border:none;border-radius:10px;padding:11px 17px;cursor:pointer;transition:transform .15s;font-family:var(--body)}
-  .nl button.go:hover{transform:scale(1.04)}
-  .nl .close{position:absolute;top:12px;right:15px;background:none;border:none;font-size:15px;color:var(--meta-on-dark);cursor:pointer}
-  .nl .msg{font-family:var(--mono);font-size:11px;margin-top:9px}
-  .ck{position:fixed;left:16px;right:16px;bottom:16px;max-width:480px;background:#fff;border:1px solid var(--hairline);border-radius:14px;box-shadow:0 14px 40px rgba(13,18,13,.18);padding:16px 18px;z-index:60;font-size:13px;color:var(--ink-soft)}
-  .ck a{color:var(--green)}
-  .ck .b{display:flex;gap:8px;margin-top:11px}
-  .ck button{font-family:var(--body);font-weight:700;font-size:12.5px;border-radius:9px;padding:9px 14px;cursor:pointer;border:1px solid var(--hairline);background:#fff;color:var(--ink)}
-  .ck button.ok{background:var(--dark);border-color:var(--dark);color:#fff}
+    with open(qpath, "w", encoding="utf-8") as f:
+        json.dump(queue, f, ensure_ascii=False, indent=2)
+    print(f"Tweet queue: added {added}, pending {len(queue['pending'])}, "
+          f"day total {day_count + added}/{max_per_day}.")
 
-  footer{background:var(--dark);color:var(--meta-on-dark);margin-top:56px;width:100%}
-  .f-inner{max-width:var(--maxw);margin:0 auto;padding:46px 24px 30px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;align-items:start}
-  .f-logo{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;color:var(--paper-on-dark);text-decoration:none}
-  .f-logo span{color:var(--green-bright)}
-  .f-blurb{font-size:13px;line-height:1.8;margin-top:12px;max-width:380px}
-  .f-blurb .v{color:var(--green-soft)}
-  .f-col h5{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--meta-on-dark);margin-bottom:12px}
-  .f-col a{display:block;font-size:13.5px;color:var(--paper-on-dark);text-decoration:none;padding:5px 0;transition:color .15s}
-  .f-col a:hover{color:var(--green-soft)}
-  .f-bottom{border-top:1px solid rgba(255,255,255,.1)}
-  .f-bottom-inner{max-width:var(--maxw);margin:0 auto;padding:18px 24px 40px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px}
-  .f-bottom-inner a{color:var(--paper-on-dark);font-weight:600;text-decoration:none}
-  @media (max-width:720px){.f-inner{grid-template-columns:1fr;gap:28px;padding:36px 16px 24px}.f-bottom-inner{padding:16px 16px 36px}}
+
+def generate_tweet(st, section_name, link):
+    """One concise, free-tier tweet (well under 280 incl. link) with 2-3
+    relevant hashtags. Factual, punchy, never sensational. Returns None on fail."""
+    sys_prompt = (
+        "You write tweets for 'The Last 24', a verified Indian news brief. Voice: "
+        "a sharp, trustworthy reporter — punchy, factual, never clickbait or "
+        "sensational. Write ONE short tweet for the story below.\n"
+        "HARD rules: the tweet TEXT must be UNDER 180 characters (a link is added "
+        "separately and eats ~23 more). Be tight — lead with the news, name the key "
+        "real people/places/figures, skip filler. End with exactly 2-3 relevant "
+        "hashtags (always include #IndiaNews, plus 1-2 topical ones like #Cricket, "
+        "#RBI, #UPSC, #Markets as fits). No 'BREAKING' unless it truly is. No emojis. "
+        'Respond with ONLY this JSON: {"tweet":"...tweet text incl hashtags..."}')
+    user = (f"Section: {section_name}\nHeadline: {st['headline']}\n"
+            f"Summary: {st.get('what','')}\nWhy it matters: {st.get('lens','')}")
+    try:
+        data = extract_json(call_claude(sys_prompt, user, 300), "tweet")
+        text = str(data.get("tweet", "")).strip()
+        if not text:
+            return None
+        # Free tier = 280 chars; X counts any link as 23. Keep text <= 180 so
+        # text + space + link stays comfortably within limit. If trimming is
+        # needed, preserve the trailing hashtags (they carry reach).
+        if len(text) > 180:
+            import re as _re
+            tags = _re.findall(r"#\w+", text)
+            tag_str = (" " + " ".join(tags[:3])) if tags else ""
+            body = _re.sub(r"\s*#\w+\s*$", "", text).strip()
+            budget = 180 - len(tag_str) - 1
+            if len(body) > budget:
+                body = body[:budget].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+            text = body + tag_str
+        return f"{text}\n{link}"
+    except (RuntimeError, ValueError) as exc:
+        print(f"  tweet generation failed for '{st.get('headline','')[:40]}': {exc}")
+        return None
+
+
+def build_trending(edition):
+    """Trending = the stories rising to the top across all sections right now:
+    breaking items first, then the most recent, deduped. Free signal derived
+    from the edition we already built (no paid trends API). Writes trending.js
+    (window.TRENDING) + trending.html."""
+    items = []
+    for sec in edition["sections"]:
+        for st in sec["stories"]:
+            items.append({
+                "headline": st.get("headline", ""),
+                "section": sec.get("name", ""),
+                "section_id": sec.get("id", ""),
+                "time": st.get("time", ""),
+                "hour": st.get("hour", 0),
+                "breaking": bool(st.get("breaking", False)),
+                "image": st.get("image", ""),
+                "lens": st.get("lens", ""),
+                "slug": st.get("slug", ""),
+                "source": st.get("source", ""),
+            })
+    # Rank: breaking first, then newest by hour.
+    items.sort(key=lambda x: (not x["breaking"], -(x["hour"] or 0)))
+    items = items[:12]  # the top 12 trending
+
+    trending = {
+        "date": NOW.strftime("%A, %d %B %Y"),
+        "updated_label": NOW.strftime("%d %b %Y, %H:%M IST"),
+        "items": items,
+    }
+    with open("trending.js", "w", encoding="utf-8") as f:
+        f.write("window.TRENDING = " + json.dumps(trending, ensure_ascii=False) + ";")
+
+    _mhead = masthead_html([("Current Affairs", "/current-affairs.html", True),
+                            ("Archive", "/archive.html", False),
+                            ("Home", "/", False)],
+                           date_label=edition.get("date", ""))
+    _mcss = masthead_css()
+    hue_map = json.dumps(SECTION_HUES)
+    page = TRENDING_PAGE.replace("/*MASTHEAD_CSS*/", _mcss) \
+                        .replace("<!--MASTHEAD-->", _mhead) \
+                        .replace("/*HUES*/", hue_map) \
+                        .replace("SITE_URL_REPLACE", SITE_URL)
+    with open("trending.html", "w", encoding="utf-8") as f:
+        f.write(page)
+    print(f"Trending: {len(items)} stories ({sum(1 for i in items if i['breaking'])} breaking).")
+
+
+TRENDING_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3154853937012742" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trending in India — The Last 24</title>
+<meta name="description" content="What's trending across India right now — the stories rising to the top from verified publishers, updated through the day.">
+<link rel="canonical" href="SITE_URL_REPLACE/trending.html">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{--paper:#F7F6F2;--card:#FFFFFF;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--dark:#0C110C;--green:#0C6E49;--green-bright:#27B97C;--green-soft:#0F7A52;
+--display:Georgia,'Times New Roman',serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--mw:920px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+/*MASTHEAD_CSS*/
+a{color:inherit}
+.hero{padding:34px 0 8px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px}
+.hero p{font-size:16px;color:var(--meta);max-width:620px}
+.updated{font-family:var(--mono);font-size:12px;color:var(--meta);margin-top:14px}
+.updated b{color:var(--green)}
+.tlist{padding:26px 0 60px;display:flex;flex-direction:column;gap:2px}
+.trow{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--hairline);text-decoration:none;transition:background .15s}
+.trow:hover{background:#fff}
+.trank{font-family:var(--display);font-weight:800;font-size:30px;color:var(--hue,#27B97C);min-width:42px;line-height:1}
+.tbody{flex:1}
+.tkick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.tcat{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--hue,#27B97C)}
+.tbreak{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#CE3D1D;padding:2px 7px;border-radius:5px}
+.ttime{font-family:var(--mono);font-size:11px;color:var(--meta)}
+.trow h3{font-family:var(--display);font-size:20px;line-height:1.25;font-weight:700;margin:0 0 4px}
+.tlens{font-size:14px;color:var(--meta)}
+.empty{text-align:center;color:var(--meta);padding:60px 0;font-family:var(--mono);font-size:13px}
+footer{border-top:1px solid var(--hairline);padding:30px 0;font-family:var(--mono);font-size:12px;color:var(--meta);text-align:center}
+@media(max-width:600px){.wrap{padding:0 14px}.trank{font-size:24px;min-width:32px}.trow h3{font-size:18px}}
 </style>
 </head>
 <body>
-
-<div class="band">
-  <div class="wrap">
-    <div class="brand-row">
-      <a class="brand" href="/">The Last <span>24</span></a>
-      <div class="brand-side">
-        <div class="brand-nav">
-          <a class="archive-link" href="worldcup.html">World Cup →</a>
-          <a class="archive-link" href="trending.html">Trending →</a>
-          <a class="ca-link" href="current-affairs.html">Current Affairs →</a>
-          <a class="archive-link" href="archive.html">Archive →</a>
-        </div>
-        <div class="brand-meta"><span class="live-dot"></span>Up to date<br><span class="v">✓ Verified publishers only</span><br><span id="date-label">—</span></div>
-      </div>
-    </div>
-    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
-  </div>
+<!--MASTHEAD-->
+<div class="wrap hero">
+  <h1>Trending in India</h1>
+  <p>The stories rising to the top across India right now — drawn from verified publishers and refreshed through the day.</p>
+  <div class="updated" id="updated"></div>
 </div>
-
-<div class="wrap car-wrap">
-  <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Top stories">
-    <div class="car-track" id="car-track"></div>
-    <button class="car-arrow car-prev" id="car-prev" aria-label="Previous story">‹</button>
-    <button class="car-arrow car-next" id="car-next" aria-label="Next story">›</button>
-    <div class="car-ui"><span class="car-count" id="car-count"></span><span id="car-dots" style="display:flex;gap:6px"></span></div>
-  </div>
-</div>
-
-<div class="wrap today">
-  <p class="topline rise in" id="topline"></p>
-  <a class="strip-box rise in" href="archive.html" aria-label="Browse the full archive">
-    <div class="strip-cells" id="strip" aria-label="Hours when stories broke"></div>
-    <p class="strip-caption">Each cell marks a major event from around the world — tap to explore all stories in our archive →</p>
-  </a>
-</div>
-
-<nav><div class="wrap nav-fade"><div class="nav-inner" id="nav"></div></div></nav>
-
-<main class="wrap" id="main"></main>
-
-<div class="wrap"><div class="ad-slot"><!-- AD SLOT: home-footer. Paste your AdSense/ad-network snippet here. -->Ad space</div></div>
-
-<footer>
-  <div class="f-inner">
-    <div>
-      <a class="f-logo" href="/">The Last <span>24</span></a>
-      <p class="f-blurb">Everything that mattered in India — curated exclusively from <span class="v">verified publishers</span> like PTI, Reuters, The Hindu, The Economic Times and Mint. Every story links to its original source.</p>
-    </div>
-    <div class="f-col">
-      <h5>Explore</h5>
-      <a href="/">Today's brief</a>
-      <a href="archive.html">Archive</a>
-      <a href="about.html">About</a>
-    </div>
-    <div class="f-col">
-      <h5>Connect</h5>
-      <a href="contact.html">Contact</a>
-      <a href="mailto:support@thelast24.in">support@thelast24.in</a>
-      <a href="privacy.html">Privacy policy</a>
-    </div>
-  </div>
-  <div class="f-bottom">
-    <div class="f-bottom-inner">
-      <span>© 2026 The Last 24 · All stories belong to their cited publishers</span>
-      <span>Founded by <a href="about.html">Pankaj Kumar</a></span>
-    </div>
-  </div>
-</footer>
-
-<div class="ck" id="ck" hidden>
-  We use cookies to remember your preferences and measure readership; with your consent we may also use them for advertising in future. See our <a href="privacy.html">privacy policy</a>.
-  <div class="b"><button class="ok" id="ck-ok">Accept all</button><button id="ck-no">Essential only</button></div>
-</div>
-
-<aside class="nl" id="nl" aria-label="Weekly newsletter signup">
-  <button class="close" id="nl-close" aria-label="Dismiss">✕</button>
-  <h4>The week, in <span>one email.</span></h4>
-  <p class="sub">Pick your topics — get a weekly curation of only what you care about. Free.</p>
-  <div class="prefs" id="nl-prefs"></div>
-  <div class="row2">
-    <input type="email" id="nl-email" placeholder="you@email.com" aria-label="Email address">
-    <button class="go" id="nl-go">Sign up</button>
-  </div>
-  <p class="msg" id="nl-msg"></p>
-</aside>
-
-<script src="data.js"></script>
+<div class="wrap tlist" id="tlist"></div>
+<footer><div class="wrap">The Last 24 · Verified publishers only · <a href="/">Home</a> · <a href="/current-affairs.html">Current Affairs</a> · <a href="/archive.html">Archive</a></div></footer>
+<script src="trending.js"></script>
 <script>
-// Fallback edition (replaced at build time with the latest real edition).
-window.BRIEF = window.BRIEF || {
-  "date": "Friday, 12 June 2026",
-  "edition": "12 June 2026 — Launch Edition",
-  "lensLabel": "Why it matters",
-  "topline": "Today's headlines from across India, led by: Amit Shah chairs high-level review of Amarnath Yatra security today.",
-  "sections": [
-    {
-      "id": "national",
-      "name": "National",
-      "stories": [
-        {
-          "hour": 8,
-          "time": "08:00 IST",
-          "headline": "Amit Shah chairs high-level review of Amarnath Yatra security today",
-          "what": "Union Home Minister Amit Shah is holding a meeting in New Delhi today to review preparedness for the Shri Amarnath Ji Yatra. The National Security Advisor, the Lieutenant Governor of Jammu & Kashmir, the Army Chief and the DG of the CRPF are among senior officials attending. The review covers security arrangements and logistics for the annual pilgrimage.",
-          "lens": "The scale of this meeting — NSA, Army Chief, CRPF chief in one room — signals how seriously the Centre is treating pilgrim security this season; expect tighter movement protocols if you're planning the Yatra.",
-          "source": "News9 Live",
-          "url": "https://www.news9live.com/india/breaking-news-headlines-today-12-06-2026-live-updates-in-english-india-world-politics-crime-president-donald-trump-israel-us-vs-iran-war-pm-narendra-modi-2979403",
-          "breaking": false
-        },
-        {
-          "hour": 11,
-          "time": "11:00 IST",
-          "headline": "J.P. Nadda launches 'A Decade of Care' marking 10 years of PMSMA",
-          "what": "Union Health Minister J.P. Nadda launched nationwide celebrations marking ten years of the Pradhan Mantri Surakshit Matritva Abhiyan in New Delhi. A Rs 75 commemorative coin and a Rs 5 postal stamp were released to recognise the scheme's contribution to maternal healthcare. The programme has provided assured antenatal check-ups to pregnant women on the 9th of every month since 2016.",
-          "lens": "PMSMA is one of the quiet schemes that touches crores of families — a decade milestone usually precedes an expansion or revamp worth watching in the next health budget.",
-          "source": "FreeJobAlert Current Affairs",
-          "url": "https://www.freejobalert.com/articles/daily-current-affairs-12-june-2026-10279",
-          "breaking": false
-        },
-        {
-          "hour": 12,
-          "time": "12:00 IST",
-          "headline": "Sangeet Natak Akademi elects 7 fellows, announces 108 Akademi Awards",
-          "what": "The General Council of the Sangeet Natak Akademi elected seven eminent artists as Fellows — the Akademi's highest honour — and announced 108 Akademi Awards covering 2024 and 2025. The decisions were taken at the national academy's council meeting on June 10. The awards span music, dance, theatre and allied performing arts from across the country.",
-          "lens": "Akademi Fellowships shape which traditions get institutional backing and funding visibility — a signal of where India's official cultural patronage is heading.",
-          "source": "FreeJobAlert Current Affairs",
-          "url": "https://www.freejobalert.com/articles/daily-current-affairs-12-june-2026-10279",
-          "breaking": false
-        }
-      ]
-    },
-    {
-      "id": "world",
-      "name": "World",
-      "stories": [
-        {
-          "hour": 22,
-          "time": "22:30 IST",
-          "headline": "Iran says ceasefire is 'practically meaningless' after US strikes; crude surges",
-          "what": "Iran's foreign ministry condemned the latest US strikes on the country, saying the ceasefire has been rendered effectively void. Crude oil prices surged on the escalation, feeding fears of imported inflation in oil-dependent economies. The flare-up dragged Asian equities lower and kept global investors in risk-off mode.",
-          "lens": "India imports most of its crude — every sustained spike shows up in your petrol bill, in inflation, and in pressure on the rupee, which opened near record lows against the dollar.",
-          "source": "Upstox News",
-          "url": "https://upstox.com/news/market-news/stocks/sensex-nifty-50-fall-for-second-straight-session-dragged-by-it-stocks/article-195190/",
-          "breaking": true
-        },
-        {
-          "hour": 23,
-          "time": "23:00 IST",
-          "headline": "US launches air strikes on Iran for a second consecutive day",
-          "what": "The United States carried out air strikes on Iran for the second day running, deepening the most serious escalation in the region this year. The strikes follow Tehran's declaration that the existing ceasefire has been rendered effectively void. Regional governments and oil markets are bracing for further retaliation cycles.",
-          "lens": "Every additional day of strikes pushes crude higher and keeps the rupee, your fuel bill and the RBI's rate-cut timeline hostage to events 3,000 km away.",
-          "source": "NPR",
-          "url": "https://www.npr.org/sections/world/",
-          "breaking": false
-        },
-        {
-          "hour": 20,
-          "time": "20:30 IST",
-          "headline": "Taiwan awaits US approval of $14 billion arms package amid Beijing outreach",
-          "what": "Taiwan is awaiting Washington's approval of a $14 billion arms package as questions linger over the US's long-term commitment to the island's defence. The wait coincides with opposition KMT chairwoman Cheng Li-wun meeting Chinese President Xi Jinping in Beijing. The twin tracks underline how contested Taiwan's strategic direction has become.",
-          "lens": "Taiwan makes the chips inside nearly everything India imports — any wobble in its security calculus is a supply-chain risk story for Indian electronics manufacturing.",
-          "source": "NPR",
-          "url": "https://www.npr.org/sections/world/",
-          "breaking": false
-        }
-      ]
-    },
-    {
-      "id": "business",
-      "name": "Business & Markets",
-      "stories": [
-        {
-          "hour": 15,
-          "time": "15:30 IST",
-          "headline": "Sensex falls 151 points to 73,833 as IT drags; second straight losing session",
-          "what": "The Sensex ended 151 points lower at 73,833 and the Nifty 50 dropped 53 points to 23,162, falling for a second straight session. The Nifty IT index led the decline with a fall of about 1.6% as 11 of 15 major NSE sector gauges closed lower. Mahindra & Mahindra, ICICI Bank, Kotak Mahindra Bank and Bharti Airtel were among the few gainers, while market breadth stayed firmly negative.",
-          "lens": "IT — the biggest weight in many mutual fund portfolios — is bearing the brunt of global AI-spending jitters; if your SIPs are tech-heavy, expect choppiness while West Asia tensions and FII selling persist.",
-          "source": "Upstox News",
-          "url": "https://upstox.com/news/market-news/stocks/sensex-nifty-50-fall-for-second-straight-session-dragged-by-it-stocks/article-195190/",
-          "breaking": false
-        },
-        {
-          "hour": 9,
-          "time": "09:30 IST",
-          "headline": "May inflation print due today; foreign outflows hit a record $30.6 billion",
-          "what": "India's May consumer inflation data is due later today, with the annual rate expected to accelerate to around 4.0% from 3.48% in April. Foreign portfolio investors sold another $207 million of Indian equities on Thursday, taking year-to-date outflows to a record $30.6 billion. The rupee's weakness near 95.5 to the dollar adds to imported-inflation pressure from costlier crude.",
-          "lens": "A 4% print would still be within the RBI's comfort band — but the combination of rising oil, a weak rupee and record foreign selling is exactly the mix that delays rate cuts on your home loan.",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/india/stock-market",
-          "breaking": false
-        },
-        {
-          "hour": 17,
-          "time": "17:30 IST",
-          "headline": "Canara Bank raises MCLR by 5 bps across key tenures from June 12",
-          "what": "Canara Bank hiked its marginal cost of funds-based lending rate by 5 basis points across the month, quarter and six-month tenures, effective June 12. UCO Bank separately raised its treasury-bill-linked rates by up to 15 basis points earlier in the week. The moves come as banks reprice funds amid tighter liquidity and a weak rupee.",
-          "lens": "MCLR hikes feed straight into older floating-rate loans — if your home or business loan is MCLR-linked, your EMI maths just shifted slightly against you.",
-          "source": "Trendlyne",
-          "url": "https://trendlyne.com/markets-today/",
-          "breaking": false
-        }
-      ]
-    },
-    {
-      "id": "tech",
-      "name": "Technology",
-      "stories": [
-        {
-          "hour": 11,
-          "time": "11:00 IST",
-          "headline": "TCS partners with Anthropic to build a dedicated enterprise AI unit",
-          "what": "Tata Consultancy Services has partnered with AI company Anthropic to set up a new business unit focused on scaling enterprise AI adoption. The move deepens the tie-up between India's largest IT services firm and one of the leading frontier AI labs. It comes as Indian IT majors race to convert AI demand into services revenue amid investor scrutiny of the sector.",
-          "lens": "India's IT giants are repositioning from coding shops to AI-deployment partners — that's where the next wave of tech hiring and reskilling demand will come from.",
-          "source": "Trendlyne",
-          "url": "https://trendlyne.com/markets-today/",
-          "breaking": false
-        },
-        {
-          "hour": 12,
-          "time": "12:30 IST",
-          "headline": "Lenskart shares worth Rs 1,960 crore change hands in a single block deal",
-          "what": "About 4 crore shares of Lenskart Solutions, worth roughly Rs 1,960 crore, reportedly changed hands in a block deal. Large block trades of this size typically signal an early investor paring its stake or institutional repositioning. The eyewear retailer has been among the most watched new-age listings on the exchanges.",
-          "lens": "Big block deals in new-age stocks are worth watching — early-investor exits can pressure prices short-term but also widen public float, often a precursor to index inclusion.",
-          "source": "Trendlyne",
-          "url": "https://trendlyne.com/markets-today/",
-          "breaking": false
-        },
-        {
-          "hour": 14,
-          "time": "14:00 IST",
-          "headline": "Power Grid approves Rs 485 crore upgrade of national power monitoring systems",
-          "what": "Power Grid Corporation's board approved a Rs 485 crore capital expenditure to upgrade the systems that monitor India's electricity network. The modernisation targets the technology layer that watches grid flows in real time. It follows a period of record peak demand and growing renewable inputs that make grid management harder.",
-          "lens": "Smarter grid monitoring is what stands between record summer demand and blackouts — and it's a growing order pipeline for Indian grid-tech and automation firms.",
-          "source": "Trendlyne",
-          "url": "https://trendlyne.com/markets-today/",
-          "breaking": false
-        }
-      ]
-    },
-    {
-      "id": "ai",
-      "name": "Artificial Intelligence",
-      "stories": [
-        {
-          "hour": 14,
-          "time": "14:00 IST",
-          "headline": "TCS partners with Anthropic to build an enterprise AI unit",
-          "what": "Tata Consultancy Services has partnered with AI company Anthropic to set up a new business unit focused on scaling enterprise AI adoption. The tie-up deepens links between India's largest IT services firm and a leading frontier AI lab. It comes as Indian IT majors race to turn AI demand into services revenue.",
-          "lens": "India's IT giants are repositioning from coding shops to AI-deployment partners — that's where the next wave of tech hiring and reskilling demand will come from.",
-          "source": "Trendlyne",
-          "url": "https://trendlyne.com/markets-today/",
-          "breaking": false
-        },
-        {
-          "hour": 10,
-          "time": "10:00 IST",
-          "headline": "Anthropic releases Claude Sonnet 4.6 with the same pricing as 4.5",
-          "what": "Anthropic made Claude Sonnet 4.6 its default model, holding pricing steady at $3 per million input tokens and $15 per million output tokens. The release continues rapid iteration across frontier AI labs. Enterprise adopters get an upgrade without a cost increase.",
-          "lens": "Flat pricing on a stronger model means the AI tools many Indian startups build on just got cheaper to run per unit of quality.",
-          "source": "Trendlyne",
-          "url": "https://trendlyne.com/markets-today/",
-          "breaking": false
-        },
-        {
-          "hour": 8,
-          "time": "08:00 IST",
-          "headline": "India's IndiaAI Mission opens new compute access for startups",
-          "what": "The IndiaAI Mission expanded subsidised GPU compute access for domestic startups and researchers. The programme aims to lower the cost barrier to training and deploying AI models in India. It is part of the government's push for sovereign AI capability.",
-          "lens": "Cheaper compute is the single biggest unlock for Indian AI startups — this is the kind of policy that decides whether the next model is built here or abroad.",
-          "source": "Inc42",
-          "url": "https://inc42.com/",
-          "breaking": false
-        }
-      ]
-    },
-    {
-      "id": "sports",
-      "name": "Sports",
-      "stories": [
-        {
-          "hour": 7,
-          "time": "07:30 IST",
-          "headline": "Shooting legend Jaspal Rana passes away; Abhinav Bindra leads tributes",
-          "what": "Former shooting champion and celebrated coach Jaspal Rana has passed away, drawing tributes from across Indian sport. Olympic gold medallist Abhinav Bindra called him intense and gifted, crediting him as part of the generation that shaped Indian shooting. Rana later became one of the country's most influential pistol coaches, mentoring Olympic medallist Manu Bhaker.",
-          "lens": "Rana's fingerprints are on India's modern shooting success — his loss is felt from the national ranges to the Olympic podium pipeline he helped build.",
-          "source": "News9 Live",
-          "url": "https://www.news9live.com/india/breaking-news-headlines-today-12-06-2026-live-updates-in-english-india-world-politics-crime-president-donald-trump-israel-us-vs-iran-war-pm-narendra-modi-2979403",
-          "breaking": false
-        },
-        {
-          "hour": 10,
-          "time": "10:00 IST",
-          "headline": "India retain No. 1 ODI ranking in ICC annual update under Shubman Gill",
-          "what": "Shubman Gill's India remain the world's top-ranked ODI side after the ICC's annual rankings update. The team heads into preparations for the 2027 ODI World Cup as the format's benchmark side. Meanwhile India A, featuring an explosive knock from young opener Vaibhav Suryavanshi praised by R Ashwin, continued their tri-series campaign in Dambulla.",
-          "lens": "Holding No. 1 entering a World Cup cycle matters for seedings and confidence — and the Suryavanshi buzz tells you who the selectors are building the 2027 squad around.",
-          "source": "InsideSport",
-          "url": "https://www.newsnow.co.uk/h/Sport/Cricket/India",
-          "breaking": false
-        },
-        {
-          "hour": 23,
-          "time": "23:45 IST",
-          "headline": "FIFA World Cup 2026 kicks off with opening ceremony at Estadio Azteca",
-          "what": "The 2026 FIFA World Cup opened with ceremony festivities at Mexico City's Estadio Azteca ahead of the tournament's first kickoff. The expanded 48-team edition is co-hosted by the United States, Mexico and Canada. It is the first World Cup to open at the Azteca since the famous 1986 tournament.",
-          "lens": "A month of late-night football is about to reshape Indian screen time and ad spends — and with 48 teams, more matches in India-friendly time slots than any previous World Cup.",
-          "source": "CBS News",
-          "url": "https://www.cbsnews.com/world/",
-          "breaking": false
-        }
-      ]
-    },
-    {
-      "id": "entertainment",
-      "name": "Entertainment",
-      "stories": [
-        {
-          "hour": 6,
-          "time": "06:00 IST",
-          "headline": "Blockbuster OTT Friday: Suriya's Karuppu leads ten-plus releases across platforms",
-          "what": "One of the busiest streaming Fridays of 2026 lands today, headlined by Suriya's Tamil action spectacle Karuppu alongside Bhooth Bangla, Raakh, Dridam, Maa Hai Na and Sshhh Season 3. Netflix, Prime Video, ZEE5, JioHotstar, Aha and Apple TV are all dropping major titles into the same weekend. The slate spans horror-comedy, thrillers, psychological drama and true-crime documentary.",
-          "lens": "Platforms stacking a single Friday this heavily is a subscriber-retention play — your existing subscriptions just got more valuable this weekend, no theatre ticket required.",
-          "source": "The Sunday Guardian",
-          "url": "https://sundayguardianlive.com/entertainment-news/friday-ott-release-jun-12-2026-from-bhooth-bangla-karuppu-raakh-maa-hai-na-dridam-maternal-instinct-sshhh-season-3-more-on-netflix-amazon-prime-jiohotstar-zee5-more-205288/",
-          "breaking": false
-        },
-        {
-          "hour": 21,
-          "time": "21:00 IST",
-          "headline": "Hai Jawani Toh Ishq Hona Hai opens to Rs 8.5 crore on Day 1",
-          "what": "Hai Jawani Toh Ishq Hona Hai collected about Rs 8.5 crore on its opening day, with roughly 25,000 tickets sold in the national multiplex chains. Trade trackers called the opening a surprise on the upside for the comedy. The number sets up a crucial first weekend as it competes with a heavy OTT release slate.",
-          "lens": "A Rs 8.5 crore opening against a stacked streaming weekend suggests theatrical comedy still pulls crowds — watch the Saturday jump to know if word-of-mouth is real.",
-          "source": "Bollywood Hungama",
-          "url": "https://www.bollywoodhungama.com/",
-          "breaking": false
-        },
-        {
-          "hour": 13,
-          "time": "13:00 IST",
-          "headline": "Drishyam 3 crosses Rs 236 crore worldwide in 22 days",
-          "what": "Mohanlal's thriller Drishyam 3 has topped Rs 236 crore at the global box office on day 22 of its run. The third instalment of the franchise continues to hold strongly weeks after release. The film extends one of Malayalam cinema's most successful franchises into rare box-office territory.",
-          "lens": "Malayalam cinema crossing Rs 200+ crore repeatedly is rewriting how studios value non-Hindi films — expect bigger budgets and wider all-India releases from the south.",
-          "source": "The Sunday Guardian",
-          "url": "https://sundayguardianlive.com/entertainment-news/friday-ott-release-jun-12-2026-from-bhooth-bangla-karuppu-raakh-maa-hai-na-dridam-maternal-instinct-sshhh-season-3-more-on-netflix-amazon-prime-jiohotstar-zee5-more-205288/",
-          "breaking": false
-        }
-      ]
-    }
-  ]
-};
-
-(function(){
-  var NEWSLETTER_ENDPOINT = "https://formspree.io/f/mgobpqbn"; // Formspree endpoint.
-  var HUES = {national:"#3D7A5C", world:"#3E6088", business:"#A07A3C", tech:"#6A5C9A", ai:"#3C8585", sports:"#B5573F", entertainment:"#A65478"};
-  var B = window.BRIEF || window.EDITION || null;
-  var totalStories = B && B.sections ? B.sections.reduce(function(a,s){ return a + (s.stories||[]).length; }, 0) : 0;
-  if(!B || !totalStories){
-    document.getElementById('main').innerHTML = '<p style="padding:60px 20px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--meta)">No stories available right now — the next edition will populate this page automatically.</p>';
-    document.getElementById('carousel').style.display = 'none';
-    document.querySelector('.today').style.display = 'none';
-    return;
-  }
-  var lensLabel = B.lensLabel || 'Why it matters';
-  document.getElementById('date-label').textContent = B.date || '';
-  document.getElementById('topline').textContent = B.topline || '';
-
-  function eachStory(fn){ B.sections.forEach(function(s){ s.stories.forEach(function(st){ fn(st, s); }); }); }
-
-  function hashBytes(s){ var h=2166136261,out=[]; for(var r=0;r<32;r++){ for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=(h*16777619)>>>0; } out.push(h&255); h=(h^r)>>>0; } return out; }
-  function art(seed, hue, vw, vh){
-    vw=vw||160; vh=vh||90;
-    var b=hashBytes(seed), v=function(i,lo,hi){ return lo+(b[i%32]/255)*(hi-lo); };
-    var s='<svg viewBox="0 0 '+vw+' '+vh+'" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="'+vw+'" height="'+vh+'" fill="#EDEFE9"/>';
-    for(var i=0;i<6;i++){
-      var cx=v(i*3,vw*.05,vw*.95), cy=v(i*3+1,vh*.08,vh*.92), r=v(i*3+2,vh*.12,vh*.34), op=v(i*5+1,0.10,0.26).toFixed(2);
-      s += (b[i*2]%3===0)
-        ? '<rect x="'+(cx-r).toFixed(1)+'" y="'+(cy-r/2).toFixed(1)+'" width="'+(r*2).toFixed(1)+'" height="'+r.toFixed(1)+'" rx="'+(r/5).toFixed(1)+'" fill="'+hue+'" opacity="'+op+'"/>'
-        : '<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+hue+'" opacity="'+op+'"/>';
-    }
-    s+='<circle cx="'+v(20,vw*.18,vw*.82).toFixed(1)+'" cy="'+v(21,vh*.2,vh*.75).toFixed(1)+'" r="'+v(22,vh*.07,vh*.16).toFixed(1)+'" fill="none" stroke="'+hue+'" stroke-width="'+(vh*.02).toFixed(1)+'" opacity="0.9"/></svg>';
-    return s;
-  }
-  function media(st, hue, eager){
-    if(!st.image) return art(st.headline, hue);
-    // Simple, quote-safe loader: once loaded, lock it (onload) so it can never
-    // revert; on a hard failure, swap to art once. No nested functions/quotes
-    // in the inline handlers (those break card HTML).
-    var fallback = art(st.headline, hue).replace(/"/g,'&quot;');
-    return '<img src="'+st.image+'" alt="" '
-         + 'loading="'+(eager?'eager':'lazy')+'" decoding="async" '
-         + 'onload="this.setAttribute(&quot;data-ok&quot;,1)" '
-         + 'onerror="if(!this.getAttribute(&quot;data-ok&quot;)){this.parentNode.innerHTML=this.getAttribute(&quot;data-fallback&quot;)}" '
-         + 'data-fallback="'+fallback+'">';
-  }
-
-  // ticker
-  var tickHTML = '';
-  eachStory(function(st, s){ tickHTML += '<span class="ticker-item"><span class="dot" style="background:'+(HUES[s.id]||'#3BCB8D')+'"></span>'+st.headline+'</span>'; });
-  document.getElementById('ticker').innerHTML = tickHTML + tickHTML;
-
-  // carousel
-  var allPairs = [];
-  eachStory(function(st, s){ allPairs.push([st, s]); });
-  allPairs.sort(function(a, b){
-    if(!!b[0].breaking !== !!a[0].breaking) return (!!b[0].breaking) - (!!a[0].breaking);
-    return (b[0].hour||0) - (a[0].hour||0);
-  });
-  var slidesData = allPairs.slice(0, 5);
-
-  var track = document.getElementById('car-track'), dots = document.getElementById('car-dots'), counter = document.getElementById('car-count');
-  slidesData.forEach(function(pair, i){
-    var st = pair[0], s = pair[1], hue = HUES[s.id]||'#0E7B52';
-    var el = document.createElement(st.slug ? 'a' : 'div');
-    if(st.slug) el.href = 'articles/'+st.slug+'.html';
-    el.className = 'slide';
-    el.innerHTML = '<div class="media">'+media(st, hue, i===0)+'</div>'+
-      '<div class="slide-content"><div class="kick">'+
-      (st.breaking?'<span class="b">● Breaking</span>':'')+
-      '<span style="color:#3BCB8D">'+s.name+'</span><span style="opacity:.7;font-weight:400">'+st.time+'</span></div>'+
-      '<h2>'+st.headline+'</h2>'+
-      '<p class="dek">'+(st.what||'')+'</p>'+
-      '<p class="srcline">via <b>'+(st.source||'')+'</b> ✓</p></div>';
-    track.appendChild(el);
-    var d = document.createElement('button');
-    d.className = 'car-dot'+(i===0?' on':''); d.setAttribute('aria-label','Story '+(i+1));
-    d.addEventListener('click', function(){ go(i, true); });
-    dots.appendChild(d);
-  });
-
-  var cur = 0, n = slidesData.length, timer = null;
-  var noMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function go(i, manual){
-    cur = (i+n)%n;
-    track.style.transform = 'translateX(-'+(cur*100)+'%)';
-    dots.querySelectorAll('.car-dot').forEach(function(d,j){ d.classList.toggle('on', j===cur); });
-    if(counter) counter.textContent = (cur+1)+' / '+n;
-    if(manual) restart();
-  }
-  function restart(){ if(timer) clearInterval(timer); if(!noMotion && n>1) timer = setInterval(function(){ go(cur+1); }, 5200); }
-  if(n){ counter.textContent = '1 / '+n; }
-  document.getElementById('car-prev').addEventListener('click', function(){ go(cur-1, true); });
-  document.getElementById('car-next').addEventListener('click', function(){ go(cur+1, true); });
-  var carEl = document.getElementById('carousel');
-  carEl.addEventListener('mouseenter', function(){ if(timer) clearInterval(timer); });
-  carEl.addEventListener('mouseleave', restart);
-  var tx=null;
-  carEl.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
-  carEl.addEventListener('touchend', function(e){
-    if(tx===null) return;
-    var dx = e.changedTouches[0].clientX - tx; tx=null;
-    if(Math.abs(dx) > 40) go(cur + (dx<0?1:-1), true);
-  }, {passive:true});
-  restart();
-
-  // 24-hour strip
-  var strip = document.getElementById('strip'), hourMap = {};
-  eachStory(function(st){ if(!hourMap[st.hour]) hourMap[st.hour]={breaking:false}; if(st.breaking) hourMap[st.hour].breaking=true; });
-  for(var h=0; h<24; h++){
-    var cell = document.createElement('div'); cell.className='cell';
-    if(hourMap[h]) cell.classList.add(hourMap[h].breaking?'breaking':'active');
-    strip.appendChild(cell);
-  }
-
-  // ===== filterable category nav + card-grid sections =====
-  var nav = document.getElementById('nav'), main = document.getElementById('main');
-  var sectionEls = {};
-
-  function makeChip(label, id, hue){
-    var c = document.createElement('button');
-    c.className = 'chip'; c.type = 'button'; c.dataset.id = id;
-    c.innerHTML = (hue ? '<span class="hue" style="background:'+hue+'"></span>' : '') + label;
-    c.addEventListener('click', function(){ setFilter(id, hue); });
-    nav.appendChild(c);
-    return c;
-  }
-  function setFilter(id, hue){
-    nav.querySelectorAll('.chip').forEach(function(c){
-      var on = c.dataset.id === id;
-      c.classList.toggle('on', on);
-      c.style.background = on ? (c.dataset.hue || 'var(--ink)') : '#fff';
-    });
-    Object.keys(sectionEls).forEach(function(k){
-      sectionEls[k].style.display = (id === 'all' || id === k) ? '' : 'none';
-    });
-    var adMid = document.getElementById('ad-mid');
-    if(adMid) adMid.style.display = (id === 'all') ? '' : 'none';
-    if(window.scrollY > 300) window.scrollTo({top: document.getElementById('main').offsetTop - 120, behavior: noMotion ? 'auto' : 'smooth'});
-  }
-  var allChip = makeChip('All', 'all', null); allChip.dataset.hue = 'var(--ink)';
-
-  B.sections.forEach(function(s, si){
-    if(!s.stories || s.stories.length === 0){ return; }  // hide only truly empty sections
-    var hue = HUES[s.id]||'#0E7B52';
-    var c = makeChip(s.name, s.id, hue); c.dataset.hue = hue;
-
-    var sec = document.createElement('section');
-    sec.id = s.id;
-    var head = document.createElement('div');
-    head.className = 'sec-head rise';
-    head.innerHTML = '<span class="hue" style="background:'+hue+'"></span><h2>'+s.name+'</h2>'+
-      '<span class="count">'+s.stories.length+(s.stories.length>1?' stories':' story')+'</span><span class="bar"></span>';
-    var actions = document.createElement('div'); actions.className = 'sec-actions';
-    var prev = document.createElement('button'); prev.className='sec-arrow'; prev.innerHTML='‹'; prev.setAttribute('aria-label','Scroll '+s.name+' back');
-    var next = document.createElement('button'); next.className='sec-arrow'; next.innerHTML='›'; next.setAttribute('aria-label','Scroll '+s.name+' forward');
-    var more = document.createElement('a');
-    more.className = 'sec-more'; more.href = 'archive.html?cat=' + s.id;
-    more.style.color = hue; more.style.borderColor = hue;
-    more.textContent = 'View more in Archive →';
-    more.addEventListener('mouseenter', function(){ more.style.background = hue; more.style.color = '#fff'; });
-    more.addEventListener('mouseleave', function(){ more.style.background = 'transparent'; more.style.color = hue; });
-    actions.appendChild(prev); actions.appendChild(next); actions.appendChild(more);
-    head.appendChild(actions);
-    sec.appendChild(head);
-
-    var rail = document.createElement('div'); rail.className = 'hscroll';
-    var shown = s.stories.slice().sort(function(a,b){ return (b.hour||0)-(a.hour||0); }).slice(0, 5);
-    shown.forEach(function(st){
-      var d = document.createElement('article');
-      d.className = 'card rise';
-      var headline = st.slug ? '<a href="articles/'+st.slug+'.html">'+st.headline+'</a>' : st.headline;
-      d.innerHTML =
-        '<div class="media">'+media(st, hue)+'</div>'+
-        '<div class="pad">'+
-        '<div class="kick"><span style="color:'+hue+'">'+s.name+'</span>'+
-        (st.breaking?'<span class="b">● Breaking</span>':'')+
-        '<span class="t">'+st.time+'</span></div>'+
-        '<h3>'+headline+'</h3>'+
-        '<p class="what">'+st.what+'</p>'+
-        '<p class="lens" style="border-color:'+hue+'"><b style="color:'+hue+'">'+lensLabel+':</b> '+st.lens+'</p>'+
-        '<p class="meta-line">'+
-        (st.url ? '<a class="src" href="'+st.url+'" target="_blank" rel="noopener"><span class="v">✓</span> '+(st.source||'Source')+' ↗</a>' : '<span class="src" style="border:none">'+(st.source||'')+'</span>')+
-        (st.slug ? '<a class="read" style="color:'+hue+'" href="articles/'+st.slug+'.html">Read →</a>' : '')+
-        '</p></div>';
-      rail.appendChild(d);
-    });
-    var railWrap = document.createElement('div'); railWrap.className = 'rail-wrap';
-    railWrap.appendChild(rail);
-    sec.appendChild(railWrap);
-    var step = function(){ return (rail.firstChild ? rail.firstChild.getBoundingClientRect().width + 16 : 336); };
-    prev.addEventListener('click', function(){ rail.scrollBy({left: -step(), behavior: noMotion?'auto':'smooth'}); });
-    next.addEventListener('click', function(){ rail.scrollBy({left: step(), behavior: noMotion?'auto':'smooth'}); });
-    main.appendChild(sec);
-    sectionEls[s.id] = sec;
-    if(si === 1){
-      var ad = document.createElement('div');
-      ad.className = 'ad-slot'; ad.id = 'ad-mid';
-      ad.innerHTML = '<!-- AD SLOT: home-mid. Paste your AdSense/ad-network snippet here. -->Ad space';
-      main.appendChild(ad);
-    }
-  });
-  setFilter('all');
-
-  // Honest scroll hints: hide a rail's right-edge fade once it's scrolled to the end.
-  function wireFade(scroller, wrapper){
-    function update(){
-      var atEnd = scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4;
-      var scrollable = scroller.scrollWidth > scroller.clientWidth + 4;
-      wrapper.style.setProperty('--fade', (scrollable && !atEnd) ? '1' : '0');
-    }
-    scroller.addEventListener('scroll', update, {passive:true});
-    window.addEventListener('resize', update);
-    setTimeout(update, 100);
-  }
-  document.querySelectorAll('.rail-wrap').forEach(function(w){
-    var r = w.querySelector('.hscroll'); if(r) wireFade(r, w);
-  });
-  var navFade = document.querySelector('.nav-fade');
-  if(navFade) wireFade(document.getElementById('nav'), navFade);
-
-  // scroll-reveal
-  if('IntersectionObserver' in window && !noMotion){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.05});
-    document.querySelectorAll('.rise:not(.in)').forEach(function(el){ io.observe(el); });
-  } else {
-    document.querySelectorAll('.rise').forEach(function(el){ el.classList.add('in'); });
-  }
-
-  // cookie consent first; newsletter only after a choice
-  var store = { get:function(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
-                set:function(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
-  var ck = document.getElementById('ck');
-  function consentDecided(){ return !!store.get('cookie-consent'); }
-  function decide(v){ store.set('cookie-consent', v); ck.hidden = true; armNewsletter();
-    // Tell Google Analytics the consent decision (Consent Mode v2).
-    if (typeof gtag === 'function') {
-      if (v === 'granted') {
-        gtag('consent', 'update', {
-          'ad_storage':'granted','ad_user_data':'granted',
-          'ad_personalization':'granted','analytics_storage':'granted'
-        });
-      } else {
-        gtag('consent', 'update', {
-          'ad_storage':'denied','ad_user_data':'denied',
-          'ad_personalization':'denied','analytics_storage':'denied'
-        });
-      }
-    }
-  }
-  if(!consentDecided()) ck.hidden = false;
-  document.getElementById('ck-ok').addEventListener('click', function(){ decide('granted'); });
-  document.getElementById('ck-no').addEventListener('click', function(){ decide('denied'); });
-
-  var nl = document.getElementById('nl'), prefsBox = document.getElementById('nl-prefs'), chosen = {};
-  B.sections.forEach(function(s){
-    var p = document.createElement('span');
-    p.className='pref'; p.textContent=s.name; p.setAttribute('role','button'); p.tabIndex=0;
-    function toggle(){ chosen[s.id]=!chosen[s.id]; p.classList.toggle('on',chosen[s.id]); }
-    p.addEventListener('click',toggle);
-    p.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
-    prefsBox.appendChild(p);
-  });
-  var nlArmed = false;
-  function armNewsletter(){
-    if(nlArmed) return; nlArmed = true;
-    if(store.get('nl-done')==='1' || store.get('nl-snooze')===new Date().toDateString()) return;
-    var shown=false;
-    function show(){ if(!shown){ shown=true; nl.classList.add('show'); } }
-    setTimeout(show, 14000);
-    window.addEventListener('scroll', function(){ if(window.scrollY > document.body.scrollHeight*0.35) show(); }, {passive:true});
-  }
-  if(consentDecided()) armNewsletter();
-  document.getElementById('nl-close').addEventListener('click', function(){
-    nl.classList.remove('show'); store.set('nl-snooze', new Date().toDateString());
-  });
-  document.getElementById('nl-go').addEventListener('click', function(){
-    var email = document.getElementById('nl-email').value.trim();
-    var msg = document.getElementById('nl-msg');
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.textContent='Enter a valid email.'; msg.style.color='var(--vermilion)'; return; }
-    var prefs = Object.keys(chosen).filter(function(k){ return chosen[k]; });
-    if(!NEWSLETTER_ENDPOINT){
-      msg.style.color='var(--green-bright)';
-      msg.textContent='Demo mode — set NEWSLETTER_ENDPOINT in index.html to start collecting.';
-      return;
-    }
-    var fd = new FormData(); fd.append('email', email); fd.append('preferences', prefs.join(','));
-    fetch(NEWSLETTER_ENDPOINT, {method:'POST', body:fd, headers:{'Accept':'application/json'}})
-      .then(function(r){ if(!r.ok) throw 0;
-        msg.style.color='var(--green-bright)'; msg.textContent='Thanks for signing up — you\'ll start receiving our weekly newsletter.';
-        store.set('nl-done','1'); setTimeout(function(){ nl.classList.remove('show'); }, 2200);
-      })
-      .catch(function(){ msg.style.color='var(--vermilion)'; msg.textContent='Could not sign you up — try again.'; });
-  });
-})();
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+var HUES=/*HUES*/;
+var T=window.TRENDING||{items:[],updated_label:""};
+function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function render(){
+  var box=document.getElementById('tlist');
+  if(!T.items.length){box.innerHTML='<div class="empty">No trending stories right now — check back after the next update.</div>';return;}
+  box.innerHTML=T.items.map(function(x,i){
+    var hue=HUES[x.section_id]||'#27B97C';
+    var href=x.slug?('/articles/'+x.slug+'.html'):'/';
+    return '<a class="trow" href="'+href+'" style="--hue:'+hue+'">'
+      +'<div class="trank">'+(i+1)+'</div>'
+      +'<div class="tbody"><div class="tkick">'
+      +'<span class="tcat">'+esc(x.section)+'</span>'
+      +(x.breaking?'<span class="tbreak">Breaking</span>':'')
+      +(x.time?'<span class="ttime">'+esc(x.time)+'</span>':'')+'</div>'
+      +'<h3>'+esc(x.headline)+'</h3>'
+      +(x.lens?'<div class="tlens">'+esc(x.lens)+'</div>':'')
+      +'</div></a>';
+  }).join('');
 }
+document.getElementById('updated').innerHTML=T.updated_label?'Updated <b>'+esc(T.updated_label)+'</b> · '+T.items.length+' stories':'';
+render();
 </script>
 </body>
-</html>
+</html>"""
+
+
+def main():
+    raw = collect_headlines()
+    print(f"Collected {len(raw.splitlines())} headlines.")
+    edition = write_edition(raw)
+
+    # World Cup 2026: inject the daily scores story at the front of the Sports
+    # section (so it's the first carousel card), and build the dedicated page.
+    try:
+        import build_worldcup as bwc
+        wc_story = bwc.daily_scores_story()
+        if wc_story:
+            for sec in edition["sections"]:
+                if sec["id"] == "sports":
+                    sec["stories"].insert(0, wc_story)
+                    break
+    except Exception as exc:
+        print(f"World Cup Sports-card step skipped: {exc}")
+
+    write_outputs(edition)
+    build_archive()
+    build_trending(edition)
+    build_tweet_queue(edition, max_per_day=10)
+    # World Cup standings/scores/fixtures page.
+    try:
+        import build_worldcup as bwc
+        result = bwc.build_worldcup(write_page=True)
+        if result is None:
+            print("WARNING: World Cup page not written (fetch failed or disabled). "
+                  "Check WORLDCUP_ENABLED and network access to raw.githubusercontent.com.")
+        elif not os.path.exists("worldcup.html"):
+            print("WARNING: build_worldcup ran but worldcup.html is missing.")
+        else:
+            print("World Cup page written OK.")
+    except Exception as exc:
+        import traceback
+        print(f"World Cup page step FAILED: {exc}")
+        traceback.print_exc()
+    # Current Affairs (UPSC/IAS) — re-curate the same headlines, exam-framed.
+    try:
+        import build_current_affairs as bca
+        bca.build_current_affairs(raw, call_claude, extract_json)
+    except Exception as exc:
+        print(f"Current affairs step skipped: {exc}")
+
+if __name__ == "__main__":
+    main()
