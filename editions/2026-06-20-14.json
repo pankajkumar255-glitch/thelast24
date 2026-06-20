@@ -1,5 +1,4 @@
-// auto-generated 2026-06-20 14:27 IST
-window.BRIEF = {
+{
   "date": "Saturday, 20 June 2026",
   "edition": "2026-06-20 14:27",
   "topline": "As the Supreme Court declared walking on footpaths a fundamental right and India signaled retreat from US trade talks over tariffs, Trump praised Modi while Iran and the US pushed nuclear negotiations to Switzerland and Israel struck Lebanon despite a ceasefire.",
@@ -15,6 +14,12 @@ window.BRIEF = {
           "headline": "Supreme Court asks tribunal to expedite advocate's appeal in SIR row",
           "what": "The Supreme Court has directed a tribunal to speed up its hearing of an appeal filed by an advocate in connection with the Special Investigation Report (SIR) controversy. The court's intervention signals judicial concern over delays in resolving the matter at the tribunal level. The case involves a legal professional whose appeal has reportedly been pending without timely progress, prompting the apex court to step in.",
           "lens": "The Supreme Court's push to clear a pending advocate's appeal in the SIR row highlights how delays in specialised tribunals continue to undermine timely justice, an issue that affects thousands of litigants across India.",
+          "article": "The Hindu reports that the Supreme Court has directed a tribunal to accelerate its proceedings in an appeal filed by an advocate connected to a dispute over a Special Investigation Report (SIR). The court's order came after concerns were raised that the appeal had not been progressing at a pace consistent with the requirements of justice.\n\nThe SIR controversy relates to a specific investigative or regulatory report — the precise nature of which touches on professional or legal accountability matters — and the advocate at the centre of the appeal is seeking redress through the tribunal process. The Supreme Court's intervention underlines its supervisory role over lower judicial and quasi-judicial bodies when proceedings stall.\n\nDelays in tribunals have been a persistent problem in India's legal system, with backlogs often leaving appellants in prolonged legal limbo. By directing the tribunal to speed up, the apex court is reinforcing that timely adjudication is itself a component of the right to justice. The outcome of this appeal could have implications for similar cases where regulatory or investigative reports are contested by legal professionals.",
+          "key_facts": [
+            "Supreme Court orders tribunal to expedite advocate's appeal",
+            "Case concerns a Special Investigation Report (SIR) dispute",
+            "Apex court exercising supervisory jurisdiction over tribunal delays"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRUlpTWNLRDRFTDJzalVVTjBJd1RCM0FBREU1TDd3X0diOEo0OXJCOGZRamtKamx2cDEwcHZKQmVsZkdaRnlrbTVfS240ajNEZ0IxV1VYcHdJR0haU3NUTXk2UHVzYndQUk9LVExOUWd3VE45ZW1wQXZ0WmE0Z0xOWkV5Y1hyR092TkRBY0pad0dTcEtZeWpWcG84Z2hWb0JVRXBmQ3dteDFtRzFWRkpuWTJpeGFNeTAzaDBtR1F1Z1BTOTN5OVpleWtxY9IBywFBVV95cUxNRUlpTWNLRDRFTDJzalVVTjBJd1RCM0FBREU1TDd3X0diOEo0OXJCOGZRamtKamx2cDEwcHZKQmVsZkdaRnlrbTVfS240ajNEZ0IxV1VYcHdJR0haU3NUTXk2UHVzYndQUk9LVExOUWd3VE45ZW1wQXZ0WmE0Z0xOWkV5Y1hyR092TkRBY0pad0dTcEtZeWpWcG84Z2hWb0JVRXBmQ3dteDFtRzFWRkpuWTJpeGFNeTAzaDBtR1F1Z1BTOTN5OVpleWtxYw",
           "breaking": false,
@@ -30,6 +35,13 @@ window.BRIEF = {
           "headline": "Supreme Court declares right to walk on footpaths a fundamental right, calls for a law",
           "what": "The Supreme Court of India has ruled that the right to walk on footpaths is a fundamental right, marking a significant constitutional interpretation. The bench made clear it expects all roads to have proper, usable footpaths and has called for legislation to enforce this. The ruling highlights the chronic neglect of pedestrian infrastructure across Indian cities and towns, and puts the onus on governments to act.",
           "lens": "For millions of Indians who walk to work, school, or markets daily — often risking their lives on roads with no footpaths — this ruling gives constitutional weight to their safety and demands governments actually build and maintain walkable pavements.",
+          "article": "The Hindu reports that the Supreme Court of India has declared the right to walk on footpaths a fundamental right, a landmark constitutional ruling that puts pedestrian safety squarely within the domain of guaranteed rights. The court expressed that every road must have proper footpaths and signalled its intent to see this backed by legislation, directing attention to the persistent failure of urban and rural authorities to provide safe walking space.\n\nThe ruling emerges against a backdrop of India's severe pedestrian safety crisis, where footpaths are routinely absent, encroached upon, or in disrepair, forcing walkers onto carriageways shared with fast-moving vehicles. Road accident data consistently shows pedestrians among the most vulnerable fatalities on Indian roads.\n\nBy anchoring the right to walk safely within fundamental rights, the court has given citizens a constitutional basis to challenge governments and municipalities that fail to build or maintain footpaths. It also presses Parliament and state legislatures to enact specific law on the subject, shifting what has long been an administrative afterthought into a legal obligation enforceable in court.",
+          "key_facts": [
+            "Supreme Court rules walking on footpaths is a fundamental right",
+            "Court wants all roads to have proper footpaths",
+            "Bench has called for legislation to enforce this right",
+            "Ruling reported by The Hindu and India Today"
+          ],
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQQ3MyOG1ZNlBUb01LemRtMVl1ODFneVJwRUVqbjE5UUxNQXF6X0VOc0w2TFRmUkJmS1EtQ2diV3BjNExQc0pUS214QVgtbkhrQ3NMdWJXWWlDd20zOFY2SHJVYUtlM1pXYnk5cnJaQl93dTFuTEdtSlRRRTdtZFZpQ2tJeXgzUlh4aEIyS3p3ZnlUVVR1bVhxSXdIZzFoeEU0SlRmbFpVTG9QdmtjRzR4YS11eWJlb1d2WDBPTWwzMDBPbTVKRUd2TFlldV93cDdSSWJJNlRFaU7SAd8BQVVfeXFMT3NEbURlN0NGTTFZX19SX1pTZ2Z5N0hROFNXbFdhbG50M1lfYU1ZTWhIdFpUTXBJV1I4M3JLRVdDTXZqem9CeXpsUE1fQmN0dnJHck85NzBFdHRGbFZQaHl1SzJrNmJIQUhoXzBtNzVqa3ppSUZUdEpRRnlzVnAwbzVxQk5mZHJVRlIzZWtaWUpSVWtvWmdWUmJ6U3dXelhxV2x6RXRzVUlxVlk0Q3BiQzdYWE5NQkx5ZnM0NFdMd1ROV2pxeFd4dTE5VW5ZcVRhS3ROSlJ6U2kzemJWMHpCYw",
           "breaking": false,
@@ -45,6 +57,12 @@ window.BRIEF = {
           "headline": "Karnataka appoints Kunal Vajani and Omar Hoda as Additional Advocate Generals in Supreme Court",
           "what": "The Karnataka government has appointed Kunal Vajani and Omar Hoda as Additional Advocate Generals to represent the state in the Supreme Court of India. The appointments strengthen Karnataka's legal representation at the apex court. Such roles are critical for a state that has several high-profile matters pending before the Supreme Court, including water-sharing and inter-state disputes.",
           "lens": "Karnataka has several sensitive cases before the Supreme Court — including the Cauvery water dispute — and these appointments signal the state government's intent to bolster its legal firepower at the country's highest court.",
+          "article": "The New Indian Express reports that the Karnataka government has appointed Kunal Vajani and Omar Hoda as Additional Advocate Generals to represent the state before the Supreme Court of India. The move expands Karnataka's legal team at the apex court level, adding two senior lawyers to handle the state's growing docket of cases.\n\nAdditional Advocate Generals play a key role in presenting state governments' positions in constitutional, civil, and inter-state disputes before the Supreme Court. Karnataka is a party to several prominent and sensitive matters at the apex court, including the long-running Cauvery river water-sharing dispute with neighbouring Tamil Nadu.\n\nThe appointments reflect the Karnataka government's focus on ensuring robust legal representation at the national level, particularly as states increasingly contest central policies and resource-sharing arrangements before the Supreme Court.",
+          "key_facts": [
+            "Karnataka appoints Kunal Vajani as Additional Advocate General, Supreme Court",
+            "Omar Hoda also appointed Additional Advocate General, Supreme Court",
+            "Appointments strengthen Karnataka's legal team at the apex court"
+          ],
           "source": "The New Indian Express",
           "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNZWh5OUY4bGRtczFmMl9zQ2ZyT1hXNk9TZDVyNUtoSTFacERXX2tKR3FDVjFhTEdfRUd5bm9jTEVvU2I0SUlpZHhrOXFqeDhCSTg0VVJJRHBTM1E5VUVuTE1uQmtwLXRNUDFINmpqMm80X2ZuX1Fpak5SanNMdE9laTNJMEdHUzd4SGhsbzhrV2FqR2NzSkNPemJIRTJja19FZk1Rcnd2SlNOVnlvcGFmSUVONWI1cGtvVlNUdWxwZG1jT21DN0hlRFFhbGc0LXlxUDhaV3p5U1pHQkxGRVd0dmdlYnktQdIB5gFBVV95cUxNZWh5OUY4bGRtczFmMl9zQ2ZyT1hXNk9TZDVyNUtoSTFacERXX2tKR3FDVjFhTEdfRUd5bm9jTEVvU2I0SUlpZHhrOXFqeDhCSTg0VVJJRHBTM1E5VUVuTE1uQmtwLXRNUDFINmpqMm80X2ZuX1Fpak5SanNMdE9laTNJMEdHUzd4SGhsbzhrV2FqR2NzSkNPemJIRTJja19FZk1Rcnd2SlNOVnlvcGFmSUVONWI1cGtvVlNUdWxwZG1jT21DN0hlRFFhbGc0LXlxUDhaV3p5U1pHQkxGRVd0dmdlYnktQQ",
           "breaking": false,
@@ -60,6 +78,13 @@ window.BRIEF = {
           "headline": "Supreme Court refuses interim stay on CBSE's three-language policy",
           "what": "The Supreme Court has declined to grant interim relief against the CBSE's three-language policy, allowing the board's framework to remain in operation while the petition against it is heard. The three-language formula — typically requiring students to study Hindi, English, and a regional or modern Indian language — has long been contentious, particularly in non-Hindi-speaking states. The court's refusal to stay the policy means millions of CBSE students will continue under the existing framework for now.",
           "lens": "For parents of CBSE school students — especially in Tamil Nadu, Karnataka, and other southern states where resistance to Hindi imposition runs deep — this ruling means the three-language policy stays in classrooms while the legal battle plays out.",
+          "article": "Business Standard reports that the Supreme Court has declined to grant interim relief to petitioners challenging CBSE's three-language policy, meaning the policy will remain in force as the case proceeds. The petitioners had sought a stay on the policy while their legal challenge was being heard, but the court refused, allowing the Central Board of Secondary Education's language framework to continue applying to its affiliated schools across the country.\n\nThe three-language formula has historically required students in CBSE schools to study three languages — typically Hindi, English, and a third regional or classical language. The policy has been a flashpoint in India's language politics, with states like Tamil Nadu and Karnataka viewing mandatory Hindi instruction as linguistic imposition by the Centre, while the formula's proponents argue it promotes national integration and multilingualism.\n\nCBSE affiliates tens of thousands of schools across India and overseas, making its language policy one of the most widely felt curriculum decisions in the country's education system.\n\nThe Supreme Court's refusal to stay the policy, even temporarily, is a significant procedural setback for the petitioners and signals that the bench does not see an immediate case for disrupting the status quo. The substantive hearing on whether the policy is constitutionally valid will continue.",
+          "key_facts": [
+            "Supreme Court refuses interim stay on CBSE three-language policy",
+            "Policy requires students to study Hindi, English, and a regional language",
+            "Petition challenges the policy; hearing to continue",
+            "Policy applies to CBSE-affiliated schools across India"
+          ],
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQ0NucHJJVWd3M2tRX2ctWlVxYjNUdlc4cjQxNWlaTGJVejczTkUyalFVT0xzQWxBdUZEc1dmdFlhNWhDS2YyZEJiME5sWnhFTlV2OFBub3FidGt1b2dyUW5ZVmQ1MHhrdzBEWmI2X1FRLXFDb1N4bmJwY1JXclFsa3NZalVFYjRjYnpLR3hPNnQ3c3lZYjlILVprV29Nd2pSekkzdnhsTVZKYkRJV3BxR1VMQXNxLVhCZWY0SHJFR3ZmcW5pTnVxZVY5d2FOR3NIUGxPejVPR2c0ZzlFWmdLa09tZFBZZw",
           "breaking": false,
@@ -67,7 +92,8 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/36984938/pexels-photo-36984938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Mark Stebnicki",
-          "image_credit_url": "https://www.pexels.com/@nc-farm-bureau-mark"
+          "image_credit_url": "https://www.pexels.com/@nc-farm-bureau-mark",
+          "_edition_date": "2026-06-19"
         },
         {
           "hour": 16,
@@ -75,6 +101,12 @@ window.BRIEF = {
           "headline": "Walking on Demarcated Footpaths Is a Fundamental Right, Rules Supreme Court",
           "what": "The Supreme Court of India has declared that walking on demarcated footpaths constitutes a fundamental right of citizens. The ruling affirms that pedestrians have a constitutionally protected entitlement to use pavements that have been set aside for their use. The decision is significant in a country where footpaths are routinely encroached upon by vendors, parked vehicles, and construction, effectively denying pedestrians safe passage.",
           "lens": "For millions of Indians who walk to work or school daily, this ruling gives constitutional teeth to demand clear, encroachment-free footpaths from their municipal bodies.",
+          "article": "NDTV reports that the Supreme Court has declared walking on demarcated footpaths a fundamental right of Indian citizens. The ruling directly addresses the widespread and chronic problem of footpath encroachments across Indian cities, where pavements are routinely occupied by street vendors, illegally parked vehicles, and construction material, forcing pedestrians onto roads.\n\nThe court's observation elevates pedestrian access from a matter of civic administration to one of constitutional protection. This means citizens can now invoke fundamental rights to challenge encroachments or the failure of municipal authorities to maintain and clear footpaths.\n\nFor the vast majority of Indians — especially in urban areas — who walk as their primary or supplementary mode of transport, this ruling has direct practical significance. It empowers residents to approach courts demanding safe walking infrastructure and puts the onus on local bodies to enforce encroachment-free footpaths as a matter of rights, not mere convenience.",
+          "key_facts": [
+            "Supreme Court rules walking on demarcated footpaths is a fundamental right",
+            "Ruling addresses chronic encroachment of footpaths by vendors and vehicles",
+            "Citizens can now invoke constitutional protection for pedestrian access"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaHNQamNqYm0teEh2aDZaZ21aMzJLNUp0VE9iejd1TVpYdE43OExaVURTaThOdERRSXIwb1NOZFBVd1R4ZFhCelRVdkxyLVFWRmU5TmozaXl5akhGQ3dSSFVSQVMxb0ttdVBGMWRRYnpfYzd2UEhaWU9aQjJzLVNvMVdOWF9Rb01kMzhwV1lHUU95YzNscE4zamdubFdoTzJIT0VLTC1PdnFsSE8ySktQR2h6WHNZZXR6ZGdDdA?oc=5",
           "breaking": false,
@@ -82,7 +114,8 @@ window.BRIEF = {
           "image": "https://pixabay.com/get/g7191a8081b07c25673e3a3a58045b43fe4f6603bba9c33a7e9208b547c36e845681751fea6e571cee28f519307bf53160a095be197a1cffa58f927315ebd42ac_1280.jpg",
           "image_kind": "photo",
           "image_credit": "BunteAufnahmen",
-          "image_credit_url": "https://pixabay.com/users/BunteAufnahmen-6345617/"
+          "image_credit_url": "https://pixabay.com/users/BunteAufnahmen-6345617/",
+          "_edition_date": "2026-06-19"
         }
       ]
     },
@@ -96,6 +129,12 @@ window.BRIEF = {
           "headline": "Trump Names PM Modi and Xi Jinping as the World Leaders He Admires Most",
           "what": "US President Donald Trump, when asked which world leader he admires most, named Indian Prime Minister Narendra Modi and Chinese President Xi Jinping. Trump praised Modi as a \"great leader\" who \"stays out of wars, which is smart.\" The remarks stand out given ongoing US–China trade tensions and India's strategic balancing act between major powers. The comments were reported by NDTV.",
           "lens": "Trump singling out Modi as a leader he admires — specifically for keeping India out of wars — directly shapes how Washington sees New Delhi's foreign policy stance amid global conflicts.",
+          "article": "NDTV reports that US President Donald Trump, responding to a question about which world leader he admires most, named Indian Prime Minister Narendra Modi and Chinese President Xi Jinping. Trump described Modi as a \"great leader\" who \"stays out of wars, which is smart\" — a pointed endorsement of India's long-standing policy of strategic autonomy.\n\nThe remarks come at a moment of significant geopolitical complexity: the US and China are locked in an escalating trade war, while India has carefully maintained ties with both Washington and Moscow amid the Russia–Ukraine conflict. Trump's framing of Modi's restraint as \"smart\" effectively validates India's non-alignment approach on the global stage.\n\nFor everyday Indians, the comments carry weight because they signal continued warmth between the Trump administration and New Delhi, which has implications for trade negotiations, defence deals, and the broader India–US partnership at a time when the global order is being actively renegotiated.",
+          "key_facts": [
+            "Trump named Modi and Xi Jinping as the world leaders he admires most",
+            "Called Modi a 'great leader' who 'stays out of wars, which is smart'",
+            "Remarks come amid US–China trade tensions and India's strategic balancing"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPYm9LODd1UURuSFZDUWtoZDZzRUhTUjk4VzlqZG53MWhBSUFXV054bG84M3FGMF9rb2FiRmxoTGpOVnQ2UDJtdjhkSVRHZHo1cHE3akZpSkJEdVVvQnQtNEI1OTVGTjVudVJ5Z0xSV3k0b3JTR1U3M0xfQmlpb3VDWnY2eFlPaFRYNGJ1VnF2Tno5VXpkdmZyQnVnMlE3YVIxMWRZTEZCaWR6UlFETmMtWWZ1dl9Nd9IBvgFBVV95cUxQMUFjMDNtc1h2RGlzUFhuTGZkU3pLSkNHMHVhZEwxQTFDWWNScmo2UDM4bHotd0tEV0VkSmxQZWN4LUdJTFJOQUhidnhvY2dSbVlSQ3lKLXFzZENJNGZnYjFvRGwxWEVOc0tSMlJzZmhrc09SYlJvLXk3MmEwdFlkcW1XY29FM0dIYTZDdDdjOUNNTzhkeHNnWGpJSzcxdmlpaXFVbkJFNC1FbDVsLXpMMFk1bXdLZDMwWmpWYmRR",
           "breaking": false,
@@ -111,6 +150,13 @@ window.BRIEF = {
           "headline": "US and Iran Agree on Framework, Diplomats Head to Switzerland for Next Round of Nuclear Talks",
           "what": "A deal framework has been reached between the United States and Iran, with Trump's envoy and Iran's foreign minister now travelling to Switzerland for the next round of nuclear negotiations. The development signals meaningful progress in what has been a tense diplomatic effort to curtail Iran's nuclear programme. The Switzerland meeting will be a critical next step in formalising any agreement between the two long-adversarial nations.",
           "lens": "A US-Iran nuclear deal would reshape global oil prices and Middle East stability — both of which directly affect India's energy import bills and regional security calculus.",
+          "article": "NDTV reports that a deal framework has been agreed upon between the United States and Iran, with Trump's envoy and Iran's Foreign Minister now heading to Switzerland for the next round of formal negotiations. The announcement marks a significant step forward in diplomatic efforts that have been underway to rein in Iran's nuclear ambitions and lift related international sanctions.\n\nThe talks in Switzerland are expected to translate the agreed framework into concrete, binding terms. Iran's nuclear programme has long been a flashpoint, with previous agreements — notably the 2015 JCPOA — collapsing after the US withdrew under Trump's first term. Any new deal would need to address uranium enrichment levels, inspection mechanisms, and sanction relief.\n\nFor India, the outcome carries direct consequences. Iran is a critical supplier of crude oil, and any easing of sanctions would likely increase global oil supply and ease prices. India also has strategic interests in Iran, including the Chabahar Port project, which provides an alternative trade route to Afghanistan and Central Asia. A stable diplomatic resolution would benefit Indian energy security and regional connectivity ambitions.",
+          "key_facts": [
+            "Trump's envoy and Iran's Foreign Minister travelling to Switzerland",
+            "A deal framework has reportedly been agreed upon",
+            "Switzerland talks aimed at formalising a new nuclear agreement",
+            "Previous US-Iran nuclear deal (JCPOA) collapsed after Trump's first-term withdrawal"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaThlUXVfZ2oyODhJUkdpdllxSUk0OEV2WDVtZExnb29ldGpGUE5vWncyd0pzem1oMnhOWk50Qms5ZTkyRTg4V0d6dEZzUXYtNEtLVlRMZGliLUN0cjByekY2RS1Cek5OR2txdzJjYWpvWXVXaGZaR2dzODF1b0xVdnJ4d2RhMTlWbUthLUtfWkwxZFZtdFNRbldVLURmajdPTXFZQld2UzU4b2JQX05KRDF6akpfaVdGNE1oUTh6Ymo5a3dXLWVtN0RKRWxxcFVXSXY3ODhnaFdIVDF3V1BYZHNxNUFrMWNkaFdJSHE2S1_SAfgBQVVfeXFMTlhZQ1dsSWJIRkItdWNPaWkxX1d3UTFLQV8tNFQ5bk5aQzhVdnYzbnlsVkRYVHlPQjdLUWhSNDB1RVY2clc1a2pRTUJsR0NhVGpKSFFYWVIyMy1pX2tqU2FRX2lHajhqU2w4RTdDMXN1Umw0Vm5CV3ZYU0RkU2UtNUoyc1VzbkdYQlhtMktDU0NIRS1WanY0TmtLT3owOHFHLVpJTkNyaEt2b0hYeFNKTlczT0tZNzJ2QkM0TjNDNDRod3E3NVNxbldCYUxWUWY1eTAza3ZRZU9MM3htQnRod1UtOFZpcFZoUl9QMVNMSTlRM1M5dTRXQ0w",
           "breaking": false,
@@ -126,6 +172,13 @@ window.BRIEF = {
           "headline": "5 Killed as Israel Strikes Lebanon Despite Active Ceasefire with Hezbollah",
           "what": "Israel carried out strikes on Lebanon that killed at least 5 people, even as a ceasefire agreement with Hezbollah remains nominally in force. The strikes represent a significant and alarming violation of the ceasefire terms, raising fears that the fragile truce could fully collapse. The incident underscores the deep instability persisting across the Israel-Lebanon border despite diplomatic efforts to halt hostilities.",
           "lens": "Any resumption of full-scale Israel-Lebanon conflict would spike global oil prices, endanger the Indian diaspora in the region, and test India's carefully balanced Middle East diplomacy.",
+          "article": "NDTV reports that Israeli strikes on Lebanon have killed at least 5 people, occurring despite an active ceasefire between Israel and Hezbollah. The ceasefire, brokered with international involvement, was intended to halt months of cross-border hostilities that had escalated sharply in 2024. The latest strikes suggest the truce is being violated and may be on the verge of breaking down entirely.\n\nThe ceasefire between Israel and Hezbollah had been seen as a partial de-escalation in the broader Middle East conflict that has consumed the region since the Hamas attacks of October 2023. However, mutual accusations of violations have persisted, and the latest Israeli military action raises serious questions about the durability of the agreement and international efforts to maintain it.\n\nIndia has approximately 90,000 citizens living and working in Lebanon, making the security situation a matter of direct concern. Beyond the diaspora angle, a renewed escalation would likely push up global crude oil prices — of which India is the world's third-largest importer — and further complicate New Delhi's diplomatic balancing act between Israel and the Arab world.",
+          "key_facts": [
+            "5 people killed in Israeli strikes on Lebanon",
+            "Strikes occurred despite an active ceasefire with Hezbollah",
+            "Ceasefire was brokered to end months of cross-border hostilities",
+            "India has a large diaspora community in Lebanon"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNWDl6UDk5RWsyWG9vOEtFNTdNbld5YmFRSzFMVEg4YzVaeVFUa0o1N0FKY19SYlljYlBYNU9BcC1lU1ZfbGxQdjg2Y1BHamdnaGlDNUxud1lOTFg0eWNsMVRyWFB6YXdZRWo2RGR6MTBlcWZJWU1xR01lS3ktS0dBcUhFV1A4Mm5lcVJydW8zdHRoTzJDRlNtdGRuQjNRcWV1MmE3OUNqdU9ZVFM1TUhZ0gG3AUFVX3lxTFBKRG1kcVp4SWI1X3NYa0JSa1JUMzVHNE1zdXFfLVBXVnJ5cnNoMWFmR3U3V1BjemRpY3hKNEV6OWNtM2s0MWF2a1doM3BCbnVCUUZOTnFOMkRrVmc4VmFMYUVOXzlPclJrZF9JQmtKVlYwVkRfRUdnSE13U29zNWdpWFVvejJ2V3JSOVV4bDVVUDZzdm5JV2FMT3l5alRBaUxyc3lQUlUxTTJselJNbk5ZNkFlUGtaRQ",
           "breaking": true,
@@ -141,6 +194,12 @@ window.BRIEF = {
           "headline": "Trump Announces Plans to Visit Turkey and China This Year",
           "what": "US President Donald Trump has announced he plans to travel to both Turkey and China during 2025. The visits would mark significant diplomatic engagements: Turkey is a key NATO ally with complex ties to both Russia and the West, while any Trump–Xi summit would be the first amid an intensifying US–China trade war. NDTV reported the announcement.",
           "lens": "A Trump visit to China while a bruising US–China trade war is underway could directly affect Indian exports, supply chains, and the global economic balance that impacts everyday prices in India.",
+          "article": "NDTV reports that US President Donald Trump has announced his intention to visit both Turkey and China in 2025. The declaration comes at a particularly charged moment in global diplomacy — the US and China are in the midst of a steep tariff conflict that has rattled global markets, and a direct presidential visit would signal a potential shift toward negotiation.\n\nTurkey, a NATO member that has maintained relations with Russia throughout the Ukraine war, has also positioned itself as a potential mediator. A Trump visit to Ankara would carry its own geopolitical significance for the broader resolution of the Russia–Ukraine conflict, in which India has a direct stake given its energy and defence ties with Moscow.\n\nFor Indian readers, the prospect of a Trump–Xi meeting is especially consequential: any US–China trade détente or new economic framework could reshape the global supply chains and export opportunities that Indian manufacturers and businesses depend on, while a continued escalation would keep pushing inflation and uncertainty into Asian markets.",
+          "key_facts": [
+            "Trump plans visits to both Turkey and China in 2025",
+            "Any Trump–Xi summit would be the first amid current US–China trade war",
+            "Turkey is a NATO ally and potential Ukraine-conflict mediator"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdDVqNXNVWHk0TUxlLU45QUdlY2ZJQndmLW5YQUQxNTRlNy1UWWp2TVd6R0IxazhPSFo4dW9YMWM0bmFXRlgzbHJBZTB4bHNjWmdsZWRLSWNIM20wTHVoREJ2c195VjY0S0VlQktPN0NhMmtnSFFMOHM3T3BJT180aHB6anRXVEJBT0dvVnF6a1VWeGtwZ3RTd1dieHnSAaQBQVVfeXFMT1NQVTdKN2MtTTVlREFoTjZDdUV3TDMwNDgySFY3QUNsd1laYlN3WWRQYktQNEpqbEhKYlhoMktxMEJiZUs4QlNmcktLVXVtdWZFYmEtUElWZV9Fa3c3eVgyMjhOZmlIMDRrQllOUGlLam11ZXlUbjh5UkpnN2pGeGJZbW83eHM5elVCZE45bHhlY1ZvUE9oalJRc25aUWxtSFdiVm0",
           "breaking": false,
@@ -156,6 +215,13 @@ window.BRIEF = {
           "headline": "Mojtaba Khamenei Says 'Desperate' Trump Used All Kinds of Leverage for Iran Nuclear Deal",
           "what": "Iran's Supreme Leader Ali Khamenei's son Mojtaba Khamenei has publicly claimed that US President Donald Trump used every form of leverage available in a 'desperate' push to secure a nuclear deal with Iran. The remarks signal deep scepticism within Iran's ruling establishment about the US-Iran diplomatic process. The characterisation of Trump as 'desperate' is a pointed rebuke from one of the most influential figures in the Islamic Republic's inner circle.",
           "lens": "A potential US-Iran deal would reshape oil markets and Middle East stability, directly affecting India's energy import costs and its careful diplomatic balance between Washington and Tehran.",
+          "article": "NDTV reports that Mojtaba Khamenei, son of Iran's Supreme Leader Ali Khamenei and a highly influential figure within the Islamic Republic's power structure, has publicly described US President Donald Trump as 'desperate' in his pursuit of a nuclear deal with Iran, alleging Trump used 'all kinds of leverage' to push the negotiations forward.\n\nThe remarks reflect a significant divide between how Washington and Tehran are characterising the ongoing diplomatic process. While the Trump administration has publicly projected confidence in securing an agreement, Khamenei's son's comments suggest Iran's inner circle views the American posture as one of weakness rather than strength.\n\nIndia watches the US-Iran standoff closely: Iran is a major oil supplier to Asia, and any deal — or collapse of talks — directly affects global crude prices. India also maintains strategic ties with Iran, including its interest in the Chabahar port, making the diplomatic outcome consequential for New Delhi's foreign policy and energy security.",
+          "key_facts": [
+            "Mojtaba Khamenei called Trump 'desperate' over Iran nuclear deal push",
+            "Claimed Trump used 'all kinds of leverage' in negotiations",
+            "Mojtaba Khamenei is son of Iran's Supreme Leader Ali Khamenei",
+            "Remarks signal deep scepticism in Iran's ruling establishment"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNXzhzcU5EOUVEbURybkpFTnctSWNGOHhaOXpEcl9fVU52OHYxNnNEYVptM2NrOGdrVTR2RGZCelhzVi1EVFZONHpkbm9KbWRGNkI1U0RMNThVRldwZFZQWEJQNTV2X3BndHhEazY0TkhyZ2hlZnZlM3FhSU0ydUVFemUxZXNxR0ZELTI3ZFBTb0RoUG54RUxFM2Z5eElmc2NYYXhqX0JLUnVOSU10Z0lyLW80UTVDa0MzWThFMXpTUGJGMFXSAcsBQVVfeXFMUEdjVWVzZWRsWlVUZHl6c241anFnVFJvdk9yc0lTT1dSZzJjTDB3eHdtdF8ydm9lZTF4UFh0Q2NzY1dmWXRxX3REbV8wdVl0TW5JYjlReVpGV1R0QVhhZGhxV05vN1hTa01FUXZRUko2Qm8wamxoSjA2VUN0cmFqTk1BYUNsMkhSdkVWMjMxRjFsVXI0OVB1aGNRTTZaUldkczIzMGFuSk9xWUtmWnlDbDAwdkRzbVlhUm9SazhyZ2lzXzlwU2dDS05kWm8",
           "breaking": false,
@@ -163,7 +229,8 @@ window.BRIEF = {
           "image": "https://pixabay.com/get/g8453195fcba9655681dac4e8ca5ed218ee1e223528d1fed58fe5328574d06992a4765e0c2ad3b0a1c5a5983292c87c366923924dd0e0db9255aa0bf30bd8c3b4_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Mediamodifier",
-          "image_credit_url": "https://pixabay.com/users/Mediamodifier-1567646/"
+          "image_credit_url": "https://pixabay.com/users/Mediamodifier-1567646/",
+          "_edition_date": "2026-06-19"
         }
       ]
     },
@@ -177,6 +244,13 @@ window.BRIEF = {
           "headline": "India and Uzbekistan set target to double bilateral trade within three years",
           "what": "India and Uzbekistan have announced a joint ambition to double their bilateral trade within three years, signalling a deepening of economic ties between the two countries. The commitment reflects India's broader push to expand trade relationships across Central Asia as part of its Connect Central Asia policy. Specific sectors and current trade volumes were cited as part of the discussions between the two sides.",
           "lens": "Central Asia is a strategic economic corridor for India, and deeper trade with Uzbekistan opens routes and markets that reduce dependence on traditional Western and Chinese supply chains — relevant to Indian exporters and policymakers alike.",
+          "article": "The Economic Times reports that India and Uzbekistan have agreed to target a doubling of bilateral trade within the next three years, underscoring a strengthening of economic engagement between New Delhi and Tashkent.\n\nIndia has been actively working to deepen ties with Central Asian nations, and Uzbekistan is a key partner in that outreach, with both countries sharing interests in connectivity, pharmaceuticals, textiles, and energy. The current bilateral trade figures remain modest by global standards, which is precisely why both governments see significant room for growth.\n\nFor India, expanding trade with Uzbekistan also supports the International North-South Transport Corridor and other connectivity initiatives that could link Indian goods to Central Asian and eventually European markets. For everyday Indian businesses — particularly in pharmaceuticals, IT services, and textiles — a doubling of trade with Uzbekistan would mean tangible new export opportunities in a region that has historically been underserved by Indian commerce.",
+          "key_facts": [
+            "India and Uzbekistan aim to double bilateral trade in 3 years",
+            "Part of India's broader Connect Central Asia push",
+            "Key sectors include pharmaceuticals, textiles, and connectivity",
+            "Reported by The Economic Times"
+          ],
           "source": "The Economic Times",
           "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTVJ4UFp1WHFHZnhleGVhUm5xVTRzUXYzWERTZGstbHFidjBsWlh2Y1BHNkktOXdNV2NhRDhiUkRPM2hxWURQNWNVVVdxaGY2SkNqRzEtVVpRWThMY3pfbV9EUmxLSGxIb2I4ZXRmdFdlajVKYU1SQ0pHdDQ1dmNEdC1MSFhPOE90SGJzN3V6ZU5Md1FGSTlkdF9sU3J4dG4wYnVxSkJhS3hTaEFiX004Wjc4bUVfQTNjRnNBUENlVTBDY3djanNYaDZ1dm5MZnEzaGxqZGtZb3NqSUFMY0NXZw",
           "breaking": false,
@@ -192,6 +266,12 @@ window.BRIEF = {
           "headline": "Trump Says PM Modi's Long Tenure Has Helped US-India Trade",
           "what": "US President Donald Trump has publicly credited Prime Minister Narendra Modi's long time in office as a factor that has benefited trade relations between the United States and India. The remarks represent an unusually personal compliment from Trump directed at Modi and come amid otherwise turbulent trade negotiations between the two nations. The statement is seen as an attempt to maintain a constructive personal relationship even as structural trade disagreements persist.",
           "lens": "Trump's remarks signal that personal ties between the two leaders remain a diplomatic buffer even as trade-deal talks hit a wall — a dynamic that directly shapes the terms Indian exporters may ultimately face.",
+          "article": "The Indian Express reports that US President Donald Trump has said that Prime Minister Narendra Modi's extended tenure in office has been beneficial for trade between the United States and India. Trump's comments, made publicly, are notable for their warm tone toward Modi at a time when the two countries are grappling with significant disagreements over tariffs and trade deal terms.\n\nThe remarks align with Trump's long-standing style of personalising foreign policy around individual leaders rather than institutional frameworks. By highlighting Modi's longevity in power as a stabilising force for trade, Trump appeared to signal continued goodwill toward India even as broader negotiations stall.\n\nFor everyday Indian observers, the significance lies in what this personal rapport between the two leaders may — or may not — translate to in concrete trade outcomes. With a former US official simultaneously suggesting India has walked away from trade talks, Trump's positive words about Modi underscore the gap between diplomatic optics and the harder realities of tariff negotiations that affect Indian exporters across sectors.",
+          "key_facts": [
+            "Trump publicly praised PM Modi's long tenure as beneficial for US-India trade",
+            "Remarks came amid stalled bilateral trade deal negotiations",
+            "Trump known for personalising foreign policy around individual leaders"
+          ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNU1BaOEkyN2ZNaXhvNUpnVHdKbmlac0VlcGFfLUdxNElHM05PNnJjV1JyYlkteDRtdUk0U0tjM2JDaUw1ZWl1a2hPcXh1bEtzejZ5TzhhcVNhTW1Od2tpd0lyZ3E1UlpjMjRlS1VrUldVVWhFcXR5cEJQTTBzOUUtYzE2Z2dnUDY2U3g3alBUaVczelViY2hvYkNBdXc2WElxU3JOTEd3",
           "breaking": false,
@@ -207,6 +287,13 @@ window.BRIEF = {
           "headline": "India Has 'Walked Away' From US Trade Talks Due To Tariffs, Says Ex-Top Official",
           "what": "A former senior US trade official has stated that India has effectively walked away from ongoing trade negotiations with the United States, citing unacceptable tariff demands. The claim signals a significant setback to efforts by both sides to finalise a bilateral trade deal. This comes amid broader US tariff tensions with multiple countries, and as India seeks to protect key export sectors from punishing duties.",
           "lens": "A stalled India-US trade deal directly threatens Indian exporters in sectors like textiles, pharmaceuticals, and IT services, which depend heavily on American market access.",
+          "article": "NDTV reports that a former top US trade official has declared that India has 'walked away' from trade negotiations with the United States, attributing the breakdown to disagreements over tariffs. The statement marks a pointed escalation in the rhetoric surrounding bilateral trade talks that have been underway for months, with both sides struggling to bridge wide gaps on market access and duty structures.\n\nIndia has reportedly resisted US pressure to lower tariffs on American goods across several sensitive sectors, while seeking guaranteed access and reduced duties for its own exports. The talks had gained urgency after the Trump administration imposed sweeping tariffs on multiple trading partners, prompting India to reassess the terms on offer.\n\nThe development is significant given that a successful India-US trade deal had been projected as a flagship economic partnership, with both governments at various points expressing optimism about its prospects. A prolonged impasse could dampen foreign investment sentiment and leave Indian exporters — particularly in pharmaceuticals, textiles, and technology services — exposed to US tariff pressures without the cushion of a formal agreement.",
+          "key_facts": [
+            "Former US official says India has walked away from trade negotiations",
+            "Tariff disagreements cited as the primary reason for the breakdown",
+            "Talks aimed at a bilateral India-US trade deal have stalled",
+            "Indian exporters in pharmaceuticals, textiles, IT face tariff exposure"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMi_gNBVV95cUxObEs2and3X1ByN1FDbTJHbnBVTW9meTI4aWN4TWFGcEJMX205d2s4ZHJjenFuLUlFeUFiQzZ6eU52Y0wtcGk2eUFadWdJakp1LWpNTGJ5Mkg4RVpnN3g0cDRGNVpPSUVHT3VKNVZSSGFoNG01TVlyVjZ4Ni1WWFNJbVZiNVpFelFTSnFoOTRGTXd2WVdvdFNlc1ZSUDJkNEdxUnlnYUFfQWhQUzdndWtjN0JJNTl5LXdOZ29KOC05REZhMHlUNElIREx1QWtVemM1VXY1TUJOeDNIYmIySzZwcVJ0WDZtMU4ySERWSTlZN3hTaTJWQVpOUEF0WEFscEhjQ3B1V01VeVI0SjdpWjQ0eHVXRnF1LTlEUm5jN09icEUwWjc4dkFpOXpNWTBDbW5vR1pDWGN1c3RUTnE5bWVHaUJ5M3dBMlpVdDEtenlyaWVZX0JCWXpnS29Ka0dIWVB4UW04THRFay02REZaUlY4ZWtKd0g3V0pqMmJoYVFwa08wMEJscXNwTmo1ZE4xaDl5bExRdFdILW9lSU9jaExWRTExeUlOOGJwaFpSVE82anFXTGJOcVFmMFF6SEFDQ3FMTjB1Q1JZV1A2cUVBUk5tbWxDam9FVDZlQTdpVGtrUUZ0NV9GVktLRUdfSmlfUmtSd1UxSlFiM2xzemxPMlE",
           "breaking": false,
@@ -222,6 +309,13 @@ window.BRIEF = {
           "headline": "Indian IT Industry Eyes 'Unglamorous' AI Work for American Companies",
           "what": "Scroll.in reports that India's IT industry is positioning itself to capture the less visible but highly lucrative side of the artificial intelligence boom — the data labelling, model training, quality testing, and AI maintenance work that large American technology companies need done at scale. Industry leaders argue this 'unglamorous' AI services segment plays to India's existing strengths in large-scale outsourcing, a trained English-speaking workforce, and competitive costs, and could be the next major growth engine for the sector.",
           "lens": "India's IT industry employs over five million people — its ability to grab a large share of AI services work from US companies will shape salaries, hiring, and tech careers across cities like Bengaluru, Hyderabad, and Pune for the next decade.",
+          "article": "Scroll.in reports that India's IT industry is making a deliberate push to capture the back-end, infrastructure-heavy work that powers artificial intelligence for American corporations — tasks such as data annotation, model training, AI testing, and system maintenance that are essential but rarely in the spotlight. Industry voices describe this as 'unglamorous' AI work, yet argue it represents a massive, durable opportunity that aligns well with India's established outsourcing capabilities.\n\nThe pitch is that India's IT sector — already a dominant force in global technology services — can replicate its decades-long success in business process and software outsourcing by pivoting large parts of its workforce toward AI-enabling tasks. Competitive labour costs, scale, and a large English-proficient talent pool are cited as India's core advantages in this race.\n\nThe stakes are significant: with generative AI transforming how American companies operate, the volume of supporting work required is expected to grow sharply. For India's IT workforce of over five million, success in this segment could translate into sustained hiring and wage growth, particularly in tech hubs like Bengaluru, Hyderabad, and Pune, even as traditional software services face disruption from automation.",
+          "key_facts": [
+            "Indian IT industry targeting AI data labelling, model training, and testing work for US firms",
+            "Sector employs over five million people in India",
+            "India's cost advantage and outsourcing scale cited as key strengths",
+            "Opportunity driven by generative AI adoption surge among American companies"
+          ],
           "source": "Scroll.in",
           "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOV2VIQ3Fqeks2SW9Sd1RxMV9zcnpOTWlOZHJ1RW5raVh6aTdwcnk1Y0FBdkZzVlNoTGxIaFZ3c0dJTDhuOVJyT0FRQ0JkZXp1UWFBYmplMzAtZEhUTkdRbl9GcjBIVEJOeEhrRU5xdnJ4WVE3MTJqbi1EWTNGUWctODVvOXRnV2g2QjBEN0hlVUxXeDVwOGsyUE8tSzF3Z1dLcGtobk1CSFIyaDBDZ0hKZWlIcDFZNXPSAbcBQVVfeXFMTldlSENxanpLNklvUndUcTFfc3J6Tk1pTmRydUVua2lYemk3cHJ5NWNBQXZGc1ZTaExsSGhWd3NHSUw4bjlSck9BUUNCZGV6dVFhQWJqZTMwLWRIVE5HUW5fRnIwSFRCTnhIa0VOcXZyeFlRNzEyam4tRFkzRlFnLTg1bzl0Z1doNkIwRDdIZVVMV3g1cDhrMlBPLUsxd2dXS3BraG5NQkhSMmgwQ2dISmVpSHAxWTVz",
           "breaking": false,
@@ -237,6 +331,13 @@ window.BRIEF = {
           "headline": "How India's Economy Weathered the West Asia Shock",
           "what": "The Indian Express examines how India's economy managed to absorb the disruptions caused by escalating conflict and instability in West Asia, a region critical to India's energy imports, remittances, and trade routes. Despite fears of an oil price spike and supply-chain disruption, India deployed a combination of diversified oil sourcing, diplomatic hedging, and strong domestic demand to limit the damage. The analysis offers a detailed look at the policy choices and structural factors that buffered the Indian economy.",
           "lens": "West Asia directly affects every Indian household through fuel prices and remittances from the diaspora — understanding how India managed this shock explains why petrol prices and inflation stayed in check.",
+          "article": "The Indian Express analyses how India's economy demonstrated resilience in the face of the West Asia conflict shock, a development that had threatened to derail growth through surging crude oil prices and disrupted trade routes. The report underscores that India's strategic import diversification — sourcing discounted Russian crude alongside West Asian supplies — played a key role in cushioning the blow.\n\nRemittances from the large Indian diaspora in Gulf countries, which run into tens of billions of dollars annually, remained broadly stable despite regional turbulence, providing continued support to household incomes in states like Kerala, Tamil Nadu, and Uttar Pradesh. India's diplomatic posture of maintaining ties with multiple regional actors also helped protect its economic interests.\n\nThe analysis highlights that while the shock tested India's external sector, strong domestic consumption and a relatively contained current account deficit gave policymakers sufficient room to manage without emergency intervention. For ordinary Indians, the most visible indicator — retail fuel prices — was kept in check, underlining how the government's multi-pronged energy strategy absorbed what could have been a far more disruptive event.",
+          "key_facts": [
+            "India diversified oil sourcing, including discounted Russian crude, to cushion price shocks",
+            "Gulf remittances to India remained broadly stable despite regional conflict",
+            "Domestic consumption and contained current account deficit provided economic buffer",
+            "Retail fuel prices in India were kept in check despite West Asia turbulence"
+          ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSUNKMWJaTVhyVzlzNkVJS09tMXhGQU5tRUNrenR4LWFkY1hSTFpIX0lBRURESnFFMU5zN2dhVXFJbEEwZG1UMkdWcVlacFN5NFJnVWkxSjZjREg3NWhzY0pkUWVoaTJYOGhzRDVoS1AwQTBUVU9lZGtMSlA5ZVMydTdZODR4OEI2RmtaYmgwUHVmZjNmVmFYd1gtaVRxR0U1MjluQUZTNNIBrgFBVV95cUxOamh6Zlg0YzlGUzQ1aHJlUGRFRG5jdHIwTTc3Q29QeUpVTk4wR1MyaFhmalBlM2FIblFJZ2Z0bVltXy1nU2xRbksyMGxUM05UNlNBeTZFMC10Rk9WekJHS2pPQXhvYkJQVTBMR25wYmw4VVN6Szl5b0R1WGV5SU5naUhDMGxrOXlVYWtwSlpFQUVKUU5hM1RPOWpiYVNrQW5ibU5GNTJMT19iYi04Z2c",
           "breaking": false,
@@ -258,6 +359,13 @@ window.BRIEF = {
           "headline": "Bengaluru-based Gnani AI launches new speech-to-text model",
           "what": "Gnani AI, a Bengaluru-based conversational AI startup, has launched its latest speech-to-text model, strengthening its position in the Indian AI landscape. The company specialises in voice AI for enterprise customers, particularly in sectors such as banking, financial services, and insurance. The new model is aimed at improving transcription accuracy for Indian languages and accents, an area where global models have historically underperformed.",
           "lens": "Indian enterprises increasingly depend on voice AI for customer service, and a homegrown speech-to-text model tuned for Indian languages and accents could be meaningfully more accurate and useful than generic global alternatives.",
+          "article": "Deccan Herald reports that Gnani AI, a Bengaluru-based artificial intelligence startup focused on conversational and voice AI, has launched its latest speech-to-text model. The company has built its business around serving enterprise clients — particularly in banking, financial services, and insurance — with AI-driven voice solutions including automated call centre tools and transcription services.\n\nGnani AI's focus on Indian languages and the distinctive accents and code-switching patterns of Indian speakers addresses a well-documented gap in global speech AI, where models trained predominantly on Western English data tend to perform poorly on Indian English and vernacular languages. A model purpose-built for this context could deliver meaningfully better accuracy for businesses handling high volumes of customer calls in India.\n\nThe launch reflects the growing maturity of India's homegrown AI ecosystem, with startups increasingly moving beyond reselling global models to building specialised systems for local needs. For Indian businesses that rely on voice-based customer interaction — from banks to insurers to telecom firms — improvements in speech-to-text accuracy directly translate to better customer service and lower operational costs.",
+          "key_facts": [
+            "Gnani AI is a Bengaluru-based conversational AI startup",
+            "New model focuses on speech-to-text for Indian languages and accents",
+            "Target sectors include banking, financial services, and insurance",
+            "Addresses underperformance of global models on Indian speech patterns"
+          ],
           "source": "Deccan Herald",
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPNHlWck5GVUlIVk0xZDZlMmtiLXJsenZYaFVqMmFTRGpWa1ZWTHNvUC1RamhsQzRBWllQSENuNS1jdWs1Q3ZGUHRkTDhSV2FJWklQcUF1dE5aSG5iWWZpeXJYblFjNk1IR1JXcUx6N1JoZ29DTzNYam9kY21OeVFGeVQzWW0wTHZoZjBaTHd1b29jVEhkUkRaMjVjNklMNGRBOGdfa212YnVjaHJJYURkbnMwT2M5SzJk?oc=5",
           "breaking": false,
@@ -273,6 +381,13 @@ window.BRIEF = {
           "headline": "Amazon drops Luca Guadagnino's Sam Altman film after OpenAI deal",
           "what": "Amazon has dropped 'Artificial', a nearly completed feature film directed by Luca Guadagnino and centred on OpenAI CEO Sam Altman, after the studio's parent company struck a major investment partnership with OpenAI. The decision, reported by Variety, raises stark questions about editorial independence when media conglomerates have financial ties to their subjects. The film was reportedly very close to completion before it was pulled.",
           "lens": "Amazon's decision to shelve a film about Sam Altman precisely after investing in OpenAI is a vivid illustration of how Big Tech's AI deals can now influence culture and media — not just business.",
+          "article": "Variety reports that Amazon has dropped 'Artificial', a feature film directed by acclaimed filmmaker Luca Guadagnino that centred on OpenAI CEO Sam Altman, after Amazon's parent company entered into a significant investment and partnership with OpenAI. The film was described as nearly finished at the time it was pulled, making the decision all the more striking.\n\nGuadagnino is one of contemporary cinema's most celebrated directors, known for films such as 'Call Me by Your Name' and 'Challengers'. The shelving of a near-complete film by such a prominent director is unusual and immediately drew attention to the timing: Amazon's deepening financial relationship with OpenAI appears to have made a film scrutinising the company's CEO an uncomfortable proposition for the studio.\n\nThe episode highlights a tension that is growing sharper as major technology companies pour billions into AI firms while also owning vast media and entertainment assets. For observers tracking AI's broader societal footprint, the story underscores how corporate AI investments can ripple outward to shape what stories get told — and which ones get quietly shelved.",
+          "key_facts": [
+            "Amazon dropped 'Artificial', directed by Luca Guadagnino, about Sam Altman",
+            "Film was nearly finished when it was pulled",
+            "Amazon has a major investment and partnership with OpenAI",
+            "Decision raises concerns about media independence and corporate AI ties"
+          ],
           "source": "Variety",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMVBqY24tSVdzQ2lUaVRNRnIwcHZ0SXprTVZOem9hQ1hCZUlvRF9CUXVrcUpoS0lMZG5ZOFFUdGczY1lzVTZ3N3ZwZ3FENnJ1R21WNlVnZHhMdUFhVnplN3dBekRRWEIzZXJ6VXBucDNiX2NDU3hBTW9kR1dxakZ5cTJ6WFJIZDRZWnI0Qmg2N2RabGVXalZlaXA2U2M4M1U2MXE3eTl0bWNjOW8?oc=5",
           "breaking": false,
@@ -288,6 +403,13 @@ window.BRIEF = {
           "headline": "Chinese AI Models Dominate Global Top 10 by Token Usage",
           "what": "Chinese artificial intelligence models now account for the majority share among the global top 10 AI models when ranked by token usage, according to a new report highlighted by NDTV Profit. This marks a striking shift in the global AI landscape, suggesting that Chinese-developed models are being adopted at scale by users worldwide, rivalling and in some metrics surpassing their American counterparts. Token usage is a key measure of how actively and extensively an AI model is being used.",
           "lens": "China's AI models overtaking American rivals in real-world usage is a wake-up call about the pace of global AI competition — and has direct implications for India as it decides which AI ecosystems to build its digital infrastructure around.",
+          "article": "NDTV Profit reports that Chinese AI models now account for the majority share among the world's top 10 AI systems when ranked by token usage — a widely used metric reflecting the volume of text processed and generated, and thus the actual scale of real-world deployment.\n\nThe finding signals that Chinese AI development, long seen as trailing US frontier labs like OpenAI and Anthropic, has caught up significantly in terms of adoption and practical use. Models from Chinese developers have been making rapid strides in benchmark performance and cost efficiency, with some, like DeepSeek, having already caused significant attention globally earlier this year.\n\nToken usage as a metric captures not just capabilities but actual user adoption, making it a meaningful indicator of which AI ecosystems are gaining commercial and developer traction worldwide.\n\nFor India, which is actively building its AI stack and deciding which large language models to integrate into government, enterprise, and consumer applications, the dominance of Chinese models in global usage charts adds urgency to questions around AI sovereignty, data security, and the choice between US and Chinese AI ecosystems.",
+          "key_facts": [
+            "Chinese AI models hold majority share of global top 10 by token usage",
+            "Token usage measures real-world scale of AI model deployment",
+            "Signals Chinese AI has caught up with US rivals in practical adoption",
+            "Raises questions for India on AI ecosystem and data security choices"
+          ],
           "source": "NDTV Profit",
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORmJVRzNUNE00VHZMaTloUy1QZEt2MmJLMFdUQUZEVXRTYzR6RXV0RmNFSV93ZDZZVFQxRWxlc1Nid0tOVmdELUVSa21RZFhpYzhZUW4zUDBuOGo1Ylo3dnB6WmtRZWw1Q0pad281TzdzSW9qOEluSmFNWTJnTGNETENORU1PNmM0NnJ5N0hfMk5yX19SMFNvNHlZeTY5a1FReU91dDVnZFBCTk95R21QcGhOV1RwYlA5N0RJTDdwMlRzdE1HOXViNtIByAFBVV95cUxORmJVRzNUNE00VHZMaTloUy1QZEt2MmJLMFdUQUZEVXRTYzR6RXV0RmNFSV93ZDZZVFQxRWxlc1Nid0tOVmdELUVSa21RZFhpYzhZUW4zUDBuOGo1Ylo3dnB6WmtRZWw1Q0pad281TzdzSW9qOEluSmFNWTJnTGNETENORU1PNmM0NnJ5N0hfMk5yX19SMFNvNHlZeTY5a1FReU91dDVnZFBCTk95R21QcGhOV1RwYlA5N0RJTDdwMlRzdE1HOXViNg?oc=5",
           "breaking": false,
@@ -303,6 +425,13 @@ window.BRIEF = {
           "headline": "Nobel Prize Winner John Jumper Quits Google DeepMind for Anthropic",
           "what": "John Jumper, the Nobel Prize-winning scientist celebrated for co-creating AlphaFold — the AI system that predicted the structure of nearly every known protein — has left Google DeepMind to join Anthropic. Jumper shared the 2024 Nobel Prize in Chemistry for his work on AlphaFold, widely regarded as one of the most significant scientific breakthroughs in decades. His move to Anthropic, the Claude AI maker, marks a major talent acquisition for the startup.",
           "lens": "When a Nobel Prize winner walks out of Google DeepMind — one of the world's most prestigious AI labs — to join a rival, it signals just how intensely the global race to build transformative AI is reshaping who works where and why.",
+          "article": "NDTV reports that John Jumper, the Nobel Prize-winning scientist and a key architect of Google DeepMind's landmark AlphaFold protein-structure model, has resigned from DeepMind to join Anthropic, the AI safety-focused startup behind the Claude family of large language models.\n\nJumper was awarded the 2024 Nobel Prize in Chemistry alongside DeepMind CEO Demis Hassabis for AlphaFold, which used deep learning to predict the three-dimensional structures of virtually all known proteins — a problem that had stumped biologists for half a century. His departure is a significant blow to DeepMind and a major coup for Anthropic.\n\nAnthropichas been aggressively recruiting top-tier research talent as it competes with OpenAI, Google, and Meta in developing frontier AI models. The company, founded by former OpenAI researchers, has positioned itself as a leader in AI safety research alongside capabilities development.\n\nFor India's fast-growing AI research and startup community, the story underscores how elite scientific talent is increasingly being drawn to well-funded private AI labs over established tech giants — a dynamic that is reshaping global AI development priorities and investment flows.",
+          "key_facts": [
+            "John Jumper won the 2024 Nobel Prize in Chemistry for co-creating AlphaFold",
+            "AlphaFold predicted the 3D structure of nearly all known proteins",
+            "Jumper leaves Google DeepMind to join Anthropic, maker of Claude AI",
+            "Marks a major talent shift in the global AI race between top labs"
+          ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbkU2cThrWjhZc2UxMS0wNVFwMDFzcFJvcWU1QktWTTI3dHd3ek5LMFZKR1hzZ0hpT1lVeHpfeVJBa1FOMVB4aHU2cjk0UnA5X3JMekd0b0RvTXZDTW9VNXprRDB1SDhiNzNvazFnaVN4cHR5a2pXN292Q0RZUER2RWJkYk1nWVVXUUN4Vmt1Qm1ZSUpCUDQtckNIZFRZTS1ybjNTV2FpN3laMlkyaHM5ekZwZXE2QUV0QmNvadIBxAFBVV95cUxOS1hEVGpta181LV9OU2g4d2hZY09KY1g4Z016cHJSMFF2ZHo5YTNLWHZueDZvdFc3TlVBVENLWm9LLUx6NEYwLTFGbjhKRnloeExDV3NUMXUyNU9XRW9fUU1iM05hVG1ST1pSYmNDQ0d5OGQzd09hajdQSmpfd3hFOTYweEg4VFZFYXlVMmR4SUZpUU1GbXpGLWFDREtuNlNWemw3NTJlTVBTeDBxWmswNzRzYzV1WjBXQ2J6NzdnS3I2Zi16?oc=5",
           "breaking": false,
@@ -318,6 +447,13 @@ window.BRIEF = {
           "headline": "Trump Dismisses Concerns About Anthropic Security Threat After AI Curbs",
           "what": "US President Donald Trump has publicly dismissed concerns that Anthropic poses a national security threat, pushing back against claims that had surfaced following the imposition of new restrictions on the AI company. The remarks came amid reports that Commerce Secretary Howard Lutnick's intervention had granted new regulatory power over AI models, with Anthropic caught in the crossfire of Washington's tightening grip on the AI sector. Trump's comments signal a complex, shifting US government stance toward frontier AI labs.",
           "lens": "Washington's push-and-pull over regulating leading AI companies like Anthropic directly shapes which AI technologies reach Indian businesses and developers, and how openly American AI firms can operate globally.",
+          "article": "Business Standard reports that US President Donald Trump has publicly stated that Anthropic does not represent a national security threat, seeking to cool tensions after a series of restrictions were placed on the AI startup. The comments come amid a broader regulatory tightening in Washington around frontier AI development.\n\nSeparately, the Economic Times reports that Commerce Secretary Howard Lutnick's intervention in the Anthropic matter has effectively claimed new governmental power over AI models — a significant move that could set precedents for how US federal authorities oversee private AI companies going forward.\n\nAnthropicis the maker of the Claude series of AI assistants and is one of the most well-funded AI safety-focused startups in the world, backed by billions in investment from Amazon and Google, among others. The regulatory attention it is now receiving reflects Washington's growing anxiety about who controls cutting-edge AI systems.\n\nFor Indian readers, the developments matter because Anthropic's Claude models are widely used by Indian enterprises and developers; any US government restrictions on the company's operations could affect access to these tools and influence how India's own AI policy conversation evolves.",
+          "key_facts": [
+            "Trump said Anthropic is not a national security threat",
+            "US Commerce Secretary Lutnick's actions claimed new power over AI models",
+            "Anthropic makes the Claude AI model series",
+            "Amazon and Google are major investors in Anthropic"
+          ],
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNWTJuX0s1ZHoyWkx6dlN6Q016ZTNDdElhdlk0Wmw1WjF2VHZrY190aGNsS0g1QWMwWE4ybWl1cVhVRDBFWlFWRk5DWHRhMUNIUVJEVWFPWHNoSnAtbzhDU1ZOQTdRYjNaRnFLeGZvQU5KRTRrR01EMy03ZjdHZ3VLVUVwSW1odGFMN2MwTFc4bGJtOXduVzI0dXltd1FLWDB5M0JaTFR4SjJIeno3cDF2NE5LQzZEWWhmQTRZd1BJNVppNGVrX1hndWZORDh0YllSOS1MaNIB2gFBVV95cUxQNUpFVG5POHdGOVlxbFdibWNYdm9EMHlVWGNEdmRaNFZQTmNMWVVDRGZENUJaWThmY3BDUGRkYk5NZUlmYlRTdnotNDhBTHNTN1BHdzUxSW5tOUhzZTBuZ0c5YlVPT3F3YWMtTENRUkdRSlBPZ0xoX3NxM2dheW9qVFI2bTR5NHNlODB1eWlDRUh5MTJNWV9ld01nZHd4MGRrOHlzZFZNa2M1bTFmX09sYjMtaGFaX3I5NGl4RVhQbUN3TjlKeHlsUmRpVU1EbnlvZjlPcTNuZDIwZw?oc=5",
           "breaking": false,
@@ -339,6 +475,13 @@ window.BRIEF = {
           "headline": "India set for major XI changes against Afghanistan in third ODI at Chepauk",
           "what": "India, already 2-0 up against Afghanistan in the ODI series, are set to make significant changes to their playing XI for the third and final match at Chepauk in Chennai. The Times of India reports that at least one senior player is likely to be rested, opening the door for fringe players to get game time. The series is already won, giving team management room to experiment before the next assignment.",
           "lens": "With the series wrapped up, the players who get a chance in this dead rubber could stake their claim for future squads — giving fans a glimpse of India's ODI bench strength.",
+          "article": "The Times of India reports that India are set to make sweeping changes to their playing XI for the third ODI against Afghanistan at Chepauk in Chennai, with at least one senior player likely to be rested. The series is already sealed 2-0 in India's favour, giving the team management the freedom to rotate and hand opportunities to players on the fringes of the squad.\n\nThe Hindu and The New Indian Express had both flagged India's dominant form heading into this dead rubber, with the hosts having comfortably won the first two matches. The Chennai venue, known for its turning pitches, is expected to offer a stiff test for Afghanistan's batting order.\n\nFor India, the third ODI is an opportunity to fine-tune their squad depth ahead of upcoming assignments. Resting key seniors while blooding in reserve players is a common strategy in dead rubbers, and the team management is expected to use this game to assess options across batting and bowling departments. For fans, the match is a chance to watch potential future regulars earn their stripes on the international stage.",
+          "key_facts": [
+            "India lead Afghanistan ODI series 2-0",
+            "Third ODI to be played at Chepauk, Chennai",
+            "At least one senior Indian player likely rested",
+            "Changes create opportunities for fringe squad members"
+          ],
           "source": "The Times of India",
           "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQRFU0WHZHQTFYOHBuMnpVMDhuaUlBbTRRVGtMRHZxZVduOG9TOXRKLS1jTFduQ1hsQi1wWU1PQ2NNVGdhNFJHOW94MVpsS09VcHYyX1JiZktyYnVYc1BxUExOQkVlZmQyRGQ4bHNlbmhVdHIwRC13MTFKRG1QUThhRHVFbS12ZnY1bXIwWGxiekdSR2wwNTh5QzdIMWdPVUZ6eEZJSlo1Tko0ZEVQUnFvRUY4SEhaNWJZRW10TzgxaGpORGs5QkFQbXNicHluN2ZfNTJ5T0VGUEhMVGxDZHB0N090OUZnZ1BPdWtmSUwtZUxtbjdLOFHSAfYBQVVfeXFMUERVNFh2R0ExWDhwbjJ6VTA4bmlJQW00UVRrTER2cWVXbjhvUzl0Si0tY0xXbkNYbEItcFlNT0NjTVRnYTRSRzlveDFabEtPVXB2Ml9SYmZLcmJ1WHNQcVBMTkJFZWZkMkRkOGxzZW5oVXRyMEQtdzExSkRtUFE4YUR1RW0tdmZ2NW1yMFhsYnpHUkdsMDU4eUM3SDFnT1VGenhGSUpaNU5KNGRFUFJxb0VGOEhIWjViWUVtdE84MWhqTkRrOUJBUG1zYnB5bjdmXzUyeU9FRlBITFRsQ2RwdDdPdDlGZ2dQT3VrZklMLWVMbW43SzhR",
           "breaking": false,
@@ -354,6 +497,12 @@ window.BRIEF = {
           "headline": "India Women face South Africa in T20 World Cup 2026 opener",
           "what": "The Indian women's cricket team are set to face South Africa in what is expected to be a key early fixture at the ICC Women's T20 World Cup 2026. The head-to-head record and broadcast details have been outlined ahead of the match, giving fans all they need to follow the action. The SA-W vs IND-W contest is expected to be one of the marquee early matchups of the tournament.",
           "lens": "For Indian cricket fans planning to watch the Women's T20 World Cup, this is the essential preview and broadcast guide for India's opening fixture against South Africa.",
+          "article": "Olympics.com reports that the Indian women's cricket team will take on South Africa in an early fixture at the ICC Women's T20 World Cup 2026, with the head-to-head record and live-viewing details now available for fans ahead of the match.\n\nIndia and South Africa have faced each other in multiple Women's T20 Internationals over recent years, making this a contest with genuine history. South Africa's women's side has grown considerably as a T20 force, having reached the final of the 2023 Women's T20 World Cup, making them a stern test for Harmanpreet Kaur's India.\n\nThe Women's T20 World Cup 2026 is a significant event for Indian cricket, with the Board of Control for Cricket in India and fans eagerly watching how the national side performs against established international competition. India have consistently been among the contenders in global women's T20 tournaments.\n\nFor everyday Indian cricket fans, this match represents an important early indicator of how the Indian women's team will fare in the tournament, and broadcast details being confirmed means supporters can plan to watch from home or on mobile platforms.",
+          "key_facts": [
+            "India Women vs South Africa Women in T20 World Cup 2026",
+            "Head-to-head record and broadcast/live streaming details confirmed",
+            "South Africa reached Women's T20 World Cup final in 2023"
+          ],
           "source": "olympics.com",
           "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZUlOWFBubFR2TFk1UUxJMnZicEVEZFdydzFZa3VrZ1RjY3NhOTNKd2R3eEk4RXBTUFFCTnRWSGZzYzdvUEp4bnQ5b1QyQVhtcjd2bVdXUzZqQl9hbWswMGF5anUwNWxNWEcwVlY2RFdPMkRldzd4Ni05bnNqbmRZQkxmMUUyQnVmX3BmMDVnVXZtcWF0SHR4N0tFOHZyQ2ZUNnpuem1mNjB0dDFXY3c?oc=5",
           "breaking": false,
@@ -369,6 +518,12 @@ window.BRIEF = {
           "headline": "Indian women's hockey team in FIH Nations League semis against Chile; Ashmita Chaliha exits Macau Open",
           "what": "India's women's hockey team are set to face Chile in the semi-finals of the FIH Hockey Nations League, a significant step in their build-up to international competition. In badminton, Indian shuttler Ashmita Chaliha suffered a semi-final defeat at the Macau Open, ending her campaign at that stage. Both developments are part of a busy day of Indian sports action on June 20.",
           "lens": "India's women's hockey semi-final against Chile in the FIH Nations League is a genuine title-contention moment for the national side, while Chaliha's exit is a setback for Indian badminton's depth beyond the top names.",
+          "article": "ESPN India reports that the Indian women's hockey team face Chile in the semi-finals of the FIH Hockey Nations League on June 20, marking a crucial knockout-stage appearance for the side as they compete for a top finish in the international league competition.\n\nThe FIH Hockey Nations League is an important competitive platform for national women's hockey teams, and a semi-final berth represents strong progress for India. A win over Chile would put the team in the final, a significant result for the development and visibility of women's hockey in the country.\n\nOn the badminton front, Ashmita Chaliha — one of India's rising women's singles players — was eliminated in the semi-finals of the Macau Open, falling short of a potential title run. Chaliha has been among the more prominent Indian women's badminton names in recent seasons at the international circuit.\n\nFor Indian sports fans, both stories highlight the country's growing multi-sport presence across hockey and badminton on the same day, with the women's hockey semi-final in particular offering a chance for India to claim a marquee result on the international stage.",
+          "key_facts": [
+            "India Women's Hockey vs Chile in FIH Nations League semi-finals",
+            "A win would take India into the Nations League final",
+            "Ashmita Chaliha loses Macau Open badminton semi-final"
+          ],
           "source": "ESPN India",
           "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPUEszMmNhQWJuN2N3WWh1d1loVVFkMmNVclBJQUdseGlJZm1fcTY3OHdfQjVORFR1UDlJak1BRTZBcjFQNjhCNjJpWV9vMm1tNHl3TlFRc2xVNVV2Tk0wV29CT1FZcVhaaGVNS3JFRkdMdzlBME1jOW1OdlZDSks5bnNweG1EOUkzMVpsbjBpblBEdDJDemJyZkhlSG5jWEVQWjY0S2I0d1NmRkp4Y2lBVGlVSGR5NDVfSlJLOHI5SzNLVkRBVVJXVWZaTndGbm0zSU9SODJPQWFXRm5Fek5sUHhSQ0dzOTVjdV9mcFR3eDRjTnhRMkpRUw?oc=5",
           "breaking": false,
@@ -384,6 +539,12 @@ window.BRIEF = {
           "headline": "India vs Afghanistan 3rd ODI: Where and how to watch today's series decider",
           "what": "India and Afghanistan meet in the third and final ODI today, with broadcast and live-streaming details now confirmed for Indian viewers. The series is level after two matches, making this the decisive fixture. The Indian Express has outlined all the details fans need — TV channels, online platforms, and start times — to catch the match live.",
           "lens": "For Indian cricket fans wanting to watch the series-deciding ODI between India and Afghanistan today, this confirms the TV channels and streaming platforms where they can tune in.",
+          "article": "The Indian Express reports that India take on Afghanistan in the third and deciding ODI today, with full details confirmed on where fans can watch the match live on television and online streaming platforms in India.\n\nThe series has been keenly contested, with the third ODI set to determine the overall winner. India-Afghanistan ODI contests have grown in significance over recent years as Afghanistan have developed into a competitive one-day side, capable of causing upsets against top teams.\n\nFor Indian viewers, the match is available on broadcast television as well as on digital streaming platforms, ensuring broad access across the country. The ODI is part of a home series for India and carries ranking and selection implications for both sides ahead of future international commitments.\n\nWith the series on the line, Indian fans will be eager to see how the team performs in a pressure decider, making access to the live broadcast particularly important for supporters following the series closely.",
+          "key_facts": [
+            "India vs Afghanistan 3rd ODI is today — series decider",
+            "Series level heading into the final match",
+            "Live on TV and online streaming platforms in India"
+          ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxONEl3N3hwOVdKaWY0WEkxN1JFRnpxbHJLMk0yVFBYWHdhdHlHdkFPQlN2ZE1MN05hamQ0OENRWVh0bURubjd3bHZwYjBlU1JyZ3ZVcGFCYVE1azcyUnBLcVFFcUNzdUdZS3MzaHFXV2FSSW1ZQ3RodGVMZTY0RGN6ZEJId2IwaGNtdmtKRXgxcXo1bkw5VEo1UVBUSUxDODhsU05qMnFEUm4taDZNcWFkaTIzbWpHNlN0UHZkOXpKV0JjakJMY1U2RXhaYlc0NXJ3WURlZUhuMzFtNDhDZTZVSHR4c3UzTzc0cmhNT2ZMVE5nZjFuaHd0eNIB_wFBVV95cUxOR0J0OEY4VTBuNk9zdVFSb0FFc0lGWlp2MjNiVERKeDlNSTduUHRLdFBYYUlGUDlJVW1TY3poSDl4OTFTVFNlcW9jdlJfNWxoTTY1THhuOUxQbHV5bDItOUZMZXhuaVlhVGhIYjI0R1FuX0pKdWxZaDVGZHJ5T2FGT2Y0NEtmUWVadzQ4SmdUNVV3UmNTMDU3QmNHYUwwWjlFREs2bWFGSmZUcGpvaWFDX1BTaW44NG1zT2Ixc2RDem9SSWRYNWZ1Q2E2OHdCSE9WUGUzVFdhc2hxamxkZFJLWUhOTmpsam1ZQV90b3FwSlBqS2FZaEVkaUFrNGtFOGM?oc=5",
           "breaking": false,
@@ -399,6 +560,12 @@ window.BRIEF = {
           "headline": "Sangakkara returns to cricket wearing India helmet gifted by Yashasvi Jaiswal, gesture goes viral",
           "what": "Former Sri Lanka captain Kumar Sangakkara was seen returning to cricket wearing an Indian cricket helmet that was gifted to him by young Indian opener Yashasvi Jaiswal. The heartwarming gesture between a legend of the game and a rising Indian star has gone viral on social media, drawing widespread appreciation. Sangakkara, one of cricket's greatest batsmen, continues to be involved in the sport in various capacities.",
           "lens": "The viral moment captures the cross-generational goodwill that makes cricket a shared passion across South Asia, and puts Yashasvi Jaiswal's growing stature in the sport on display.",
+          "article": "News18 reports that legendary former Sri Lanka captain Kumar Sangakkara was spotted back at cricket wearing a helmet gifted to him by India's young opening batsman Yashasvi Jaiswal. The gesture, which saw one of cricket's all-time greats don gear from a rising Indian star, quickly went viral across social media platforms.\n\nSangakkara, widely regarded as one of the finest batsmen in cricket history, has remained closely connected to the game after retirement through various administrative and mentoring roles. Jaiswal, who has rapidly established himself as one of India's most exciting batting talents, presented the helmet to Sangakkara in what appears to have been a personal gesture of respect and admiration.\n\nFor Indian fans, the moment is a charming reminder of cricket's ability to bridge generations and nations. Jaiswal's growing profile — both on the field and in moments like these — underlines why he is considered one of India's brightest batting prospects for the years ahead.",
+          "key_facts": [
+            "Yashasvi Jaiswal gifted a cricket helmet to Kumar Sangakkara",
+            "Sangakkara seen wearing the Indian helmet on his return to cricket",
+            "The gesture went viral on social media"
+          ],
           "source": "News18",
           "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNaGUwSXZTY2haX21YS3hnV3V6QVdXdWdaYkRLQkRaZHBZS0QtZ0duN1ZQcEFHbXM2cFAxeG9Eb2R4R1ZIOHJZZktTRVlqNFhCZUlOOHFmaV93cFQ0Z3BsYkxMaC1Ra05YdmtDQ0RuTlFNU0J1SFZQLTVJN0hPbU5Hb1VTUVptaHBjdThod2NIRHJKUGd1QXNxTzAzMURsMWZfWnd6TkVZdFNsNmMtQnZ6SWJ6d3ZKazRNV3o2V09mTzRiWVZLZ3Jkd2toWEZvSkk3YzhRUl9pdTFoZkxXT1HSAd4BQVVfeXFMTWhlMEl2U2NoWl9tWEt4Z1d1ekFXV3VnWmJES0JEWmRwWUtELWdHbjdWUHBBR21zNnBQMXhvRG9keEdWSDhyWWZLU0VZajRYQmVJTjhxZmlfd3BUNGdwbGJMTGgtUWtOWHZrQ0NEbk5RTVNCdUhWUC01STdIT21OR29VU1FabWhwY3U4aHdjSERySlBndUFzcU8wMzFEbDFmX1p3ek5FWXRTbDZjLUJ2ekliend2Sms0TVd6NldPZk80YllWS2dyZHdraFhGb0pJN2M4UVJfaXUxaGZMV09R",
           "breaking": false,
@@ -406,9 +573,10 @@ window.BRIEF = {
           "image": "https://images.pexels.com/photos/13067379/pexels-photo-13067379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Sandeep Singh",
-          "image_credit_url": "https://www.pexels.com/@usbofphotography"
+          "image_credit_url": "https://www.pexels.com/@usbofphotography",
+          "_edition_date": "2026-06-19"
         }
       ]
     }
   ]
-};
+}
