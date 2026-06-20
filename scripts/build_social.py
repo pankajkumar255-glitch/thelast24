@@ -33,6 +33,7 @@ import requests
 
 # Reuse the relevance-first image resolver + Claude helpers from the pipeline.
 import importlib.util
+import ig_design as ig
 _spec = importlib.util.spec_from_file_location(
     "build_edition", os.path.join(os.path.dirname(__file__), "build_edition.py"))
 _be = importlib.util.module_from_spec(_spec)
@@ -60,10 +61,13 @@ SECTION_HUES = {
     "entertainment": (194, 49, 126),
 }
 HASHTAGS = {
-    "national": ["#IndiaNews", "#India"], "world": ["#WorldNews", "#GlobalNews"],
-    "business": ["#Business", "#Markets", "#Economy"], "tech": ["#Tech", "#Technology"],
-    "ai": ["#AI", "#ArtificialIntelligence"], "sports": ["#Sports", "#Cricket"],
-    "entertainment": ["#Entertainment", "#Bollywood"],
+    "national": ["#IndiaNews", "#India", "#BharatNews", "#NewsUpdate", "#CurrentAffairs", "#IndianExpress", "#BreakingNews"],
+    "world": ["#WorldNews", "#GlobalNews", "#InternationalNews", "#WorldAffairs", "#Geopolitics", "#NewsToday"],
+    "business": ["#Business", "#Markets", "#Economy", "#StockMarket", "#BusinessNews", "#Finance", "#IndianEconomy", "#Sensex"],
+    "tech": ["#Tech", "#Technology", "#TechNews", "#Innovation", "#Startups", "#IndianStartups", "#DigitalIndia", "#Gadgets"],
+    "ai": ["#AI", "#ArtificialIntelligence", "#MachineLearning", "#TechNews", "#FutureTech", "#AINews", "#Innovation"],
+    "sports": ["#Sports", "#Cricket", "#IndianSports", "#SportsNews", "#TeamIndia", "#Football", "#SportsUpdate"],
+    "entertainment": ["#Entertainment", "#Bollywood", "#BollywoodNews", "#Cinema", "#OTT", "#EntertainmentNews", "#IndianCinema", "#Movies"],
 }
 
 FONT_DIR = "/usr/share/fonts/truetype/dejavu"
@@ -284,24 +288,28 @@ def build_caption(section_name, sid, stories, date_label):
     """Rich, Instagram-friendly caption written by Claude: varied opening, short
     per-story summaries, warm-but-credible voice, hashtags. Falls back to a
     simple assembled caption if the API is unavailable."""
-    tags = HASHTAGS.get(sid, ["#IndiaNews"]) + ["#TheLast24", "#NewsIndia"]
+    tags = HASHTAGS.get(sid, ["#IndiaNews"]) + ["#TheLast24", "#NewsIndia", "#5MinuteRead", "#StayInformed"]
     tagline = " ".join(tags)
     if _be is not None:
         items = "\n".join(f"- {s['headline']}: {s.get('what','')}" for s in stories)
         sys_prompt = (
-            "You write Instagram captions for 'The Last 24', a verified Indian "
-            "news brief. Voice: warm but credible — a smart friend who reads the "
-            "news so others don't have to. Not stiff, not clickbait.\n"
-            f"Write ONE caption summarising the day's {section_name} stories for "
-            f"{date_label}.\n"
-            "Structure: (1) a fresh, varied opening line that hooks — vary it, "
-            "don't always start the same way; sometimes a teaser of the biggest "
-            "story, sometimes a 'here's what you missed', sometimes a question. "
-            "(2) a short, plain-language 1-2 sentence summary of EACH story, in "
-            "flowing form (you may use a line break between stories, but keep it "
-            "natural, not rigidly bulleted). (3) a soft close pointing readers to "
-            "the full brief at thelast24.in. Keep it under 1400 characters before "
-            "hashtags. Indian English, accurate, no invented facts.\n"
+            "You write scroll-stopping Instagram captions for 'The Last 24', a "
+            "verified Indian news brief. Voice: a sharp, clued-in friend who reads "
+            "everything and gives the real gist — confident, human, a little "
+            "personality. Native to Instagram, NOT a press release.\n"
+            f"Write ONE caption for the day's {section_name} stories ({date_label}).\n"
+            "FORMAT (Instagram-native):\n"
+            "- Open with a STRONG hook line: a bold statement, a striking number, "
+            "or 'here's what you actually need to know' energy. One tasteful emoji "
+            "is fine; never spammy.\n"
+            "- Then 2-4 tight lines, each capturing one story in plain, punchy "
+            "language — what happened and why you'd care. Line breaks between them "
+            "so it's skimmable. A leading arrow (\u2192) per line is fine.\n"
+            "- Close pointing to the full brief at thelast24.in, plus an "
+            "engagement nudge like 'Save this \U0001F4CC' or 'Follow @thelast24 for "
+            "your daily 5-minute brief'.\n"
+            "Under 1500 characters. Indian English, accurate, never invent facts. "
+            "Do NOT add hashtags yourself — they're appended separately.\n"
             'Respond with ONLY JSON: {"caption":"...the caption text..."}')
         try:
             data = _be.extract_json(
@@ -311,11 +319,12 @@ def build_caption(section_name, sid, stories, date_label):
                 return cap + "\n\n" + tagline
         except Exception as exc:
             print(f"  caption generation failed ({exc}); using simple caption")
-    lines = [f"What mattered in {section_name} \u2014 {date_label}", ""]
+    lines = [f"Here's what mattered in {section_name} today \U0001F4F0", ""]
     for s in stories:
         summ = (s.get("what") or "").split(". ")[0]
-        lines.append(f"\u2022 {s['headline']} \u2014 {summ}.")
-    lines += ["", "Full brief \u2192 thelast24.in", "", tagline]
+        lines.append(f"\u2192 {s['headline']} \u2014 {summ}.")
+    lines += ["", "Full brief \U0001F449 thelast24.in", "Save this for later \U0001F4CC",
+              "", tagline]
     return "\n".join(lines)
 
 
@@ -427,9 +436,27 @@ def build_worldcup_carousel(base):
                "#FIFAWorldCup #WorldCup2026 #Football #IndiaNews #TheLast24")
     with open(os.path.join(sdir, "caption.txt"), "w", encoding="utf-8") as f:
         f.write(caption)
+    wc_pdf = _carousel_pdf(slides, sdir, "World Cup")
     print(f"World Cup IG carousel: {len(slides)} slides.")
     return {"id": "worldcup", "name": "World Cup", "slides": slides,
-            "caption_file": os.path.join(sdir, "caption.txt"), "slide_count": len(slides)}
+            "caption_file": os.path.join(sdir, "caption.txt"), "pdf": wc_pdf,
+            "slide_count": len(slides)}
+
+
+def _carousel_pdf(slide_paths, sdir, name):
+    """Compile a carousel's slide PNGs into a single PDF (for LinkedIn reuse).
+    Returns the PDF path, or None on failure."""
+    if not slide_paths:
+        return None
+    try:
+        imgs = [Image.open(p).convert("RGB") for p in slide_paths]
+        pdf_path = os.path.join(sdir, "carousel.pdf")
+        imgs[0].save(pdf_path, "PDF", resolution=150.0,
+                     save_all=True, append_images=imgs[1:])
+        return pdf_path
+    except Exception as exc:
+        print(f"  PDF export failed for {name}: {exc}")
+        return None
 
 
 def main():
@@ -449,30 +476,52 @@ def main():
             continue
         sdir = os.path.join(base, sid)
         os.makedirs(sdir, exist_ok=True)
-        slides, used_images = [], set()
+        slides = []
 
-        cover = cover_slide(sec["name"], sid, date_label)
-        p = os.path.join(sdir, "slide-01.png"); cover.save(p); slides.append(p)
+        total = len(stories) + 2  # cover + stories + outro
+        # Cover — keep the established design language, lead with the section.
+        lead = stories[0].get("headline", sec["name"])
+        cover_img = ig.cover(sec["name"], sid, date_label,
+                             f"Everything that happened in {sec['name'].lower()} today",
+                             source=stories[0].get("source"))
+        p = os.path.join(sdir, "slide-01.png"); cover_img.save(p); slides.append(p)
 
+        # Body slides — ALTERNATE light / dark to break monotony; weave images in.
         for i, st in enumerate(stories, start=1):
-            s, used_url = story_slide(st, sec["name"], sid, i, len(stories), used_images)
-            if used_url:
-                used_images.add(used_url)
-            p = os.path.join(sdir, f"slide-{i+1:02d}.png"); s.save(p); slides.append(p)
+            kicker = f"{i:02d} — {'the brief' if i == 1 else 'story ' + str(i)}"
+            heading = st.get("headline", "")
+            # points: prefer key_facts; fall back to splitting 'what'
+            pts = [f for f in (st.get("key_facts") or []) if str(f).strip()]
+            if not pts:
+                whatx = (st.get("what") or "").replace("\n", " ")
+                pts = [s.strip() + "." for s in whatx.split(". ") if s.strip()][:3]
+            src = st.get("source", "")
+            source_line = f"Source: {src}" if src else None
+            photo = st.get("image") if st.get("image", "").startswith("http") else None
+            if i % 2 == 1:
+                s_img = ig.light_slide(kicker, heading, pts, i + 1, total,
+                                       source_line=source_line, photo_url=photo)
+            else:
+                s_img = ig.dark_slide(kicker, heading, pts, i + 1, total,
+                                      source_line=source_line, photo_url=photo)
+            p = os.path.join(sdir, f"slide-{i+1:02d}.png"); s_img.save(p); slides.append(p)
 
-        outro = outro_slide(sid)
-        p = os.path.join(sdir, f"slide-{len(stories)+2:02d}.png"); outro.save(p); slides.append(p)
+        outro_img = ig.outro(sid)
+        p = os.path.join(sdir, f"slide-{len(stories)+2:02d}.png"); outro_img.save(p); slides.append(p)
 
         caption = build_caption(sec["name"], sid, stories, date_label)
         with open(os.path.join(sdir, "caption.txt"), "w", encoding="utf-8") as f:
             f.write(caption)
 
+        pdf_path = _carousel_pdf(slides, sdir, sec["name"])
+
         manifest["sections"].append({
             "id": sid, "name": sec["name"], "slides": slides,
             "caption_file": os.path.join(sdir, "caption.txt"),
+            "pdf": pdf_path,
             "slide_count": len(slides),
         })
-        print(f"  {sec['name']}: {len(slides)} slides")
+        print(f"  {sec['name']}: {len(slides)} slides" + (" + PDF" if pdf_path else ""))
 
     # World Cup daily carousel (scores + standings), if the tournament is on.
     try:
