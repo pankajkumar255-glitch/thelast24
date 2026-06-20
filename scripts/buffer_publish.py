@@ -63,6 +63,22 @@ def _gql(query, variables=None):
 # immediate posting we use customScheduled with a near-now time isn't needed —
 # Buffer supports an immediate mode via mode=share on some plans; addToQueue is
 # the safe universal default.
+def _morning_slot(index):
+    """ISO timestamp for the Nth post: starting at BUFFER_MORNING_START IST
+    (default 08:00) the next morning, spaced BUFFER_SPACING_MIN apart (default
+    60 min), so posts drip out like a morning brief."""
+    from datetime import datetime, timedelta, timezone
+    ist = timezone(timedelta(hours=5, minutes=30))
+    now = datetime.now(ist)
+    start_hour = int(os.environ.get("BUFFER_MORNING_START", "8"))
+    spacing = int(os.environ.get("BUFFER_SPACING_MIN", "60"))
+    base = now.replace(hour=start_hour, minute=0, second=0, microsecond=0)
+    if base <= now:
+        base = base + timedelta(days=1)
+    slot = base + timedelta(minutes=spacing * index)
+    return slot.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
+
 _CREATE = """
 mutation Create($input: CreatePostInput!) {
   createPost(input: $input) {
@@ -73,16 +89,23 @@ mutation Create($input: CreatePostInput!) {
 """
 
 
-def _create_post(channel_id, text, image_urls=None, instagram=False):
+def _create_post(channel_id, text, image_urls=None, instagram=False, slot_index=0):
     """Create one Buffer post. image_urls: list of public image URLs (carousel).
     instagram=True attaches the required Instagram metadata (type=post for a
-    feed carousel)."""
+    feed carousel). slot_index spaces morning-scheduled posts 1 hour apart."""
     inp = {
         "text": text,
         "channelId": channel_id,
-        "schedulingType": "automatic",
-        "mode": "addToQueue" if SCHEDULE != "now" else "share",
     }
+    if SCHEDULE == "now":
+        inp["schedulingType"] = "automatic"
+        inp["mode"] = "share"
+    elif SCHEDULE == "morning":
+        inp["schedulingType"] = "customScheduled"
+        inp["dueAt"] = _morning_slot(slot_index)
+    else:
+        inp["schedulingType"] = "automatic"
+        inp["mode"] = "addToQueue"
     if image_urls:
         # Buffer's AssetInput: each entry specifies one of image/video/document/link.
         # For images: {"image": {"url": "..."}} — NOT {"type","url"}.
@@ -154,7 +177,7 @@ def publish_tweets():
             img = covers.get(item.get("section", ""), "")
         imgs = [img] if img else None
         try:
-            pid = _create_post(X_CHANNEL, item["text"], image_urls=imgs)
+            pid = _create_post(X_CHANNEL, item["text"], image_urls=imgs, slot_index=sent)
             done.add(key)
             sent += 1
             tag = "with image" if imgs else "text only"
@@ -209,7 +232,7 @@ def publish_carousels():
         if cf and os.path.exists(cf):
             caption = open(cf, encoding="utf-8").read().strip()
         try:
-            pid = _create_post(IG_CHANNEL, caption, image_urls=slide_urls, instagram=True)
+            pid = _create_post(IG_CHANNEL, caption, image_urls=slide_urls, instagram=True, slot_index=sent)
             done.add(sid)
             sent += 1
             print(f"  ✓ carousel '{sec['name']}' queued to Buffer "
