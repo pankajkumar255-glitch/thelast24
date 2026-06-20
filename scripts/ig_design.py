@@ -40,17 +40,47 @@ SECTION_HUES = {
 
 GF = "/usr/share/fonts/truetype/google-fonts"
 DV = "/usr/share/fonts/truetype/dejavu"
+# Optional: a fonts/ folder bundled in the repo (preferred if present).
+REPO_FONTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
 _cache = {}
-def _f(path, size):
-    key = (path, size)
-    if key not in _cache:
-        _cache[key] = ImageFont.truetype(path, size)
-    return _cache[key]
-def bold(s):    return _f(f"{GF}/Poppins-Bold.ttf", s)
-def medium(s):  return _f(f"{GF}/Poppins-Medium.ttf", s)
-def regular(s): return _f(f"{GF}/Poppins-Regular.ttf", s)
-def light(s):   return _f(f"{GF}/Poppins-Light.ttf", s)
-def mono(s):    return _f(f"{DV}/DejaVuSansMono.ttf", s)
+
+def _load(candidates, size):
+    """Load the first available font from a list of candidate paths, at `size`.
+    Falls back through the list so the build never crashes if a font is missing
+    on a given environment (e.g. Poppins absent on the GitHub runner)."""
+    key = (tuple(candidates), size)
+    if key in _cache:
+        return _cache[key]
+    for path in candidates:
+        try:
+            f = ImageFont.truetype(path, size)
+            _cache[key] = f
+            return f
+        except Exception:
+            continue
+    # Last resort: PIL's built-in default (always works, just plain).
+    f = ImageFont.load_default()
+    _cache[key] = f
+    return f
+
+def bold(s):
+    return _load([f"{REPO_FONTS}/Poppins-Bold.ttf", f"{GF}/Poppins-Bold.ttf",
+                  f"{DV}/DejaVuSans-Bold.ttf"], s)
+def medium(s):
+    return _load([f"{REPO_FONTS}/Poppins-Medium.ttf", f"{GF}/Poppins-Medium.ttf",
+                  f"{DV}/DejaVuSans-Bold.ttf"], s)
+def regular(s):
+    return _load([f"{REPO_FONTS}/Poppins-Regular.ttf", f"{GF}/Poppins-Regular.ttf",
+                  f"{DV}/DejaVuSans.ttf"], s)
+def light(s):
+    return _load([f"{REPO_FONTS}/Poppins-Light.ttf", f"{GF}/Poppins-Light.ttf",
+                  f"{DV}/DejaVuSans.ttf"], s)
+def mono(s):
+    return _load([f"{DV}/DejaVuSansMono.ttf"], s)
+
+
+def _f(path, size):  # kept for any direct callers
+    return _load([path, f"{DV}/DejaVuSans.ttf"], size)
 
 
 def _wrap(d, text, fnt, max_w):
