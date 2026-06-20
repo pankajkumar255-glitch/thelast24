@@ -1,7 +1,7 @@
 {
   "date": "Saturday, 20 June 2026",
-  "edition": "2026-06-20 20:20",
-  "topline": "As India's Supreme Court enshrines safe footpaths as a fundamental right and Modi pushes to reverse brain drain and boost self-reliance, Iran heads to Switzerland for US peace talks while America advances at the FIFA World Cup 2026.",
+  "edition": "2026-06-20 20:36",
+  "topline": "From India's Supreme Court demanding safer streets to Nobel laureate John Jumper jumping from Google DeepMind to Anthropic, and Iran heading to Switzerland for US peace talks, a day shaped by rights, rivalries, and a reshuffling of AI talent.",
   "lensLabel": "Why it matters",
   "sections": [
     {
@@ -45,7 +45,7 @@
           "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNbmZ2NTFuWmtXTU1tRTlKZzB2SHNTMUVwRWdKeVdiUVV3QkJRT215M2Q4MS1NQ3M0STFCOUd1Y3lHbk5KZ29OSVdVWXhyNjhSaXNTVUJ6OHdud3FpWkhFQWd3RWtmcHhaNGlMSV9ELWc1cHNHSzZJZGVuRm1GaGhMU05oa2cxd1A0eFJFMlRfRkJGRkRwMllRdmZBM3V1dlVST1d2RlZRcGpzakFaTHc4NldJZGhrTFJic3RlZW5hT0s2Yy1DTDlkX3h0djRIWE5zbjBaT0pSRTDSAeYBQVVfeXFMTWVoeTlGOGxkbXMxZjJfc0Nmck9YVzZPU2Q1cjVLaEkxWnBEV19rSkdxQ1YxYUxHX0VHeW5vY0xFb1NiNElJaWR4azlxang4Qkk4NFVSSURwUzNROVVFbkxNbkJrcC10TVAxSDZqajJvNF9mbl9RaWpOUmpzTHRPZWkzSTBHR1M3eEhobG84a1dhakdjc0pDT3piSEUyY2tfRWZNUXJ3dkpTTlZ5b3BhZklFTjViNXBrb1ZTVHVscGRtY09tQzdIZURRYWxnNC15cVA4Wld6eVNaR0JMRkVXdHZnZWJ5LUE",
           "breaking": false,
           "slug": "20260620-karnataka-appoints-kunal-vajani-and-omar-hoda-as-additional-advocate-g",
-          "image": "https://pixabay.com/get/g282180264891e1bec12af8e667834457a8d28ae27c585c2fc44fdc4e833017389d7947bb506cad3bbe779821ec62d301a5edc417858a96d107b7387b13b18a76_1280.jpg",
+          "image": "https://pixabay.com/get/g4209edfc6d9bb4548dc448739036a33eb14775eb8acf5033406cc5970608a14d3cb3c9b64d932e91b989e64ce9118f2d8a64e4bc2f887a904a93468beb1df1b0_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Kamyq",
           "image_credit_url": "https://pixabay.com/users/Kamyq-680923/"
@@ -53,23 +53,23 @@
         {
           "hour": 6,
           "time": "06:14 IST",
-          "headline": "Supreme Court declares right to walk on safe footpaths a fundamental right, seeks law",
-          "what": "The Supreme Court of India has ruled that the right to walk on safe footpaths is a fundamental right, marking a landmark constitutional interpretation. The court called for legislation to ensure all roads are equipped with proper footpaths for pedestrians. The ruling signals judicial intent to hold governments accountable for pedestrian infrastructure across the country.",
-          "lens": "Crumbling or non-existent footpaths are a daily hazard for millions of Indians walking to work, school, and markets — this ruling gives them constitutional backing to demand safer streets.",
-          "article": "The Indian Express reports that the Supreme Court of India has declared the right to walk on safe footpaths a fundamental right, a significant constitutional ruling that extends basic rights protections to everyday pedestrian mobility. The court directed that all roads must have proper footpaths, and called for a law to be enacted to formalise and enforce this obligation on governments.\n\nThe ruling emerges from longstanding concerns about the deplorable state of pedestrian infrastructure in Indian cities and towns, where footpaths are routinely encroached upon by vendors, vehicles, and construction, or simply absent altogether. The court's intervention places the responsibility squarely on the state to ensure walkable, safe public spaces.\n\nFor the vast majority of Indians who walk as their primary mode of daily commute — to bus stops, markets, schools, and workplaces — this judgment has immediate practical significance. It provides a constitutional basis to challenge local governments and municipal bodies that fail to build or maintain footpaths, potentially transforming urban planning priorities across the country.",
+          "headline": "Supreme Court declares right to walk on safe footpaths a fundamental right, asks for law",
+          "what": "The Supreme Court of India has ruled that the right to walk on safe footpaths is a fundamental right, marking a landmark interpretation of constitutional protections for pedestrians. The court directed that all roads must have footpaths and called for legislation to codify this right. The ruling underscores the state's obligation to ensure safe walking infrastructure for every citizen. It is among the first such explicit judicial declarations linking pedestrian safety to fundamental rights.",
+          "lens": "With millions of Indians walking daily on roads that lack proper footpaths, this ruling could force governments to build and maintain pedestrian infrastructure — directly affecting the safety of ordinary commuters across every city and town.",
+          "article": "The Indian Express reports that the Supreme Court of India has declared the right to walk on safe footpaths a fundamental right, a ruling with sweeping implications for urban and rural infrastructure across the country. The court ruled that all roads must have footpaths, and it called on the government to bring in legislation to formalise and protect this right.\n\nThe judgment represents one of the most direct judicial expansions of fundamental rights to everyday pedestrian safety. The court's direction to seek a law signals that it expects this ruling to translate into concrete policy, not remain an aspirational declaration.\n\nIndia's roads are notoriously dangerous for pedestrians — footpaths are either absent, encroached upon, or poorly maintained in most cities and towns. Hundreds of pedestrian fatalities are recorded every year due to inadequate walking infrastructure. This ruling places a constitutional obligation on state and central governments to remedy that gap.\n\nFor the average Indian — whether a daily wage worker, a schoolchild, or an elderly resident — this decision could ultimately mean safer streets and a legal basis to demand proper walking space as a matter of right, not civic charity.",
           "key_facts": [
-            "Supreme Court rules right to walk on safe footpaths is a fundamental right",
-            "Court seeks legislation to mandate footpaths on all roads",
-            "Ruling holds governments constitutionally accountable for pedestrian infrastructure"
+            "Supreme Court declares right to walk on safe footpaths a fundamental right",
+            "Court directs all roads must have footpaths",
+            "Supreme Court calls for legislation to codify this pedestrian right"
           ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdGxnOF95d2xLQ09tZlNKNkMxVkhmQWJ6R0MwQ2RfSXJwZGNmTlRoUTdZajZ0Y0lSYWhBWkw3Zk1IbGlnak9tdG5YLUE5WFlzNEdXSVhmRVRKczFIZHluWFNQREdPZjBiVURCM3J1VVBBc3BqdHBYZHpIQnBvLUpNTzJESGFST2JPOFZLeWtfRkVFR3NwUFI5Z2xLSC1lQVpOdnBORzIwNDFDZTJSMGd30gG2AUFVX3lxTFB1dlFxbTdGUGg3X2kxTXRvTlRvOXBqVEQtWVVOeFU2Qi1wYkxhbDVmMHVrQ082ZzVuMXg3enR6RWcyanZOc3dOT3Z5NWFjRk50UHFtTWZ6cW5LS2I5SzZWZVdrZTR1WGRIWFFtaUUyMHNPY1BtX0M2YzFzWHlzVThKUnBDcmRYRVlTUllpT2g5a0R2YklKbENqTjI1a3k0aWs3UTNmcHVmTVF2OFZ3aE1tUVlqLXN3",
           "breaking": false,
           "slug": "20260620-supreme-court-declares-right-to-walk-on-safe-footpaths-a-fundamental-r",
-          "image": "https://images.pexels.com/photos/365813/pexels-photo-365813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://pixabay.com/get/g1745429763a128b4dabadb2b7663ef939b879a18315844e98bbd9be805b5471c3aac12a23c10594b3d815acaa5ff57e25240fa869430dfcfd4d49c71f398473a_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Dom J",
-          "image_credit_url": "https://www.pexels.com/@dom-j-7304"
+          "image_credit": "ymyphoto",
+          "image_credit_url": "https://pixabay.com/users/ymyphoto-23007053/"
         },
         {
           "hour": 22,
@@ -110,7 +110,7 @@
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaHNQamNqYm0teEh2aDZaZ21aMzJLNUp0VE9iejd1TVpYdE43OExaVURTaThOdERRSXIwb1NOZFBVd1R4ZFhCelRVdkxyLVFWRmU5TmozaXl5akhGQ3dSSFVSQVMxb0ttdVBGMWRRYnpfYzd2UEhaWU9aQjJzLVNvMVdOWF9Rb01kMzhwV1lHUU95YzNscE4zamdubFdoTzJIT0VLTC1PdnFsSE8ySktQR2h6WHNZZXR6ZGdDdA?oc=5",
           "breaking": false,
           "slug": "20260620-walking-on-demarcated-footpaths-is-a-fundamental-right-rules-supreme-c",
-          "image": "https://pixabay.com/get/g253723db476925d02342a46a7d3e5ad8ce018fa5840cfc410babd38070b0699ab4767929545c28229c847f231d49feecec8ecf899b7762f68ea8a7a8b1628b7b_1280.jpg",
+          "image": "https://pixabay.com/get/gceac9253092157f3a71c40c007d37df041286f5c09e1ecb0edc8eb1239c2cbc6fa41f69afbb2b44c480d06cd03f55cd6195fe1a3d9d034ac9dcb564e6efac856_1280.jpg",
           "image_kind": "photo",
           "image_credit": "BunteAufnahmen",
           "image_credit_url": "https://pixabay.com/users/BunteAufnahmen-6345617/",
@@ -126,39 +126,37 @@
           "hour": 20,
           "time": "20:08 IST",
           "headline": "Iran Negotiators Head to Switzerland for Peace Talks with US",
-          "what": "Iranian negotiators have departed for Switzerland to engage in discussions with the United States over a potential peace deal, NDTV reports. The talks mark a significant diplomatic moment as both countries explore pathways to resolve their long-standing tensions, particularly around Iran's nuclear programme. Switzerland, a traditional neutral broker, is hosting the meeting. The outcome could have major implications for regional stability in the Middle East and global energy markets.",
-          "lens": "A US-Iran deal could ease global oil supply anxieties — directly relevant to India, which is among the world's largest importers of Iranian crude and closely watches any shifts in Middle East tensions.",
-          "article": "NDTV reports that Iranian negotiators have left for Switzerland to hold discussions with US counterparts on a possible peace deal. The development signals a renewed diplomatic push between Washington and Tehran at a time of heightened tensions in the Middle East, with Switzerland playing its traditional role as a neutral host for sensitive international negotiations.\n\nThe talks are expected to centre on Iran's nuclear ambitions, which have been a flashpoint in US-Iran relations for decades — especially since the collapse of the 2015 Joint Comprehensive Plan of Action (JCPOA) after the United States withdrew in 2018. Both sides have since traded sanctions and retaliatory measures, with Iran significantly expanding its uranium enrichment activities.\n\nFor India, the stakes are considerable. India has historically been one of the largest buyers of Iranian oil and has had to carefully navigate its energy needs against US-led sanctions pressure. Any durable agreement between Washington and Tehran could reshape global oil supply dynamics, potentially affecting crude prices that directly influence fuel costs and inflation back home. The outcome of the Switzerland talks will be watched closely in New Delhi.",
+          "what": "Iranian negotiators have departed for Switzerland to hold discussions with the United States aimed at reaching a peace deal. The talks represent a significant diplomatic development as the two countries attempt to resolve long-standing tensions. Switzerland, a traditional neutral ground for international diplomacy, is hosting the negotiations. The outcome could have major implications for regional stability and global energy markets.",
+          "lens": "A US-Iran deal could ease global oil supply tensions, directly affecting petrol prices in India, which imports significant crude from the region.",
+          "article": "NDTV reports that Iranian negotiators have left for Switzerland to engage in direct talks with the United States over a potential peace deal. The development marks a notable step in diplomacy between two countries that have been at odds for decades, with negotiations now moving to a neutral European venue.\n\nSwitzerland has historically served as a diplomatic back-channel for sensitive international negotiations, and the choice of venue signals both sides' intent to pursue dialogue seriously. The specific terms or framework being discussed were not detailed in the report, but the move follows a period of heightened tensions between Washington and Tehran.\n\nFor India, the stakes are considerable. Iran has historically been one of India's key crude oil suppliers, and any easing of US sanctions or broader geopolitical settlement could reshape energy trade flows and oil prices globally. Indian importers and policymakers will be watching the outcome of these talks closely, as disruptions or resolutions in the Gulf region tend to have a direct bearing on domestic fuel costs and inflation.",
           "key_facts": [
-            "Iranian negotiators departed for Switzerland for US peace talks",
-            "Talks focus on resolving longstanding US-Iran nuclear tensions",
-            "Switzerland serving as neutral host for the negotiations",
-            "A deal could reshape global oil supply and crude prices"
+            "Iranian negotiators departed for Switzerland for US-Iran talks",
+            "Talks aimed at reaching a peace deal between the two countries",
+            "Switzerland chosen as neutral diplomatic venue"
           ],
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdWVmemZWOTBSM09uTmo2T21GTDRKYXFONy1UTDZTdktZWUhEMk9hLUI1c0RzQ2pHYV9sTnZySHdmeTFWUXpsd2VKdXZUNWZxaWdhZGU4RC1TbkFraFJtOTVmQnA4cHFJLW9xUHlHTlJvMF9TdElFVk9WZ0dxYWhYZ2Fib0lFc1VzTlF6UmZnZE1ocEpyMUNlY2RabGE5S1FwdVJMQ0liejZFZU9fOVHSAbYBQVVfeXFMTXpVVmdPUUpJNjhMZHpVekFyaGVvWjJWWUJxVlhkbVJTVGs2VEI0azYzejFmR0QwTkxDR0t0QUYyYmFpVm1ZaHJfTjBOQ05rWUR3SnAzSjZFNUFTMUh5WVFONklGTmxYWUx4WUlJdFQySmszWVM0dm5VczZJWU9hZ1JxSEtHam82aUdfVzk1YWdRNklnYy1ZNHotYnhCbE81SG1xcUMxZXBSQkZUak14UmFqS1ZEUXc",
           "breaking": false,
           "slug": "20260620-iran-negotiators-head-to-switzerland-for-peace-talks-with-us",
-          "image": "https://images.pexels.com/photos/12231832/pexels-photo-12231832.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://pixabay.com/get/ge9e2b2d8ecdd145ac6406d3f14a83c2ca266863594aae5ea8b610f5af83d8985844ff3b9b7dc842d8f468c784040386b5cb26b43049012c9a17846e4980d1226_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Markus Winkler",
-          "image_credit_url": "https://www.pexels.com/@markus-winkler-1430818"
+          "image_credit": "995645",
+          "image_credit_url": "https://pixabay.com/users/995645-995645/"
         },
         {
           "hour": 19,
           "time": "19:48 IST",
           "headline": "JD Vance's Mother Was Confused About Usha Vance's Indian Origin, Asked 'Which Tribe?'",
-          "what": "A newly surfaced anecdote reveals that JD Vance's mother was confused about the Indian origin of his wife, Usha Vance, reportedly asking \"which tribe?\" when told Usha was Indian-American. The story, reported by NDTV, sheds light on the cultural unfamiliarity some Americans have with South Asian identity. Usha Vance, a Yale-educated lawyer of Telugu Hindu descent, became a prominent public figure when JD Vance was named Donald Trump's running mate in 2024.",
-          "lens": "As an Indian-origin woman who became the second lady of the United States, Usha Vance is a source of pride for many Indians — this anecdote about cultural confusion in her own family adds a very human dimension to her remarkable story.",
-          "article": "NDTV reports a revealing anecdote about JD Vance's mother reacting with confusion to the news that her son's partner was of Indian origin, reportedly asking \"which tribe?\" — apparently unfamiliar with India as a country distinct from Native American communities. The story offers an intimate glimpse into the cultural distance Usha Vance navigated within her own extended family.\n\nUsha Vance, born to Telugu immigrant parents, is a Yale Law School graduate who clerked for Chief Justice John Roberts. She came into global prominence when JD Vance was selected as Donald Trump's vice-presidential running mate ahead of the 2024 US presidential election, and subsequently became the second lady of the United States — the first person of Indian origin to hold that role.\n\nThe anecdote resonates particularly with the Indian diaspora and Indians at home who have followed Usha's journey closely. It underlines the broader experience of South Asian Americans navigating identity in Western cultural contexts, while also highlighting how far Usha Vance has come — from a family background rooted in Indian immigrant values to one of the most visible positions in American public life.",
+          "what": "A report reveals that JD Vance's mother was confused about his wife Usha Vance's Indian heritage, reportedly asking 'Which tribe?' when learning of her origin. The anecdote sheds light on the cultural unfamiliarity some Americans have with Indian identity. Usha Vance, who is of Indian descent, is now the Second Lady of the United States following JD Vance's election as Vice President. The story has drawn attention to questions of identity, diversity, and representation at the highest levels of American politics.",
+          "lens": "With an Indian-origin woman as US Second Lady, this anecdote resonates with millions of Indians and the Indian diaspora navigating questions of identity and belonging in the West.",
+          "article": "NDTV reports that JD Vance's mother was confused about the Indian origin of his wife, Usha Vance, reportedly asking 'Which tribe?' when told about her heritage. The anecdote highlights a cultural unfamiliarity with South Asian identity that many in the Indian diaspora will find familiar, even as Usha Vance now occupies one of the most prominent positions in American public life as the US Second Lady.\n\nUsha Vance, born to Indian immigrant parents, has become a significant figure of interest for Indians both at home and abroad since JD Vance's election as Vice President of the United States. Her prominence has sparked widespread discussion about the Indian diaspora's rising influence in global politics.\n\nFor Indian readers, the story carries a personal resonance — the experience of having one's identity misunderstood or reduced to broad generalisations is widely shared among Indians living abroad. It also underscores the cultural distance that still exists in parts of the West when it comes to understanding the diversity and specificity of South Asian identity, even as figures like Usha Vance break new ground at the world's highest political levels.",
           "key_facts": [
-            "JD Vance's mother asked 'which tribe?' on hearing Usha was Indian",
-            "Usha Vance is of Telugu Hindu descent and a Yale Law graduate",
-            "She is the first person of Indian origin to serve as US Second Lady",
-            "JD Vance is the current US Vice President under Donald Trump"
+            "JD Vance's mother asked 'Which tribe?' about Usha's Indian origin",
+            "Usha Vance is of Indian descent and serves as US Second Lady",
+            "JD Vance is the current Vice President of the United States"
           ],
           "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZlZHWUszdHQzV2xlUG02dWV2RkZTek51djdPY3UtU01TVWpDUkszYlFHVHlEUzFvd0I2R2owdjhHblV3amNPTFZfQjlJSUdXOWFnV1JwMVM2cl9tR3QtenRVTW5YZ1hHVFp5eEUwUVlJal9vcTd5ZTlRbFF3ai1PbTVwRUhSaThqeTdoaU9jOG1USFZNWFNzbkZPdXFTSUhXQzNlTFZxVW9rcEctOEpqQ2JVc1jSAbwBQVVfeXFMUDhxSGhPT0ZVRFc4LU1VeXhCSW5lem9iYm1hUDdfbzkwenI3VkFGZ2JJdDRick5GZGFCdm92MGVUeE9oTGMwQzRiOGlOM0JvNjh2NmNrRmZWTTFIc1lSVllLRzlYNzdtM0Y5el82Rkc4TDlYTTBGR0FBektYUlhnVmRyTHhPckdLVHppakdSQTlXQjFZYnlPelprdUJkbk55X2pNcE1jYl9Edm5ySTdlN2dZdENXSHpMM3RHVHc",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZlZHWUszdHQzV2xlUG02dWV2RkZTek51djdPY3UtU01TVWpDUkszYlFHVHlEUzFvd0I2R2owdjhHblV3amNPTFZfQjlJSUdXOWFnV1JwMVM2cl9tR3QtenRVTW5YZ1hHVFp5eEUwUVlJal9vcTd5ZTlRbFF3ai1PbTVwRUhSaThqeTdoaU9jOG1USFZNWFNzbkZPdXFTSUhXQzNlTFZxVW9rcEctOEpqQ2JVc1jSAbwBQVVfeXFMUDhxSGhPT0ZVRFc4LU1VeXhCSW5lem9iYm1hUDdfbzkwenI3VkFGZ2JJdDRick5GZGFCdm92MGVUeE9oTGMwQzRiOGlOM0JvNjh2NmNrRmZWTTFIc1lSVllLRzlYNzdtM0Y5el82Rkc4TDlYTTBGR2FBektYUlhnVmRyTHhPckdLVHppakdSQTlXQjFZYnlPelprdUJkbk55X2pNcE1jYl9Edm5ySTdlN2dZdENXSHpMM3RHVHc",
           "breaking": false,
           "slug": "20260620-jd-vance-s-mother-was-confused-about-usha-vance-s-indian-origin-asked",
           "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Usha_Vance%2C_official_portrait_%282025%29_%283x4_cropped%29.jpg",
@@ -183,7 +181,7 @@
           "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeURNaXFQeDJIQzk5RlQ5TFloNUxOMWV2cDB6MGhfcDVzVldvUlF2cDRzdVl4dnRmeEtXcjVZMDdOUkxzRldIV3c3R0wxN1ZQTVVnTUVpQlBNTUVhdWFEb0Zsd0paQ0szbUFRaE9xUGYyc3ZiaVk1aFZMRzZDSmpINXZQQkN6VmhyMWlfcW9mdjJYem95OFB3SkdGS1ZXYmFyMzFvTWs4V0xmSW45TmtwRFhvbmpoZHk2OF96UGV3Nm1FbnlGQURJQ0NIRlRlZ0dXZDlIbEFn0gHeAUFVX3lxTE9WUXZUaDlUdkVsRV9HYXZ5LWxyVmFiWWIxMzNFNEkwUXlIZGFSbW5hMXo1NTdCaXRBdnc1bGttXzVKck1aU3BTN1VwSFF5MmFLanJEVjNRRUNyT1ZHVjExU0Zac3RnSmc4WFVua0FZc0RsYjBNUEZBdDQ2Y24tQ2FUeDhvYkpYM1U1UHlHMURiQ01RTjhWYUpEdXZhRW83dXhlb3RGaGhISS05bnB4RzRublRyYy1WZGM4MU1yQ0p3dVc3THlSSzhGWkRaaE9RWEZtdV9YYi1RbWx4cmYwUQ?oc=5",
           "breaking": true,
           "slug": "20260620-iran-closes-strait-of-hormuz-amid-escalating-israel-lebanon-conflict",
-          "image": "https://pixabay.com/get/g6db6b85ff31354fa4fb079003c1d8ca65a57cf588d8b426c4162774adf153fd23acc2bec14e9cf33ca94c524da1d1e871c937dde98223c3408180883ba4bb943_1280.jpg",
+          "image": "https://pixabay.com/get/g5ca758a1949872046dcfc76b88cc6c5c762a7d7c3bcfbfd5540c63321bee7f7a9506317341da4c213344921c455a9bbb27566b9246a7a1ec87ca841a58b46ff9_1280.jpg",
           "image_kind": "photo",
           "image_credit": "mostafa_meraji",
           "image_credit_url": "https://pixabay.com/users/mostafa_meraji-13551092/"
@@ -204,7 +202,7 @@
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPYm9LODd1UURuSFZDUWtoZDZzRUhTUjk4VzlqZG53MWhBSUFXV054bG84M3FGMF9rb2FiRmxoTGpOVnQ2UDJtdjhkSVRHZHo1cHE3akZpSkJEdVVvQnQtNEI1OTVGTjVudVJ5Z0xSV3k0b3JTR1U3M0xfQmlpb3VDWnY2eFlPaFRYNGJ1VnF2Tno5VXpkdmZyQnVnMlE3YVIxMWRZTEZCaWR6UlFETmMtWWZ1dl9Nd9IBvgFBVV95cUxQMUFjMDNtc1h2RGlzUFhuTGZkU3pLSkNHMHVhZEwxQTFDWWNScmo2UDM4bHotd0tEV0VkSmxQZWN4LUdJTFJOQUhidnhvY2dSbVlSQ3lKLXFzZENJNGZnYjFvRGwxWEVOc0tSMlJzZmhrc09SYlJvLXk3MmEwdFlkcW1XY29FM0dIYTZDdDdjOUNNTzhkeHNnWGpJSzcxdmlpaXFVbkJFNC1FbDVsLXpMMFk1bXdLZDMwWmpWYmRR",
           "breaking": false,
           "slug": "20260620-trump-names-pm-modi-and-xi-jinping-as-the-world-leaders-he-admires-mos",
-          "image": "https://pixabay.com/get/g266c221771b613d625663cef3979ffebdd711d318a656db8aab40b2a02ac5ef1901cbb356dd58a7c53fc12a6fed19b9abb122cacf6d7081d3479454dcb27b10c_1280.jpg",
+          "image": "https://pixabay.com/get/g18f1a73714c39783d2927d132aa4a0dbd3d6e6a9c2504e511b90fd09d499edf8bc7c5b35fd7f79bc01a19e9905c79a4065b6024a2fb58a0f6cf89ecdbc3775a3_1280.jpg",
           "image_kind": "photo",
           "image_credit": "kalhh",
           "image_credit_url": "https://pixabay.com/users/kalhh-86169/"
@@ -212,21 +210,20 @@
         {
           "hour": 8,
           "time": "08:43 IST",
-          "headline": "US Beat Australia to Reach FIFA World Cup 2026 Knockout Round",
-          "what": "The United States defeated Australia at the FIFA World Cup 2026 to advance to the knockout rounds, with fans reacting with jubilation across host cities. BBC captured fan reactions to the result, which marks a significant moment for American soccer on home soil. The US is co-hosting the 2026 World Cup alongside Canada and Mexico. Australia's exit ends their campaign at the group stage.",
-          "lens": "With India set to co-host the 2027 AFC Asian Cup and growing football interest domestically, high-profile World Cup results like this give Indian fans a closer look at what tournament football's knockout drama looks like.",
-          "article": "BBC reports that the United States defeated Australia at the FIFA World Cup 2026, booking their place in the knockout rounds and sending Australia home at the group stage. Fan reactions captured by BBC showed celebrations across venues as the American side capitalised on home advantage at what is one of the most watched sporting events on the planet.\n\nThe 2026 FIFA World Cup is being jointly hosted by the United States, Canada, and Mexico — the first time three nations have co-hosted the tournament. For the US, progressing to the knockouts on home soil carries enormous significance for the growth of soccer in a country where the sport has historically played second fiddle to American football, basketball, and baseball.\n\nAustralia, who had a memorable run to the quarterfinals at the 2022 Qatar World Cup, exit this edition at the group stage. The knockout rounds will now see the US face stiffer competition, with the tournament entering its most intense phase. For Indian football fans increasingly engaged with global football, the drama of the World Cup knockout stage offers both entertainment and a template for the ambitions India holds for its own growing football ecosystem.",
+          "headline": "US Beats Australia to Reach FIFA World Cup 2026 Knockout Round",
+          "what": "The United States national football team defeated Australia to advance to the knockout round of the FIFA World Cup 2026, with fans reacting enthusiastically to the result. The win is a significant moment for American soccer, as the US co-hosts the tournament alongside Canada and Mexico. Australia's exit ends their campaign at the group stage. The reaction from fans across both nations captured the high emotion of the tournament.",
+          "lens": "With FIFA World Cup 2026 co-hosted across North America, Indian football fans following the tournament will feel the shift as the host nation advances and the field narrows.",
+          "article": "BBC reports that the United States defeated Australia to qualify for the knockout round of the FIFA World Cup 2026, with fans of both nations reacting strongly to the result. The win is particularly meaningful for the US, which is co-hosting the World Cup alongside Canada and Mexico, adding a strong home-crowd dimension to their campaign.\n\nAustralia's elimination at the group stage ends a campaign that had generated significant interest, particularly given the Socceroos' strong showing at previous tournaments. The US victory consolidates their position among the teams to watch as the competition enters its more decisive phases.\n\nFor Indian football fans, the World Cup 2026 has been one of the most closely watched tournaments in recent memory, with the expanded 48-team format bringing in more matches and more nations. The US advancing as a host nation adds further storyline to the knockout rounds, and the tournament's progress will continue to dominate conversations among football followers across India.",
           "key_facts": [
-            "USA defeated Australia to reach the World Cup 2026 knockout round",
-            "Australia eliminated at the group stage",
-            "2026 World Cup co-hosted by USA, Canada, and Mexico",
-            "US progressing on home soil in a landmark tournament"
+            "USA defeated Australia to reach the FIFA World Cup 2026 knockout round",
+            "USA is a co-host of World Cup 2026 alongside Canada and Mexico",
+            "Australia eliminated at the group stage"
           ],
           "source": "BBC",
           "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE0xYTNZNVFNUlhNN2tKUVpubDBGOWtObGktbGVENko4VVgxMFJsVEpoaFBwVDh4bmtnWl9LaUZVOTZneUlTa0VFMHVSN0Q0a0JWeGFocE9kRQ",
           "breaking": false,
-          "slug": "20260620-us-beat-australia-to-reach-fifa-world-cup-2026-knockout-round",
-          "image": "https://pixabay.com/get/g8d07e34996d40bf3ac793c2ef9bb6f61f751acd7f5fa89a65c06e42532069d28c0ea1460361fa7394f9fae11165ca19b6d32a98ea8cbd35b5801050b23070f5f_1280.jpg",
+          "slug": "20260620-us-beats-australia-to-reach-fifa-world-cup-2026-knockout-round",
+          "image": "https://pixabay.com/get/gd23d026113a338b032ba74ad61844ce2b8f0541e25d3028cac738be0329754b15a3f619744d85649cf0edd5dd0b4b659c032b09e4c3bb383d73ae46107268cb8_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Pexels",
           "image_credit_url": "https://pixabay.com/users/Pexels-2286921/"
@@ -276,10 +273,32 @@
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPR0tUWWNuWHl0OG5oUHFFdEhrOHI0YUdSbnVHc002ejl5OUU0MnVveUJVSnJHY2E0VGd1dks2MEJ4U0NIRm1uR1ZYU256dENQODRwbEVBRFFZZlVxbWZFcnB6RHJ2VzRLemhWU2JUdEhJaTNBZmtDQm96NlBNVVc1NkViRW9jalZZMWlWcHBZVFVDMlRueTZvbXYxSVhfQ1FsUFc0T0k1aTZXaG84clJJeXlFRG91el9rc1FLZ0JVekp1cDhfZ1pfUkt3V2xZZ9IB1AFBVV95cUxPMTlFYVgtZDFabWgtNWVYRHo2UWxldlJiOEgxN0Q3RkgxNjFvM3kzemJ4NjlpTXo4aFFZNjZnYTk0b3pGYkVlSlhSUGhfckxEaVpJMUVjTUJDRlBsNzJfcGxXdUQwdHBvZ3VlcVlzclhOc0pJVzY0WE9NRmtyYXVMaDBxV3RmeElHN0tkamlyZnpDODlnUUJyZ0dhSlpoTlp5Mnc5aUpPRmswbTVNWGVaZ21jRWpFX0s2Qk5MX0JpVEM2S0k4cDZWVnp2dnFfRXJPV1Q3aQ",
           "breaking": false,
           "slug": "20260620-lack-of-investment-chapter-in-india-uk-trade-deal-not-a-concern-says-m",
-          "image": "https://pixabay.com/get/g8f20b35ee5a0192a9719c8d25b7652c692dcc17ff6a76201623b469896f4b8d6fb64dd37244b77e5f2f920aaa784ef9924103ff318dac164a4d98e5022837666_1280.jpg",
+          "image": "https://pixabay.com/get/g6845da035d244963d7e205ba135c54f6c3fd22c010138398ac1a711961a6b4660712b81a3123835c469bd9ab6abd0616b059c322d9101dbacba5a67f6898802e_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Ralphs_Fotos",
-          "image_credit_url": "https://pixabay.com/users/Ralphs_Fotos-1767157/"
+          "image_credit": "3844328",
+          "image_credit_url": "https://pixabay.com/users/3844328-3844328/"
+        },
+        {
+          "hour": 18,
+          "time": "18:26 IST",
+          "headline": "Piyush Goyal reveals what's holding up the India-US trade deal — and why Indian farmers are 'fully protected'",
+          "what": "Commerce Minister Piyush Goyal has spelled out the sticking points delaying a India-US trade deal, saying India will not sign until it secures a 'competitive advantage' from the pact. The government has simultaneously moved to reassure Indian farmers that their interests are fully protected in the ongoing negotiations. The frank public disclosure signals that talks remain substantive but unresolved on key terms.",
+          "lens": "With India-US trade talks directly affecting agricultural exports, manufacturing tariffs, and millions of livelihoods, Goyal's conditions set a clear public benchmark for what any final deal must deliver for ordinary Indians.",
+          "article": "The Times of India and The Economic Times report that Commerce and Industry Minister Piyush Goyal has publicly stated that India will not implement a trade deal with the United States until the country secures a clear 'competitive advantage' from the agreement. Speaking candidly, Goyal outlined the specific terms India is holding out for, signalling that negotiations — while active — remain stuck on core issues around market access and tariff structures.\n\nSeparately, the central government moved to reassure Indian farmers, with NDTV reporting an official statement that Indian agricultural interests are 'fully protected' in the ongoing negotiations. The dual messaging — tough on trade terms, protective on agriculture — reflects the political sensitivity of any concessions India might make to secure American market access for its goods and services.\n\nThe India-US bilateral trade relationship is worth over $190 billion annually, and a formal trade deal has been under discussion for years. Sectors including pharmaceuticals, textiles, IT services, and agriculture are all at stake. Goyal's public articulation of India's red lines is significant: it narrows the space for a quick deal but also signals India's intent to negotiate from a position of strength rather than urgency.",
+          "key_facts": [
+            "Goyal: India-US deal won't be implemented without 'competitive advantage' for India",
+            "Government assures Indian farmers are 'fully protected' in negotiations",
+            "India-US bilateral trade is worth over $190 billion annually",
+            "Key sectors at stake include agriculture, pharmaceuticals, and textiles"
+          ],
+          "source": "The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNd1lyVG50bTlTZ1RIQUdHQW04d2NMUUcyVVlNR1ByYUFFaXpEbzQyTmNfTDBLLVpPZ0FleXItTnRvdVMwc01pOXlmTjF2V2d2UU5Xbkh3QWZfS0NMSXAxaDY3SHd1Si1pMDc2MWdFWDNNZVN3c1hXaExaT3RqNFBvNmFNVGF5Vzd1VURVNU1EenNVOTg2ekJBMDRza29RcnlkZ0pvOGxoQjlFWDJreWlEc0J3VDRxc0N1SDVqNl92eXRwS3ZGQkl1cVVEaDljUXd0cUZ0aXN1V2VORFllUFE1OTZJWWJ5V2_SAewBQVVfeXFMTmdhZzFySmwzQ0Y5Ump5dVpvcTIxeWZWTHhTYzNUVXpLR1llcUJ2em1vLThIZjkzZktYdVFCd29wRkxCcTNwNVNmaWtINjNrTzVjMnJhNXU1VHNURkdYM3d3bmJWLUo5SV9TSTJNdXhmSWtRWXcxRHNLMXgtV0NKZk0xSnFzNGpfcEVSZlhxTzkzSkNVUHRJQWk2ZjNHbXNlYUMyTjZjRE1CM2NyOHMyRlQ1RS1nSG1ZZGtBOVNONElDTndPeHlsdU1zTGtEdDVsTHpEeFZlUXJZY1JGbEc0dVk5RjNUMFhNcW9FQVE",
+          "breaking": false,
+          "slug": "20260620-piyush-goyal-reveals-what-s-holding-up-the-india-us-trade-deal-and-why",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Piyush_Goyal_crop.jpg",
+          "image_kind": "photo",
+          "image_credit": "Ministry of Textiles / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Piyush_Goyal"
         },
         {
           "hour": 18,
@@ -298,10 +317,10 @@
           "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQN2ZGeGhkWlh2UlJGYk9fQzRjS1c0N2tGYjhQZUp6blJxcDhpQWZVYl9EVVQ2bGVMaXFXQjlXN09DVktxTUlzUWJXMm8wcE1SRzRZTDZsaHRLdnY2ZU9rX2JpZmxsZzNWc0NKcDFNSTVqd3NsX2o4SW1DeVh6SGRfMi1zeF9jYWxWYnVwWVV4dmlydF8yY0FMenFuX2pqaEFVVG1VenloTUJkX19sVlhLaWExenVySlE4UVI4WHptN3Zrb0dYaTZWWmNCZ0ppemg1LUZyYmRrcTdZYnJOd3VQLUJYZUQwRGk3R2x1TEx4QTUzZmFkdkt5Mm1tQjhGZ9IBgwJBVV95cUxORVhhcWVsNTU5MWJBN1VBRXQtMzFUT3IzVHZfck1GUGtqOVJXcm1KekQyLVVEWDZnREJiZ2wtU09OV29QeGY2Yk41ZTNocGM5YVp3eEp6OHRHQTJtcW9SQWRRNTRzb1kzdEZRRzV4emh3QmdKdDFRYXZLcV9HcHNQQlNpWTdJVUFVWlY5dURkWHJGRnFVNXNUUlpUejZyUWVkeVZlTmNfem9SZG5GSzRicFZmR2t5WVpBVWt5RjlMTnREZWo3Rk41anBOQ3ZkWjdsR3lGWVNPajE5NzdmQXhhSnhoZ2haTmY1dmlSV3d0WjFYTW5jdmpnQUFmUlpuUG5xY3VB",
           "breaking": false,
           "slug": "20260620-piyush-goyal-says-india-needs-competitive-advantage-before-us-trade-de",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Piyush_Goyal_crop.jpg",
+          "image": "https://pixabay.com/get/gf4449b5d06b1f554e7a7955ee4c1f01791b171f6362a9402b12e37fe6eb5f7efe81903326bf32954700dc61177f53efccb9ceae6827e0fd3636915b326079582_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Ministry of Textiles / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Piyush_Goyal"
+          "image_credit": "Damian_Konietzny",
+          "image_credit_url": "https://pixabay.com/users/Damian_Konietzny-14709364/"
         },
         {
           "hour": 18,
@@ -319,31 +338,10 @@
           "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNd1lyVG50bTlTZ1RIQUdHQW04d2NMUUcyVVlNR1ByYUFFaXpEbzQyTmNfTDBLLVpPZ0FleXItTnRvdVMwc01pOXlmTjF2V2d2UU5Xbkh3QWZfS0NMSXAxaDY3SHd1Si1pMDc2MWdFWDNNZVN3c1hXaExaT3RqNFBvNmFNVGF5Vzd1VURVNU1EenNVOTg2ekJBMDRza29RcnlkZ0pvOGxoQjlFWDJreWlEc0J3VDRxc0N1SDVqNl92eXRwS3ZGQkl1cVVEaDljUXd0cUZ0aXN1V2VORFllUFE1OTZJWWJ5V2_SAewBQVVfeXFMTmdhZzFySmwzQ0Y5Ump5dVpvcTIxeWZWTHhTYzNUVXpLR1llcUJ2em1vLThIZjkzZktYdVFCd29wRkxCcTNwNVNmaWtINjNrTzVjMnJhNXU1VHNURkdYM3d3bmJWLUo5SV9TSTJNdXhmSWtRWXcxRHNLMXgtV0NKZk0xSnFzNGpfcEVSZlhxTzkzSkNVUHRJQWk2ZjNHbXNlYUMyTjZjRE1CM2NyOHMyRlQ1RS1nSG1ZZGtBOVNONElDTndPeHlsdU1zTGtEdDVsTHpEeFZlUXJZY1JGbEc0dVk5RjNUMFhNcW9FQVE",
           "breaking": false,
           "slug": "20260620-piyush-goyal-says-india-us-trade-deal-stalled-until-india-gets-competi",
-          "image": "https://pixabay.com/get/g00a6b67db9ad773acb37a3e34e57cc3e1a28eb90f591da9ad630b513c1ffedddcd3f4bb916a8deb37cf72138d4fbcba4_1280.jpg",
+          "image": "https://pixabay.com/get/g9c5ba4c6360a5ae52b26f12ba02fd5431d14c67ea4fc03439a1a3b33a9038c9fa4cea01c353feb493a3b2393c1276da6_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Simon",
           "image_credit_url": "https://pixabay.com/users/Simon-3/"
-        },
-        {
-          "hour": 14,
-          "time": "14:39 IST",
-          "headline": "Japan PM Sanae Takaichi to Visit Assam With Business Leaders for India Investment Summit",
-          "what": "Japanese Prime Minister Sanae Takaichi is set to visit Assam accompanied by a delegation of Japanese business leaders for a key India investment summit. The visit signals growing Japan-India economic engagement and positions Assam as a destination for foreign investment, particularly in connectivity, manufacturing, and the Act East Policy corridor. The summit is expected to generate investment commitments from Japanese firms.",
-          "lens": "Japan is one of India's top infrastructure investors — a PM-level visit with business leaders to Assam could channel real capital into Northeast India's roads, industries, and jobs.",
-          "article": "The New Indian Express reports that Japanese Prime Minister Sanae Takaichi is scheduled to visit Assam along with a delegation of Japanese business leaders to participate in a key India investment summit. The visit represents a significant diplomatic and economic signal, elevating the Northeast Indian state as a focal point for Japan-India economic cooperation.\n\nAssam and India's Northeast have been central to India's Act East Policy, which seeks to deepen ties with Southeast and East Asian economies using the region as a gateway. Japan has historically been a major partner in this effort, with significant investments in infrastructure projects including the Delhi-Mumbai Industrial Corridor and various connectivity initiatives. A PM-level visit with business leaders suggests concrete investment discussions are on the agenda.\n\nFor residents of Assam and the Northeast, increased Japanese investment could mean new industrial projects, improved infrastructure, and employment opportunities in a region that has historically lagged behind in economic development. It also reinforces India's broader strategy of leveraging its northeastern states as a bridge to East and Southeast Asia.",
-          "key_facts": [
-            "Japan PM Sanae Takaichi to visit Assam for India investment summit",
-            "Delegation of Japanese business leaders to accompany Takaichi",
-            "Visit linked to India's Act East Policy and Northeast investment push"
-          ],
-          "source": "The New Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYUU5QVd4WkR5NVljcWtNZlVKbUtBVmFKRDBjVUtFdl9QWHk0RkNVUGJFTmthZV9sMlktV3ZhdkE4bHJKcFpPZG9ab2Z0TmFibXFHZjB0U1BZLXhBelhDczhxUmpSeVEyTXo1U3hJdTN5b2cyclNKejVtNENFOUZJUzFYVEFtN2tJMXZXRjBIYjkwZ2NjaHJ2MEJsek9RS3BYOXBCelJVb0FtOTVZaUxFd0JoaXNES0N6MVB3WFYxeUNCeFgtMndLcjNkM2FFLWNLQ09UR3NIMkFoY25HNFHSAd4BQVVfeXFMTmFFOUFXeFpEeTVZY3FrTWZVSm1LQVZhSkQwY1VLRXZfUFh5NEZDVVBiRU5rYWVfbDJZLVd2YXZBOGxySnBaT2RvWm9mdE5hYm1xR2YwdFNQWS14QXpYQ3M4cVJqUnlRMk16NVN4SXUzeW9nMnJTSno1bTRDRTlGSVMxWFRBbTdrSTF2V0YwSGI5MGdjY2hydjBCbHpPUUtwWDlwQnpSVW9BbTk1WWlMRXdCaGlzREtDejFQd1hWMXlDQnhYLTJ3S3IzZDNhRS1jS0NPVEdzSDJBaGNuRzRR",
-          "breaking": false,
-          "slug": "20260620-japan-pm-sanae-takaichi-to-visit-assam-with-business-leaders-for-india",
-          "image": "https://pixabay.com/get/g72f97ac78bc19af3c5f1e6f35d6c45223efa809e1f5994c895149133afcec239ddea3a6871868d13f7c63eb2b328e8dbde91d490c2e7890ff824ea5a1ac7250a_1280.jpg",
-          "image_kind": "photo",
-          "image_credit": "balouriarajesh",
-          "image_credit_url": "https://pixabay.com/users/balouriarajesh-6205857/"
         }
       ]
     },
@@ -377,44 +375,46 @@
         {
           "hour": 17,
           "time": "17:05 IST",
-          "headline": "Kotak calls for greater Indian self-reliance in capital, defence, energy, and technology",
-          "what": "Kotak Mahindra Bank's founder Uday Kotak has called for India to significantly reduce its dependence on foreign capital, defence equipment, energy, and technology, framing self-reliance as a strategic imperative rather than mere economic nationalism. Moneycontrol reports the remarks, which come amid global supply-chain disruptions, rising geopolitical tensions, and India's experience of technology access restrictions. Kotak argued that structural vulnerabilities in these four areas expose India to outsized external risks.",
-          "lens": "When one of India's most prominent bankers flags dependence on foreign technology and capital as a national vulnerability, it signals that Atmanirbhar Bharat is moving from political slogan to serious boardroom concern — with real implications for where India invests next.",
-          "article": "Moneycontrol reports that Uday Kotak, founder of Kotak Mahindra Bank and one of India's most influential financial voices, has urged the country to pursue greater self-reliance across four critical domains: foreign capital, defence, energy, and technology. He framed external dependence in these areas as a structural vulnerability that exposes India to risks it cannot fully control.\n\nKotak's remarks come against a backdrop of heightened global uncertainty — including US-China technology decoupling, sanctions regimes that have affected energy and defence supply chains globally, and India's own experience navigating restrictions on technology access from Western partners. The argument is that India's scale and ambition require a stronger domestic foundation in each of these sectors.\n\nOn technology specifically, his call echoes concerns raised by India's semiconductor mission, its push for domestic AI infrastructure, and ongoing efforts to develop indigenous defence platforms. On capital, the remarks point to the risks of over-reliance on foreign institutional investors whose flows can be abruptly reversed.\n\nFor ordinary Indians, the stakes of this debate are concrete: self-reliance in energy affects fuel prices and power supply; in defence it affects national security spending priorities; in technology it shapes which industries grow domestically and which remain dependent on foreign goodwill. Kotak's intervention gives institutional weight to arguments that have previously been made mainly in policy circles.",
+          "headline": "Kotak calls for greater self-reliance in capital, defence, energy and tech",
+          "what": "Uday Kotak, founder of Kotak Mahindra Bank, has called for India to significantly reduce its dependence on foreign capital, defence equipment, energy imports, and technology, arguing that greater self-reliance is essential for the country's long-term strategic and economic security. Moneycontrol.com reports the remarks, which come amid global trade uncertainty and India's ongoing push to build domestic manufacturing and technology capabilities. Kotak's intervention adds a prominent business voice to the self-reliance debate.",
+          "lens": "When one of India's most influential bankers publicly calls for reducing foreign dependence across four critical sectors simultaneously, it signals that the business establishment sees strategic self-reliance as an economic imperative, not just political rhetoric — which could shape investment and policy priorities affecting millions.",
+          "article": "Moneycontrol.com reports that Uday Kotak, the prominent Indian banker and founder of Kotak Mahindra Bank, has made a strong public case for India to pursue greater self-reliance across four critical domains: foreign capital, defence, energy, and technology. The remarks reflect a broader anxiety in Indian business circles about the risks of over-dependence on external sources during a period of global geopolitical and trade volatility.\n\nKotak's call on foreign capital is particularly notable coming from a banker — it suggests concern about India's vulnerability to sudden shifts in global investor sentiment, currency pressures, and the conditions attached to foreign investment. On technology, the call echoes ongoing government efforts to build domestic semiconductor, AI, and software capabilities.\n\nThe statement aligns with, but also pushes further than, the government's existing Atmanirbhar Bharat (self-reliant India) agenda, lending it significant credibility from a private-sector perspective. India currently imports the large majority of its defence equipment, is heavily dependent on fossil fuel imports, and relies substantially on foreign technology platforms and components.\n\nFor everyday Indians, the practical implication of this debate is significant: a genuine shift toward self-reliance in these sectors would require massive domestic investment, industrial policy changes, and could reshape job creation patterns across manufacturing, energy, and technology over the coming decade.",
           "key_facts": [
-            "Uday Kotak calls for self-reliance in capital, defence, energy, and technology",
-            "Remarks made amid global supply-chain and geopolitical disruptions",
-            "Kotak flags foreign dependence in these four areas as structural vulnerability"
+            "Uday Kotak calls for self-reliance in capital, defence, energy, and tech",
+            "Remarks reported by Moneycontrol amid global trade uncertainty",
+            "India imports most of its defence equipment and fossil fuels",
+            "Kotak's stance extends and legitimises the Atmanirbhar Bharat agenda"
           ],
           "source": "Moneycontrol.com",
           "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPbzlGemZPOWRXVjVycHQtUEFkRXNHRTRuZk1XM3hrckZSbGVuOTBibjFfc0pUWWdWSXJXelVyQ0VDV0JGc0pEMGdxdi15WnBuSmxjU0hxcF9jV1BwQTAwZ2Z6VmViRWhXMXAtWlQ0Wk8tbzNwZG9laExCRmtJYVVWcFJXQU9TWmY0Mko4Z2l1T0NxaV9IQng3VGMyWkI0NVRxcW91YXJtNk9YY2M0cm82dTFnbFFYVTItaFhGS2ZSVFJKdF85WmJJZ1ljd1BhTG93SEVfM1JWVVA0RWRzM0pEc1ZvdnZxRWc1VndLYUNTUmdfTmJJRnp30gH8AUFVX3lxTFBZQkNOQnNZSUNmYVR3cnZHNUp0TjMxTWtVNndvT28zZ2R5N1pMUDY4Z2d1VWtpRVhuRllWcDFMaG5tSXFsZmJmOUFuU3VZaDEwOXc2Zk5FVmhwNDBDYldXVGRDNXVXaENKamx5QW5PQlQyTHNRcEpadTlMNlVRZTFHUDZvblQtWjFhVF9JSXFXNTVXQ2VNbXA3TWdmSHl5WXpxb1lZZUcwT1ZBak13TmpWcHBiU1Q2eFV4NUJYT1pSZEJnMjZoSmxxOVJsS3RzTkdmZFZuaGstVlRScEt6dGdrOEdhbUZrQXlxSkFTUVdHYjV1TURiN2FXVUJyQg",
           "breaking": false,
-          "slug": "20260620-kotak-calls-for-greater-indian-self-reliance-in-capital-defence-energy",
-          "image": "https://pixabay.com/get/g0de9bf239c38346be4f9a912142606f5a69ad0682f0dedb7ee2a5665284e7af5d834eb9805d67d8085c907c81235960e33088afe84ec7d0821d3a5308055728d_1280.jpg",
+          "slug": "20260620-kotak-calls-for-greater-self-reliance-in-capital-defence-energy-and-te",
+          "image": "https://pixabay.com/get/g795078485dbc52d7bc85780b13fe4b213d8a83c1bc05e159fc954ba76b6e6d18abef6c303e7d4f086c7e43d6171b791571a2aad39c505157dc15bf7e6d900c94_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "StartupStockPhotos",
-          "image_credit_url": "https://pixabay.com/users/StartupStockPhotos-690514/"
+          "image_credit": "rupixen",
+          "image_credit_url": "https://pixabay.com/users/rupixen-11154019/"
         },
         {
           "hour": 9,
           "time": "09:00 IST",
           "headline": "Indian IT industry eyes 'unglamorous' AI work for American companies",
-          "what": "India's IT sector is positioning itself to handle the less glamorous but high-volume AI work for American companies — tasks like data labelling, model fine-tuning, AI quality testing, and back-end infrastructure management. Scroll.in reports that Indian firms see this as a massive opportunity as US companies scale up AI deployments but seek cost-efficient execution partners. The move echoes how India captured global BPO and software services work in earlier technology waves.",
-          "lens": "For millions of IT and services workers in India, this could define the next wave of employment — determining whether AI becomes a threat to jobs or a creator of them.",
-          "article": "Scroll.in reports that India's IT industry is actively pursuing what it calls the 'unglamorous' side of artificial intelligence — the large-scale, labour-intensive work that underpins AI systems for American corporations. This includes data annotation, model training support, AI output evaluation, and infrastructure operations that US firms prefer to offshore for cost and scale reasons.\n\nThe strategy mirrors how Indian companies like Infosys, Wipro, and TCS built their dominance in earlier decades by absorbing outsourced software and business-process work. Industry leaders argue that while frontier AI research may remain concentrated in the US, the enormous execution layer beneath it is a natural fit for India's skilled, English-speaking, cost-competitive workforce.\n\nThe opportunity comes as American companies accelerate AI adoption but face pressure to manage costs. Indian IT firms are pitching themselves as the backbone partners who make AI deployments actually function at scale — less visible than the headline models, but essential.\n\nFor India's technology workforce, the stakes are significant. If Indian IT successfully captures this segment, it could absorb large numbers of workers and create new career pathways. If it fails to adapt quickly enough, the same AI tools could automate away traditional IT outsourcing jobs that currently employ millions.",
+          "what": "India's IT sector is positioning itself to handle the less glamorous but high-volume AI-related work for American companies — tasks such as data labelling, model fine-tuning, and AI operations that underpin large language models. Scroll.in reports that Indian IT firms see this as a significant new revenue stream, leveraging their existing outsourcing relationships and large English-speaking workforce. The opportunity is substantial even if it lacks the prestige of building frontier AI models.",
+          "lens": "For India's millions of IT employees, this signals a concrete near-term job category in AI — not just abstract talk of an AI future, but actual work pipelines that could sustain and grow the sector.",
+          "article": "Scroll.in reports that the Indian IT industry is actively seeking to capture what it calls 'unglamorous' AI work from American technology companies — the essential but less celebrated tasks that power modern AI systems, including data annotation, model training support, quality evaluation, and AI operations management.\n\nThis work, while not headline-grabbing, is enormous in scale and aligns well with India's established strengths in large-scale outsourcing, process management, and a vast English-proficient workforce. Indian IT majors and mid-tier firms alike are reportedly pitching themselves to US clients as reliable partners for this layer of the AI pipeline.\n\nThe move reflects a pragmatic strategy: rather than competing with Silicon Valley on cutting-edge AI research, India's IT industry is doubling down on execution-layer work — the kind of high-volume, process-intensive tasks that American companies are eager to offshore. This mirrors how India captured the global software services boom of the 1990s and 2000s.\n\nFor everyday Indians working in or entering the IT sector, this represents a real and near-term employment opportunity in the AI economy, offering a bridge between current skills and the demands of an AI-driven world.",
           "key_facts": [
-            "Indian IT targeting AI data labelling, fine-tuning, and quality work for US firms",
-            "Strategy mirrors India's earlier capture of BPO and software outsourcing",
-            "Millions of Indian IT jobs could hinge on success of this pivot"
+            "Indian IT firms targeting data labelling, model fine-tuning, AI ops work",
+            "Work is for American tech companies seeking to offshore AI pipeline tasks",
+            "Strategy mirrors India's earlier capture of global software outsourcing",
+            "Leverages India's large English-speaking, process-skilled workforce"
           ],
           "source": "Scroll.in",
           "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOV2VIQ3Fqeks2SW9Sd1RxMV9zcnpOTWlOZHJ1RW5raVh6aTdwcnk1Y0FBdkZzVlNoTGxIaFZ3c0dJTDhuOVJyT0FRQ0JkZXp1UWFBYmplMzAtZEhUTkdRbl9GcjBIVEJOeEhrRU5xdnJ4WVE3MTJqbi1EWTNGUWctODVvOXRnV2g2QjBEN0hlVUxXeDVwOGsyUE8tSzF3Z1dLcGtobk1CSFIyaDBDZ0hKZWlIcDFZNXPSAbcBQVVfeXFMTldlSENxanpLNklvUndUcTFfc3J6Tk1pTmRydUVua2lYemk3cHJ5NWNBQXZGc1ZTaExsSGhWd3NHSUw4bjlSck9BUUNCZGV6dVFhQWJqZTMwLWRIVE5HUW5fRnIwSFRCTnhIa0VOcXZyeFlRNzEyam4tRFkzRlFnLTg1bzl0Z1doNkIwRDdIZVVMV3g1cDhrMlBPLUsxd2dXS3BraG5NQkhSMmgwQ2dISmVpSHAxWTVz",
           "breaking": false,
           "slug": "20260620-indian-it-industry-eyes-unglamorous-ai-work-for-american-companies",
-          "image": "https://pixabay.com/get/gb86c113f73e645ef69efe9b65e866cfbcd5dbde501433f99d02ba00b9d99ae4c7349b118a46d97ce0ecdb7936fff21199049ad6258ceaed5c616e79f8f6f0b0d_1280.png",
+          "image": "https://images.pexels.com/photos/31321061/pexels-photo-31321061.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Janson_G",
-          "image_credit_url": "https://pixabay.com/users/Janson_G-5907103/"
+          "image_credit": "EqualStock IN",
+          "image_credit_url": "https://www.pexels.com/@equalstock"
         },
         {
           "hour": 9,
@@ -432,29 +432,29 @@
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQeTBWclhybkgwd1ZEZ2pLdlNZM1V3S21rUTRXMnpzQ0xkYUdvMlMtd0Z4WU02Tjl5ZS1aUXpNTnNGcDBWdnBMeDJqaGpxTzhnY2FfWDV1cWJyVmxUQVBaa3U0eXBabEJIU3RjRGZNVkdfcU1LMm5md1R2ZXh1dVZnYm1JZm1EN3VjS05yM3YtZmVmOG83a3pNdnNIaUMtSHR1cnpiT0luSHNYUGxBUXBpd3lZZGVIWkZaZkNleVd2ai1VRUxWdS02eg",
           "breaking": false,
           "slug": "20260620-modi-government-launches-push-to-reverse-india-s-brain-drain",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg",
+          "image": "https://pixabay.com/get/g21c633ed251b0cc8b671b332efa3f9816d5984a6d6b580e1f36ca5e851fc9a7ea1a39b945e618d3b14ad26260e637a0d76f5b333dc65f9619ee5a8231c8e23a4_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Prime Minister's Office / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Narendra_Modi"
+          "image_credit": "pradhanantarip",
+          "image_credit_url": "https://pixabay.com/users/pradhanantarip-22490439/"
         },
         {
           "hour": 8,
           "time": "08:20 IST",
-          "headline": "India has built a startup ecosystem — now it must build an innovation ecosystem",
-          "what": "YourStory argues that while India has successfully cultivated a world-scale startup ecosystem — ranking among the top three globally by number of unicorns — the country has yet to build a genuine innovation ecosystem driven by deep research, IP creation, and technology differentiation. The piece contends that most Indian startups are business-model innovations rather than technology innovations, leaving India dependent on foreign core technologies. Building the next layer requires universities, research labs, and patient capital working in concert.",
-          "lens": "Whether India's next generation of companies creates original technology or merely adapts foreign inventions will determine how much economic value — and how many high-quality jobs — actually stays in India.",
-          "article": "YourStory argues that India has accomplished the first phase of its technology ambition: building one of the world's largest startup ecosystems, with hundreds of unicorns and a deep bench of founders, investors, and support infrastructure. But the publication contends that this success masks a structural gap — most Indian startups are innovations in business models, distribution, and market access rather than in core technology itself.\n\nThe piece points out that fundamental technologies underlying Indian startups — semiconductors, foundational AI models, cloud infrastructure, and key software stacks — are largely developed abroad. India captures value by applying these technologies cleverly to local markets, but creates relatively little original intellectual property at the foundational layer.\n\nTransitioning from a startup ecosystem to an innovation ecosystem would require stronger university research output, longer-term capital willing to fund deep-tech bets with uncertain timelines, closer collaboration between academic institutions and industry, and government procurement and policy that rewards domestic technology development.\n\nFor the average Indian, the distinction matters in practical terms: an innovation ecosystem means more high-value jobs that cannot be easily automated or offshored, stronger domestic solutions in critical sectors like defence and healthcare, and greater insulation from geopolitical technology restrictions of the kind India has already experienced.",
+          "headline": "India has a startup ecosystem — but still lacks a true innovation ecosystem",
+          "what": "YourStory.com argues that while India has successfully built a thriving startup ecosystem over the past decade, the country has yet to cultivate a deeper innovation ecosystem — one that produces original research, deep-tech breakthroughs, and intellectual property rather than primarily replicating or adapting foreign models for the Indian market. The piece calls for a structural shift in how India thinks about entrepreneurship, research funding, and the relationship between academia and industry.",
+          "lens": "As India competes globally in AI and deep tech, the gap between launching startups and generating original innovation will determine whether India becomes a technology creator or remains a technology adapter — directly affecting the quality and longevity of tech jobs.",
+          "article": "YourStory.com publishes an analysis arguing that India's much-celebrated startup ecosystem — now one of the world's largest by number of funded companies and unicorns — has not automatically translated into a genuine innovation ecosystem. The distinction is important: a startup ecosystem produces companies, while an innovation ecosystem produces original knowledge, deep research, and proprietary technology.\n\nThe piece points out that the majority of India's successful startups have built their businesses on adapting existing global technologies and business models to Indian conditions — a valuable but ultimately derivative approach. For India to compete at the frontier of AI, semiconductors, biotech, and other emerging fields, it needs stronger linkages between research institutions, universities, industry, and patient capital willing to fund long-horizon bets.\n\nThe argument is particularly timely given global competition in AI and the Indian government's push through initiatives like the India AI Mission. Without a cultural and structural shift toward original research and deeper risk-taking, India risks becoming a high-quality executor of others' ideas rather than a source of world-changing ones.\n\nFor Indian professionals and policymakers, the message is clear: the next phase of India's technology ambition requires investing not just in companies, but in the ideas and people that create genuinely new things.",
           "key_facts": [
-            "India ranks among top three globally by unicorn count",
-            "Most Indian startups are business-model, not deep-technology, innovations",
-            "Core technologies underpinning Indian startups are largely foreign-built",
-            "Transition requires stronger university research and patient deep-tech capital"
+            "India is among world's largest startup ecosystems by unicorn count",
+            "Most Indian startups adapt global models rather than create original technology",
+            "Gap identified between startup culture and deep research/IP creation",
+            "Piece calls for stronger academia-industry-capital linkages"
           ],
           "source": "YourStory.com",
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQzdLWWcybkg0cmNiUzdDVHJKb2lsR3hTNXozMFhTQlJPRGo3UWxVZFNpZlJwWE83ZG50eXdpdnFxNU9hVHZYeXpxeGNWT3ZuWDh4QXJ4d0NrbEY0eFc0ell6R2tZelp5OXZZeTR1N2hJNV80UWhQSElIZi16dWJqam9mLVlRelZNVkhVc2dPbWs3S2lpQlFRdTRRY0swZmc",
           "breaking": false,
-          "slug": "20260620-india-has-built-a-startup-ecosystem-now-it-must-build-an-innovation-ec",
-          "image": "https://pixabay.com/get/g75a580f0f80a991899bcf6ddd81f0a5c281e88ea245ea745fbf4b2842a2d6609d71fd947f1a59ba6a38257ea9422d263a03edcbadd86ed8d213e055d9355750c_1280.jpg",
+          "slug": "20260620-india-has-a-startup-ecosystem-but-still-lacks-a-true-innovation-ecosys",
+          "image": "https://pixabay.com/get/g825f26b01e754c7d0f2ca86e26c140514b8aa0c165d6219509dd7c89efc0414dcb692e959f774fc92cdfabaf1415de79f11361a2a4cf89d46a49d30b1cfb7c77_1280.jpg",
           "image_kind": "photo",
           "image_credit": "StartupStockPhotos",
           "image_credit_url": "https://pixabay.com/users/StartupStockPhotos-690514/"
@@ -491,24 +491,24 @@
         {
           "hour": 15,
           "time": "15:53 IST",
-          "headline": "Amazon, Google and Microsoft Agree Anthropic Is Ahead — But Here's Why They're Not Bothered",
-          "what": "The Times of India reports that Amazon, Google, and Microsoft have tacitly acknowledged that Anthropic is currently leading in certain areas of frontier AI development, yet none of the tech giants appear alarmed. The piece explores the strategic logic behind their relative equanimity: all three have significant financial stakes in the AI ecosystem, with Amazon and Google being major Anthropic investors themselves. The framing reveals a nuanced competition where investment, partnership, and rivalry coexist simultaneously.",
-          "lens": "The AI pecking order among these global giants matters to Indian developers and startups choosing which cloud platform and AI APIs to build on — understanding who's actually ahead helps them pick the right technology bets.",
-          "article": "The Times of India reports that Amazon, Google, and Microsoft have each, in different forums, conceded that Anthropic currently holds an edge in certain aspects of frontier AI — yet the three tech giants appear unconcerned about this competitive gap. The analysis explores why that apparent equanimity makes strategic sense.\n\nA key reason is financial entanglement: Amazon has committed billions of dollars to Anthropic, and Google is also a major investor. This means both companies profit from Anthropic's success even as their own AI models compete with it. Microsoft, meanwhile, has bet heavily on OpenAI and believes its partnership gives it a separate path to AI leadership. The result is a market where the world's largest technology companies are simultaneously rivals and backers of their competitors.\n\nFor Indian businesses and developers, the story cuts through the noise of AI hype to reveal a more pragmatic reality: the major cloud providers are not in a winner-takes-all race but in an overlapping web of investment and competition. Choosing between AWS, Google Cloud, or Azure for AI workloads in India increasingly means navigating this complex web rather than simply picking the 'best' AI.",
+          "headline": "Amazon, Google and Microsoft Agree Anthropic Is Ahead — But Why They Are Not Bothered",
+          "what": "The Times of India reports that tech giants Amazon, Google, and Microsoft have acknowledged Anthropic's lead in frontier AI development, yet none appear particularly alarmed. The piece examines the strategic logic behind this apparent complacency: all three are either investors in Anthropic or have equivalent large language models of their own, meaning Anthropic's advances still benefit their cloud and investment ecosystems. The dynamic reveals a complex web of competition and cooperation reshaping the global AI industry.",
+          "lens": "For Indian developers and businesses choosing between AWS, Azure, and Google Cloud for AI services, understanding that these giants see Anthropic's lead as complementary rather than threatening explains why all three platforms are likely to keep offering — and improving — access to frontier AI tools.",
+          "article": "The Times of India examines a striking dynamic in global AI: Amazon, Google, and Microsoft have each, in different forums, acknowledged that Anthropic currently leads in frontier AI model capability — yet none of the three appear strategically threatened by that fact. The analysis explores why this apparent complacency makes sense given the underlying business relationships.\n\nAmazon and Google are both major investors in Anthropic, meaning Anthropic's competitive success financially benefits them even as it nominally challenges their own AI products. Microsoft, through its deep investment in OpenAI, is pursuing a parallel strategy of betting on an external AI champion rather than relying solely on in-house development. All three companies also profit from Anthropic's usage through their cloud infrastructure businesses.\n\nThe piece highlights a broader structural truth about the current AI moment: the largest technology companies have concluded that the best hedge against losing the AI race is to own a piece of every serious contender. For Indian businesses and consumers, this competitive-yet-cooperative landscape means frontier AI tools — including Anthropic's Claude — are likely to remain widely available and aggressively priced through the cloud platforms that dominate India's enterprise technology market.",
           "key_facts": [
-            "Amazon and Google are major investors in Anthropic",
-            "Microsoft has bet on OpenAI as its primary AI partner",
-            "All three giants acknowledge Anthropic's current frontier AI edge",
-            "Investment and rivalry coexist across Amazon, Google, and Microsoft"
+            "Amazon, Google, Microsoft acknowledge Anthropic leads in frontier AI",
+            "Amazon and Google are investors in Anthropic",
+            "Microsoft is a major investor in OpenAI",
+            "All three profit from Anthropic via cloud infrastructure usage"
           ],
           "source": "The Times of India",
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUEFOX3ZnVGVQMXUxMlN1cjFkV0FCM1BqMG1kR0pOUnBVN2ZkaEcwNlhqa1l0UlBjRHZ3bkJ0dEJqN2tldTJiN3MtSjZrZUZMalh4ZjRDRmd2WWxVLTVnbXNIQ0RYQjFwcnRxNjB1OXozdk1fbnhFTVNCMW01Z3RLRERMSjdMS2VNOVlZNWdkejdodnFtaEVCQjl2ZHEyQXdMMmxhNlFMcGFmWEZpNU95ZmlNUC1uVXNjY19HNXRqV3U2VUVMT3FFQXN1ZkZvZm9vWmo4dy1qOXlBTG95cWxnOUs2RXhEejZQMm9rdjI2YjV6LWZXd01sMNIB_gFBVV95cUxPWEoyODlxTE9VbWhnR0xHNTZXSmtjM2diYWtmbm9oSWFlM3FTOEEwZFNMemRiazBEeHViNnZ6TmJpRVhDY0Z5N25YZEI2eXpkRTV1anZ0M095Vmp3OTZMWi1WQWxyU2lWUEp4UVRLREZaVHN0OUhMTTRYWWtvSzVrUnI1UzU0LXRQRUhZbGk3U0k0dXBJalQ0aHFVci05Z2hyQl9UbmFULUlub1AySTRjMDZNS3hWOWFsWExZbHJtMk9EdU1pUUxzMGZYVnlkaTZpOWVjY2VFaWhsR0cxeWhlYlBoQ2lMTTVYVlp0WkFxNE9ZZU5zbGc0bzB5UDBCZw",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUEFOX3ZnVGVQMXUxMlN1cjFkV0FCM1BqMG1kR0pOUnBVN2ZkaEcwNlhqa1l0UlBjRHZ3bkJ0dEJqN2tldTJiN3MtSjZrZUZMalh4ZjRDRmd2WWxVLTVnbXNIQ0RYQjFwcnRxNjB1OXozdk1fbnhFTVNCMW01Z3RLRERMSjdMS2VNOVlZNWdkejdodnFtaEVCQjl2ZHEyQXdMMmxhNlFMcGFmWEZpNU95ZmlNUC1uVXNjY19HNXRqV3U2VUVMT3FFQXN1ZkZvZm9vWmo4dy1qOXlBTG95cWxnOUs2RXhEejZQMm9rdjI2YjV6LWZXd01sMNIB_gFBVV95cUxPWEoyODlxTE9VbWhnR0xHNTZXSmtjM2diYWtmbm9oSWFlM3FTOEEwZFNMemRiazBEeHViNnZ6TmJpRVhDY0Z5N25YZEI2eXpkRTV1anZ0M095Vmp3OTZMWi1WQWxyU2lWUEp4UVRLREZaVHN0OUhMTTRYWWtvSzVrUnI1UzU0LXRQRUhZbGk3U0k0dXBJalQ4aHFVci05Z2hyQl9UbmFULUlub1AySTRjMDZNS3hWOWFsWExZbHJtMk9EdU1pUUxzMGZYVnlkaTZpOWVjY2VFaWhsR0cxeWhlYlBoQ2lMTTVYVlp0WkFxNE9ZZU5zbGc4bzB5UDBCZw",
           "breaking": false,
-          "slug": "20260620-amazon-google-and-microsoft-agree-anthropic-is-ahead-but-here-s-why-th",
-          "image": "https://pixabay.com/get/g87569f5e8aae6bc6aa6c2f7c382ae21ccaec013baef3d33aec11dac3475609b0811e796565e874211db03b4fcd2165019d30e2c26845c489ea0ca2eee920b164_1280.jpg",
+          "slug": "20260620-amazon-google-and-microsoft-agree-anthropic-is-ahead-but-why-they-are",
+          "image": "https://pixabay.com/get/g366b0537d4dca60e0dabeaf617bad12992a39d6817e26d4852d85e87cd28a401620c769d66a0277e2e6238d26b79bb672d74323600ff8e45a4f7e3b4c0aa59fe_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Alexandra_Koch",
-          "image_credit_url": "https://pixabay.com/users/Alexandra_Koch-621802/"
+          "image_credit": "stevepb",
+          "image_credit_url": "https://pixabay.com/users/stevepb-282134/"
         },
         {
           "hour": 11,
@@ -537,17 +537,17 @@
           "hour": 8,
           "time": "08:12 IST",
           "headline": "Nobel Prize Winner John Jumper Quits Google DeepMind For Anthropic",
-          "what": "John Jumper, the Nobel Prize-winning AI scientist best known for co-developing AlphaFold at Google DeepMind, has left the company to join Anthropic, the AI safety-focused startup. Jumper shared the 2024 Nobel Prize in Chemistry for AlphaFold's breakthrough in protein structure prediction. His move to Anthropic signals a significant talent shift at the highest levels of AI research, drawing one of the field's most decorated scientists away from Google.",
-          "lens": "When a Nobel laureate leaves Google DeepMind for a rival AI lab, it signals where the sharpest minds believe the most consequential AI work is now happening — and that race shapes the AI tools millions of Indians will use.",
-          "article": "NDTV reports that John Jumper, who won the 2024 Nobel Prize in Chemistry for his work on AlphaFold at Google DeepMind, has resigned from the company to join Anthropic. Jumper was a central figure in DeepMind's landmark protein-structure prediction project, which the Nobel committee recognised as one of the most significant scientific breakthroughs in decades.\n\nAlphaFold, which Jumper helped develop alongside Demis Hassabis and David Baker, used deep learning to predict the three-dimensional shapes of proteins with near-perfect accuracy — a problem that had stumped biologists for 50 years. The tool has since been used by millions of researchers worldwide, including those working on drug discovery in India.\n\nHis departure for Anthropic — the AI safety company founded by former OpenAI researchers and backed by Amazon and Google — is one of the most high-profile talent moves in recent AI history. It adds to Anthropic's growing stature as a destination for elite AI researchers who want to work on frontier models with a safety-first philosophy. For everyday Indians, the significance lies in who is shaping the AI systems that will increasingly power healthcare, research, and digital services.",
+          "what": "John Jumper, the Nobel Prize-winning AI scientist best known for co-developing AlphaFold at Google DeepMind, has resigned to join Anthropic, the AI safety company backed by Amazon and Google. Jumper shared the 2024 Nobel Prize in Chemistry for AlphaFold's breakthrough in predicting protein structures. His move is a major talent coup for Anthropic and a high-profile loss for DeepMind, underlining the intense competition for top AI researchers globally.",
+          "lens": "When a Nobel laureate leaves Google DeepMind for a rival, it signals just how fiercely the global AI talent war is being fought — and Anthropic, which has significant Indian cloud-computing backing through Amazon Web Services, is now at its centre.",
+          "article": "NDTV reports that John Jumper, the Nobel Prize-winning scientist who co-created AlphaFold at Google DeepMind, has left the company to join Anthropic. Jumper was awarded the 2024 Nobel Prize in Chemistry alongside Demis Hassabis for AlphaFold, a system that solved one of biology's grand challenges by accurately predicting the 3D structure of proteins — a breakthrough with profound implications for drug discovery and disease research.\n\nAnthropicis an AI safety-focused company co-founded by former OpenAI researchers and is backed by both Amazon and Google, making Jumper's departure from DeepMind particularly symbolic. His move represents one of the most notable researcher defections in recent AI history, coming at a time when Anthropic is aggressively expanding its scientific and research capabilities.\n\nThe development highlights the fierce global competition for elite AI talent, with well-funded startups increasingly able to attract researchers away from the largest technology companies. For everyday Indians, this matters because Anthropic's Claude AI models are increasingly available through Amazon Web Services and Google Cloud platforms used by Indian businesses and developers, and stronger research talent could accelerate their capabilities.",
           "key_facts": [
-            "John Jumper won the 2024 Nobel Prize in Chemistry for AlphaFold",
-            "Jumper leaves Google DeepMind to join Anthropic",
-            "AlphaFold solved protein structure prediction, a 50-year-old biology problem",
-            "Anthropic is backed by Amazon and Google"
+            "John Jumper won 2024 Nobel Prize in Chemistry for AlphaFold at DeepMind",
+            "Jumper is leaving Google DeepMind to join Anthropic",
+            "Anthropic is backed by both Amazon and Google",
+            "AlphaFold predicts protein structures, transforming drug discovery"
           ],
           "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbkU2cThrWjhZc2UxMS0wNVFwMDFzcFJvcWU1QktWTTI3dHd3ek5LMFZKR1hzZ0hpT1lVeHpfeVJBa1FOMVB4aHU2cjk0UnA5X3JMekd0b0RvTXZDTW9VNXprRDB1SDhiNzNvazFnaVN4cHR5a2pXN292Q0RZUER2RWJkYk1nWVVXUUN4Vmt1Qm1ZSUpCUDQtckNIZFRZTS1ybjNTV2FpN3laMlkyaHM5ekZwZXE2QUV0QmNvadIBxAFBVV95cUxOS1hEVGpta181LV9OU2g4d2hZY09KY1g0Z016cHJSMFF2ZHo5YTNLWHZueDZvdFc3TlVBVENLWm9LLUx6NEYwLTFGbjhKRnloeExDV3NUMXUyNU9XRW9fUU1iM05hVG1ST1pSYmNDQ0d5OGQzd09hajdQSmpfd3hFOTYweEg0VFZFYXlVMmR4SUZpUU1GbXpGLWFDREtuNlNWemw3NTJlTVBTeDBxWmswNzRzYzV1WjBXQ2J6NzdnS3I2Zi16",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbkU2cThrWjhZc2UxMS0wNVFwMDFzcFJvcWU1QktWTTI3dHd3ek5LMFZKR1hzZ0hpT1lVeHpfeVJBa1FOMVB4aHU2cjk0UnA5X3JMekd0b0RvTXZDTW9VNXprRDB1SDhiNzNvazFnaVN4cHR5a2pXN292Q0RZUER2RWJkYk1nWVVXUUN4Vmt1Qm1ZSUpCUDQtckNIZFRZTS1ybjNTV2FpN3laMlkyaHM5ekZwZXE2QUV0QmNvadIBxAFBVV95cUxOS1hEVGpta181LV9OU2g4d2hZY09KY1g4Z016cHJSMFF2ZHo5YTNLWHZueDZvdFc3TlVBVENLWm9LLUx6NEYwLTFGbjhKRnloeExDV3NUMXUyNU9XRW9fUU1iM05hVG1ST1pSYmNDQ0d5OGQzd09hajdQSmpfd3hFOTYweEg4VFZFYXlVMmR4SUZpUU1GbXpGLWFDREtuNlNWemw3NTJlTVBTeDBxWmswNzRzYzV1WjBXQ2J6NzdnS3I2Zi16",
           "breaking": false,
           "slug": "20260620-nobel-prize-winner-john-jumper-quits-google-deepmind-for-anthropic",
           "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/John_Jumper%2C_2024_Nobel_Prize_Laureate_in_Chemistry.jpg",
@@ -558,24 +558,24 @@
         {
           "hour": 7,
           "time": "07:16 IST",
-          "headline": "Anthropic Not A Security Threat, Says Trump, Dismissing Concerns Over AI Curbs",
-          "what": "US President Donald Trump has publicly stated that Anthropic does not pose a national security threat, pushing back against concerns that had emerged following recent American restrictions on AI technology. The comments come amid growing scrutiny of AI companies' ties to foreign investors and the broader debate over AI export controls. Trump's intervention is notable given that Anthropic has received major investment from both Amazon and Google, and is now attracting top talent including Nobel laureate John Jumper.",
-          "lens": "US government signals on which AI companies are 'safe' directly influence which platforms get adopted by Indian businesses and regulators — making Trump's endorsement of Anthropic commercially significant for India's fast-growing AI sector.",
-          "article": "Business Standard reports that US President Donald Trump has dismissed concerns about Anthropic being a national security risk, stating the AI safety company does not pose a threat to the United States. The remarks were made in the context of broader debates over AI technology curbs and export controls that have gathered pace in Washington.\n\nAnthropic, founded by former OpenAI researchers Dario and Daniela Amodei, has emerged as one of the world's leading frontier AI labs. It has received significant investment from Amazon and Google, and its Claude family of AI models competes directly with OpenAI's ChatGPT and Google's Gemini. The company has been positioning itself on AI safety, which has brought it both credibility and scrutiny from policymakers.\n\nTrump's comments effectively clear the political air around Anthropic at a time when the company is on a hiring spree — having just attracted Nobel Prize-winning scientist John Jumper from Google DeepMind. For Indian enterprises and developers increasingly adopting Claude-based tools, the US government's stance on Anthropic's legitimacy removes a layer of geopolitical uncertainty from their technology choices.",
+          "headline": "Anthropic Not a Security Threat, Says Trump, Dismissing Concerns Following AI Curbs",
+          "what": "US President Donald Trump has publicly stated that Anthropic does not pose a national security threat, dismissing concerns that had been raised following his administration's tightening of AI export controls. The comments come as Anthropic — backed by Amazon and Google — faces scrutiny over its rapid growth and foreign investment ties. Trump's assurance is significant for the AI industry, which has been on edge over potential restrictions on frontier AI companies.",
+          "lens": "Trump's clearance of Anthropic matters for Indian tech and businesses because Amazon Web Services and Google Cloud — both Anthropic investors — are major cloud providers in India, and any US security crackdown on Anthropic could disrupt access to Claude AI tools used here.",
+          "article": "Business Standard reports that US President Donald Trump has dismissed concerns about Anthropic being a national security risk, stating the AI safety company does not pose a threat to the United States. The comments follow a period of heightened scrutiny of frontier AI companies in the wake of new American AI export control measures introduced by the Trump administration.\n\nAnthropichas received major investments from Amazon and Google, raising questions in some policy circles about the concentration of AI capability and the geopolitical implications of its rapid expansion. Trump's remarks appear intended to draw a distinction between general AI regulation concerns and specific national security designations.\n\nThe clarification provides some short-term relief for the AI industry, which has been watching US policy closely. For Indian enterprises and developers, who increasingly rely on Anthropic's Claude models through Amazon Web Services and Google Cloud infrastructure, the avoidance of any security-driven restrictions on Anthropic is directly relevant to the uninterrupted availability of these AI services in the country.",
           "key_facts": [
-            "Trump declares Anthropic is not a US national security threat",
-            "Statement comes amid wider US AI export control debates",
-            "Anthropic backed by Amazon and Google; founded by ex-OpenAI team",
-            "Anthropic's Claude models compete with ChatGPT and Gemini"
+            "Trump says Anthropic is not a national security threat",
+            "Comments follow US tightening of AI export controls",
+            "Anthropic is backed by Amazon and Google",
+            "Concerns centred on frontier AI companies and foreign investment"
           ],
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNWTJuX0s1ZHoyWkx6dlN6Q016ZTNDdElhdlk0Wmw1WjF2VHZrY190aGNsS0g1QWMwWE4ybWl1cVhVRDBFWlFWRk5DWHRhMUNIUVJEVWFPWHNoSnAtbzhDU1ZOQTdRYjNaRnFLeGZvQU5KRTRrR01EMy03ZjdHZ3VLVUVwSW1odGFMN2MwTFc4bGJtOXduVzI0dXltd1FLWDB5M0JaTFR4SjJIeno3cDF2NE5LQzZEWWhmQTRZd1BJNVppNGVrX1hndWZORDh0YllSOS1MaNIB2gFBVV95cUxQNUpFVG5POHdGOVlxbFdibWNYdm9EMHlVWGNEdmRaNFZQTmNMWVVDRGZENUJaWThmY3BDUGRkYk5NZUlmYlRTdnotNDhBTHNTN1BHdzUxSW5tOUhzZTBuZ0c5YlVPT3F3YWMtTENRUkdRSlBPZ0xoX3NxM2dheW9qVFI2bTR5NHNlODB1eWlDRUh5MTJNWV9ld01nZHd4MGRrOHlzZFZNa2M1bTFmX09sYjMtaGFaX3I5NGl4RVhQbUN3TjlKeHlsUmRpVU1EbnlvZjlPcTNuZDIwZw",
           "breaking": false,
-          "slug": "20260620-anthropic-not-a-security-threat-says-trump-dismissing-concerns-over-ai",
-          "image": "https://pixabay.com/get/g96398fe0713e1857714c5d0e926bd6be67648cb45d6a20d21e05b4b7952ef86db7c79fa71905d7ab8b542ce12489a6d66248306f465c29dab3831d0fd0b59888_1280.jpg",
+          "slug": "20260620-anthropic-not-a-security-threat-says-trump-dismissing-concerns-followi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg",
           "image_kind": "photo",
-          "image_credit": "51581",
-          "image_credit_url": "https://pixabay.com/users/51581-51581/"
+          "image_credit": "Daniel Torok / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Donald_Trump"
         }
       ]
     },
@@ -585,7 +585,7 @@
       "stories": [
         {
           "headline": "World Cup 2026: latest scores and what's next",
-          "time": "20:26 IST",
+          "time": "20:42 IST",
           "hour": 20,
           "what": "Latest World Cup scores and upcoming fixtures, in IST.",
           "lens": "Track every matchday in your time zone.",
@@ -601,10 +601,32 @@
           "breaking": false,
           "worldcup": true,
           "slug": "20260620-world-cup-2026-latest-scores-and-what-s-next",
-          "image": "https://pixabay.com/get/gf5db1b47a05c3507b6f40886fa065169b2cb2f8da5436c93b9e7518eb463c7b704f1336da7db9006ce0d4a8c00b247e5536fad4223a3d62c59bbd359f5c2f561_1280.jpg",
+          "image": "https://pixabay.com/get/g28e0d18a9f08c5631aac5ce16673ba0ff010fd651561c6f21278d1fd664f36dbbe0714d1ead5fedcad13f907481e55ebd914f1e8ff42030d981372934efc7389_1280.jpg",
           "image_kind": "photo",
           "image_credit": "jorono",
           "image_credit_url": "https://pixabay.com/users/jorono-1966666/"
+        },
+        {
+          "hour": 20,
+          "time": "20:06 IST",
+          "headline": "Yashasvi Jaiswal seizes Virat Kohli's spot as India crush Afghanistan in Chennai ODI",
+          "what": "Yashasvi Jaiswal converted his opportunity to replace Virat Kohli in India's batting lineup into a commanding statement performance as India crushed Afghanistan in the third and final ODI in Chennai. Hindustan Times reports that Jaiswal's innings anchored a comprehensive Indian victory. The win also saw India break a 22-year-old ODI record — achieved within just six balls — underlining the dominance of India's batting in the series decider.",
+          "lens": "Jaiswal cementing Kohli's ODI slot with a big knock signals a genuine generational shift at the top of India's batting order — a transition fans and selectors will be watching closely ahead of major tournaments.",
+          "article": "Hindustan Times reports that Yashasvi Jaiswal turned his chance to replace Virat Kohli in India's ODI lineup into a decisive statement, anchoring India's crushing win over Afghanistan in the third and final ODI at Chennai. Kohli's absence handed Jaiswal a high-profile audition, and by all accounts he delivered, with India recording a dominant series-sealing victory.\n\nThe match also produced a historic moment: according to The Times of India, India broke a 22-year-old ODI record in just six balls, underlining the sheer batting firepower on display in Chennai. The series win over Afghanistan continues India's strong run in home ODI cricket ahead of a busy international calendar.\n\nFor Indian fans, Jaiswal's performance carries real weight. With Kohli's ODI future a recurring topic of speculation, a young opener seizing the moment with authority gives selectors a compelling option. It also marks another step in Jaiswal's rapid rise from T20 sensation to a credible all-format presence for India.",
+          "key_facts": [
+            "Yashasvi Jaiswal replaced Virat Kohli and starred in India's win",
+            "India crushed Afghanistan in the 3rd ODI in Chennai",
+            "India broke a 22-year-old ODI record within just 6 balls",
+            "Result sealed the ODI series for India"
+          ],
+          "source": "Hindustan Times",
+          "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOTmZNa3pFMmZsZG54RlFXNXBnbUtrYlgyd1lGX0dMLTRycEN2YXNmc19RSVI0UE5odS0wZnA3TUwxdlQzdlJ6eXh5VlZWY2c2YnY0THZ5NmxxR0RXWmhqU0J5RjVDRWJuMk52cjFTZ3l1dlpOZUlGdUtFTHJTYzhCa1JHY1JIUFJlT3g1Nzd3ZW5UQXJjV0E1b2xjdTBxdUhRMGdETEhfaEZPMHZ2UEpkc1NEZmdLTFVoRGdIM3BMN0VYYXlHWmNhb3ExbHpDc0g0UEIycld2S0tCWUQ4enV2U3BjYVREc3dkX1FadHRvZzYtdTZmSldQby1n0gH_AUFVX3lxTE9ibFVSLU15VmpSS3FiUEVEYjRoVEdsbU9rX0RmODhyVjI3eGtPcC1EaTlzN1ljd1ZuWk92UmgycjVPb0ZZZlh5ZTJXZ1BQSUNsdmdzdlVnYlRUcXllNDNfcERVbjhVRndHRmtBTElMTS13MlU2SlMwVWFVT2c4UHNja1kzZ1E0MU5YaTh2MFdrOXRzVzRBTDJSZnRHRWI3d2Y1OUllZmRWdzZwNExpWTZZcTZfeGgxWmhNTVBFYkFJR21USllTcl9OdTc2ejdJbHZ1dkp0ZklIM1pyTGo4M21zdU1xcXdpeEZQOFBFMFN0ZkdiWk5NYTQxNEUycV94cw",
+          "breaking": true,
+          "slug": "20260620-yashasvi-jaiswal-seizes-virat-kohli-s-spot-as-india-crush-afghanistan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg",
+          "image_kind": "photo",
+          "image_credit": "Prime Minister's Office / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Yashasvi_Jaiswal"
         },
         {
           "hour": 20,
@@ -623,10 +645,10 @@
           "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOTmZNa3pFMmZsZG54RlFXNXBnbUtrYlgyd1lGX0dMLTRycEN2YXNmc19RSVI0UE5odS0wZnA3TUwxdlQzdlJ6eXh5VlZWY2c2YnY0THZ5NmxxR0RXWmhqU0J5RjVDRWJuMk52cjFTZ3l1dlpOZUlGdUtFTHJTYzhCa1JHY1JIUFJlT3g1Nzd3ZW5UQXJjV0E1b2xjdTBxdUhRMGdETEhfaEZPMHZ2UEpkc1NEZmdLTFVoRGdIM3BMN0VYYXlHWmNhb3ExbHpDc0g0UEIycld2S0tCWUQ4enV2U3BjYVREc3dkX1FadHRvZzYtdTZmSldQby1n0gH_AUFVX3lxTE9ibFVSLU15VmpSS3FiUEVEYjRoVEdsbU9rX0RmODhyVjI3eGtPcC1EaTlzN1ljd1ZuWk92UmgycjVPb0ZZZlh5ZTJXZ1BQSUNsdmdzdlVnYlRUcXllNDNfcERVbjhVRndHRmtBTElMTS13MlU2SlMwVWFVT2c4UHNja1kzZ1E0MU5YaTh2MFdrOXRzVzRBTDJSZnRHRWI3d2Y1OUllZmRWdzZwNExpWTZZcTZfeGgxWmhNTVBFYkFJR21USllTcl9OdTc2ejdJbHZ1dkp0ZklIM1pyTGo4M21zdU1xcXdpeEZQOFBFMFN0ZkdiWk5NYTQxNEUycV94cw",
           "breaking": false,
           "slug": "20260620-yashasvi-jaiswal-turns-virat-kohli-replacement-chance-into-statement-a",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg",
+          "image": "https://images.pexels.com/photos/11740547/pexels-photo-11740547.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Prime Minister's Office / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Yashasvi_Jaiswal"
+          "image_credit": "T K DHAMU",
+          "image_credit_url": "https://www.pexels.com/@tkdhamu"
         },
         {
           "hour": 17,
@@ -651,47 +673,25 @@
           "image_credit_url": "https://www.pexels.com/@risingstudio07"
         },
         {
-          "hour": 14,
-          "time": "14:37 IST",
-          "headline": "India vs New Zealand: Squads Set for ICC Men's T20 World Cup 2026 Final",
-          "what": "Cricbuzz has published the official match squads for the ICC Men's T20 World Cup 2026 Final between India and New Zealand. The two sides have made it through the tournament to contest the ultimate prize in the shortest format of the game. The squad announcement marks the final step before what promises to be a high-stakes showdown between two of cricket's strongest T20 nations.",
-          "lens": "An India vs New Zealand ICC T20 World Cup Final is one of the biggest cricket events an Indian fan can watch — expect record viewership and national attention.",
-          "article": "Cricbuzz reports that the official squads for the ICC Men's T20 World Cup 2026 Final between India and New Zealand have been announced, with both sides named and ready for the title clash. The final is the culmination of the ICC Men's T20 World Cup 2026 tournament, bringing together the two teams that navigated the group stages and knockouts successfully.\n\nIndia and New Zealand have a storied T20 history, with both sides having contested major ICC events before. A World Cup final appearance represents the pinnacle of the shortest format, and India's qualification will have set off celebrations among hundreds of millions of fans across the country.\n\nFor everyday Indian cricket fans, this is the match of the tournament — a chance for the national side to claim ICC T20 World Cup glory. The squad confirmation means team selection is finalised and the cricketing world now turns its full attention to what promises to be a marquee final.",
+          "hour": 13,
+          "time": "13:32 IST",
+          "headline": "India Women face South Africa in T20 World Cup 2026 — head-to-head and live-streaming details",
+          "what": "India Women's cricket team are set to take on South Africa Women in the ICC Women's T20 World Cup 2026, with olympics.com providing head-to-head records and live-streaming information for fans. The two sides have a competitive recent history in women's T20 internationals, making this a closely watched group-stage fixture. With India among the favourites for the tournament, their performance against South Africa will be an early indicator of their campaign's strength.",
+          "lens": "For Indian cricket fans who want to watch IND-W vs SA-W live, this is the practical guide to where and how to catch the action from the Women's T20 World Cup 2026.",
+          "article": "Olympics.com reports that India Women are scheduled to face South Africa Women in the ICC Women's T20 World Cup 2026, with the outlet providing head-to-head statistics and live-streaming details for the fixture. The match is part of India's group-stage campaign in the tournament.\n\nIndia and South Africa have developed a competitive rivalry in women's T20 cricket in recent years, with South Africa having caused upsets against stronger sides on the global stage. India will be looking to assert their status as one of the tournament's stronger teams with a confident showing.\n\nFor everyday Indian fans, the Women's T20 World Cup represents a marquee event for Indian women's cricket, and knowing where to watch it live — whether on broadcast TV or through streaming platforms — is the most immediate practical concern around this fixture.",
           "key_facts": [
-            "IND vs NZ is the ICC Men's T20 World Cup 2026 Final",
-            "Official squads announced by Cricbuzz",
-            "Both teams have qualified through the tournament knockout rounds"
+            "India Women vs South Africa Women in ICC Women's T20 World Cup 2026",
+            "Head-to-head and live-streaming info published by olympics.com",
+            "India among tournament favourites"
           ],
-          "source": "Cricbuzz",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOY0pDdkdVMWFBcDl3dC1lLVIxMGlpU21tMU5lRGplLTg0VDI1a01LOW1WanFzVVY0czRoeE5uNU1nQTJFX0E2NVRFYk9sSTB5MWM4SW1USUs2bjE1UUttZFJVb3RoRXJFZFc1ZVNaYUFWX2ZUbjFEeC0yWFYyU044QlVaOGlZWUxINVE5dHhScmpZQ1h1LWJQOWcwaTE?oc=5",
-          "breaking": true,
-          "slug": "20260620-india-vs-new-zealand-squads-set-for-icc-men-s-t20-world-cup-2026-final",
-          "image": "https://images.pexels.com/photos/14094276/pexels-photo-14094276.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "image_kind": "photo",
-          "image_credit": "Vishal Adhikari",
-          "image_credit_url": "https://www.pexels.com/@vishalcreation"
-        },
-        {
-          "hour": 14,
-          "time": "14:34 IST",
-          "headline": "F1 eyes India comeback as Sports Minister orders task force for grand prix revival",
-          "what": "India's Sports Minister has announced a task force to explore reviving Formula 1 racing in India, years after the Indian Grand Prix last ran at the Buddh International Circuit in Greater Noida in 2013. The move signals renewed government interest in bringing the sport back to the country. A task force implies formal coordination between stakeholders including promoters, state governments, and possibly the FIA.",
-          "lens": "A revived Indian Grand Prix would bring billions in tourism revenue and put India back on the global motorsport calendar — directly affecting sports fans, infrastructure investment, and India's soft-power ambitions.",
-          "article": "India Today reports that the Sports Minister has directed the formation of a dedicated task force to examine the revival of Formula 1 racing in India. The announcement marks the most concrete government step toward restoring an Indian Grand Prix since the race was dropped from the F1 calendar after 2013.\n\nThe Indian Grand Prix was held at the Buddh International Circuit in Greater Noida across three editions — 2011, 2012, and 2013 — before it lapsed due to disputes over taxation and logistics. The circuit itself remains largely dormant, though it has hosted domestic motorsport events. A task force would likely assess infrastructure readiness, commercial viability, and regulatory hurdles.\n\nFor everyday Indians, an F1 return would mean a marquee global sporting event on home soil, with significant spin-offs for hospitality, tourism, and motorsport development at the grassroots level. It also fits into India's broader push to host major international sports events, including its Cricket World Cup and Olympics candidacy ambitions.",
-          "key_facts": [
-            "Sports Minister orders task force to revive F1 racing in India",
-            "India last hosted F1 at Buddh International Circuit, Greater Noida, in 2013",
-            "Three Indian Grands Prix held: 2011, 2012, 2013"
-          ],
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSDhselZHVldtTEdnVzBPNGhxaHRSWkpHMGdyUDRGSmtoaXVBQ1FUbDRSaHprTENNNXg0dmFWTllXLVlJS082Uk9SZHo0RWxQYm04SVJXQjVGUmNEdC1nY3I0SHlLeS1ic3NfR1ZVbU1UcndwNGxIYjB0a1ZwcVdYR1BoT2VUOFNxWmczOEdHaFBieTJkTVNZTnFyelNKR3JEVXVQRU9RMGhkbXh5MFNzMHBtYWNTaWdnNzRCbG9VWnA0SUw5S0lxU3hPOUx1TDByUEstZ9IB2gFBVV95cUxPX2VzbXVuaEFBUlJZd3pLSGVpaGxDdlN3NnlubXNVWkQta05pVTI4WGl3cU5HdXJLRlhwdlV0S25EbHZ5LVVRU3U3VG8wRVY0d3I5VHZmVDlDYUxCZlYtY3o5enlQOEJUSWZfdTFDUnpIMk92SWpaS2xzMS11SHA2UUYyZ3NCSE95cTZFSUoxMlBJRWV4WWk4cTdIMXNZeUdQUDdFZnBtb2lTYWl6NnZVTmd2Y0N1QjBJUXAtWXdMZjV5TXZYT0hvbG1CalJVR0h4QkwxdXBjeUJRQQ",
+          "source": "olympics.com",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZUlOWFBubFR2TFk1UUxJMnZicEVEZFdydzFZa3VrZ1RjY3NhOTNKd2R3eEk0RXBTUFFCTnRWSGZzYzdvUEp4bnQ5b1QyQVhtcjd2bVdXUzZqQl9hbWswMGF5anUwNWxNWEcwVlY2RFdPMkRldzd4Ni05bnNqbmRZQkxmMUUyQnVmX3BmMDVnVXZtcWF0SHR4N0tFOHZyQ2ZUNnpuem1mNjB0dDFXY3c",
           "breaking": false,
-          "slug": "20260620-f1-eyes-india-comeback-as-sports-minister-orders-task-force-for-grand",
-          "image": "https://images.pexels.com/photos/11482791/pexels-photo-11482791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "slug": "20260620-india-women-face-south-africa-in-t20-world-cup-2026-head-to-head-and-l",
+          "image": "https://images.pexels.com/photos/36230651/pexels-photo-36230651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Sebastian Angarita",
-          "image_credit_url": "https://www.pexels.com/@sebastian-angarita-188980555",
-          "carried": true
+          "image_credit": "Shlok",
+          "image_credit_url": "https://www.pexels.com/@shlok-230964119"
         }
       ]
     },
@@ -702,23 +702,22 @@
         {
           "hour": 18,
           "time": "18:10 IST",
-          "headline": "Johnny Lever surprises Zakir Khan on stage at Papa Yaar Mumbai tour",
-          "what": "Veteran comedian Johnny Lever made a surprise appearance on stage during Zakir Khan's Papa Yaar stand-up comedy tour in Mumbai, delighting the audience. The unexpected cameo by Lever — a Bollywood comedy legend — alongside the younger Khan created a viral moment, with fans describing it as 'The genius with the GOAT' on social media. The appearance brought two generations of Indian comedy together in a single, unscripted moment.",
-          "lens": "The clip of a Bollywood comedy icon spontaneously joining one of India's most popular stand-up comedians on stage is the kind of cross-generational moment that travels fast on Indian social media.",
-          "article": "Hindustan Times reports that veteran Bollywood comedian Johnny Lever made a surprise appearance on stage at Zakir Khan's Papa Yaar comedy tour stop in Mumbai, generating an enthusiastic reaction from the live audience and quickly going viral online. Lever, one of Hindi cinema's most beloved comic actors with a career spanning decades, joined Khan unannounced, creating an unscripted moment that fans celebrated on social media with comments like 'The genius with the GOAT'.\n\nZakir Khan has built a massive following through his relatable desi humour and long-running stand-up specials, while Johnny Lever remains an iconic figure in Indian popular culture thanks to his decades of work in Bollywood comedies. The meeting of the two on one stage was seen by fans as a collision of two eras of Indian comedy.\n\nFor everyday audiences, the clip encapsulates the growing prestige of India's stand-up comedy circuit, which has matured to the point where Bollywood legends treat it as a worthy stage. The moment is expected to keep circulating across YouTube and Instagram reels for days.",
+          "headline": "Johnny Lever surprises Zakir Khan on stage at Papa Yaar tour in Mumbai",
+          "what": "Comedy legend Johnny Lever made a surprise appearance on stage during Zakir Khan's Papa Yaar stand-up tour stop in Mumbai, delighting fans who witnessed the unexpected meeting of two generations of Indian comedy. The moment quickly went viral, with audiences describing it as watching a comedy icon honour a new-age star. Fans flooded social media calling it 'the genius with the GOAT'.",
+          "lens": "The moment captures a rare, unscripted cross-generational connection in Indian comedy that fans rarely get to witness live.",
+          "article": "Hindustan Times reports that veteran Bollywood comedian Johnny Lever made a surprise appearance on stage during comedian Zakir Khan's ongoing Papa Yaar tour at a Mumbai venue, creating an electric moment that fans quickly shared across social media.\n\nZakir Khan has emerged as one of India's most beloved stand-up comedians, known for his 'Sakht Launda' persona, while Johnny Lever is widely regarded as one of Hindi cinema's greatest comic talents with a career spanning four decades. The two sharing a stage was described by fans online as witnessing 'the genius with the GOAT', a tribute to both performers.\n\nThe Papa Yaar tour has been one of the more prominent stand-up comedy tours in India this year. Moments like this unplanned celebrity encounter underline the growing cultural stature of live comedy in India, where stand-up tours now draw audiences and attention comparable to mainstream entertainment events.",
           "key_facts": [
-            "Johnny Lever made surprise appearance at Zakir Khan's Papa Yaar Mumbai show",
-            "Fans dubbed it 'The genius with the GOAT' on social media",
-            "Event was part of Zakir Khan's ongoing Papa Yaar tour"
+            "Johnny Lever made surprise appearance at Zakir Khan's Papa Yaar tour in Mumbai",
+            "Fans described moment as 'the genius with the GOAT' on social media"
           ],
           "source": "Hindustan Times",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNZWFwUlhpUFlINmZseEJUaHQ0YjgyZG52NWxWdFEwUXNHMzNQTkpWS0NfWlFWdVFLLWxsMmZiNmdEUk5CM2ZGVTItblZJR2JlVlVvbXhHWUJac3JORkpxcWZhejlvY0tWMk12Nkk1YXNNbFI0bFdDb1AwbjQ3M2JpSHhaM294RlFVa1d2WWtQakVvRG1YSHplT2pZWXFOMzAwYXY2aUVnemE1M01qdmF1X01COHFhdVRBdnREZGZrTmIzamRPekh2OXJIMUdUZWItMm5PNVY1ekFkZ0hPak9fRVBWaFLSAeQBQVVfeXFMTWVhcFJYaVBZSDZmbHhCVGh0NGI4MmRudjVsVnRRMFFzRzMzUE5KVktDX1pRVnVRSy1sbDJmYjZnRFJOQjNmRlUyLW5WSUdiZVZVb214R1lCWnNyTkZKcXFmYXo5b2NLVjJNdjZJNWFzTWxSNGxXQ29QMG40NzNiaUh4WjNveEZRVWtXdllrUGpFb0RtWEh6ZU9qWVlxTjMwMGF2NmlFZ3phNTNNanZhdV9NQjhxYXVUQXZ0RGRma05iM2pkT3pIdjlySDFHVGViLTJuTzVWNXpBZGdIT2pPX0VQVmhS",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNZWFwUlhpUFlINmZseEJUaHQ0YjgyZG52NWxWdFEwUXNHMzNQTkpWS0NfWlFWdVFLLWxsMmZiNmdEUk5CM2ZGVTItblZJR2JlVlVvbXhHWUJac3JORkpxcWZhejlvY0tWMk12Nkk1YXNNbFI0bFdDb1AwbjQ3M2JpSHhaM294RlFVa1d2WWtQakVvRG1YSHplT2pZWXFOMzAwYXY2aUVnemE1M01qdmF1X01COHFhdVRBdnREZGZrTmIzamRPekh2OXJIMUdUZWItMm5PNVY1ekFkZ0hPak9fRVBWaFI",
           "breaking": false,
-          "slug": "20260620-johnny-lever-surprises-zakir-khan-on-stage-at-papa-yaar-mumbai-tour",
-          "image": "https://pixabay.com/get/g4f0152c07bcb6bbe5c758b40299309857724e07d720d611c33335f935979eaba745eef01a92dd9368d3d36ca57d21eb685ffedae906ff362283f6fefbe57ce84_1280.jpg",
+          "slug": "20260620-johnny-lever-surprises-zakir-khan-on-stage-at-papa-yaar-tour-in-mumbai",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Zakir_khan_2.jpg",
           "image_kind": "photo",
-          "image_credit": "adege",
-          "image_credit_url": "https://pixabay.com/users/adege-4994132/"
+          "image_credit": "Panigrahiasmitku / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Zakir_Khan_(comedian)"
         },
         {
           "hour": 17,
@@ -746,13 +745,12 @@
           "hour": 16,
           "time": "16:30 IST",
           "headline": "Priyanka Chopra to star in Hollywood film alongside Angelina Jolie",
-          "what": "Priyanka Chopra is set to appear in a Hollywood film co-starring Angelina Jolie, marking a significant new chapter in her international career. The Indian Express reports the pairing of two globally recognised stars, a rare crossover moment for Indian and Hollywood cinema. The project places Chopra alongside one of Hollywood's most iconic actresses. No release date has been announced yet.",
-          "lens": "For Indian audiences, Priyanka Chopra sharing screen space with Angelina Jolie is a milestone that underlines how far Bollywood stars have penetrated mainstream Hollywood.",
-          "article": "The Indian Express reports that Priyanka Chopra is set to work alongside Angelina Jolie in an upcoming Hollywood film, a pairing that has generated significant excitement among fans of both stars. The project marks another major step in Chopra's Hollywood journey, which has already included the television series Quantico and films such as Baywatch and The Matrix Resurrections.\n\nAngelina Jolie is one of Hollywood's most celebrated actresses, known for films including the Maleficent franchise, Salt, and Mr. & Mrs. Smith. Specific details about the film's plot, director, or release timeline have not yet been disclosed in the report.\n\nFor Indian cinema fans, this collaboration signals the continued rise of Indian talent in mainstream global entertainment. Priyanka Chopra has consistently been one of the most prominent Indian faces in international films and television, and a project alongside a star of Jolie's stature is likely to draw considerable global attention.",
+          "what": "Priyanka Chopra is set to appear in a Hollywood film alongside Angelina Jolie, marking a significant new collaboration for the Indian actress in international cinema. The pairing of two of the world's most recognisable actresses is generating considerable buzz. Details about the film's plot, director, and release timeline have not yet been fully disclosed.",
+          "lens": "Priyanka Chopra sharing screen space with Angelina Jolie raises the profile of Indian talent in mainstream Hollywood at the highest level.",
+          "article": "The Indian Express reports that Priyanka Chopra is set to work alongside Hollywood superstar Angelina Jolie in an upcoming film, marking one of the most high-profile pairings of an Indian actress in mainstream Western cinema. The project places Chopra alongside one of the most globally recognised names in the industry.\n\nChopra has steadily built a Hollywood career since her debut in the ABC drama Quantico, going on to appear in films including Baywatch and the Matrix Resurrections. A collaboration with Jolie, whose credits include the Maleficent franchise and Eternals, would represent a significant step up in her international standing.\n\nFor Indian audiences, this is a moment of cultural pride — Chopra continues to serve as one of the most visible Indian faces in global entertainment, and a project of this scale could open further doors for Indian talent in Hollywood productions.",
           "key_facts": [
             "Priyanka Chopra to co-star with Angelina Jolie in a Hollywood film",
-            "Reported by The Indian Express",
-            "Project details, director, and release date not yet disclosed"
+            "Reported by The Indian Express"
           ],
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOR3hibWcwRjZjaVQzZ2UyNEpNQ0JWOVVJRDRxbl9kVmpDcnN6cmg3c1VRWTRrSS0xMUFiWEdlZ3pVVFFibTM3R1JYMGk2YTFNM3NlVzVRMlIzX09EY19PV3IzdHNfM01jTUM1STctbUFWYlR4bXpILVdfZGFwQjVUN3FpQmhSRVJHRTRTRng0R0FBU0FWZk9DSmQ0Rkg0Y2pWMHNaci1NQzJseWNsVnU4NXpfYzRpckVfY200QmgtZ1Z1Q3RXODRBdnFlZ9IB0gFBVV95cUxOQjdyR1JXSnlnTUtnbjVlRFhUSUxVbHNpckQ0T1dtNFphWUpCZkNmSXdYdjJLV3BtRlBBN0lNLTVzdWZsQjBWOFJ6SWdlUmNCdEM0TG93d3VhU3EyZW50emhqbF9DLUc4SElNMV81MVMyNlBOYWktclRXdXMwdkh4LXZQVnk4dnA4NGItTlZmd3hCQWdTckIwekRvYldWWVlaMHVoUHZSRmZsT2FadHFsbUtlTDhPbXV3Rkk2U21OTGVfU3l0cFp5OENZWlhtdTBXUWc",
@@ -766,23 +764,22 @@
         {
           "hour": 13,
           "time": "13:46 IST",
-          "headline": "OTT releases this week: What's new on Netflix, Prime Video, JioHotstar, ZEE5 and Apple TV+ (June 15–21)",
-          "what": "The Economic Times has compiled the full list of new OTT releases across major streaming platforms for the week of June 15 to June 21. The roundup covers Netflix, ZEE5, Prime Video, JioHotstar, and Apple TV+, giving subscribers a comprehensive guide to new content available this week. The weekly release slate spans films, web series, and specials across languages. It is one of the most-read entertainment formats for Indian streaming audiences.",
-          "lens": "With millions of Indian households subscribed to multiple OTT platforms, a weekly guide to new releases directly helps viewers decide where to spend their streaming time this weekend.",
-          "article": "The Economic Times has published its weekly OTT release guide covering new content arriving on Netflix, ZEE5, Prime Video, JioHotstar, and Apple TV+ between June 15 and June 21. The roundup serves as a one-stop reference for Indian viewers navigating an increasingly crowded streaming landscape.\n\nThe Indian OTT market has expanded rapidly, with subscribers now spread across a half-dozen major platforms offering content in Hindi, English, and a range of regional languages. Weekly release guides have become a staple read for urban audiences who rely on streaming for their primary entertainment.\n\nWith the weekend falling within this window, the guide is particularly timely for viewers planning their viewing choices across drama, comedy, thriller, and reality genres available on competing services.",
+          "headline": "New OTT releases this week: What's streaming on Netflix, Prime Video, JioHotstar, ZEE5 and Apple TV+ (June 15–21)",
+          "what": "A fresh batch of titles lands across India's major streaming platforms this week — Netflix, Amazon Prime Video, JioHotstar, ZEE5, and Apple TV+ — covering the period June 15 to June 21. The Economic Times has compiled the full rundown of new releases for viewers deciding what to watch over the week. The slate spans multiple languages and genres catering to India's diverse OTT audience.",
+          "lens": "With millions of Indians deciding their weekend watch-list, this weekly rundown directly shapes how audiences across the country spend their leisure hours.",
+          "article": "The Economic Times reports that a new wave of content is arriving on India's leading OTT platforms for the week of June 15 to June 21, spanning Netflix, Amazon Prime Video, JioHotstar, ZEE5, and Apple TV+. The release calendar covers a wide range of genres and languages, reflecting the expanding breadth of India's streaming ecosystem.\n\nIndia's OTT market has grown into one of the largest in the world, with platforms competing aggressively for subscriber attention through simultaneous original releases and digital premieres of theatrical films. The mid-June window is typically a strong one for content drops ahead of the summer school holiday wind-down.\n\nFor everyday viewers, the weekly OTT guide has become an essential reference, helping audiences navigate an increasingly crowded content landscape across five major platforms — each offering distinct originals and acquisitions to retain and grow their user base.",
           "key_facts": [
-            "New releases listed for June 15–21 across Netflix, ZEE5, Prime Video, JioHotstar, Apple TV+",
-            "Covers films, web series, and specials across languages",
-            "Reported by The Economic Times"
+            "New titles releasing June 15–21 on Netflix, Prime Video, JioHotstar, ZEE5, Apple TV+",
+            "Covers multiple languages and genres for Indian audiences"
           ],
           "source": "The Economic Times",
-          "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxObXAzM1dEMWUzQzhUS3BuVnZBaVhLQ1p1VkxZMEhDcGZ3OGNxZUp2YTk4VGs3NDc1TVBiUl9jd0tVcGV2dnVxMG5ubngyYkhLS0JzemJ2bkpmeUkyQ1d4ejBOaWZEVkJmNFZYaDAtWUpYYzVXVXV6UDI5SUJQSUw0NHJ4enR6Tk1QcmcwNm5idG1KYXN0cXlaMmRqaU5Lc0pxR2xPMnZqZm56amtzUkt5V3pENTVYTlg4UjBtM1drUXFVczFWQmVDOFozWEx3T094VnV6LVVIVTF0R3BNV3h1RURKSVRKYS1COXJFejVRZjMxXzZRSTVZTTZ1ODhzbC0xLVFaRHA5Y1FZMU9pZWfSAZMCQVVfeXFMUEo0czVlclZZM2tjMF83dWZuQThYdEhQYzV3ei1oY294TDN1LUtia2NCSGJFUGY0RmZYRExIYlNGNmI1ZnFMR0RYaDlQbURGODRMMnlzdkJwVnJhaGlqMVIwb196VFA5YWpUVTZYZFZVZndLNUktY1NSd19MSWN1Umo5Skt2VHE0N19fcjl6U1pMQ0hiQi10RDNSa3Q4VWhDMXJnaWtxVF9pUjhpN2RiMGQ0WkhqVkdYeERqdVlGUFBDWngyR2lJUGZrb1p3TDJjUmZkNUdueXA0ZU5IRXp0b2lIeUVVSFhhQUhuTU9DTTlaSmJCY01oOFZKYndjYmJ0ME9DZE1RS2lLWFNPUGdmUGVDLW8",
+          "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxObXAzM1dEMWUzQzhUS3BuVnZBaVhLQ1p1VkxZMEhDcGZ3OGNxZUp2YTk4VGs3NDc1TVBiUl9jd0tVcGV2dnVxMG5ubngyYkhLS0JzemJ2bkpmeUkyQ1d4ejBOaWZEVkJmNFZYaDAtWUpYYzVXVXV6UDI5SUJQSUw0NHJ4enR6Tk1QcmcwNm5idG1KYXN0cXlaMmRqaU5Lc0pxR2xPMnZqZm56amtzUkt5V3pENTVYTlg4UjBtM1drUXFVczFWQmVDOFozWEx3T094VnV6LVVIVTF0R3BNV3h1RURKSVRKYS1COXJFejVRZjMxXzZRSTVZTTZ1ODhzbC0xLVFaRHA5Y1FZMU9pZWc",
           "breaking": false,
-          "slug": "20260620-ott-releases-this-week-what-s-new-on-netflix-prime-video-jiohotstar-ze",
-          "image": "https://pixabay.com/get/g27905f68f1cbfea96ff7b4ca0b283c7ce89987aad1b6be59126c56c1b10a7053aacea27ca73212895acf0138273c7df5d8ad7066e50ce80e0e4f47730d320e4e_1280.jpg",
+          "slug": "20260620-new-ott-releases-this-week-what-s-streaming-on-netflix-prime-video-jio",
+          "image": "https://pixabay.com/get/g8a23baaf7070531154eb039d09b5b8623df0ea1bd9fdee4a1cd70ef3912cd4bff12cdb7a41d72f78c2d854840a8307f14ab80eb5341a3226f3f0e4c682161d90_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Tumisu",
-          "image_credit_url": "https://pixabay.com/users/Tumisu-148124/"
+          "image_credit": "mjimages",
+          "image_credit_url": "https://pixabay.com/users/mjimages-10627284/"
         },
         {
           "hour": 6,
@@ -801,10 +798,10 @@
           "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQNVd5Q015bE1OT3h6YzdBejRMVzhZQ2k4Mk1FOUtzVno4WHQ3S240N1lzYTZwMUVMYXNVS3ZWaXlQWnNqT2hiNEVvQjZ5MTRQaXFVWERSdDBIQ1hxSF9pTGhadUtoZnl0ajFQQ0JDQndEUDBBcGowcUFkcVJIUHRITEFUYU1oSFNHUWoyZVRxYU1xRHN1X2pmNjNQblIwYk4zbTljVHJHRE1aczlKYTEwRjgtUlQyMHczek9TRjJ6TE81b0FjdTU1SEg2YVRpZGVjdTNseC1HazI5R0JGZXkzSmhWS1Q5VXkxSjVCQVRKMU5jYjZKSmQ0MnZpN1QtS0hiQmJQeG9fSnNuVVlYRzBNYUtKMNIBmAJBVV95cUxNWlZRd191YzhOQjluMkxET2lTOTBlekhwWnk4Vkk5RVN4VkRncGpYNno3cS05LVM4TWE2ZjdFSkw3Q3AwWkdlVFNTRnNGMHlLc0FpZVFfYWE1TGJKRXI5Wk1CbDBoNGtKS3NaRkZRVFNHX01kRmVuYklLTW9zaHRpeXpGQzlTTEVXR1h6aDg5Rk02eWVzZGNxU3dWSVh5SklkbGlfUGFfRmM1R19mU0M4YjBvRWNmY3NEbGl0RTlfM1g4cWQtTkVpb2UzNnFfMnZnei1XS0FxRmpNVlVzbmRfMWo4bGdJVXdBVEY0RVREek9STDlrdUNQRE1CRVBIaWlYQ2Q2XzBfTDhiYm1PcE5Sd3QtTDZIeFBS",
           "breaking": false,
           "slug": "20260620-k-pop-group-le-sserafim-on-their-guru-randhawa-collaboration-boompala",
-          "image": "https://pixabay.com/get/gd39d5119362e64e273e65b6a8fb103b758dc881e0e1a5565d2868ad33369b1cebb20f319139851bad68128dd830a1cabe5d8d300a37e560d8bc72970584765b6_1280.jpg",
+          "image": "https://images.pexels.com/photos/7503256/pexels-photo-7503256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Pexels",
-          "image_credit_url": "https://pixabay.com/users/Pexels-2286921/"
+          "image_credit": "RDNE Stock project",
+          "image_credit_url": "https://www.pexels.com/@rdne"
         }
       ]
     }

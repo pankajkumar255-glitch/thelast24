@@ -1,8 +1,8 @@
-// auto-generated 2026-06-20 20:20 IST
+// auto-generated 2026-06-20 20:36 IST
 window.BRIEF = {
   "date": "Saturday, 20 June 2026",
-  "edition": "2026-06-20 20:20",
-  "topline": "As India's Supreme Court enshrines safe footpaths as a fundamental right and Modi pushes to reverse brain drain and boost self-reliance, Iran heads to Switzerland for US peace talks while America advances at the FIFA World Cup 2026.",
+  "edition": "2026-06-20 20:36",
+  "topline": "From India's Supreme Court demanding safer streets to Nobel laureate John Jumper jumping from Google DeepMind to Anthropic, and Iran heading to Switzerland for US peace talks, a day shaped by rights, rivalries, and a reshuffling of AI talent.",
   "lensLabel": "Why it matters",
   "sections": [
     {
@@ -34,7 +34,7 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNbmZ2NTFuWmtXTU1tRTlKZzB2SHNTMUVwRWdKeVdiUVV3QkJRT215M2Q4MS1NQ3M0STFCOUd1Y3lHbk5KZ29OSVdVWXhyNjhSaXNTVUJ6OHdud3FpWkhFQWd3RWtmcHhaNGlMSV9ELWc1cHNHSzZJZGVuRm1GaGhMU05oa2cxd1A0eFJFMlRfRkJGRkRwMllRdmZBM3V1dlVST1d2RlZRcGpzakFaTHc4NldJZGhrTFJic3RlZW5hT0s2Yy1DTDlkX3h0djRIWE5zbjBaT0pSRTDSAeYBQVVfeXFMTWVoeTlGOGxkbXMxZjJfc0Nmck9YVzZPU2Q1cjVLaEkxWnBEV19rSkdxQ1YxYUxHX0VHeW5vY0xFb1NiNElJaWR4azlxang4Qkk4NFVSSURwUzNROVVFbkxNbkJrcC10TVAxSDZqajJvNF9mbl9RaWpOUmpzTHRPZWkzSTBHR1M3eEhobG84a1dhakdjc0pDT3piSEUyY2tfRWZNUXJ3dkpTTlZ5b3BhZklFTjViNXBrb1ZTVHVscGRtY09tQzdIZURRYWxnNC15cVA4Wld6eVNaR0JMRkVXdHZnZWJ5LUE",
           "breaking": false,
           "slug": "20260620-karnataka-appoints-kunal-vajani-and-omar-hoda-as-additional-advocate-g",
-          "image": "https://pixabay.com/get/g282180264891e1bec12af8e667834457a8d28ae27c585c2fc44fdc4e833017389d7947bb506cad3bbe779821ec62d301a5edc417858a96d107b7387b13b18a76_1280.jpg",
+          "image": "https://pixabay.com/get/g4209edfc6d9bb4548dc448739036a33eb14775eb8acf5033406cc5970608a14d3cb3c9b64d932e91b989e64ce9118f2d8a64e4bc2f887a904a93468beb1df1b0_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Kamyq",
           "image_credit_url": "https://pixabay.com/users/Kamyq-680923/"
@@ -42,17 +42,17 @@ window.BRIEF = {
         {
           "hour": 6,
           "time": "06:14 IST",
-          "headline": "Supreme Court declares right to walk on safe footpaths a fundamental right, seeks law",
-          "what": "The Supreme Court of India has ruled that the right to walk on safe footpaths is a fundamental right, marking a landmark constitutional interpretation. The court called for legislation to ensure all roads are equipped with proper footpaths for pedestrians. The ruling signals judicial intent to hold governments accountable for pedestrian infrastructure across the country.",
-          "lens": "Crumbling or non-existent footpaths are a daily hazard for millions of Indians walking to work, school, and markets — this ruling gives them constitutional backing to demand safer streets.",
+          "headline": "Supreme Court declares right to walk on safe footpaths a fundamental right, asks for law",
+          "what": "The Supreme Court of India has ruled that the right to walk on safe footpaths is a fundamental right, marking a landmark interpretation of constitutional protections for pedestrians. The court directed that all roads must have footpaths and called for legislation to codify this right. The ruling underscores the state's obligation to ensure safe walking infrastructure for every citizen. It is among the first such explicit judicial declarations linking pedestrian safety to fundamental rights.",
+          "lens": "With millions of Indians walking daily on roads that lack proper footpaths, this ruling could force governments to build and maintain pedestrian infrastructure — directly affecting the safety of ordinary commuters across every city and town.",
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdGxnOF95d2xLQ09tZlNKNkMxVkhmQWJ6R0MwQ2RfSXJwZGNmTlRoUTdZajZ0Y0lSYWhBWkw3Zk1IbGlnak9tdG5YLUE5WFlzNEdXSVhmRVRKczFIZHluWFNQREdPZjBiVURCM3J1VVBBc3BqdHBYZHpIQnBvLUpNTzJESGFST2JPOFZLeWtfRkVFR3NwUFI5Z2xLSC1lQVpOdnBORzIwNDFDZTJSMGd30gG2AUFVX3lxTFB1dlFxbTdGUGg3X2kxTXRvTlRvOXBqVEQtWVVOeFU2Qi1wYkxhbDVmMHVrQ082ZzVuMXg3enR6RWcyanZOc3dOT3Z5NWFjRk50UHFtTWZ6cW5LS2I5SzZWZVdrZTR1WGRIWFFtaUUyMHNPY1BtX0M2YzFzWHlzVThKUnBDcmRYRVlTUllpT2g5a0R2YklKbENqTjI1a3k0aWs3UTNmcHVmTVF2OFZ3aE1tUVlqLXN3",
           "breaking": false,
           "slug": "20260620-supreme-court-declares-right-to-walk-on-safe-footpaths-a-fundamental-r",
-          "image": "https://images.pexels.com/photos/365813/pexels-photo-365813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://pixabay.com/get/g1745429763a128b4dabadb2b7663ef939b879a18315844e98bbd9be805b5471c3aac12a23c10594b3d815acaa5ff57e25240fa869430dfcfd4d49c71f398473a_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Dom J",
-          "image_credit_url": "https://www.pexels.com/@dom-j-7304"
+          "image_credit": "ymyphoto",
+          "image_credit_url": "https://pixabay.com/users/ymyphoto-23007053/"
         },
         {
           "hour": 22,
@@ -79,7 +79,7 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaHNQamNqYm0teEh2aDZaZ21aMzJLNUp0VE9iejd1TVpYdE43OExaVURTaThOdERRSXIwb1NOZFBVd1R4ZFhCelRVdkxyLVFWRmU5TmozaXl5akhGQ3dSSFVSQVMxb0ttdVBGMWRRYnpfYzd2UEhaWU9aQjJzLVNvMVdOWF9Rb01kMzhwV1lHUU95YzNscE4zamdubFdoTzJIT0VLTC1PdnFsSE8ySktQR2h6WHNZZXR6ZGdDdA?oc=5",
           "breaking": false,
           "slug": "20260620-walking-on-demarcated-footpaths-is-a-fundamental-right-rules-supreme-c",
-          "image": "https://pixabay.com/get/g253723db476925d02342a46a7d3e5ad8ce018fa5840cfc410babd38070b0699ab4767929545c28229c847f231d49feecec8ecf899b7762f68ea8a7a8b1628b7b_1280.jpg",
+          "image": "https://pixabay.com/get/gceac9253092157f3a71c40c007d37df041286f5c09e1ecb0edc8eb1239c2cbc6fa41f69afbb2b44c480d06cd03f55cd6195fe1a3d9d034ac9dcb564e6efac856_1280.jpg",
           "image_kind": "photo",
           "image_credit": "BunteAufnahmen",
           "image_credit_url": "https://pixabay.com/users/BunteAufnahmen-6345617/"
@@ -94,25 +94,25 @@ window.BRIEF = {
           "hour": 20,
           "time": "20:08 IST",
           "headline": "Iran Negotiators Head to Switzerland for Peace Talks with US",
-          "what": "Iranian negotiators have departed for Switzerland to engage in discussions with the United States over a potential peace deal, NDTV reports. The talks mark a significant diplomatic moment as both countries explore pathways to resolve their long-standing tensions, particularly around Iran's nuclear programme. Switzerland, a traditional neutral broker, is hosting the meeting. The outcome could have major implications for regional stability in the Middle East and global energy markets.",
-          "lens": "A US-Iran deal could ease global oil supply anxieties — directly relevant to India, which is among the world's largest importers of Iranian crude and closely watches any shifts in Middle East tensions.",
+          "what": "Iranian negotiators have departed for Switzerland to hold discussions with the United States aimed at reaching a peace deal. The talks represent a significant diplomatic development as the two countries attempt to resolve long-standing tensions. Switzerland, a traditional neutral ground for international diplomacy, is hosting the negotiations. The outcome could have major implications for regional stability and global energy markets.",
+          "lens": "A US-Iran deal could ease global oil supply tensions, directly affecting petrol prices in India, which imports significant crude from the region.",
           "source": "NDTV",
           "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdWVmemZWOTBSM09uTmo2T21GTDRKYXFONy1UTDZTdktZWUhEMk9hLUI1c0RzQ2pHYV9sTnZySHdmeTFWUXpsd2VKdXZUNWZxaWdhZGU4RC1TbkFraFJtOTVmQnA4cHFJLW9xUHlHTlJvMF9TdElFVk9WZ0dxYWhYZ2Fib0lFc1VzTlF6UmZnZE1ocEpyMUNlY2RabGE5S1FwdVJMQ0liejZFZU9fOVHSAbYBQVVfeXFMTXpVVmdPUUpJNjhMZHpVekFyaGVvWjJWWUJxVlhkbVJTVGs2VEI0azYzejFmR0QwTkxDR0t0QUYyYmFpVm1ZaHJfTjBOQ05rWUR3SnAzSjZFNUFTMUh5WVFONklGTmxYWUx4WUlJdFQySmszWVM0dm5VczZJWU9hZ1JxSEtHam82aUdfVzk1YWdRNklnYy1ZNHotYnhCbE81SG1xcUMxZXBSQkZUak14UmFqS1ZEUXc",
           "breaking": false,
           "slug": "20260620-iran-negotiators-head-to-switzerland-for-peace-talks-with-us",
-          "image": "https://images.pexels.com/photos/12231832/pexels-photo-12231832.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://pixabay.com/get/ge9e2b2d8ecdd145ac6406d3f14a83c2ca266863594aae5ea8b610f5af83d8985844ff3b9b7dc842d8f468c784040386b5cb26b43049012c9a17846e4980d1226_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Markus Winkler",
-          "image_credit_url": "https://www.pexels.com/@markus-winkler-1430818"
+          "image_credit": "995645",
+          "image_credit_url": "https://pixabay.com/users/995645-995645/"
         },
         {
           "hour": 19,
           "time": "19:48 IST",
           "headline": "JD Vance's Mother Was Confused About Usha Vance's Indian Origin, Asked 'Which Tribe?'",
-          "what": "A newly surfaced anecdote reveals that JD Vance's mother was confused about the Indian origin of his wife, Usha Vance, reportedly asking \"which tribe?\" when told Usha was Indian-American. The story, reported by NDTV, sheds light on the cultural unfamiliarity some Americans have with South Asian identity. Usha Vance, a Yale-educated lawyer of Telugu Hindu descent, became a prominent public figure when JD Vance was named Donald Trump's running mate in 2024.",
-          "lens": "As an Indian-origin woman who became the second lady of the United States, Usha Vance is a source of pride for many Indians — this anecdote about cultural confusion in her own family adds a very human dimension to her remarkable story.",
+          "what": "A report reveals that JD Vance's mother was confused about his wife Usha Vance's Indian heritage, reportedly asking 'Which tribe?' when learning of her origin. The anecdote sheds light on the cultural unfamiliarity some Americans have with Indian identity. Usha Vance, who is of Indian descent, is now the Second Lady of the United States following JD Vance's election as Vice President. The story has drawn attention to questions of identity, diversity, and representation at the highest levels of American politics.",
+          "lens": "With an Indian-origin woman as US Second Lady, this anecdote resonates with millions of Indians and the Indian diaspora navigating questions of identity and belonging in the West.",
           "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZlZHWUszdHQzV2xlUG02dWV2RkZTek51djdPY3UtU01TVWpDUkszYlFHVHlEUzFvd0I2R2owdjhHblV3amNPTFZfQjlJSUdXOWFnV1JwMVM2cl9tR3QtenRVTW5YZ1hHVFp5eEUwUVlJal9vcTd5ZTlRbFF3ai1PbTVwRUhSaThqeTdoaU9jOG1USFZNWFNzbkZPdXFTSUhXQzNlTFZxVW9rcEctOEpqQ2JVc1jSAbwBQVVfeXFMUDhxSGhPT0ZVRFc4LU1VeXhCSW5lem9iYm1hUDdfbzkwenI3VkFGZ2JJdDRick5GZGFCdm92MGVUeE9oTGMwQzRiOGlOM0JvNjh2NmNrRmZWTTFIc1lSVllLRzlYNzdtM0Y5el82Rkc4TDlYTTBGR0FBektYUlhnVmRyTHhPckdLVHppakdSQTlXQjFZYnlPelprdUJkbk55X2pNcE1jYl9Edm5ySTdlN2dZdENXSHpMM3RHVHc",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZlZHWUszdHQzV2xlUG02dWV2RkZTek51djdPY3UtU01TVWpDUkszYlFHVHlEUzFvd0I2R2owdjhHblV3amNPTFZfQjlJSUdXOWFnV1JwMVM2cl9tR3QtenRVTW5YZ1hHVFp5eEUwUVlJal9vcTd5ZTlRbFF3ai1PbTVwRUhSaThqeTdoaU9jOG1USFZNWFNzbkZPdXFTSUhXQzNlTFZxVW9rcEctOEpqQ2JVc1jSAbwBQVVfeXFMUDhxSGhPT0ZVRFc4LU1VeXhCSW5lem9iYm1hUDdfbzkwenI3VkFGZ2JJdDRick5GZGFCdm92MGVUeE9oTGMwQzRiOGlOM0JvNjh2NmNrRmZWTTFIc1lSVllLRzlYNzdtM0Y5el82Rkc4TDlYTTBGR2FBektYUlhnVmRyTHhPckdLVHppakdSQTlXQjFZYnlPelprdUJkbk55X2pNcE1jYl9Edm5ySTdlN2dZdENXSHpMM3RHVHc",
           "breaking": false,
           "slug": "20260620-jd-vance-s-mother-was-confused-about-usha-vance-s-indian-origin-asked",
           "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Usha_Vance%2C_official_portrait_%282025%29_%283x4_cropped%29.jpg",
@@ -130,7 +130,7 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeURNaXFQeDJIQzk5RlQ5TFloNUxOMWV2cDB6MGhfcDVzVldvUlF2cDRzdVl4dnRmeEtXcjVZMDdOUkxzRldIV3c3R0wxN1ZQTVVnTUVpQlBNTUVhdWFEb0Zsd0paQ0szbUFRaE9xUGYyc3ZiaVk1aFZMRzZDSmpINXZQQkN6VmhyMWlfcW9mdjJYem95OFB3SkdGS1ZXYmFyMzFvTWs4V0xmSW45TmtwRFhvbmpoZHk2OF96UGV3Nm1FbnlGQURJQ0NIRlRlZ0dXZDlIbEFn0gHeAUFVX3lxTE9WUXZUaDlUdkVsRV9HYXZ5LWxyVmFiWWIxMzNFNEkwUXlIZGFSbW5hMXo1NTdCaXRBdnc1bGttXzVKck1aU3BTN1VwSFF5MmFLanJEVjNRRUNyT1ZHVjExU0Zac3RnSmc4WFVua0FZc0RsYjBNUEZBdDQ2Y24tQ2FUeDhvYkpYM1U1UHlHMURiQ01RTjhWYUpEdXZhRW83dXhlb3RGaGhISS05bnB4RzRublRyYy1WZGM4MU1yQ0p3dVc3THlSSzhGWkRaaE9RWEZtdV9YYi1RbWx4cmYwUQ?oc=5",
           "breaking": true,
           "slug": "20260620-iran-closes-strait-of-hormuz-amid-escalating-israel-lebanon-conflict",
-          "image": "https://pixabay.com/get/g6db6b85ff31354fa4fb079003c1d8ca65a57cf588d8b426c4162774adf153fd23acc2bec14e9cf33ca94c524da1d1e871c937dde98223c3408180883ba4bb943_1280.jpg",
+          "image": "https://pixabay.com/get/g5ca758a1949872046dcfc76b88cc6c5c762a7d7c3bcfbfd5540c63321bee7f7a9506317341da4c213344921c455a9bbb27566b9246a7a1ec87ca841a58b46ff9_1280.jpg",
           "image_kind": "photo",
           "image_credit": "mostafa_meraji",
           "image_credit_url": "https://pixabay.com/users/mostafa_meraji-13551092/"
@@ -145,7 +145,7 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPYm9LODd1UURuSFZDUWtoZDZzRUhTUjk4VzlqZG53MWhBSUFXV054bG84M3FGMF9rb2FiRmxoTGpOVnQ2UDJtdjhkSVRHZHo1cHE3akZpSkJEdVVvQnQtNEI1OTVGTjVudVJ5Z0xSV3k0b3JTR1U3M0xfQmlpb3VDWnY2eFlPaFRYNGJ1VnF2Tno5VXpkdmZyQnVnMlE3YVIxMWRZTEZCaWR6UlFETmMtWWZ1dl9Nd9IBvgFBVV95cUxQMUFjMDNtc1h2RGlzUFhuTGZkU3pLSkNHMHVhZEwxQTFDWWNScmo2UDM4bHotd0tEV0VkSmxQZWN4LUdJTFJOQUhidnhvY2dSbVlSQ3lKLXFzZENJNGZnYjFvRGwxWEVOc0tSMlJzZmhrc09SYlJvLXk3MmEwdFlkcW1XY29FM0dIYTZDdDdjOUNNTzhkeHNnWGpJSzcxdmlpaXFVbkJFNC1FbDVsLXpMMFk1bXdLZDMwWmpWYmRR",
           "breaking": false,
           "slug": "20260620-trump-names-pm-modi-and-xi-jinping-as-the-world-leaders-he-admires-mos",
-          "image": "https://pixabay.com/get/g266c221771b613d625663cef3979ffebdd711d318a656db8aab40b2a02ac5ef1901cbb356dd58a7c53fc12a6fed19b9abb122cacf6d7081d3479454dcb27b10c_1280.jpg",
+          "image": "https://pixabay.com/get/g18f1a73714c39783d2927d132aa4a0dbd3d6e6a9c2504e511b90fd09d499edf8bc7c5b35fd7f79bc01a19e9905c79a4065b6024a2fb58a0f6cf89ecdbc3775a3_1280.jpg",
           "image_kind": "photo",
           "image_credit": "kalhh",
           "image_credit_url": "https://pixabay.com/users/kalhh-86169/"
@@ -153,14 +153,14 @@ window.BRIEF = {
         {
           "hour": 8,
           "time": "08:43 IST",
-          "headline": "US Beat Australia to Reach FIFA World Cup 2026 Knockout Round",
-          "what": "The United States defeated Australia at the FIFA World Cup 2026 to advance to the knockout rounds, with fans reacting with jubilation across host cities. BBC captured fan reactions to the result, which marks a significant moment for American soccer on home soil. The US is co-hosting the 2026 World Cup alongside Canada and Mexico. Australia's exit ends their campaign at the group stage.",
-          "lens": "With India set to co-host the 2027 AFC Asian Cup and growing football interest domestically, high-profile World Cup results like this give Indian fans a closer look at what tournament football's knockout drama looks like.",
+          "headline": "US Beats Australia to Reach FIFA World Cup 2026 Knockout Round",
+          "what": "The United States national football team defeated Australia to advance to the knockout round of the FIFA World Cup 2026, with fans reacting enthusiastically to the result. The win is a significant moment for American soccer, as the US co-hosts the tournament alongside Canada and Mexico. Australia's exit ends their campaign at the group stage. The reaction from fans across both nations captured the high emotion of the tournament.",
+          "lens": "With FIFA World Cup 2026 co-hosted across North America, Indian football fans following the tournament will feel the shift as the host nation advances and the field narrows.",
           "source": "BBC",
           "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE0xYTNZNVFNUlhNN2tKUVpubDBGOWtObGktbGVENko4VVgxMFJsVEpoaFBwVDh4bmtnWl9LaUZVOTZneUlTa0VFMHVSN0Q0a0JWeGFocE9kRQ",
           "breaking": false,
-          "slug": "20260620-us-beat-australia-to-reach-fifa-world-cup-2026-knockout-round",
-          "image": "https://pixabay.com/get/g8d07e34996d40bf3ac793c2ef9bb6f61f751acd7f5fa89a65c06e42532069d28c0ea1460361fa7394f9fae11165ca19b6d32a98ea8cbd35b5801050b23070f5f_1280.jpg",
+          "slug": "20260620-us-beats-australia-to-reach-fifa-world-cup-2026-knockout-round",
+          "image": "https://pixabay.com/get/gd23d026113a338b032ba74ad61844ce2b8f0541e25d3028cac738be0329754b15a3f619744d85649cf0edd5dd0b4b659c032b09e4c3bb383d73ae46107268cb8_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Pexels",
           "image_credit_url": "https://pixabay.com/users/Pexels-2286921/"
@@ -196,10 +196,25 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPR0tUWWNuWHl0OG5oUHFFdEhrOHI0YUdSbnVHc002ejl5OUU0MnVveUJVSnJHY2E0VGd1dks2MEJ4U0NIRm1uR1ZYU256dENQODRwbEVBRFFZZlVxbWZFcnB6RHJ2VzRLemhWU2JUdEhJaTNBZmtDQm96NlBNVVc1NkViRW9jalZZMWlWcHBZVFVDMlRueTZvbXYxSVhfQ1FsUFc0T0k1aTZXaG84clJJeXlFRG91el9rc1FLZ0JVekp1cDhfZ1pfUkt3V2xZZ9IB1AFBVV95cUxPMTlFYVgtZDFabWgtNWVYRHo2UWxldlJiOEgxN0Q3RkgxNjFvM3kzemJ4NjlpTXo4aFFZNjZnYTk0b3pGYkVlSlhSUGhfckxEaVpJMUVjTUJDRlBsNzJfcGxXdUQwdHBvZ3VlcVlzclhOc0pJVzY0WE9NRmtyYXVMaDBxV3RmeElHN0tkamlyZnpDODlnUUJyZ0dhSlpoTlp5Mnc5aUpPRmswbTVNWGVaZ21jRWpFX0s2Qk5MX0JpVEM2S0k4cDZWVnp2dnFfRXJPV1Q3aQ",
           "breaking": false,
           "slug": "20260620-lack-of-investment-chapter-in-india-uk-trade-deal-not-a-concern-says-m",
-          "image": "https://pixabay.com/get/g8f20b35ee5a0192a9719c8d25b7652c692dcc17ff6a76201623b469896f4b8d6fb64dd37244b77e5f2f920aaa784ef9924103ff318dac164a4d98e5022837666_1280.jpg",
+          "image": "https://pixabay.com/get/g6845da035d244963d7e205ba135c54f6c3fd22c010138398ac1a711961a6b4660712b81a3123835c469bd9ab6abd0616b059c322d9101dbacba5a67f6898802e_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Ralphs_Fotos",
-          "image_credit_url": "https://pixabay.com/users/Ralphs_Fotos-1767157/"
+          "image_credit": "3844328",
+          "image_credit_url": "https://pixabay.com/users/3844328-3844328/"
+        },
+        {
+          "hour": 18,
+          "time": "18:26 IST",
+          "headline": "Piyush Goyal reveals what's holding up the India-US trade deal — and why Indian farmers are 'fully protected'",
+          "what": "Commerce Minister Piyush Goyal has spelled out the sticking points delaying a India-US trade deal, saying India will not sign until it secures a 'competitive advantage' from the pact. The government has simultaneously moved to reassure Indian farmers that their interests are fully protected in the ongoing negotiations. The frank public disclosure signals that talks remain substantive but unresolved on key terms.",
+          "lens": "With India-US trade talks directly affecting agricultural exports, manufacturing tariffs, and millions of livelihoods, Goyal's conditions set a clear public benchmark for what any final deal must deliver for ordinary Indians.",
+          "source": "The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNd1lyVG50bTlTZ1RIQUdHQW04d2NMUUcyVVlNR1ByYUFFaXpEbzQyTmNfTDBLLVpPZ0FleXItTnRvdVMwc01pOXlmTjF2V2d2UU5Xbkh3QWZfS0NMSXAxaDY3SHd1Si1pMDc2MWdFWDNNZVN3c1hXaExaT3RqNFBvNmFNVGF5Vzd1VURVNU1EenNVOTg2ekJBMDRza29RcnlkZ0pvOGxoQjlFWDJreWlEc0J3VDRxc0N1SDVqNl92eXRwS3ZGQkl1cVVEaDljUXd0cUZ0aXN1V2VORFllUFE1OTZJWWJ5V2_SAewBQVVfeXFMTmdhZzFySmwzQ0Y5Ump5dVpvcTIxeWZWTHhTYzNUVXpLR1llcUJ2em1vLThIZjkzZktYdVFCd29wRkxCcTNwNVNmaWtINjNrTzVjMnJhNXU1VHNURkdYM3d3bmJWLUo5SV9TSTJNdXhmSWtRWXcxRHNLMXgtV0NKZk0xSnFzNGpfcEVSZlhxTzkzSkNVUHRJQWk2ZjNHbXNlYUMyTjZjRE1CM2NyOHMyRlQ1RS1nSG1ZZGtBOVNONElDTndPeHlsdU1zTGtEdDVsTHpEeFZlUXJZY1JGbEc0dVk5RjNUMFhNcW9FQVE",
+          "breaking": false,
+          "slug": "20260620-piyush-goyal-reveals-what-s-holding-up-the-india-us-trade-deal-and-why",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Piyush_Goyal_crop.jpg",
+          "image_kind": "photo",
+          "image_credit": "Ministry of Textiles / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Piyush_Goyal"
         },
         {
           "hour": 18,
@@ -211,10 +226,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQN2ZGeGhkWlh2UlJGYk9fQzRjS1c0N2tGYjhQZUp6blJxcDhpQWZVYl9EVVQ2bGVMaXFXQjlXN09DVktxTUlzUWJXMm8wcE1SRzRZTDZsaHRLdnY2ZU9rX2JpZmxsZzNWc0NKcDFNSTVqd3NsX2o4SW1DeVh6SGRfMi1zeF9jYWxWYnVwWVV4dmlydF8yY0FMenFuX2pqaEFVVG1VenloTUJkX19sVlhLaWExenVySlE4UVI4WHptN3Zrb0dYaTZWWmNCZ0ppemg1LUZyYmRrcTdZYnJOd3VQLUJYZUQwRGk3R2x1TEx4QTUzZmFkdkt5Mm1tQjhGZ9IBgwJBVV95cUxORVhhcWVsNTU5MWJBN1VBRXQtMzFUT3IzVHZfck1GUGtqOVJXcm1KekQyLVVEWDZnREJiZ2wtU09OV29QeGY2Yk41ZTNocGM5YVp3eEp6OHRHQTJtcW9SQWRRNTRzb1kzdEZRRzV4emh3QmdKdDFRYXZLcV9HcHNQQlNpWTdJVUFVWlY5dURkWHJGRnFVNXNUUlpUejZyUWVkeVZlTmNfem9SZG5GSzRicFZmR2t5WVpBVWt5RjlMTnREZWo3Rk41anBOQ3ZkWjdsR3lGWVNPajE5NzdmQXhhSnhoZ2haTmY1dmlSV3d0WjFYTW5jdmpnQUFmUlpuUG5xY3VB",
           "breaking": false,
           "slug": "20260620-piyush-goyal-says-india-needs-competitive-advantage-before-us-trade-de",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Piyush_Goyal_crop.jpg",
+          "image": "https://pixabay.com/get/gf4449b5d06b1f554e7a7955ee4c1f01791b171f6362a9402b12e37fe6eb5f7efe81903326bf32954700dc61177f53efccb9ceae6827e0fd3636915b326079582_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Ministry of Textiles / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Piyush_Goyal"
+          "image_credit": "Damian_Konietzny",
+          "image_credit_url": "https://pixabay.com/users/Damian_Konietzny-14709364/"
         },
         {
           "hour": 18,
@@ -226,25 +241,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNd1lyVG50bTlTZ1RIQUdHQW04d2NMUUcyVVlNR1ByYUFFaXpEbzQyTmNfTDBLLVpPZ0FleXItTnRvdVMwc01pOXlmTjF2V2d2UU5Xbkh3QWZfS0NMSXAxaDY3SHd1Si1pMDc2MWdFWDNNZVN3c1hXaExaT3RqNFBvNmFNVGF5Vzd1VURVNU1EenNVOTg2ekJBMDRza29RcnlkZ0pvOGxoQjlFWDJreWlEc0J3VDRxc0N1SDVqNl92eXRwS3ZGQkl1cVVEaDljUXd0cUZ0aXN1V2VORFllUFE1OTZJWWJ5V2_SAewBQVVfeXFMTmdhZzFySmwzQ0Y5Ump5dVpvcTIxeWZWTHhTYzNUVXpLR1llcUJ2em1vLThIZjkzZktYdVFCd29wRkxCcTNwNVNmaWtINjNrTzVjMnJhNXU1VHNURkdYM3d3bmJWLUo5SV9TSTJNdXhmSWtRWXcxRHNLMXgtV0NKZk0xSnFzNGpfcEVSZlhxTzkzSkNVUHRJQWk2ZjNHbXNlYUMyTjZjRE1CM2NyOHMyRlQ1RS1nSG1ZZGtBOVNONElDTndPeHlsdU1zTGtEdDVsTHpEeFZlUXJZY1JGbEc0dVk5RjNUMFhNcW9FQVE",
           "breaking": false,
           "slug": "20260620-piyush-goyal-says-india-us-trade-deal-stalled-until-india-gets-competi",
-          "image": "https://pixabay.com/get/g00a6b67db9ad773acb37a3e34e57cc3e1a28eb90f591da9ad630b513c1ffedddcd3f4bb916a8deb37cf72138d4fbcba4_1280.jpg",
+          "image": "https://pixabay.com/get/g9c5ba4c6360a5ae52b26f12ba02fd5431d14c67ea4fc03439a1a3b33a9038c9fa4cea01c353feb493a3b2393c1276da6_1280.jpg",
           "image_kind": "photo",
           "image_credit": "Simon",
           "image_credit_url": "https://pixabay.com/users/Simon-3/"
-        },
-        {
-          "hour": 14,
-          "time": "14:39 IST",
-          "headline": "Japan PM Sanae Takaichi to Visit Assam With Business Leaders for India Investment Summit",
-          "what": "Japanese Prime Minister Sanae Takaichi is set to visit Assam accompanied by a delegation of Japanese business leaders for a key India investment summit. The visit signals growing Japan-India economic engagement and positions Assam as a destination for foreign investment, particularly in connectivity, manufacturing, and the Act East Policy corridor. The summit is expected to generate investment commitments from Japanese firms.",
-          "lens": "Japan is one of India's top infrastructure investors — a PM-level visit with business leaders to Assam could channel real capital into Northeast India's roads, industries, and jobs.",
-          "source": "The New Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYUU5QVd4WkR5NVljcWtNZlVKbUtBVmFKRDBjVUtFdl9QWHk0RkNVUGJFTmthZV9sMlktV3ZhdkE4bHJKcFpPZG9ab2Z0TmFibXFHZjB0U1BZLXhBelhDczhxUmpSeVEyTXo1U3hJdTN5b2cyclNKejVtNENFOUZJUzFYVEFtN2tJMXZXRjBIYjkwZ2NjaHJ2MEJsek9RS3BYOXBCelJVb0FtOTVZaUxFd0JoaXNES0N6MVB3WFYxeUNCeFgtMndLcjNkM2FFLWNLQ09UR3NIMkFoY25HNFHSAd4BQVVfeXFMTmFFOUFXeFpEeTVZY3FrTWZVSm1LQVZhSkQwY1VLRXZfUFh5NEZDVVBiRU5rYWVfbDJZLVd2YXZBOGxySnBaT2RvWm9mdE5hYm1xR2YwdFNQWS14QXpYQ3M4cVJqUnlRMk16NVN4SXUzeW9nMnJTSno1bTRDRTlGSVMxWFRBbTdrSTF2V0YwSGI5MGdjY2hydjBCbHpPUUtwWDlwQnpSVW9BbTk1WWlMRXdCaGlzREtDejFQd1hWMXlDQnhYLTJ3S3IzZDNhRS1jS0NPVEdzSDJBaGNuRzRR",
-          "breaking": false,
-          "slug": "20260620-japan-pm-sanae-takaichi-to-visit-assam-with-business-leaders-for-india",
-          "image": "https://pixabay.com/get/g72f97ac78bc19af3c5f1e6f35d6c45223efa809e1f5994c895149133afcec239ddea3a6871868d13f7c63eb2b328e8dbde91d490c2e7890ff824ea5a1ac7250a_1280.jpg",
-          "image_kind": "photo",
-          "image_credit": "balouriarajesh",
-          "image_credit_url": "https://pixabay.com/users/balouriarajesh-6205857/"
         }
       ]
     },
@@ -271,32 +271,32 @@ window.BRIEF = {
         {
           "hour": 17,
           "time": "17:05 IST",
-          "headline": "Kotak calls for greater Indian self-reliance in capital, defence, energy, and technology",
-          "what": "Kotak Mahindra Bank's founder Uday Kotak has called for India to significantly reduce its dependence on foreign capital, defence equipment, energy, and technology, framing self-reliance as a strategic imperative rather than mere economic nationalism. Moneycontrol reports the remarks, which come amid global supply-chain disruptions, rising geopolitical tensions, and India's experience of technology access restrictions. Kotak argued that structural vulnerabilities in these four areas expose India to outsized external risks.",
-          "lens": "When one of India's most prominent bankers flags dependence on foreign technology and capital as a national vulnerability, it signals that Atmanirbhar Bharat is moving from political slogan to serious boardroom concern — with real implications for where India invests next.",
+          "headline": "Kotak calls for greater self-reliance in capital, defence, energy and tech",
+          "what": "Uday Kotak, founder of Kotak Mahindra Bank, has called for India to significantly reduce its dependence on foreign capital, defence equipment, energy imports, and technology, arguing that greater self-reliance is essential for the country's long-term strategic and economic security. Moneycontrol.com reports the remarks, which come amid global trade uncertainty and India's ongoing push to build domestic manufacturing and technology capabilities. Kotak's intervention adds a prominent business voice to the self-reliance debate.",
+          "lens": "When one of India's most influential bankers publicly calls for reducing foreign dependence across four critical sectors simultaneously, it signals that the business establishment sees strategic self-reliance as an economic imperative, not just political rhetoric — which could shape investment and policy priorities affecting millions.",
           "source": "Moneycontrol.com",
           "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPbzlGemZPOWRXVjVycHQtUEFkRXNHRTRuZk1XM3hrckZSbGVuOTBibjFfc0pUWWdWSXJXelVyQ0VDV0JGc0pEMGdxdi15WnBuSmxjU0hxcF9jV1BwQTAwZ2Z6VmViRWhXMXAtWlQ0Wk8tbzNwZG9laExCRmtJYVVWcFJXQU9TWmY0Mko4Z2l1T0NxaV9IQng3VGMyWkI0NVRxcW91YXJtNk9YY2M0cm82dTFnbFFYVTItaFhGS2ZSVFJKdF85WmJJZ1ljd1BhTG93SEVfM1JWVVA0RWRzM0pEc1ZvdnZxRWc1VndLYUNTUmdfTmJJRnp30gH8AUFVX3lxTFBZQkNOQnNZSUNmYVR3cnZHNUp0TjMxTWtVNndvT28zZ2R5N1pMUDY4Z2d1VWtpRVhuRllWcDFMaG5tSXFsZmJmOUFuU3VZaDEwOXc2Zk5FVmhwNDBDYldXVGRDNXVXaENKamx5QW5PQlQyTHNRcEpadTlMNlVRZTFHUDZvblQtWjFhVF9JSXFXNTVXQ2VNbXA3TWdmSHl5WXpxb1lZZUcwT1ZBak13TmpWcHBiU1Q2eFV4NUJYT1pSZEJnMjZoSmxxOVJsS3RzTkdmZFZuaGstVlRScEt6dGdrOEdhbUZrQXlxSkFTUVdHYjV1TURiN2FXVUJyQg",
           "breaking": false,
-          "slug": "20260620-kotak-calls-for-greater-indian-self-reliance-in-capital-defence-energy",
-          "image": "https://pixabay.com/get/g0de9bf239c38346be4f9a912142606f5a69ad0682f0dedb7ee2a5665284e7af5d834eb9805d67d8085c907c81235960e33088afe84ec7d0821d3a5308055728d_1280.jpg",
+          "slug": "20260620-kotak-calls-for-greater-self-reliance-in-capital-defence-energy-and-te",
+          "image": "https://pixabay.com/get/g795078485dbc52d7bc85780b13fe4b213d8a83c1bc05e159fc954ba76b6e6d18abef6c303e7d4f086c7e43d6171b791571a2aad39c505157dc15bf7e6d900c94_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "StartupStockPhotos",
-          "image_credit_url": "https://pixabay.com/users/StartupStockPhotos-690514/"
+          "image_credit": "rupixen",
+          "image_credit_url": "https://pixabay.com/users/rupixen-11154019/"
         },
         {
           "hour": 9,
           "time": "09:00 IST",
           "headline": "Indian IT industry eyes 'unglamorous' AI work for American companies",
-          "what": "India's IT sector is positioning itself to handle the less glamorous but high-volume AI work for American companies — tasks like data labelling, model fine-tuning, AI quality testing, and back-end infrastructure management. Scroll.in reports that Indian firms see this as a massive opportunity as US companies scale up AI deployments but seek cost-efficient execution partners. The move echoes how India captured global BPO and software services work in earlier technology waves.",
-          "lens": "For millions of IT and services workers in India, this could define the next wave of employment — determining whether AI becomes a threat to jobs or a creator of them.",
+          "what": "India's IT sector is positioning itself to handle the less glamorous but high-volume AI-related work for American companies — tasks such as data labelling, model fine-tuning, and AI operations that underpin large language models. Scroll.in reports that Indian IT firms see this as a significant new revenue stream, leveraging their existing outsourcing relationships and large English-speaking workforce. The opportunity is substantial even if it lacks the prestige of building frontier AI models.",
+          "lens": "For India's millions of IT employees, this signals a concrete near-term job category in AI — not just abstract talk of an AI future, but actual work pipelines that could sustain and grow the sector.",
           "source": "Scroll.in",
           "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOV2VIQ3Fqeks2SW9Sd1RxMV9zcnpOTWlOZHJ1RW5raVh6aTdwcnk1Y0FBdkZzVlNoTGxIaFZ3c0dJTDhuOVJyT0FRQ0JkZXp1UWFBYmplMzAtZEhUTkdRbl9GcjBIVEJOeEhrRU5xdnJ4WVE3MTJqbi1EWTNGUWctODVvOXRnV2g2QjBEN0hlVUxXeDVwOGsyUE8tSzF3Z1dLcGtobk1CSFIyaDBDZ0hKZWlIcDFZNXPSAbcBQVVfeXFMTldlSENxanpLNklvUndUcTFfc3J6Tk1pTmRydUVua2lYemk3cHJ5NWNBQXZGc1ZTaExsSGhWd3NHSUw4bjlSck9BUUNCZGV6dVFhQWJqZTMwLWRIVE5HUW5fRnIwSFRCTnhIa0VOcXZyeFlRNzEyam4tRFkzRlFnLTg1bzl0Z1doNkIwRDdIZVVMV3g1cDhrMlBPLUsxd2dXS3BraG5NQkhSMmgwQ2dISmVpSHAxWTVz",
           "breaking": false,
           "slug": "20260620-indian-it-industry-eyes-unglamorous-ai-work-for-american-companies",
-          "image": "https://pixabay.com/get/gb86c113f73e645ef69efe9b65e866cfbcd5dbde501433f99d02ba00b9d99ae4c7349b118a46d97ce0ecdb7936fff21199049ad6258ceaed5c616e79f8f6f0b0d_1280.png",
+          "image": "https://images.pexels.com/photos/31321061/pexels-photo-31321061.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Janson_G",
-          "image_credit_url": "https://pixabay.com/users/Janson_G-5907103/"
+          "image_credit": "EqualStock IN",
+          "image_credit_url": "https://www.pexels.com/@equalstock"
         },
         {
           "hour": 9,
@@ -308,22 +308,22 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQeTBWclhybkgwd1ZEZ2pLdlNZM1V3S21rUTRXMnpzQ0xkYUdvMlMtd0Z4WU02Tjl5ZS1aUXpNTnNGcDBWdnBMeDJqaGpxTzhnY2FfWDV1cWJyVmxUQVBaa3U0eXBabEJIU3RjRGZNVkdfcU1LMm5md1R2ZXh1dVZnYm1JZm1EN3VjS05yM3YtZmVmOG83a3pNdnNIaUMtSHR1cnpiT0luSHNYUGxBUXBpd3lZZGVIWkZaZkNleVd2ai1VRUxWdS02eg",
           "breaking": false,
           "slug": "20260620-modi-government-launches-push-to-reverse-india-s-brain-drain",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg",
+          "image": "https://pixabay.com/get/g21c633ed251b0cc8b671b332efa3f9816d5984a6d6b580e1f36ca5e851fc9a7ea1a39b945e618d3b14ad26260e637a0d76f5b333dc65f9619ee5a8231c8e23a4_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Prime Minister's Office / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Narendra_Modi"
+          "image_credit": "pradhanantarip",
+          "image_credit_url": "https://pixabay.com/users/pradhanantarip-22490439/"
         },
         {
           "hour": 8,
           "time": "08:20 IST",
-          "headline": "India has built a startup ecosystem — now it must build an innovation ecosystem",
-          "what": "YourStory argues that while India has successfully cultivated a world-scale startup ecosystem — ranking among the top three globally by number of unicorns — the country has yet to build a genuine innovation ecosystem driven by deep research, IP creation, and technology differentiation. The piece contends that most Indian startups are business-model innovations rather than technology innovations, leaving India dependent on foreign core technologies. Building the next layer requires universities, research labs, and patient capital working in concert.",
-          "lens": "Whether India's next generation of companies creates original technology or merely adapts foreign inventions will determine how much economic value — and how many high-quality jobs — actually stays in India.",
+          "headline": "India has a startup ecosystem — but still lacks a true innovation ecosystem",
+          "what": "YourStory.com argues that while India has successfully built a thriving startup ecosystem over the past decade, the country has yet to cultivate a deeper innovation ecosystem — one that produces original research, deep-tech breakthroughs, and intellectual property rather than primarily replicating or adapting foreign models for the Indian market. The piece calls for a structural shift in how India thinks about entrepreneurship, research funding, and the relationship between academia and industry.",
+          "lens": "As India competes globally in AI and deep tech, the gap between launching startups and generating original innovation will determine whether India becomes a technology creator or remains a technology adapter — directly affecting the quality and longevity of tech jobs.",
           "source": "YourStory.com",
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQzdLWWcybkg0cmNiUzdDVHJKb2lsR3hTNXozMFhTQlJPRGo3UWxVZFNpZlJwWE83ZG50eXdpdnFxNU9hVHZYeXpxeGNWT3ZuWDh4QXJ4d0NrbEY0eFc0ell6R2tZelp5OXZZeTR1N2hJNV80UWhQSElIZi16dWJqam9mLVlRelZNVkhVc2dPbWs3S2lpQlFRdTRRY0swZmc",
           "breaking": false,
-          "slug": "20260620-india-has-built-a-startup-ecosystem-now-it-must-build-an-innovation-ec",
-          "image": "https://pixabay.com/get/g75a580f0f80a991899bcf6ddd81f0a5c281e88ea245ea745fbf4b2842a2d6609d71fd947f1a59ba6a38257ea9422d263a03edcbadd86ed8d213e055d9355750c_1280.jpg",
+          "slug": "20260620-india-has-a-startup-ecosystem-but-still-lacks-a-true-innovation-ecosys",
+          "image": "https://pixabay.com/get/g825f26b01e754c7d0f2ca86e26c140514b8aa0c165d6219509dd7c89efc0414dcb692e959f774fc92cdfabaf1415de79f11361a2a4cf89d46a49d30b1cfb7c77_1280.jpg",
           "image_kind": "photo",
           "image_credit": "StartupStockPhotos",
           "image_credit_url": "https://pixabay.com/users/StartupStockPhotos-690514/"
@@ -353,17 +353,17 @@ window.BRIEF = {
         {
           "hour": 15,
           "time": "15:53 IST",
-          "headline": "Amazon, Google and Microsoft Agree Anthropic Is Ahead — But Here's Why They're Not Bothered",
-          "what": "The Times of India reports that Amazon, Google, and Microsoft have tacitly acknowledged that Anthropic is currently leading in certain areas of frontier AI development, yet none of the tech giants appear alarmed. The piece explores the strategic logic behind their relative equanimity: all three have significant financial stakes in the AI ecosystem, with Amazon and Google being major Anthropic investors themselves. The framing reveals a nuanced competition where investment, partnership, and rivalry coexist simultaneously.",
-          "lens": "The AI pecking order among these global giants matters to Indian developers and startups choosing which cloud platform and AI APIs to build on — understanding who's actually ahead helps them pick the right technology bets.",
+          "headline": "Amazon, Google and Microsoft Agree Anthropic Is Ahead — But Why They Are Not Bothered",
+          "what": "The Times of India reports that tech giants Amazon, Google, and Microsoft have acknowledged Anthropic's lead in frontier AI development, yet none appear particularly alarmed. The piece examines the strategic logic behind this apparent complacency: all three are either investors in Anthropic or have equivalent large language models of their own, meaning Anthropic's advances still benefit their cloud and investment ecosystems. The dynamic reveals a complex web of competition and cooperation reshaping the global AI industry.",
+          "lens": "For Indian developers and businesses choosing between AWS, Azure, and Google Cloud for AI services, understanding that these giants see Anthropic's lead as complementary rather than threatening explains why all three platforms are likely to keep offering — and improving — access to frontier AI tools.",
           "source": "The Times of India",
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUEFOX3ZnVGVQMXUxMlN1cjFkV0FCM1BqMG1kR0pOUnBVN2ZkaEcwNlhqa1l0UlBjRHZ3bkJ0dEJqN2tldTJiN3MtSjZrZUZMalh4ZjRDRmd2WWxVLTVnbXNIQ0RYQjFwcnRxNjB1OXozdk1fbnhFTVNCMW01Z3RLRERMSjdMS2VNOVlZNWdkejdodnFtaEVCQjl2ZHEyQXdMMmxhNlFMcGFmWEZpNU95ZmlNUC1uVXNjY19HNXRqV3U2VUVMT3FFQXN1ZkZvZm9vWmo4dy1qOXlBTG95cWxnOUs2RXhEejZQMm9rdjI2YjV6LWZXd01sMNIB_gFBVV95cUxPWEoyODlxTE9VbWhnR0xHNTZXSmtjM2diYWtmbm9oSWFlM3FTOEEwZFNMemRiazBEeHViNnZ6TmJpRVhDY0Z5N25YZEI2eXpkRTV1anZ0M095Vmp3OTZMWi1WQWxyU2lWUEp4UVRLREZaVHN0OUhMTTRYWWtvSzVrUnI1UzU0LXRQRUhZbGk3U0k0dXBJalQ0aHFVci05Z2hyQl9UbmFULUlub1AySTRjMDZNS3hWOWFsWExZbHJtMk9EdU1pUUxzMGZYVnlkaTZpOWVjY2VFaWhsR0cxeWhlYlBoQ2lMTTVYVlp0WkFxNE9ZZU5zbGc0bzB5UDBCZw",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNUEFOX3ZnVGVQMXUxMlN1cjFkV0FCM1BqMG1kR0pOUnBVN2ZkaEcwNlhqa1l0UlBjRHZ3bkJ0dEJqN2tldTJiN3MtSjZrZUZMalh4ZjRDRmd2WWxVLTVnbXNIQ0RYQjFwcnRxNjB1OXozdk1fbnhFTVNCMW01Z3RLRERMSjdMS2VNOVlZNWdkejdodnFtaEVCQjl2ZHEyQXdMMmxhNlFMcGFmWEZpNU95ZmlNUC1uVXNjY19HNXRqV3U2VUVMT3FFQXN1ZkZvZm9vWmo4dy1qOXlBTG95cWxnOUs2RXhEejZQMm9rdjI2YjV6LWZXd01sMNIB_gFBVV95cUxPWEoyODlxTE9VbWhnR0xHNTZXSmtjM2diYWtmbm9oSWFlM3FTOEEwZFNMemRiazBEeHViNnZ6TmJpRVhDY0Z5N25YZEI2eXpkRTV1anZ0M095Vmp3OTZMWi1WQWxyU2lWUEp4UVRLREZaVHN0OUhMTTRYWWtvSzVrUnI1UzU0LXRQRUhZbGk3U0k0dXBJalQ4aHFVci05Z2hyQl9UbmFULUlub1AySTRjMDZNS3hWOWFsWExZbHJtMk9EdU1pUUxzMGZYVnlkaTZpOWVjY2VFaWhsR0cxeWhlYlBoQ2lMTTVYVlp0WkFxNE9ZZU5zbGc4bzB5UDBCZw",
           "breaking": false,
-          "slug": "20260620-amazon-google-and-microsoft-agree-anthropic-is-ahead-but-here-s-why-th",
-          "image": "https://pixabay.com/get/g87569f5e8aae6bc6aa6c2f7c382ae21ccaec013baef3d33aec11dac3475609b0811e796565e874211db03b4fcd2165019d30e2c26845c489ea0ca2eee920b164_1280.jpg",
+          "slug": "20260620-amazon-google-and-microsoft-agree-anthropic-is-ahead-but-why-they-are",
+          "image": "https://pixabay.com/get/g366b0537d4dca60e0dabeaf617bad12992a39d6817e26d4852d85e87cd28a401620c769d66a0277e2e6238d26b79bb672d74323600ff8e45a4f7e3b4c0aa59fe_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Alexandra_Koch",
-          "image_credit_url": "https://pixabay.com/users/Alexandra_Koch-621802/"
+          "image_credit": "stevepb",
+          "image_credit_url": "https://pixabay.com/users/stevepb-282134/"
         },
         {
           "hour": 11,
@@ -385,10 +385,10 @@ window.BRIEF = {
           "hour": 8,
           "time": "08:12 IST",
           "headline": "Nobel Prize Winner John Jumper Quits Google DeepMind For Anthropic",
-          "what": "John Jumper, the Nobel Prize-winning AI scientist best known for co-developing AlphaFold at Google DeepMind, has left the company to join Anthropic, the AI safety-focused startup. Jumper shared the 2024 Nobel Prize in Chemistry for AlphaFold's breakthrough in protein structure prediction. His move to Anthropic signals a significant talent shift at the highest levels of AI research, drawing one of the field's most decorated scientists away from Google.",
-          "lens": "When a Nobel laureate leaves Google DeepMind for a rival AI lab, it signals where the sharpest minds believe the most consequential AI work is now happening — and that race shapes the AI tools millions of Indians will use.",
+          "what": "John Jumper, the Nobel Prize-winning AI scientist best known for co-developing AlphaFold at Google DeepMind, has resigned to join Anthropic, the AI safety company backed by Amazon and Google. Jumper shared the 2024 Nobel Prize in Chemistry for AlphaFold's breakthrough in predicting protein structures. His move is a major talent coup for Anthropic and a high-profile loss for DeepMind, underlining the intense competition for top AI researchers globally.",
+          "lens": "When a Nobel laureate leaves Google DeepMind for a rival, it signals just how fiercely the global AI talent war is being fought — and Anthropic, which has significant Indian cloud-computing backing through Amazon Web Services, is now at its centre.",
           "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbkU2cThrWjhZc2UxMS0wNVFwMDFzcFJvcWU1QktWTTI3dHd3ek5LMFZKR1hzZ0hpT1lVeHpfeVJBa1FOMVB4aHU2cjk0UnA5X3JMekd0b0RvTXZDTW9VNXprRDB1SDhiNzNvazFnaVN4cHR5a2pXN292Q0RZUER2RWJkYk1nWVVXUUN4Vmt1Qm1ZSUpCUDQtckNIZFRZTS1ybjNTV2FpN3laMlkyaHM5ekZwZXE2QUV0QmNvadIBxAFBVV95cUxOS1hEVGpta181LV9OU2g4d2hZY09KY1g0Z016cHJSMFF2ZHo5YTNLWHZueDZvdFc3TlVBVENLWm9LLUx6NEYwLTFGbjhKRnloeExDV3NUMXUyNU9XRW9fUU1iM05hVG1ST1pSYmNDQ0d5OGQzd09hajdQSmpfd3hFOTYweEg0VFZFYXlVMmR4SUZpUU1GbXpGLWFDREtuNlNWemw3NTJlTVBTeDBxWmswNzRzYzV1WjBXQ2J6NzdnS3I2Zi16",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbkU2cThrWjhZc2UxMS0wNVFwMDFzcFJvcWU1QktWTTI3dHd3ek5LMFZKR1hzZ0hpT1lVeHpfeVJBa1FOMVB4aHU2cjk0UnA5X3JMekd0b0RvTXZDTW9VNXprRDB1SDhiNzNvazFnaVN4cHR5a2pXN292Q0RZUER2RWJkYk1nWVVXUUN4Vmt1Qm1ZSUpCUDQtckNIZFRZTS1ybjNTV2FpN3laMlkyaHM5ekZwZXE2QUV0QmNvadIBxAFBVV95cUxOS1hEVGpta181LV9OU2g4d2hZY09KY1g4Z016cHJSMFF2ZHo5YTNLWHZueDZvdFc3TlVBVENLWm9LLUx6NEYwLTFGbjhKRnloeExDV3NUMXUyNU9XRW9fUU1iM05hVG1ST1pSYmNDQ0d5OGQzd09hajdQSmpfd3hFOTYweEg4VFZFYXlVMmR4SUZpUU1GbXpGLWFDREtuNlNWemw3NTJlTVBTeDBxWmswNzRzYzV1WjBXQ2J6NzdnS3I2Zi16",
           "breaking": false,
           "slug": "20260620-nobel-prize-winner-john-jumper-quits-google-deepmind-for-anthropic",
           "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/John_Jumper%2C_2024_Nobel_Prize_Laureate_in_Chemistry.jpg",
@@ -399,17 +399,17 @@ window.BRIEF = {
         {
           "hour": 7,
           "time": "07:16 IST",
-          "headline": "Anthropic Not A Security Threat, Says Trump, Dismissing Concerns Over AI Curbs",
-          "what": "US President Donald Trump has publicly stated that Anthropic does not pose a national security threat, pushing back against concerns that had emerged following recent American restrictions on AI technology. The comments come amid growing scrutiny of AI companies' ties to foreign investors and the broader debate over AI export controls. Trump's intervention is notable given that Anthropic has received major investment from both Amazon and Google, and is now attracting top talent including Nobel laureate John Jumper.",
-          "lens": "US government signals on which AI companies are 'safe' directly influence which platforms get adopted by Indian businesses and regulators — making Trump's endorsement of Anthropic commercially significant for India's fast-growing AI sector.",
+          "headline": "Anthropic Not a Security Threat, Says Trump, Dismissing Concerns Following AI Curbs",
+          "what": "US President Donald Trump has publicly stated that Anthropic does not pose a national security threat, dismissing concerns that had been raised following his administration's tightening of AI export controls. The comments come as Anthropic — backed by Amazon and Google — faces scrutiny over its rapid growth and foreign investment ties. Trump's assurance is significant for the AI industry, which has been on edge over potential restrictions on frontier AI companies.",
+          "lens": "Trump's clearance of Anthropic matters for Indian tech and businesses because Amazon Web Services and Google Cloud — both Anthropic investors — are major cloud providers in India, and any US security crackdown on Anthropic could disrupt access to Claude AI tools used here.",
           "source": "Business Standard",
           "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNWTJuX0s1ZHoyWkx6dlN6Q016ZTNDdElhdlk0Wmw1WjF2VHZrY190aGNsS0g1QWMwWE4ybWl1cVhVRDBFWlFWRk5DWHRhMUNIUVJEVWFPWHNoSnAtbzhDU1ZOQTdRYjNaRnFLeGZvQU5KRTRrR01EMy03ZjdHZ3VLVUVwSW1odGFMN2MwTFc4bGJtOXduVzI0dXltd1FLWDB5M0JaTFR4SjJIeno3cDF2NE5LQzZEWWhmQTRZd1BJNVppNGVrX1hndWZORDh0YllSOS1MaNIB2gFBVV95cUxQNUpFVG5POHdGOVlxbFdibWNYdm9EMHlVWGNEdmRaNFZQTmNMWVVDRGZENUJaWThmY3BDUGRkYk5NZUlmYlRTdnotNDhBTHNTN1BHdzUxSW5tOUhzZTBuZ0c5YlVPT3F3YWMtTENRUkdRSlBPZ0xoX3NxM2dheW9qVFI2bTR5NHNlODB1eWlDRUh5MTJNWV9ld01nZHd4MGRrOHlzZFZNa2M1bTFmX09sYjMtaGFaX3I5NGl4RVhQbUN3TjlKeHlsUmRpVU1EbnlvZjlPcTNuZDIwZw",
           "breaking": false,
-          "slug": "20260620-anthropic-not-a-security-threat-says-trump-dismissing-concerns-over-ai",
-          "image": "https://pixabay.com/get/g96398fe0713e1857714c5d0e926bd6be67648cb45d6a20d21e05b4b7952ef86db7c79fa71905d7ab8b542ce12489a6d66248306f465c29dab3831d0fd0b59888_1280.jpg",
+          "slug": "20260620-anthropic-not-a-security-threat-says-trump-dismissing-concerns-followi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg",
           "image_kind": "photo",
-          "image_credit": "51581",
-          "image_credit_url": "https://pixabay.com/users/51581-51581/"
+          "image_credit": "Daniel Torok / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Donald_Trump"
         }
       ]
     },
@@ -419,7 +419,7 @@ window.BRIEF = {
       "stories": [
         {
           "headline": "World Cup 2026: latest scores and what's next",
-          "time": "20:26 IST",
+          "time": "20:42 IST",
           "hour": 20,
           "what": "Latest World Cup scores and upcoming fixtures, in IST.",
           "lens": "Track every matchday in your time zone.",
@@ -428,10 +428,25 @@ window.BRIEF = {
           "breaking": false,
           "worldcup": true,
           "slug": "20260620-world-cup-2026-latest-scores-and-what-s-next",
-          "image": "https://pixabay.com/get/gf5db1b47a05c3507b6f40886fa065169b2cb2f8da5436c93b9e7518eb463c7b704f1336da7db9006ce0d4a8c00b247e5536fad4223a3d62c59bbd359f5c2f561_1280.jpg",
+          "image": "https://pixabay.com/get/g28e0d18a9f08c5631aac5ce16673ba0ff010fd651561c6f21278d1fd664f36dbbe0714d1ead5fedcad13f907481e55ebd914f1e8ff42030d981372934efc7389_1280.jpg",
           "image_kind": "photo",
           "image_credit": "jorono",
           "image_credit_url": "https://pixabay.com/users/jorono-1966666/"
+        },
+        {
+          "hour": 20,
+          "time": "20:06 IST",
+          "headline": "Yashasvi Jaiswal seizes Virat Kohli's spot as India crush Afghanistan in Chennai ODI",
+          "what": "Yashasvi Jaiswal converted his opportunity to replace Virat Kohli in India's batting lineup into a commanding statement performance as India crushed Afghanistan in the third and final ODI in Chennai. Hindustan Times reports that Jaiswal's innings anchored a comprehensive Indian victory. The win also saw India break a 22-year-old ODI record — achieved within just six balls — underlining the dominance of India's batting in the series decider.",
+          "lens": "Jaiswal cementing Kohli's ODI slot with a big knock signals a genuine generational shift at the top of India's batting order — a transition fans and selectors will be watching closely ahead of major tournaments.",
+          "source": "Hindustan Times",
+          "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOTmZNa3pFMmZsZG54RlFXNXBnbUtrYlgyd1lGX0dMLTRycEN2YXNmc19RSVI0UE5odS0wZnA3TUwxdlQzdlJ6eXh5VlZWY2c2YnY0THZ5NmxxR0RXWmhqU0J5RjVDRWJuMk52cjFTZ3l1dlpOZUlGdUtFTHJTYzhCa1JHY1JIUFJlT3g1Nzd3ZW5UQXJjV0E1b2xjdTBxdUhRMGdETEhfaEZPMHZ2UEpkc1NEZmdLTFVoRGdIM3BMN0VYYXlHWmNhb3ExbHpDc0g0UEIycld2S0tCWUQ4enV2U3BjYVREc3dkX1FadHRvZzYtdTZmSldQby1n0gH_AUFVX3lxTE9ibFVSLU15VmpSS3FiUEVEYjRoVEdsbU9rX0RmODhyVjI3eGtPcC1EaTlzN1ljd1ZuWk92UmgycjVPb0ZZZlh5ZTJXZ1BQSUNsdmdzdlVnYlRUcXllNDNfcERVbjhVRndHRmtBTElMTS13MlU2SlMwVWFVT2c4UHNja1kzZ1E0MU5YaTh2MFdrOXRzVzRBTDJSZnRHRWI3d2Y1OUllZmRWdzZwNExpWTZZcTZfeGgxWmhNTVBFYkFJR21USllTcl9OdTc2ejdJbHZ1dkp0ZklIM1pyTGo4M21zdU1xcXdpeEZQOFBFMFN0ZkdiWk5NYTQxNEUycV94cw",
+          "breaking": true,
+          "slug": "20260620-yashasvi-jaiswal-seizes-virat-kohli-s-spot-as-india-crush-afghanistan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg",
+          "image_kind": "photo",
+          "image_credit": "Prime Minister's Office / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Yashasvi_Jaiswal"
         },
         {
           "hour": 20,
@@ -443,10 +458,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOTmZNa3pFMmZsZG54RlFXNXBnbUtrYlgyd1lGX0dMLTRycEN2YXNmc19RSVI0UE5odS0wZnA3TUwxdlQzdlJ6eXh5VlZWY2c2YnY0THZ5NmxxR0RXWmhqU0J5RjVDRWJuMk52cjFTZ3l1dlpOZUlGdUtFTHJTYzhCa1JHY1JIUFJlT3g1Nzd3ZW5UQXJjV0E1b2xjdTBxdUhRMGdETEhfaEZPMHZ2UEpkc1NEZmdLTFVoRGdIM3BMN0VYYXlHWmNhb3ExbHpDc0g0UEIycld2S0tCWUQ4enV2U3BjYVREc3dkX1FadHRvZzYtdTZmSldQby1n0gH_AUFVX3lxTE9ibFVSLU15VmpSS3FiUEVEYjRoVEdsbU9rX0RmODhyVjI3eGtPcC1EaTlzN1ljd1ZuWk92UmgycjVPb0ZZZlh5ZTJXZ1BQSUNsdmdzdlVnYlRUcXllNDNfcERVbjhVRndHRmtBTElMTS13MlU2SlMwVWFVT2c4UHNja1kzZ1E0MU5YaTh2MFdrOXRzVzRBTDJSZnRHRWI3d2Y1OUllZmRWdzZwNExpWTZZcTZfeGgxWmhNTVBFYkFJR21USllTcl9OdTc2ejdJbHZ1dkp0ZklIM1pyTGo4M21zdU1xcXdpeEZQOFBFMFN0ZkdiWk5NYTQxNEUycV94cw",
           "breaking": false,
           "slug": "20260620-yashasvi-jaiswal-turns-virat-kohli-replacement-chance-into-statement-a",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg",
+          "image": "https://images.pexels.com/photos/11740547/pexels-photo-11740547.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Prime Minister's Office / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Yashasvi_Jaiswal"
+          "image_credit": "T K DHAMU",
+          "image_credit_url": "https://www.pexels.com/@tkdhamu"
         },
         {
           "hour": 17,
@@ -464,35 +479,19 @@ window.BRIEF = {
           "image_credit_url": "https://www.pexels.com/@risingstudio07"
         },
         {
-          "hour": 14,
-          "time": "14:37 IST",
-          "headline": "India vs New Zealand: Squads Set for ICC Men's T20 World Cup 2026 Final",
-          "what": "Cricbuzz has published the official match squads for the ICC Men's T20 World Cup 2026 Final between India and New Zealand. The two sides have made it through the tournament to contest the ultimate prize in the shortest format of the game. The squad announcement marks the final step before what promises to be a high-stakes showdown between two of cricket's strongest T20 nations.",
-          "lens": "An India vs New Zealand ICC T20 World Cup Final is one of the biggest cricket events an Indian fan can watch — expect record viewership and national attention.",
-          "source": "Cricbuzz",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOY0pDdkdVMWFBcDl3dC1lLVIxMGlpU21tMU5lRGplLTg0VDI1a01LOW1WanFzVVY0czRoeE5uNU1nQTJFX0E2NVRFYk9sSTB5MWM4SW1USUs2bjE1UUttZFJVb3RoRXJFZFc1ZVNaYUFWX2ZUbjFEeC0yWFYyU044QlVaOGlZWUxINVE5dHhScmpZQ1h1LWJQOWcwaTE?oc=5",
-          "breaking": true,
-          "slug": "20260620-india-vs-new-zealand-squads-set-for-icc-men-s-t20-world-cup-2026-final",
-          "image": "https://images.pexels.com/photos/14094276/pexels-photo-14094276.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "image_kind": "photo",
-          "image_credit": "Vishal Adhikari",
-          "image_credit_url": "https://www.pexels.com/@vishalcreation"
-        },
-        {
-          "hour": 14,
-          "time": "14:34 IST",
-          "headline": "F1 eyes India comeback as Sports Minister orders task force for grand prix revival",
-          "what": "India's Sports Minister has announced a task force to explore reviving Formula 1 racing in India, years after the Indian Grand Prix last ran at the Buddh International Circuit in Greater Noida in 2013. The move signals renewed government interest in bringing the sport back to the country. A task force implies formal coordination between stakeholders including promoters, state governments, and possibly the FIA.",
-          "lens": "A revived Indian Grand Prix would bring billions in tourism revenue and put India back on the global motorsport calendar — directly affecting sports fans, infrastructure investment, and India's soft-power ambitions.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSDhselZHVldtTEdnVzBPNGhxaHRSWkpHMGdyUDRGSmtoaXVBQ1FUbDRSaHprTENNNXg0dmFWTllXLVlJS082Uk9SZHo0RWxQYm04SVJXQjVGUmNEdC1nY3I0SHlLeS1ic3NfR1ZVbU1UcndwNGxIYjB0a1ZwcVdYR1BoT2VUOFNxWmczOEdHaFBieTJkTVNZTnFyelNKR3JEVXVQRU9RMGhkbXh5MFNzMHBtYWNTaWdnNzRCbG9VWnA0SUw5S0lxU3hPOUx1TDByUEstZ9IB2gFBVV95cUxPX2VzbXVuaEFBUlJZd3pLSGVpaGxDdlN3NnlubXNVWkQta05pVTI4WGl3cU5HdXJLRlhwdlV0S25EbHZ5LVVRU3U3VG8wRVY0d3I5VHZmVDlDYUxCZlYtY3o5enlQOEJUSWZfdTFDUnpIMk92SWpaS2xzMS11SHA2UUYyZ3NCSE95cTZFSUoxMlBJRWV4WWk4cTdIMXNZeUdQUDdFZnBtb2lTYWl6NnZVTmd2Y0N1QjBJUXAtWXdMZjV5TXZYT0hvbG1CalJVR0h4QkwxdXBjeUJRQQ",
+          "hour": 13,
+          "time": "13:32 IST",
+          "headline": "India Women face South Africa in T20 World Cup 2026 — head-to-head and live-streaming details",
+          "what": "India Women's cricket team are set to take on South Africa Women in the ICC Women's T20 World Cup 2026, with olympics.com providing head-to-head records and live-streaming information for fans. The two sides have a competitive recent history in women's T20 internationals, making this a closely watched group-stage fixture. With India among the favourites for the tournament, their performance against South Africa will be an early indicator of their campaign's strength.",
+          "lens": "For Indian cricket fans who want to watch IND-W vs SA-W live, this is the practical guide to where and how to catch the action from the Women's T20 World Cup 2026.",
+          "source": "olympics.com",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZUlOWFBubFR2TFk1UUxJMnZicEVEZFdydzFZa3VrZ1RjY3NhOTNKd2R3eEk0RXBTUFFCTnRWSGZzYzdvUEp4bnQ5b1QyQVhtcjd2bVdXUzZqQl9hbWswMGF5anUwNWxNWEcwVlY2RFdPMkRldzd4Ni05bnNqbmRZQkxmMUUyQnVmX3BmMDVnVXZtcWF0SHR4N0tFOHZyQ2ZUNnpuem1mNjB0dDFXY3c",
           "breaking": false,
-          "slug": "20260620-f1-eyes-india-comeback-as-sports-minister-orders-task-force-for-grand",
-          "image": "https://images.pexels.com/photos/11482791/pexels-photo-11482791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "slug": "20260620-india-women-face-south-africa-in-t20-world-cup-2026-head-to-head-and-l",
+          "image": "https://images.pexels.com/photos/36230651/pexels-photo-36230651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Sebastian Angarita",
-          "image_credit_url": "https://www.pexels.com/@sebastian-angarita-188980555",
-          "carried": true
+          "image_credit": "Shlok",
+          "image_credit_url": "https://www.pexels.com/@shlok-230964119"
         }
       ]
     },
@@ -503,17 +502,17 @@ window.BRIEF = {
         {
           "hour": 18,
           "time": "18:10 IST",
-          "headline": "Johnny Lever surprises Zakir Khan on stage at Papa Yaar Mumbai tour",
-          "what": "Veteran comedian Johnny Lever made a surprise appearance on stage during Zakir Khan's Papa Yaar stand-up comedy tour in Mumbai, delighting the audience. The unexpected cameo by Lever — a Bollywood comedy legend — alongside the younger Khan created a viral moment, with fans describing it as 'The genius with the GOAT' on social media. The appearance brought two generations of Indian comedy together in a single, unscripted moment.",
-          "lens": "The clip of a Bollywood comedy icon spontaneously joining one of India's most popular stand-up comedians on stage is the kind of cross-generational moment that travels fast on Indian social media.",
+          "headline": "Johnny Lever surprises Zakir Khan on stage at Papa Yaar tour in Mumbai",
+          "what": "Comedy legend Johnny Lever made a surprise appearance on stage during Zakir Khan's Papa Yaar stand-up tour stop in Mumbai, delighting fans who witnessed the unexpected meeting of two generations of Indian comedy. The moment quickly went viral, with audiences describing it as watching a comedy icon honour a new-age star. Fans flooded social media calling it 'the genius with the GOAT'.",
+          "lens": "The moment captures a rare, unscripted cross-generational connection in Indian comedy that fans rarely get to witness live.",
           "source": "Hindustan Times",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNZWFwUlhpUFlINmZseEJUaHQ0YjgyZG52NWxWdFEwUXNHMzNQTkpWS0NfWlFWdVFLLWxsMmZiNmdEUk5CM2ZGVTItblZJR2JlVlVvbXhHWUJac3JORkpxcWZhejlvY0tWMk12Nkk1YXNNbFI0bFdDb1AwbjQ3M2JpSHhaM294RlFVa1d2WWtQakVvRG1YSHplT2pZWXFOMzAwYXY2aUVnemE1M01qdmF1X01COHFhdVRBdnREZGZrTmIzamRPekh2OXJIMUdUZWItMm5PNVY1ekFkZ0hPak9fRVBWaFLSAeQBQVVfeXFMTWVhcFJYaVBZSDZmbHhCVGh0NGI4MmRudjVsVnRRMFFzRzMzUE5KVktDX1pRVnVRSy1sbDJmYjZnRFJOQjNmRlUyLW5WSUdiZVZVb214R1lCWnNyTkZKcXFmYXo5b2NLVjJNdjZJNWFzTWxSNGxXQ29QMG40NzNiaUh4WjNveEZRVWtXdllrUGpFb0RtWEh6ZU9qWVlxTjMwMGF2NmlFZ3phNTNNanZhdV9NQjhxYXVUQXZ0RGRma05iM2pkT3pIdjlySDFHVGViLTJuTzVWNXpBZGdIT2pPX0VQVmhS",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNZWFwUlhpUFlINmZseEJUaHQ0YjgyZG52NWxWdFEwUXNHMzNQTkpWS0NfWlFWdVFLLWxsMmZiNmdEUk5CM2ZGVTItblZJR2JlVlVvbXhHWUJac3JORkpxcWZhejlvY0tWMk12Nkk1YXNNbFI0bFdDb1AwbjQ3M2JpSHhaM294RlFVa1d2WWtQakVvRG1YSHplT2pZWXFOMzAwYXY2aUVnemE1M01qdmF1X01COHFhdVRBdnREZGZrTmIzamRPekh2OXJIMUdUZWItMm5PNVY1ekFkZ0hPak9fRVBWaFI",
           "breaking": false,
-          "slug": "20260620-johnny-lever-surprises-zakir-khan-on-stage-at-papa-yaar-mumbai-tour",
-          "image": "https://pixabay.com/get/g4f0152c07bcb6bbe5c758b40299309857724e07d720d611c33335f935979eaba745eef01a92dd9368d3d36ca57d21eb685ffedae906ff362283f6fefbe57ce84_1280.jpg",
+          "slug": "20260620-johnny-lever-surprises-zakir-khan-on-stage-at-papa-yaar-tour-in-mumbai",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Zakir_khan_2.jpg",
           "image_kind": "photo",
-          "image_credit": "adege",
-          "image_credit_url": "https://pixabay.com/users/adege-4994132/"
+          "image_credit": "Panigrahiasmitku / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Zakir_Khan_(comedian)"
         },
         {
           "hour": 17,
@@ -535,8 +534,8 @@ window.BRIEF = {
           "hour": 16,
           "time": "16:30 IST",
           "headline": "Priyanka Chopra to star in Hollywood film alongside Angelina Jolie",
-          "what": "Priyanka Chopra is set to appear in a Hollywood film co-starring Angelina Jolie, marking a significant new chapter in her international career. The Indian Express reports the pairing of two globally recognised stars, a rare crossover moment for Indian and Hollywood cinema. The project places Chopra alongside one of Hollywood's most iconic actresses. No release date has been announced yet.",
-          "lens": "For Indian audiences, Priyanka Chopra sharing screen space with Angelina Jolie is a milestone that underlines how far Bollywood stars have penetrated mainstream Hollywood.",
+          "what": "Priyanka Chopra is set to appear in a Hollywood film alongside Angelina Jolie, marking a significant new collaboration for the Indian actress in international cinema. The pairing of two of the world's most recognisable actresses is generating considerable buzz. Details about the film's plot, director, and release timeline have not yet been fully disclosed.",
+          "lens": "Priyanka Chopra sharing screen space with Angelina Jolie raises the profile of Indian talent in mainstream Hollywood at the highest level.",
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOR3hibWcwRjZjaVQzZ2UyNEpNQ0JWOVVJRDRxbl9kVmpDcnN6cmg3c1VRWTRrSS0xMUFiWEdlZ3pVVFFibTM3R1JYMGk2YTFNM3NlVzVRMlIzX09EY19PV3IzdHNfM01jTUM1STctbUFWYlR4bXpILVdfZGFwQjVUN3FpQmhSRVJHRTRTRng0R0FBU0FWZk9DSmQ0Rkg0Y2pWMHNaci1NQzJseWNsVnU4NXpfYzRpckVfY200QmgtZ1Z1Q3RXODRBdnFlZ9IB0gFBVV95cUxOQjdyR1JXSnlnTUtnbjVlRFhUSUxVbHNpckQ0T1dtNFphWUpCZkNmSXdYdjJLV3BtRlBBN0lNLTVzdWZsQjBWOFJ6SWdlUmNCdEM0TG93d3VhU3EyZW50emhqbF9DLUc4SElNMV81MVMyNlBOYWktclRXdXMwdkh4LXZQVnk4dnA4NGItTlZmd3hCQWdTckIwekRvYldWWVlaMHVoUHZSRmZsT2FadHFsbUtlTDhPbXV3Rkk2U21OTGVfU3l0cFp5OENZWlhtdTBXUWc",
           "breaking": false,
@@ -549,17 +548,17 @@ window.BRIEF = {
         {
           "hour": 13,
           "time": "13:46 IST",
-          "headline": "OTT releases this week: What's new on Netflix, Prime Video, JioHotstar, ZEE5 and Apple TV+ (June 15–21)",
-          "what": "The Economic Times has compiled the full list of new OTT releases across major streaming platforms for the week of June 15 to June 21. The roundup covers Netflix, ZEE5, Prime Video, JioHotstar, and Apple TV+, giving subscribers a comprehensive guide to new content available this week. The weekly release slate spans films, web series, and specials across languages. It is one of the most-read entertainment formats for Indian streaming audiences.",
-          "lens": "With millions of Indian households subscribed to multiple OTT platforms, a weekly guide to new releases directly helps viewers decide where to spend their streaming time this weekend.",
+          "headline": "New OTT releases this week: What's streaming on Netflix, Prime Video, JioHotstar, ZEE5 and Apple TV+ (June 15–21)",
+          "what": "A fresh batch of titles lands across India's major streaming platforms this week — Netflix, Amazon Prime Video, JioHotstar, ZEE5, and Apple TV+ — covering the period June 15 to June 21. The Economic Times has compiled the full rundown of new releases for viewers deciding what to watch over the week. The slate spans multiple languages and genres catering to India's diverse OTT audience.",
+          "lens": "With millions of Indians deciding their weekend watch-list, this weekly rundown directly shapes how audiences across the country spend their leisure hours.",
           "source": "The Economic Times",
-          "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxObXAzM1dEMWUzQzhUS3BuVnZBaVhLQ1p1VkxZMEhDcGZ3OGNxZUp2YTk4VGs3NDc1TVBiUl9jd0tVcGV2dnVxMG5ubngyYkhLS0JzemJ2bkpmeUkyQ1d4ejBOaWZEVkJmNFZYaDAtWUpYYzVXVXV6UDI5SUJQSUw0NHJ4enR6Tk1QcmcwNm5idG1KYXN0cXlaMmRqaU5Lc0pxR2xPMnZqZm56amtzUkt5V3pENTVYTlg4UjBtM1drUXFVczFWQmVDOFozWEx3T094VnV6LVVIVTF0R3BNV3h1RURKSVRKYS1COXJFejVRZjMxXzZRSTVZTTZ1ODhzbC0xLVFaRHA5Y1FZMU9pZWfSAZMCQVVfeXFMUEo0czVlclZZM2tjMF83dWZuQThYdEhQYzV3ei1oY294TDN1LUtia2NCSGJFUGY0RmZYRExIYlNGNmI1ZnFMR0RYaDlQbURGODRMMnlzdkJwVnJhaGlqMVIwb196VFA5YWpUVTZYZFZVZndLNUktY1NSd19MSWN1Umo5Skt2VHE0N19fcjl6U1pMQ0hiQi10RDNSa3Q4VWhDMXJnaWtxVF9pUjhpN2RiMGQ0WkhqVkdYeERqdVlGUFBDWngyR2lJUGZrb1p3TDJjUmZkNUdueXA0ZU5IRXp0b2lIeUVVSFhhQUhuTU9DTTlaSmJCY01oOFZKYndjYmJ0ME9DZE1RS2lLWFNPUGdmUGVDLW8",
+          "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxObXAzM1dEMWUzQzhUS3BuVnZBaVhLQ1p1VkxZMEhDcGZ3OGNxZUp2YTk4VGs3NDc1TVBiUl9jd0tVcGV2dnVxMG5ubngyYkhLS0JzemJ2bkpmeUkyQ1d4ejBOaWZEVkJmNFZYaDAtWUpYYzVXVXV6UDI5SUJQSUw0NHJ4enR6Tk1QcmcwNm5idG1KYXN0cXlaMmRqaU5Lc0pxR2xPMnZqZm56amtzUkt5V3pENTVYTlg4UjBtM1drUXFVczFWQmVDOFozWEx3T094VnV6LVVIVTF0R3BNV3h1RURKSVRKYS1COXJFejVRZjMxXzZRSTVZTTZ1ODhzbC0xLVFaRHA5Y1FZMU9pZWc",
           "breaking": false,
-          "slug": "20260620-ott-releases-this-week-what-s-new-on-netflix-prime-video-jiohotstar-ze",
-          "image": "https://pixabay.com/get/g27905f68f1cbfea96ff7b4ca0b283c7ce89987aad1b6be59126c56c1b10a7053aacea27ca73212895acf0138273c7df5d8ad7066e50ce80e0e4f47730d320e4e_1280.jpg",
+          "slug": "20260620-new-ott-releases-this-week-what-s-streaming-on-netflix-prime-video-jio",
+          "image": "https://pixabay.com/get/g8a23baaf7070531154eb039d09b5b8623df0ea1bd9fdee4a1cd70ef3912cd4bff12cdb7a41d72f78c2d854840a8307f14ab80eb5341a3226f3f0e4c682161d90_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Tumisu",
-          "image_credit_url": "https://pixabay.com/users/Tumisu-148124/"
+          "image_credit": "mjimages",
+          "image_credit_url": "https://pixabay.com/users/mjimages-10627284/"
         },
         {
           "hour": 6,
@@ -571,10 +570,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQNVd5Q015bE1OT3h6YzdBejRMVzhZQ2k4Mk1FOUtzVno4WHQ3S240N1lzYTZwMUVMYXNVS3ZWaXlQWnNqT2hiNEVvQjZ5MTRQaXFVWERSdDBIQ1hxSF9pTGhadUtoZnl0ajFQQ0JDQndEUDBBcGowcUFkcVJIUHRITEFUYU1oSFNHUWoyZVRxYU1xRHN1X2pmNjNQblIwYk4zbTljVHJHRE1aczlKYTEwRjgtUlQyMHczek9TRjJ6TE81b0FjdTU1SEg2YVRpZGVjdTNseC1HazI5R0JGZXkzSmhWS1Q5VXkxSjVCQVRKMU5jYjZKSmQ0MnZpN1QtS0hiQmJQeG9fSnNuVVlYRzBNYUtKMNIBmAJBVV95cUxNWlZRd191YzhOQjluMkxET2lTOTBlekhwWnk4Vkk5RVN4VkRncGpYNno3cS05LVM4TWE2ZjdFSkw3Q3AwWkdlVFNTRnNGMHlLc0FpZVFfYWE1TGJKRXI5Wk1CbDBoNGtKS3NaRkZRVFNHX01kRmVuYklLTW9zaHRpeXpGQzlTTEVXR1h6aDg5Rk02eWVzZGNxU3dWSVh5SklkbGlfUGFfRmM1R19mU0M4YjBvRWNmY3NEbGl0RTlfM1g4cWQtTkVpb2UzNnFfMnZnei1XS0FxRmpNVlVzbmRfMWo4bGdJVXdBVEY0RVREek9STDlrdUNQRE1CRVBIaWlYQ2Q2XzBfTDhiYm1PcE5Sd3QtTDZIeFBS",
           "breaking": false,
           "slug": "20260620-k-pop-group-le-sserafim-on-their-guru-randhawa-collaboration-boompala",
-          "image": "https://pixabay.com/get/gd39d5119362e64e273e65b6a8fb103b758dc881e0e1a5565d2868ad33369b1cebb20f319139851bad68128dd830a1cabe5d8d300a37e560d8bc72970584765b6_1280.jpg",
+          "image": "https://images.pexels.com/photos/7503256/pexels-photo-7503256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Pexels",
-          "image_credit_url": "https://pixabay.com/users/Pexels-2286921/"
+          "image_credit": "RDNE Stock project",
+          "image_credit_url": "https://www.pexels.com/@rdne"
         }
       ]
     }
