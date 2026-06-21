@@ -92,10 +92,12 @@ mutation Create($input: CreatePostInput!) {
 """
 
 
-def _create_post(channel_id, text, image_urls=None, instagram=False, slot_index=0):
+def _create_post(channel_id, text, image_urls=None, instagram=False, slot_index=0,
+                 document_url=None):
     """Create one Buffer post. image_urls: list of public image URLs (carousel).
-    instagram=True attaches the required Instagram metadata (type=post for a
-    feed carousel). slot_index spaces morning-scheduled posts 1 hour apart."""
+    document_url: a public PDF URL (LinkedIn document/carousel post).
+    instagram=True attaches the required Instagram metadata. slot_index spaces
+    morning-scheduled posts 1 hour apart."""
     inp = {
         "text": text,
         "channelId": channel_id,
@@ -109,7 +111,10 @@ def _create_post(channel_id, text, image_urls=None, instagram=False, slot_index=
     else:
         inp["schedulingType"] = "automatic"
         inp["mode"] = "addToQueue"
-    if image_urls:
+    if document_url:
+        # Buffer AssetInput for a PDF document (LinkedIn renders these as carousels).
+        inp["assets"] = [{"document": {"url": document_url}}]
+    elif image_urls:
         # Buffer's AssetInput: each entry specifies one of image/video/document/link.
         # For images: {"image": {"url": "..."}} — NOT {"type","url"}.
         inp["assets"] = [{"image": {"url": u}} for u in image_urls]
@@ -168,6 +173,11 @@ def publish_tweets():
     covers = _section_cover_urls()
 
     pending = queue.get("pending", [])
+    if not pending:
+        print("Tweet queue has no pending items — run a fresh edition to generate tweets.")
+    new_count = sum(1 for it in pending if it.get("key") and it.get("key") not in done)
+    if pending and new_count == 0:
+        print(f"All {len(pending)} queued tweets already posted (nothing new).")
     sent = 0
     for item in pending:
         key = item.get("key")
@@ -288,18 +298,25 @@ def publish_linkedin():
         slide_urls = [f"{SITE_URL}/{p}" for p in sec.get("slides", [])]
         if not slide_urls:
             continue
+        # Prefer the LinkedIn-specific caption; fall back to the IG one.
         caption = ""
-        cf = sec.get("caption_file")
+        cf = sec.get("linkedin_caption_file") or sec.get("caption_file")
         if cf and os.path.exists(cf):
             caption = open(cf, encoding="utf-8").read().strip()
+        # Prefer posting the PDF document (LinkedIn renders PDF carousels well);
+        # fall back to the slide images if no PDF.
+        li_pdf = sec.get("linkedin_pdf") or sec.get("pdf")
         try:
-            # LinkedIn is a standard image post (no Instagram metadata needed).
-            pid = _create_post(LINKEDIN_CHANNEL, caption, image_urls=slide_urls,
-                               slot_index=sent)
+            if li_pdf and os.path.exists(li_pdf):
+                doc_url = f"{SITE_URL}/{li_pdf}"
+                pid = _create_post(LINKEDIN_CHANNEL, caption, document_url=doc_url,
+                                   slot_index=sent)
+            else:
+                pid = _create_post(LINKEDIN_CHANNEL, caption, image_urls=slide_urls,
+                                   slot_index=sent)
             done.add(sid)
             sent += 1
-            print(f"  ✓ LinkedIn '{sec['name']}' queued to Buffer "
-                  f"({len(slide_urls)} slides) id={pid}")
+            print(f"  ✓ LinkedIn '{sec['name']}' queued to Buffer id={pid}")
             time.sleep(1)
         except Exception as exc:
             print(f"  ✗ LinkedIn '{sec['name']}' failed: {exc}")
