@@ -336,6 +336,32 @@ def build_caption(section_name, sid, stories, date_label):
 # ----------------------------------------------------------------------------
 # Read yesterday, build
 # ----------------------------------------------------------------------------
+def _story_fingerprint(st):
+    """Loose fingerprint matching the SAME story even when reworded by a
+    different publisher. Set of significant words (>3 chars, minus filler) from
+    the headline. Same event -> mostly the same words."""
+    stop = {"the", "and", "for", "with", "from", "that", "this", "after", "over",
+            "into", "amid", "says", "said", "will", "your", "you", "are", "was",
+            "has", "have", "its", "his", "her", "their", "they", "them", "than",
+            "more", "most", "new", "now", "set", "get", "but", "not", "all"}
+    import re as _re
+    words = _re.findall(r"[a-z0-9]+", (st.get("headline") or "").lower())
+    return frozenset(w for w in words if len(w) > 3 and w not in stop)
+
+
+def _is_dupe_fp(fp, seen_fps):
+    """True if fp overlaps a seen fingerprint enough to be the same event."""
+    if not fp or len(fp) < 4:
+        return False
+    for s in seen_fps:
+        if not s or len(s) < 4:
+            continue
+        overlap = len(fp & s); union = len(fp | s)
+        if union and overlap / union >= 0.5:   # 0.5 = aggressive for social
+            return True
+    return False
+
+
 def yesterday_sections():
     y = (NOW - timedelta(days=1)).strftime("%Y-%m-%d")
     by_section, order = {}, []
@@ -350,13 +376,31 @@ def yesterday_sections():
         for sec in ed.get("sections", []):
             sid = sec["id"]
             if sid not in by_section:
-                by_section[sid] = {"name": sec["name"], "stories": [], "seen": set()}
+                by_section[sid] = {"name": sec["name"], "stories": [],
+                                   "seen": set(), "fps": []}
                 order.append(sid)
             for st in sec.get("stories", []):
                 key = st.get("slug") or st.get("headline")
                 if key in by_section[sid]["seen"]:
                     continue
+                # Fuzzy: skip if it's the SAME event as one already kept
+                # (different publisher, reworded headline). But if the new copy
+                # HAS an image and the kept one doesn't, swap to the better copy.
+                fp = _story_fingerprint(st)
+                dupe_idx = None
+                for i, seen_fp in enumerate(by_section[sid]["fps"]):
+                    if _is_dupe_fp(fp, [seen_fp]):
+                        dupe_idx = i
+                        break
+                if dupe_idx is not None:
+                    existing = by_section[sid]["stories"][dupe_idx]
+                    new_has_img = bool((st.get("image") or "").startswith("http"))
+                    old_has_img = bool((existing.get("image") or "").startswith("http"))
+                    if new_has_img and not old_has_img:
+                        by_section[sid]["stories"][dupe_idx] = st  # keep the one with an image
+                    continue
                 by_section[sid]["seen"].add(key)
+                by_section[sid]["fps"].append(fp)
                 by_section[sid]["stories"].append(st)
     return y, order, by_section
 
@@ -476,7 +520,12 @@ def main():
 
     for sid in order:
         sec = by_section[sid]
-        stories = sec["stories"][:5]
+        # Prefer stories that have a real image (so slides aren't repetitive
+        # generative art), while preserving recency order within each group.
+        _all = sec["stories"]
+        _with_img = [s for s in _all if (s.get("image") or "").startswith("http")]
+        _without = [s for s in _all if not (s.get("image") or "").startswith("http")]
+        stories = (_with_img + _without)[:5]
         if not stories:
             continue
         sdir = os.path.join(base, sid)
