@@ -156,12 +156,16 @@ def build_worldcup(write_page=True):
 
 
 def _match_report_line(m):
-    """Build a detailed one-match report: 'Brazil 3-0 Haiti — goals from Vinícius
-    Júnior (12'), Rodrygo (44'), Raphinha (78').'"""
+    """Build a detailed one-match report paragraph: scoreline, goalscorers with
+    minutes, half-time score and venue."""
     score = m.get("score", {})
     ft = score.get("ft") if isinstance(score, dict) else None
+    ht = score.get("ht") if isinstance(score, dict) else None
     sc = f"{ft[0]}-{ft[1]}" if ft and len(ft) == 2 else "v"
     line = f"{m['team1']} {sc} {m['team2']}"
+    grp = m.get("group", "")
+    if grp:
+        line += f" ({grp})"
     scorers = []
     for who, glist in ((m['team1'], m.get('goals1') or []),
                        (m['team2'], m.get('goals2') or [])):
@@ -169,9 +173,16 @@ def _match_report_line(m):
             nm = g.get("name", "").strip()
             mn = g.get("minute", "")
             if nm:
-                scorers.append(f"{nm} ({mn}')" if mn else nm)
+                scorers.append(f"{nm} {mn}'" if mn else nm)
+    detail = []
     if scorers:
-        line += " — goals from " + ", ".join(scorers)
+        detail.append("Scorers: " + ", ".join(scorers) + ".")
+    if ht and len(ht) == 2:
+        detail.append(f"Half-time: {ht[0]}-{ht[1]}.")
+    if m.get("ground"):
+        detail.append(f"Venue: {m['ground']}.")
+    if detail:
+        line += ". " + " ".join(detail)
     return line
 
 
@@ -206,17 +217,19 @@ def daily_scores_story():
 
     facts = [f"{r['team1']} {r['score']} {r['team2']}" for r in recent[:4]]
 
-    # Well-paragraphed editorial article.
+    # Well-paragraphed editorial article — each match is its OWN paragraph.
     paras = []
     if detailed:
         paras.append("The FIFA World Cup 2026 group stage continued with another "
                      "full matchday. Here are the latest results in full:")
-        paras.append("\n".join(detailed))
+        # Each match report as a separate paragraph (blank-line separated).
+        paras.extend(detailed)
     nxt = (today + upcoming)[:4]
     if nxt:
-        fixtures = "\n".join(f"{u['team1']} v {u['team2']} — {u['ist']}" for u in nxt)
         paras.append("Coming up next (all times IST):")
-        paras.append(fixtures)
+        for u in nxt:
+            paras.append(f"{u['team1']} v {u['team2']} — {u['ist']}"
+                         + (f" ({u['group']})" if u.get("group") else ""))
     paras.append("Full group standings, scorers and the complete fixture list are "
                  "on our FIFA World Cup 2026 page, updated through the day.")
     article = "\n\n".join(paras)
