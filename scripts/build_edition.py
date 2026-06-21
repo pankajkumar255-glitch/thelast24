@@ -124,8 +124,9 @@ def collect_headlines():
 
 # ------------------------------------------------------------------ write ---
 SECTION_IDS = {
-    "National": "national", "World": "world", "Business & Markets": "business",
-    "Technology": "tech", "Artificial Intelligence": "ai", "Sports": "sports", "Entertainment": "entertainment",
+    "World": "world", "Business & Markets": "business", "Technology": "tech",
+    "National": "national", "Artificial Intelligence": "ai", "Sports": "sports",
+    "Entertainment": "entertainment",
 }
 
 EDITORIAL_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher. You will be given the raw headlines for ONE section and must produce that section's stories.
@@ -844,7 +845,7 @@ def article_page(story, section, edition):
         facts_box = f'<div class="facts"><h2>Key facts</h2><ul>{items}</ul></div>'
     src_name = e(story.get("source", "the original source"))
     src_url = e(story.get("url", "#"))
-    _mhead = masthead_html([("World Cup", "/worldcup.html", False),
+    _mhead = masthead_html([("FIFA World Cup 2026", "/worldcup.html", False),
                             ("Trending", "/trending.html", False),
                             ("Current Affairs", "/current-affairs.html", True),
                             ("Archive", "/archive.html", False)],
@@ -1029,7 +1030,7 @@ def build_archive():
     cat_opts = "".join(f'<option value="{c}">{e(n)}</option>' for c, n in sorted(cats.items(), key=lambda x: x[1]))
     src_opts = "".join(f'<option value="{e(s)}">{e(s)}</option>' for s in sorted(x for x in sources if x))
     total = len(seen)
-    _arch_mhead = masthead_html([("World Cup", "/worldcup.html", False),
+    _arch_mhead = masthead_html([("FIFA World Cup 2026", "/worldcup.html", False),
                             ("Trending", "/trending.html", False),
                                  ("Current Affairs", "/current-affairs.html", True),
                                  ("Home", "/", False)])
