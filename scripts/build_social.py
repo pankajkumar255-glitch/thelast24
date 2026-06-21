@@ -289,6 +289,50 @@ def outro_slide(sid):
 # ----------------------------------------------------------------------------
 # Caption (Claude-written)
 # ----------------------------------------------------------------------------
+def build_linkedin_caption(section_name, sid, stories, date_label):
+    """A LinkedIn-native caption: professional, insight-led, light on hashtags.
+    LinkedIn rewards a strong opening line + substance over emoji/hashtag spam."""
+    LI_TAGS = {
+        "ai": ["#ArtificialIntelligence", "#AI", "#Technology", "#Innovation"],
+        "tech": ["#Technology", "#Innovation", "#Startups", "#India"],
+        "world": ["#WorldNews", "#GlobalAffairs", "#Geopolitics"],
+    }
+    tags = LI_TAGS.get(sid, ["#News"]) + ["#TheLast24"]
+    tagline = " ".join(tags)
+    if _be is not None:
+        items = "\n".join(f"- {s['headline']}: {s.get('what','')}" for s in stories)
+        sys_prompt = (
+            "You write LinkedIn posts for 'The Last 24', a verified Indian news "
+            "brief. LinkedIn voice: professional, measured, insight-led — written "
+            "for a business and tech audience that values substance over hype. "
+            "NOT the casual Instagram voice; no emoji spam, no 'save this'.\n"
+            f"Write ONE LinkedIn post summarising today's {section_name} stories "
+            f"({date_label}).\n"
+            "FORMAT: (1) Open with a sharp, professional hook line — an insight, a "
+            "trend observation, or why this matters for business/industry. (2) A "
+            "short readable rundown of the key stories, each with a line on its "
+            "significance — use line breaks for readability. (3) A measured close "
+            "that invites the reader to the full brief at thelast24.in. Keep it "
+            "substantive and under 1300 characters. At most ONE tasteful emoji, "
+            "optional. Indian English, accurate, no invented facts. Do NOT add "
+            "hashtags yourself.\n"
+            'Respond with ONLY JSON: {"caption":"...the post text..."}')
+        try:
+            data = _be.extract_json(
+                _be.call_claude(sys_prompt, f"Stories:\n{items}", 1500), "caption")
+            cap = str(data.get("caption", "")).strip()
+            if cap:
+                return cap + "\n\n" + tagline
+        except Exception as exc:
+            print(f"  LinkedIn caption generation failed ({exc}); using simple caption")
+    lines = [f"{section_name} — what mattered today ({date_label}):", ""]
+    for s in stories:
+        summ = (s.get("what") or "").split(". ")[0]
+        lines.append(f"• {s['headline']} — {summ}.")
+    lines += ["", "Full brief: thelast24.in", "", tagline]
+    return "\n".join(lines)
+
+
 def build_caption(section_name, sid, stories, date_label):
     """Rich, Instagram-friendly caption written by Claude: varied opening, short
     per-story summaries, warm-but-credible voice, hashtags. Falls back to a
@@ -515,6 +559,8 @@ def main():
         return
     date_label = (NOW - timedelta(days=1)).strftime("%A, %d %B %Y")
     base = f"social/instagram/{date_str}"
+    li_base = f"social/linkedin/{date_str}"
+    os.makedirs(li_base, exist_ok=True)
     os.makedirs(base, exist_ok=True)
     manifest = {"date": date_str, "label": date_label, "sections": []}
 
@@ -550,13 +596,28 @@ def main():
 
         pdf_path = _carousel_pdf(slides, sdir, sec["name"])
 
+        # LinkedIn: for the professional-fit sections only (AI/Tech/World),
+        # write a PDF + a LinkedIn-friendly caption into a SEPARATE folder.
+        li_pdf = li_caption_file = None
+        if sid in ("ai", "tech", "world"):
+            li_dir = os.path.join(li_base, sid)
+            os.makedirs(li_dir, exist_ok=True)
+            li_pdf = _carousel_pdf(slides, li_dir, sec["name"] + " (LinkedIn)")
+            li_cap = build_linkedin_caption(sec["name"], sid, stories, date_label)
+            li_caption_file = os.path.join(li_dir, "caption.txt")
+            with open(li_caption_file, "w", encoding="utf-8") as f:
+                f.write(li_cap)
+
         manifest["sections"].append({
             "id": sid, "name": sec["name"], "slides": slides,
             "caption_file": os.path.join(sdir, "caption.txt"),
             "pdf": pdf_path,
+            "linkedin_pdf": li_pdf,
+            "linkedin_caption_file": li_caption_file,
             "slide_count": len(slides),
         })
-        print(f"  {sec['name']}: {len(slides)} slides" + (" + PDF" if pdf_path else ""))
+        print(f"  {sec['name']}: {len(slides)} slides" + (" + PDF" if pdf_path else "")
+              + (" + LinkedIn" if li_pdf else ""))
 
     # World Cup daily carousel (scores + standings), if the tournament is on.
     try:
