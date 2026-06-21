@@ -290,32 +290,44 @@ def outro_slide(sid):
 # Caption (Claude-written)
 # ----------------------------------------------------------------------------
 def build_linkedin_caption(section_name, sid, stories, date_label):
-    """A LinkedIn-native caption: professional, insight-led, light on hashtags.
-    LinkedIn rewards a strong opening line + substance over emoji/hashtag spam."""
+    """A LinkedIn-native caption with a strong opinionated hook and a real point
+    of view — modelled on what actually performs: a bold/contrarian opening line
+    in the first ~200 chars, POV-led commentary ('what this means'), no external
+    link in the body, 3-5 hashtags."""
     LI_TAGS = {
         "ai": ["#ArtificialIntelligence", "#AI", "#Technology", "#Innovation"],
         "tech": ["#Technology", "#Innovation", "#Startups", "#India"],
         "world": ["#WorldNews", "#GlobalAffairs", "#Geopolitics"],
     }
     tags = LI_TAGS.get(sid, ["#News"]) + ["#TheLast24"]
-    tagline = " ".join(tags)
+    tagline = " ".join(tags[:5])
     if _be is not None:
         items = "\n".join(f"- {s['headline']}: {s.get('what','')}" for s in stories)
         sys_prompt = (
             "You write LinkedIn posts for 'The Last 24', a verified Indian news "
-            "brief. LinkedIn voice: professional, measured, insight-led — written "
-            "for a business and tech audience that values substance over hype. "
-            "NOT the casual Instagram voice; no emoji spam, no 'save this'.\n"
-            f"Write ONE LinkedIn post summarising today's {section_name} stories "
+            "brief, in the voice of a sharp industry commentator with a clear "
+            "POINT OF VIEW — the kind of post professionals actually stop to read "
+            "and argue with in the comments. NOT a neutral news summary, NOT the "
+            "casual Instagram voice.\n"
+            f"Write ONE LinkedIn post reacting to today's {section_name} stories "
             f"({date_label}).\n"
-            "FORMAT: (1) Open with a sharp, professional hook line — an insight, a "
-            "trend observation, or why this matters for business/industry. (2) A "
-            "short readable rundown of the key stories, each with a line on its "
-            "significance — use line breaks for readability. (3) A measured close "
-            "that invites the reader to the full brief at thelast24.in. Keep it "
-            "substantive and under 1300 characters. At most ONE tasteful emoji, "
-            "optional. Indian English, accurate, no invented facts. Do NOT add "
-            "hashtags yourself.\n"
+            "WHAT MAKES IT WORK (follow closely):\n"
+            "- HOOK FIRST: the opening 1-2 lines (under ~200 characters) must land "
+            "before LinkedIn's 'see more' cut. Use a bold statement, a contrarian "
+            "take, a striking specific number, or 'here's what everyone's missing' "
+            "energy. Take a POSITION — opinionated openings outperform neutral ones.\n"
+            "- THEN THE SUBSTANCE: pull together the day's key developments and add "
+            "YOUR read — what it means, why it matters, what to watch next. React "
+            "as a commentator, don't just relay headlines. Name the specifics "
+            "(companies, numbers, people).\n"
+            "- Short paragraphs / line breaks for readability on mobile.\n"
+            "- Close with a light prompt for discussion (an open question or a "
+            "'what's your take?'), NOT a hard sell.\n"
+            "- LENGTH: aim 600-1100 characters. Tight and punchy beats padded.\n"
+            "- Do NOT put any external link or URL in the text (LinkedIn throttles "
+            "posts with links). Do NOT add hashtags yourself. At most one tasteful "
+            "emoji, optional.\n"
+            "Indian English, accurate, never invent facts.\n"
             'Respond with ONLY JSON: {"caption":"...the post text..."}')
         try:
             data = _be.extract_json(
@@ -325,11 +337,13 @@ def build_linkedin_caption(section_name, sid, stories, date_label):
                 return cap + "\n\n" + tagline
         except Exception as exc:
             print(f"  LinkedIn caption generation failed ({exc}); using simple caption")
-    lines = [f"{section_name} — what mattered today ({date_label}):", ""]
+    lead = stories[0]
+    lines = [f"{lead['headline']}.", "",
+             "The stories shaping " + section_name.lower() + f" today ({date_label}):", ""]
     for s in stories:
         summ = (s.get("what") or "").split(". ")[0]
         lines.append(f"• {s['headline']} — {summ}.")
-    lines += ["", "Full brief: thelast24.in", "", tagline]
+    lines += ["", "What's your read on this?", "", tagline]
     return "\n".join(lines)
 
 
