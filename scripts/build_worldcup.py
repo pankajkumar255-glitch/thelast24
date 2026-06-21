@@ -155,35 +155,80 @@ def build_worldcup(write_page=True):
     return payload
 
 
+def _match_report_line(m):
+    """Build a detailed one-match report: 'Brazil 3-0 Haiti — goals from Vinícius
+    Júnior (12'), Rodrygo (44'), Raphinha (78').'"""
+    score = m.get("score", {})
+    ft = score.get("ft") if isinstance(score, dict) else None
+    sc = f"{ft[0]}-{ft[1]}" if ft and len(ft) == 2 else "v"
+    line = f"{m['team1']} {sc} {m['team2']}"
+    scorers = []
+    for who, glist in ((m['team1'], m.get('goals1') or []),
+                       (m['team2'], m.get('goals2') or [])):
+        for g in glist:
+            nm = g.get("name", "").strip()
+            mn = g.get("minute", "")
+            if nm:
+                scorers.append(f"{nm} ({mn}')" if mn else nm)
+    if scorers:
+        line += " — goals from " + ", ".join(scorers)
+    return line
+
+
 def daily_scores_story():
-    """A story dict for the Sports carousel: yesterday/today's World Cup results
-    plus the next fixtures, in the site's story shape. Returns None if no data."""
+    """A richly detailed story dict for the Sports carousel: a proper match report
+    of recent World Cup results (with goalscorers) plus upcoming fixtures, well
+    paragraphed. Returns None if no data."""
     if not ENABLED:
         return None
     try:
         data = _fetch()
     except Exception:
         return None
-    recent, today, upcoming = _matches_view(data.get("matches", []))
+    matches = data.get("matches", [])
+    # attach raw goal data to the recent view by matching teams+date
+    recent, today, upcoming = _matches_view(matches)
+    # build a lookup so we can enrich recent items with goals
+    raw_by_key = {(m.get("team1"), m.get("team2"), m.get("date")): m for m in matches}
     if not (recent or today or upcoming):
         return None
-    lines = []
-    for r in recent[:4]:
-        lines.append(f"{r['team1']} {r['score']} {r['team2']}")
-    facts = lines[:4]
-    nxt = (today + upcoming)[:3]
-    next_line = "; ".join(f"{u['team1']} v {u['team2']} ({u['ist']})" for u in nxt)
-    headline = "World Cup 2026: latest scores and what's next"
-    article = ("The latest from the FIFA World Cup 2026. Recent results: "
-               + "; ".join(lines[:4]) + ". ")
-    if next_line:
-        article += f"Coming up (IST): {next_line}."
+
+    # Detailed per-match report lines (with scorers) for the key facts + article.
+    detailed = []
+    for r in recent[:5]:
+        raw = raw_by_key.get((r["team1"], r["team2"], r.get("ist_date")))
+        if not raw:
+            # fall back: find by teams only
+            raw = next((m for m in matches if m.get("team1") == r["team1"]
+                        and m.get("team2") == r["team2"] and m.get("score")), None)
+        detailed.append(_match_report_line(raw) if raw else
+                        f"{r['team1']} {r['score']} {r['team2']}")
+
+    facts = [f"{r['team1']} {r['score']} {r['team2']}" for r in recent[:4]]
+
+    # Well-paragraphed editorial article.
+    paras = []
+    if detailed:
+        paras.append("The FIFA World Cup 2026 group stage continued with another "
+                     "full matchday. Here are the latest results in full:")
+        paras.append("\n".join(detailed))
+    nxt = (today + upcoming)[:4]
+    if nxt:
+        fixtures = "\n".join(f"{u['team1']} v {u['team2']} — {u['ist']}" for u in nxt)
+        paras.append("Coming up next (all times IST):")
+        paras.append(fixtures)
+    paras.append("Full group standings, scorers and the complete fixture list are "
+                 "on our FIFA World Cup 2026 page, updated through the day.")
+    article = "\n\n".join(paras)
+
+    headline = "FIFA World Cup 2026: latest scores and full results"
     return {
         "headline": headline,
         "time": NOW.strftime("%H:%M IST"),
         "hour": NOW.hour,
-        "what": "Latest World Cup scores and upcoming fixtures, in IST.",
-        "lens": "Track every matchday in your time zone.",
+        "what": ("The latest FIFA World Cup 2026 results in full — scorelines, "
+                 "goalscorers and what's coming up next, all in IST."),
+        "lens": "Every matchday, tracked in your time zone.",
         "article": article,
         "key_facts": facts,
         "source": "openfootball",
