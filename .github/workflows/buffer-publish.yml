@@ -19,13 +19,18 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: Install dependencies
+        run: pip install requests
       - name: Push queued content to Buffer
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_X_CHANNEL_ID: ${{ secrets.BUFFER_X_CHANNEL_ID }}
           BUFFER_IG_CHANNEL_ID: ${{ secrets.BUFFER_IG_CHANNEL_ID }}
+          BUFFER_LINKEDIN_CHANNEL_ID: ${{ secrets.BUFFER_LINKEDIN_CHANNEL_ID }}
           SITE_URL: ${{ vars.SITE_URL }}
-          BUFFER_SCHEDULE: queue
+          BUFFER_SCHEDULE: ${{ vars.BUFFER_SCHEDULE }}
+          BUFFER_MORNING_START: ${{ vars.BUFFER_MORNING_START }}
+          BUFFER_SPACING_MIN: ${{ vars.BUFFER_SPACING_MIN }}
         run: python scripts/buffer_publish.py
       - name: Commit posted-tracking files
         run: |
