@@ -16,6 +16,8 @@
       ],
       "caption_file": "social/instagram/2026-06-21/national/caption.txt",
       "pdf": "social/instagram/2026-06-21/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
       "slide_count": 7
     },
     {
@@ -32,6 +34,8 @@
       ],
       "caption_file": "social/instagram/2026-06-21/world/caption.txt",
       "pdf": "social/instagram/2026-06-21/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-21/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-21/world/caption.txt",
       "slide_count": 7
     },
     {
@@ -48,6 +52,8 @@
       ],
       "caption_file": "social/instagram/2026-06-21/business/caption.txt",
       "pdf": "social/instagram/2026-06-21/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
       "slide_count": 7
     },
     {
@@ -64,6 +70,8 @@
       ],
       "caption_file": "social/instagram/2026-06-21/tech/caption.txt",
       "pdf": "social/instagram/2026-06-21/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-21/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-21/tech/caption.txt",
       "slide_count": 7
     },
     {
@@ -80,6 +88,8 @@
       ],
       "caption_file": "social/instagram/2026-06-21/ai/caption.txt",
       "pdf": "social/instagram/2026-06-21/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-21/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-21/ai/caption.txt",
       "slide_count": 7
     },
     {
@@ -96,6 +106,8 @@
       ],
       "caption_file": "social/instagram/2026-06-21/sports/caption.txt",
       "pdf": "social/instagram/2026-06-21/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
       "slide_count": 7
     },
     {
@@ -112,6 +124,8 @@
       ],
       "caption_file": "social/instagram/2026-06-21/entertainment/caption.txt",
       "pdf": "social/instagram/2026-06-21/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
       "slide_count": 7
     },
     {
