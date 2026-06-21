@@ -7,7 +7,7 @@ name: Publish to Buffer
 on:
   workflow_dispatch:        # manual "Run workflow" button
   schedule:
-    - cron: "0 3 * * *"     # 03:00 UTC = 08:30 IST daily (after the social build)
+    - cron: "30 4 * * *"     # 04:30 UTC = 10:00 IST — well after social build + Pages deploy
 
 permissions:
   contents: write           # to commit the posted-tracking files
