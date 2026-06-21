@@ -35,6 +35,9 @@ BUFFER_API = "https://api.buffer.com"
 API_KEY = os.environ.get("BUFFER_API_KEY", "").strip()
 X_CHANNEL = os.environ.get("BUFFER_X_CHANNEL_ID", "").strip()
 IG_CHANNEL = os.environ.get("BUFFER_IG_CHANNEL_ID", "").strip()
+LINKEDIN_CHANNEL = os.environ.get("BUFFER_LINKEDIN_CHANNEL_ID", "").strip()
+# LinkedIn = professional audience: only these sections make sense there.
+LINKEDIN_SECTIONS = ["ai", "tech", "world"]
 SITE_URL = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
 SCHEDULE = os.environ.get("BUFFER_SCHEDULE", "queue").strip().lower()
 
@@ -246,6 +249,66 @@ def publish_carousels():
     print(f"Carousels pushed to Buffer: {sent} (from {date_dir}).")
 
 
+# --------------------------------------------------------------- linkedin ---
+def publish_linkedin():
+    """Post up to 3 carousels to LinkedIn — only the professional-fit sections
+    (AI, Technology, World news). Uses the same carousel images + caption."""
+    if not LINKEDIN_CHANNEL:
+        print("No BUFFER_LINKEDIN_CHANNEL_ID set — skipping LinkedIn.")
+        return
+    manifests = sorted(glob.glob("social/instagram/*/manifest.json"))
+    if not manifests:
+        print("No manifests — nothing to post to LinkedIn.")
+        return
+    mpath = manifests[-1]
+    base = os.path.dirname(mpath)
+    date_dir = os.path.basename(base)
+    with open(mpath, encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    posted_path = os.path.join(base, "linkedin-posted.json")
+    done = set()
+    if os.path.exists(posted_path):
+        try:
+            done = set(json.load(open(posted_path, encoding="utf-8")).get("sections", []))
+        except Exception:
+            pass
+
+    # Keep only LinkedIn-appropriate sections, in priority order, capped at 3.
+    secs = {s["id"]: s for s in manifest.get("sections", [])}
+    ordered = [secs[sid] for sid in LINKEDIN_SECTIONS if sid in secs]
+
+    sent = 0
+    for sec in ordered:
+        if sent >= 3:
+            break
+        sid = sec["id"]
+        if sid in done:
+            continue
+        slide_urls = [f"{SITE_URL}/{p}" for p in sec.get("slides", [])]
+        if not slide_urls:
+            continue
+        caption = ""
+        cf = sec.get("caption_file")
+        if cf and os.path.exists(cf):
+            caption = open(cf, encoding="utf-8").read().strip()
+        try:
+            # LinkedIn is a standard image post (no Instagram metadata needed).
+            pid = _create_post(LINKEDIN_CHANNEL, caption, image_urls=slide_urls,
+                               slot_index=sent)
+            done.add(sid)
+            sent += 1
+            print(f"  ✓ LinkedIn '{sec['name']}' queued to Buffer "
+                  f"({len(slide_urls)} slides) id={pid}")
+            time.sleep(1)
+        except Exception as exc:
+            print(f"  ✗ LinkedIn '{sec['name']}' failed: {exc}")
+
+    with open(posted_path, "w", encoding="utf-8") as f:
+        json.dump({"sections": list(done)}, f, ensure_ascii=False, indent=2)
+    print(f"LinkedIn posts pushed to Buffer: {sent} (from {date_dir}).")
+
+
 def list_channels():
     """Print connected Buffer channels + their IDs. Tries a few schema shapes
     since Buffer's GraphQL field nesting can vary. Run: python scripts/buffer_publish.py --list-channels"""
@@ -303,6 +366,7 @@ def main():
     print("Pushing to Buffer...")
     publish_tweets()
     publish_carousels()
+    publish_linkedin()
     print("Buffer publish complete.")
 
 
