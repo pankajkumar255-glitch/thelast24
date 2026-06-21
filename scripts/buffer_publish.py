@@ -93,11 +93,11 @@ mutation Create($input: CreatePostInput!) {
 
 
 def _create_post(channel_id, text, image_urls=None, instagram=False, slot_index=0,
-                 document_url=None):
+                 document_url=None, document_title=None, document_thumbnail=None):
     """Create one Buffer post. image_urls: list of public image URLs (carousel).
-    document_url: a public PDF URL (LinkedIn document/carousel post).
-    instagram=True attaches the required Instagram metadata. slot_index spaces
-    morning-scheduled posts 1 hour apart."""
+    document_url: a public PDF URL (LinkedIn document/carousel post) — requires
+    document_title and document_thumbnail. instagram=True attaches the required
+    Instagram metadata. slot_index spaces morning-scheduled posts 1 hour apart."""
     inp = {
         "text": text,
         "channelId": channel_id,
@@ -112,8 +112,12 @@ def _create_post(channel_id, text, image_urls=None, instagram=False, slot_index=
         inp["schedulingType"] = "automatic"
         inp["mode"] = "addToQueue"
     if document_url:
-        # Buffer AssetInput for a PDF document (LinkedIn renders these as carousels).
-        inp["assets"] = [{"document": {"url": document_url}}]
+        # Buffer AssetInput for a PDF document — title + thumbnailUrl are REQUIRED.
+        inp["assets"] = [{"document": {
+            "url": document_url,
+            "title": document_title or "The Last 24",
+            "thumbnailUrl": document_thumbnail or "",
+        }}]
     elif image_urls:
         # Buffer's AssetInput: each entry specifies one of image/video/document/link.
         # For images: {"image": {"url": "..."}} — NOT {"type","url"}.
@@ -197,7 +201,22 @@ def publish_tweets():
             print(f"  ✓ tweet queued to Buffer ({tag}) ({key[:40]}) id={pid}")
             time.sleep(1)
         except Exception as exc:
-            print(f"  ✗ tweet failed ({key[:40]}): {exc}")
+            # Most failures are image-fetch errors (404/expired URL). A tweet
+            # never NEEDS an image — retry text-only so it still goes out.
+            if imgs:
+                try:
+                    pid = _create_post(X_CHANNEL, item["text"], image_urls=None,
+                                       slot_index=sent)
+                    done.add(key)
+                    sent += 1
+                    print(f"  ✓ tweet queued to Buffer (text only, image skipped) "
+                          f"({key[:40]}) id={pid}")
+                    time.sleep(1)
+                    continue
+                except Exception as exc2:
+                    print(f"  ✗ tweet failed even text-only ({key[:40]}): {exc2}")
+            else:
+                print(f"  ✗ tweet failed ({key[:40]}): {exc}")
 
     posted["keys"] = list(done)
     with open(posted_path, "w", encoding="utf-8") as f:
@@ -309,8 +328,12 @@ def publish_linkedin():
         try:
             if li_pdf and os.path.exists(li_pdf):
                 doc_url = f"{SITE_URL}/{li_pdf}"
+                # Use the first slide PNG as the document thumbnail.
+                slides_li = sec.get("slides", [])
+                thumb = f"{SITE_URL}/{slides_li[0]}" if slides_li else ""
                 pid = _create_post(LINKEDIN_CHANNEL, caption, document_url=doc_url,
-                                   slot_index=sent)
+                                   document_title=f"The Last 24 — {sec['name']}",
+                                   document_thumbnail=thumb, slot_index=sent)
             else:
                 pid = _create_post(LINKEDIN_CHANNEL, caption, image_urls=slide_urls,
                                    slot_index=sent)
