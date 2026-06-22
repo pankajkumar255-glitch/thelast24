@@ -30,7 +30,7 @@ SECTION_QUERIES = {
     "Sports":             "India cricket OR sports",
     "Entertainment":      "Bollywood OR Indian entertainment OR OTT",
 }
-PER_SECTION = 4
+PER_SECTION = 8
 
 # Breaking / trending: extra high-priority pulls so big India-wide stories that
 # don't fit a single section query (e.g. a major appointment, a sudden event)
@@ -425,7 +425,9 @@ def _carry_forward_sections(needed_ids):
 def write_edition(raw):
     """One small Claude call per section — short JSON outputs parse reliably."""
     backfill = int(os.environ.get("BACKFILL_DAYS", "0") or 0) > 0
-    per_cap = 6 if backfill else 5
+    # Ask for more than the display target (5) so that after de-duplication and
+    # cross-section removal, each section still has enough to show a full 5.
+    per_cap = 8 if backfill else 7
     groups = {}
     breaking_pool = []
     for line in raw.splitlines():
@@ -473,10 +475,12 @@ def write_edition(raw):
                 print(f"  -> attempt failed ({exc}); trying a simpler request...")
         if stories:
             # Drop near-duplicates within the section (same event from 2 sources).
+            # Aggressive (0.34) — reworded same-event repeats inside one section
+            # are exactly what users notice (e.g. two Tech stories on one launch).
             deduped, fps = [], []
             for st in stories:
                 fp = _story_fingerprint(st)
-                if _is_dupe(fp, fps):
+                if _is_dupe(fp, fps, threshold=0.34):
                     print(f"  -> dropped near-duplicate: {st.get('headline','')[:50]}")
                     continue
                 deduped.append(st); fps.append(fp)
@@ -570,7 +574,9 @@ def write_edition(raw):
         "lensLabel": "Why it matters",
         "sections": sections,
     }
-    topup_and_sort(edition, target=per_cap)
+    # Display target is always 5 (the buffer above just ensures enough survive
+    # de-duplication). Top up thin sections from recent editions to reach 5.
+    topup_and_sort(edition, target=5)
     return edition
 
 
@@ -589,16 +595,26 @@ def _story_dt(st):
         return NOW
 
 
+def _stem(w):
+    """Light suffix stripping so morphological variants match: india/indian,
+    launch/launches/launched/launching, reduce/reduces/reduced, etc."""
+    for suf in ("ing", "es", "ed", "s", "n"):
+        if len(w) > len(suf) + 3 and w.endswith(suf):
+            return w[: -len(suf)]
+    return w
+
+
 def _story_fingerprint(st):
     """A loose fingerprint that matches the SAME story even when the headline is
-    reworded. Uses the set of significant words (>3 chars, minus common filler)
-    from the headline. Two headlines about the same event share most of these."""
+    reworded. Uses the set of significant (stemmed) words (>3 chars, minus
+    common filler). Two headlines about the same event share most of these."""
     stop = {"the", "and", "for", "with", "from", "that", "this", "after", "over",
             "into", "amid", "says", "said", "will", "your", "you", "are", "was",
             "has", "have", "its", "his", "her", "their", "they", "them", "than",
-            "more", "most", "new", "now", "set", "get", "but", "not", "all"}
+            "more", "most", "new", "now", "set", "get", "but", "not", "all",
+            "india", "indian", "market", "latest", "amid", "as"}
     words = re.findall(r"[a-z0-9]+", (st.get("headline") or "").lower())
-    sig = frozenset(w for w in words if len(w) > 3 and w not in stop)
+    sig = frozenset(_stem(w) for w in words if len(w) > 3 and w not in stop)
     return sig
 
 def _is_dupe(fp, seen_fps, threshold=0.65):
@@ -653,6 +669,13 @@ def topup_and_sort(edition, target=5, lookback_hours=48):
                 past.setdefault(sec["id"], []).append(st)
 
     have = {sec["id"]: sec for sec in edition["sections"]}
+    # Track fingerprints GLOBALLY so a top-up story isn't a duplicate of one
+    # already shown in ANOTHER section either (no cross-section repeats appear
+    # via the back-fill path).
+    global_seen_fps = []
+    for sec in edition["sections"]:
+        for s in sec["stories"]:
+            global_seen_fps.append(_story_fingerprint(s))
     for sid, sec in have.items():
         seen = {(s.get("slug") or s.get("headline")) for s in sec["stories"]}
         seen_fps = [_story_fingerprint(s) for s in sec["stories"]]
@@ -662,11 +685,14 @@ def topup_and_sort(edition, target=5, lookback_hours=48):
                 if key in seen:
                     continue
                 fp = _story_fingerprint(st)
-                if _is_dupe(fp, seen_fps):
+                # Reject if it duplicates anything in THIS section or any other.
+                if _is_dupe(fp, seen_fps, threshold=0.34) or \
+                   _is_dupe(fp, global_seen_fps, threshold=0.34):
                     continue
                 sec["stories"].append(st)
                 seen.add(key)
                 seen_fps.append(fp)
+                global_seen_fps.append(fp)
                 if len(sec["stories"]) >= target:
                     break
         # Newest-first by IST timestamp, then trim to target.
