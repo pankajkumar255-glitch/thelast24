@@ -674,6 +674,37 @@ window.BRIEF = window.BRIEF || {
   document.getElementById('date-label').textContent = B.date || '';
   document.getElementById('topline').textContent = B.topline || '';
 
+  // GLOBAL de-duplication — runs ONCE on the whole edition before anything
+  // renders, so the ticker, hero carousel AND every section list are all clean.
+  // The same event can appear in multiple sections (esp. breaking stories);
+  // this drops near-identical headlines everywhere, keeping the first occurrence.
+  (function dedupeEdition(){
+    function fp(t){
+      var stop = {the:1,and:1,"for":1,"with":1,from:1,that:1,"this":1,after:1,over:1,
+        into:1,amid:1,says:1,said:1,will:1,"new":1,now:1,india:1,indian:1,its:1,has:1,
+        to:1,of:1,"in":1,on:1,as:1,is:1,at:1,a:1,an:1,by:1,be:1,after:1};
+      var w = (t||'').toLowerCase().match(/[a-z0-9]+/g) || [];
+      return w.filter(function(x){ return x.length>3 && !stop[x]; });
+    }
+    function dupe(a, b){
+      if(!a.length || !b.length) return false;
+      var setB = {}; b.forEach(function(x){ setB[x]=1; });
+      var ov = 0; a.forEach(function(x){ if(setB[x]) ov++; });
+      var uni = {}; a.concat(b).forEach(function(x){ uni[x]=1; });
+      return ov / Object.keys(uni).length >= 0.34;
+    }
+    var seen = [];
+    B.sections.forEach(function(s){
+      s.stories = (s.stories||[]).filter(function(st){
+        var f = fp(st.headline);
+        for(var i=0;i<seen.length;i++){ if(dupe(f, seen[i])) return false; }
+        seen.push(f); return true;
+      });
+    });
+    // Drop any section left empty by dedup so it doesn't render a blank block.
+    B.sections = B.sections.filter(function(s){ return (s.stories||[]).length > 0; });
+  })();
+
   function eachStory(fn){ B.sections.forEach(function(s){ s.stories.forEach(function(st){ fn(st, s); }); }); }
 
   function hashBytes(s){ var h=2166136261,out=[]; for(var r=0;r<32;r++){ for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=(h*16777619)>>>0; } out.push(h&255); h=(h^r)>>>0; } return out; }
