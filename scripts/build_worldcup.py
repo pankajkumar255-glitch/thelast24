@@ -357,7 +357,7 @@ footer{border-top:1px solid var(--hairline);padding:28px 0;font-family:var(--mon
   <div class="panel" id="scores"></div>
   <div class="panel" id="fixtures"></div>
 </div>
-<footer><div class="wrap">World Cup data via openfootball (public domain) · Times in IST · <a href="/">The Last 24</a></div></footer>
+<footer><div class="wrap">FIFA World Cup 2026 data via openfootball (public domain) · Times in IST · <a href="/">The Last 24</a><br><span class="f-social"><a href="https://www.linkedin.com/company/the-last-24/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/thelast24in/" target="_blank" rel="noopener">Instagram</a> · <a href="https://x.com/Thelast24IN" target="_blank" rel="noopener">X</a></span></div></footer>
 <script src="worldcup.js"></script>
 <script>
 var W=window.WORLDCUP||{standings:{},recent:[],today:[],upcoming:[]};
