@@ -1,8 +1,8 @@
-// auto-generated 2026-06-22 04:15 IST
+// auto-generated 2026-06-22 10:45 IST
 window.BRIEF = {
   "date": "Monday, 22 June 2026",
-  "edition": "2026-06-22 04:15",
-  "topline": "India dominates the day as over two million students retake the NEET exam amid a paper leak scandal, while New Delhi moves toward a landmark trade deal with the US ahead of Greer's visit, and the Supreme Court expands citizens' rights to footpaths — as Trump predicts Starmer's resignation and Iran rejects US peace talks over Lebanon.",
+  "edition": "2026-06-22 10:45",
+  "topline": "Keir Starmer teeters on the edge of resignation as Britain's political crisis deepens, while Anthropic scores a double win — shedding its national security label under Trump and poaching Nobel laureate John Jumper from Google DeepMind.",
   "lensLabel": "Why it matters",
   "sections": [
     {
@@ -19,7 +19,7 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQeDFIa1U1d2dXVlBsdzFjZ2U0T19tMmxCZnZJWXJfOXpuMGVyX3FwRU80ZGl0YTlUbmVLWTF0d3lQUElQc2RhaVhJb1ZhVWNsTnlVbF9GQnBPU09JanhlSTU3NW9PYnlYb0JCRElGdHB2Vmx2TWtDalpRaWtybEV5V0wyZ2RkN3lsX0U2NGZ0RmVhdktQN0hud3hDeFlMbnV3X2QwS3puOWJmVlJPaVBNdVpSSF9mS21KRmZwU1R3?oc=5",
           "breaking": false,
           "slug": "20260622-over-2-million-indian-students-resit-neet-medical-entrance-exam-after",
-          "image": "https://images.pexels.com/photos/6683577/pexels-photo-6683577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://images.pexels.com/photos/6683393/pexels-photo-6683393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Andy Barbour",
           "image_credit_url": "https://www.pexels.com/@andy-barbour"
@@ -34,10 +34,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUGFLN3FUNzl2cktRTzBDMGoxeVNGeXFENmdnMXozVFhrTlBzTU93a3RLR2x4SThzMkhjOGlSbWJqTTdlNUh2d2s5d3p1OFFCOVh6NGI4RjZuUHFFVFdkZVV6bjVEQWR6LW9aUmQxUENFbERuZTlMRXdremczTGN0VmZuaWZYaUJXUUxGWG1fQ3VMYVk1a0UwdjU3Ymd0cVhJRExpeXcxckNvNXNkQ29zN3FvUHVaV3ljNXNYcWhHQlhaSFg0amxWbll4Y1XSAdQBQVVfeXFMUHJZZXhJNnJGWHJhSEdjWEdPOFhfbl9ndVp1MmJEM0l4MldXNFNEcHNTUTJpZFRqZHFhN29Ta3Z4c1R5YW5fd0Y1Ykx4M0xmWW4wSjZhUzUya1dYR21DRll0YWFRdEVsaHhNQTZXcEs4LTNucWotV3VKMFZfTG1vb0o2ZmNDN0VUWHQ3WTBDeG9oQnJ0Sll4cXVDaEdfdVJwRGZvY3p2LUVGbnZIazlkTXJyeWJZYm9ieXpQY0c1WWJqUERBV2xMeTFRb0JZaHlpbkF2RVY?oc=5",
           "breaking": false,
           "slug": "20260622-trump-says-keir-starmer-failed-badly-and-will-resign-as-uk-prime-minis",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Prime_Minister_Keir_Starmer_Portrait_%28cropped%29.jpg",
+          "image": "https://pixabay.com/get/g9956e450e612cae1abc5858f1ea099f325fbd3a07fe9b86809514905817af0da60b3f3292d8d05183cc32a5d034edbf7b2dc21f3843992959d0e284511317983_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Prime Minister's Office / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Keir_Starmer"
+          "image_credit": "vjkombajn",
+          "image_credit_url": "https://pixabay.com/users/vjkombajn-764634/"
         },
         {
           "hour": 20,
@@ -55,34 +55,34 @@ window.BRIEF = {
           "image_credit_url": "https://www.pexels.com/@joshua-santos-1174893"
         },
         {
-          "hour": 19,
-          "time": "19:11 IST",
-          "headline": "Trump Threatens Iran, Tehran Warns 'Be Careful' as US-Iran Tensions Escalate",
-          "what": "US President Donald Trump has threatened to hit Iran harder over its nuclear programme and regional posture, prompting a sharp counter-warning from Tehran urging Washington to tread carefully. Iran also declared it will not enter peace talks with the United States unless the war in Lebanon is brought to a halt. The exchange marks a significant hardening of rhetoric between the two countries, raising fears of a wider confrontation in the Middle East.",
-          "lens": "An outright US-Iran military confrontation would spike global oil prices overnight — and India, which imports heavily from the Gulf, would feel the pinch at the fuel pump almost immediately.",
+          "hour": 9,
+          "time": "09:16 IST",
+          "headline": "Keir Starmer Said to Be on the Brink of Resignation as UK Political Crisis Deepens",
+          "what": "British Prime Minister Keir Starmer is reportedly on the verge of resignation, with an announcement expected imminently, according to NDTV. The development signals a dramatic collapse of Starmer's Labour government less than two years after it swept to power with a historic majority in the 2024 general election. The news has sent shockwaves through Westminster and raised urgent questions about the future of British political leadership.",
+          "lens": "A change in UK's top leadership has direct implications for India-UK relations, including the ongoing Free Trade Agreement negotiations and the Indian diaspora's status in Britain.",
           "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNnYxYzdRcWwzY1JUT2g3SEljWnNFWGg4SVV6TnJSbUtmUElYb3FBVlF0U0NrbGNkYy1GS1VkWnJ2TzRqMjc4OGZVdEJ2eXkyaWxDdjljd0xBUGkyMDJ2QTc5SnEySXRxTHgwb0kyZFFUVmYtMWM5SWcyZmNxRF82djVFZi1ZUFBLTmZDNVNlaVVvQWNKT19pSkZ1U3BrMl84UVBKM1EzUFZCUm81dHV4SlJNRdIBuwFBVV95cUxPbTRPOGpEc1FLeGpZY3g3RWpHdTZBNVl2QTJuN0NvWEJVcVNMTlhTU3VJdEFWS3l5S0QxdmNOSHNiTFgtdFJrMzlrVWdwbW9VaW94Rzhxd2ZneTQzeDVwamw2MGVXLUhJOVNnaDZaWUl6QWEteE5LQ2RuanlKckFfT2VFVm4wNXJqZlFVN2RXUTg0RWxlenFCRDE1SWVnZ2JHOFlwZi1xMmhmZUhVZlhhODZDblR0U2ZNcTJ3?oc=5",
-          "breaking": false,
-          "slug": "20260622-trump-threatens-iran-tehran-warns-be-careful-as-us-iran-tensions-escal",
-          "image": "https://images.pexels.com/photos/16386081/pexels-photo-16386081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQX0k3cjNsdUZUUVFWS0ZpTEZjV0RGSElhT3hwcHBWcXpnRDN3WWxyM2dQTURRc3BEN0tJN3JOR1AtRng2VlFRTlhOY1JzTkNxcGRFcko0ZzBGdVExbG9aQXh3TWU4XzAwSWVOYzVkaWE5Z3YwNUVnbXVqZVNYMVl3eDlXcWRqSXZ5SVFYWlZBMjNOYmw0R18waGttMHhwdWxhYmc0ZWtkamk5MEFz0gG0AUFVX3lxTE5fTjQzNk9jSkVscFBuem5HcGdMaXlIVHVQX05RWmhpaUtGTk1jWmhXMGdxZW1TLWZLY1cwc3E0MHhCY0VPaXoxUlZsNGNMMERlM3VWSmVIV3ZXTmoxWFBraUNCXzNpTWQ2Q29sX1dwd01DeFV3MjNLMFkzcFBvRS1lUWxHWUZod3BGczdZVXVkZDhJS191YTNyb01WVDdEYm12azNaSk9TUU1MclROSnZnbnVmdg",
+          "breaking": true,
+          "slug": "20260622-keir-starmer-said-to-be-on-the-brink-of-resignation-as-uk-political-cr",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Prime_Minister_Keir_Starmer_Portrait_%28cropped%29.jpg",
           "image_kind": "photo",
-          "image_credit": "Aref Sarkhosh",
-          "image_credit_url": "https://www.pexels.com/@arefsarkhosh"
+          "image_credit": "Prime Minister's Office / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Keir_Starmer"
         },
         {
-          "hour": 17,
-          "time": "17:20 IST",
-          "headline": "Iran Refuses Peace Talks With US Until Lebanon War Is Stopped",
-          "what": "Iran has stated it will not enter into any peace negotiations with the United States unless the war in Lebanon is brought to a halt first, setting a firm precondition that significantly complicates diplomatic efforts in the region. The declaration signals Tehran's continued linkage of its own bilateral disputes with Washington to the broader conflict involving Hezbollah and Israel in Lebanon. The stance is likely to deepen the diplomatic stalemate between Iran and the West at a moment of heightened regional tension.",
-          "lens": "Iran's precondition directly shapes the trajectory of Middle East conflict — a region whose instability drives global oil prices and affects India's energy import costs and the safety of over 8 million Indians living and working in the Gulf.",
-          "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVm5UZnR1Q3dHZnd4UUNMdUNXZnoxcUVZMG16NWlyMnV3OTBELTFWYi1EMVNHbU9hNlBTV2Nhcl9SOEdDSldfV28yaUU1bzdYN2FxcTVBMi1FTkFJeTlaV194N0VzTEhuUHVMblhGSUM5MktQMlFSVUdXVUk0Wk1SdXVOVXJmNjYzSE9meWo1STI3ZEFhQU1JWFFnZGQzS2oyT1dCRkV3T3pfZ2JLQ1FpbjJWb9IBuwFBVV95cUxNLUJhNU9XZUVROXhVQThKWl93SEhpd3E0cTAxbzc1NFBzd2tTMzIzbGI3UThIQU93SW0zeHJ2OC1wV08zVW9ucnc3LWpEakRtM2hqYWFmZ2tuVkdRQk5QOGxPRmFONlNZdmw0WGd4b05OQWoxSWJvc3kxeW1iQmNoRTdNOXhHZWtnZGpVUDdZLUoyQXZTZG9CUHZ5NE9TM0pBTnlsZWszYmtkQmFDRzNzYTk4QWl1ajZWMjBJ?oc=5",
+          "hour": 7,
+          "time": "07:24 IST",
+          "headline": "US-Iran Nuclear Talks End in Switzerland Without Deal; Technical Negotiations to Continue",
+          "what": "A fresh round of US-Iran nuclear negotiations concluded in Switzerland without a breakthrough agreement, with both sides indicating that technical-level talks would continue. The latest diplomatic session was part of ongoing efforts to revive a nuclear deal that would curb Iran's uranium enrichment programme in exchange for sanctions relief. The inconclusive outcome keeps global oil markets and regional security in a state of uncertainty.",
+          "lens": "Iran is a major oil supplier and India is one of its biggest customers — any breakdown or breakthrough in these talks directly affects Indian crude import costs and energy security.",
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOV0ptQVkzMEpPSFoyT0Z0YU5aZ1dGNlRkYS1qM0hSRnlqTXhZdUpNLXdyZ0hGQW1OSzIzUEtlMnlXX3JtaEhQVWJybHF2bnItZmxVaGpST1o3MFVPUGt4Mzk1dFdEUXJUQzlBczl2UlFoclp5dEFpQWE3R2g0ZXlScThyMnlwTU9SbmE4bmtZTWxqV2tiOHJ1b2ZyMkw0ZXlrZldYa05yb1BlSWJXcTZJSWhyWGZ5Z3N5dHZScjhacTVVbnZxeVhQTzFHRGt2Mi1pLUHSAdIBQVVfeXFMTldKbUFZMzBKT0haMk9GdGFOWmdXRjZUZGEtajNIUkZ5ak14WXVKTS13cmdIRkFtTksyM1BLZTJ5V19ybWhIUFVicmxxdm5yLWZsVWhqUk9aNzBVT1BreDM5NXRXRFFyVEM5QXM5dlJRaHJaeXRBaUFhN0doOGV5UnE4cjJ5cE1PUm5hOG5rWU1saldrYjhydW9mcjJMNGV5a2ZXWGtOcm9QZUliV3E2SUloclhmeWdzeXR2UnI4WnE1VW52cXlYUE8xR0RrdjItaS1B",
           "breaking": false,
-          "slug": "20260622-iran-refuses-peace-talks-with-us-until-lebanon-war-is-stopped",
-          "image": "https://pixabay.com/get/g906ccf6acf085057a57fb93b5cf4bbe76d19eee7a737c4b9d52d5032bed0afdc22f5a114398837ade55e3bfec7d5c956fe00ac26e8df454d9f747440a0f3f318_1280.jpg",
+          "slug": "20260622-us-iran-nuclear-talks-end-in-switzerland-without-deal-technical-negoti",
+          "image": "https://pixabay.com/get/gbba8bf4bb617f78458313eecf70d6693507f5f1d9491170b557d9144aa2835b19e4b2e1e647f03fa788d3bc5bf58327d5bbac73cd22618128b7b33ee741bc47f_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "jorono",
-          "image_credit_url": "https://pixabay.com/users/jorono-1966666/"
+          "image_credit": "995645",
+          "image_credit_url": "https://pixabay.com/users/995645-995645/"
         }
       ]
     },
@@ -100,7 +100,7 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPcUFxUnBKNTNxRzNFOVFEQW1aQmhaWFJNSVczSlgwX0R6UVpQeFVnRnNCMWE0VUJDTm5KYkRDU3k2XzU2TVdYZ3NET3NRaHJPUU54eFFkNHRvWExGb0pyN3ViLWJ5ckZHWDdjRGpuY3NMN0RnNXM1QjNVcW16YTBqZjAzT01YWm1McXNkVEFKcDBnNjB3ZnFaZWtWSTYyWUtUam82NE43ejJGRHlPQ1U3WjVJYTV4aHhRWWhObVBmbVN3RnZxUGRVcVRpMHkzQXRjbkQzRkxfZkkydkhNblHSAd4BQVVfeXFMT3FBcVJwSjUzcUczRTlRREFtWkJoWlhSTUlXM0pYMF9EelFaUHhVZ0ZzQjFhNFVCQ05uSmJEQ1N5Nl81Nk1XWGdzRE9zUWhyT1FOeHhRZDR0b1hMRm9Kcjd1Yi1ieXJGR1g3Y0RqbmNzTDdEZzVzNUIzVXFtemEwamYwM09NWFptTHFzZFRBSnAwZzYwd2ZxWmVrVkk2MllLVGpvNjRON3oyRkR5T0NVN1o1SWE1eGh4UVloTm1QZm1Td0Z2cVBkVXFUaTB5M0F0Y25EM0ZMX2ZJMnZITW5R?oc=5",
           "breaking": false,
           "slug": "20260622-india-may-seek-sunset-clause-in-u-s-trade-pact-amid-tariff-concerns",
-          "image": "https://images.pexels.com/photos/30869090/pexels-photo-30869090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://images.pexels.com/photos/30839695/pexels-photo-30839695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Markus Winkler",
           "image_credit_url": "https://www.pexels.com/@markus-winkler-1430818"
@@ -115,10 +115,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPVnZxSl81SFRmMFpGYzE1UFlUMHd3dmxHWkltd0lGZEUxTWxPQ3hYM09DSHNxMWV2MmZSVnpheDdYNERoTU5qc0NBNU9GclhaT19GWExaeVVRRDdlR2R0YzRGOEtERTNEN1dvV1FROEdIRHFycGxqMHk2R0pCbjQyUjNSMkJ4aC1XZzhUelRaX19hQmRmTlJvNDlCSHIxbU90R1BFcWpRVU9MZmtpaG4zczVLTklGRnhjNFc3NXJOalpzUk95eF8wckNWcXdfWHhTdERBNFlSZ0J5MTY4V293Zk82emNoLU5zMlFz0gHwAUFVX3lxTE9Ha0xFTkZxdXg1S3c4aTdBOGU1WFhuSndXYTJ3NE5nVEg3VUdEaFpvbm5pRjVHZmpmRkxxNUtCS3UxMlI3YVJJazlqcWN1VE91NEsySXBnRzdpWGRKX0xPMEJoYlhZOVZxcDJ1YjVfV3BSaXMyY3RuMXJqZThreXpkcG5EcFpwbWNCSTZtcURjRnc4LXZLNElkcFJ3UTZMR3ktWkZ0WFlXZVFQZDNmTnlmYUhVVUpnS0hCVkZpeUxNRm9Da3djdkRORWhUWk95SlZzNzlGSnBJMERUYzRyVzRKVGh2S2tQT2tMUzQyRmRjRw?oc=5",
           "breaking": false,
           "slug": "20260622-mega-fta-wave-to-bring-60-of-india-s-trade-under-preferential-regime",
-          "image": "https://images.pexels.com/photos/28185416/pexels-photo-28185416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://pixabay.com/get/g360e5b34c890fb1073433ac8e4c5373067ddebc6bd50d34196b580a8a01ea7467b455738f3a14b0ec2119f1a28947679_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Md Sihabul Islam",
-          "image_credit_url": "https://www.pexels.com/@md-sihabul-islam-750002427"
+          "image_credit": "Simon",
+          "image_credit_url": "https://pixabay.com/users/Simon-3/"
         },
         {
           "hour": 22,
@@ -130,10 +130,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQVk1QUjFPVndfRHhqY2xFSVJaaVlINjBJblljTFliUGJyWTVMa2RzUkZVa21veExYbURpOFZDRUFIbVZiWXBjVUFmNkhnSnVZZGxyM05UUTc1RXdZNDV2T3o5THd3eEdQMDVuaEU0MGRORGFvQ2R2a192amVZYWV0bVNNS0NnenNIb1liNVlMbkxsaUk1ZG9sRmRBMzM2SHZnZ3E5aTNmS3oxUS1HWGxFYko2N0RKQTQ0VGljUkxCSjdXZzI5SkNsc1lJV1pIWkpmSk5v0gHYAUFVX3lxTE5UQjdSTmpiLXpNWmFJLWl4VUlFU2ZvekpjRW05NE1rZEZzQUQzWkhCeEg4Xzd2S2w3enZQdlRHeGZQNmtSM0k0d05HSFBfM1RjOTJpd3NzSlJnQXJuczBoVUtnZjBGbFRERkw3Z2RBMHNwN25ERHBpOFc5dWppUDhHR3pTdEgxdDBSVHVKTFdTQ3VrUHpUVEVrODNKRzlwQUZIaHNraVJCaUc0RlBqOTJhSjJzOUtwTkFtbk1VMS14SDBzbUo4eWV2UVBHSEROV0hHZTJhNkl5eQ?oc=5",
           "breaking": false,
           "slug": "20260622-india-s-dependence-on-services-exports-is-rising-as-trade-composition",
-          "image": "https://images.pexels.com/photos/163726/belgium-antwerp-shipping-container-163726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://images.pexels.com/photos/28185416/pexels-photo-28185416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Pixabay",
-          "image_credit_url": "https://www.pexels.com/@pixabay"
+          "image_credit": "Md Sihabul Islam",
+          "image_credit_url": "https://www.pexels.com/@md-sihabul-islam-750002427"
         },
         {
           "hour": 21,
@@ -145,7 +145,7 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPVnM1VDJEazh1ck9uYUtNNi1NbG12Q3plOG9nOXNJVTdtb1VER25HZUtDeGdweHlqWFpvRXcwNl9FaVRHUU1tR0hkNHdSSXpXZ1ptaVZ4ZUUzLVBqNnNIN29XMTk1ckdoWVlpa1l4SF9TV3RBdU45anFfczFUaTVsb3p3S2pfTVZOLVR3MFVIWXdyeGhVSFJwS0JTMUVFM3ZXaE9uY04wdjdUSFJfSGxNZThUTk90TU9EMUI1b0RBdXk5dnpWT1pYVlpfcHRmZDFlejBBX3cxbEN0Q0xYWXfSAeMBQVVfeXFMUFBrblR4RDUxUy1KR2ktMXl4R0dZeDhOejA1T0VDNF80MzcwdFExT0lxQ2E2ckRtRklIelI1WC1Lc241MGRUaFdDaW44VjJUMVZRR0NHQnRHb2dkUHFGQTVqUEk5YmgzVVpfdDcxd3pnVzZnQkU1THJXSk52VjFucnhLM1Z4ejdRX2FlOW12TWpLTnlSQUd3VWNqR3RwWmp6VEd0cW9KdUI5MnQ0UUhZNmZyb18zRm1GYkZjRXlWMEt2NVlGbGhNOTZ5VGE3R0pNOGFKTmdtc3VKUUlPRGUzM1Q4UWc?oc=5",
           "breaking": false,
           "slug": "20260622-modi-trump-bilateral-at-g7-trade-tariffs-and-trust-dominate-as-india-u",
-          "image": "https://images.pexels.com/photos/30839695/pexels-photo-30839695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://images.pexels.com/photos/30855417/pexels-photo-30855417.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Markus Winkler",
           "image_credit_url": "https://www.pexels.com/@markus-winkler-1430818"
@@ -154,8 +154,8 @@ window.BRIEF = {
           "hour": 18,
           "time": "18:51 IST",
           "headline": "India-U.S. interim trade deal needs only 'final touches'; Greer to visit New Delhi on June 23-24",
-          "what": "The India-U.S. interim trade deal is close to conclusion, with only 'final touches' remaining, according to The Hindu. U.S. Trade Representative Jamieson Greer is set to visit New Delhi on June 23-24 to seal the agreement. The visit signals high-level engagement from Washington to finalise terms ahead of the July 9 deadline when U.S. reciprocal tariffs — paused at 10% — are set to resume.",
-          "lens": "A signed interim deal before July 9 could prevent Indian exports from facing 26% U.S. tariffs again, directly affecting industries from textiles to pharma that employ millions.",
+          "what": "The India-U.S. interim trade deal is nearly complete, requiring only 'final touches' before it can be signed, with U.S. Trade Representative Jamieson Greer scheduled to visit New Delhi on June 23-24 to advance negotiations. The visit signals that both sides are in the home stretch of a bilateral trade agreement that has been in the works for months. The deal is expected to lower tariffs on select Indian exports to the U.S. while opening Indian markets in key sectors.",
+          "lens": "A finalised India-U.S. trade deal could shield Indian exporters from the steep reciprocal tariffs imposed earlier this year, directly affecting sectors like textiles, pharmaceuticals and IT services that employ millions.",
           "source": "The Hindu",
           "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPTHZCVHcyQjU1UUo5eWdqTGpqb29wSUQ2eXF5THF5S2x6WExCamllLUJDOUVCVFpMZmo3Q3ptV0hVZ1JEVlFPSy1zLVA2SGtpUmJyUGpvcmVmUFhWZ2dIRGFIeHY0SFhQYW42TXN4SFE4NFRuU0I0WWZObkxBSEdhanUtVzg5b3hkNE5keDctb1c5U2VFNHc2WFBHdndib1B0Z0I0cENDUXg0VXVoOHdpVVpsalVKSDVBcVFULUY5TERiY3RleE82SGI1YXdFdGQ0b09jVWpBeWpUMlIxVmxYVS1SYTjSAesBQVVfeXFMTWw0dDRzQ2dPV2pabUtTblNIellmS2tzblhaTjh2Z01DLV9NdDVNMlQ2MGNmTGdiSVlMTkJ0eTBaMUtVSmRCV0lPQlJDLU42SmFxOVpNOUJsUUtQeUVkaGpleC1PeUZfdHl6Tmo0bmgtem93NTRDRkk4Y25ZSHU3aHRtdGlLVC1WNi1MSkw3QVlqVmlaNkhVeVMyWkptR1ZueWctV0VNMGdHZlBjZzZuR0gwOTVlb3BpQ29sSXVJbnFUMmI2VWZmbkZyenZZbUFtZVpVZkxlQ0NSZXFZWVkwODNBSWYyTm9YM0t1TQ?oc=5",
           "breaking": true,
@@ -174,6 +174,21 @@ window.BRIEF = {
         {
           "hour": 23,
           "time": "23:41 IST",
+          "headline": "West Asia conflict squeezes startup funding routes for Indian firms",
+          "what": "The ongoing conflict in West Asia is tightening funding options for Indian startups, as investors from the Gulf region — a growing source of venture capital for India — grow cautious amid regional instability. Business Standard reports that the geopolitical turbulence is disrupting capital flows at a time when Indian startups were increasingly looking to Middle Eastern sovereign and family-office money to diversify away from traditional US and China-linked funds. The development adds another layer of uncertainty to an already challenging fundraising environment.",
+          "lens": "Gulf money had emerged as one of the freshest and fastest-growing pools of capital for Indian startups; if that tap tightens, founders at all stages will find fewer options and likely face tougher valuation terms.",
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRmRqaV93eEd6dWowLWgtdlZET296NFZyaE5EVHR5WmZuaTYtVjFFdU1tLTIwTEFBYURwdVlwT2poaDZjeUxoZEs1Qk5zV2JlYzJOZ3UyZER2T1g2QnJ3dmR0MjBXQ19QQmZoVHNBNTBBb3lnRnVpZzh6RUdtSFVJMnJ0NGtyZjRnYzVCVkFTaGdlNGQ0dnV5dHFLbzl3X2QyVTZaZU1RNnRJUHVtU1dfamMzZU1nQmxLSC1VUWdnbWdEUmJ1aHkyedIBzgFBVV95cUxPcUdSS1VRVi03R0luaDhKb2dmaEM4ek1JalVGbXBBU2g4THdsN2N0Z3RhT2ZDNzk4QVBmUzJtRGtXZHJEUVpWXzh0WkJscW5WSkVjVmFJaGJBdURRYkNXNUdaTG0yS3RmNEVJZFUzSWdxSDdCd1k5Zi15U202WTA5THI2bnJLQTRYdGh0MHUzeVN4NHdBeWdOUXBOT0had196MlJoanhDZW1HQW9XaDNVUWUwQVJuVW9Ua0gtNHNTZzlqanlPZkxYUkY5bUUwdw",
+          "breaking": false,
+          "slug": "20260622-west-asia-conflict-squeezes-startup-funding-routes-for-indian-firms",
+          "image": "https://pixabay.com/get/g2d652ac7fbbbbe2dc630de2b8790c2419a960851f774dce4f93056163edae1594c41ed088c778ff91359d056e50cb1e7c63d023b3c6a63e69c51aecaad633199_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "Tumisu",
+          "image_credit_url": "https://pixabay.com/users/Tumisu-148124/"
+        },
+        {
+          "hour": 23,
+          "time": "23:41 IST",
           "headline": "West Asia Crisis Drags Indian Startup Funding Down 43% Year-on-Year Since March",
           "what": "Global geopolitical turbulence stemming from the West Asia crisis has hit Indian startup funding hard, with investment volumes falling 43% year-on-year since March, according to Business Standard. The sharp decline signals that international investor risk appetite has contracted significantly, with funds pulling back from emerging-market bets amid war-driven uncertainty. The drop marks one of the steeper funding contractions seen in the Indian startup ecosystem in recent memory, coming even as inflation and interest rate pressures had already tightened venture capital globally.",
           "lens": "A 43% funding collapse means fewer Indian startups can raise capital to grow, hire, or survive — affecting jobs and the next wave of consumer products millions of Indians use.",
@@ -181,10 +196,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcUdSS1VRVi03R0luaDhKb2dmaEM4ek1JalVGbXBBU2g4THdsN2N0Z3RhT2ZDNzk4QVBmUzJtRGtXZHJEUVpWXzh0WkJscW5WSkVjVmFJaGJBdURRYkNXNUdaTG0yS3RmNEVJZFUzSWdxSDdCd1k5Zi15U202WTA5THI2bnJLQTRYdGh0MHUzeVN4NHdBeWdOUXBOT0had196MlJoanhDZW1HQW9XaDNVUWUwQVJuVW9Ua0gtNHNTZzlqanlPZkxYUkY5bUUwd9IBzgFBVV95cUxPcUdSS1VRVi03R0luaDhKb2dmaEM4ek1JalVGbXBBU2g4THdsN2N0Z3RhT2ZDNzk4QVBmUzJtRGtXZHJEUVpWXzh0WkJscW5WSkVjVmFJaGJBdURRYkNXNUdaTG0yS3RmNEVJZFUzSWdxSDdCd1k1Zi15U202WTA5THI2bnJLQTRYdGh0MHUzeVN4NHdBeWdOUXBOT0had196MlJoanhDZW1HQW9XaDNVUWUwQVJuVW9Ua0gtNHNTZzlqanlPZkxYUkY5bUUwdw?oc=5",
           "breaking": false,
           "slug": "20260622-west-asia-crisis-drags-indian-startup-funding-down-43-year-on-year-sin",
-          "image": "https://pixabay.com/get/ga564a250f5a9729f9c90a47d410301ad1d1907c9dc97383dd69e1285a2003337ba0fd128a77546b88475143392fcde5196b4fd47b52967fb5a418fb9034af34e_1280.jpg",
+          "image": "https://images.pexels.com/photos/15195538/pexels-photo-15195538.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Tumisu",
-          "image_credit_url": "https://pixabay.com/users/Tumisu-148124/"
+          "image_credit": "Ashwani Babbar",
+          "image_credit_url": "https://www.pexels.com/@ashwani"
         },
         {
           "hour": 21,
@@ -196,55 +211,40 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPTnNqT21qUDJpdDgxUjJWTm1vZ0gyUk5qZ1FOaTZlUEs1c29abEJMNGNTV25FSnJMemxPcmNId21qNzl3X0F1dXQxNUFCSklGWWFLMFA1U2ZvZ2lDMmhwZEx6WmxWSHNlWmpMV0lkc3RIM0s5YUEwaWQ5WmNxUEFTTGFUS0o5dE8zMk5teGx5ZXJZOG9Hcml5alFGLXJncFlMOTgyWU42TloyUk9tNUNZV2tHLXBmYl9NN0NRWWNRVUYtS3BtNkhLdkdsV3NvdVdvUUVCQ0o0X3hIRFVOOE1LdGhGTkZ6QkhHRDdtbUFscG1vTjFQbEVTYtIB-AFBVV95cUxPTnNqT21qUDJpdDgxUjJWTm1vZ0gyUk5qZ1FOaTZlUEs1c29abEJMNGNTV25FSnJMemxPcmNId21qNzl3X0F1dXQxNUFCSklGWWFLMFA1U2ZvZ2lDMmhwZEx6WmxWSHNlWmpMV0lkc3RIM0s5YUEwaWQ5WmNxUEFTTGFUS0o5dE8zMk5teGx5ZXJZOG9Hcml5alFGLXJncFlMOTgyWU42TloyUk9tNUNZV2tHLXBmYl9NN0NRWWNRVUYtS3BtNkhLdkdsV3NvdVdvUUVCQ0o0X3hIRFVOOE1LdGhGTkZ6QkhHRDdtbUFscG1vTjFQbEVTYg?oc=5",
           "breaking": false,
           "slug": "20260622-ai-agents-are-quietly-replacing-human-workflows-across-india-s-it-serv",
-          "image": "https://pixabay.com/get/g2d8ebe68713dcb3f5151adacac36d8ced03409e3aad6b566d9f48efc77772762b069c42baebb0bd9281ebeaab9fd247117840ddaf6613d36f034d80dea515011_1280.jpg",
+          "image": "https://images.pexels.com/photos/7709182/pexels-photo-7709182.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "51581",
-          "image_credit_url": "https://pixabay.com/users/51581-51581/"
-        },
-        {
-          "hour": 21,
-          "time": "21:24 IST",
-          "headline": "AI agents are quietly reshaping India's IT services workforce",
-          "what": "Artificial intelligence agents — software systems capable of autonomously executing multi-step tasks — are increasingly being deployed across India's IT services industry, reshaping how work is structured and who does it. Major Indian IT firms are integrating these tools into delivery models, reducing reliance on large human teams for routine and even mid-complexity tasks. The shift is accelerating rapidly, with analysts describing it as one of the most consequential workforce transformations the sector has seen. The implications extend well beyond productivity gains, touching hiring pipelines, job profiles, and long-term employment patterns.",
-          "lens": "India's IT sector employs over 5 million people directly — a quiet replacement of human work by AI agents hits livelihoods, hiring, and the middle-class career path that millions of families depend on.",
-          "source": "Business Standard",
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPTnNqT21qUDJpdDgxUjJWTm1vZ0gyUk5qZ1FOaTZlUEs1c29abEJMNGNTV25FSnJMemxPcmNId21qNzl3X0F1dXQxNUFCSklGWWFLMFA1U2ZvZ2lDMmhwZEx6WmxWSHNlWmpMV0lkc3RIM0s5YUEwaWQ5WmNxUEFTTGFUS0o5dE8zMk5teGx5ZXJZOG9Hcml5alFGLXJncFlMOTgyWU42TloyUk9tNUNZV2tHLXBmYl9NN0NRWWNRVUYtS3BtNkhLdkdsV3NvdVdvUUVCQ0o0X3hIRFVOOE1LdGhGTkZ6QkhHRDdtbUFscG1vTjFQbEVTYg",
-          "breaking": false,
-          "slug": "20260622-ai-agents-are-quietly-reshaping-india-s-it-services-workforce",
-          "image": "https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "image_kind": "photo",
-          "image_credit": "Yan Krukau",
-          "image_credit_url": "https://www.pexels.com/@yankrukov"
+          "image_credit": "MART  PRODUCTION",
+          "image_credit_url": "https://www.pexels.com/@mart-production"
         },
         {
           "hour": 9,
-          "time": "09:21 IST",
-          "headline": "Indian startup builds balcony escape system for high-rise fires after elevator failures",
-          "what": "An Indian startup has developed a balcony-based emergency escape system designed to let residents evacuate high-rise buildings when lifts fail and stairwells become inaccessible during fires. The product was inspired by real incidents where people were trapped on upper floors as elevators stopped functioning and smoke blocked stairways. The system is intended as a last-resort evacuation solution that can be activated from a balcony without specialist training. As India's urban skyline fills with taller residential and commercial towers, fire-safety infrastructure has repeatedly been flagged as dangerously inadequate.",
-          "lens": "With millions of Indians now living in high-rise apartments and fire-safety regulations poorly enforced, a workable balcony escape system addresses a life-safety gap that affects urban residents directly.",
-          "source": "NDTV",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPVDYzZUhoalg0TzdDc0U4dUNuTlNnMnRsX1k4cDRXRjFxenp0dFVfWGIxZWRLT0N2VHZHM1pEZU5vemZodHdmeFhIRTV6U1VZZFNGZlVSUGpBa1dTMGstNHRvT2dNa3I0X1pXWFdWVzY3cWcxdnVwamlYUzJpOC1SUTVEbDhOZVZkR0dfYjE3V05Cb05mNDF0VXIyR1c2ajdkUlNyZkhCVU9QTnlBS0RPZ0EzTnFkZ1NBQWJ1N29lZDV4QzFHd2lXM0RVVUbSAcwBQVVfeXFMT1Q2M2VIaGpYNE83Q3NFOHVDbk5TZzJ0bF9ZOHA0V0YxcXp6dHRVX1hiMWVkS09DdlR2RzNaRGVOb3pmaHR3ZnhYSEU1elNVWWRTRmZVUlBqQWtXUzBrLTR0b09nTWtyNF9aV1hXVlc2N3FnMXZ1cGppWFMyaTgtUlE1RGw4TmVWZEdHX2IxN1dOQm9OZjQxdFVyMkdXNmo3ZFJTcmZIQlVPUE55QUtET2dBM05xZGdTQUFidTdvZWQ1eEMxR3dpVzNEVVVG",
+          "time": "09:48 IST",
+          "headline": "Amazon defends India data centre water use, points to conservation measures",
+          "what": "Amazon has responded to growing scrutiny over water consumption by its data centres in India, pointing to conservation steps it has taken in the country. The company's defence comes as hyperscale data centre expansion across India has raised concerns about pressure on local water resources. The disclosure puts a spotlight on the environmental footprint of cloud infrastructure at a time when India is rapidly scaling up its digital capacity.",
+          "lens": "As Amazon and rivals race to build data centres across India, how much water these facilities consume — and whether conservation pledges hold up — directly affects communities sharing already-stressed local water supplies.",
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPYVBaYWV0N1ZkWUt2WldTYWNYNEZac0w3cnZCbG1ZNDBxbE1kZmJhWWVTcU5MRk1JWGFqQzdwU0c2NndUaFhScDMyRi03b3g3MFNfWEt6UkVWQW5hNjNZOUZqSnRZUWZZM1hldnVrckVXeEk3dUpSYUxZTG03el9lbDNDMkJrRVh1aDZ1SjlGWFRmSElpM0laYnpobmhoUGkyWU94d19wOFJ5Y3M4SHFBOExIQ1psMUJoNmV3SDY0bjhnRERrTjJrX1gtOFd5OFdqeEJ6UVJoSGHSAd8BQVVfeXFMTUZxZGEzdS1tTHlLSkhMNTR6MGdjNjc2TUNOSWZzcjI4NVdwSUYwZUc4RjhtZlQ0MVdtVV9WUEFLRFNLOE5GMC1OSFVtSjByTjR0cU9GeE8ta1ZSd3g4TVpQMi1zdkFUZjcwVFlsNnBsYkNlei1uSVFjdjdvVUN6NjJ5NG1nSk9tQkt1ZHRIMUlibm9aendWaEpQb3B5WWtpOXJ2Yi1VeF9GWENwelZGRzFmLS1wM29sT25Ed3pxVGZNZnBiRzNUUk8zRjdfSFVBSzVHbDJ3SWRIRmMyMUVrMA",
           "breaking": false,
-          "slug": "20260622-indian-startup-builds-balcony-escape-system-for-high-rise-fires-after",
-          "image": "https://images.pexels.com/photos/14776573/pexels-photo-14776573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "slug": "20260622-amazon-defends-india-data-centre-water-use-points-to-conservation-meas",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Amazon_Tower_I_topped_out%2C_June_2015.jpg",
           "image_kind": "photo",
-          "image_credit": "Quang Nguyen Vinh",
-          "image_credit_url": "https://www.pexels.com/@quang-nguyen-vinh-222549"
+          "image_credit": "SounderBruce / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Amazon_(company)"
         },
         {
-          "hour": 22,
-          "time": "22:41 IST",
-          "headline": "India Must Invest in Deep Tech, Not Rely on Global Trends, Says Neelkanth Mishra",
-          "what": "Economist and Axis Bank chief economist Neelkanth Mishra has called on India to prioritise investment in deep technology rather than simply following global tech trends. He argued that sustained innovation in areas like semiconductors, advanced materials, and frontier science is essential for India to build genuine technological self-reliance. The call comes as India's tech sector remains heavily dependent on foreign platforms, chips, and foundational research.",
-          "lens": "India's ability to compete globally in AI and manufacturing hinges on whether domestic capital flows into hard science and engineering, not just consumer-facing apps.",
-          "source": "Business Standard",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQV1I0bk9UZDBueUZWMG5PMTdyNU96Q2JKdG5BOHEtZTNHWXBaNFM0N2U1d0ZxX3o4VUw0bWlnUExrQTNWQ2pvOEpEQlFXdTNxcXBRRTdzV3ItZTFlX3hEY1AtTW5HRTA4MEtjQVpFNVdfNVAxcEhpTlI5b1BKMkRBSFprRjhzYUp1TXZiRG9FTlFlaTFGVU1CUXkwTUJXb3dNTkdzbFp3cFRvOEVpaXZnaTdkWEtGemUtODdiX3M4OTh6ekR5THpGWE1VcEVuRHZNWGxEV0ZnZUZFSGJ60gHcAUFVX3lxTFBXUjRuT1RkMG55RlYwbk8xN3I1T3pDYkp0bkE4cS1lM0dZcFo0UzQ3ZTV3RnFfejhVTDRtaWdQTGtBM1ZDam84SkRCUVd1M3FxcFFFN3NXci1lMWVfeERjUC1NbkdFMDgwS2NBWkU1V181UDFwSGlOUjlvUEoyREFIWmtGOHNhSnVNdmJEb0VOUWVpMUZVTUJReTBNQldvd01OR3NsWndwVG84RWlpdmdpN2RYS0Z6ZS04N2Jfczg5OHp6RHlMekZYTVVwRW5Edk1YbERXRmdlRkVIYno?oc=5",
+          "hour": 8,
+          "time": "08:08 IST",
+          "headline": "India needs a full Science & Technology Mission, not just an AI mission, Moneycontrol argues",
+          "what": "A Moneycontrol commentary argues that India's current focus on building a standalone AI mission is too narrow, and that the country needs a broader, integrated Science and Technology Mission to remain competitive in the global technology race. The piece contends that AI cannot deliver its potential without foundational investments in basic science, research infrastructure, semiconductor capability and STEM talent — areas where India still has significant gaps. The argument arrives as the government finalises its AI policy framework.",
+          "lens": "If India bets its entire tech future on AI alone without fixing the underlying science and research gaps, it risks building an impressive-looking edifice on weak foundations — a concern that affects India's long-term economic competitiveness.",
+          "source": "Moneycontrol.com",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQY2lBRzBzak9xYmp1M1E0c1lmV2Z6VWc5Y1JRem91VnpPV0syNTh3MVVtSGRmVDhjNDRCS2tsR0RNTEZYeExjc2ZTWTBaX09tQ0swYW9CVmlZdDEzeWhoUEJfZ2V0QkVkT2hBRWlsUE1KUjN3Y2tJQzh1TUpvZDdabkJ4RUdoazFScHJDQkVmOW53YkswVWFBVXdFQzJTWFZsNklTYWJSdDVuQVlqR3dxeUNuZmhBUFBHNTUwT3BR0gHDAUFVX3lxTE51ZW4wYzRab2RPTlhzaUFTdU1BRURhR2xDYXpXdWlhMktlcHlOeVlMTDVGRDRrTmpXV2YyN3MwTFJUUDNBZ3o2U0RIcVAwdjhhM3ZCd1N3NmZnVzNMRjR3RWkzTlBEVXJJM2N3TzhpeHdJZnJWaG1HaEVzZllOMEU4X1dZUHg4NngxVkY3akpEcGxuU0pDcm1RNFlvcVNQcGM2cmc1b0Zic0ZCUDUwUkRVRHFxUWdnZ2tvNEVESXczdHkzcw",
           "breaking": false,
-          "slug": "20260622-india-must-invest-in-deep-tech-not-rely-on-global-trends-says-neelkant",
-          "image": "https://pixabay.com/get/gff14d2dc66747c4675d81dad8f08156025d60e51115d1767a5f49d7dc47287bd10a7a8fd406fb3b437e4716b24f16a9e3d017c74e5e5f45416a25552571a4876_1280.jpg",
+          "slug": "20260622-india-needs-a-full-science-technology-mission-not-just-an-ai-mission-m",
+          "image": "https://pixabay.com/get/ge59c83e3cf09e1fb91898df8ddfa71888ee203ecdd41d8789a9d070af680dd5e66d67560179780779f64138a15e4d081f23d569760ed2c899a6af83d67034d81_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "ksreekanth6",
-          "image_credit_url": "https://pixabay.com/users/ksreekanth6-860938/"
+          "image_credit": "tiburi",
+          "image_credit_url": "https://pixabay.com/users/tiburi-2851152/"
         }
       ]
     },
@@ -255,39 +255,24 @@ window.BRIEF = {
         {
           "hour": 14,
           "time": "14:47 IST",
-          "headline": "Congress Demands Fundamental Right to Vote, Riding Wave of Supreme Court Footpath Ruling",
-          "what": "The Congress party has used the Supreme Court's landmark footpath ruling to push for a broader constitutional guarantee — demanding that the right to vote be elevated to a fundamental right. The party argued that if the Court can recognise the right to walk on footpaths as justiciable, the right to vote — the cornerstone of democracy — deserves the same or stronger constitutional protection. The demand is aimed at insulating voting rights from legislative dilution and electoral roll manipulation. The move signals Congress's intent to use judicial momentum to press political reform arguments.",
-          "lens": "A demand to make voting a fundamental right would affect every Indian citizen's legal standing against voter-list deletions, disenfranchisement, and electoral manipulation.",
+          "headline": "Congress Demands Fundamental Right to Vote, Citing Supreme Court's Footpath Ruling",
+          "what": "The Congress party has urged the Supreme Court and the government to recognise voting as a fundamental right, drawing on the court's recent landmark ruling that affirmed citizens' right to walk on footpaths. The party argued that if the right to use public infrastructure can be elevated to a constitutional right, the right to vote — foundational to democracy — deserves explicit fundamental-right status. The move is seen as part of a broader Congress push on electoral and democratic rights ahead of upcoming political contests.",
+          "lens": "By linking a pedestrian-rights verdict to voting rights, Congress is using a popular Supreme Court ruling as political leverage to push for stronger constitutional protection of the ballot — a debate that could reshape electoral law conversations.",
           "source": "India Today",
           "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV0l4cl9EQmppY3pXUWFXdXJMZnk5cXVvdVpENXVyQXFvYjJfUk81VXRfdnd3QUhuSDBrVWV3OFdodlg3bHg1VlJ3cUVkQ3ZVYzBIUUR0YUdKdno0X0hOQ245THYwb24zbGJQaDlnQm42dVVhQmd3aVBDU1kwcG9MdkNrVm1Ld205UEhUejVJTkR3UGtqbDA3a1JzYXFiUnRBdnBmZlRyUHJURnJzV3AzLU1fWTFkeV9ILXBpeDd6ZUt2YXBOUVpJd2NuVEbSAdIBQVVfeXFMT21ndUFyelhpenlWSUJuSFRoNlpxRTFEbUxXc0NnT0VEVHRhMmlIWW5OZHdXWThDN0dSQlZ4MFE5dzVlNGJ3QW5EREdNYmVHY3FfdFZ5TThpVG1sYzZRVjFYN3BMNmdKNTFFdmxpSDlMU3gwQ3RRNzRMTFdpOVVJTW1WSkpIMHdfcTZoQm9sWVVCTEVNamk4cmU5LURDVmt2VXViZGlJMGpaUWRlT09McmQ3T3JNd21UV0JVM0RNcnU4NURlYXlpZnJYSVp3V0dLR2FB?oc=5",
           "breaking": false,
-          "slug": "20260622-congress-demands-fundamental-right-to-vote-riding-wave-of-supreme-cour",
-          "image": "https://pixabay.com/get/g987f34c3fe4ef26359ec40afe5362f48b9bcbbdf108dd90f860caf23a3a759db3d01a267d9486911b81ceccf87b9a6497f4cf5ad42e28903c92d27b6f9961857_1280.jpg",
-          "image_kind": "photo",
-          "image_credit": "planet_fox",
-          "image_credit_url": "https://pixabay.com/users/planet_fox-4691618/"
-        },
-        {
-          "hour": 14,
-          "time": "14:47 IST",
-          "headline": "Congress Demands Fundamental Right to Vote, Citing Supreme Court's Footpath Ruling as Legal Precedent",
-          "what": "The Congress party has called for the right to vote to be enshrined as a fundamental right under the Indian Constitution, drawing on the Supreme Court's recent order recognising the right to walk on footpaths. Congress argued that if the judiciary can read a basic civic activity like walking as a fundamental right, the act of voting — the cornerstone of democracy — deserves at least equal constitutional protection. Currently, the right to vote in India is a statutory right under the Representation of the People Act, not a fundamental right. The demand is both a legal argument and a political statement targeting the ruling establishment.",
-          "lens": "Making voting a fundamental right would give courts direct power to strike down any law that restricts or dilutes the franchise — a significant constitutional shift.",
-          "source": "India Today",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV0l4cl9EQmppY3pXUWFXdXJMZnk5cXVvdVpENXVyQXFvYjJfUk81VXRfdnd3QUhuSDBrVWV3OFdodlg3bHg1VlJ3cUVkQ3ZVYzBIUUR0YUdKdno0X0hOQ245THYwb24zbGJQaDlnQm42dVVhQmd3aVBDU1kwcG9MdkNrVm1Ld205UEhUejVJTkR3UGtqbDA3a1JzYXFiUnRBdnBmZlRyUHJURnJzV3AzLU1fWTFkeV9ILXBpeDd6ZUt2YXBOUVpJd2NuVEbSAdIBQVVfeXFMT21ndUFyelhpenlWSUJuSFRoNlpxRTFEbUxXc0NnT0VEVHRhMmlIWW5OZHdXWThDN0dSQlZ4MFE5dzVlNGJ3QW5EREdNYmVHY3FfdFZ5TThpVG1sYzZRVjFYN3BMNmdKNTFFdmxpSDlMU3gwQ3RRNzRMTFdpOVVJTW1WSkpIMHdfcTZoQm9sWVVCTEVNamk4cmU5LURDVmt2VXViZGlJMGpaUWRlT09McmQ3T3JNd21UV0JVM0RNcnU4NURlYXlpZnJYSVp3V0dLR2FB",
-          "breaking": false,
           "slug": "20260622-congress-demands-fundamental-right-to-vote-citing-supreme-court-s-foot",
-          "image": "https://images.pexels.com/photos/33509496/pexels-photo-33509496.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://pixabay.com/get/gdc9bec37b642462d882c1a4659cff1109c779ea29008706e3c852c7b43cb7dc58459c6b9d79b0608069e7533135fa533fbb8ca8b5afa90de3de4ee265c474bac_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Chris F",
-          "image_credit_url": "https://www.pexels.com/@chris-f-38966"
+          "image_credit": "Leonhard_Niederwimmer",
+          "image_credit_url": "https://pixabay.com/users/Leonhard_Niederwimmer-1131094/"
         },
         {
           "hour": 12,
           "time": "12:41 IST",
           "headline": "Supreme Court Orders Right to Walk on Footpaths as Pedestrian Deaths Surge Across India",
-          "what": "The Supreme Court of India has issued an order recognising the right to walk on footpaths, a ruling prompted by a sharp rise in pedestrian deaths on Indian roads. The order comes as data reveals a sustained surge in fatalities among walkers, many of whom are forced onto busy carriageways due to encroached, broken, or non-existent footpaths. The ruling effectively frames safe pedestrian access as a constitutional right, putting pressure on urban local bodies and state governments to act. It marks a significant judicial intervention in urban infrastructure and road-safety governance.",
-          "lens": "With India recording tens of thousands of pedestrian deaths every year, this SC order directly affects anyone who walks a street — making it a ruling for virtually every Indian.",
+          "what": "The Supreme Court of India has issued an order affirming the right of citizens to walk on footpaths, a ruling prompted by a dramatic surge in pedestrian deaths across the country. The judgment puts the spotlight on encroached, broken, and non-existent footpaths in Indian cities that force millions of pedestrians onto roads daily. The ruling is expected to compel state governments and municipalities to take urgent corrective action on pavement infrastructure.",
+          "lens": "With pedestrian deaths among the highest in the world, this ruling could finally force Indian cities to fix their footpaths — making walking safer for millions who have no other option.",
           "source": "The Indian Express",
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSGN3QlZqVWN4VnNWZUQwUmRmOUNJeHZEWlFuckF4VU5oRUtGX21XRlBvNVYzM1BxS2VONnZmOTZEMGF1bWxrSjVyNktkMjNDQ29pakFXUjdCNEtXSXZ4MnZ0NjNLUUd4ZTM1amJjdmFlYTk2bU4tQnYtMzhkSU8zM0VVTlRjRko0dWQ4R1RTaFRKNFpGQ3h1S2RtTlA2QW9SS3BWRXVmYnljU3U1RzVhOGlaNNIBugFBVV95cUxOY09BVVJvSktoemRic2JBS1VOcWI5a2JqNFFhOWYzUG9SclRncWw2Y3ByX3Z0TnVUclFWRTZGeU4yZDdqekxrTHdILVAtZGlnSWd1cElISFQ0bDF3ZXhsMVhjS2s3eHcxZktyUGd5MVhzcU1FSEhGSWdPd2V6WXFydmJ2dXg0cHRtSUZUUUpZNWg2elVULTJoS0dDOTdsOFQtMDI4dmhabzJSTVpHZldiUTRPOXBsZDZMVVE?oc=5",
           "breaking": false,
@@ -307,10 +292,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPQW9SYlRCc1V5ZXUtbE5Cd3BsT0FScmd4dGFBQ1doV3g3WnFSbm9zTEdpaDQtMDNnZnBUa1U4S05CUTA3SDZwWG9XQlRDeXdCbXNRNllIQUh3MXFFYkpNeE5ObmxCTzR4ZW1qZno2bXBVQ0p0OXlObHIydGx4YUpUdFAtc1hsak5jdHZUUVFIbWttaDZld0VrSzZXOGd6RktwcnJhRjNiMkp1U3k2SlF4ZEpLWEJBZUY3OG5tMFBSX09veTZKZEx2OXZxME5GYXJUSUNTQWJoMTR5OFYwUV9DQjNmembSAesBQVVfeXFMTnp3T2dCSGpGT0hhV0Y5VTBHckNNVzhKMXBJaHNaLVFPbUVZemZnNkpqTDllSnBmZllYTlE4cXdieWNiTWgzZGNHNE43Uk1mMjNkOG9STnhuQkRhVlc5WVZ5d3JfM1BueHVlWWVhRFBUMDd6eEdJWUh3T2w1bUVRU19pRkpBZ055eGxNeThkUHpXQ0ZzQ3FWQnZNcDc3M3ZVMmFkQUJZbG5pTDlSOUw2OFM0akZjLTFldk1sZVpsd1VaUXdHRE1EVW9ielFIcUdsbXJNcXVtanp3UEp4aGdvT294bWk3SGk1X3dodw?oc=5",
           "breaking": false,
           "slug": "20260622-do-police-need-court-permission-to-investigate-further-after-filing-fi",
-          "image": "https://pixabay.com/get/ge4bcc7c5c4b16b91fd50335f0abeec9d7e3901d0854c734340c436c5d34c479611bd1d4e922f82454164a2c0088faa4ef1039070f8b1bf7890a9dd4fe9ded811_1280.jpg",
+          "image": "https://images.pexels.com/photos/10464437/pexels-photo-10464437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "qimono",
-          "image_credit_url": "https://pixabay.com/users/qimono-1962238/"
+          "image_credit": "cottonbro studio",
+          "image_credit_url": "https://www.pexels.com/@cottonbro"
         },
         {
           "hour": 20,
@@ -326,6 +311,21 @@ window.BRIEF = {
           "image_kind": "photo",
           "image_credit": "Mark Stebnicki",
           "image_credit_url": "https://www.pexels.com/@nc-farm-bureau-mark"
+        },
+        {
+          "hour": 15,
+          "time": "15:37 IST",
+          "headline": "Supreme Court dismisses businessman's plea against ED searches in TASMAC liquor case",
+          "what": "The Supreme Court has rejected a petition filed by a businessman challenging the legality of searches conducted by the Enforcement Directorate in connection with the TASMAC case — a high-profile money-laundering investigation linked to Tamil Nadu's state-run liquor corporation. The dismissal clears the ED to continue its probe, dealing a setback to those seeking judicial relief against the agency's search operations. The TASMAC case has significant political dimensions, with allegations of large-scale financial irregularities in the liquor supply chain.",
+          "lens": "The Supreme Court backing the ED's search powers in the TASMAC case means the money-laundering probe into Tamil Nadu's state liquor corporation can press ahead without legal roadblocks.",
+          "source": "The New Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQVzB1VnF5YS15SlJJS2xKUWFVU3pSb3BGUVBWYWpyS2Zlc3NfSm9iemNBNzFQaGJDeDlGQTVBVjEwSXgzQVBvS3BFN2xuODJ3MVpqRUlFaVI0WDRIdnVRVk5tOFVRdV9DT2h6QUIzWTA0eDZxckVndU9fNmJGQmdOSzlRVVBaZ1FyOUJ6ajctQXR6dmc0SHBzYW80UW5mUjJCYkY0ZjJPS3ZrQkNySW42T2pyb2RXX2U1STFRSklRek43UTNVT3hmUXFXTE42Yjlx0gHeAUFVX3lxTE5rMDBrNmh3cHhIYXQ4VXRQVlotSHc0UUlxUTNtczVuRm5SUmllQ1pOYkZEdkFDdjN0dkZEZ2pFUHlBdEMyelJ3Mm4xVWk3RzdremtZOVRUeWtjNnlWRU43VThkQTJCYlE2RVNjeTVDTXZ6enNFckxOWXVnUFZDN3FDb1J1NVNHdVVpaDV0UmlpblVMcHdINEw4Z0N5V1RWTkNVU3Z1NndnRmItUm82Q2dHLXBLb0h2S2pTSkFlT3NlZlprV1dfNlI1YV9tTEg0cHBhT2ZxeEtNN2NOTGhLUQ",
+          "breaking": false,
+          "slug": "20260622-supreme-court-dismisses-businessman-s-plea-against-ed-searches-in-tasm",
+          "image": "https://pixabay.com/get/g89f9d1a41beeeedaf347776bc3bed77ea0b53a6862bd2643571fafa7b0acdeefb69992e2a18f27759379203cfa47743d328aa57152b3c76136691e0cc812b6aa_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "BunteAufnahmen",
+          "image_credit_url": "https://pixabay.com/users/BunteAufnahmen-6345617/"
         }
       ]
     },
@@ -336,6 +336,21 @@ window.BRIEF = {
         {
           "hour": 22,
           "time": "22:01 IST",
+          "headline": "India's AI strategy problem: Why building sovereign models may not be the answer",
+          "what": "A Business Standard analysis argues that India's push to develop sovereign large language models — AI systems built and owned by the Indian state — may be misguided, contending that the costs are prohibitive, the timelines are long, and the strategic benefits are overstated. The piece suggests India would be better served by focusing on AI applications, local data infrastructure, and regulatory frameworks rather than competing head-to-head with US and Chinese foundation model labs. The debate comes as the government's IndiaAI Mission rolls out funding and compute infrastructure.",
+          "lens": "Whether India builds its own AI models or rides foreign ones will determine everything from data sovereignty to which language and cultural contexts Indian AI systems actually understand — a policy choice that affects every Indian who will eventually use an AI-powered government service or app.",
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQR3J3OWtsbnVmU09RM0tqZ21BTmI1Z3AyNGhldndEU1JYZDhrRjdnRkJ6QUtVeWpNTDhuQkhXazZTX2UwVmR3a0VOby15MWJYdWt4eHh5cnp2V2FYMHRUZ0RfMUxXZzZjRWVPN0dkemxIWVJ5eWpMSmQzR0YxaDZ1NGl6TkVsN2RidXh4OEFBUkQ4S1V1TC1UN0FpdFprb3FVQlpyWEYyZFFpeS1uRGNFMFVwLTV2eTlhLWNCSjJVaDdPWE1xRlBjenplNHN5eDMtQkh3Y1R30gHbAUFVX3lxTE5vVy1jOWRlQ2NTZWJzWDhDcU81bWxuWkZOUTBSVDRobjZOUW1maGJ4WkpmaDFxdTFWRjBCSmdJUVlXWnE0WkdzZkt6a3ozRDN5LXc0YkZmdGhNWWJ0T1Y2cXJPUzhFaUJRWGdEbUhzMlExM1hyWTJXY3dzTVVtbEYwLWhJVm12TGlhbzRacXVYcGpxeE03YW1CaVBjdXoyRHdPMjFvYUk3bWduSDR5bFpzOS0zTlZKVVF5YkluTG1tQTNhMUI0N1gwYjJoa2pIMzRaZTB2RV9YZlZZQQ?oc=5",
+          "breaking": false,
+          "slug": "20260622-india-s-ai-strategy-problem-why-building-sovereign-models-may-not-be-t",
+          "image": "https://images.pexels.com/photos/10822937/pexels-photo-10822937.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Prasanjeet Shyam",
+          "image_credit_url": "https://www.pexels.com/@prasanjeet-shyam-279139"
+        },
+        {
+          "hour": 22,
+          "time": "22:01 IST",
           "headline": "India's Sovereign AI Model Push May Be the Wrong Answer, Analysts Warn",
           "what": "A Business Standard analysis argues that India's government strategy of building sovereign AI models — state-backed large language models developed domestically — may be misaligned with where AI value is actually created. The piece contends that pouring public resources into foundation model development puts India in direct competition with vastly better-resourced US and Chinese labs, rather than focusing on the application and deployment layer where Indian strengths in software services could yield greater returns. The debate touches the core of how India should spend its AI Mission budget.",
           "lens": "With India's Rs 10,372-crore AI Mission already under way, the question of whether public money should fund base models or application-layer innovation will directly shape thousands of AI jobs and the country's competitive position in global tech.",
@@ -343,55 +358,25 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOb1ctYzlkZUNjU2Vic1g4Q3FPNW1sblpGTlEwUlQ0aG42TlFtZmhieFpKZmgxcXUxVkYwQkpnSVFZV1pxNFpHc2ZLemt6M0QzeS13NGJGZnRoTVlidE9WNnFyT1M4RWlCUVhnRG1IczJRMTNYclkyV2N3c01VbWxGMC1oSVZtdkxpYW80WnF1WHBqcXhNN2FtQmlQY3V6MkR3TzIxb2FJN21nbkg0eWxaczktM05WSlVReWJJbkxtbUEzYTFCNDdYMGIyaGtqSDM0WmUwdkVfWGZWWUHSAdsBQVVfeXFMTm9XLWM5ZGVDY1NlYnNYOENxTzVtbG5aRk5RMFJUNGhuNk5RbWZoYnhaSmZoMXF1MVZGMEJKZ0lRWVdacTRaR3NmS3prejNEM3ktdzRiRmZ0aE1ZYnRPVjZxck9TOEVpQlFYZ0RtSHMyUTEzWHJZMldjd3NNVW1sRjAtaElWbXZMaWFvNFpxdVhwanF4TTdhbUJpUGN1ejJEd08yMW9hSTdtZ25INHlsWnM5LTNOVkpVUXliSW5MbW1BM2ExQjQ3WDBiMmhrakgzNFplMHZFX1hmVllB?oc=5",
           "breaking": false,
           "slug": "20260622-india-s-sovereign-ai-model-push-may-be-the-wrong-answer-analysts-warn",
-          "image": "https://images.pexels.com/photos/15774367/pexels-photo-15774367.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://pixabay.com/get/g27ed5460936c1809717cfb78e499c70763a48479b39b303dea98678789d398fa07de4969406572e27f73e687e922a1e9316645b5ddc235a8de2e78f76929e825_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "Abhinav Tripathi",
-          "image_credit_url": "https://www.pexels.com/@abhinav-tripathi-473877923"
-        },
-        {
-          "hour": 22,
-          "time": "22:01 IST",
-          "headline": "India's AI Strategy Problem: Why Sovereign Models May Not Be the Answer",
-          "what": "Business Standard argues that India's push to develop sovereign AI models — homegrown large language models built and controlled by the state — may be strategically misguided. The analysis contends that the enormous compute costs, talent requirements, and time horizons involved mean India risks investing heavily in infrastructure that delivers little practical edge over simply adopting and adapting globally available frontier models. The piece calls for a sharper, more nuanced national AI strategy focused on application and governance rather than model-building.",
-          "lens": "How India bets its AI strategy will shape whether the country becomes a genuine AI power or an expensive also-ran — and the debate directly affects public spending priorities and the competitiveness of Indian tech firms.",
-          "source": "Business Standard",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOb1ctYzlkZUNjU2Vic1g4Q3FPNW1sblpGTlEwUlQ0aG42TlFtZmhieFpKZmgxcXUxVkYwQkpnSVFZV1pxNFpHc2ZLemt6M0QzeS13NGJGZnRoTVlidE9WNnFyT1M4RWlCUVhnRG1IczJRMTNYclkyV2N3c01VbWxGMC1oSVZtdkxpYW80WnF1WHBqcXhNN2FtQmlQY3V6MkR3TzIxb2FJN21nbkg0eWxaczktM05WSlVReWJJbkxtbUEzYTFCNDdYMGIyaGtqSDM0WmUwdkVfWGZWWUHSAdsBQVVfeXFMTm9XLWM5ZGVDY1NlYnNYOENxTzVtbG5aRk5RMFJUNGhuNk5RbWZoYnhaSmZoMXF1MVZGMEJKZ0lRWVdacTRaR3NmS3prejNEM3ktdzRiRmZ0aE1ZYnRPVjZxck9TOEVpQlFYZ0RtSHMyUTEzWHJZMldjd3NNVW1sRjAtaElWbXZMaWFvNFpxdVhwanF4TTdhbUJpUGN1ejJEd08yMW9hSTdtZ25INHlsWnM5LTNOVkpVUXliSW5MbW1BM2ExQjQ3WDBiMmhrakgzNFplMHZFX1hmVllB?oc=5",
-          "breaking": false,
-          "slug": "20260622-india-s-ai-strategy-problem-why-sovereign-models-may-not-be-the-answer",
-          "image": "https://images.pexels.com/photos/8438956/pexels-photo-8438956.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "image_kind": "photo",
-          "image_credit": "Pavel Danilyuk",
-          "image_credit_url": "https://www.pexels.com/@pavel-danilyuk"
+          "image_credit": "mickey970",
+          "image_credit_url": "https://pixabay.com/users/mickey970-1278620/"
         },
         {
           "hour": 15,
           "time": "15:34 IST",
-          "headline": "Google DeepMind Loses Nobel Prize Winner John Jumper to Anthropic",
-          "what": "John Jumper, who shared the 2024 Nobel Prize in Chemistry for his work on AlphaFold's protein-structure predictions at Google DeepMind, has left to join Anthropic. The departure is a significant blow to DeepMind, which celebrated Jumper's Nobel win as a landmark validation of AI-driven science. Anthropic, the AI safety company backed by Amazon and founded by ex-OpenAI researchers, continues to attract world-class talent as competition in frontier AI intensifies.",
-          "lens": "When a Nobel laureate moves from one AI lab to another, it signals where the field's sharpest minds think the most important work is happening — and which company is winning the talent war that will shape AI's future.",
-          "source": "Outlook Business",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORnFkRlJIN2otYnFyb0IzbFpRU3NKRTdMZHhiSEtGYnlaOWpVdEJSdFViZjZVR2VfM2NhR055UEEzZmpSUHQwVC16SEhienRxdkVaZThpZGR6UEJWRmwtT3ZEcXZvb1BERzJoZGVmTTZuTmhmcDBoZG9yQW9GMjlGemZoTkdSQXZCSFFZcjZsdDkxLTdmaENNYUhQTDRfTUxUY2tNYXpUbTVLakFKMkc5Z9IBsAFBVV95cUxORnFkRlJIN2otYnFyb0IzbFpRU3NKRTdMZHhiSEtGYnlaOWpVdEJSdFViZjZVR2VfM2NhR055UEEzZmpSUHQwVC16SEhienRxdkVaZThpZGR6UEJWRmwtT3ZEcXZvb1BERzJoZGVmTTZuTmhmcDBoZG9yQW9GMjlGemZoTkdSQXZCSFFZcjZsdDkxLTdmaENNYUhQTDRfTUxUY2tNYXpUbTVLakFKMkc5Zw?oc=5",
+          "headline": "Google DeepMind loses Nobel laureate John Jumper to Anthropic",
+          "what": "John Jumper, the scientist who won the 2024 Nobel Prize in Chemistry for his work on AlphaFold — the AI system that predicted the 3D structure of nearly every known protein — has left Google DeepMind to join Anthropic. The move is a significant talent win for Anthropic and a notable loss for DeepMind, where Jumper led one of the most celebrated breakthroughs in modern science. His hire signals Anthropic's ambition to deepen its fundamental AI research bench.",
+          "lens": "Jumper's move from DeepMind to Anthropic underscores how fiercely Big Tech and AI labs are competing for world-class scientific talent — a race that directly shapes which platforms power drug discovery, biotech, and research tools Indian institutions may soon rely on.",
+          "source": "outlookbusiness.com",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORnFkRlJIN2otYnFyb0IzbFpRU3NKRTdMZHhiSEtGYnlaOWpVdEJSdFViZjZVR2VfM2NhR055UEEzZmpSUHQwVC16SEhienRxdkVaZThpZGR6UEJWRmwtT3ZEcXZvb1BERzJoZGVmTTZuTmhmcDBoZG9yQW9GMjlGemZoTkdSQXZCSFFZcjZsdDkxLTdmaENNYUhQTDRfTUxUY2tNYXpUbTVLakFKMkc1Zw?oc=5",
           "breaking": false,
-          "slug": "20260622-google-deepmind-loses-nobel-prize-winner-john-jumper-to-anthropic",
-          "image": "https://images.pexels.com/photos/8439008/pexels-photo-8439008.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "slug": "20260622-google-deepmind-loses-nobel-laureate-john-jumper-to-anthropic",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/John_Jumper%2C_2024_Nobel_Prize_Laureate_in_Chemistry.jpg",
           "image_kind": "photo",
-          "image_credit": "Pavel Danilyuk",
-          "image_credit_url": "https://www.pexels.com/@pavel-danilyuk"
-        },
-        {
-          "hour": 10,
-          "time": "10:36 IST",
-          "headline": "Trump No Longer Views Anthropic as a National Security Threat",
-          "what": "US President Donald Trump has reportedly dropped his earlier view that Anthropic, the AI safety company behind the Claude models, posed a national security threat. The shift is significant given the Trump administration's heightened scrutiny of AI companies with ties to foreign investors and its broader push to assert American dominance in AI. The reversal clears a cloud of regulatory uncertainty that had hung over Anthropic as it competes with OpenAI and Google for talent, capital, and government contracts.",
-          "lens": "For India's tech and startup ecosystem, which increasingly builds on US AI platforms including Anthropic's Claude, a less adversarial US regulatory posture toward frontier AI labs means more stability in the tools and APIs that power Indian AI products.",
-          "source": "The Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQSTUwa1JCNmszeklLUHBObnB4aXIxd3F4aWhUYlplcEEzRGR2MWVrU3NoTlYxSVNpZkxxd0FYNGh0UWJjVVJUdFlMb1FqS2c1dHZ1OHdNSHItVHdpR3dOeHNlTjEtLVVaci1TWDFxSGtKRHB5NGlqYzRwejdVOVdic0xHQVROQXJ5RExmYUxzbVZnbFV4Y1hsZEI1SnJBNTZDTFotbFJacXlOcjlxXzRsOVFFQVBQN0U5b0ZYNTVsMFVqVXgtdko1X2tCR3JPVUNCVk91UUJJMFVJekZ5QTVPZXJnd3ZieTZ5OGVxUEN2OXJOQlpUZHVEUk5n0gGAAkFVX3lxTE4wR05jb21GZnlsVlZJOUxFVXdaX29wZkJMSk5WYTdvaGxGSUlUMkY3c3RfUU90cXJXNGE4MUFKWkJ0bnFaS0YyZ1JzVnc1VVc2V1cwZkRuZE9nR200aEZBaVJPLWNKcHM0Zkl6WkpQVlRrcnhVdndQSVJfZTh2Z2RaWkZYX0o2UThWTnVjR2NmYWVZVm1yOVBlNV95QUpNS2RaLUktUGs0b0NkTHZtS0VuelVhZHVjUEhVMnd4NjZEQUwzWTh5RUo2YjE2cGNnLTg0ZUJRUTNIZWplNmVSeXl0M0xGcnU2bU1FN3luTm9kd01Hb0tPX2NjWVQtbDBiT0Q?oc=5",
-          "breaking": false,
-          "slug": "20260622-trump-no-longer-views-anthropic-as-a-national-security-threat",
-          "image": "https://pixabay.com/get/g7564d98c4c4bd7d41feccee459c3640f834e531f1a0f2751b3ed1610739b4d3e4e7b751f75878c1e5ab189ab61e10fbefa39c6b74f22ecff71561ea24d54287c_1280.jpg",
-          "image_kind": "photo",
-          "image_credit": "51581",
-          "image_credit_url": "https://pixabay.com/users/51581-51581/"
+          "image_credit": "Arthur Petron / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/John_M._Jumper"
         },
         {
           "hour": 10,
@@ -403,10 +388,25 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOblNpeklYakhZU0xOV1Rzc2RtTGRDbVlGams0RVJEN2MteGVWMkhHa0MtYVdFSklaQ1p4ekQ0LVk5QzNsWGZwbkgwemxIdlppd1EyM2tqTVVWc3h6V3d1OHJxYkJvcTZHRlhxWmxTS3VTLTYtMHpWc3pVczZva1gwenV5dkNORzlPSWIwRTFPZ1dtNl9nQjA4N0dWSW5NSjBheTdoVXFfQVFFclhnVzBaTENuem9YSE1LaDVYMHBHNGd2alV2TFBDLTlTRnBGcEZRN0hIUTVqWU9zUVVJV05GOXJVTHp0Y0k?oc=5",
           "breaking": false,
           "slug": "20260622-tech-workers-who-maxed-out-on-ai-are-now-pulling-back",
-          "image": "https://pixabay.com/get/g87673be8ec1ea4e7a8b743104950e75e6bf60fab44003c2184d202c2f4bbb65e373ba00db76931709fbb9de557bd2054b24db4f92c71f1f61540a8b51eb78d9c_1280.jpg",
+          "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "JESHOOTS-com",
-          "image_credit_url": "https://pixabay.com/users/JESHOOTS-com-264599/"
+          "image_credit": "Tara Winstead",
+          "image_credit_url": "https://www.pexels.com/@tara-winstead"
+        },
+        {
+          "hour": 9,
+          "time": "09:32 IST",
+          "headline": "Trump no longer views Anthropic as a national security threat",
+          "what": "US President Donald Trump told Axios he no longer considers Anthropic, the AI safety company behind Claude, a national security threat — a significant reversal from earlier concerns about the firm's ties to foreign investment. The shift could ease regulatory pressure on Anthropic and smooth its path for US government contracts. It comes as Washington recalibrates its approach to domestic AI companies amid intense competition with China.",
+          "lens": "For Indian AI researchers and firms watching US policy closely, a softer American stance on Anthropic could accelerate global enterprise adoption of Claude-based tools and reshape which AI platforms Indian businesses partner with.",
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNcWJMTm5fMVhMOTk0NmdHcjRlV1lCVWZYMkMzaWJRN2VlNWNwYU5vQlZUZ3daVkxFYTdCQVBWSm1RcnNKSDNjUzUwbWFYVHpjbUVWMWlwNkFLckl5U3NCdUVDeXdoVzVXc3BmdlJiQWZCX2RKWVlnSW9wcDhLQlZRbWVVTF9nWXFOcGtzVlBSM1Z5eEdhNDFLSFZLT2dNYW1hMzBlTHQ0QmtyVEZZYnBMeFZma3NrcmJNVkg5X3UyaTczU3Zzb3ladmxCandkUUFVSl9sVWRWaUFhUzF30gHcAUFVX3lxTE1xYkxObl8xWEw5OTQ2Z0dyNGVXWUJVZlgyQzNpYlE3ZWU1Y3BhTm9CVlRnd1pWTEVhN0JBUFZKbVFyc0pIM2NTNTBtYVhUemNtRVYxaXA2QUtySXlTc0J1RUN5d2hXNVdzcGZ2UmJBZkJfZEpZWWdJb3BwOEtCVlFtZVVMX2dZcU5wa3NWUFIzVnl4R2E0MUtIVktPZ01hbWEzMGVMdDRCa3JURllicEx4VmZrc2tyYk1WSDlfdTJpNzNTdnNveVp2bEJqd2RRQVVKX2xVZFZpQWFTMXc?oc=5",
+          "breaking": false,
+          "slug": "20260622-trump-no-longer-views-anthropic-as-a-national-security-threat",
+          "image": "https://pixabay.com/get/geba30e8a928e546701dd83e9c21727096810f4dc859d8aef81dc1675e2ea1f9578263bd0d7ca8486369fb5918637f245244dfc83f1423e3abaa0ed371552725c_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "Alexandra_Koch",
+          "image_credit_url": "https://pixabay.com/users/Alexandra_Koch-621802/"
         }
       ]
     },
@@ -416,8 +416,8 @@ window.BRIEF = {
       "stories": [
         {
           "headline": "FIFA World Cup 2026: latest scores and full results",
-          "time": "04:24 IST",
-          "hour": 4,
+          "time": "10:51 IST",
+          "hour": 10,
           "what": "The latest FIFA World Cup 2026 results in full — scorelines, goalscorers and what's coming up next, all in IST.",
           "lens": "Every matchday, tracked in your time zone.",
           "source": "openfootball",
@@ -425,10 +425,25 @@ window.BRIEF = {
           "breaking": false,
           "worldcup": true,
           "slug": "20260622-fifa-world-cup-2026-latest-scores-and-full-results",
-          "image": "https://pixabay.com/get/gf7d4f922f182939e0d7b6642afe7501238e3e1f42caaec7177e4437c3226db40d741898577885df49b777b3c80cb63aff4ab7954eb774024e7c3a9775e5558cc_1280.jpg",
+          "image": "https://pixabay.com/get/gbf1c8db89bf0c632342e8a0287fa9679a791d202e5e46b98bb0453d5e96a23035c4b2915981d9fdd324f7ad8dc112b16fae3a4f4bfad9c8f3d6412a4f129905c_1280.jpg",
           "image_kind": "photo",
           "image_credit": "jorono",
           "image_credit_url": "https://pixabay.com/users/jorono-1966666/"
+        },
+        {
+          "hour": 22,
+          "time": "22:40 IST",
+          "headline": "Marizanne Kapp Stars as South Africa Beat India to Keep Women's T20 World Cup Hopes Alive",
+          "what": "India suffered their first defeat of the Women's T20 World Cup 2026 as South Africa beat them in a crucial group-stage contest, with Marizanne Kapp delivering a match-winning all-round performance. The loss ends India's unbeaten run in the tournament and injects fresh uncertainty into the standings. South Africa, who needed the win to stay alive in the competition, kept their qualification hopes firmly on track. India's middle order once again came under scrutiny as the side failed to build on their start.",
+          "lens": "India's first loss puts their direct path to the knockout stage under pressure — the result could determine whether they finish top of their group or face a tougher route in the knockouts.",
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1DRkRJTU5uUmEwNkZYZXd2ZWY1MTdEazhBcDd6enVFdFdVY19BSXZxdDZwcTRfTTlWSEhPMEhzWEM0U01SZEtWMGRCeGxsOHlaM0Vwc3lqSU5OODZ1Z3FDQVVHRXpIdw",
+          "breaking": false,
+          "slug": "20260622-marizanne-kapp-stars-as-south-africa-beat-india-to-keep-women-s-t20-wo",
+          "image": "https://images.pexels.com/photos/36230651/pexels-photo-36230651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Shlok",
+          "image_credit_url": "https://www.pexels.com/@shlok-230964119"
         },
         {
           "hour": 22,
@@ -440,10 +455,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNQ1RTMElkcW9OdVRZQ083bUtjamZJenVQMnhsV3k0LWdPS21rME1EaGFCSXFrU1FndEFLUEx6M0JCYllyeEhuVzJ5d25IYnEzSzk4NGNkM2RkcXdqbml5NTFuRVF1SXRRRWJPaDdCVTkybUR0bFlqUGtkcFRqU3BjZnZNaExmbE90blNoV2NHS2h2OVR5a2VxMnNrUGZiX1JDQzFpSzFmZzhjM0UtbEl5ODRSeF92M3ZLSk1CUlpfNjNic19XSzhpatIByAFBVV95cUxNQ1RTMElkcW9OdVRZQ083bUtjamZJenVQMnhsV3k0LWdPS21rME1EaGFCSXFrU1FndEFLUEx6M0JCYllyeEhuVzJ5d25IYnEzSzk4NGNkM2RkcXdqbml5NTFuRVF1SXRRRWJPaDdCVTkybUR0bFlqUGtkcFRqU3BjZnZNaExmbE90blNoV2NHS2h2OVR5a2VxMnNrUGZiX1JDQzFpSzFmZzhjM0UtbEl5ODRSeF92M3ZLSk1CUlpfNjNic19XSzhpag",
           "breaking": true,
           "slug": "20260622-sloppy-india-lose-manchester-thriller-to-south-africa-now-in-danger-of",
-          "image": "https://images.pexels.com/photos/36230651/pexels-photo-36230651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image": "https://images.pexels.com/photos/20987995/pexels-photo-20987995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Shlok",
-          "image_credit_url": "https://www.pexels.com/@shlok-230964119"
+          "image_credit": "Leon Aschemann",
+          "image_credit_url": "https://www.pexels.com/@leon-aschemann-734730704"
         },
         {
           "hour": 16,
@@ -455,40 +470,25 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5uUF95MnNjM0dFZUdzLURxYkpFWGVzeG12M29tSGhVM0QweHF1MUVrV2U5LTg0bFd2NC05eVgwYUdkWGtlNUllT2VLdzY4c05vOHBWMVRPaWhxQ2FXSTk3UThyLWIwZw",
           "breaking": false,
           "slug": "20260622-vaibhav-sooryavanshi-smashes-record-breaking-11-ball-fifty-for-india-a",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/6/68/Vaibhav_Suryavanshi_meets_PM_Modi.jpg",
+          "image": "https://images.pexels.com/photos/15132924/pexels-photo-15132924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Nevin Verochan",
+          "image_credit_url": "https://www.pexels.com/@nevin-verochan-27256961"
+        },
+        {
+          "hour": 6,
+          "time": "06:56 IST",
+          "headline": "Jaiswal Axed from England ODI Squad Despite Century; Virat Kohli Returns to India Setup",
+          "what": "Yashasvi Jaiswal has been dropped from India's ODI squad for the England series despite scoring a century, in a major selection surprise that has set off debate about the selectors' priorities and team balance. Virat Kohli, meanwhile, has been named in the squad, marking his return to the Indian setup after a period away. The contrasting fortunes of the two batters — one in red-hot form yet left out, the other returning on reputation and past record — has made this one of the most talked-about selection calls in recent memory.",
+          "lens": "When a centurion gets dropped while a rested superstar walks back in, it tells everyday fans exactly how the selectors weigh current form against established stature — a debate that cuts to the heart of Indian cricket's selection culture.",
+          "source": "Telegraph India",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUmxrejVzSTlmRXp0NnVOM1RxSldid05qOWxrQVlhcjJkZkdldkFEVDRrSVdESDl6VFpDSEZhMkpldTM1NTBhYVo1QU1zS1QtOXl1U19xS3pCdVpEaVB4bndYcTQ3R1BXOEstSkx1Nm8xVTVHQXVlV04tcExsbzNnZEhMYmd0cFI4Z1JOSTlqWi1pQzFpbUpTVml3SEMyTXU1bXlpS0padmxBcnNkRUdKcDE0U2dyX1h4UWpUTFY0eU5SYzA3MXp1aGJPZS1qcHBXR1pacNIB2gFBVV95cUxNNzBJLTZjMUhOcXdKTnBkR2JLdnl1WGNKbWVYTWt5NmI0VDg2c2xCRTVHZGhmTkFLeW5hTGhlOXlkZHotMUsyWWZjMy12R0hfTEdOREZaZGpSdVpGOTBuRHEtZ1VsSlJxLURFM2JKRURDT2ctcGxkcUNFQlVZMUk2ZzRuNHFiR0FqeUJXN29XZkVNaFRYNURVckZ6VGdQeWw4X2hyWkFsdXYxWFEtLUxGUXRwWjZRUWtzaThoZWgxTUNJR0ZKZGh5S25PclZpamJia0pXUjRJeWxaUQ",
+          "breaking": false,
+          "slug": "20260622-jaiswal-axed-from-england-odi-squad-despite-century-virat-kohli-return",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Virat_Kohli_in_PMO_New_Delhi.jpg",
           "image_kind": "photo",
           "image_credit": "Prime Minister's Office / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Vaibhav_Sooryavanshi"
-        },
-        {
-          "hour": 21,
-          "time": "21:04 IST",
-          "headline": "Cricket Ireland breaks silence on security threat to Sooryavanshi's potential India debut",
-          "what": "Cricket Ireland has publicly addressed reports of a security threat surrounding Vaibhav Sooryavanshi's potential debut for India, which is expected to come in the upcoming series in Ireland. The Irish board broke its silence to respond to concerns that had been swirling around the teenager's first senior international appearance. The situation highlights the heightened scrutiny and logistical complexity that now accompanies Sooryavanshi's every move given his extraordinary rise to fame.",
-          "lens": "A security threat around a young Indian debutant playing abroad is an unusual and serious development — it speaks to both Sooryavanshi's celebrity status and India's duty-of-care obligations towards players on tour.",
-          "source": "NDTV Sports",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPdXgzWW9NdlRZdG82SC0xZm9lTGJaUGRzVHJVLWFkVWFZOEJmRkZ2NUtPVlNMMy00N2RYMktiV0VsMU5EdmctSmliZ3UyREVrZTlwV3dFekxTX1FCUl9OMGtnRk15eUotTFB2dHhDb1k3bERqQWVRQkdUcU5zd3dIN3FDZVpkNWdEZ3NxcXJfRTVTWG1LamF2VVFQanBPNjNjRkxISU1qUDhQUkRwOEhxVXdsZ3RfaUQ0LTBVQ3lXbmFWZjh2QVVmbjhJeVhod0E1MEU0?oc=5",
-          "breaking": false,
-          "slug": "20260622-cricket-ireland-breaks-silence-on-security-threat-to-sooryavanshi-s-po",
-          "image": "https://images.pexels.com/photos/30401164/pexels-photo-30401164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "image_kind": "photo",
-          "image_credit": "Manoj Poosam",
-          "image_credit_url": "https://www.pexels.com/@manoj-poosam-3217664"
-        },
-        {
-          "hour": 21,
-          "time": "21:36 IST",
-          "headline": "Yashasvi Jaiswal Stars as India Complete Series Sweep",
-          "what": "Yashasvi Jaiswal led India to a series sweep, delivering a standout performance in the final match to seal a clean series win. The victory underlines India's dominant form with Jaiswal emerging as the decisive batting force across the series. It marks a commanding statement by the Indian side heading into their broader international schedule.",
-          "lens": "A series sweep confirms India's growing depth and Jaiswal's emergence as a match-winner — a sign of things to come for the national side.",
-          "source": "The New Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPa0tVOGxnSzJlNkhzX0xCb1A1MktFODd5UGczRE4ydUtpTFVqbHZsUTVsUXJDMkFabEc0R2lrY2l1bUVENkRIazhsYnc3dm5ZblE0RVFnSk0xM0RSd1JjMXNVblR4dkpwMjRaTHBEdHZBTmhMQXZKYUJfal9icEtOLTI4ODQ0Slg2T09ncTM5b0VfdGhXYkJUSmdvdEQyM3BBTWU2Z9IBsgFBVV95cUxPc0tqUlNKTExzdzBNZzFLTWxiVFJhdDVBWF9IaTAya1ZqcHNkSlZDY3U5U084elpaaGJjZkhQTXhKMlhiTW1nM3hET09qdjR0My11UVJON1JVbXRrRGJhbzQyODV5R1VkTG9GLU9XNGExMDc2Nkw3bDJJbU1weWg4a0pWV1BwdkhZR3VGTl9xQzdPaXNJcm9DcU1ScExfQ1BlY1BrUEhIMEpDeWQyaUR2VU93",
-          "breaking": false,
-          "slug": "20260622-yashasvi-jaiswal-stars-as-india-complete-series-sweep",
-          "image": "https://images.pexels.com/photos/3602833/pexels-photo-3602833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "image_kind": "photo",
-          "image_credit": "Patrick Case",
-          "image_credit_url": "https://www.pexels.com/@case-originals"
+          "image_credit_url": "https://en.wikipedia.org/wiki/Virat_Kohli"
         }
       ]
     },
@@ -506,10 +506,10 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPX3B3T085UXVoTTBOQl8wMS03QUdKZDJYeDZKTWRQV0V0WkZoNkQtVk1FaGJGTExpbXh4Y1RqSjlpZV91WGJpQ0VIUnRSSWRFVFh4NWhwX2pCN2lBaVVQc1NsQ0tJSGNZOEVBNy14T2ZfYmZxNDE5MS1qTDE4Q3RMbFlnbnV5WUh0MG55UnJMZ3MzVUc2Y1dDMUtjdUVCV0NiV0NyZE5Cc0E0ZzduME1MM3ZzU0JYUjEtYnZIQVdBOXBlVS0ycEdNM3dSU2k0WW1Gb09scEVlLWZRX3M5UlZTV2wyVdIB4wFBVV95cUxPX3B3T085UXVoTTBOQl8wMS03QUdKZDJYeDZKTWRQV0V0WkZoNkQtVk1FaGJGTExpbXh4Y1RqSjlpZV91WGJpQ0VIUnRSSWRFVFh4NWhwX2pCN2lBaVVQc1NsQ0tJSGNZOEVBNy14T2ZfYmZxNDE5MS1qTDE4Q3RMbFlnbnV5WUh0MG55UnJMZ3MzVUc2Y1dDMUtjdUVCV0NiV0NyZE5Cc0E0ZzduME1MM3ZzU0JYUjEtYnZIQVdBOXBlVS0ycEdNM3dSU2k0WW1Gb09scEVlLWZRX3M5UlZTV2wyVQ?oc=5",
           "breaking": false,
           "slug": "20260622-did-amitabh-bachchan-shelve-khabardar-to-avoid-being-overshadowed-by-k",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Indian_actor_Amitabh_Bachchan.jpg",
+          "image": "https://images.pexels.com/photos/7723755/pexels-photo-7723755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "File:Amitabh Bacchan and Shrinivas Kulkarni.jpg: Shrinivaskulkarni1388\nderivativ / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Amitabh_Bachchan"
+          "image_credit": "Tara Winstead",
+          "image_credit_url": "https://www.pexels.com/@tara-winstead"
         },
         {
           "hour": 15,
@@ -521,55 +521,55 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQWU43eEsycng1N3Z3Q2NEY25tRXNVSGtNaFNDSUE2dnBoQWs2ajFFcFV2bFN5Z1Ewc0pva2VMZ0hUWTQ0SEliMUNCSTFsWG9qNklYYXBuSVJsNF8waFIxaVljZkF2TGRlVjc5NEJ1bDNteEhydnh6cHJBVmRoM0FoZEx5andQU3gwelNsT19EOXBDWmtRVHU4Wm84NW5jdTVmLU5xQVk4dUZLZ2Y5S0J0U0VFZGl3SGc4N3dUNnNMTWNBa0tfQWJYM1gwRGhwVE5wbUlSaVlBSjNCd9IB2gFBVV95cUxQWU43eEsycng1N3Z3Q2NEY25tRXNVSGtNaFNDSUE2dnBoQWs2ajFFcFV2bFN5Z1Ewc0pva2VMZ0hUWTQ0SEliMUNCSTFsWG9qNklYYXBuSVJsNF8waFIxaVljZkF2TGRlVjc5NEJ1bDNteEhydnh6cHJBVmRoM0FoZEx5andQU3gwelNsT19EOXBDWmtRVHU4Wm84NW5jdTVmLU5xQVk4dUZLZ2Y5S0J0U0VFZGl3SGc4N3dUNnNMTWNBa0tfQWJYM1gwRGhwVE5wbUlSaVlBSjNCdw?oc=5",
           "breaking": false,
           "slug": "20260622-how-om-puri-s-craft-silenced-raaj-kumar-s-on-set-insults",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/OmPuriSept10TIFF.jpg",
+          "image": "https://pixabay.com/get/g51680a3f9616480c79a22a280200c7d0f0d7e03ca57d7457da276f9c33edee0127c38e7a44ff77d1ee36292c8ba6a61f1024cf8e325f7a3706728f2cf0b723a7_1280.jpg",
           "image_kind": "photo",
-          "image_credit": "gdcgraphics at https://www.flickr.com/photos/gdcgraphics/ / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Om_Puri"
+          "image_credit": "pprasantasahooo",
+          "image_credit_url": "https://pixabay.com/users/pprasantasahooo-5744012/"
         },
         {
-          "hour": 12,
-          "time": "12:37 IST",
-          "headline": "Sonam Khan breaks silence on 40-year-old rumour about casting in Tridev's iconic 'Oye Oye'",
-          "what": "Actor Sonam Khan has addressed a decades-old rumour surrounding the casting of the iconic song 'Oye Oye' from the 1989 Bollywood blockbuster Tridev. The song, featuring Sonam and choreographed memorably by Saroj Khan, became one of the defining pop-culture moments of late-1980s Hindi cinema. Khan's reaction sheds fresh light on backstage stories from a golden era of Bollywood, reigniting interest among fans of classic Hindi film music and nostalgia lovers.",
-          "lens": "For fans of 1980s Bollywood, Sonam Khan's firsthand account of the 'Oye Oye' casting story offers a rare, direct window into how one of Hindi cinema's most beloved songs came to be.",
+          "hour": 9,
+          "time": "09:45 IST",
+          "headline": "After publicly demanding Samay Raina be 'paraded on a donkey', Shaktimaan actor Mukesh Khanna ends up collaborating with him",
+          "what": "Mukesh Khanna, the actor famed for playing Shaktimaan, had previously made headlines by saying stand-up comedian and roast-king Samay Raina 'should be paraded on a donkey' — a sharp public rebuke. Now, in a striking reversal, Khanna has gone ahead and worked with Raina on a project. The about-turn has drawn wide attention online, given how emphatic Khanna's original criticism was. It underscores the peculiar pull of Raina's growing cultural platform.",
+          "lens": "When one of Bollywood's most vocal moral guardians ends up on the same set as the man he publicly shamed, it says something sharp about how creator-economy clout now reshapes old-guard celebrity calculations.",
           "source": "The Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOZVRYSUEzXzZ4TEhORXFUTEVaYUIwQ0ZqdEEtb09VNEQ4NGJnSkRwc0I4ekdFRXFmdWJxSXVfREtxbHZzVGtUc08xM0pQUVR3cGdmNnNabTdPWVpPSHo2TUQxS1NBT3l0UVR3VVhxQnliMi1hYVAtTVVjTFFmc05sNWVoYXlkeXljVV9OZ2h2ZHdtU3YzQi1nY1A2WjRyVXpub2ZaY1Y1TzRFZG02UE1jNm9LbndqUWxkR2ZzTWYyTTFOaHdXbnpiOTBWU3dwWnU5NlI3Tmp5NXVlUmJh0gHjAUFVX3lxTE5lVjhHM3UzdUFQaHNJT3VMcVB1ejZ4Y0kxUXMtX0t3UEpzei1DVTlxTGZMTVdnREg1ejVucTd0WWpoalRjYUwtdm00SmhLR29PdHpadWtlWGgtRnE1ampYbFRyRkxfanBEaHhOaS1TSzBsMDFNV05yQ1gzS0EyT0ZvaWJDNDQtX2NXUEtxVC1yUTljd2J2cHJVRy0zMm5wWjFkS3pITUJqNDNFVnBQZVRjX2lhdHBkem5xRVBxWVhGWFZEOTVVcEt3dWlnY3ExeW1YakltUl9qV29Zd3I3YVRmRTdJ",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPZnlBQjdlX0poVFprUEVWZlhzc2VkZjR0ZUlFbmxiSVpfVFpObFZJYnV1dWtDeTByaW1CMlkwRjRfVzUyVHpibEQ4STdPUVFGUWdWYUl0RjNET193NWlfNkJWNXp2RHlDTTZtY2FET3pNUVpkei1vV3ZuX0tFR2ozZjJoRy15eE8zUWJVTXQyeWRRVFZ6ZWlQc0VZeTZPNGdvQ3Nsb2U0SXhCa0dnODhfSkR6NUFHOUpBaXRTRU9sSi0xbUtISWpIS3JwUDNMQVZDNVQ4dF9KMmdpZ3hCX1R2bGxHR2FDeTFRWFM5MnYtd1d0d0530gH7AUFVX3lxTE1uNXJWYXMwV1FOWGtiLVZtdnltTF9nUElxTW13d0hoUTJBRC1vcGFVUlViTlRLOW1sXzBOejFpMGJIdDBPUXZyVVJtUDZmNG1QNG1yUWhMblhFa3BwdE9GQktVcURJTFczR2Q3ZUY5cGNTS0o5MlBwdFN0TVh4NTRNV2NHRTVtMHBQQ2dwZElTRG5rX1A0S2VvZmhmbDlkc3pLbEUwOFpvbEJsdS1VbnZDVnY2aXVFZWZTNEJ6d0NDbFd2MEkxQ3htUFA0aXpzRHdwNWJqYWd2U0VtczhweVZlYVd3QWFjZ2VOWFR5U2UzRDB2cW1oLTVWX2VB",
           "breaking": false,
-          "slug": "20260622-sonam-khan-breaks-silence-on-40-year-old-rumour-about-casting-in-tride",
-          "image": "https://pixabay.com/get/gff5f1b11c1cf5fb147253b4db277751221c6714bfe86922c839e07c1d8f56f75bd0d929188ce308b2957d69ec905931726f3315deb048c610d67ca3d37be7eda_1280.jpg",
-          "image_kind": "photo",
-          "image_credit": "armennano",
-          "image_credit_url": "https://pixabay.com/users/armennano-9097212/"
-        },
-        {
-          "hour": 11,
-          "time": "11:30 IST",
-          "headline": "'My qaum are all Indians': Javed Akhtar claps back at troll, reaffirms his atheism",
-          "what": "Veteran lyricist and screenwriter Javed Akhtar has sharply responded to an online troll, declaring 'My qaum are all Indians' and reiterating that he is an atheist. The exchange drew wide attention on social media, with Akhtar refusing to be pigeonholed by religious or communal identity. The response underscores his long-standing public stance on secularism and national identity, resonating with many at a time of heightened social polarisation in India.",
-          "lens": "Akhtar's pointed rebuttal cuts to the heart of an ongoing online debate about identity and belonging in India, showing how public intellectuals are pushing back against communal trolling.",
-          "source": "The Indian Express",
-          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNWmxfdkRfdko3M1NYa09OVFBJQ1IwckM3dEhKTm9meTJ5Qkk4WDBkSTh5X0I2RUczcS1fN3VXRnoxeWpmS0hzbE1ZZzRvanhzNjJFX1Jrb05oV3YzNnlZSDI0QWxzNVVQUnlRUmJoTHZMSmoxMjBSWG1YZFVSWC1FOXh0cW5acW5GaW1DcUNtM3czZTlFVzNucWp5XzMyRUZRVnhiODYzenJmdElGMjY0VVNFc0EzenZYSzBWTzdidHgxdkVfbGI1NlJfcEZoeUx1eDBmSThqN015eUFwWjVHZmpfVdIB6gFBVV95cUxNaVJrQnp6RlVIRUMzcjJ4b1V1aXRXN0JhYVNISEtzMTlOdXhaZmRPeEUyQ0YwRjdaZC1yYzZvWC1yZ3ZDeUQ5a09JcEFJV2x1MExFdHR1Y3hWWDNqbW05S2g2ZjBDcU5wbVF0VU9PZU12OFdYcFBxMkxKMzBFUVhDN2pVQ1VwcmphVmZUb2lzN3VGSGtwNWFDem1zU3Y4a3lGcUE5MkZYU253cFpDdGkxSHd1cG5kMGoxYUhCNHJ3QjZySkpWUUxRRFNCN0I1XzJacm5sakVlb2hHNDdwc3NYQTFNTTRQREJfMHc",
-          "breaking": false,
-          "slug": "20260622-my-qaum-are-all-indians-javed-akhtar-claps-back-at-troll-reaffirms-his",
-          "image": "https://images.pexels.com/photos/11297336/pexels-photo-11297336.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "image_kind": "photo",
-          "image_credit": "vivek sao",
-          "image_credit_url": "https://www.pexels.com/@vivek-sao-186119587"
-        },
-        {
-          "hour": 8,
-          "time": "08:13 IST",
-          "headline": "Shankar Mahadevan on World Music Day: 'Indian musicians are doing wonders on the world stage'",
-          "what": "On World Music Day, celebrated composer and singer Shankar Mahadevan spoke about the remarkable rise of Indian musicians on the global stage, saying they are 'doing wonders' internationally. His comments reflect a broader moment of pride in Indian classical, fusion, and independent artists finding audiences far beyond South Asia. The remarks come as Indian music — from film scores to independent acts — continues to gain international recognition and streaming visibility.",
-          "lens": "As Indian artists increasingly headline global festivals and top international streaming charts, Mahadevan's words capture a real shift in how the world listens to Indian music.",
-          "source": "Hindustan Times",
-          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNcURSMW9PbTJuTktmbGkzNW00TlUyNXdtZkQwbFJaQ0JOazhnS2RxeEE2QTVYNmdub04zMjdZNkJGVGR3Uzl2MHJabTBsTnJ1YTU5a1REWW5nMzRKeHE2Sy1oT1NmOWNtR09xWEExRTBDSWZLdHQ4WTNkbmZydkRLWkNSbW9zZ1dUak1sS1IwbGt5SU9BTFN3NjgzRm40dXFzUnE4N1RVeU14WjZ0OXNyejU4ejVBZWpySFNrQkdvLVQxWi05Q3BQQ1Z3NlBZTVFwcHlkZm9sY2xlYlNRcVlhbEZYOVV6Z0UydzY1UGI2VlVrTVJWeWxSLUxPeDlMZ9IBgwJBVV95cUxNbUoxUFZqc2FURzNxNFJXemhPdU14cUNqRkZGenpsMThoeGpxalZxMnFSVjBuUnNtQmdVdlVEZnV4cmcyMGRhNUpYQVF2bmtfbmd2U0lnaTJnWl9lSFRNTlZ5ZjRFdVpudGYzWUlTSktqR2UzVE9wb0ZvZ0xUVlg5dE5wdEczUkpMVnBNY3kxUUV1cW1GNldxTmNVZlpnWUFuS2RQWUh3Yl9WRVcyRGxDWFMxSGU1ajBya0hGNUJSZ1dpUzgxcHBRd3l2WVNGeTlscmZ1YzZNeWZ2WlU3YS1VeERwVWhWWEgxVS1tQmxIMElGQm5BZUtwRUozVHhwRHhoeGpj?oc=5",
-          "breaking": false,
-          "slug": "20260622-shankar-mahadevan-on-world-music-day-indian-musicians-are-doing-wonder",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Shankar_Mahadevan_01_%28cropped%29.jpg",
+          "slug": "20260622-after-publicly-demanding-samay-raina-be-paraded-on-a-donkey-shaktimaan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/d/de/MukeshKhanna.jpg",
           "image_kind": "photo",
           "image_credit": "Bollywood Hungama / Wikimedia Commons",
-          "image_credit_url": "https://en.wikipedia.org/wiki/Shankar_Mahadevan"
+          "image_credit_url": "https://en.wikipedia.org/wiki/Mukesh_Khanna"
+        },
+        {
+          "hour": 9,
+          "time": "09:16 IST",
+          "headline": "Sona Mohapatra says Bollywood heartbreak songs are 'reserved for men', questions why women's pain goes unsung",
+          "what": "Singer Sona Mohapatra has called out a longstanding gender imbalance in Bollywood music, arguing that heartbreak songs are overwhelmingly written for and performed by men, leaving women's emotional experiences largely invisible in mainstream Hindi film music. She pointedly asked 'is man making love to himself?' — highlighting the absurdity of a musical landscape where male longing is central but a female counterpart is absent. The comment has reignited debate about representation in the Hindi film music industry.",
+          "lens": "Bollywood produces hundreds of songs a year that shape how millions of Indians process love and loss — if women's heartbreak is systematically absent from that canon, it reflects and reinforces a real cultural blind spot.",
+          "source": "The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxQd3E5dlhKQlJzc2Jia08yVWJWNDNkN0QwdWFVeFhjMmFybUhyeE56MFdNcHBOVlhFdjREeTdoQk1mRElCUDMtbE42Y1FfRTdBd3pLdUxEUWhETmlwWVlRQVJJWWhZVlJ6WjJ1b043S1g0QWNCeU9MS1QtbTJSU2dfWW1sR3BKVGxhOTBMT1NkbDlzQ1UtLVBKanhRT3ZKQmdEemRkalR4X083a1VCTjdQQW5hTGRHd2ZwX2YtX1JLanNUOUthQXJHSEYzNWxlWk54Y0xIRG1uaWRLNUROQjhPa0FJYzVObDBlSWRvcUdtMTZEMlVGdXE1YkJ0M0lhMi1DdmxEV2F5TmRpV0FSZDJsTHg5ZG9YanF5ZF9udWZSMWluQ3lsODFGeUl3QzBSVWtFU193NGthUdIBvAJBVV95cUxOaDd2cnlMS1FwOWNBMVR0Qzd2aWZXZ2tPSGpzZkJocDFuY2V3a1NWRnZqdnRDeHJHU0IxNVZwUDhRU0dza21odDByWlZPd3JFc05FbHduNHRqXzFSR0Znbko1b2Fyc3JJUmo1UWs2Q2lnamo1VkJ6ODRiRzg1R1JYQTFUdWZ4S3hkUV9STXhzY25xZF8tNlpkYjBZblBNdzR1SjJ3SVdIMFM1R3pvZlBIbTRBeHZyQ2VqckFVSi11Qlk5bGRDNFFHT0dBdEZtaHpzR253ZXRMZzZQdUk3V2F0WUVYTWdYQU5FTy1ZU1BDVVVWMjU5TGYtcmRUeFhfdXpBdW0tWlFzNVhsZUlsc1pPcExqa0FLSTNsN1EwdlV6LW1xc0tDVjZYUzJCbWdmZ0E2U1ZpN19ka3RQX0lO",
+          "breaking": false,
+          "slug": "20260622-sona-mohapatra-says-bollywood-heartbreak-songs-are-reserved-for-men-qu",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Sona_Mohapatra_snapped_at_a_store_launch_in_Khar_%28cropped%29.jpg",
+          "image_kind": "photo",
+          "image_credit": "Bollywood Hungama / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Sona_Mohapatra"
+        },
+        {
+          "hour": 9,
+          "time": "09:00 IST",
+          "headline": "Indian kids' IP brand behind 'Emomee' launches its first animated series",
+          "what": "The Indian children's intellectual property brand behind 'Emomee' has rolled out its first full animated series, marking a significant step for homegrown kids' content in a market long dominated by foreign IP. The launch, reported exclusively by Variety, signals growing confidence among Indian creators in building original characters and franchises aimed at young domestic audiences. Emomee is positioned as a character-driven brand built around emotional literacy for children, making the animated series a natural extension of the IP.",
+          "lens": "As global streaming platforms flood Indian children's screens with foreign content, an Indian-origin kids' IP graduating to a full animated series is a meaningful step toward building homegrown franchises that reflect Indian children's lives and emotions.",
+          "source": "Variety",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOc1VHdUZ6NzN6SG1KV3BndUU0NjI3bWNTWVlWSWdXa3JTaDVrX1hPNm1pTkR4QWlxUDhDMzk5TENUdFFTZnBmaDRHV0pyWmJlMlVDLVZaSU5ONXlqS3pBWDhZNjk3c1RHYnN0WlBlMmZUZVFpTlRNM3lUXzdEalFBbjhDQU0",
+          "breaking": false,
+          "slug": "20260622-indian-kids-ip-brand-behind-emomee-launches-its-first-animated-series",
+          "image": "https://pixabay.com/get/g34b57c39d2332e8660ecfdc0804e787e4bc9d64fa203c85b73b63ec12d0799d22b2a00bd4daaaa90ba3a6fbc593936d2f81a70244cf668c048b1f1389a806a0e_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "stevepb",
+          "image_credit_url": "https://pixabay.com/users/stevepb-282134/"
         }
       ]
     }

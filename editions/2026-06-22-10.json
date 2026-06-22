@@ -1,0 +1,818 @@
+{
+  "date": "Monday, 22 June 2026",
+  "edition": "2026-06-22 10:45",
+  "topline": "Keir Starmer teeters on the edge of resignation as Britain's political crisis deepens, while Anthropic scores a double win — shedding its national security label under Trump and poaching Nobel laureate John Jumper from Google DeepMind.",
+  "lensLabel": "Why it matters",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "stories": [
+        {
+          "hour": 22,
+          "time": "22:20 IST",
+          "headline": "Over 2 Million Indian Students Resit NEET Medical Entrance Exam After Alleged Paper Leak",
+          "what": "More than 2 million Indian students were made to resit the NEET medical entrance examination after allegations emerged that the question paper had been leaked ahead of the original test. The re-examination represents one of the largest such exercises in India's recent history, affecting aspirants nationwide who had already sat the high-stakes test. The NEET controversy has triggered widespread outrage among students, parents, and opposition politicians, putting intense pressure on the central government over the integrity of the country's most critical medical admissions process.",
+          "lens": "For millions of Indian families who spend years and lakhs of rupees preparing for NEET, a forced re-sit due to a suspected paper leak strikes at the very heart of fair opportunity in medical education.",
+          "article": "More than two million Indian students were compelled to resit the NEET undergraduate medical entrance examination after serious allegations surfaced that the original question paper had been leaked before the test was conducted. The development, reported internationally by The Guardian, underscores the scale of the crisis engulfing India's centralised medical admissions system.\n\nNEET is the sole gateway to undergraduate medical and dental colleges across India, making it one of the most fiercely competitive examinations in the world. Allegations of a paper leak first emerged after discrepancies in results and reports from multiple states suggested that certain candidates had prior access to the questions. The National Testing Agency (NTA), which administers the exam, faced immediate calls for accountability.\n\nThe controversy rapidly escalated into a national political flashpoint, with opposition parties demanding the resignation of officials and a thorough criminal investigation. Student groups staged protests in several cities, arguing that honest candidates had been penalised for a failure of the system. The Supreme Court of India also took note of petitions challenging the conduct of the examination.\n\nThe decision to hold a re-examination for over two million students is extraordinary in its logistical scope and signals the depth of institutional failure. For aspirants who had prepared for years, the disruption adds enormous psychological and financial stress. The episode has reignited demands for sweeping reforms to India's examination infrastructure and stricter safeguards against paper leaks in high-stakes national tests.",
+          "key_facts": [
+            "Over 2 million students required to resit NEET medical entrance exam",
+            "Re-sit ordered following allegations of question paper leak",
+            "NEET is India's sole undergraduate medical and dental admissions test",
+            "NTA, the exam's administrator, faces calls for accountability and reform"
+          ],
+          "source": "The Guardian",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQeDFIa1U1d2dXVlBsdzFjZ2U0T19tMmxCZnZJWXJfOXpuMGVyX3FwRU80ZGl0YTlUbmVLWTF0d3lQUElQc2RhaVhJb1ZhVWNsTnlVbF9GQnBPU09JanhlSTU3NW9PYnlYb0JCRElGdHB2Vmx2TWtDalpRaWtybEV5V0wyZ2RkN3lsX0U2NGZ0RmVhdktQN0hud3hDeFlMbnV3X2QwS3puOWJmVlJPaVBNdVpSSF9mS21KRmZwU1R3?oc=5",
+          "breaking": false,
+          "slug": "20260622-over-2-million-indian-students-resit-neet-medical-entrance-exam-after",
+          "image": "https://images.pexels.com/photos/6683393/pexels-photo-6683393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Andy Barbour",
+          "image_credit_url": "https://www.pexels.com/@andy-barbour"
+        },
+        {
+          "hour": 20,
+          "time": "20:54 IST",
+          "headline": "Trump Says Keir Starmer 'Failed Badly' and Will Resign as UK Prime Minister",
+          "what": "US President Donald Trump publicly declared that UK Prime Minister Keir Starmer has \"failed badly\" and predicted he would resign from office, adding international weight to growing domestic pressure on the Labour leader. The comments from Trump come amid a turbulent period for Starmer's government, with falling poll numbers and controversy over several policy decisions. Trump's intervention — however unsolicited — is likely to further energise Starmer's political opponents in Westminster.",
+          "lens": "When the US President publicly predicts a sitting British PM's resignation, it signals serious turbulence in a key bilateral relationship that directly affects global trade and security arrangements India watches closely.",
+          "article": "US President Donald Trump declared that British Prime Minister Keir Starmer had \"failed badly\" and would resign, in a sharp public broadside that added fuel to an already volatile political situation in the United Kingdom. Trump's comments, reported by NDTV, marked an unusual direct intervention by an American president in the internal politics of a close ally.\n\nStarmer, who led the Labour Party to a landslide general election victory in 2024, has faced a steep decline in approval ratings since taking office. His government has been buffeted by a series of controversies, including welfare reform decisions, public sector disputes, and tensions within his own parliamentary party. Domestic critics from both the left and right have grown increasingly vocal in questioning his leadership.\n\nTrump's broadside is notable not only for its bluntness but for the context: UK-US relations have been under strain as Britain navigates its post-Brexit trade posture and its approach to conflicts in the Middle East and Ukraine. Trump has previously clashed with European leaders, and his willingness to publicly undermine Starmer is seen by analysts as part of a broader pattern of pressure on Western governments he views as insufficiently aligned with his positions.\n\nStarmer's office has not indicated any intention to resign. However, with opposition Conservative and Reform UK politicians seizing on Trump's remarks, pressure on the Prime Minister is likely to intensify in the coming days. The episode illustrates how precarious Starmer's political position has become just months into his tenure.",
+          "key_facts": [
+            "Trump said Starmer \"failed badly\" and predicted his resignation",
+            "Starmer has faced falling approval ratings since Labour's 2024 election win",
+            "No indication from Starmer's office of any resignation plans",
+            "Trump's comments add international pressure to existing domestic political crisis"
+          ],
+          "source": "NDTV",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUGFLN3FUNzl2cktRTzBDMGoxeVNGeXFENmdnMXozVFhrTlBzTU93a3RLR2x4SThzMkhjOGlSbWJqTTdlNUh2d2s5d3p1OFFCOVh6NGI4RjZuUHFFVFdkZVV6bjVEQWR6LW9aUmQxUENFbERuZTlMRXdremczTGN0VmZuaWZYaUJXUUxGWG1fQ3VMYVk1a0UwdjU3Ymd0cVhJRExpeXcxckNvNXNkQ29zN3FvUHVaV3ljNXNYcWhHQlhaSFg0amxWbll4Y1XSAdQBQVVfeXFMUHJZZXhJNnJGWHJhSEdjWEdPOFhfbl9ndVp1MmJEM0l4MldXNFNEcHNTUTJpZFRqZHFhN29Ta3Z4c1R5YW5fd0Y1Ykx4M0xmWW4wSjZhUzUya1dYR21DRll0YWFRdEVsaHhNQTZXcEs4LTNucWotV3VKMFZfTG1vb0o2ZmNDN0VUWHQ3WTBDeG9oQnJ0Sll4cXVDaEdfdVJwRGZvY3p2LUVGbnZIazlkTXJyeWJZYm9ieXpQY0c1WWJqUERBV2xMeTFRb0JZaHlpbkF2RVY?oc=5",
+          "breaking": false,
+          "slug": "20260622-trump-says-keir-starmer-failed-badly-and-will-resign-as-uk-prime-minis",
+          "image": "https://pixabay.com/get/g9956e450e612cae1abc5858f1ea099f325fbd3a07fe9b86809514905817af0da60b3f3292d8d05183cc32a5d034edbf7b2dc21f3843992959d0e284511317983_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "vjkombajn",
+          "image_credit_url": "https://pixabay.com/users/vjkombajn-764634/"
+        },
+        {
+          "hour": 20,
+          "time": "20:54 IST",
+          "headline": "Trump Predicts Keir Starmer Will Resign as UK PM Faces Mounting Pressure",
+          "what": "US President Donald Trump has publicly declared that UK Prime Minister Keir Starmer will resign, saying he has 'failed badly'. The remarks arrive as pressure on Starmer is intensifying at home over a combination of economic headwinds, public discontent, and political missteps in the early months of his Labour government. Trump's intervention, characteristically blunt and globally amplified, adds an unusual layer of external pressure on a sitting British prime minister.",
+          "lens": "Trump wading into British domestic politics signals how his unpredictable commentary is reshaping the diplomatic norms between the US and its closest allies — and could complicate India-UK trade talks that depend on a stable British government.",
+          "article": "Donald Trump declared on Wednesday that British Prime Minister Keir Starmer will resign, saying the Labour leader has 'failed badly' — a striking public intervention by a sitting US president in the domestic politics of Washington's most important ally. The remarks were made without diplomatic hedging, reflecting Trump's well-documented willingness to publicly undercut world leaders he views as adversaries or as politically weak.\n\nThe backdrop to Trump's prediction is a genuinely difficult political moment for Starmer. Since taking office in July 2024 after Labour's landslide general election victory, his government has faced criticism over proposed welfare cuts, a sluggish economy, and a string of controversies that have eroded his early polling lead. Calls for his resignation have surfaced from within parts of the British left, though his parliamentary majority remains substantial and no formal challenge to his leadership is yet underway.\n\nTrump's comments follow a pattern of friction between the two men. The US president is known to be cool toward Starmer, who has sought to maintain a working relationship with Washington while resisting some of Trump's more transactional demands, particularly around NATO spending and trade terms.\n\nFor India, the turbulence in London matters. Negotiations toward an India-UK Free Trade Agreement — revived with renewed energy after Labour's election win — depend on political continuity in Westminster. A destabilised or distracted British government could slow the pace of talks that both sides have described as a priority.",
+          "key_facts": [
+            "Trump said Starmer has 'failed badly' and will resign",
+            "Starmer has faced domestic pressure over welfare cuts and economic discontent",
+            "Labour won a large parliamentary majority in July 2024",
+            "India-UK FTA negotiations could be affected by British political instability"
+          ],
+          "source": "NDTV",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUGFLN3FUNzl2cktRTzBDMGoxeVNGeXFENmdnMXozVFhrTlBzTU93a3RLR2x4SThzMkhjOGlSbWJqTTdlNUh2d2s5d3p1OFFCOVh6NGI4RjZuUHFFVFdkZVV6bjVEQWR6LW9aUmQxUENFbERuZTlMRXdremczTGN0VmZuaWZYaUJXUUxGWG1fQ3VMYVk1a0UwdjU3Ymd0cVhJRExpeXcxckNvNXNkQ29zN3FvUHVaV3ljNXNYcWhHQlhaSFg0amxWbll4Y1XSAdQBQVVfeXFMUHJZZXhJNnJGWHJhSEdjWEdPOFhfbl9ndVp1MmJEM0l4MldXNFNEcHNTUTJpZFRqZHFhN29Ta3Z4c1R5YW5fd0Y5Ykx4M0xmWW4wSjZhUzUya1dYR21DRll0YWFRdEVsaHhNQTZXcEs4LTNucWotV3VKMFZfTG1vb0o2ZmNDN0VUWHQ3WTBDeG9oQnJ0Sll4cXVDaEdfdVJwRGZvY3p2LUVGbnZIazlkTXJyeWJZYm9ieXpQY0c5WWJqUERBV2xMeTFRb0JZaHlpbkF2RVY?oc=5",
+          "breaking": false,
+          "slug": "20260622-trump-predicts-keir-starmer-will-resign-as-uk-pm-faces-mounting-pressu",
+          "image": "https://images.pexels.com/photos/37477812/pexels-photo-37477812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Joshua Santos",
+          "image_credit_url": "https://www.pexels.com/@joshua-santos-1174893"
+        },
+        {
+          "hour": 9,
+          "time": "09:16 IST",
+          "headline": "Keir Starmer Said to Be on the Brink of Resignation as UK Political Crisis Deepens",
+          "what": "British Prime Minister Keir Starmer is reportedly on the verge of resignation, with an announcement expected imminently, according to NDTV. The development signals a dramatic collapse of Starmer's Labour government less than two years after it swept to power with a historic majority in the 2024 general election. The news has sent shockwaves through Westminster and raised urgent questions about the future of British political leadership.",
+          "lens": "A change in UK's top leadership has direct implications for India-UK relations, including the ongoing Free Trade Agreement negotiations and the Indian diaspora's status in Britain.",
+          "article": "Keir Starmer is reportedly on the brink of resignation as British Prime Minister, with an announcement expected imminently — a stunning potential collapse for a leader who came to power in July 2024 with one of the largest parliamentary majorities in Labour's history.\n\nStarmer's tenure has been marked by mounting internal party discontent, a series of controversial policy reversals, and plummeting public approval ratings. The Labour government faced fierce criticism over welfare reform cuts, energy bill decisions, and a perception that the administration had failed to deliver on its transformational promises to British voters.\n\nThe prospect of Starmer's exit has thrown Westminster into turmoil, with Labour MPs scrambling to assess succession options. Senior cabinet members and party figures are said to be in urgent consultations, while the opposition Conservative Party and Reform UK have seized on the reports to demand an immediate general election.\n\nFor India, the stakes are considerable. The India-UK Free Trade Agreement — long in negotiation — could face delays or a fundamental renegotiation under a new prime minister. The status of the large Indian-origin diaspora in Britain and bilateral ties on defence, technology, and education partnerships would all come under fresh scrutiny depending on who succeeds Starmer.",
+          "key_facts": [
+            "Starmer's resignation said to be expected imminently",
+            "Labour won a historic majority in the July 2024 UK general election",
+            "Resignation would trigger Labour leadership contest",
+            "India-UK Free Trade Agreement negotiations could be affected"
+          ],
+          "source": "NDTV",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQX0k3cjNsdUZUUVFWS0ZpTEZjV0RGSElhT3hwcHBWcXpnRDN3WWxyM2dQTURRc3BEN0tJN3JOR1AtRng2VlFRTlhOY1JzTkNxcGRFcko0ZzBGdVExbG9aQXh3TWU4XzAwSWVOYzVkaWE5Z3YwNUVnbXVqZVNYMVl3eDlXcWRqSXZ5SVFYWlZBMjNOYmw0R18waGttMHhwdWxhYmc0ZWtkamk5MEFz0gG0AUFVX3lxTE5fTjQzNk9jSkVscFBuem5HcGdMaXlIVHVQX05RWmhpaUtGTk1jWmhXMGdxZW1TLWZLY1cwc3E0MHhCY0VPaXoxUlZsNGNMMERlM3VWSmVIV3ZXTmoxWFBraUNCXzNpTWQ2Q29sX1dwd01DeFV3MjNLMFkzcFBvRS1lUWxHWUZod3BGczdZVXVkZDhJS191YTNyb01WVDdEYm12azNaSk9TUU1MclROSnZnbnVmdg",
+          "breaking": true,
+          "slug": "20260622-keir-starmer-said-to-be-on-the-brink-of-resignation-as-uk-political-cr",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Prime_Minister_Keir_Starmer_Portrait_%28cropped%29.jpg",
+          "image_kind": "photo",
+          "image_credit": "Prime Minister's Office / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Keir_Starmer"
+        },
+        {
+          "hour": 7,
+          "time": "07:24 IST",
+          "headline": "US-Iran Nuclear Talks End in Switzerland Without Deal; Technical Negotiations to Continue",
+          "what": "A fresh round of US-Iran nuclear negotiations concluded in Switzerland without a breakthrough agreement, with both sides indicating that technical-level talks would continue. The latest diplomatic session was part of ongoing efforts to revive a nuclear deal that would curb Iran's uranium enrichment programme in exchange for sanctions relief. The inconclusive outcome keeps global oil markets and regional security in a state of uncertainty.",
+          "lens": "Iran is a major oil supplier and India is one of its biggest customers — any breakdown or breakthrough in these talks directly affects Indian crude import costs and energy security.",
+          "article": "US-Iran negotiations concluded in Switzerland without a final agreement on Friday, though both delegations signalled that technical discussions would press on, keeping alive the slim possibility of a renewed nuclear deal.\n\nThe Switzerland talks were the latest in a series of indirect and direct diplomatic engagements aimed at limiting Iran's nuclear programme — which Western powers and Israel warn is approaching weapons-grade capability — in return for the lifting of crippling US sanctions. Iran has consistently denied seeking nuclear weapons, insisting its programme is for civilian energy purposes.\n\nThe absence of a deal prolongs a period of heightened Middle East tension that has already roiled global oil markets. Iran has been steadily advancing its uranium enrichment levels, and without a formal agreement, the risk of further escalation — including potential Israeli or US military action — remains elevated. Reports from Islamabad indicate that Pakistan is also positioning itself as a diplomatic facilitator, seeking a key role in any future US-Iran peace framework, underlining how widely the crisis is drawing in regional powers.\n\nFor India, the outcome carries immediate economic weight. New Delhi has historically been among the largest buyers of Iranian crude, and the perpetuation of US sanctions keeps Indian refiners locked out of cheaper Iranian oil. Any resumption of a deal that eases sanctions could meaningfully reduce India's energy import bill.",
+          "key_facts": [
+            "Talks held in Switzerland; ended without a final agreement",
+            "Technical-level negotiations to continue between the two sides",
+            "Iran's uranium enrichment remains the central dispute",
+            "Pakistan seeking a facilitative role in US-Iran diplomacy"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOV0ptQVkzMEpPSFoyT0Z0YU5aZ1dGNlRkYS1qM0hSRnlqTXhZdUpNLXdyZ0hGQW1OSzIzUEtlMnlXX3JtaEhQVWJybHF2bnItZmxVaGpST1o3MFVPUGt4Mzk1dFdEUXJUQzlBczl2UlFoclp5dEFpQWE3R2g0ZXlScThyMnlwTU9SbmE4bmtZTWxqV2tiOHJ1b2ZyMkw0ZXlrZldYa05yb1BlSWJXcTZJSWhyWGZ5Z3N5dHZScjhacTVVbnZxeVhQTzFHRGt2Mi1pLUHSAdIBQVVfeXFMTldKbUFZMzBKT0haMk9GdGFOWmdXRjZUZGEtajNIUkZ5ak14WXVKTS13cmdIRkFtTksyM1BLZTJ5V19ybWhIUFVicmxxdm5yLWZsVWhqUk9aNzBVT1BreDM5NXRXRFFyVEM5QXM5dlJRaHJaeXRBaUFhN0doOGV5UnE4cjJ5cE1PUm5hOG5rWU1saldrYjhydW9mcjJMNGV5a2ZXWGtOcm9QZUliV3E2SUloclhmeWdzeXR2UnI4WnE1VW52cXlYUE8xR0RrdjItaS1B",
+          "breaking": false,
+          "slug": "20260622-us-iran-nuclear-talks-end-in-switzerland-without-deal-technical-negoti",
+          "image": "https://pixabay.com/get/gbba8bf4bb617f78458313eecf70d6693507f5f1d9491170b557d9144aa2835b19e4b2e1e647f03fa788d3bc5bf58327d5bbac73cd22618128b7b33ee741bc47f_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "995645",
+          "image_credit_url": "https://pixabay.com/users/995645-995645/"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "stories": [
+        {
+          "hour": 23,
+          "time": "23:30 IST",
+          "headline": "India may seek sunset clause in U.S. trade pact amid tariff concerns",
+          "what": "India is considering pushing for a sunset clause in any trade agreement with the United States, according to Business Standard, a provision that would allow the deal to be reviewed or expire after a fixed period. The demand reflects Indian negotiators' concerns about locking into long-term tariff commitments with the U.S. in a volatile trade environment. A sunset clause would give India flexibility to renegotiate terms if geopolitical or economic conditions shift significantly.",
+          "lens": "A sunset clause would protect India from being permanently bound to unfavourable terms, giving future governments room to renegotiate — a safeguard that matters for sensitive sectors like agriculture and dairy.",
+          "article": "India is weighing a demand for a sunset clause in its trade deal with the United States, a provision that would build in a mandatory review or expiry date for the agreement, Business Standard reported. The move signals that New Delhi, while eager to conclude an interim pact before the July 9 tariff deadline, is equally anxious about the long-term implications of any commitments it makes.\n\nA sunset clause is a standard tool in modern trade agreements that forces both parties back to the table after a set number of years — typically five to ten — to either renew, revise or let a deal lapse. For India, which has historically been cautious about opening its agricultural and dairy sectors to foreign competition, such a provision would provide a crucial escape valve if domestic industries face unexpected harm.\n\nThe demand also reflects the broader political reality in India, where trade deals are deeply sensitive and subject to intense scrutiny from farmer groups, small manufacturers and opposition parties. Locking in terms indefinitely with any major trading partner, let alone the United States under the current unpredictable tariff environment, carries significant political risk.\n\nU.S. trade negotiators have generally resisted sunset clauses in bilateral agreements, preferring durable frameworks. Whether Washington accepts this Indian ask — or whether it becomes a sticking point in the 'final touches' phase — could shape both the content and the durability of the eventual deal.",
+          "key_facts": [
+            "India considering sunset clause demand in U.S. trade pact",
+            "Sunset clause would allow deal review or expiry after fixed period",
+            "Reflects concern about long-term tariff commitments",
+            "Agriculture and dairy sectors among India's sensitive areas"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPcUFxUnBKNTNxRzNFOVFEQW1aQmhaWFJNSVczSlgwX0R6UVpQeFVnRnNCMWE0VUJDTm5KYkRDU3k2XzU2TVdYZ3NET3NRaHJPUU54eFFkNHRvWExGb0pyN3ViLWJ5ckZHWDdjRGpuY3NMN0RnNXM1QjNVcW16YTBqZjAzT01YWm1McXNkVEFKcDBnNjB3ZnFaZWtWSTYyWUtUam82NE43ejJGRHlPQ1U3WjVJYTV4aHhRWWhObVBmbVN3RnZxUGRVcVRpMHkzQXRjbkQzRkxfZkkydkhNblHSAd4BQVVfeXFMT3FBcVJwSjUzcUczRTlRREFtWkJoWlhSTUlXM0pYMF9EelFaUHhVZ0ZzQjFhNFVCQ05uSmJEQ1N5Nl81Nk1XWGdzRE9zUWhyT1FOeHhRZDR0b1hMRm9Kcjd1Yi1ieXJGR1g3Y0RqbmNzTDdEZzVzNUIzVXFtemEwamYwM09NWFptTHFzZFRBSnAwZzYwd2ZxWmVrVkk2MllLVGpvNjRON3oyRkR5T0NVN1o1SWE1eGh4UVloTm1QZm1Td0Z2cVBkVXFUaTB5M0F0Y25EM0ZMX2ZJMnZITW5R?oc=5",
+          "breaking": false,
+          "slug": "20260622-india-may-seek-sunset-clause-in-u-s-trade-pact-amid-tariff-concerns",
+          "image": "https://images.pexels.com/photos/30839695/pexels-photo-30839695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Markus Winkler",
+          "image_credit_url": "https://www.pexels.com/@markus-winkler-1430818"
+        },
+        {
+          "hour": 23,
+          "time": "23:58 IST",
+          "headline": "Mega FTA wave to bring 60% of India's trade under preferential regime",
+          "what": "A sweeping wave of Free Trade Agreements being pursued by India is set to bring 60% of the country's total trade under a preferential tariff regime, according to The Economic Times. India is simultaneously negotiating or concluding deals with the United States, the European Union, the United Kingdom, and the Gulf Cooperation Council, among others. The shift marks a fundamental change in India's historically cautious approach to free trade.",
+          "lens": "If 60% of India's trade moves to preferential tariffs, everyday imported goods from electronics to food could get cheaper, while Indian exporters gain a structural edge in global markets.",
+          "article": "India is on the cusp of a trade liberalisation milestone, with a cluster of Free Trade Agreements in various stages of negotiation set to bring 60% of the country's total trade under a preferential tariff framework, The Economic Times reported. The figure represents a dramatic expansion from the current coverage and would mark a turning point for an economy that has long been among the world's more protected large markets.\n\nThe deals in play span virtually every major trading bloc. Alongside the high-profile interim pact with the United States, India is in advanced stages of negotiations with the European Union and the United Kingdom — both of which have been in progress for years — as well as ongoing engagement with the Gulf Cooperation Council and other partners in Southeast Asia and beyond. Together, these agreements would cover a substantial majority of India's merchandise and services trade flows.\n\nThe shift reflects a strategic recalibration in New Delhi's trade posture, driven partly by the urgency of the U.S. tariff situation and partly by a broader recognition that India needs preferential access to grow its manufacturing exports and attract global supply chains relocating out of China. Sectors like textiles, pharmaceuticals, engineering goods and electronics stand to gain the most from reduced tariffs in key destination markets.\n\nThe challenge, however, lies in sequencing and domestic sensitivity. Opening markets to cheaper imports from the EU or the UK, for instance, carries political risk in sectors like agriculture, automobiles and dairy. How India manages those tradeoffs — through safeguards, sunset clauses or phased liberalisation — will determine whether the FTA wave becomes a growth catalyst or a source of political friction.",
+          "key_facts": [
+            "60% of India's total trade to come under preferential tariff regime",
+            "Deals with U.S., EU, UK, and Gulf Cooperation Council in progress",
+            "Marks major shift from India's historically protectionist trade stance",
+            "Textiles, pharma, and engineering goods among key beneficiary sectors"
+          ],
+          "source": "The Economic Times",
+          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPVnZxSl81SFRmMFpGYzE1UFlUMHd3dmxHWkltd0lGZEUxTWxPQ3hYM09DSHNxMWV2MmZSVnpheDdYNERoTU5qc0NBNU9GclhaT19GWExaeVVRRDdlR2R0YzRGOEtERTNEN1dvV1FROEdIRHFycGxqMHk2R0pCbjQyUjNSMkJ4aC1XZzhUelRaX19hQmRmTlJvNDlCSHIxbU90R1BFcWpRVU9MZmtpaG4zczVLTklGRnhjNFc3NXJOalpzUk95eF8wckNWcXdfWHhTdERBNFlSZ0J5MTY4V293Zk82emNoLU5zMlFz0gHwAUFVX3lxTE9Ha0xFTkZxdXg1S3c4aTdBOGU1WFhuSndXYTJ3NE5nVEg3VUdEaFpvbm5pRjVHZmpmRkxxNUtCS3UxMlI3YVJJazlqcWN1VE91NEsySXBnRzdpWGRKX0xPMEJoYlhZOVZxcDJ1YjVfV3BSaXMyY3RuMXJqZThreXpkcG5EcFpwbWNCSTZtcURjRnc4LXZLNElkcFJ3UTZMR3ktWkZ0WFlXZVFQZDNmTnlmYUhVVUpnS0hCVkZpeUxNRm9Da3djdkRORWhUWk95SlZzNzlGSnBJMERUYzRyVzRKVGh2S2tQT2tMUzQyRmRjRw?oc=5",
+          "breaking": false,
+          "slug": "20260622-mega-fta-wave-to-bring-60-of-india-s-trade-under-preferential-regime",
+          "image": "https://pixabay.com/get/g360e5b34c890fb1073433ac8e4c5373067ddebc6bd50d34196b580a8a01ea7467b455738f3a14b0ec2119f1a28947679_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "Simon",
+          "image_credit_url": "https://pixabay.com/users/Simon-3/"
+        },
+        {
+          "hour": 22,
+          "time": "22:30 IST",
+          "headline": "India's dependence on services exports is rising as trade composition shifts",
+          "what": "India's export mix is undergoing a structural shift, with the country becoming increasingly dependent on services exports relative to merchandise goods, according to an analysis by Business Standard. Services — led by IT, business process outsourcing, and financial services — now account for a growing share of India's total export earnings. While this reflects India's competitive strengths, it also raises questions about the resilience and diversification of the export base, particularly as goods exporters face tariff headwinds globally.",
+          "lens": "Rising services export dependence means India's economic fortunes are increasingly tied to global demand for IT and outsourcing — a key concern for the millions employed in those sectors.",
+          "article": "India's trade composition is shifting in a structurally significant way, with the country's reliance on services exports growing steadily as a share of total export earnings. The trend, highlighted in a Business Standard analysis, underscores both the scale of India's competitive advantage in IT, business process outsourcing and financial services, and the relative difficulty its goods exporters have had in breaking into global markets at scale.\n\nServices exports — dominated by software and IT-enabled services, which account for the bulk of the category — have proved resilient even as merchandise exports have faced headwinds from global demand slowdowns, supply chain disruptions, and now escalating tariff pressures from major economies. India's services trade surplus has become a crucial cushion for the current account, partly offsetting persistent deficits on the goods side.\n\nHowever, the growing concentration in services also introduces vulnerabilities. A significant portion of India's services export revenue is tied to demand from the United States and Europe — markets that are themselves navigating economic uncertainty, automation pressures, and, in the U.S. case, political pressure to keep jobs onshore. Any softening in outsourcing demand or tightening of work visa regimes could dent earnings meaningfully.\n\nThe analysis comes at a moment when policymakers are trying to use the ongoing FTA wave to boost merchandise exports — in textiles, electronics, and engineering goods — and reduce the lopsided dependence on services. Balancing the two will be critical to ensuring India's export growth story remains broad-based and resilient.",
+          "key_facts": [
+            "Services exports rising as share of India's total trade earnings",
+            "IT, BPO and financial services lead the services export surge",
+            "U.S. and Europe are dominant buyers of India's services exports",
+            "Goods exporters face separate headwinds from global tariff pressures"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQVk1QUjFPVndfRHhqY2xFSVJaaVlINjBJblljTFliUGJyWTVMa2RzUkZVa21veExYbURpOFZDRUFIbVZiWXBjVUFmNkhnSnVZZGxyM05UUTc1RXdZNDV2T3o5THd3eEdQMDVuaEU0MGRORGFvQ2R2a192amVZYWV0bVNNS0NnenNIb1liNVlMbkxsaUk1ZG9sRmRBMzM2SHZnZ3E5aTNmS3oxUS1HWGxFYko2N0RKQTQ0VGljUkxCSjdXZzI5SkNsc1lJV1pIWkpmSk5v0gHYAUFVX3lxTE5UQjdSTmpiLXpNWmFJLWl4VUlFU2ZvekpjRW05NE1rZEZzQUQzWkhCeEg4Xzd2S2w3enZQdlRHeGZQNmtSM0k0d05HSFBfM1RjOTJpd3NzSlJnQXJuczBoVUtnZjBGbFRERkw3Z2RBMHNwN25ERHBpOFc5dWppUDhHR3pTdEgxdDBSVHVKTFdTQ3VrUHpUVEVrODNKRzlwQUZIaHNraVJCaUc0RlBqOTJhSjJzOUtwTkFtbk1VMS14SDBzbUo4eWV2UVBHSEROV0hHZTJhNkl5eQ?oc=5",
+          "breaking": false,
+          "slug": "20260622-india-s-dependence-on-services-exports-is-rising-as-trade-composition",
+          "image": "https://images.pexels.com/photos/28185416/pexels-photo-28185416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Md Sihabul Islam",
+          "image_credit_url": "https://www.pexels.com/@md-sihabul-islam-750002427"
+        },
+        {
+          "hour": 21,
+          "time": "21:34 IST",
+          "headline": "Modi-Trump bilateral at G7: Trade, tariffs and trust dominate as India-U.S. reset gathers pace",
+          "what": "Prime Minister Narendra Modi and U.S. President Donald Trump held bilateral talks on the sidelines of the G7 summit, with trade, tariffs and strategic trust forming the core of the agenda. The meeting comes at a critical juncture as the two countries race to finalise an interim trade deal ahead of the expiry of a 90-day tariff pause. The discussions signal a concerted effort by both sides to stabilise a relationship that has been strained by Washington's sweeping reciprocal tariff regime announced earlier this year.",
+          "lens": "The outcome of Modi-Trump talks directly affects tariffs on Indian exports worth billions of dollars, with knock-on effects on jobs and prices across Indian industries.",
+          "article": "Prime Minister Narendra Modi and U.S. President Donald Trump met on the sidelines of the G7 summit, with their conversation dominated by the three Ts — trade, tariffs and trust — as India and the United States work to cement a bilateral reset after months of friction over Washington's aggressive tariff agenda.\n\nThe meeting was closely watched by Indian industry and diplomats alike. Trump's administration had earlier slapped steep reciprocal tariffs on Indian goods, triggering alarm across export-dependent sectors such as textiles, gems and jewellery, pharmaceuticals, and engineering products. New Delhi has since been in intensive negotiations to secure relief, and the G7 sideline meet appears to have added political momentum to those efforts.\n\nThe talks fed directly into the progress on an interim trade deal, which both sides have since described as needing only 'final touches' — with USTR Jamieson Greer scheduled to travel to New Delhi on June 23-24 to conclude the agreement. Modi's personal engagement with Trump at the G7 is being read as a signal that India is willing to offer meaningful market-access concessions in exchange for tariff relief.\n\nFor Modi, the optics are also important domestically — demonstrating that India's diplomacy can deliver economic wins under pressure. For Trump, a deal with India would be a high-profile addition to his administration's trade scorecard. Analysts note that how much ground India actually concedes — particularly on agriculture, digital trade, and intellectual property — will determine whether the 'reset' is substantive or largely performative.",
+          "key_facts": [
+            "Modi and Trump met at G7 summit sidelines",
+            "Trade, tariffs and trust were the core agenda items",
+            "Meeting coincides with near-finalised India-U.S. interim trade deal",
+            "USTR Greer's New Delhi visit (June 23-24) to follow the G7 meeting"
+          ],
+          "source": "India Today",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPVnM1VDJEazh1ck9uYUtNNi1NbG12Q3plOG9nOXNJVTdtb1VER25HZUtDeGdweHlqWFpvRXcwNl9FaVRHUU1tR0hkNHdSSXpXZ1ptaVZ4ZUUzLVBqNnNIN29XMTk1ckdoWVlpa1l4SF9TV3RBdU45anFfczFUaTVsb3p3S2pfTVZOLVR3MFVIWXdyeGhVSFJwS0JTMUVFM3ZXaE9uY04wdjdUSFJfSGxNZThUTk90TU9EMUI1b0RBdXk5dnpWT1pYVlpfcHRmZDFlejBBX3cxbEN0Q0xYWXfSAeMBQVVfeXFMUFBrblR4RDUxUy1KR2ktMXl4R0dZeDhOejA1T0VDNF80MzcwdFExT0lxQ2E2ckRtRklIelI1WC1Lc241MGRUaFdDaW44VjJUMVZRR0NHQnRHb2dkUHFGQTVqUEk5YmgzVVpfdDcxd3pnVzZnQkU1THJXSk52VjFucnhLM1Z4ejdRX2FlOW12TWpLTnlSQUd3VWNqR3RwWmp6VEd0cW9KdUI5MnQ0UUhZNmZyb18zRm1GYkZjRXlWMEt2NVlGbGhNOTZ5VGE3R0pNOGFKTmdtc3VKUUlPRGUzM1Q4UWc?oc=5",
+          "breaking": false,
+          "slug": "20260622-modi-trump-bilateral-at-g7-trade-tariffs-and-trust-dominate-as-india-u",
+          "image": "https://images.pexels.com/photos/30855417/pexels-photo-30855417.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Markus Winkler",
+          "image_credit_url": "https://www.pexels.com/@markus-winkler-1430818"
+        },
+        {
+          "hour": 18,
+          "time": "18:51 IST",
+          "headline": "India-U.S. interim trade deal needs only 'final touches'; Greer to visit New Delhi on June 23-24",
+          "what": "The India-U.S. interim trade deal is nearly complete, requiring only 'final touches' before it can be signed, with U.S. Trade Representative Jamieson Greer scheduled to visit New Delhi on June 23-24 to advance negotiations. The visit signals that both sides are in the home stretch of a bilateral trade agreement that has been in the works for months. The deal is expected to lower tariffs on select Indian exports to the U.S. while opening Indian markets in key sectors.",
+          "lens": "A finalised India-U.S. trade deal could shield Indian exporters from the steep reciprocal tariffs imposed earlier this year, directly affecting sectors like textiles, pharmaceuticals and IT services that employ millions.",
+          "article": "The India-U.S. interim trade deal is down to its 'final touches', with U.S. Trade Representative Jamieson Greer set to arrive in New Delhi on June 23-24 for what could be the closing round of negotiations. The two sides have been working toward a limited bilateral trade agreement since early 2025, driven by the urgency of U.S. President Donald Trump's sweeping reciprocal tariff regime that placed a 26 percent levy on Indian goods — a measure currently paused under a 90-day truce set to expire in July.\n\nGreer's visit is the highest-level trade engagement between the two countries in this cycle and underlines how close both sides believe they are to a deal. India has been seeking relief on tariffs affecting its export-heavy sectors — textiles, gems and jewellery, shrimp and pharmaceutical ingredients — while Washington has pushed New Delhi to lower duties on American agricultural goods, high-end electronics and energy products.\n\nThe phrase 'final touches', used by Indian officials familiar with the discussions and reported by The Hindu, suggests that the broad framework is in place and that Greer's trip is aimed at clearing the last remaining sticking points rather than reopening fundamental terms. Commerce Minister Piyush Goyal has been leading the Indian negotiating team, with multiple rounds of talks held in both capitals over recent weeks.\n\nThe outcome of Greer's visit will be closely watched. A signed interim deal before the tariff truce expires would be a significant diplomatic win for both governments, locking in preferential terms for India while giving the U.S. a template for other bilateral negotiations. Failure to conclude could see the 26 percent tariff kick back in, rattling Indian exporters and financial markets.",
+          "key_facts": [
+            "India-U.S. interim trade deal described as needing only 'final touches'",
+            "U.S. Trade Representative Jamieson Greer to visit New Delhi on June 23-24",
+            "Deal aimed at averting 26% U.S. reciprocal tariff on Indian goods",
+            "90-day tariff truce between India and U.S. set to expire in July 2025"
+          ],
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPTHZCVHcyQjU1UUo5eWdqTGpqb29wSUQ2eXF5THF5S2x6WExCamllLUJDOUVCVFpMZmo3Q3ptV0hVZ1JEVlFPSy1zLVA2SGtpUmJyUGpvcmVmUFhWZ2dIRGFIeHY0SFhQYW42TXN4SFE4NFRuU0I0WWZObkxBSEdhanUtVzg5b3hkNE5keDctb1c5U2VFNHc2WFBHdndib1B0Z0I0cENDUXg0VXVoOHdpVVpsalVKSDVBcVFULUY5TERiY3RleE82SGI1YXdFdGQ0b09jVWpBeWpUMlIxVmxYVS1SYTjSAesBQVVfeXFMTWw0dDRzQ2dPV2pabUtTblNIellmS2tzblhaTjh2Z01DLV9NdDVNMlQ2MGNmTGdiSVlMTkJ0eTBaMUtVSmRCV0lPQlJDLU42SmFxOVpNOUJsUUtQeUVkaGpleC1PeUZfdHl6Tmo0bmgtem93NTRDRkk4Y25ZSHU3aHRtdGlLVC1WNi1MSkw3QVlqVmlaNkhVeVMyWkptR1ZueWctV0VNMGdHZlBjZzZuR0gwOTVlb3BpQ29sSXVJbnFUMmI2VWZmbkZyenZZbUFtZVpVZkxlQ0NSZXFZWVkwODNBSWYyTm9YM0t1TQ?oc=5",
+          "breaking": true,
+          "slug": "20260622-india-u-s-interim-trade-deal-needs-only-final-touches-greer-to-visit-n",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Official_portrait_of_U.S._Trade_Representative_Jamieson_Greer_%28cropped_2%29.jpg",
+          "image_kind": "photo",
+          "image_credit": "Office of the United States Trade Representative / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Jamieson_Greer"
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "stories": [
+        {
+          "hour": 23,
+          "time": "23:41 IST",
+          "headline": "West Asia conflict squeezes startup funding routes for Indian firms",
+          "what": "The ongoing conflict in West Asia is tightening funding options for Indian startups, as investors from the Gulf region — a growing source of venture capital for India — grow cautious amid regional instability. Business Standard reports that the geopolitical turbulence is disrupting capital flows at a time when Indian startups were increasingly looking to Middle Eastern sovereign and family-office money to diversify away from traditional US and China-linked funds. The development adds another layer of uncertainty to an already challenging fundraising environment.",
+          "lens": "Gulf money had emerged as one of the freshest and fastest-growing pools of capital for Indian startups; if that tap tightens, founders at all stages will find fewer options and likely face tougher valuation terms.",
+          "article": "The conflict in West Asia is beginning to crimp funding pipelines for Indian startups, with investors based in the Gulf region pulling back or pausing commitments as geopolitical uncertainty mounts, according to Business Standard. The development is a fresh headwind for a startup ecosystem that had been leaning more heavily on Middle Eastern capital after traditional funding sources from the US and China became harder to access.\n\nOver the past three years, sovereign wealth funds, family offices and institutional investors from Saudi Arabia, the UAE and other Gulf states had significantly increased their exposure to Indian technology and consumer startups. India's large market, young demographics and digital growth story made it an attractive destination, and Gulf investors were seen as a strategic counterweight to the dominance of American and Chinese venture money.\n\nThe current conflict has created risk-aversion among capital allocators in the region, who are contending with uncertainty about energy revenues, regional stability and portfolio rebalancing. Some planned funding rounds that included Gulf anchor investors are reported to be facing delays, while others are being restructured with different lead investors.\n\nFor Indian founders, the timing is difficult. The domestic IPO market has provided an exit route for some, but early and growth-stage companies depend on fresh primary capital. With US interest rates having kept global risk appetite subdued and SoftBank-era mega-cheques a distant memory, losing Gulf momentum would meaningfully reduce the depth of available funding for Indian startups heading into 2026.",
+          "key_facts": [
+            "Gulf region investors growing cautious due to West Asia conflict",
+            "Middle Eastern capital had become a key funding source for Indian startups",
+            "Disruption affects startups seeking to diversify from US/China-linked funds",
+            "Adds pressure to an already difficult fundraising environment in 2025-26"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRmRqaV93eEd6dWowLWgtdlZET296NFZyaE5EVHR5WmZuaTYtVjFFdU1tLTIwTEFBYURwdVlwT2poaDZjeUxoZEs1Qk5zV2JlYzJOZ3UyZER2T1g2QnJ3dmR0MjBXQ19QQmZoVHNBNTBBb3lnRnVpZzh6RUdtSFVJMnJ0NGtyZjRnYzVCVkFTaGdlNGQ0dnV5dHFLbzl3X2QyVTZaZU1RNnRJUHVtU1dfamMzZU1nQmxLSC1VUWdnbWdEUmJ1aHkyedIBzgFBVV95cUxPcUdSS1VRVi03R0luaDhKb2dmaEM4ek1JalVGbXBBU2g4THdsN2N0Z3RhT2ZDNzk4QVBmUzJtRGtXZHJEUVpWXzh0WkJscW5WSkVjVmFJaGJBdURRYkNXNUdaTG0yS3RmNEVJZFUzSWdxSDdCd1k5Zi15U202WTA5THI2bnJLQTRYdGh0MHUzeVN4NHdBeWdOUXBOT0had196MlJoanhDZW1HQW9XaDNVUWUwQVJuVW9Ua0gtNHNTZzlqanlPZkxYUkY5bUUwdw",
+          "breaking": false,
+          "slug": "20260622-west-asia-conflict-squeezes-startup-funding-routes-for-indian-firms",
+          "image": "https://pixabay.com/get/g2d652ac7fbbbbe2dc630de2b8790c2419a960851f774dce4f93056163edae1594c41ed088c778ff91359d056e50cb1e7c63d023b3c6a63e69c51aecaad633199_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "Tumisu",
+          "image_credit_url": "https://pixabay.com/users/Tumisu-148124/"
+        },
+        {
+          "hour": 23,
+          "time": "23:41 IST",
+          "headline": "West Asia Crisis Drags Indian Startup Funding Down 43% Year-on-Year Since March",
+          "what": "Global geopolitical turbulence stemming from the West Asia crisis has hit Indian startup funding hard, with investment volumes falling 43% year-on-year since March, according to Business Standard. The sharp decline signals that international investor risk appetite has contracted significantly, with funds pulling back from emerging-market bets amid war-driven uncertainty. The drop marks one of the steeper funding contractions seen in the Indian startup ecosystem in recent memory, coming even as inflation and interest rate pressures had already tightened venture capital globally.",
+          "lens": "A 43% funding collapse means fewer Indian startups can raise capital to grow, hire, or survive — affecting jobs and the next wave of consumer products millions of Indians use.",
+          "article": "Indian startup funding has fallen 43% year-on-year since March, driven in significant part by the escalating crisis in West Asia that has rattled global investor confidence and triggered a broad pullback from risk assets, Business Standard reported. The numbers underline just how exposed India's venture capital ecosystem remains to geopolitical shocks originating thousands of kilometres away.\n\nThe West Asia conflict has tightened liquidity across global financial markets, prompting institutional investors and sovereign funds — many of which are based in the Gulf region and have been significant backers of Indian startups — to conserve capital. That retrenchment has cascaded down into reduced ticket sizes and fewer new deals in India's startup landscape, affecting early-stage and growth-stage companies alike.\n\nThe 43% decline is particularly striking because it arrives at a moment when India's startup ecosystem had been widely expected to stage a recovery after the funding winter of 2022-23. Several high-profile IPOs and a stabilising macroeconomic environment had rekindled optimism earlier in the year, making the renewed slide all the more jarring for founders and fund managers.\n\nFor the broader Indian economy, the slowdown has real consequences. Startups have been a major driver of white-collar employment and consumer-facing innovation in sectors from fintech to health tech. A sustained funding drought could delay product launches, force layoffs, and consolidate the market around only the best-capitalised players, ultimately reducing competition and consumer choice.",
+          "key_facts": [
+            "Startup funding down 43% year-on-year since March",
+            "West Asia geopolitical crisis cited as primary driver",
+            "Decline follows earlier hopes of a post-funding-winter recovery",
+            "Gulf-based institutional investors are significant backers of Indian startups"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcUdSS1VRVi03R0luaDhKb2dmaEM4ek1JalVGbXBBU2g4THdsN2N0Z3RhT2ZDNzk4QVBmUzJtRGtXZHJEUVpWXzh0WkJscW5WSkVjVmFJaGJBdURRYkNXNUdaTG0yS3RmNEVJZFUzSWdxSDdCd1k5Zi15U202WTA5THI2bnJLQTRYdGh0MHUzeVN4NHdBeWdOUXBOT0had196MlJoanhDZW1HQW9XaDNVUWUwQVJuVW9Ua0gtNHNTZzlqanlPZkxYUkY5bUUwd9IBzgFBVV95cUxPcUdSS1VRVi03R0luaDhKb2dmaEM4ek1JalVGbXBBU2g4THdsN2N0Z3RhT2ZDNzk4QVBmUzJtRGtXZHJEUVpWXzh0WkJscW5WSkVjVmFJaGJBdURRYkNXNUdaTG0yS3RmNEVJZFUzSWdxSDdCd1k1Zi15U202WTA5THI2bnJLQTRYdGh0MHUzeVN4NHdBeWdOUXBOT0had196MlJoanhDZW1HQW9XaDNVUWUwQVJuVW9Ua0gtNHNTZzlqanlPZkxYUkY5bUUwdw?oc=5",
+          "breaking": false,
+          "slug": "20260622-west-asia-crisis-drags-indian-startup-funding-down-43-year-on-year-sin",
+          "image": "https://images.pexels.com/photos/15195538/pexels-photo-15195538.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Ashwani Babbar",
+          "image_credit_url": "https://www.pexels.com/@ashwani"
+        },
+        {
+          "hour": 21,
+          "time": "21:24 IST",
+          "headline": "AI Agents Are Quietly Replacing Human Workflows Across India's IT Services Industry",
+          "what": "Artificial intelligence agents — software systems capable of autonomously completing multi-step tasks — are driving a silent but accelerating workforce shift across India's IT services sector, Business Standard reports. Major IT firms are deploying these agents to handle coding, testing, client communications and back-office processes that were previously managed by large human teams. The shift is raising urgent questions about the future shape of employment in an industry that directly employs over five million Indians and underpins the country's largest export sector.",
+          "lens": "India's IT sector employs over five million people; AI agents automating core workflows could reshape hiring, salaries, and career paths for a generation of Indian tech workers.",
+          "article": "AI agents are reshaping the workforce architecture of India's IT services industry with a speed and scale that has caught many insiders off guard. Unlike earlier automation waves that targeted repetitive, rule-based tasks, the new generation of AI agents can autonomously handle complex, multi-step workflows — from writing and reviewing code to managing client ticket queues and generating project documentation — functions that have historically required large teams of skilled engineers and analysts.\n\nIndia's top IT firms, including the major players that dominate global outsourcing contracts, have been quietly integrating these agents into delivery models, often redeploying or reducing headcount on specific project types rather than announcing sweeping layoffs. The transformation is gradual but structural: as AI agents become more capable and cost-effective, the calculus for staffing large service delivery teams is changing fundamentally.\n\nThe consequences for India's IT workforce are significant and complex. On one hand, AI agents could allow Indian IT firms to win larger, more complex contracts with leaner teams, potentially improving margins. On the other, entry-level roles — the traditional on-ramp for millions of engineering graduates each year — are among the most vulnerable, as these positions typically involve the kinds of standardised, process-driven work that agents can now handle.\n\nIndustry observers note that the shift demands a rapid reskilling response from both companies and employees. Workers who can manage, prompt, and supervise AI agents are likely to remain in demand, but those whose skills overlap most directly with agent capabilities face genuine displacement risk. For a sector that has long been India's most reliable engine of middle-class employment, the stakes could not be higher.",
+          "key_facts": [
+            "AI agents handling coding, testing, and back-office IT tasks autonomously",
+            "India's IT sector employs over 5 million people",
+            "Entry-level roles considered most vulnerable to AI agent displacement",
+            "Firms deploying agents to improve margins on outsourcing contracts"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPTnNqT21qUDJpdDgxUjJWTm1vZ0gyUk5qZ1FOaTZlUEs1c29abEJMNGNTV25FSnJMemxPcmNId21qNzl3X0F1dXQxNUFCSklGWWFLMFA1U2ZvZ2lDMmhwZEx6WmxWSHNlWmpMV0lkc3RIM0s5YUEwaWQ5WmNxUEFTTGFUS0o5dE8zMk5teGx5ZXJZOG9Hcml5alFGLXJncFlMOTgyWU42TloyUk9tNUNZV2tHLXBmYl9NN0NRWWNRVUYtS3BtNkhLdkdsV3NvdVdvUUVCQ0o0X3hIRFVOOE1LdGhGTkZ6QkhHRDdtbUFscG1vTjFQbEVTYtIB-AFBVV95cUxPTnNqT21qUDJpdDgxUjJWTm1vZ0gyUk5qZ1FOaTZlUEs1c29abEJMNGNTV25FSnJMemxPcmNId21qNzl3X0F1dXQxNUFCSklGWWFLMFA1U2ZvZ2lDMmhwZEx6WmxWSHNlWmpMV0lkc3RIM0s5YUEwaWQ5WmNxUEFTTGFUS0o5dE8zMk5teGx5ZXJZOG9Hcml5alFGLXJncFlMOTgyWU42TloyUk9tNUNZV2tHLXBmYl9NN0NRWWNRVUYtS3BtNkhLdkdsV3NvdVdvUUVCQ0o0X3hIRFVOOE1LdGhGTkZ6QkhHRDdtbUFscG1vTjFQbEVTYg?oc=5",
+          "breaking": false,
+          "slug": "20260622-ai-agents-are-quietly-replacing-human-workflows-across-india-s-it-serv",
+          "image": "https://images.pexels.com/photos/7709182/pexels-photo-7709182.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "MART  PRODUCTION",
+          "image_credit_url": "https://www.pexels.com/@mart-production"
+        },
+        {
+          "hour": 9,
+          "time": "09:48 IST",
+          "headline": "Amazon defends India data centre water use, points to conservation measures",
+          "what": "Amazon has responded to growing scrutiny over water consumption by its data centres in India, pointing to conservation steps it has taken in the country. The company's defence comes as hyperscale data centre expansion across India has raised concerns about pressure on local water resources. The disclosure puts a spotlight on the environmental footprint of cloud infrastructure at a time when India is rapidly scaling up its digital capacity.",
+          "lens": "As Amazon and rivals race to build data centres across India, how much water these facilities consume — and whether conservation pledges hold up — directly affects communities sharing already-stressed local water supplies.",
+          "article": "Amazon has pushed back against scrutiny of its data centres' water consumption in India, pointing to a series of conservation measures the company says it has implemented across its facilities in the country. The disclosure, reported by The Hindu, comes as India's data centre boom draws increasing attention to the environmental trade-offs of cloud infrastructure.\n\nHyperscale data centres rely heavily on water for cooling systems, and as Amazon, Microsoft, Google and others race to expand capacity in India to meet surging demand for cloud and AI services, questions about resource consumption have sharpened. India's water stress, particularly in regions where data centre clusters are concentrated, makes the issue acutely sensitive.\n\nAmazon's response did not specify exact volumes of water consumed or saved, but the company indicated it has adopted water-efficient cooling technologies and is working towards water-positive commitments at its Indian operations. The scrutiny reflects a broader global reckoning with the environmental costs of the AI and cloud computing buildout, which has strained power grids and water systems in multiple countries.\n\nFor India, the stakes are particularly high: the government is actively courting hyperscalers to invest in domestic data infrastructure as part of its digital economy ambitions, but that push must be balanced against the country's mounting water security challenges. Regulators and civil society groups are likely to press for greater transparency on consumption data as new facilities come online.",
+          "key_facts": [
+            "Amazon responding to scrutiny over water use at India data centres",
+            "Company points to water conservation steps taken at Indian facilities",
+            "Data centre cooling systems are major consumers of local water resources",
+            "India is a fast-growing market for hyperscale cloud infrastructure"
+          ],
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPYVBaYWV0N1ZkWUt2WldTYWNYNEZac0w3cnZCbG1ZNDBxbE1kZmJhWWVTcU5MRk1JWGFqQzdwU0c2NndUaFhScDMyRi03b3g3MFNfWEt6UkVWQW5hNjNZOUZqSnRZUWZZM1hldnVrckVXeEk3dUpSYUxZTG03el9lbDNDMkJrRVh1aDZ1SjlGWFRmSElpM0laYnpobmhoUGkyWU94d19wOFJ5Y3M4SHFBOExIQ1psMUJoNmV3SDY0bjhnRERrTjJrX1gtOFd5OFdqeEJ6UVJoSGHSAd8BQVVfeXFMTUZxZGEzdS1tTHlLSkhMNTR6MGdjNjc2TUNOSWZzcjI4NVdwSUYwZUc4RjhtZlQ0MVdtVV9WUEFLRFNLOE5GMC1OSFVtSjByTjR0cU9GeE8ta1ZSd3g4TVpQMi1zdkFUZjcwVFlsNnBsYkNlei1uSVFjdjdvVUN6NjJ5NG1nSk9tQkt1ZHRIMUlibm9aendWaEpQb3B5WWtpOXJ2Yi1VeF9GWENwelZGRzFmLS1wM29sT25Ed3pxVGZNZnBiRzNUUk8zRjdfSFVBSzVHbDJ3SWRIRmMyMUVrMA",
+          "breaking": false,
+          "slug": "20260622-amazon-defends-india-data-centre-water-use-points-to-conservation-meas",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Amazon_Tower_I_topped_out%2C_June_2015.jpg",
+          "image_kind": "photo",
+          "image_credit": "SounderBruce / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Amazon_(company)"
+        },
+        {
+          "hour": 8,
+          "time": "08:08 IST",
+          "headline": "India needs a full Science & Technology Mission, not just an AI mission, Moneycontrol argues",
+          "what": "A Moneycontrol commentary argues that India's current focus on building a standalone AI mission is too narrow, and that the country needs a broader, integrated Science and Technology Mission to remain competitive in the global technology race. The piece contends that AI cannot deliver its potential without foundational investments in basic science, research infrastructure, semiconductor capability and STEM talent — areas where India still has significant gaps. The argument arrives as the government finalises its AI policy framework.",
+          "lens": "If India bets its entire tech future on AI alone without fixing the underlying science and research gaps, it risks building an impressive-looking edifice on weak foundations — a concern that affects India's long-term economic competitiveness.",
+          "article": "India's ambition to become a global artificial intelligence powerhouse risks falling short if the government does not anchor its AI push within a much broader Science and Technology Mission, according to a sharply argued commentary published by Moneycontrol. The piece makes the case that AI is, at its core, a downstream application of deep scientific capability — and that capability is precisely what India has underinvested in for decades.\n\nThe commentary points to India's relatively modest public spending on research and development, its limited number of world-class research institutions outside a handful of IITs and IIScs, and a talent pipeline that is strong in software services but thinner in fundamental research. Without addressing these structural gaps, it argues, India's AI mission risks being dependent on imported models, foreign chips and global platforms rather than generating indigenous innovation.\n\nThe argument is timely. The Indian government has announced the IndiaAI Mission with a significant budget allocation, and global technology giants are queuing up to build data centres and partner with Indian institutions. But critics, including the Moneycontrol commentary, warn that framing the national technology agenda primarily around AI misses the forest for the trees — semiconductors, quantum computing, space technology, biotechnology and advanced materials all require a foundational scientific base that a single-sector mission cannot build.\n\nThe piece calls for a national-level coordination body that integrates AI with broader S&T goals, linking academia, industry and government in a manner analogous to DARPA in the United States. Whether the government's current institutional architecture is equipped to deliver that ambition remains an open question.",
+          "key_facts": [
+            "Moneycontrol commentary urges a broad Science & Technology Mission for India",
+            "Current IndiaAI Mission seen as too narrow without foundational S&T investment",
+            "India's R&D spending and basic research infrastructure remain limited",
+            "Call for DARPA-style coordination linking academia, industry and government"
+          ],
+          "source": "Moneycontrol.com",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQY2lBRzBzak9xYmp1M1E0c1lmV2Z6VWc5Y1JRem91VnpPV0syNTh3MVVtSGRmVDhjNDRCS2tsR0RNTEZYeExjc2ZTWTBaX09tQ0swYW9CVmlZdDEzeWhoUEJfZ2V0QkVkT2hBRWlsUE1KUjN3Y2tJQzh1TUpvZDdabkJ4RUdoazFScHJDQkVmOW53YkswVWFBVXdFQzJTWFZsNklTYWJSdDVuQVlqR3dxeUNuZmhBUFBHNTUwT3BR0gHDAUFVX3lxTE51ZW4wYzRab2RPTlhzaUFTdU1BRURhR2xDYXpXdWlhMktlcHlOeVlMTDVGRDRrTmpXV2YyN3MwTFJUUDNBZ3o2U0RIcVAwdjhhM3ZCd1N3NmZnVzNMRjR3RWkzTlBEVXJJM2N3TzhpeHdJZnJWaG1HaEVzZllOMEU4X1dZUHg4NngxVkY3akpEcGxuU0pDcm1RNFlvcVNQcGM2cmc1b0Zic0ZCUDUwUkRVRHFxUWdnZ2tvNEVESXczdHkzcw",
+          "breaking": false,
+          "slug": "20260622-india-needs-a-full-science-technology-mission-not-just-an-ai-mission-m",
+          "image": "https://pixabay.com/get/ge59c83e3cf09e1fb91898df8ddfa71888ee203ecdd41d8789a9d070af680dd5e66d67560179780779f64138a15e4d081f23d569760ed2c899a6af83d67034d81_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "tiburi",
+          "image_credit_url": "https://pixabay.com/users/tiburi-2851152/"
+        }
+      ]
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "stories": [
+        {
+          "hour": 14,
+          "time": "14:47 IST",
+          "headline": "Congress Demands Fundamental Right to Vote, Citing Supreme Court's Footpath Ruling",
+          "what": "The Congress party has urged the Supreme Court and the government to recognise voting as a fundamental right, drawing on the court's recent landmark ruling that affirmed citizens' right to walk on footpaths. The party argued that if the right to use public infrastructure can be elevated to a constitutional right, the right to vote — foundational to democracy — deserves explicit fundamental-right status. The move is seen as part of a broader Congress push on electoral and democratic rights ahead of upcoming political contests.",
+          "lens": "By linking a pedestrian-rights verdict to voting rights, Congress is using a popular Supreme Court ruling as political leverage to push for stronger constitutional protection of the ballot — a debate that could reshape electoral law conversations.",
+          "article": "The Congress party seized on the Supreme Court's footpath ruling to demand that the right to vote be enshrined as a fundamental right in the Indian Constitution, escalating a long-running debate about the legal standing of electoral participation in the world's largest democracy. The party drew a direct parallel: if the apex court can affirm the right to walk on a pavement as flowing from the constitutional right to life, it argued, the right to cast a ballot — the very foundation of democratic governance — deserves at least as strong a protection.\n\nCurrently, the right to vote in India is a statutory right under the Representation of the People Act, 1951, not a fundamental right under the Constitution. This distinction has significant legal consequences: statutory rights can be curtailed by ordinary legislation, while fundamental rights enjoy the protection of judicial review and can only be amended through a more rigorous constitutional process.\n\nCongress's demand places the ruling Bharatiya Janata Party government in a politically delicate spot. Agreeing would require a constitutional amendment the government has shown no appetite for; refusing invites the charge of wanting to keep voting rights legally vulnerable. The party has previously raised concerns about electoral roll deletions, voter suppression, and the functioning of the Election Commission.\n\nThe move is also a signal of how the opposition intends to use the judiciary's growing engagement with civic and constitutional rights as a political platform. Legal experts note that while the demand is constitutionally coherent, turning it into reality would require broad political consensus — something that appears distant in the current polarised parliamentary environment.",
+          "key_facts": [
+            "Congress demands voting be made a fundamental right",
+            "Argument draws on SC's recent footpath right-to-life ruling",
+            "Right to vote is currently statutory, not fundamental, in India",
+            "Push comes amid broader opposition concerns over electoral rights"
+          ],
+          "source": "India Today",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV0l4cl9EQmppY3pXUWFXdXJMZnk5cXVvdVpENXVyQXFvYjJfUk81VXRfdnd3QUhuSDBrVWV3OFdodlg3bHg1VlJ3cUVkQ3ZVYzBIUUR0YUdKdno0X0hOQ245THYwb24zbGJQaDlnQm42dVVhQmd3aVBDU1kwcG9MdkNrVm1Ld205UEhUejVJTkR3UGtqbDA3a1JzYXFiUnRBdnBmZlRyUHJURnJzV3AzLU1fWTFkeV9ILXBpeDd6ZUt2YXBOUVpJd2NuVEbSAdIBQVVfeXFMT21ndUFyelhpenlWSUJuSFRoNlpxRTFEbUxXc0NnT0VEVHRhMmlIWW5OZHdXWThDN0dSQlZ4MFE5dzVlNGJ3QW5EREdNYmVHY3FfdFZ5TThpVG1sYzZRVjFYN3BMNmdKNTFFdmxpSDlMU3gwQ3RRNzRMTFdpOVVJTW1WSkpIMHdfcTZoQm9sWVVCTEVNamk4cmU5LURDVmt2VXViZGlJMGpaUWRlT09McmQ3T3JNd21UV0JVM0RNcnU4NURlYXlpZnJYSVp3V0dLR2FB?oc=5",
+          "breaking": false,
+          "slug": "20260622-congress-demands-fundamental-right-to-vote-citing-supreme-court-s-foot",
+          "image": "https://pixabay.com/get/gdc9bec37b642462d882c1a4659cff1109c779ea29008706e3c852c7b43cb7dc58459c6b9d79b0608069e7533135fa533fbb8ca8b5afa90de3de4ee265c474bac_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "Leonhard_Niederwimmer",
+          "image_credit_url": "https://pixabay.com/users/Leonhard_Niederwimmer-1131094/"
+        },
+        {
+          "hour": 12,
+          "time": "12:41 IST",
+          "headline": "Supreme Court Orders Right to Walk on Footpaths as Pedestrian Deaths Surge Across India",
+          "what": "The Supreme Court of India has issued an order affirming the right of citizens to walk on footpaths, a ruling prompted by a dramatic surge in pedestrian deaths across the country. The judgment puts the spotlight on encroached, broken, and non-existent footpaths in Indian cities that force millions of pedestrians onto roads daily. The ruling is expected to compel state governments and municipalities to take urgent corrective action on pavement infrastructure.",
+          "lens": "With pedestrian deaths among the highest in the world, this ruling could finally force Indian cities to fix their footpaths — making walking safer for millions who have no other option.",
+          "article": "The Supreme Court of India has ruled that citizens have the right to walk on footpaths, a landmark order rooted in a grim reality: India's pedestrian death toll has been surging at an alarming pace, making the country one of the most dangerous in the world for people on foot. The court's intervention comes as data shows that pedestrians account for a disproportionately large share of road accident fatalities in India, with crumbling, encroached, and absent footpaths pushing millions onto live traffic every day.\n\nAcross Indian cities, footpaths have long been colonised by vendors, parked vehicles, construction debris, and illegal structures, leaving pedestrians — particularly the elderly, the disabled, and daily wage workers — with no safe passage. The Supreme Court's order signals that the failure to provide functional footpaths is not merely a civic lapse but a violation of a constitutional right, likely grounded in the right to life under Article 21.\n\nThe ruling is expected to place significant pressure on municipal corporations and state governments to audit, clear, and rebuild pedestrian infrastructure. Urban planners and road-safety advocates have long argued that India's infrastructure spending overwhelmingly favours vehicles over people, and that footpath neglect is a policy choice with lethal consequences.\n\nThe judgment is likely to trigger a fresh round of public interest litigation at high courts across states, and could set a legal precedent compelling local bodies to act on long-pending pedestrian safety plans. For the millions of Indians who walk to work, school, or markets every day, the ruling offers a rare moment of judicial recognition that their safety on the street is a right, not a privilege.",
+          "key_facts": [
+            "SC ruled citizens have a right to walk on footpaths",
+            "Ruling driven by a surge in pedestrian deaths across India",
+            "Footpaths widely encroached by vendors, vehicles, and debris",
+            "Order expected to compel municipalities to restore pedestrian infrastructure"
+          ],
+          "source": "The Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSGN3QlZqVWN4VnNWZUQwUmRmOUNJeHZEWlFuckF4VU5oRUtGX21XRlBvNVYzM1BxS2VONnZmOTZEMGF1bWxrSjVyNktkMjNDQ29pakFXUjdCNEtXSXZ4MnZ0NjNLUUd4ZTM1amJjdmFlYTk2bU4tQnYtMzhkSU8zM0VVTlRjRko0dWQ4R1RTaFRKNFpGQ3h1S2RtTlA2QW9SS3BWRXVmYnljU3U1RzVhOGlaNNIBugFBVV95cUxOY09BVVJvSktoemRic2JBS1VOcWI5a2JqNFFhOWYzUG9SclRncWw2Y3ByX3Z0TnVUclFWRTZGeU4yZDdqekxrTHdILVAtZGlnSWd1cElISFQ0bDF3ZXhsMVhjS2s3eHcxZktyUGd5MVhzcU1FSEhGSWdPd2V6WXFydmJ2dXg0cHRtSUZUUUpZNWg2elVULTJoS0dDOTdsOFQtMDI4dmhabzJSTVpHZldiUTRPOXBsZDZMVVE?oc=5",
+          "breaking": false,
+          "slug": "20260622-supreme-court-orders-right-to-walk-on-footpaths-as-pedestrian-deaths-s",
+          "image": "https://images.pexels.com/photos/365813/pexels-photo-365813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Dom J",
+          "image_credit_url": "https://www.pexels.com/@dom-j-7304"
+        },
+        {
+          "hour": 11,
+          "time": "11:36 IST",
+          "headline": "Do Police Need Court Permission to Investigate Further After Filing Final Report? Supreme Court Explains",
+          "what": "The Hindu has examined a significant legal question clarified by the Supreme Court of India: whether police require explicit court permission to conduct further investigation after a final report — known as a chargesheet — has already been filed in a case. The Court's ruling addresses a procedural grey area that has practical implications for how criminal investigations are conducted and how accused persons' rights are protected. The question is particularly relevant in high-profile cases where investigators seek to add new evidence or accused persons after initially closing the probe. The ruling brings clarity to the interplay between police powers and judicial oversight under the Code of Criminal Procedure.",
+          "lens": "This ruling shapes how every criminal case in India can be reopened or extended by police — directly affecting the rights of the accused and the quality of justice delivered.",
+          "article": "The Supreme Court of India has addressed one of criminal law's more consequential procedural questions: whether the police need to obtain explicit permission from a court before carrying out further investigation in a case where a final report — commonly referred to as a chargesheet — has already been submitted. The ruling, examined in depth by The Hindu, brings authoritative clarity to a question that has divided lower courts and complicated the conduct of serious criminal matters.\n\nUnder the Code of Criminal Procedure (CrPC), Section 173(8) explicitly permits further investigation even after a final report has been filed. However, the practical question of whether police must formally seek judicial sanction before doing so — or whether they can proceed and simply submit a supplementary chargesheet — has been the subject of conflicting interpretations across different High Courts. The Supreme Court's ruling now settles this ambiguity, with the judgment having implications for both investigating agencies and individuals already named in chargesheets.\n\nThe distinction matters enormously in practice. If police can conduct further investigation without prior court permission, they retain broader operational flexibility — allowing them to gather new evidence, identify additional accused persons, or strengthen a case that was initially filed under time pressure. On the other hand, requiring judicial permission at every stage provides a check against potential misuse of the investigative process, particularly in cases involving political sensitivity or personal vendetta.\n\nFor ordinary citizens and legal practitioners alike, the ruling sets a clearer procedural map for navigating post-chargesheet investigations. Defence lawyers in ongoing cases will now have a defined standard to invoke when challenging the admissibility or propriety of supplementary investigation material, making the judgment a practical reference point across trial courts throughout India.",
+          "key_facts": [
+            "SC clarified whether police need court permission for further investigation post-chargesheet",
+            "Governed by Section 173(8) of the Code of Criminal Procedure",
+            "Resolves conflicting interpretations across High Courts",
+            "Affects rights of accused and scope of police investigative powers"
+          ],
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPQW9SYlRCc1V5ZXUtbE5Cd3BsT0FScmd4dGFBQ1doV3g3WnFSbm9zTEdpaDQtMDNnZnBUa1U4S05CUTA3SDZwWG9XQlRDeXdCbXNRNllIQUh3MXFFYkpNeE5ObmxCTzR4ZW1qZno2bXBVQ0p0OXlObHIydGx4YUpUdFAtc1hsak5jdHZUUVFIbWttaDZld0VrSzZXOGd6RktwcnJhRjNiMkp1U3k2SlF4ZEpLWEJBZUY3OG5tMFBSX09veTZKZEx2OXZxME5GYXJUSUNTQWJoMTR5OFYwUV9DQjNmembSAesBQVVfeXFMTnp3T2dCSGpGT0hhV0Y5VTBHckNNVzhKMXBJaHNaLVFPbUVZemZnNkpqTDllSnBmZllYTlE4cXdieWNiTWgzZGNHNE43Uk1mMjNkOG9STnhuQkRhVlc5WVZ5d3JfM1BueHVlWWVhRFBUMDd6eEdJWUh3T2w1bUVRU19pRkpBZ055eGxNeThkUHpXQ0ZzQ3FWQnZNcDc3M3ZVMmFkQUJZbG5pTDlSOUw2OFM0akZjLTFldk1sZVpsd1VaUXdHRE1EVW9ielFIcUdsbXJNcXVtanp3UEp4aGdvT294bWk3SGk1X3dodw?oc=5",
+          "breaking": false,
+          "slug": "20260622-do-police-need-court-permission-to-investigate-further-after-filing-fi",
+          "image": "https://images.pexels.com/photos/10464437/pexels-photo-10464437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "cottonbro studio",
+          "image_credit_url": "https://www.pexels.com/@cottonbro"
+        },
+        {
+          "hour": 20,
+          "time": "20:36 IST",
+          "headline": "Supreme Court refuses urgent hearing on plea to defer June 21 NEET-UG retest",
+          "what": "The Supreme Court of India declined to grant an urgent hearing on a petition seeking to defer the NEET-UG retest scheduled for June 21. The court's refusal means the retest is set to proceed as planned, maintaining pressure on the National Testing Agency and the government to conduct a fair and secure examination. The development comes amid ongoing controversy over the NEET-UG paper leak and irregularities that have roiled India's medical admissions process for weeks.",
+          "lens": "For the hundreds of thousands of medical aspirants who appeared in the compromised NEET-UG exam, the Supreme Court's refusal to defer the retest means June 21 remains the date they must prepare for — and the path to clearing admissions uncertainty stays on its current timeline.",
+          "article": "The Supreme Court of India on Thursday refused to grant an urgent hearing to a petition seeking postponement of the NEET-UG retest scheduled for June 21, effectively allowing the examination to proceed as currently planned by the National Testing Agency.\n\nThe refusal is a significant procedural development in the protracted NEET-UG controversy. The examination, India's single gateway to undergraduate medical admissions, was engulfed in a paper leak and malpractice scandal that triggered nationwide protests, parliamentary debates, and multiple court petitions. A retest was ordered for candidates whose results were flagged as suspicious or who had benefited from grace marks awarded in an opaque manner.\n\nPetitioners had sought an urgent deferral, likely citing concerns about the adequacy of safeguards for the retest or procedural issues with the list of candidates called to appear. By declining to hear the matter urgently, the Supreme Court has signalled that it does not see sufficient grounds to halt or delay the process at this stage.\n\nThe NTA and the government now remain on course to conduct the June 21 retest. Medical aspirants across the country are watching closely, as the results of both the original examination and the retest will determine admissions to MBBS and BDS seats at government and private medical colleges nationwide. Further hearings on the broader NEET paper leak matter are expected to continue separately at the Supreme Court.",
+          "key_facts": [
+            "SC refused urgent hearing on plea to defer NEET-UG retest",
+            "Retest scheduled for June 21 will proceed as planned",
+            "Plea sought deferral amid ongoing NEET paper leak controversy",
+            "NTA conducting retest for candidates flagged in original exam"
+          ],
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOc0xsOTd6dHJ1MGhkbWlLNUxyN1FEcFpURmh3N01pX2lfVzg3LXllMHduUVFBdFdqcldGZWFVQUVROVlJTHY0RlVZTDlGUW1COGV3YW9jbUN3WkQzU05qeFJDUmRVaHhEaGxja3VIcnVFQ2xHR3dLb1VuZlFDYWRKTHNmSTh6THI0VlQxZG9VSzlkcDZRQzZTeUt2VVhpdllScVdPb25WNjF6UkdSTzBLWFlSNGstUHdWTTdSbTBmNjBqd9IByAFBVV95cUxNRFlLcEN2OGticW1sV09LMEVhMjFzR2VoRzJYRGR5UlQzdGJxRmJGQmZYSEdjdHo3dFMxdzZUOEpGUGlJa2lsOWxOcjV2Ty04TVpJWUxMcGJOSDJGTnlkcS1wVGlxajMtcDMwbE5QeDdSN3ZOSG9xbkltLXFJSEtiSWdpZjgzV3JWeUt6aWc0aHIxaGlGREQzWFNkSHBHVHJEelRSRlJubndDMi01Sk9CN0ptcjcyQ1VOZGVLRHFiLTdjQjJDS19fOA",
+          "breaking": false,
+          "slug": "20260622-supreme-court-refuses-urgent-hearing-on-plea-to-defer-june-21-neet-ug",
+          "image": "https://images.pexels.com/photos/36984943/pexels-photo-36984943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Mark Stebnicki",
+          "image_credit_url": "https://www.pexels.com/@nc-farm-bureau-mark",
+          "_edition_date": "2026-06-21"
+        },
+        {
+          "hour": 15,
+          "time": "15:37 IST",
+          "headline": "Supreme Court dismisses businessman's plea against ED searches in TASMAC liquor case",
+          "what": "The Supreme Court has rejected a petition filed by a businessman challenging the legality of searches conducted by the Enforcement Directorate in connection with the TASMAC case — a high-profile money-laundering investigation linked to Tamil Nadu's state-run liquor corporation. The dismissal clears the ED to continue its probe, dealing a setback to those seeking judicial relief against the agency's search operations. The TASMAC case has significant political dimensions, with allegations of large-scale financial irregularities in the liquor supply chain.",
+          "lens": "The Supreme Court backing the ED's search powers in the TASMAC case means the money-laundering probe into Tamil Nadu's state liquor corporation can press ahead without legal roadblocks.",
+          "article": "The Supreme Court has dismissed a petition filed by a businessman challenging the Enforcement Directorate's search operations in the TASMAC case, refusing to interfere with the federal agency's ongoing money-laundering investigation. The bench junked the plea, effectively endorsing the ED's authority to conduct searches in connection with alleged financial irregularities at the Tamil Nadu State Marketing Corporation, better known as TASMAC.\n\nTASMAC, which holds a monopoly over liquor retail in Tamil Nadu, has been at the centre of a prolonged ED investigation into allegations of kickbacks, irregular procurement, and money laundering in its supply chain. The case carries significant political weight, given that TASMAC is a major revenue generator for the state and its operations touch thousands of employees and licensed vendors.\n\nBy declining to entertain the businessman's challenge to the searches, the Supreme Court has reinforced the ED's broad powers under the Prevention of Money Laundering Act to conduct raids and searches during investigations. Petitioners in such cases often argue that searches are conducted without adequate legal basis, but courts have repeatedly upheld PMLA's expansive investigative framework.\n\nThe ruling, as reported by The New Indian Express, means the ED faces no judicial obstacle to continuing its probe. For the Tamil Nadu government and those under the agency's scanner, the dismissal is a significant legal setback, and further action — including arrests or charge sheets — could follow as the investigation progresses.",
+          "key_facts": [
+            "Supreme Court dismissed plea challenging ED searches in TASMAC case",
+            "TASMAC is Tamil Nadu's state-run liquor monopoly corporation",
+            "ED is probing money-laundering allegations in TASMAC's supply chain",
+            "Dismissal clears ED to continue investigation without judicial interference"
+          ],
+          "source": "The New Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQVzB1VnF5YS15SlJJS2xKUWFVU3pSb3BGUVBWYWpyS2Zlc3NfSm9iemNBNzFQaGJDeDlGQTVBVjEwSXgzQVBvS3BFN2xuODJ3MVpqRUlFaVI0WDRIdnVRVk5tOFVRdV9DT2h6QUIzWTA0eDZxckVndU9fNmJGQmdOSzlRVVBaZ1FyOUJ6ajctQXR6dmc0SHBzYW80UW5mUjJCYkY0ZjJPS3ZrQkNySW42T2pyb2RXX2U1STFRSklRek43UTNVT3hmUXFXTE42Yjlx0gHeAUFVX3lxTE5rMDBrNmh3cHhIYXQ4VXRQVlotSHc0UUlxUTNtczVuRm5SUmllQ1pOYkZEdkFDdjN0dkZEZ2pFUHlBdEMyelJ3Mm4xVWk3RzdremtZOVRUeWtjNnlWRU43VThkQTJCYlE2RVNjeTVDTXZ6enNFckxOWXVnUFZDN3FDb1J1NVNHdVVpaDV0UmlpblVMcHdINEw4Z0N5V1RWTkNVU3Z1NndnRmItUm82Q2dHLXBLb0h2S2pTSkFlT3NlZlprV1dfNlI1YV9tTEg0cHBhT2ZxeEtNN2NOTGhLUQ",
+          "breaking": false,
+          "slug": "20260622-supreme-court-dismisses-businessman-s-plea-against-ed-searches-in-tasm",
+          "image": "https://pixabay.com/get/g89f9d1a41beeeedaf347776bc3bed77ea0b53a6862bd2643571fafa7b0acdeefb69992e2a18f27759379203cfa47743d328aa57152b3c76136691e0cc812b6aa_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "BunteAufnahmen",
+          "image_credit_url": "https://pixabay.com/users/BunteAufnahmen-6345617/",
+          "_edition_date": "2026-06-21"
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "stories": [
+        {
+          "hour": 22,
+          "time": "22:01 IST",
+          "headline": "India's AI strategy problem: Why building sovereign models may not be the answer",
+          "what": "A Business Standard analysis argues that India's push to develop sovereign large language models — AI systems built and owned by the Indian state — may be misguided, contending that the costs are prohibitive, the timelines are long, and the strategic benefits are overstated. The piece suggests India would be better served by focusing on AI applications, local data infrastructure, and regulatory frameworks rather than competing head-to-head with US and Chinese foundation model labs. The debate comes as the government's IndiaAI Mission rolls out funding and compute infrastructure.",
+          "lens": "Whether India builds its own AI models or rides foreign ones will determine everything from data sovereignty to which language and cultural contexts Indian AI systems actually understand — a policy choice that affects every Indian who will eventually use an AI-powered government service or app.",
+          "article": "India's ambition to build sovereign artificial intelligence models — large-scale foundation systems developed and controlled domestically — is drawing serious pushback from policy analysts, with a prominent Business Standard opinion piece arguing that the strategy may be fundamentally misconceived.\n\nThe core of the critique is economic and practical. Training frontier AI models requires tens of billions of dollars, enormous GPU clusters, and years of sustained effort — resources that even well-funded Western and Chinese labs strain to deploy. For India, which is still building out the compute infrastructure backbone through the IndiaAI Mission, attempting to match the likes of GPT-4 or Gemini on a state budget risks enormous expenditure for systems that could be obsolete before deployment.\n\nCritics of the sovereign model push argue India's genuine advantages lie elsewhere: in its vast and linguistically diverse data, its large pool of AI engineers, and its unique position as a high-volume user market that can shape how global AI systems are fine-tuned and adapted. A strategy centred on application layers, domain-specific models for healthcare, agriculture, and governance, and strong data-governance laws could yield far greater returns than frontier model development.\n\nThe debate is live and consequential. The government's IndiaAI Mission has already committed thousands of crores toward GPU capacity and model development. Whether that investment is best directed at building sovereign foundation models or at enabling Indian developers to build on top of global ones will define the country's AI trajectory for the next decade — and the Business Standard piece suggests the current strategy needs a harder look.",
+          "key_facts": [
+            "India's IndiaAI Mission is funding sovereign AI model development",
+            "Analysis argues sovereign models are too costly and slow for India",
+            "Alternative: focus on AI applications, data infrastructure, regulation",
+            "Frontier AI model training costs tens of billions of dollars globally"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQR3J3OWtsbnVmU09RM0tqZ21BTmI1Z3AyNGhldndEU1JYZDhrRjdnRkJ6QUtVeWpNTDhuQkhXazZTX2UwVmR3a0VOby15MWJYdWt4eHh5cnp2V2FYMHRUZ0RfMUxXZzZjRWVPN0dkemxIWVJ5eWpMSmQzR0YxaDZ1NGl6TkVsN2RidXh4OEFBUkQ4S1V1TC1UN0FpdFprb3FVQlpyWEYyZFFpeS1uRGNFMFVwLTV2eTlhLWNCSjJVaDdPWE1xRlBjenplNHN5eDMtQkh3Y1R30gHbAUFVX3lxTE5vVy1jOWRlQ2NTZWJzWDhDcU81bWxuWkZOUTBSVDRobjZOUW1maGJ4WkpmaDFxdTFWRjBCSmdJUVlXWnE0WkdzZkt6a3ozRDN5LXc0YkZmdGhNWWJ0T1Y2cXJPUzhFaUJRWGdEbUhzMlExM1hyWTJXY3dzTVVtbEYwLWhJVm12TGlhbzRacXVYcGpxeE03YW1CaVBjdXoyRHdPMjFvYUk3bWduSDR5bFpzOS0zTlZKVVF5YkluTG1tQTNhMUI0N1gwYjJoa2pIMzRaZTB2RV9YZlZZQQ?oc=5",
+          "breaking": false,
+          "slug": "20260622-india-s-ai-strategy-problem-why-building-sovereign-models-may-not-be-t",
+          "image": "https://images.pexels.com/photos/10822937/pexels-photo-10822937.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Prasanjeet Shyam",
+          "image_credit_url": "https://www.pexels.com/@prasanjeet-shyam-279139"
+        },
+        {
+          "hour": 22,
+          "time": "22:01 IST",
+          "headline": "India's Sovereign AI Model Push May Be the Wrong Answer, Analysts Warn",
+          "what": "A Business Standard analysis argues that India's government strategy of building sovereign AI models — state-backed large language models developed domestically — may be misaligned with where AI value is actually created. The piece contends that pouring public resources into foundation model development puts India in direct competition with vastly better-resourced US and Chinese labs, rather than focusing on the application and deployment layer where Indian strengths in software services could yield greater returns. The debate touches the core of how India should spend its AI Mission budget.",
+          "lens": "With India's Rs 10,372-crore AI Mission already under way, the question of whether public money should fund base models or application-layer innovation will directly shape thousands of AI jobs and the country's competitive position in global tech.",
+          "article": "India's push to build sovereign AI foundation models risks being a costly strategic misstep, according to a sharp new analysis in Business Standard — a critique that arrives as the government's Rs 10,372-crore India AI Mission moves into its implementation phase. The argument is straightforward: building competitive large language models requires compute infrastructure, training data, and research talent at a scale that even well-funded Western and Chinese giants struggle to match. For India to divert scarce public resources into that race may mean arriving late with an inferior product.\n\nThe analysis points to a more productive alternative path: focusing India's AI investment on the application and deployment layer, where the country's established strengths in software services, domain expertise in sectors like agriculture, healthcare, and financial inclusion, and a massive domestic user base could create genuine competitive advantage. Fine-tuning and deploying existing frontier models for Indian languages and use cases, rather than building from scratch, may deliver far greater public value per rupee spent.\n\nThe sovereign model argument has strong political appeal — it promises data sovereignty, strategic autonomy, and the prestige of a home-grown AI. But critics note that sovereignty in AI is not simply a function of who builds the base model; it also depends on who controls the data, the compute, and the deployment infrastructure. India could achieve meaningful AI sovereignty through regulation and data governance without competing head-to-head in foundation model development.\n\nThe debate is not merely academic. How the India AI Mission allocates its budget will determine whether the country produces globally competitive AI applications or spends the next decade building models that struggle to match GPT-4-era capabilities. Policymakers, industry bodies, and academia are increasingly divided on the answer.",
+          "key_facts": [
+            "India AI Mission has a budget of Rs 10,372 crore",
+            "Debate: sovereign base models vs. application-layer AI investment",
+            "India competes against US and Chinese labs with far greater compute resources",
+            "Analysis argues India's software strengths suit the deployment layer"
+          ],
+          "source": "Business Standard",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOb1ctYzlkZUNjU2Vic1g4Q3FPNW1sblpGTlEwUlQ0aG42TlFtZmhieFpKZmgxcXUxVkYwQkpnSVFZV1pxNFpHc2ZLemt6M0QzeS13NGJGZnRoTVlidE9WNnFyT1M4RWlCUVhnRG1IczJRMTNYclkyV2N3c01VbWxGMC1oSVZtdkxpYW80WnF1WHBqcXhNN2FtQmlQY3V6MkR3TzIxb2FJN21nbkg0eWxaczktM05WSlVReWJJbkxtbUEzYTFCNDdYMGIyaGtqSDM0WmUwdkVfWGZWWUHSAdsBQVVfeXFMTm9XLWM5ZGVDY1NlYnNYOENxTzVtbG5aRk5RMFJUNGhuNk5RbWZoYnhaSmZoMXF1MVZGMEJKZ0lRWVdacTRaR3NmS3prejNEM3ktdzRiRmZ0aE1ZYnRPVjZxck9TOEVpQlFYZ0RtSHMyUTEzWHJZMldjd3NNVW1sRjAtaElWbXZMaWFvNFpxdVhwanF4TTdhbUJpUGN1ejJEd08yMW9hSTdtZ25INHlsWnM5LTNOVkpVUXliSW5MbW1BM2ExQjQ3WDBiMmhrakgzNFplMHZFX1hmVllB?oc=5",
+          "breaking": false,
+          "slug": "20260622-india-s-sovereign-ai-model-push-may-be-the-wrong-answer-analysts-warn",
+          "image": "https://pixabay.com/get/g27ed5460936c1809717cfb78e499c70763a48479b39b303dea98678789d398fa07de4969406572e27f73e687e922a1e9316645b5ddc235a8de2e78f76929e825_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "mickey970",
+          "image_credit_url": "https://pixabay.com/users/mickey970-1278620/"
+        },
+        {
+          "hour": 15,
+          "time": "15:34 IST",
+          "headline": "Google DeepMind loses Nobel laureate John Jumper to Anthropic",
+          "what": "John Jumper, the scientist who won the 2024 Nobel Prize in Chemistry for his work on AlphaFold — the AI system that predicted the 3D structure of nearly every known protein — has left Google DeepMind to join Anthropic. The move is a significant talent win for Anthropic and a notable loss for DeepMind, where Jumper led one of the most celebrated breakthroughs in modern science. His hire signals Anthropic's ambition to deepen its fundamental AI research bench.",
+          "lens": "Jumper's move from DeepMind to Anthropic underscores how fiercely Big Tech and AI labs are competing for world-class scientific talent — a race that directly shapes which platforms power drug discovery, biotech, and research tools Indian institutions may soon rely on.",
+          "article": "John Jumper, the Nobel Prize-winning scientist celebrated for leading the AlphaFold protein-structure prediction project, has departed Google DeepMind to join Anthropic, in one of the most high-profile researcher moves the AI industry has seen in recent years.\n\nJumper shared the 2024 Nobel Prize in Chemistry with DeepMind CEO Demis Hassabis for AlphaFold2, a system that solved a 50-year-old grand challenge in biology by accurately predicting the three-dimensional structures of virtually all known proteins. The work has already transformed drug discovery, with researchers worldwide using the freely available AlphaFold database to accelerate the development of new medicines and treatments.\n\nHis decision to leave DeepMind for Anthropic is striking both symbolically and strategically. DeepMind, a subsidiary of Alphabet, had positioned Jumper's Nobel as a crown jewel validating its long-term, fundamental research approach. Anthropic, meanwhile, has been on an aggressive hiring drive as it seeks to move beyond AI safety research and into deeper scientific capability. Jumper's expertise in applying machine learning to complex scientific problems aligns closely with efforts to extend large language models into rigorous scientific reasoning and biological applications.\n\nThe hire arrives days after Trump signalled Anthropic no longer poses a national security concern, further strengthening the company's momentum. For the broader AI talent landscape — including Indian researchers trained in structural biology and ML — the message is clear: Anthropic is now competing at the very top of the field.",
+          "key_facts": [
+            "John Jumper won the 2024 Nobel Prize in Chemistry for AlphaFold",
+            "Jumper co-created AlphaFold2 at Google DeepMind with Demis Hassabis",
+            "AlphaFold predicted 3D structures of nearly all known proteins",
+            "Jumper is departing DeepMind to join Anthropic"
+          ],
+          "source": "outlookbusiness.com",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORnFkRlJIN2otYnFyb0IzbFpRU3NKRTdMZHhiSEtGYnlaOWpVdEJSdFViZjZVR2VfM2NhR055UEEzZmpSUHQwVC16SEhienRxdkVaZThpZGR6UEJWRmwtT3ZEcXZvb1BERzJoZGVmTTZuTmhmcDBoZG9yQW9GMjlGemZoTkdSQXZCSFFZcjZsdDkxLTdmaENNYUhQTDRfTUxUY2tNYXpUbTVLakFKMkc1Zw?oc=5",
+          "breaking": false,
+          "slug": "20260622-google-deepmind-loses-nobel-laureate-john-jumper-to-anthropic",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/John_Jumper%2C_2024_Nobel_Prize_Laureate_in_Chemistry.jpg",
+          "image_kind": "photo",
+          "image_credit": "Arthur Petron / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/John_M._Jumper"
+        },
+        {
+          "hour": 10,
+          "time": "10:41 IST",
+          "headline": "Tech Workers Who Maxed Out on AI Are Now Pulling Back",
+          "what": "A new report in The Indian Express explores a growing backlash among tech workers who aggressively adopted AI tools — and are now deliberately scaling back their use. The pattern, emerging among software developers, writers, and knowledge workers, reflects concerns about cognitive dependency, skill erosion, and the diminishing quality of AI-assisted work. Rather than a wholesale rejection of AI, the retreat represents workers recalibrating how much they rely on tools like ChatGPT and GitHub Copilot in their daily workflows.",
+          "lens": "For India's massive IT workforce — the world's largest pool of software professionals — the question of how much to lean on AI tools has direct implications for skills development, employability, and who gets left behind as the industry transforms.",
+          "article": "A quiet counter-movement is emerging among tech workers who were among the earliest and heaviest adopters of AI productivity tools: having pushed AI use to its limits, they are now consciously trying to reduce it. The Indian Express reports on a growing cohort of developers, writers, and knowledge workers who found that maximising their use of tools like ChatGPT and GitHub Copilot came with unexpected downsides — atrophied problem-solving skills, over-reliance on outputs they couldn't always verify, and work that felt increasingly disconnected from their own judgment.\n\nThe phenomenon is distinct from AI scepticism. These workers are not anti-AI; most continue to use the tools selectively. Instead, they describe a deliberate recalibration — reserving AI assistance for specific tasks while deliberately working through others unaided, in much the way a runner might choose not to use a GPS watch to rebuild their sense of pace. The goal is to preserve the underlying skill even while using the tool.\n\nThe backlash points to a broader tension in how AI is being integrated into professional work. Employers and productivity evangelists have pushed maximum AI adoption as a competitive imperative, but workers on the ground are discovering that the relationship between AI assistance and human capability is more complex than a simple productivity multiplier. Skill erosion — the gradual loss of competence through disuse — is emerging as a real concern, particularly among junior workers who may never have developed certain skills in the first place.\n\nFor India, where millions of IT professionals are navigating rapid AI-driven change in their workplaces, the debate over how much AI use is too much carries significant stakes. The workers pulling back may be early signals of a wider industry conversation about the right balance between AI leverage and human skill development.",
+          "key_facts": [
+            "Early heavy AI adopters among tech workers are now reducing usage",
+            "Concerns include skill atrophy and over-reliance on AI outputs",
+            "Affects developers, writers, and knowledge workers",
+            "Trend reflects recalibration, not rejection, of AI tools"
+          ],
+          "source": "The Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOblNpeklYakhZU0xOV1Rzc2RtTGRDbVlGams0RVJEN2MteGVWMkhHa0MtYVdFSklaQ1p4ekQ0LVk5QzNsWGZwbkgwemxIdlppd1EyM2tqTVVWc3h6V3d1OHJxYkJvcTZHRlhxWmxTS3VTLTYtMHpWc3pVczZva1gwenV5dkNORzlPSWIwRTFPZ1dtNl9nQjA4N0dWSW5NSjBheTdoVXFfQVFFclhnVzBaTENuem9YSE1LaDVYMHBHNGd2alV2TFBDLTlTRnBGcEZRN0hIUTVqWU9zUVVJV05GOXJVTHp0Y0k?oc=5",
+          "breaking": false,
+          "slug": "20260622-tech-workers-who-maxed-out-on-ai-are-now-pulling-back",
+          "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Tara Winstead",
+          "image_credit_url": "https://www.pexels.com/@tara-winstead"
+        },
+        {
+          "hour": 9,
+          "time": "09:32 IST",
+          "headline": "Trump no longer views Anthropic as a national security threat",
+          "what": "US President Donald Trump told Axios he no longer considers Anthropic, the AI safety company behind Claude, a national security threat — a significant reversal from earlier concerns about the firm's ties to foreign investment. The shift could ease regulatory pressure on Anthropic and smooth its path for US government contracts. It comes as Washington recalibrates its approach to domestic AI companies amid intense competition with China.",
+          "lens": "For Indian AI researchers and firms watching US policy closely, a softer American stance on Anthropic could accelerate global enterprise adoption of Claude-based tools and reshape which AI platforms Indian businesses partner with.",
+          "article": "Donald Trump has told Axios he no longer views Anthropic as a national security threat, marking a notable turnaround in the White House's posture toward one of Silicon Valley's most prominent AI safety companies.\n\nThe statement is significant because Anthropic, the maker of the Claude family of AI assistants, had previously drawn scrutiny over its funding sources, including investment from Google and foreign-linked backers. Any national security designation or restriction could have severely limited the company's ability to work with US federal agencies or attract further institutional capital.\n\nTrump's remarks effectively remove a cloud of uncertainty that had hung over Anthropic even as the company aggressively expanded Claude's capabilities and enterprise reach. The AI sector has been watching closely how the administration would treat domestic AI labs, particularly as Washington frames artificial intelligence development as a strategic competition with Beijing. By signalling that Anthropic is not a threat, Trump appears to be drawing a line between US-headquartered AI companies he wants to champion and foreign entities he considers adversarial.\n\nThe shift could have downstream consequences for procurement, regulation, and investment in the AI industry globally. Companies and governments — including in India — that are evaluating AI platforms for sensitive applications will likely take note that Anthropic now carries an implicit US government endorsement of trustworthiness.",
+          "key_facts": [
+            "Trump told Axios Anthropic is no longer viewed as a national security threat",
+            "Anthropic makes the Claude AI assistant series",
+            "Earlier concerns centred on Anthropic's foreign investment links",
+            "Shift could open US government contracts to Anthropic"
+          ],
+          "source": "The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNcWJMTm5fMVhMOTk0NmdHcjRlV1lCVWZYMkMzaWJRN2VlNWNwYU5vQlZUZ3daVkxFYTdCQVBWSm1RcnNKSDNjUzUwbWFYVHpjbUVWMWlwNkFLckl5U3NCdUVDeXdoVzVXc3BmdlJiQWZCX2RKWVlnSW9wcDhLQlZRbWVVTF9nWXFOcGtzVlBSM1Z5eEdhNDFLSFZLT2dNYW1hMzBlTHQ0QmtyVEZZYnBMeFZma3NrcmJNVkg5X3UyaTczU3Zzb3ladmxCandkUUFVSl9sVWRWaUFhUzF30gHcAUFVX3lxTE1xYkxObl8xWEw5OTQ2Z0dyNGVXWUJVZlgyQzNpYlE3ZWU1Y3BhTm9CVlRnd1pWTEVhN0JBUFZKbVFyc0pIM2NTNTBtYVhUemNtRVYxaXA2QUtySXlTc0J1RUN5d2hXNVdzcGZ2UmJBZkJfZEpZWWdJb3BwOEtCVlFtZVVMX2dZcU5wa3NWUFIzVnl4R2E0MUtIVktPZ01hbWEzMGVMdDRCa3JURllicEx4VmZrc2tyYk1WSDlfdTJpNzNTdnNveVp2bEJqd2RRQVVKX2xVZFZpQWFTMXc?oc=5",
+          "breaking": false,
+          "slug": "20260622-trump-no-longer-views-anthropic-as-a-national-security-threat",
+          "image": "https://pixabay.com/get/geba30e8a928e546701dd83e9c21727096810f4dc859d8aef81dc1675e2ea1f9578263bd0d7ca8486369fb5918637f245244dfc83f1423e3abaa0ed371552725c_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "Alexandra_Koch",
+          "image_credit_url": "https://pixabay.com/users/Alexandra_Koch-621802/"
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "stories": [
+        {
+          "headline": "FIFA World Cup 2026: latest scores and full results",
+          "time": "10:51 IST",
+          "hour": 10,
+          "what": "The latest FIFA World Cup 2026 results in full — scorelines, goalscorers and what's coming up next, all in IST.",
+          "lens": "Every matchday, tracked in your time zone.",
+          "article": "The FIFA World Cup 2026 group stage continued with another full matchday. Here are the latest results in full:\n\nBelgium 0-0 Iran (Group G). Half-time: 0-0. Venue: Los Angeles (Inglewood).\n\nNew Zealand 1-3 Egypt (Group G). Scorers: Finn Surman 15', Mostafa Zico 58', Mohamed Salah 67', Trézéguet 82'. Half-time: 1-0. Venue: Vancouver.\n\nUruguay 2-2 Cape Verde (Group H). Scorers: Maxi Araújo 44', Agustín Cano 45+6', Kevin Pina 21', Hélio Varela 61'. Half-time: 2-1. Venue: Miami (Miami Gardens).\n\nGermany 2-1 Ivory Coast (Group E). Scorers: Deniz Undav 68', Deniz Undav 90+4', Franck Kessié 30'. Half-time: 0-1. Venue: Toronto.\n\nEcuador 0-0 Curaçao (Group E). Half-time: 0-0. Venue: Kansas City.\n\nComing up next (all times IST):\n\nArgentina v Austria — 22 Jun, 10:30 PM IST (Group J)\n\nFrance v Iraq — 23 Jun, 02:30 AM IST (Group I)\n\nNorway v Senegal — 23 Jun, 05:30 AM IST (Group I)\n\nJordan v Algeria — 23 Jun, 08:30 AM IST (Group J)\n\nFull group standings, scorers and the complete fixture list are on our FIFA World Cup 2026 page, updated through the day.",
+          "key_facts": [
+            "Belgium 0-0 Iran",
+            "New Zealand 1-3 Egypt",
+            "Uruguay 2-2 Cape Verde",
+            "Germany 2-1 Ivory Coast"
+          ],
+          "source": "openfootball",
+          "url": "https://thelast24.in/worldcup.html",
+          "breaking": false,
+          "worldcup": true,
+          "slug": "20260622-fifa-world-cup-2026-latest-scores-and-full-results",
+          "image": "https://pixabay.com/get/gbf1c8db89bf0c632342e8a0287fa9679a791d202e5e46b98bb0453d5e96a23035c4b2915981d9fdd324f7ad8dc112b16fae3a4f4bfad9c8f3d6412a4f129905c_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "jorono",
+          "image_credit_url": "https://pixabay.com/users/jorono-1966666/"
+        },
+        {
+          "hour": 22,
+          "time": "22:40 IST",
+          "headline": "Marizanne Kapp Stars as South Africa Beat India to Keep Women's T20 World Cup Hopes Alive",
+          "what": "India suffered their first defeat of the Women's T20 World Cup 2026 as South Africa beat them in a crucial group-stage contest, with Marizanne Kapp delivering a match-winning all-round performance. The loss ends India's unbeaten run in the tournament and injects fresh uncertainty into the standings. South Africa, who needed the win to stay alive in the competition, kept their qualification hopes firmly on track. India's middle order once again came under scrutiny as the side failed to build on their start.",
+          "lens": "India's first loss puts their direct path to the knockout stage under pressure — the result could determine whether they finish top of their group or face a tougher route in the knockouts.",
+          "article": "India's unbeaten run at the Women's T20 World Cup 2026 came to an abrupt end as South Africa produced a disciplined, Marizanne Kapp-inspired performance to clinch a vital win and keep their own tournament hopes alive. Kapp, one of the most experienced all-rounders in women's cricket, was the standout performer — her contributions with both bat and ball proved decisive in what was a tightly contested fixture.\n\nFor India, the defeat exposed a recurring vulnerability: the middle order once again failed to fire at a critical juncture. After promising starts in earlier matches, the side could not string together the partnerships needed under pressure, a pattern that has drawn pointed criticism from analysts throughout the tournament. The collapse gifted South Africa a total they were able to chase down with enough control to make the result convincing.\n\nSouth Africa came into the match knowing a loss would effectively end their World Cup campaign. Kapp's performance galvanised the team at the right moment, and the victory means the Proteas remain in contention for a semifinal spot. It also makes the remaining group-stage fixtures significantly more high-stakes for multiple sides.\n\nFor India, the priority now will be to regroup quickly. The squad has the batting depth and bowling firepower to bounce back, but the middle-order frailty — visible across multiple matches — will need urgent attention if they are to go deep in the tournament. A slip-up in their next fixture could complicate their path to the knockouts considerably.",
+          "key_facts": [
+            "India suffer first defeat of Women's T20 World Cup 2026",
+            "Marizanne Kapp starred with bat and ball for South Africa",
+            "South Africa keep knockout qualification hopes alive",
+            "India's middle order identified as key weakness"
+          ],
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1DRkRJTU5uUmEwNkZYZXd2ZWY1MTdEazhBcDd6enVFdFdVY19BSXZxdDZwcTRfTTlWSEhPMEhzWEM0U01SZEtWMGRCeGxsOHlaM0Vwc3lqSU5OODZ1Z3FDQVVHRXpIdw",
+          "breaking": false,
+          "slug": "20260622-marizanne-kapp-stars-as-south-africa-beat-india-to-keep-women-s-t20-wo",
+          "image": "https://images.pexels.com/photos/36230651/pexels-photo-36230651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Shlok",
+          "image_credit_url": "https://www.pexels.com/@shlok-230964119"
+        },
+        {
+          "hour": 22,
+          "time": "22:58 IST",
+          "headline": "Sloppy India lose Manchester thriller to South Africa, now in danger of early Women's T20 World Cup exit",
+          "what": "India Women suffered their first defeat of the Women's T20 World Cup 2026, going down to South Africa in a thrilling match in Manchester. Marizanne Kapp was the standout performer for South Africa, whose victory keeps their own tournament hopes alive. The loss puts India in danger of an early exit from the competition, a major setback for a side that had started the tournament in promising form.",
+          "lens": "India's Women's T20 World Cup campaign, which had looked steady, is now suddenly precarious — a further slip could mean an early exit from a marquee global tournament on foreign soil.",
+          "article": "India Women's campaign at the 2026 Women's T20 World Cup hit a serious roadblock on Saturday night as a sloppy batting and fielding display handed South Africa a tense victory in Manchester, leaving the Indian side in real danger of an early tournament exit.\n\nMarizanne Kapp was the match-winner for South Africa, delivering a match-turning performance — with both bat and ball, as she is known to do — to keep her side's hopes of progressing alive. India, who had entered the fixture with a degree of confidence, were undone by a combination of their own errors and South Africa's clinical execution in the crunch moments.\n\nThe defeat is India's first in the tournament and shifts the pressure squarely onto their remaining group-stage fixtures. A side that cannot afford another stumble, India will need to regroup quickly and find the form that had earlier defined their campaign. The result was played out at what India Today described as a 'Manchester thriller', suggesting the match went deep before South Africa sealed it.\n\nFor South Africa, the win is a lifeline, reviving their qualification prospects and underlining the quality of their experienced players in high-pressure situations. Kapp's starring role will give their camp a significant confidence boost heading into the business end of the group stage.\n\nIndia's management and players will now face intense scrutiny. The coming days will determine whether this defeat proves a wake-up call or the beginning of a disappointing early departure from a tournament India had targeted as a major prize.",
+          "key_facts": [
+            "India Women's first defeat of the Women's T20 World Cup 2026",
+            "South Africa won the match in Manchester",
+            "Marizanne Kapp was South Africa's standout performer",
+            "India now in danger of early tournament exit"
+          ],
+          "source": "India Today",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNQ1RTMElkcW9OdVRZQ083bUtjamZJenVQMnhsV3k0LWdPS21rME1EaGFCSXFrU1FndEFLUEx6M0JCYllyeEhuVzJ5d25IYnEzSzk4NGNkM2RkcXdqbml5NTFuRVF1SXRRRWJPaDdCVTkybUR0bFlqUGtkcFRqU3BjZnZNaExmbE90blNoV2NHS2h2OVR5a2VxMnNrUGZiX1JDQzFpSzFmZzhjM0UtbEl5ODRSeF92M3ZLSk1CUlpfNjNic19XSzhpatIByAFBVV95cUxNQ1RTMElkcW9OdVRZQ083bUtjamZJenVQMnhsV3k0LWdPS21rME1EaGFCSXFrU1FndEFLUEx6M0JCYllyeEhuVzJ5d25IYnEzSzk4NGNkM2RkcXdqbml5NTFuRVF1SXRRRWJPaDdCVTkybUR0bFlqUGtkcFRqU3BjZnZNaExmbE90blNoV2NHS2h2OVR5a2VxMnNrUGZiX1JDQzFpSzFmZzhjM0UtbEl5ODRSeF92M3ZLSk1CUlpfNjNic19XSzhpag",
+          "breaking": true,
+          "slug": "20260622-sloppy-india-lose-manchester-thriller-to-south-africa-now-in-danger-of",
+          "image": "https://images.pexels.com/photos/20987995/pexels-photo-20987995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Leon Aschemann",
+          "image_credit_url": "https://www.pexels.com/@leon-aschemann-734730704"
+        },
+        {
+          "hour": 16,
+          "time": "16:40 IST",
+          "headline": "Vaibhav Sooryavanshi smashes record-breaking 11-ball fifty for India A against Sri Lanka A",
+          "what": "Teenage sensation Vaibhav Sooryavanshi blazed to a half-century off just 11 balls for India A against Sri Lanka A, setting a new record for the fastest fifty in this format of the game. The innings underscored the explosive batting talent the 14-year-old has already displayed at the international level, and will delight selectors and fans who have been closely tracking his meteoric rise. The performance adds another stunning chapter to one of Indian cricket's most watched young careers.",
+          "lens": "Sooryavanshi's 11-ball fifty is a reminder that Indian cricket has a genuinely generational talent on its hands — a teenager rewriting record books at every level he plays.",
+          "article": "Vaibhav Sooryavanshi, the teenage prodigy who has already made waves at the senior international level, produced yet another jaw-dropping innings on Saturday, smashing a record-breaking half-century off just 11 balls for India A against Sri Lanka A.\n\nThe 11-ball fifty is an extraordinary feat at any level of professional cricket, and coming from a teenager it signals a rare, once-in-a-generation kind of talent. Sooryavanshi, who burst onto the global stage with his performances in the IPL and subsequently earned a senior India call-up, continued to demolish bowling attacks with a fearless approach that belies his age. His innings for India A will be studied and replayed for years as a benchmark of attacking batsmanship.\n\nThe record-breaking knock once again raises questions — or rather, confirms the answer — about how quickly the selectors should be handing Sooryavanshi a more permanent senior berth. His ability to dominate experienced international bowlers, even in the A-team context with Sri Lanka A, is evidence that the step up holds little fear for him.\n\nFor Indian cricket fans, who have grown accustomed to watching Sooryavanshi's highlight-reel exploits on social media, Saturday's innings was more confirmation of the buzz that has surrounded him since he first picked up a bat. The BBC's coverage of the story further amplified his growing global profile.\n\nThe coming months will be watched closely to see whether team management integrates Sooryavanshi more regularly into senior squads, but on current form, the argument for doing so grows stronger with every match he plays.",
+          "key_facts": [
+            "Sooryavanshi hit a fifty off just 11 balls for India A",
+            "Innings came against Sri Lanka A",
+            "Sets a new record for fastest fifty in this format",
+            "Sooryavanshi is a teenager already capped at senior level"
+          ],
+          "source": "BBC",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5uUF95MnNjM0dFZUdzLURxYkpFWGVzeG12M29tSGhVM0QweHF1MUVrV2U5LTg0bFd2NC05eVgwYUdkWGtlNUllT2VLdzY4c05vOHBWMVRPaWhxQ2FXSTk3UThyLWIwZw",
+          "breaking": false,
+          "slug": "20260622-vaibhav-sooryavanshi-smashes-record-breaking-11-ball-fifty-for-india-a",
+          "image": "https://images.pexels.com/photos/15132924/pexels-photo-15132924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Nevin Verochan",
+          "image_credit_url": "https://www.pexels.com/@nevin-verochan-27256961"
+        },
+        {
+          "hour": 6,
+          "time": "06:56 IST",
+          "headline": "Jaiswal Axed from England ODI Squad Despite Century; Virat Kohli Returns to India Setup",
+          "what": "Yashasvi Jaiswal has been dropped from India's ODI squad for the England series despite scoring a century, in a major selection surprise that has set off debate about the selectors' priorities and team balance. Virat Kohli, meanwhile, has been named in the squad, marking his return to the Indian setup after a period away. The contrasting fortunes of the two batters — one in red-hot form yet left out, the other returning on reputation and past record — has made this one of the most talked-about selection calls in recent memory.",
+          "lens": "When a centurion gets dropped while a rested superstar walks back in, it tells everyday fans exactly how the selectors weigh current form against established stature — a debate that cuts to the heart of Indian cricket's selection culture.",
+          "article": "India's selectors have dropped Yashasvi Jaiswal from the ODI squad to face England despite the young opener having scored a century — a decision that has left the cricketing world stunned and sparked an immediate, heated debate about the criteria being applied for national selection. Jaiswal, widely regarded as one of India's most exciting batting talents, was in demonstrable form yet found himself on the wrong side of a bewildering call.\n\nThe headline on the other side of the announcement is Virat Kohli's return to the Indian squad. Kohli, who had stepped back from certain formats and commitments in recent months, is back in contention for the England ODI series, a move that will delight his enormous fanbase and sharpen commercial and broadcast interest in the series considerably. His inclusion, however, inevitably raises questions about whether it came at Jaiswal's direct expense given the constraints of squad balance.\n\nThe selectorial logic remains opaque. Jaiswal's century would, in most cricketing cultures, be considered near-certain protection against the axe. The decision suggests the selectors are either thinking about a particular batting combination, Jaiswal's role in other formats, or a longer-term rotation plan — none of which has been publicly articulated. Critics have been quick to call it a missed opportunity to back consistent, in-form youth.\n\nThe England ODI series now carries an added subplot beyond the cricket itself: whether Kohli can justify his recall with runs, and whether Jaiswal's omission proves to be a temporary blip or a sign of deeper uncertainty about his ODI future. For Indian fans watching selection patterns closely, this is precisely the kind of call that defines how the team's transition era is being managed.",
+          "key_facts": [
+            "Yashasvi Jaiswal dropped from India's England ODI squad despite scoring a century",
+            "Virat Kohli named in the squad, marking his return to the Indian setup",
+            "Selection decision widely debated given Jaiswal's recent form",
+            "India face England in upcoming ODI series"
+          ],
+          "source": "Telegraph India",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUmxrejVzSTlmRXp0NnVOM1RxSldid05qOWxrQVlhcjJkZkdldkFEVDRrSVdESDl6VFpDSEZhMkpldTM1NTBhYVo1QU1zS1QtOXl1U19xS3pCdVpEaVB4bndYcTQ3R1BXOEstSkx1Nm8xVTVHQXVlV04tcExsbzNnZEhMYmd0cFI4Z1JOSTlqWi1pQzFpbUpTVml3SEMyTXU1bXlpS0padmxBcnNkRUdKcDE0U2dyX1h4UWpUTFY0eU5SYzA3MXp1aGJPZS1qcHBXR1pacNIB2gFBVV95cUxNNzBJLTZjMUhOcXdKTnBkR2JLdnl1WGNKbWVYTWt5NmI0VDg2c2xCRTVHZGhmTkFLeW5hTGhlOXlkZHotMUsyWWZjMy12R0hfTEdOREZaZGpSdVpGOTBuRHEtZ1VsSlJxLURFM2JKRURDT2ctcGxkcUNFQlVZMUk2ZzRuNHFiR0FqeUJXN29XZkVNaFRYNURVckZ6VGdQeWw4X2hyWkFsdXYxWFEtLUxGUXRwWjZRUWtzaThoZWgxTUNJR0ZKZGh5S25PclZpamJia0pXUjRJeWxaUQ",
+          "breaking": false,
+          "slug": "20260622-jaiswal-axed-from-england-odi-squad-despite-century-virat-kohli-return",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Virat_Kohli_in_PMO_New_Delhi.jpg",
+          "image_kind": "photo",
+          "image_credit": "Prime Minister's Office / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Virat_Kohli"
+        }
+      ]
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "stories": [
+        {
+          "hour": 18,
+          "time": "18:00 IST",
+          "headline": "Did Amitabh Bachchan shelve Khabardar to avoid being overshadowed by Kamal Haasan?",
+          "what": "A long-circulating piece of Bollywood lore has resurfaced: that Amitabh Bachchan pulled out of — or effectively shelved — the film Khabardar because he feared being outshone by co-star Kamal Haasan. The Indian Express revisits the story behind the ill-fated collaboration between two of Hindi cinema's biggest names, a project that was never completed. The episode, if true, would represent a rare instance of Bollywood's biggest superstar stepping back from a project for fear of artistic competition.",
+          "lens": "The Bachchan-Haasan rivalry anecdote is a window into the ego politics and star-power calculations that have always shaped — and sometimes killed — ambitious Bollywood projects.",
+          "article": "Decades after the fact, one of Bollywood's most tantalising 'what-ifs' is being revisited: did Amitabh Bachchan effectively kill the film Khabardar because he feared being outperformed by Kamal Haasan? The Indian Express digs into the rumour that has persisted in film circles for years, examining the circumstances that led to the project being shelved.\n\nThe story, as it has circulated in Bollywood lore, goes that Bachchan — then at the peak of his 'angry young man' superstardom — grew uneasy about sharing screen space with Kamal Haasan, widely regarded as one of the most technically gifted actors of his generation. Haasan's ability to transform physically and emotionally for roles was already becoming legendary, and the concern, reportedly, was that audiences might walk away talking more about him than the top-billed Bachchan.\n\nSuch dynamics were not uncommon in the Hindi film industry of that era. The star system placed enormous importance on hierarchy — who got more screen time, whose name appeared first, and crucially, who audiences went home remembering. A multi-starrer that upset that calculus could be commercially and reputationally damaging for the bigger name. Whether Bachchan's team made a deliberate call or circumstances conspired is something the report examines without definitive conclusion.\n\nWhat makes the anecdote enduring is what it says about two parallel legends: Bachchan, the undisputed commercial king of Hindi cinema, and Haasan, the actor's actor who rarely played by Bollywood's star-system rules. A completed Khabardar would have been one of the most fascinating screen pairings of that era — and its absence remains one of Indian cinema's great unmade films.",
+          "key_facts": [
+            "Film Khabardar was reportedly shelved after Amitabh Bachchan's exit",
+            "Kamal Haasan was co-star; Bachchan allegedly feared being overshadowed",
+            "Project represents one of Bollywood's most notable 'unmade films'"
+          ],
+          "source": "The Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPX3B3T085UXVoTTBOQl8wMS03QUdKZDJYeDZKTWRQV0V0WkZoNkQtVk1FaGJGTExpbXh4Y1RqSjlpZV91WGJpQ0VIUnRSSWRFVFh4NWhwX2pCN2lBaVVQc1NsQ0tJSGNZOEVBNy14T2ZfYmZxNDE5MS1qTDE4Q3RMbFlnbnV5WUh0MG55UnJMZ3MzVUc2Y1dDMUtjdUVCV0NiV0NyZE5Cc0E0ZzduME1MM3ZzU0JYUjEtYnZIQVdBOXBlVS0ycEdNM3dSU2k0WW1Gb09scEVlLWZRX3M5UlZTV2wyVdIB4wFBVV95cUxPX3B3T085UXVoTTBOQl8wMS03QUdKZDJYeDZKTWRQV0V0WkZoNkQtVk1FaGJGTExpbXh4Y1RqSjlpZV91WGJpQ0VIUnRSSWRFVFh4NWhwX2pCN2lBaVVQc1NsQ0tJSGNZOEVBNy14T2ZfYmZxNDE5MS1qTDE4Q3RMbFlnbnV5WUh0MG55UnJMZ3MzVUc2Y1dDMUtjdUVCV0NiV0NyZE5Cc0E0ZzduME1MM3ZzU0JYUjEtYnZIQVdBOXBlVS0ycEdNM3dSU2k0WW1Gb09scEVlLWZRX3M5UlZTV2wyVQ?oc=5",
+          "breaking": false,
+          "slug": "20260622-did-amitabh-bachchan-shelve-khabardar-to-avoid-being-overshadowed-by-k",
+          "image": "https://images.pexels.com/photos/7723755/pexels-photo-7723755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "image_kind": "photo",
+          "image_credit": "Tara Winstead",
+          "image_credit_url": "https://www.pexels.com/@tara-winstead"
+        },
+        {
+          "hour": 15,
+          "time": "15:55 IST",
+          "headline": "How Om Puri's craft silenced Raaj Kumar's on-set insults",
+          "what": "A behind-the-scenes anecdote about the late actors Om Puri and Raaj Kumar has resurfaced, describing how Puri's raw acting ability effectively stopped Raaj Kumar — notoriously imperious on film sets — from directing his trademark contempt at him. The story, revisited by The Indian Express, illustrates the complex hierarchies and personality clashes that defined Hindi cinema's golden era. It also serves as a tribute to Om Puri's formidable reputation as one of the most technically accomplished actors of his generation.",
+          "lens": "For fans of classic Hindi cinema, this anecdote captures something real about how genuine craft — not stardom — was the ultimate currency even in an industry driven by ego and hierarchy.",
+          "article": "On the sets of Hindi cinema's golden era, few personalities were as intimidating as Raaj Kumar — an actor famed as much for his imperious manner and sharp tongue as for his screen presence. A story now doing the rounds, revisited by The Indian Express, describes how the late Om Puri managed to do what few could: render Raaj Kumar's disdain utterly ineffective, simply through the power of his acting.\n\nThe anecdote captures a moment where Raaj Kumar, known for belittling co-stars and crew, found himself unable to sustain his usual condescension in the face of Puri's extraordinary craft. Puri — trained at the Film and Television Institute of India (FTII) and the National School of Drama — brought an intensity to his performances that was virtually impossible to dismiss or diminish, even for someone of Raaj Kumar's formidable ego.\n\nOm Puri's career was built on exactly this kind of quiet authority. From Ardh Satya to Jaane Bhi Do Yaaron, he repeatedly demonstrated that pure acting technique could command a room and a camera in ways that star power alone could not. The fact that even Raaj Kumar — no shrinking violet himself — had to concede that space is a telling measure of Puri's stature.\n\nBoth actors are now gone, but stories like these keep their legacies alive in vivid, human terms. The anecdote is less about rivalry and more about the unspoken grammar of respect on a film set — that ultimately, craft speaks loudest.",
+          "key_facts": [
+            "Om Puri trained at FTII and National School of Drama",
+            "Raaj Kumar was known for his imperious, often dismissive manner on sets",
+            "Both actors are now deceased; anecdote revisits Hindi cinema's golden era"
+          ],
+          "source": "The Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQWU43eEsycng1N3Z3Q2NEY25tRXNVSGtNaFNDSUE2dnBoQWs2ajFFcFV2bFN5Z1Ewc0pva2VMZ0hUWTQ0SEliMUNCSTFsWG9qNklYYXBuSVJsNF8waFIxaVljZkF2TGRlVjc5NEJ1bDNteEhydnh6cHJBVmRoM0FoZEx5andQU3gwelNsT19EOXBDWmtRVHU4Wm84NW5jdTVmLU5xQVk4dUZLZ2Y5S0J0U0VFZGl3SGc4N3dUNnNMTWNBa0tfQWJYM1gwRGhwVE5wbUlSaVlBSjNCd9IB2gFBVV95cUxQWU43eEsycng1N3Z3Q2NEY25tRXNVSGtNaFNDSUE2dnBoQWs2ajFFcFV2bFN5Z1Ewc0pva2VMZ0hUWTQ0SEliMUNCSTFsWG9qNklYYXBuSVJsNF8waFIxaVljZkF2TGRlVjc5NEJ1bDNteEhydnh6cHJBVmRoM0FoZEx5andQU3gwelNsT19EOXBDWmtRVHU4Wm84NW5jdTVmLU5xQVk4dUZLZ2Y5S0J0U0VFZGl3SGc4N3dUNnNMTWNBa0tfQWJYM1gwRGhwVE5wbUlSaVlBSjNCdw?oc=5",
+          "breaking": false,
+          "slug": "20260622-how-om-puri-s-craft-silenced-raaj-kumar-s-on-set-insults",
+          "image": "https://pixabay.com/get/g51680a3f9616480c79a22a280200c7d0f0d7e03ca57d7457da276f9c33edee0127c38e7a44ff77d1ee36292c8ba6a61f1024cf8e325f7a3706728f2cf0b723a7_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "pprasantasahooo",
+          "image_credit_url": "https://pixabay.com/users/pprasantasahooo-5744012/"
+        },
+        {
+          "hour": 9,
+          "time": "09:45 IST",
+          "headline": "After publicly demanding Samay Raina be 'paraded on a donkey', Shaktimaan actor Mukesh Khanna ends up collaborating with him",
+          "what": "Mukesh Khanna, the actor famed for playing Shaktimaan, had previously made headlines by saying stand-up comedian and roast-king Samay Raina 'should be paraded on a donkey' — a sharp public rebuke. Now, in a striking reversal, Khanna has gone ahead and worked with Raina on a project. The about-turn has drawn wide attention online, given how emphatic Khanna's original criticism was. It underscores the peculiar pull of Raina's growing cultural platform.",
+          "lens": "When one of Bollywood's most vocal moral guardians ends up on the same set as the man he publicly shamed, it says something sharp about how creator-economy clout now reshapes old-guard celebrity calculations.",
+          "article": "Mukesh Khanna, the actor who became a household name as the caped superhero Shaktimaan, once called for Samay Raina to be publicly humiliated — specifically, that the stand-up comedian and roast organiser 'should be paraded on a donkey'. The statement was made in the context of Raina's roast culture, which Khanna viewed as disrespectful and morally corrosive. It was the kind of condemnation that, in an earlier era, would have ended any prospect of collaboration.\n\nThat makes what happened next all the more striking. Khanna has now worked with Raina on a project, a development reported by The Indian Express that has set social media buzzing with a mixture of amusement and irony. The details of the collaboration have not been fully disclosed, but the mere fact of it is the story — a loudly declared enemy becoming a professional associate.\n\nThe episode fits a familiar pattern in Indian entertainment, where public feuds between legacy Bollywood figures and new-age digital creators often thaw quietly when audiences — and opportunity — demand it. Raina, who rose to national prominence through his roast shows and his tenure on India's Got Latent, commands a young, massive fanbase that legacy stars increasingly cannot afford to ignore.\n\nFor Khanna, long known as a keeper of traditional values in entertainment, the collaboration will inevitably invite questions about principle versus pragmatism. For Raina, it is another trophy of cultural crossover — proof that even his harshest critics eventually find their way to his door.",
+          "key_facts": [
+            "Mukesh Khanna had said Samay Raina 'should be paraded on a donkey'",
+            "Khanna has now worked with Raina despite the public criticism",
+            "Raina is a prominent stand-up comedian known for roast shows"
+          ],
+          "source": "The Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPZnlBQjdlX0poVFprUEVWZlhzc2VkZjR0ZUlFbmxiSVpfVFpObFZJYnV1dWtDeTByaW1CMlkwRjRfVzUyVHpibEQ4STdPUVFGUWdWYUl0RjNET193NWlfNkJWNXp2RHlDTTZtY2FET3pNUVpkei1vV3ZuX0tFR2ozZjJoRy15eE8zUWJVTXQyeWRRVFZ6ZWlQc0VZeTZPNGdvQ3Nsb2U0SXhCa0dnODhfSkR6NUFHOUpBaXRTRU9sSi0xbUtISWpIS3JwUDNMQVZDNVQ4dF9KMmdpZ3hCX1R2bGxHR2FDeTFRWFM5MnYtd1d0d0530gH7AUFVX3lxTE1uNXJWYXMwV1FOWGtiLVZtdnltTF9nUElxTW13d0hoUTJBRC1vcGFVUlViTlRLOW1sXzBOejFpMGJIdDBPUXZyVVJtUDZmNG1QNG1yUWhMblhFa3BwdE9GQktVcURJTFczR2Q3ZUY5cGNTS0o5MlBwdFN0TVh4NTRNV2NHRTVtMHBQQ2dwZElTRG5rX1A0S2VvZmhmbDlkc3pLbEUwOFpvbEJsdS1VbnZDVnY2aXVFZWZTNEJ6d0NDbFd2MEkxQ3htUFA0aXpzRHdwNWJqYWd2U0VtczhweVZlYVd3QWFjZ2VOWFR5U2UzRDB2cW1oLTVWX2VB",
+          "breaking": false,
+          "slug": "20260622-after-publicly-demanding-samay-raina-be-paraded-on-a-donkey-shaktimaan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/d/de/MukeshKhanna.jpg",
+          "image_kind": "photo",
+          "image_credit": "Bollywood Hungama / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Mukesh_Khanna"
+        },
+        {
+          "hour": 9,
+          "time": "09:16 IST",
+          "headline": "Sona Mohapatra says Bollywood heartbreak songs are 'reserved for men', questions why women's pain goes unsung",
+          "what": "Singer Sona Mohapatra has called out a longstanding gender imbalance in Bollywood music, arguing that heartbreak songs are overwhelmingly written for and performed by men, leaving women's emotional experiences largely invisible in mainstream Hindi film music. She pointedly asked 'is man making love to himself?' — highlighting the absurdity of a musical landscape where male longing is central but a female counterpart is absent. The comment has reignited debate about representation in the Hindi film music industry.",
+          "lens": "Bollywood produces hundreds of songs a year that shape how millions of Indians process love and loss — if women's heartbreak is systematically absent from that canon, it reflects and reinforces a real cultural blind spot.",
+          "article": "Singer and activist Sona Mohapatra has fired a pointed critique at Bollywood's songwriting establishment, arguing that the genre of heartbreak — one of Hindi film music's most lucrative and beloved — is effectively 'reserved for men'. Speaking publicly, Mohapatra questioned why the emotional vocabulary of romantic loss in mainstream Indian cinema is almost entirely constructed around the male perspective, with women either absent or peripheral.\n\nHer sharpest line was a rhetorical question directed at the absurdity of the situation: 'Is man making love to himself?' The quip cuts to the heart of her argument — that if Bollywood endlessly produces songs about men pining, grieving, and longing, but rarely gives women the same emotional real estate, it implies a one-sided universe where female desire and heartbreak simply do not exist.\n\nMohapatra is no stranger to controversy within the industry. She has previously spoken out on issues ranging from music royalties to the treatment of independent artists, making her a consistent dissenting voice in an industry not known for welcoming internal criticism. Her remarks, reported by The Times of India, have drawn both agreement and pushback on social media, with many users citing specific songs that prove her point and others pointing to exceptions.\n\nThe debate touches on something structural: Bollywood's songwriting and composing fraternity has historically been male-dominated, which critics argue shapes whose emotional experiences get centred in the music that ultimately forms the soundtrack to Indian life.",
+          "key_facts": [
+            "Sona Mohapatra says Bollywood heartbreak songs are written primarily for men",
+            "She asked 'is man making love to himself?' to highlight the gender gap",
+            "The comment reignites debate about gender representation in Hindi film music"
+          ],
+          "source": "The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxQd3E5dlhKQlJzc2Jia08yVWJWNDNkN0QwdWFVeFhjMmFybUhyeE56MFdNcHBOVlhFdjREeTdoQk1mRElCUDMtbE42Y1FfRTdBd3pLdUxEUWhETmlwWVlRQVJJWWhZVlJ6WjJ1b043S1g0QWNCeU9MS1QtbTJSU2dfWW1sR3BKVGxhOTBMT1NkbDlzQ1UtLVBKanhRT3ZKQmdEemRkalR4X083a1VCTjdQQW5hTGRHd2ZwX2YtX1JLanNUOUthQXJHSEYzNWxlWk54Y0xIRG1uaWRLNUROQjhPa0FJYzVObDBlSWRvcUdtMTZEMlVGdXE1YkJ0M0lhMi1DdmxEV2F5TmRpV0FSZDJsTHg5ZG9YanF5ZF9udWZSMWluQ3lsODFGeUl3QzBSVWtFU193NGthUdIBvAJBVV95cUxOaDd2cnlMS1FwOWNBMVR0Qzd2aWZXZ2tPSGpzZkJocDFuY2V3a1NWRnZqdnRDeHJHU0IxNVZwUDhRU0dza21odDByWlZPd3JFc05FbHduNHRqXzFSR0Znbko1b2Fyc3JJUmo1UWs2Q2lnamo1VkJ6ODRiRzg1R1JYQTFUdWZ4S3hkUV9STXhzY25xZF8tNlpkYjBZblBNdzR1SjJ3SVdIMFM1R3pvZlBIbTRBeHZyQ2VqckFVSi11Qlk5bGRDNFFHT0dBdEZtaHpzR253ZXRMZzZQdUk3V2F0WUVYTWdYQU5FTy1ZU1BDVVVWMjU5TGYtcmRUeFhfdXpBdW0tWlFzNVhsZUlsc1pPcExqa0FLSTNsN1EwdlV6LW1xc0tDVjZYUzJCbWdmZ0E2U1ZpN19ka3RQX0lO",
+          "breaking": false,
+          "slug": "20260622-sona-mohapatra-says-bollywood-heartbreak-songs-are-reserved-for-men-qu",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Sona_Mohapatra_snapped_at_a_store_launch_in_Khar_%28cropped%29.jpg",
+          "image_kind": "photo",
+          "image_credit": "Bollywood Hungama / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Sona_Mohapatra"
+        },
+        {
+          "hour": 9,
+          "time": "09:00 IST",
+          "headline": "Indian kids' IP brand behind 'Emomee' launches its first animated series",
+          "what": "The Indian children's intellectual property brand behind 'Emomee' has rolled out its first full animated series, marking a significant step for homegrown kids' content in a market long dominated by foreign IP. The launch, reported exclusively by Variety, signals growing confidence among Indian creators in building original characters and franchises aimed at young domestic audiences. Emomee is positioned as a character-driven brand built around emotional literacy for children, making the animated series a natural extension of the IP.",
+          "lens": "As global streaming platforms flood Indian children's screens with foreign content, an Indian-origin kids' IP graduating to a full animated series is a meaningful step toward building homegrown franchises that reflect Indian children's lives and emotions.",
+          "article": "Emomee, an Indian children's intellectual property brand, has launched its first animated series — a milestone for homegrown kids' entertainment that has drawn attention from the international trade press. Variety, which broke the story exclusively, reported that the brand behind Emomee is now moving beyond its origins to deliver a full serialised animated format aimed at young Indian audiences.\n\nEmomee is built around the concept of emotional literacy — the characters and narratives are designed to help children identify, understand, and express their feelings. This positions it in a growing global niche of purpose-driven children's content, one that has seen significant success internationally with properties like Inside Out. The animated series format allows the IP to deepen character development and reach children through the medium they consume most naturally.\n\nThe Indian kids' content market is substantial but has historically been dominated by international franchises — from Disney and Nickelodeon to Japanese anime — leaving limited shelf space for original Indian IP to establish itself. Brands like Chhota Bheem have shown that homegrown characters can achieve massive scale, and Emomee's move into animation is a bid to follow that path with a more emotionally nuanced proposition.\n\nThe Variety exclusive suggests the brand is also positioning itself for international attention, not just domestic growth. For Indian animation studios and IP creators, a trade-press spotlight of this kind can open doors to co-production deals, international licensing, and streaming platform partnerships that were once out of reach for Indian children's content.",
+          "key_facts": [
+            "Emomee is an Indian kids' IP brand focused on emotional literacy for children",
+            "The brand has launched its first full animated series",
+            "The launch was reported exclusively by Variety, signalling international industry interest"
+          ],
+          "source": "Variety",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOc1VHdUZ6NzN6SG1KV3BndUU0NjI3bWNTWVlWSWdXa3JTaDVrX1hPNm1pTkR4QWlxUDhDMzk5TENUdFFTZnBmaDRHV0pyWmJlMlVDLVZaSU5ONXlqS3pBWDhZNjk3c1RHYnN0WlBlMmZUZVFpTlRNM3lUXzdEalFBbjhDQU0",
+          "breaking": false,
+          "slug": "20260622-indian-kids-ip-brand-behind-emomee-launches-its-first-animated-series",
+          "image": "https://pixabay.com/get/g34b57c39d2332e8660ecfdc0804e787e4bc9d64fa203c85b73b63ec12d0799d22b2a00bd4daaaa90ba3a6fbc593936d2f81a70244cf668c048b1f1389a806a0e_1280.jpg",
+          "image_kind": "photo",
+          "image_credit": "stevepb",
+          "image_credit_url": "https://pixabay.com/users/stevepb-282134/"
+        }
+      ]
+    }
+  ]
+}
