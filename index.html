@@ -101,7 +101,7 @@
     .ca-link,.archive-link{font-size:11px;padding:6px 11px;white-space:nowrap;flex-shrink:0}
   }
   .ticker{overflow:hidden;margin-top:14px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
-  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 180s linear infinite;will-change:transform}
+  .ticker-track{display:inline-flex;white-space:nowrap;padding:8px 0;animation:scroll 150s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
   @keyframes scroll{to{transform:translateX(-50%)}}
   .ticker-item{font-family:var(--mono);font-size:11.5px;color:var(--meta-on-dark);padding:0 24px;display:inline-flex;align-items:center;gap:8px}
@@ -715,7 +715,30 @@ window.BRIEF = window.BRIEF || {
     if(!!b[0].breaking !== !!a[0].breaking) return (!!b[0].breaking) - (!!a[0].breaking);
     return (b[0].hour||0) - (a[0].hour||0);
   });
-  var slidesData = allPairs.slice(0, 5);
+  // De-duplicate: the same event can appear in more than one section (e.g. a
+  // big breaking story). Drop near-identical headlines so the hero never shows
+  // the same story twice.
+  function _fp(t){
+    var stop = {the:1,and:1,for:1,with:1,from:1,that:1,this:1,after:1,over:1,into:1,
+      amid:1,says:1,said:1,will:1,"new":1,now:1,india:1,indian:1,its:1,has:1,to:1,
+      of:1,"in":1,on:1,as:1,is:1,at:1,a:1,an:1,by:1,be:1};
+    var w = (t||'').toLowerCase().match(/[a-z0-9]+/g) || [];
+    return w.filter(function(x){ return x.length>3 && !stop[x]; });
+  }
+  function _dupe(a, b){
+    if(!a.length || !b.length) return false;
+    var setB = {}; b.forEach(function(x){ setB[x]=1; });
+    var ov = 0; a.forEach(function(x){ if(setB[x]) ov++; });
+    var uni = {}; a.concat(b).forEach(function(x){ uni[x]=1; });
+    return ov / Object.keys(uni).length >= 0.34;
+  }
+  var deduped = [], seenFps = [];
+  allPairs.forEach(function(pair){
+    var fp = _fp(pair[0].headline);
+    for(var i=0;i<seenFps.length;i++){ if(_dupe(fp, seenFps[i])) return; }
+    seenFps.push(fp); deduped.push(pair);
+  });
+  var slidesData = deduped.slice(0, 5);
 
   var track = document.getElementById('car-track'), dots = document.getElementById('car-dots'), counter = document.getElementById('car-count');
   slidesData.forEach(function(pair, i){
