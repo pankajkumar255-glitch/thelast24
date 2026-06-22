@@ -601,19 +601,20 @@ def _story_fingerprint(st):
     sig = frozenset(w for w in words if len(w) > 3 and w not in stop)
     return sig
 
-def _is_dupe(fp, seen_fps):
+def _is_dupe(fp, seen_fps, threshold=0.65):
     """True only if fp shares a strong majority of significant words with a seen
     fingerprint AND both have enough words to be confident (same event, reworded).
-    Conservative by design: better to allow a rare dupe than drop a real story."""
-    if not fp or len(fp) < 4:
+    Conservative by default (0.65); callers may pass a lower threshold where
+    aggressive de-duplication is wanted (e.g. trending, hero)."""
+    if not fp or len(fp) < 3:
         return False  # too few words to judge confidently
     for s in seen_fps:
-        if not s or len(s) < 4:
+        if not s or len(s) < 3:
             continue
         overlap = len(fp & s)
         union = len(fp | s)
-        # Jaccard similarity: shared / total distinct words. 0.7+ = same story.
-        if union and overlap / union >= 0.65:
+        # Jaccard similarity: shared / total distinct words.
+        if union and overlap / union >= threshold:
             return True
     return False
 
@@ -1449,7 +1450,16 @@ def build_trending(edition):
             })
     # Rank: breaking first, then newest by hour.
     items.sort(key=lambda x: (not x["breaking"], -(x["hour"] or 0)))
-    items = items[:12]  # the top 12 trending
+    # De-duplicate: the same event can sit in more than one section. Drop
+    # near-identical headlines so trending isn't the same story repeated.
+    deduped, seen_fps = [], []
+    for it in items:
+        fp = _story_fingerprint({"headline": it["headline"]})
+        if _is_dupe(fp, seen_fps, threshold=0.34):
+            continue
+        seen_fps.append(fp)
+        deduped.append(it)
+    items = deduped[:12]  # the top 12 trending
 
     trending = {
         "date": NOW.strftime("%A, %d %B %Y"),
