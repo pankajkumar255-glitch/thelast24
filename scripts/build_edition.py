@@ -32,6 +32,19 @@ SECTION_QUERIES = {
 }
 PER_SECTION = 4
 
+# Breaking / trending: extra high-priority pulls so big India-wide stories that
+# don't fit a single section query (e.g. a major appointment, a sudden event)
+# still get caught. These run IN ADDITION to the section queries above.
+BREAKING_QUERIES = [
+    "India breaking news",
+    "India top stories today",
+]
+# Google News "Top Stories" for India — the closest thing to a live trending
+# feed. Stories appearing here are treated as high-priority/breaking signals.
+TOP_STORIES_FEED = "https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en"
+# A story published within this many hours is eligible to be flagged "breaking".
+BREAKING_RECENCY_HOURS = 5
+
 SECTION_HUES = {  # category accent colors (also used by generative art)
     "national": "#3D7A5C", "world": "#3E6088", "business": "#A07A3C",
     "tech": "#6A5C9A", "ai": "#3C8585", "sports": "#B5573F", "entertainment": "#A65478",
@@ -92,6 +105,58 @@ def resolve_url(link):
         pass
     return link
 
+def _norm_title(t):
+    """Normalize a headline to a comparable fingerprint (significant words)."""
+    stop = {"the","and","for","with","from","that","this","after","over","into",
+            "amid","says","said","will","new","now","india","indian","to","of",
+            "in","on","as","is","at","a","an","by","be"}
+    words = re.findall(r"[a-z0-9]+", (t or "").lower())
+    return frozenset(w for w in words if len(w) > 3 and w not in stop)
+
+
+def collect_breaking():
+    """Pull India-wide breaking / top stories (in addition to section queries).
+    Returns (lines, hot_fps): extra trusted headline lines tagged [BREAKING],
+    and a list of fingerprints of the hottest stories for breaking-flag scoring.
+    These are the big, time-sensitive stories that a fixed section search can
+    miss (a sudden appointment, a major event)."""
+    lines, hot_fps, seen = [], [], set()
+    feeds = [("topstories", TOP_STORIES_FEED)]
+    feeds += [("breaking", gnews_rss(q, "when:8h")) for q in BREAKING_QUERIES]
+    for kind, url in feeds:
+        try:
+            feed = feedparser.parse(url)
+        except Exception:
+            continue
+        count = 0
+        for e in feed.entries:
+            if count >= 12:
+                break
+            try:
+                pub = datetime(*e.published_parsed[:6], tzinfo=timezone.utc).astimezone(IST)
+            except Exception:
+                pub = NOW
+            # breaking must be genuinely recent
+            if (NOW - pub) > timedelta(hours=BREAKING_RECENCY_HOURS + 3):
+                continue
+            src = getattr(e, "source", None)
+            src = src.title if src and hasattr(src, "title") else ""
+            if not is_trusted(src):
+                continue
+            title = re.sub(r"\s+-\s+[^-]+$", "", e.title).strip()
+            fp = _norm_title(title)
+            key = title.lower()
+            if key in seen or not fp:
+                continue
+            seen.add(key)
+            hot_fps.append(fp)
+            url2 = resolve_url(e.link)
+            lines.append(f"{pub.strftime('%H:%M')} IST | [BREAKING] {title} | {src} | {url2}")
+            count += 1
+    print(f"Breaking/top-stories: {len(lines)} hot headlines pulled.")
+    return lines, hot_fps
+
+
 def collect_headlines():
     backfill_days = int(os.environ.get("BACKFILL_DAYS", "0") or 0)
     window = f"when:{backfill_days}d" if backfill_days > 0 else "when:1d"
@@ -118,9 +183,19 @@ def collect_headlines():
             lines.append(f"{pub.strftime('%H:%M')} IST | [{section}] {title} | {src} | {url}")
             count += 1
     print(f"Filtered out {skipped} items from non-allowlisted sources.")
-    if not lines:
+    # Pull India-wide breaking / top stories too, so big cross-section stories
+    # aren't missed. Prepend them so they're prominent in what Claude sees.
+    breaking_lines, hot_fps = collect_breaking()
+    all_lines = breaking_lines + lines
+    if not all_lines:
         sys.exit("No headlines collected from trusted publishers.")
-    return "\n".join(lines)
+    # Stash hot fingerprints globally so write_edition can flag breaking by signal.
+    global HOT_FPS
+    HOT_FPS = hot_fps
+    return "\n".join(all_lines)
+
+
+HOT_FPS = []
 
 # ------------------------------------------------------------------ write ---
 SECTION_IDS = {
@@ -132,6 +207,7 @@ SECTION_IDS = {
 EDITORIAL_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher. You will be given the raw headlines for ONE section and must produce that section's stories.
 
 EDITORIAL RULES:
+- Some headlines are tagged [BREAKING] — these are India-wide top/breaking stories. INCLUDE a [BREAKING] story ONLY if it genuinely belongs in THIS section's topic. If a breaking story fits this section and is significant, prioritise it near the top. If it doesn't fit this section, ignore it (another section will cover it). Never force an unrelated breaking story into this section.
 - Keep only the strongest stories up to the limit given; drop weak/duplicate ones. Treat two items as duplicates if they report the SAME underlying event even when the headlines are worded differently — keep only the single best one.
 - WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company" or "two platforms".
 - CARRY THE CORE FACTS. If the story has specific concrete details that are its whole point, INCLUDE them rather than gesturing at them. Examples: a squad/team announcement -> name the key players actually picked; a budget/scheme -> the amount and who it's for; a match result -> the score and standout performers; an appointment -> who, to what post; a policy -> the specific change. A summary that says "the squad was announced" without naming anyone is a FAILURE.
@@ -234,7 +310,23 @@ def clean_stories(items, section_name):
             st["hour"] = max(0, min(23, int(st.get("hour", 12))))
         except (TypeError, ValueError):
             st["hour"] = 12
-        st["breaking"] = bool(st.get("breaking", False))
+        # BREAKING by SIGNAL, not guess: a story is breaking only if it matches
+        # a story currently in India's top-stories/breaking feed AND is recent.
+        # This stops stale carried-forward stories from sitting in the hero, and
+        # catches big cross-section stories Claude wasn't sure how to flag.
+        fp = _norm_title(st.get("headline", ""))
+        is_hot = False
+        if fp and len(fp) >= 3:
+            for hot in HOT_FPS:
+                if hot and len(hot) >= 3:
+                    ov = len(fp & hot); un = len(fp | hot)
+                    if un and ov / un >= 0.3:
+                        is_hot = True
+                        break
+        recent = (NOW.hour - int(st.get("hour", 12))) <= BREAKING_RECENCY_HOURS if NOW.hour >= int(st.get("hour", 12)) else True
+        # Honour Claude's breaking only if also recent; promote hot+recent stories.
+        st["breaking"] = bool(is_hot and recent) or bool(st.get("breaking", False) and recent)
+        st["_hot"] = is_hot   # used for ranking the hero
         out.append(st)
     return out
 
@@ -271,10 +363,22 @@ def write_edition(raw):
     backfill = int(os.environ.get("BACKFILL_DAYS", "0") or 0) > 0
     per_cap = 6 if backfill else 5
     groups = {}
+    breaking_pool = []
     for line in raw.splitlines():
         m = re.search(r"\[([^\]]+)\]", line)
         if m:
-            groups.setdefault(m.group(1), []).append(line)
+            tag = m.group(1)
+            if tag == "BREAKING":
+                breaking_pool.append(line)
+            else:
+                groups.setdefault(tag, []).append(line)
+    # Make the India-wide breaking stories visible to EVERY section, so a big
+    # cross-section story (e.g. a major appointment) gets picked up wherever it
+    # best fits, rather than being lost because it didn't match a section query.
+    if breaking_pool:
+        for name in SECTION_IDS:
+            groups.setdefault(name, [])
+            groups[name] = breaking_pool + groups[name]
 
     sections = []
     for name, sid in SECTION_IDS.items():
@@ -337,6 +441,8 @@ def write_edition(raw):
                       f"{len(cf)} from a recent edition.")
                 for _st in cf:
                     _st["carried"] = True
+                    _st["breaking"] = False   # stale stories are never "breaking"
+                    _st["_hot"] = False
                 sections.append({"id": sid, "name": name, "stories": cf,
                                  "carried": True})
             else:
