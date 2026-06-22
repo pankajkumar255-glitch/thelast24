@@ -753,7 +753,7 @@ def masthead_css():
 .band{background:var(--dark);color:#F2F4EE;padding:20px 0}
 .band .wrap{max-width:var(--mw,920px);margin:0 auto;padding:0 20px}
 .brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
-.brand-row .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1;color:#F2F4EE}
+.brand-row .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1;color:#F2F4EE;white-space:nowrap;flex-shrink:0}
 .brand-row .brand span{color:var(--green-bright)}
 .brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
 .brand-nav{display:flex;align-items:center;gap:10px}
@@ -766,9 +766,11 @@ def masthead_css():
 @media (max-width:600px){
   .brand-meta{display:none}
   .brand-row{flex-wrap:wrap;gap:10px}
-  .brand-side{width:100%;justify-content:flex-start}
+  .brand-side{width:100%;justify-content:flex-start;position:relative}
   .brand-nav{width:100%;overflow-x:auto;flex-wrap:nowrap;gap:8px;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .brand-nav::-webkit-scrollbar{display:none}
+  /* Right-edge fade = visible hint that the nav scrolls horizontally. */
+  .brand-side::after{content:"";position:absolute;top:0;right:0;width:28px;height:100%;background:linear-gradient(to right,transparent,var(--dark));pointer-events:none}
   .m-ca,.m-link{font-size:11px;padding:6px 11px;flex-shrink:0}
 }
 """
@@ -926,7 +928,7 @@ footer a{{color:#3BCB8D;text-decoration:none}}
 <p class="cite">This is a summary brief. Original reporting and all facts: <a href="{src_url}" rel="noopener" target="_blank">{src_name}</a>.</p>
 <div class="ad-slot"><!-- AD SLOT: article-mid. Paste your AdSense/ad-network snippet here. -->Ad space</div>
 </div>
-<footer><div class="wrap"><p><a href="/">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
+<footer><div class="wrap"><p><a href="/">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a><a href="https://www.linkedin.com/company/the-last-24/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/thelast24in/" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/Thelast24IN" target="_blank" rel="noopener">X</a></p><p>{SITE_NAME} curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
 </body></html>""".replace("/*MASTHEAD_CSS*/", _mcss)
 
 # ---------------------------------------------------------------- outputs ---
@@ -1085,7 +1087,7 @@ footer a{{color:var(--green-bright);text-decoration:none;margin-right:14px}}
 {groups}
 <p class="empty" id="empty">No stories match those filters.</p>
 </div>
-<footer><div class="wrap"><p><a href="/">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></p>
+<footer><div class="wrap"><p><a href="/">Today's brief</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="https://www.linkedin.com/company/the-last-24/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/thelast24in/" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/Thelast24IN" target="_blank" rel="noopener">X</a></p>
 <p>{SITE_NAME} — automated brief from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
 <script>
 (function(){{
@@ -1320,7 +1322,7 @@ footer{border-top:1px solid var(--hairline);padding:30px 0;font-family:var(--mon
   <div class="updated" id="updated"></div>
 </div>
 <div class="wrap tlist" id="tlist"></div>
-<footer><div class="wrap">The Last 24 · Verified publishers only · <a href="/">Home</a> · <a href="/current-affairs.html">Current Affairs</a> · <a href="/archive.html">Archive</a></div></footer>
+<footer><div class="wrap">The Last 24 · Verified publishers only · <a href="/">Home</a> · <a href="/current-affairs.html">Current Affairs</a> · <a href="/archive.html">Archive</a><br><span class="f-social"><a href="https://www.linkedin.com/company/the-last-24/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/thelast24in/" target="_blank" rel="noopener">Instagram</a> · <a href="https://x.com/Thelast24IN" target="_blank" rel="noopener">X</a></span></div></footer>
 <script src="trending.js"></script>
 <script>
 var HUES=/*HUES*/;
