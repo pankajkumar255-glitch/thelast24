@@ -330,6 +330,70 @@ def clean_stories(items, section_name):
         out.append(st)
     return out
 
+def _semantic_dedup(sections):
+    """Use Claude to catch duplicates that word-overlap misses: the SAME event
+    reported with different vocabulary (e.g. 'RBI cuts repo rate' vs 'Reserve
+    Bank reduces lending rate'). Sends every story's headline (with a stable
+    index) and asks Claude to group same-event stories; we then keep the first
+    (highest-priority) story in each group and drop the rest. One call per run.
+    Fails safe: on any error, returns sections unchanged."""
+    # Flatten to an indexed list, preserving section order (so the kept story is
+    # the one in the earliest/most-relevant section).
+    flat = []
+    for si, sec in enumerate(sections):
+        for sti, st in enumerate(sec["stories"]):
+            flat.append((si, sti, st))
+    if len(flat) < 2:
+        return sections
+
+    listing = "\n".join(f"{i}: {st.get('headline','')}" for i, (_, _, st) in enumerate(flat))
+    sys_prompt = (
+        "You are de-duplicating a news brief. You will get a numbered list of "
+        "headlines. Some describe the SAME underlying real-world event even "
+        "though they are worded very differently (different verbs, synonyms, "
+        "partial info). Identify groups of headlines that report the SAME event.\n"
+        "STRICT RULES:\n"
+        "- Group two headlines ONLY if they are genuinely the same event/story "
+        "(same who+what). Different events that merely share a topic, person, or "
+        "company are NOT duplicates (e.g. two different cricket matches, two "
+        "separate policy announcements, two unrelated quarterly results).\n"
+        "- When unsure, do NOT group them. Over-grouping (merging distinct "
+        "stories) is worse than missing one duplicate.\n"
+        "- Most headlines will be unique and in no group.\n"
+        'Respond with ONLY JSON: {"groups": [[indices of same event], ...]} '
+        "where each group has 2+ indices. Omit singletons entirely. If there are "
+        'no duplicates, respond {"groups": []}.')
+    try:
+        data = extract_json(call_claude(sys_prompt, listing, 1000), "semantic-dedup")
+        groups = data.get("groups", [])
+        if not isinstance(groups, list):
+            return sections
+        drop = set()
+        for grp in groups:
+            if not isinstance(grp, list) or len(grp) < 2:
+                continue
+            idxs = sorted(int(i) for i in grp if isinstance(i, (int, float)) and 0 <= int(i) < len(flat))
+            # keep the first (earliest section = highest priority), drop the rest
+            for extra in idxs[1:]:
+                drop.add(extra)
+        if not drop:
+            print("Semantic dedup: no cross-vocabulary duplicates found.")
+            return sections
+        # Rebuild sections without the dropped stories.
+        for i in sorted(drop, reverse=True):
+            si, sti, st = flat[i]
+            print(f"  -> semantic duplicate dropped from {sections[si]['name']}: "
+                  f"{st.get('headline','')[:50]}")
+            sections[si]["stories"][sti] = None
+        for sec in sections:
+            sec["stories"] = [s for s in sec["stories"] if s is not None]
+        print(f"Semantic dedup: removed {len(drop)} same-event duplicate(s).")
+        return sections
+    except (RuntimeError, ValueError) as exc:
+        print(f"Semantic dedup skipped ({exc}); keeping word-overlap result.")
+        return sections
+
+
 def _carry_forward_sections(needed_ids):
     """For each section id in needed_ids, find its most recent stories from the
     saved editions (newest first). Returns {sid: [stories]}. Used so a section
@@ -424,6 +488,34 @@ def write_edition(raw):
 
     if not sections:
         sys.exit("Every section failed — no edition produced this run.")
+
+    # CROSS-SECTION de-duplication: a big breaking story can be written into more
+    # than one section (it's offered to all). Keep it only in the FIRST section
+    # that carried it, and drop the repeats elsewhere — so the hero carousel and
+    # the page never show the same event twice. Breaking stories are checked
+    # first (they're the usual culprits), preserving section order otherwise.
+    global_fps = []
+    for sec in sections:
+        kept = []
+        for st in sec["stories"]:
+            fp = _story_fingerprint(st)
+            if _is_dupe(fp, global_fps):
+                print(f"  -> cross-section duplicate dropped from {sec['name']}: "
+                      f"{st.get('headline','')[:50]}")
+                continue
+            global_fps.append(fp)
+            kept.append(st)
+        sec["stories"] = kept
+    # A section emptied entirely by cross-dedup will be back-filled below.
+    sections = [s for s in sections if s["stories"]]
+    if not sections:
+        sys.exit("Every section emptied after de-duplication — no edition produced.")
+
+    # SEMANTIC de-duplication (Claude): catches same-event stories that the
+    # word-overlap pass misses because they're reworded with different
+    # vocabulary. One call per run. Fails safe (keeps the word-overlap result).
+    sections = _semantic_dedup(sections)
+    sections = [s for s in sections if s["stories"]]
 
     # Guarantee all seven sections always appear on the homepage, in order.
     # If a section pulled nothing this run, carry forward its most recent
