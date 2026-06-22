@@ -691,7 +691,7 @@ window.BRIEF = window.BRIEF || {
       var setB = {}; b.forEach(function(x){ setB[x]=1; });
       var ov = 0; a.forEach(function(x){ if(setB[x]) ov++; });
       var uni = {}; a.concat(b).forEach(function(x){ uni[x]=1; });
-      return ov / Object.keys(uni).length >= 0.34;
+      return ov / Object.keys(uni).length >= 0.3;
     }
     var seen = [];
     B.sections.forEach(function(s){
@@ -761,7 +761,7 @@ window.BRIEF = window.BRIEF || {
     var setB = {}; b.forEach(function(x){ setB[x]=1; });
     var ov = 0; a.forEach(function(x){ if(setB[x]) ov++; });
     var uni = {}; a.concat(b).forEach(function(x){ uni[x]=1; });
-    return ov / Object.keys(uni).length >= 0.34;
+    return ov / Object.keys(uni).length >= 0.3;
   }
   var deduped = [], seenFps = [];
   allPairs.forEach(function(pair){
