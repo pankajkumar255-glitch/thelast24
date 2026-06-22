@@ -438,13 +438,55 @@ def write_edition(raw):
                 breaking_pool.append(line)
             else:
                 groups.setdefault(tag, []).append(line)
-    # Make the India-wide breaking stories visible to EVERY section, so a big
-    # cross-section story (e.g. a major appointment) gets picked up wherever it
-    # best fits, rather than being lost because it didn't match a section query.
+    # Route each breaking story to the SINGLE section it best fits (by keyword),
+    # so a sports story only reaches Sports and a business story only Business —
+    # no topic bleed. A breaking story with no clear topical home is left for the
+    # section queries to catch (it isn't force-fed anywhere).
+    _ = breaking_pool
     if breaking_pool:
-        for name in SECTION_IDS:
-            groups.setdefault(name, [])
-            groups[name] = breaking_pool + groups[name]
+        SECTION_KEYWORDS = {
+            "National": ["supreme court", "parliament", "modi", "minister", "bjp",
+                         "congress", "policy", "government", "election", "court",
+                         "police", "protest", "scheme", "cabinet", "verdict"],
+            "World": ["us", "china", "russia", "ukraine", "israel", "gaza", "un",
+                      "pakistan", "trump", "putin", "global", "world", "nato",
+                      "europe", "summit", "war", "border"],
+            "Business & Markets": ["sensex", "nifty", "rupee", "rbi", "market",
+                       "stock", "ipo", "economy", "gdp", "profit", "revenue",
+                       "company", "ceo", "funding", "billion", "crore",
+                       "bank", "tax", "trade", "investment", "shares"],
+            "Technology": ["app", "software", "smartphone", "iphone", "android",
+                       "google", "apple", "microsoft", "chip", "semiconductor",
+                       "gadget", "tech", "5g", "internet", "cyber", "device"],
+            "Artificial Intelligence": ["ai", "artificial intelligence", "openai",
+                       "chatgpt", "gemini", "anthropic", "claude", "llm",
+                       "machine learning", "neural", "gpt"],
+            "Sports": ["cricket", "football", "kohli", "rohit", "match", "world cup",
+                       "ipl", "olympic", "tournament", "wicket", "goal", "fifa",
+                       "bcci", "tennis", "hockey", "medal", "captain", "squad"],
+            "Entertainment": ["bollywood", "film", "movie", "actor", "actress",
+                       "box office", "ott", "netflix", "song", "album", "release",
+                       "trailer", "celebrity", "show", "series"],
+        }
+        import re as _re
+        for line in breaking_pool:
+            # extract the headline portion: "HH:MM IST | [BREAKING] TITLE | src | url"
+            parts = line.split(" | ")
+            title = parts[1].replace("[BREAKING]", "").strip().lower() if len(parts) > 1 else ""
+            best, best_hits = None, 0
+            for name, kws in SECTION_KEYWORDS.items():
+                hits = 0
+                for kw in kws:
+                    # whole-word / phrase match (so "ai" doesn't match "Mumbai")
+                    if _re.search(r"(?<![a-z])" + _re.escape(kw.strip()) + r"(?![a-z])", title):
+                        hits += 1
+                if hits > best_hits:
+                    best, best_hits = name, hits
+            # Only assign if there's a clear topical match (>=1 keyword hit).
+            if best and best_hits >= 1:
+                groups.setdefault(best, [])
+                retagged = line.replace("[BREAKING]", f"[{best}]")
+                groups[best] = [retagged] + groups[best]
 
     sections = []
     for name, sid in SECTION_IDS.items():
