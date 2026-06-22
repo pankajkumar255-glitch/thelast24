@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://thelast24.in/articles/20260622-google-deepmind-loses-nobel-laureate-john-jumper-to-anthropic.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Google DeepMind loses Nobel laureate John Jumper to Anthropic", "description": "John Jumper, the scientist who won the 2024 Nobel Prize in Chemistry for his work on AlphaFold — the AI system that predicted the 3D structure of nearly every known protein — has left Google DeepMind to join Anthropic. The move is a significant talent win for Anthropic and a notable loss for DeepMind, where Jumper led one of the most celebrated breakthroughs in modern science. His hire signals Anthropic's ambition to deepen its fundamental AI research bench.", "datePublished": "2026-06-22T10:45:53.354511+05:30", "dateModified": "2026-06-22T10:45:53.354511+05:30", "articleSection": "Artificial Intelligence", "author": {"@type": "Organization", "name": "The Last 24"}, "publisher": {"@type": "Organization", "name": "The Last 24", "url": "https://thelast24.in"}, "mainEntityOfPage": "https://thelast24.in/articles/20260622-google-deepmind-loses-nobel-laureate-john-jumper-to-anthropic.html", "isBasedOn": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORnFkRlJIN2otYnFyb0IzbFpRU3NKRTdMZHhiSEtGYnlaOWpVdEJSdFViZjZVR2VfM2NhR055UEEzZmpSUHQwVC16SEhienRxdkVaZThpZGR6UEJWRmwtT3ZEcXZvb1BERzJoZGVmTTZuTmhmcDBoZG9yQW9GMjlGemZoTkdSQXZCSFFZcjZsdDkxLTdmaENNYUhQTDRfTUxUY2tNYXpUbTVLakFKMkc1Zw?oc=5", "image": ["https://upload.wikimedia.org/wikipedia/commons/b/b0/John_Jumper%2C_2024_Nobel_Prize_Laureate_in_Chemistry.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Google DeepMind loses Nobel laureate John Jumper to Anthropic", "description": "John Jumper, the scientist who won the 2024 Nobel Prize in Chemistry for his work on AlphaFold — the AI system that predicted the 3D structure of nearly every known protein — has left Google DeepMind to join Anthropic. The move is a significant talent win for Anthropic and a notable loss for DeepMind, where Jumper led one of the most celebrated breakthroughs in modern science. His hire signals Anthropic's ambition to deepen its fundamental AI research bench.", "datePublished": "2026-06-22T15:46:25.290184+05:30", "dateModified": "2026-06-22T15:46:25.290184+05:30", "articleSection": "Artificial Intelligence", "author": {"@type": "Organization", "name": "The Last 24"}, "publisher": {"@type": "Organization", "name": "The Last 24", "url": "https://thelast24.in"}, "mainEntityOfPage": "https://thelast24.in/articles/20260622-google-deepmind-loses-nobel-laureate-john-jumper-to-anthropic.html", "isBasedOn": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORnFkRlJIN2otYnFyb0IzbFpRU3NKRTdMZHhiSEtGYnlaOWpVdEJSdFViZjZVR2VfM2NhR055UEEzZmpSUHQwVC16SEhienRxdkVaZThpZGR6UEJWRmwtT3ZEcXZvb1BERzJoZGVmTTZuTmhmcDBoZG9yQW9GMjlGemZoTkdSQXZCSFFZcjZsdDkxLTdmaENNYUhQTDRfTUxUY2tNYXpUbTVLakFKMkc1Zw?oc=5", "image": ["https://upload.wikimedia.org/wikipedia/commons/b/b0/John_Jumper%2C_2024_Nobel_Prize_Laureate_in_Chemistry.jpg"]}</script>
 <style>
 :root{--paper:#F7F6F2;--ink:#0F140F;--ink-soft:#454B43;--meta:#767B71;--hairline:#E9EAE3;--hue:#3C8585;
 --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -23,7 +23,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);line-heigh
 .band{background:var(--dark);color:#F2F4EE;padding:20px 0}
 .band .wrap{max-width:var(--mw,920px);margin:0 auto;padding:0 20px}
 .brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
-.brand-row .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1;color:#F2F4EE}
+.brand-row .brand{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,34px);letter-spacing:-.02em;text-decoration:none;line-height:1;color:#F2F4EE;white-space:nowrap;flex-shrink:0}
 .brand-row .brand span{color:var(--green-bright)}
 .brand-side{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
 .brand-nav{display:flex;align-items:center;gap:10px}
@@ -36,9 +36,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);line-heigh
 @media (max-width:600px){
   .brand-meta{display:none}
   .brand-row{flex-wrap:wrap;gap:10px}
-  .brand-side{width:100%;justify-content:flex-start}
+  .brand-side{width:100%;justify-content:flex-start;position:relative}
   .brand-nav{width:100%;overflow-x:auto;flex-wrap:nowrap;gap:8px;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .brand-nav::-webkit-scrollbar{display:none}
+  /* Right-edge fade = visible hint that the nav scrolls horizontally. */
+  .brand-side::after{content:"";position:absolute;top:0;right:0;width:28px;height:100%;background:linear-gradient(to right,transparent,var(--dark));pointer-events:none}
   .m-ca,.m-link{font-size:11px;padding:6px 11px;flex-shrink:0}
 }
 
@@ -95,5 +97,5 @@ footer a{color:#3BCB8D;text-decoration:none}
 <p class="cite">This is a summary brief. Original reporting and all facts: <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxORnFkRlJIN2otYnFyb0IzbFpRU3NKRTdMZHhiSEtGYnlaOWpVdEJSdFViZjZVR2VfM2NhR055UEEzZmpSUHQwVC16SEhienRxdkVaZThpZGR6UEJWRmwtT3ZEcXZvb1BERzJoZGVmTTZuTmhmcDBoZG9yQW9GMjlGemZoTkdSQXZCSFFZcjZsdDkxLTdmaENNYUhQTDRfTUxUY2tNYXpUbTVLakFKMkc1Zw?oc=5" rel="noopener" target="_blank">outlookbusiness.com</a>.</p>
 <div class="ad-slot"><!-- AD SLOT: article-mid. Paste your AdSense/ad-network snippet here. -->Ad space</div>
 </div>
-<footer><div class="wrap"><p><a href="/">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a></p><p>The Last 24 curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
+<footer><div class="wrap"><p><a href="/">Today's brief</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a><a href="https://www.linkedin.com/company/the-last-24/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/thelast24in/" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/Thelast24IN" target="_blank" rel="noopener">X</a></p><p>The Last 24 curates exclusively from verified publishers. Founded by Pankaj Kumar.</p></div></footer>
 </body></html>
