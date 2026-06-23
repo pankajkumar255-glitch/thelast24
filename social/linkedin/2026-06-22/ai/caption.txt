@@ -1,0 +1,13 @@
+India's AI Strategy Problem: Why Sovereign Models May Not Be the Answer.
+
+The stories shaping artificial intelligence today (Monday, 22 June 2026):
+
+• India's AI Strategy Problem: Why Sovereign Models May Not Be the Answer — Business Standard argues that India's push to develop sovereign AI models — homegrown large language models built and controlled by the state — may be strategically misguided.
+• Google DeepMind Loses Nobel Winner John Jumper to Anthropic — John Jumper, the Nobel Prize-winning AI scientist celebrated for co-developing AlphaFold — the protein-structure prediction system that transformed biological research — has left Google DeepMind to join Anthropic, the AI safety company backed by Amazon.
+• Trump Says He No Longer Views Anthropic as a National Security Threat — US President Donald Trump has reportedly reversed his earlier position on Anthropic, stating he no longer considers the AI safety company a national security threat.
+• Tech Workers Who Maxed Out AI Use Are Now Pulling Back — A growing cohort of technology workers who were early, intensive adopters of AI tools are now deliberately scaling back their usage, according to a report in The Indian Express.
+• India's Sovereign AI Model Push May Be the Wrong Answer, Analysts Warn — A Business Standard analysis argues that India's government strategy of building sovereign AI models — state-backed large language models developed domestically — may be misaligned with where AI value is actually created.
+
+What's your read on this?
+
+#ArtificialIntelligence #AI #Technology #Innovation #TheLast24
