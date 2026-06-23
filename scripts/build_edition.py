@@ -151,7 +151,15 @@ def collect_breaking():
             seen.add(key)
             hot_fps.append(fp)
             url2 = resolve_url(e.link)
-            lines.append(f"{pub.strftime('%H:%M')} IST | [BREAKING] {title} | {src} | {url2}")
+            summary = ""
+            raw_sum = getattr(e, "summary", "") or getattr(e, "description", "") or ""
+            if raw_sum:
+                summary = re.sub(r"<[^>]+>", " ", raw_sum)
+                summary = re.sub(r"\s+", " ", summary).strip()[:300]
+            if summary and summary.lower() not in title.lower():
+                lines.append(f"{pub.strftime('%H:%M')} IST | [BREAKING] {title} — {summary} | {src} | {url2}")
+            else:
+                lines.append(f"{pub.strftime('%H:%M')} IST | [BREAKING] {title} | {src} | {url2}")
             count += 1
     print(f"Breaking/top-stories: {len(lines)} hot headlines pulled.")
     return lines, hot_fps
@@ -180,7 +188,18 @@ def collect_headlines():
                 continue
             title = re.sub(r"\s+-\s+[^-]+$", "", e.title).strip()
             url = resolve_url(e.link)
-            lines.append(f"{pub.strftime('%H:%M')} IST | [{section}] {title} | {src} | {url}")
+            # Include a short cleaned summary if present — this often carries the
+            # exact figures (rates, scores, amounts) that the bare title omits,
+            # so Claude can reproduce the REAL number instead of guessing one.
+            summary = ""
+            raw_sum = getattr(e, "summary", "") or getattr(e, "description", "") or ""
+            if raw_sum:
+                summary = re.sub(r"<[^>]+>", " ", raw_sum)          # strip HTML
+                summary = re.sub(r"\s+", " ", summary).strip()[:300]
+            if summary and summary.lower() not in title.lower():
+                lines.append(f"{pub.strftime('%H:%M')} IST | [{section}] {title} — {summary} | {src} | {url}")
+            else:
+                lines.append(f"{pub.strftime('%H:%M')} IST | [{section}] {title} | {src} | {url}")
             count += 1
     print(f"Filtered out {skipped} items from non-allowlisted sources.")
     # Pull India-wide breaking / top stories too, so big cross-section stories
@@ -207,15 +226,16 @@ SECTION_IDS = {
 EDITORIAL_RULES = """You are the editor of "The Last 24", an automated brief covering everything that mattered in India in the last 24 hours, for a general Indian reader. Every headline you receive comes from a verified, established publisher. You will be given the raw headlines for ONE section and must produce that section's stories.
 
 EDITORIAL RULES:
+- #1 ACCURACY RULE — NEVER INVENT OR ALTER A NUMBER. Any specific figure (an exchange rate, a score, a price, an amount, a percentage, a date, a count, an age, a margin) must be reproduced EXACTLY as it appears in the headline/source you were given, character for character. If the exact figure is NOT present in the text you received, you MUST NOT supply one from memory, estimate one, or write a plausible-looking value. Instead describe the move qualitatively (e.g. "the rupee weakened against the dollar", "the index fell sharply") WITHOUT a fabricated precise number. Writing "84.63" when the source says "94" — or inventing any number not in the source — is the single worst error you can make and destroys the brief's credibility. When in doubt about a number, leave it out.
 - Some headlines are tagged [BREAKING] — these are India-wide top/breaking stories. INCLUDE a [BREAKING] story ONLY if it genuinely belongs in THIS section's topic. If a breaking story fits this section and is significant, prioritise it near the top. If it doesn't fit this section, ignore it (another section will cover it). Never force an unrelated breaking story into this section.
 - Keep only the strongest stories up to the limit given; drop weak/duplicate ones. Treat two items as duplicates if they report the SAME underlying event even when the headlines are worded differently — keep only the single best one.
 - WRITE DIRECTLY AND CONCRETELY: name the companies, brands, people, places and figures exactly as the headlines give them ("Reliance", "Zomato", "Virat Kohli", "Rs 2,000 crore"). NEVER use vague substitutes like "a major company" or "two platforms".
-- CARRY THE CORE FACTS. If the story has specific concrete details that are its whole point, INCLUDE them rather than gesturing at them. Examples: a squad/team announcement -> name the key players actually picked; a budget/scheme -> the amount and who it's for; a match result -> the score and standout performers; an appointment -> who, to what post; a policy -> the specific change. A summary that says "the squad was announced" without naming anyone is a FAILURE.
+- CARRY THE CORE FACTS — but only the REAL ones. If the story has specific concrete details present in the source, INCLUDE them rather than gesturing at them. Examples: a squad/team announcement -> name the key players actually given; a budget/scheme -> the amount and who it's for; a match result -> the score and standout performers; an appointment -> who, to what post; a policy -> the specific change. BUT if a specific figure or name is NOT in the text you received, do not manufacture it (see ACCURACY RULE #1). A summary that says "the squad was announced" without naming anyone is weak; inventing names or numbers that weren't given is far worse. Use what's real; describe the rest qualitatively.
 - "what" = a substantial 3-4 sentence standfirst (roughly 55-80 words): lead with the development itself and its key concrete details, then one line of immediate significance. Do NOT open with "According to" or a publisher name — state the news directly. Strictly from the headline plus universally known background.
 - "lens" = 1 sharp, SPECIFIC sentence: why this exact story matters to an everyday Indian reader — money, daily life, or the bigger picture. It must be concrete to THIS story, not a generic platitude. If you cannot write a genuinely specific reason, write a plainer factual significance instead of a vague one. Never filler like "this is an important development".
 - Editorial article (write like a news editor, NOT a summariser): write a polished "article" of 4-5 short paragraphs (~200-280 words) that reads like real journalism. CRITICAL RULES:
   * LEAD WITH THE NEWS ITSELF, not with attribution. Open with the actual development and its hardest, most concrete facts — exactly as a front-page lede would. NEVER begin with "According to...", "X reports...", "In a report by...", or "As per...". The opening sentence must state what actually happened, with specifics.
-  * DELIVER THE DETAILS, don't gesture at them. If a squad was named, name the actual players in the squad. If a match finished, give the score, scorers, and key moments as a match report would. If a budget/scheme was announced, state the actual amounts and beneficiaries. If a verdict came down, state what was actually ruled. The reader should finish knowing the real specifics, not just that an announcement happened.
+  * DELIVER THE DETAILS that are actually in the source, don't gesture at them — but NEVER invent specifics that aren't. If a squad was named in the source, name the actual players; if not, don't list names. If a match finished and the score is given, report it exactly; if the exact score isn't in what you received, describe the result without a made-up scoreline. If a budget/scheme states amounts, use the exact amounts; never approximate or recall a figure from memory. Re-read ACCURACY RULE #1: a precise number must come from the source or be omitted. The reader should finish knowing the real specifics — never invented ones.
   * PARAGRAPH IT LIKE AN EDITOR: a strong factual lede paragraph; then 2-3 body paragraphs developing the detail, context and reactions; a closing paragraph on what it means or what comes next. Each paragraph 2-4 sentences, flowing prose.
   * Attribution belongs woven in naturally LATER (e.g. "The selectors confirmed..." or a mid-article "as reported by The Hindu"), or simply via the source link — never as the opening crutch.
   * GROUNDING: use the headline, the provided context, and widely-established facts. Be specific and detailed, but NEVER invent quotes, exact statistics, scorelines, or full name-lists you don't actually have — if a precise detail isn't available, write authoritatively around what IS known rather than fabricating. Accuracy outranks completeness.
