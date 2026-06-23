@@ -1,0 +1,147 @@
+{
+  "date": "2026-06-23",
+  "label": "Tuesday, 23 June 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-06-23/world/slide-01.png",
+        "social/instagram/2026-06-23/world/slide-02.png",
+        "social/instagram/2026-06-23/world/slide-03.png",
+        "social/instagram/2026-06-23/world/slide-04.png",
+        "social/instagram/2026-06-23/world/slide-05.png",
+        "social/instagram/2026-06-23/world/slide-06.png",
+        "social/instagram/2026-06-23/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/world/caption.txt",
+      "pdf": "social/instagram/2026-06-23/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-23/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-23/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-06-23/business/slide-01.png",
+        "social/instagram/2026-06-23/business/slide-02.png",
+        "social/instagram/2026-06-23/business/slide-03.png",
+        "social/instagram/2026-06-23/business/slide-04.png",
+        "social/instagram/2026-06-23/business/slide-05.png",
+        "social/instagram/2026-06-23/business/slide-06.png",
+        "social/instagram/2026-06-23/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/business/caption.txt",
+      "pdf": "social/instagram/2026-06-23/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-06-23/tech/slide-01.png",
+        "social/instagram/2026-06-23/tech/slide-02.png",
+        "social/instagram/2026-06-23/tech/slide-03.png",
+        "social/instagram/2026-06-23/tech/slide-04.png",
+        "social/instagram/2026-06-23/tech/slide-05.png",
+        "social/instagram/2026-06-23/tech/slide-06.png",
+        "social/instagram/2026-06-23/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/tech/caption.txt",
+      "pdf": "social/instagram/2026-06-23/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-23/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-23/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-06-23/national/slide-01.png",
+        "social/instagram/2026-06-23/national/slide-02.png",
+        "social/instagram/2026-06-23/national/slide-03.png",
+        "social/instagram/2026-06-23/national/slide-04.png",
+        "social/instagram/2026-06-23/national/slide-05.png",
+        "social/instagram/2026-06-23/national/slide-06.png",
+        "social/instagram/2026-06-23/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/national/caption.txt",
+      "pdf": "social/instagram/2026-06-23/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-06-23/ai/slide-01.png",
+        "social/instagram/2026-06-23/ai/slide-02.png",
+        "social/instagram/2026-06-23/ai/slide-03.png",
+        "social/instagram/2026-06-23/ai/slide-04.png",
+        "social/instagram/2026-06-23/ai/slide-05.png",
+        "social/instagram/2026-06-23/ai/slide-06.png",
+        "social/instagram/2026-06-23/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/ai/caption.txt",
+      "pdf": "social/instagram/2026-06-23/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-23/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-23/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-06-23/sports/slide-01.png",
+        "social/instagram/2026-06-23/sports/slide-02.png",
+        "social/instagram/2026-06-23/sports/slide-03.png",
+        "social/instagram/2026-06-23/sports/slide-04.png",
+        "social/instagram/2026-06-23/sports/slide-05.png",
+        "social/instagram/2026-06-23/sports/slide-06.png",
+        "social/instagram/2026-06-23/sports/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/sports/caption.txt",
+      "pdf": "social/instagram/2026-06-23/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-06-23/entertainment/slide-01.png",
+        "social/instagram/2026-06-23/entertainment/slide-02.png",
+        "social/instagram/2026-06-23/entertainment/slide-03.png",
+        "social/instagram/2026-06-23/entertainment/slide-04.png",
+        "social/instagram/2026-06-23/entertainment/slide-05.png",
+        "social/instagram/2026-06-23/entertainment/slide-06.png",
+        "social/instagram/2026-06-23/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-06-23/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "worldcup",
+      "name": "World Cup",
+      "slides": [
+        "social/instagram/2026-06-23/worldcup/slide-01.png",
+        "social/instagram/2026-06-23/worldcup/slide-02.png",
+        "social/instagram/2026-06-23/worldcup/slide-03.png",
+        "social/instagram/2026-06-23/worldcup/slide-04.png",
+        "social/instagram/2026-06-23/worldcup/slide-05.png",
+        "social/instagram/2026-06-23/worldcup/slide-06.png"
+      ],
+      "caption_file": "social/instagram/2026-06-23/worldcup/caption.txt",
+      "pdf": "social/instagram/2026-06-23/worldcup/carousel.pdf",
+      "slide_count": 6
+    }
+  ]
+}
