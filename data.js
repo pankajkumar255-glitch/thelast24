@@ -87,8 +87,8 @@ window.BRIEF = {
           "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8zdGpmY1RZMmlzZ2o0LXRlSzRhbEJ0ZXctTWxNNVk5V2Vjb09kaDM1V3NWa3lObTZ6dVd2d1NFSWtyb1YzZS1fUEV0LTYtbUVGZmZYeHFNRWd4N215Mnpib1FTdTZ3cUE",
           "breaking": false,
           "_hot": false,
-          "slug": "20260623-lionel-messi-sets-more-records-as-argentina-advance-in-world-cup-2026",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Lionel_Messi_White_House_2026_%283x4_cropped%29.jpg",
+          "slug": "20260623-messi-sets-top-scorer-record-as-fifa-world-cup-2026-action-continues",
+          "image": "https://pixabay.com/get/g733b93d5aefbed3f04dd302bc491b4259a056b24bbb32dedb90bc37be2508ba5a3b7b21742253a2c3cdf92ac57627e9f4b2aa5edd9e155d069d67ce65e6c3bd2_1280.jpg",
           "image_kind": "photo",
           "image_credit": "The White House / Wikimedia Commons",
           "image_credit_url": "https://en.wikipedia.org/wiki/Lionel_Messi",
@@ -173,15 +173,16 @@ window.BRIEF = {
           "lens": "When India's biggest equity fund bets heavily on a sector going against the crowd, it often signals a turning point — retail investors and smaller funds tend to watch such moves closely before repositioning their own portfolios.",
           "source": "NDTV Profit",
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMERjd0I2YnpYcWFMQ2FrM1lBLVRCaC1qSjluSEV1QjJ3ZDdoeGcyZDRTTXAxTDd3cVhhVmtWOUl5RG9kX01TQXkxdFBHMENST2ZDRmI3UWJZV0dPRmU1Q0Jhd1ZINV8yNEhBT2d5a1Q2Nk1YVjZXQ0k3WmZ3djA4SzJpR2RmZU9qZENROEJSTDRfSTE1STI4aUhZaS1JRnFHVHNGaWliZw",
-          "breaking": true,
-          "_hot": true,
+          "breaking": false,
+          "_hot": false,
           "slug": "20260623-india-s-biggest-equity-fund-makes-contrarian-bet-on-it-stocks",
           "image": "https://images.pexels.com/photos/14907378/pexels-photo-14907378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
           "image_credit": "Ravi Roshan",
           "image_credit_url": "https://www.pexels.com/@ravi-roshan-2875998"
         }
-      ]
+      ],
+      "carried": true
     },
     {
       "id": "tech",
@@ -286,8 +287,8 @@ window.BRIEF = {
           "slug": "20260623-supreme-court-orders-right-to-walk-on-footpaths-amid-surge-in-pedestri",
           "image": "https://images.pexels.com/photos/365813/pexels-photo-365813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           "image_kind": "photo",
-          "image_credit": "Dom J",
-          "image_credit_url": "https://www.pexels.com/@dom-j-7304"
+          "image_credit": "Avrajyoti Mitra / Wikimedia Commons",
+          "image_credit_url": "https://en.wikipedia.org/wiki/Calcutta_High_Court"
         },
         {
           "hour": 16,
