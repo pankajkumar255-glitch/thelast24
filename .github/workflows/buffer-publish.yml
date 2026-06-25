@@ -7,7 +7,9 @@ name: Publish to Buffer
 on:
   workflow_dispatch:        # manual "Run workflow" button
   schedule:
-    - cron: "30 4 * * *"     # 04:30 UTC = 10:00 IST — well after social build + Pages deploy
+    - cron: "30 22 * * *"    # 22:30 UTC = 04:00 IST. NOTE: GitHub free-tier cron
+                             # can be delayed 15-60 min or skipped under load, so
+                             # this fires *around* 4 AM IST, not exactly on time.
 
 permissions:
   contents: write           # to commit the posted-tracking files
