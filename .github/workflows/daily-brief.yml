@@ -2,7 +2,11 @@ name: Publish edition
 
 on:
   schedule:
-    - cron: "15 */6 * * *"   # every 6 hours at :15 UTC (00:15, 06:15, 12:15, 18:15 = 05:45, 11:45, 17:45, 23:45 IST)
+    # Twice a day only (each run calls the Claude API, ~$1/run):
+    - cron: "30 18 * * *"   # 18:30 UTC = 00:00 IST  (midnight refresh)
+    - cron: "30 6 * * *"    # 06:30 UTC = 12:00 IST  (noon refresh)
+    # NOTE: GitHub free-tier cron can drift 15-60 min or skip under load, so
+    # these fire *around* midnight and noon IST, not exactly on the dot.
   workflow_dispatch:
     inputs:
       backfill_days:
