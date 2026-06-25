@@ -123,9 +123,14 @@ def _create_post(channel_id, text, image_urls=None, instagram=False, slot_index=
         # For images: {"image": {"url": "..."}} — NOT {"type","url"}.
         inp["assets"] = [{"image": {"url": u}} for u in image_urls]
     if instagram:
-        # Instagram requires a post type. A multi-image carousel is a feed "post".
-        # PostType is a GraphQL enum, passed via a typed variable below.
-        inp["metadata"] = {"instagram": {"type": "post", "shouldShareToFeed": True}}
+        # Instagram requires a post type. A multi-image carousel is a feed "post";
+        # a single vertical image can be published as a "story" (media only —
+        # Buffer/Instagram API can't auto-add tappable link stickers).
+        ig_type = "story" if instagram == "story" else "post"
+        if ig_type == "story":
+            inp["metadata"] = {"instagram": {"type": "story"}}
+        else:
+            inp["metadata"] = {"instagram": {"type": "post", "shouldShareToFeed": True}}
     data = _gql(_CREATE, {"input": inp})
     res = data.get("createPost", {})
     if res.get("message"):
@@ -187,17 +192,25 @@ def publish_tweets():
         key = item.get("key")
         if not key or key in done:
             continue
-        # Image priority: the story's own photo -> the section's branded cover
-        # slide -> nothing. Ensures a tweet is essentially never imageless.
-        img = (item.get("image") or "").strip()
-        if not img:
-            img = covers.get(item.get("section", ""), "")
-        imgs = [img] if img else None
+        text = item["text"]
+        # LINK-PREVIEW BEHAVIOUR: if the tweet contains its article link (it
+        # normally does), DON'T attach an uploaded image — X will auto-generate
+        # a rich link-preview card from the article page's Open Graph image and
+        # title, which is more clickable and "Twitter-native" than a bare photo.
+        # Only attach an image as a fallback when the tweet has NO link.
+        has_link = "http://" in text or "https://" in text
+        if has_link:
+            imgs = None
+        else:
+            img = (item.get("image") or "").strip()
+            if not img:
+                img = covers.get(item.get("section", ""), "")
+            imgs = [img] if img else None
         try:
-            pid = _create_post(X_CHANNEL, item["text"], image_urls=imgs, slot_index=sent)
+            pid = _create_post(X_CHANNEL, text, image_urls=imgs, slot_index=sent)
             done.add(key)
             sent += 1
-            tag = "with image" if imgs else "text only"
+            tag = "link preview" if has_link else ("with image" if imgs else "text only")
             print(f"  ✓ tweet queued to Buffer ({tag}) ({key[:40]}) id={pid}")
             time.sleep(1)
         except Exception as exc:
@@ -205,7 +218,7 @@ def publish_tweets():
             # never NEEDS an image — retry text-only so it still goes out.
             if imgs:
                 try:
-                    pid = _create_post(X_CHANNEL, item["text"], image_urls=None,
+                    pid = _create_post(X_CHANNEL, text, image_urls=None,
                                        slot_index=sent)
                     done.add(key)
                     sent += 1
@@ -276,6 +289,60 @@ def publish_carousels():
     with open(posted_path, "w", encoding="utf-8") as f:
         json.dump({"sections": list(done)}, f, ensure_ascii=False, indent=2)
     print(f"Carousels pushed to Buffer: {sent} (from {date_dir}).")
+
+
+# ----------------------------------------------------------------- stories ---
+def publish_stories():
+    """Push the day's Instagram STORY images (from manifest['stories']) to Buffer
+    as individual Instagram stories. Buffer auto-posts story MEDIA; it cannot
+    auto-add tappable link stickers (Instagram API limit), so these are
+    media-only with an in-bio call to action baked into the image. Each story
+    image is posted as a SEPARATE story (Buffer requires one media per story)."""
+    if not IG_CHANNEL:
+        print("No BUFFER_IG_CHANNEL_ID set — skipping stories.")
+        return
+    manifests = sorted(glob.glob("social/instagram/*/manifest.json"))
+    if not manifests:
+        print("No manifests — nothing to post to stories.")
+        return
+    mpath = manifests[-1]
+    base = os.path.dirname(mpath)
+    date_dir = os.path.basename(base)
+    with open(mpath, encoding="utf-8") as f:
+        manifest = json.load(f)
+    stories = manifest.get("stories", [])
+    if not stories:
+        print("No story images in manifest — skipping stories.")
+        return
+
+    posted_path = os.path.join(base, "buffer-stories-posted.json")
+    done = set()
+    if os.path.exists(posted_path):
+        try:
+            done = set(json.load(open(posted_path, encoding="utf-8")).get("stories", []))
+        except Exception:
+            pass
+
+    sent = 0
+    for i, story in enumerate(stories):
+        img_path = story.get("image", "")
+        if not img_path or img_path in done:
+            continue
+        url = f"{SITE_URL}/{img_path}"
+        try:
+            # No caption text on stories; the headline is rendered into the image.
+            pid = _create_post(IG_CHANNEL, "", image_urls=[url],
+                               instagram="story", slot_index=sent)
+            done.add(img_path)
+            sent += 1
+            print(f"  ✓ story {i+1} queued to Buffer ({story.get('headline','')[:40]}) id={pid}")
+            time.sleep(1)
+        except Exception as exc:
+            print(f"  ✗ story {i+1} failed: {exc}")
+
+    with open(posted_path, "w", encoding="utf-8") as f:
+        json.dump({"stories": list(done)}, f, ensure_ascii=False, indent=2)
+    print(f"Stories pushed to Buffer: {sent} (from {date_dir}).")
 
 
 # --------------------------------------------------------------- linkedin ---
@@ -406,6 +473,7 @@ def main():
     print("Pushing to Buffer...")
     publish_tweets()
     publish_carousels()
+    publish_stories()
     publish_linkedin()
     print("Buffer publish complete.")
 
