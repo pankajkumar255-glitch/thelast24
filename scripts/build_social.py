@@ -177,13 +177,26 @@ def _photo_background(image_url):
     return im
 
 
-def story_background(st, hue, used_images):
+SECTION_STOCK_QUERIES = {
+    "national": ["india parliament building", "india flag government", "indian city street"],
+    "world": ["world map globe", "international flags", "city skyline night"],
+    "business": ["stock market chart", "indian rupee money", "business office building"],
+    "tech": ["technology circuit", "smartphone laptop desk", "data server room"],
+    "ai": ["artificial intelligence abstract", "computer code screen", "robot technology"],
+    "sports": ["cricket stadium india", "sports stadium crowd", "football pitch"],
+    "entertainment": ["cinema film reel", "movie theater seats", "stage lights concert"],
+}
+
+
+def story_background(st, hue, used_images, sid=None):
     """Per-story background: strong relevant photo (dimmed) else branded
     pattern. Returns (image, used_url_or_None, is_photo).
 
     Primary source is the image the edition ALREADY resolved and stored on the
     story (st['image']) — this guarantees the carousel shows the same photo the
-    website shows. Only if that's missing do we try a fresh lookup."""
+    website shows. Only if that's missing do we try a fresh lookup, and finally
+    a section-generic stock photo, so a slide gets a REAL image wherever
+    possible rather than the abstract branded pattern."""
     chosen_url = None
     # Primary: the photo already resolved by build_edition (website's image).
     existing = st.get("image")
@@ -207,6 +220,17 @@ def story_background(st, hue, used_images):
                 photo = None
             if photo and photo.get("image"):
                 chosen_url = photo["image"]
+        # Last resort BEFORE the abstract pattern: a section-generic stock photo,
+        # so the slide still shows a real, on-theme image.
+        if not chosen_url and sid:
+            for q in SECTION_STOCK_QUERIES.get(sid, []):
+                try:
+                    photo = _be.fetch_photo(q, used_images)
+                except Exception:
+                    photo = None
+                if photo and photo.get("image"):
+                    chosen_url = photo["image"]
+                    break
     if chosen_url:
         bg = _photo_background(chosen_url)
         if bg is not None:
@@ -217,6 +241,22 @@ def story_background(st, hue, used_images):
 # ----------------------------------------------------------------------------
 # Slides
 # ----------------------------------------------------------------------------
+def _cover_phrase(section_name, sid):
+    """Natural-reading cover phrase per section. 'National' -> 'the nation',
+    'World' -> 'the world', etc., so it reads 'Everything that happened in the
+    nation' rather than the awkward 'Everything that happened in National'."""
+    overrides = {
+        "national": "the nation",
+        "world": "the world",
+        "business": "business & markets",
+        "tech": "technology",
+        "ai": "AI",
+        "sports": "sports",
+        "entertainment": "entertainment",
+    }
+    return overrides.get(sid, section_name.lower())
+
+
 def cover_slide(section_name, sid, date_label):
     img = Image.new("RGB", (SIZE, HEIGHT), INK)
     d = ImageDraw.Draw(img, "RGBA")
@@ -227,7 +267,8 @@ def cover_slide(section_name, sid, date_label):
     logo(d, 70, 72, 40)
     y = 360
     head_f = font(F_DISPLAY, 64)
-    for line in wrap(d, f"Everything that happened in {section_name}", head_f, SIZE - 150):
+    phrase = _cover_phrase(section_name, sid)
+    for line in wrap(d, f"Everything that happened in {phrase}", head_f, SIZE - 150):
         d.text((70, y), line, font=head_f, fill=PAPER); y += 78
     d.rectangle([74, y + 6, 74 + 90, y + 12], fill=hue)
     d.text((70, y + 34), f"on {date_label}", font=font(F_BODY, 36), fill=PAPER)
@@ -239,7 +280,7 @@ def cover_slide(section_name, sid, date_label):
 
 def story_slide(st, section_name, sid, idx, total, used_images):
     hue = SECTION_HUES.get(sid, (14, 123, 82))
-    bg, used_url, is_photo = story_background(st, hue, used_images)
+    bg, used_url, is_photo = story_background(st, hue, used_images, sid)
     img = bg.copy()
     d = ImageDraw.Draw(img, "RGBA")
     d.rectangle([0, 0, SIZE, 88], fill=(13, 18, 13, 235))
@@ -420,12 +461,42 @@ def _is_dupe_fp(fp, seen_fps):
     return False
 
 
-def yesterday_sections():
-    y = (NOW - timedelta(days=1)).strftime("%Y-%m-%d")
-    by_section, order = {}, []
-    for path in sorted(glob.glob("editions/*.json")):
-        if not os.path.basename(path).startswith(y):
+FRESH_WINDOW_HOURS = 28   # how far back to pull stories for the daily social run
+STALE_AFTER_HOURS = 30    # drop any story older than this outright
+
+
+def _story_age_hours(st):
+    """Best-effort age of a story in hours, from any timestamp it carries.
+    Returns None if no parseable time is found (treated as 'keep')."""
+    for k in ("published", "pub_iso", "timestamp", "created", "date"):
+        v = st.get(k)
+        if not v:
             continue
+        s = str(v).strip()
+        for fmt in ("%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d %H:%M:%S",
+                    "%Y-%m-%d %H:%M IST", "%Y-%m-%d %H:%M", "%Y-%m-%d"):
+            try:
+                dt = datetime.strptime(s.replace("Z", "+0000"), fmt)
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=IST)
+                return (NOW - dt).total_seconds() / 3600.0
+            except (ValueError, TypeError):
+                continue
+    return None
+
+
+def yesterday_sections():
+    """Collate stories for the daily social run from a ROLLING RECENT WINDOW of
+    editions (not just 'yesterday'), so the 4 AM run uses the freshest stories —
+    including today's midnight edition — and DROPS stale ones. Kept the function
+    name for compatibility with main()."""
+    by_section, order = {}, []
+    cutoff_date = (NOW - timedelta(hours=FRESH_WINDOW_HOURS + 24)).strftime("%Y-%m-%d")
+    label_day = (NOW - timedelta(days=1)).strftime("%Y-%m-%d")
+    # newest editions last, so fresher copies overwrite/augment older ones
+    paths = sorted(glob.glob("editions/*.json"))
+    paths = [p for p in paths if os.path.basename(p)[:10] >= cutoff_date]
+    for path in paths:
         try:
             with open(path, encoding="utf-8") as f:
                 ed = json.load(f)
@@ -438,12 +509,13 @@ def yesterday_sections():
                                    "seen": set(), "fps": []}
                 order.append(sid)
             for st in sec.get("stories", []):
+                # Drop stale stories outright (older than STALE_AFTER_HOURS).
+                age = _story_age_hours(st)
+                if age is not None and age > STALE_AFTER_HOURS:
+                    continue
                 key = st.get("slug") or st.get("headline")
                 if key in by_section[sid]["seen"]:
                     continue
-                # Fuzzy: skip if it's the SAME event as one already kept
-                # (different publisher, reworded headline). But if the new copy
-                # HAS an image and the kept one doesn't, swap to the better copy.
                 fp = _story_fingerprint(st)
                 dupe_idx = None
                 for i, seen_fp in enumerate(by_section[sid]["fps"]):
@@ -455,99 +527,130 @@ def yesterday_sections():
                     new_has_img = bool((st.get("image") or "").startswith("http"))
                     old_has_img = bool((existing.get("image") or "").startswith("http"))
                     if new_has_img and not old_has_img:
-                        by_section[sid]["stories"][dupe_idx] = st  # keep the one with an image
+                        by_section[sid]["stories"][dupe_idx] = st
                     continue
                 by_section[sid]["seen"].add(key)
                 by_section[sid]["fps"].append(fp)
                 by_section[sid]["stories"].append(st)
-    return y, order, by_section
+    # Within each section, freshest first (stories with a known age sort by age;
+    # unknown-age stories keep their original order at the end).
+    for sid in by_section:
+        sl = by_section[sid]["stories"]
+        sl.sort(key=lambda s: (_story_age_hours(s) is None, _story_age_hours(s) or 0))
+    return label_day, order, by_section
 
 
 def _wc_font(bold=True, size=48):
     return font("DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf", size)
 
 
-def build_worldcup_carousel(base):
-    """Generate a World Cup daily Instagram carousel: cover + scores + standings.
-    Pulls data via build_worldcup. Returns a manifest section dict or None."""
+def build_worldcup_summary_slide(sdir, slide_index):
+    """Build a SINGLE Instagram slide summarising recent FIFA World Cup 2026
+    results ("Team A beat Team B 2-1" with real scores and dates), to be slotted
+    into the Sports carousel — instead of a separate World Cup carousel.
+    Returns (slide_path, headline) or (None, None) if no data."""
     try:
         import build_worldcup as bwc
         if not bwc.ENABLED:
-            return None
+            return None, None
         data = bwc._fetch()
     except Exception as exc:
-        print(f"World Cup IG: data fetch failed ({exc}); skipping.")
-        return None
+        print(f"World Cup summary slide: data fetch failed ({exc}); skipping.")
+        return None, None
     recent, today, upcoming = bwc._matches_view(data.get("matches", []))
-    standings = bwc._compute_standings(data.get("matches", []))
-    if not recent and not standings:
-        return None
+    if not recent:
+        return None, None
 
     WC = (22, 135, 107)
-    sdir = os.path.join(base, "worldcup")
+    img = Image.new("RGB", (SIZE, HEIGHT), INK)
+    d = ImageDraw.Draw(img, "RGBA")
+    d.rectangle([0, 0, SIZE, HEIGHT], fill=(WC[0], WC[1], WC[2], 24))
+    d.ellipse([SIZE - 360, -120, SIZE + 120, 320], fill=(WC[0], WC[1], WC[2], 45))
+    logo(d, 70, 72, 38)
+    d.text((70, 250), "FIFA WORLD CUP 2026", font=_wc_font(True, 40), fill=GREEN_BRIGHT)
+    d.text((70, 308), "Latest results", font=font(F_DISPLAY, 60), fill=PAPER)
+    y = 430
+    # group results under their date so readers know when each happened
+    last_date = None
+    shown = 0
+    for m in recent[:6]:
+        if shown >= 6 or y > HEIGHT - 240:
+            break
+        dlabel = m.get("date_label", "")
+        if dlabel and dlabel != last_date:
+            d.text((70, y), dlabel.upper(), font=_wc_font(False, 26), fill=GREEN_BRIGHT)
+            y += 46
+            last_date = dlabel
+        result = m.get("result") or f"{m['team1']} {m['score']} {m['team2']}"
+        for line in wrap(d, result, font(F_DISPLAY, 38), SIZE - 170):
+            d.text((90, y), line, font=font(F_DISPLAY, 38), fill=PAPER); y += 48
+        sub = m.get("group", "")
+        if m.get("ist"):
+            sub = (sub + "  ·  " + m["ist"]) if sub else m["ist"]
+        d.text((90, y), sub, font=font(F_MONO, 22), fill=META); y += 50
+        shown += 1
+    draw_strip(d, 70, HEIGHT - 80, SIZE - 140, WC)
+    p = os.path.join(sdir, f"slide-{slide_index:02d}.png")
+    img.save(p)
+    return p, "FIFA World Cup 2026: latest results"
+
+
+def build_instagram_stories(base, by_section, order, date_label):
+    """Build up to 8 Instagram STORY images (9:16, 1080x1920) from the day's
+    most important stories — one headline per story image, branded, with a
+    'Read more on our page' cue (Buffer can auto-post Story media; tappable
+    links aren't supported via the API, so we use the in-bio convention).
+    Returns a list of {image, headline} dicts for the manifest."""
+    STORY_W, STORY_H = 1080, 1920
+    sdir = os.path.join(base, "stories")
     os.makedirs(sdir, exist_ok=True)
-    slides = []
-    date_label = NOW.strftime("%A, %d %B %Y")
-
-    # --- Slide 1: cover ---
-    img = Image.new("RGB", (SIZE, HEIGHT), INK); d = ImageDraw.Draw(img)
-    d.rectangle([0, 0, SIZE, 12], fill=WC)
-    d.text((80, 440), "FIFA WORLD CUP", font=_wc_font(True, 86), fill=PAPER)
-    d.text((80, 550), "2026", font=_wc_font(True, 120), fill=GREEN_BRIGHT)
-    d.text((80, 740), "Daily scores & standings", font=_wc_font(False, 46), fill=PAPER)
-    d.text((80, 800), date_label, font=_wc_font(False, 38), fill=META)
-    d.text((80, HEIGHT - 80), "THE LAST 24  ·  times in IST", font=_wc_font(False, 30), fill=META)
-    p = os.path.join(sdir, "slide-01.png"); img.save(p); slides.append(p)
-
-    # --- Slide 2: latest scores ---
-    if recent:
-        img = Image.new("RGB", (SIZE, HEIGHT), PAPER); d = ImageDraw.Draw(img)
-        d.rectangle([0, 0, SIZE, 110], fill=WC)
-        d.text((70, 32), "LATEST RESULTS", font=_wc_font(True, 50), fill=PAPER)
-        y = 190
-        for m in recent[:6]:
-            d.text((70, y), f"{m['team1']}", font=_wc_font(True, 44), fill=INK)
-            d.text((SIZE - 70, y), m["score"], font=_wc_font(True, 52), fill=WC, anchor="ra")
-            d.text((70, y + 56), f"{m['team2']}", font=_wc_font(True, 44), fill=INK)
-            d.text((70, y + 112), m["group"], font=_wc_font(False, 28), fill=META)
-            y += 200
-            if y > HEIGHT - 160:
-                break
-        p = os.path.join(sdir, "slide-02.png"); img.save(p); slides.append(p)
-
-    # --- Slide 3+: standings (2 groups per slide) ---
-    grp_items = list(standings.items())
-    slide_no = len(slides) + 1
-    for i in range(0, min(len(grp_items), 8), 2):
-        img = Image.new("RGB", (SIZE, HEIGHT), PAPER); d = ImageDraw.Draw(img)
-        d.rectangle([0, 0, SIZE, 110], fill=WC)
-        d.text((70, 32), "GROUP STANDINGS", font=_wc_font(True, 50), fill=PAPER)
-        y = 180
-        for grp, rows in grp_items[i:i + 2]:
-            d.text((70, y), grp, font=_wc_font(True, 40), fill=WC); y += 64
-            for pos, r in enumerate(rows, 1):
-                col = INK if pos <= 2 else META
-                d.text((80, y), f"{pos}", font=_wc_font(True, 32), fill=col)
-                d.text((140, y), r["team"], font=_wc_font(pos <= 2, 34), fill=col)
-                d.text((SIZE - 80, y), str(r["Pts"]), font=_wc_font(True, 36),
-                       fill=WC if pos <= 2 else META, anchor="ra")
-                y += 52
-            y += 40
-        p = os.path.join(sdir, f"slide-{slide_no:02d}.png"); img.save(p)
-        slides.append(p); slide_no += 1
-
-    # caption
-    top = "; ".join(f"{m['team1']} {m['score']} {m['team2']}" for m in recent[:3])
-    caption = (f"FIFA World Cup 2026 — daily scores & standings ({date_label}).\n\n"
-               f"{top}\n\nFull tables and fixtures (in IST) on our World Cup page.\n\n"
-               "#FIFAWorldCup #WorldCup2026 #Football #IndiaNews #TheLast24")
-    with open(os.path.join(sdir, "caption.txt"), "w", encoding="utf-8") as f:
-        f.write(caption)
-    wc_pdf = _carousel_pdf(slides, sdir, "World Cup")
-    print(f"World Cup IG carousel: {len(slides)} slides.")
-    return {"id": "worldcup", "name": "World Cup", "slides": slides,
-            "caption_file": os.path.join(sdir, "caption.txt"), "pdf": wc_pdf,
-            "slide_count": len(slides)}
+    # Gather the strongest stories across sections: prefer ones with a real image
+    # and that are flagged breaking/important, keep section variety.
+    pool = []
+    for sid in order:
+        for st in by_section[sid]["stories"]:
+            pool.append((sid, st))
+    # breaking first, then those with images, preserve order otherwise
+    pool.sort(key=lambda p: (not p[1].get("breaking", False),
+                             not (p[1].get("image") or "").startswith("http")))
+    out, used_images = [], set()
+    for idx, (sid, st) in enumerate(pool[:8], start=1):
+        hue = SECTION_HUES.get(sid, (14, 123, 82))
+        # vertical background from the story's photo, else section stock, else pattern
+        bg, used_url, is_photo = story_background(st, hue, used_images, sid)
+        if used_url:
+            used_images.add(used_url)
+        img = bg.resize((STORY_W, STORY_H)).convert("RGB") if bg.size != (STORY_W, STORY_H) else bg.convert("RGB")
+        # rebuild as a true 9:16 canvas to avoid distortion: cover-crop
+        src = bg.convert("RGB")
+        scale = max(STORY_W / src.width, STORY_H / src.height)
+        nw, nh = int(src.width * scale), int(src.height * scale)
+        src = src.resize((nw, nh))
+        left, top = (nw - STORY_W) // 2, (nh - STORY_H) // 2
+        img = src.crop((left, top, left + STORY_W, top + STORY_H))
+        d = ImageDraw.Draw(img, "RGBA")
+        # darken for legibility
+        d.rectangle([0, 0, STORY_W, STORY_H], fill=(8, 11, 9, 130))
+        d.rectangle([0, STORY_H - 760, STORY_W, STORY_H], fill=(8, 11, 9, 150))
+        logo(d, 70, 110, 46)
+        # section kicker
+        d.rectangle([70, 980, 70 + 90, 980 + 10], fill=hue)
+        d.text((70, 1010), by_section[sid]["name"].upper(),
+               font=font(F_MONO, 32), fill=(230, 232, 226))
+        # headline
+        y = 1080
+        head_f = font(F_DISPLAY, 72)
+        for line in wrap(d, st.get("headline", ""), head_f, STORY_W - 140)[:6]:
+            d.text((70, y), line, font=head_f, fill=PAPER); y += 88
+        # CTA
+        d.text((70, STORY_H - 180), "Full story on our page  \u2192",
+               font=font(F_DISPLAY, 40), fill=GREEN_BRIGHT)
+        draw_strip(d, 70, STORY_H - 90, STORY_W - 140, hue)
+        p = os.path.join(sdir, f"story-{idx:02d}.png")
+        img.save(p)
+        out.append({"image": p, "headline": st.get("headline", ""), "section": sid})
+    print(f"  Instagram Stories: {len(out)} story images built")
+    return out
 
 
 def _carousel_pdf(slide_paths, sdir, name):
@@ -601,8 +704,17 @@ def main():
                 used_images.add(used_url)
             p = os.path.join(sdir, f"slide-{i+1:02d}.png"); s.save(p); slides.append(p)
 
+        # Sports carousel gets a FIFA World Cup 2026 match-summary slide (who beat
+        # whom, with scores and dates) slotted in before the outro — replacing
+        # the old standalone World Cup carousel.
+        if sid == "sports":
+            wc_slide, wc_head = build_worldcup_summary_slide(sdir, len(slides) + 1)
+            if wc_slide:
+                slides.append(wc_slide)
+                print("  + FIFA World Cup 2026 match-summary slide added to Sports")
+
         outro = outro_slide(sid)
-        p = os.path.join(sdir, f"slide-{len(stories)+2:02d}.png"); outro.save(p); slides.append(p)
+        p = os.path.join(sdir, f"slide-{len(slides)+1:02d}.png"); outro.save(p); slides.append(p)
 
         caption = build_caption(sec["name"], sid, stories, date_label)
         with open(os.path.join(sdir, "caption.txt"), "w", encoding="utf-8") as f:
@@ -633,14 +745,16 @@ def main():
         print(f"  {sec['name']}: {len(slides)} slides" + (" + PDF" if pdf_path else "")
               + (" + LinkedIn" if li_pdf else ""))
 
-    # World Cup daily carousel (scores + standings), if the tournament is on.
+    # (The old standalone World Cup carousel has been replaced by a single
+    # match-summary slide injected into the Sports carousel above.)
+
+    # Instagram Stories: 8 vertical headline images from the day's top stories.
     try:
-        wc_sec = build_worldcup_carousel(base)
-        if wc_sec:
-            manifest["sections"].append(wc_sec)
-            print(f"  World Cup: {wc_sec['slide_count']} slides")
+        stories_imgs = build_instagram_stories(base, by_section, order, date_label)
+        if stories_imgs:
+            manifest["stories"] = stories_imgs
     except Exception as exc:
-        print(f"  World Cup IG carousel skipped: {exc}")
+        print(f"  Instagram Stories skipped: {exc}")
 
     with open(os.path.join(base, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
