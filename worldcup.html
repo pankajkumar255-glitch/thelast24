@@ -53,7 +53,11 @@ a{color:inherit}
 .panel.show{display:block}
 .section-title{font-family:var(--display);font-weight:800;font-size:18px;margin:22px 0 12px;letter-spacing:-.01em}
 /* scores */
-.match{display:grid;grid-template-columns:1fr 64px 130px;align-items:center;gap:14px;background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:14px 16px;margin-bottom:9px}
+.date-head{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--wc);text-transform:uppercase;letter-spacing:.04em;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--hairline)}
+.date-head:first-child{margin-top:4px}
+.match .result{font-family:var(--display);font-weight:700;font-size:12px;color:var(--ink);margin-bottom:3px}
+.match .when{color:var(--meta)}
+.match{display:grid;grid-template-columns:1fr 64px 150px;align-items:center;gap:14px;background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:14px 16px;margin-bottom:9px}
 .match .teams{display:flex;flex-direction:column;gap:4px;font-size:15px;font-weight:600;min-width:0}
 .match .teams span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .match .vs{font-family:var(--mono);font-size:11px;color:var(--meta);font-weight:400}
@@ -121,15 +125,27 @@ document.getElementById('updated').innerHTML=W.updated_label?'Updated <b>'+esc(W
   }).join('')+'<div class="note">Top two of each group (shaded) advance. GD = goal difference.</div>';
 })();
 
-// Scores (recent + today)
+// Scores (recent + today) — grouped by date, newest first, with who beat whom
 (function(){
   var box=document.getElementById('scores');
   var played=(W.today||[]).filter(function(m){return m.played;}).concat(W.recent||[]);
   if(!played.length){box.innerHTML='<div class="empty">No recent results yet — check back after the next matchday.</div>';return;}
-  box.innerHTML='<div class="section-title">Latest results</div>'+played.map(function(m){
-    return '<div class="match"><div class="teams"><span>'+esc(m.team1)+'</span><span>'+esc(m.team2)+'</span></div>'
-      +'<div class="sc">'+esc(m.score)+'</div>'
-      +'<div class="meta">'+esc(m.group)+'<br>'+esc(m.ground)+'</div></div>';
+  // sort newest first by full timestamp
+  played.sort(function(a,b){return (b.ist_sort||'').localeCompare(a.ist_sort||'');});
+  // group by date label
+  var groups=[], byDate={};
+  played.forEach(function(m){
+    var d=m.date_label||'';
+    if(!byDate[d]){byDate[d]=[]; groups.push(d);}
+    byDate[d].push(m);
+  });
+  box.innerHTML='<div class="section-title">Latest results</div>'+groups.map(function(d){
+    return '<div class="date-head">'+esc(d)+'</div>'+byDate[d].map(function(m){
+      var res=m.result?('<div class="result">'+esc(m.result)+'</div>'):'';
+      return '<div class="match"><div class="teams"><span>'+esc(m.team1)+'</span><span>'+esc(m.team2)+'</span></div>'
+        +'<div class="sc">'+esc(m.score)+'</div>'
+        +'<div class="meta">'+res+'<span class="when">'+esc(m.ist)+'</span><br>'+esc(m.group)+' · '+esc(m.ground)+'</div></div>';
+    }).join('');
   }).join('');
 })();
 
