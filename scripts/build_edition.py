@@ -22,7 +22,10 @@ SITE_URL = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
 SITE_NAME = "The Last 24"
 
 SECTION_QUERIES = {
-    "National":           "India government OR policy OR supreme court",
+    # National now covers governance AND the big crime / incident / civic stories
+    # that dominate national conversation (a major murder case, a disaster, an
+    # accident, a protest) — previously these had no home query and were missed.
+    "National":           "India news OR government OR policy OR crime OR incident OR investigation OR court",
     "World":              "world news OR geopolitics OR international",
     "Business & Markets": "India economy OR Sensex OR business OR trade",
     "Technology":         "India technology OR startup OR software",
@@ -33,11 +36,13 @@ SECTION_QUERIES = {
 PER_SECTION = 8
 
 # Breaking / trending: extra high-priority pulls so big India-wide stories that
-# don't fit a single section query (e.g. a major appointment, a sudden event)
-# still get caught. These run IN ADDITION to the section queries above.
+# don't fit a single section query (e.g. a major appointment, a sudden event,
+# a crime case the whole country is following) still get caught. These run IN
+# ADDITION to the section queries above.
 BREAKING_QUERIES = [
     "India breaking news",
     "India top stories today",
+    "India crime OR murder OR accident OR arrest",
 ]
 # Google News "Top Stories" for India — the closest thing to a live trending
 # feed. Stories appearing here are treated as high-priority/breaking signals.
@@ -122,7 +127,7 @@ def collect_breaking():
     miss (a sudden appointment, a major event)."""
     lines, hot_fps, seen = [], [], set()
     feeds = [("topstories", TOP_STORIES_FEED)]
-    feeds += [("breaking", gnews_rss(q, "when:8h")) for q in BREAKING_QUERIES]
+    feeds += [("breaking", gnews_rss(q, "when:24h")) for q in BREAKING_QUERIES]
     for kind, url in feeds:
         try:
             feed = feedparser.parse(url)
@@ -137,7 +142,7 @@ def collect_breaking():
             except Exception:
                 pub = NOW
             # breaking must be genuinely recent
-            if (NOW - pub) > timedelta(hours=BREAKING_RECENCY_HOURS + 3):
+            if (NOW - pub) > timedelta(hours=30):
                 continue
             src = getattr(e, "source", None)
             src = src.title if src and hasattr(src, "title") else ""
@@ -467,7 +472,10 @@ def write_edition(raw):
         SECTION_KEYWORDS = {
             "National": ["supreme court", "parliament", "modi", "minister", "bjp",
                          "congress", "policy", "government", "election", "court",
-                         "police", "protest", "scheme", "cabinet", "verdict"],
+                         "police", "protest", "scheme", "cabinet", "verdict",
+                         "murder", "rape", "arrest", "accident", "crime", "killed",
+                         "death", "investigation", "cbi", "fir", "custody",
+                         "assault", "fraud", "scam", "raid", "blast", "fire"],
             "World": ["us", "china", "russia", "ukraine", "israel", "gaza", "un",
                       "pakistan", "trump", "putin", "global", "world", "nato",
                       "europe", "summit", "war", "border"],
