@@ -493,8 +493,10 @@ def yesterday_sections():
     by_section, order = {}, []
     cutoff_date = (NOW - timedelta(hours=FRESH_WINDOW_HOURS + 24)).strftime("%Y-%m-%d")
     label_day = (NOW - timedelta(days=1)).strftime("%Y-%m-%d")
-    # newest editions last, so fresher copies overwrite/augment older ones
-    paths = sorted(glob.glob("editions/*.json"))
+    # NEWEST editions FIRST, so the freshest copy of a story is the one kept
+    # (a breaking story with an image in the midnight edition beats a stale,
+    # image-less copy of the same story from an earlier edition).
+    paths = sorted(glob.glob("editions/*.json"), reverse=True)
     paths = [p for p in paths if os.path.basename(p)[:10] >= cutoff_date]
     for path in paths:
         try:
@@ -523,11 +525,17 @@ def yesterday_sections():
                         dupe_idx = i
                         break
                 if dupe_idx is not None:
+                    # We process newest-first, so the EXISTING copy is the fresher
+                    # one — keep it. Only swap in the new (older) copy if it has an
+                    # image and the kept one doesn't (a better visual).
                     existing = by_section[sid]["stories"][dupe_idx]
                     new_has_img = bool((st.get("image") or "").startswith("http"))
                     old_has_img = bool((existing.get("image") or "").startswith("http"))
                     if new_has_img and not old_has_img:
-                        by_section[sid]["stories"][dupe_idx] = st
+                        # keep the fresher copy's breaking flag, take the image
+                        merged = dict(st)
+                        merged["breaking"] = existing.get("breaking") or st.get("breaking")
+                        by_section[sid]["stories"][dupe_idx] = merged
                     continue
                 by_section[sid]["seen"].add(key)
                 by_section[sid]["fps"].append(fp)
