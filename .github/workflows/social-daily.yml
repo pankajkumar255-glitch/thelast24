@@ -2,7 +2,7 @@ name: Daily social assets
 
 on:
   schedule:
-    - cron: "30 2 * * *"   # 02:30 UTC = 08:00 IST, daily
+    - cron: "30 21 * * *"   # 21:30 UTC = 03:00 IST — build assets before the 04:00 IST push
   workflow_dispatch:
 
 permissions:
