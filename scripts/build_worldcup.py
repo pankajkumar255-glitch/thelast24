@@ -100,13 +100,30 @@ def _matches_view(matches):
         ist = _to_ist(m.get("date", ""), m.get("time", ""))
         score = m.get("score", {})
         ft = score.get("ft") if isinstance(score, dict) else None
+        t1, t2 = m.get("team1", ""), m.get("team2", "")
+        # Plain-language result: who beat whom, or a draw.
+        result = ""
+        if ft:
+            try:
+                g1, g2 = int(ft[0]), int(ft[1])
+                if g1 > g2:
+                    result = f"{t1} beat {t2} {g1}-{g2}"
+                elif g2 > g1:
+                    result = f"{t2} beat {t1} {g2}-{g1}"
+                else:
+                    result = f"{t1} drew with {t2} {g1}-{g1}"
+            except (ValueError, TypeError):
+                result = ""
         item = {
-            "team1": m.get("team1", ""), "team2": m.get("team2", ""),
+            "team1": t1, "team2": t2,
             "group": m.get("group", ""), "ground": m.get("ground", ""),
-            "ist": ist.strftime("%d %b, %I:%M %p IST") if ist else "",
+            "ist": ist.strftime("%d %b %Y, %I:%M %p IST") if ist else "",
             "ist_date": ist.strftime("%Y-%m-%d") if ist else m.get("date", ""),
+            "ist_sort": ist.strftime("%Y-%m-%d %H:%M") if ist else (m.get("date", "") + " 00:00"),
+            "date_label": ist.strftime("%a, %d %b %Y") if ist else m.get("date", ""),
             "played": bool(ft),
             "score": f"{ft[0]}-{ft[1]}" if ft else "",
+            "result": result,
         }
         if ft:
             d = ist.date() if ist else None
@@ -118,8 +135,10 @@ def _matches_view(matches):
                 today.append(item)
             elif d and 0 < (d - today_d).days <= 3:
                 upcoming.append(item)
-    recent.sort(key=lambda x: x["ist_date"], reverse=True)
-    upcoming.sort(key=lambda x: x["ist_date"])
+    # Sort results newest-first by full timestamp (date + time), so readers see
+    # the most recent result first and can tell exactly when each happened.
+    recent.sort(key=lambda x: x["ist_sort"], reverse=True)
+    upcoming.sort(key=lambda x: x["ist_sort"])
     return recent[:8], today, upcoming[:8]
 
 
@@ -315,7 +334,11 @@ a{color:inherit}
 .panel.show{display:block}
 .section-title{font-family:var(--display);font-weight:800;font-size:18px;margin:22px 0 12px;letter-spacing:-.01em}
 /* scores */
-.match{display:grid;grid-template-columns:1fr 64px 130px;align-items:center;gap:14px;background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:14px 16px;margin-bottom:9px}
+.date-head{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--wc);text-transform:uppercase;letter-spacing:.04em;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--hairline)}
+.date-head:first-child{margin-top:4px}
+.match .result{font-family:var(--display);font-weight:700;font-size:12px;color:var(--ink);margin-bottom:3px}
+.match .when{color:var(--meta)}
+.match{display:grid;grid-template-columns:1fr 64px 150px;align-items:center;gap:14px;background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:14px 16px;margin-bottom:9px}
 .match .teams{display:flex;flex-direction:column;gap:4px;font-size:15px;font-weight:600;min-width:0}
 .match .teams span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .match .vs{font-family:var(--mono);font-size:11px;color:var(--meta);font-weight:400}
@@ -383,15 +406,27 @@ document.getElementById('updated').innerHTML=W.updated_label?'Updated <b>'+esc(W
   }).join('')+'<div class="note">Top two of each group (shaded) advance. GD = goal difference.</div>';
 })();
 
-// Scores (recent + today)
+// Scores (recent + today) — grouped by date, newest first, with who beat whom
 (function(){
   var box=document.getElementById('scores');
   var played=(W.today||[]).filter(function(m){return m.played;}).concat(W.recent||[]);
   if(!played.length){box.innerHTML='<div class="empty">No recent results yet — check back after the next matchday.</div>';return;}
-  box.innerHTML='<div class="section-title">Latest results</div>'+played.map(function(m){
-    return '<div class="match"><div class="teams"><span>'+esc(m.team1)+'</span><span>'+esc(m.team2)+'</span></div>'
-      +'<div class="sc">'+esc(m.score)+'</div>'
-      +'<div class="meta">'+esc(m.group)+'<br>'+esc(m.ground)+'</div></div>';
+  // sort newest first by full timestamp
+  played.sort(function(a,b){return (b.ist_sort||'').localeCompare(a.ist_sort||'');});
+  // group by date label
+  var groups=[], byDate={};
+  played.forEach(function(m){
+    var d=m.date_label||'';
+    if(!byDate[d]){byDate[d]=[]; groups.push(d);}
+    byDate[d].push(m);
+  });
+  box.innerHTML='<div class="section-title">Latest results</div>'+groups.map(function(d){
+    return '<div class="date-head">'+esc(d)+'</div>'+byDate[d].map(function(m){
+      var res=m.result?('<div class="result">'+esc(m.result)+'</div>'):'';
+      return '<div class="match"><div class="teams"><span>'+esc(m.team1)+'</span><span>'+esc(m.team2)+'</span></div>'
+        +'<div class="sc">'+esc(m.score)+'</div>'
+        +'<div class="meta">'+res+'<span class="when">'+esc(m.ist)+'</span><br>'+esc(m.group)+' · '+esc(m.ground)+'</div></div>';
+    }).join('');
   }).join('');
 })();
 
