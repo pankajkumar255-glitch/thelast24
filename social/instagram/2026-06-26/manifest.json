@@ -1,0 +1,175 @@
+{
+  "date": "2026-06-26",
+  "label": "Friday, 26 June 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-06-26/world/slide-01.png",
+        "social/instagram/2026-06-26/world/slide-02.png",
+        "social/instagram/2026-06-26/world/slide-03.png",
+        "social/instagram/2026-06-26/world/slide-04.png",
+        "social/instagram/2026-06-26/world/slide-05.png",
+        "social/instagram/2026-06-26/world/slide-06.png",
+        "social/instagram/2026-06-26/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-26/world/caption.txt",
+      "pdf": "social/instagram/2026-06-26/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-26/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-26/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-06-26/business/slide-01.png",
+        "social/instagram/2026-06-26/business/slide-02.png",
+        "social/instagram/2026-06-26/business/slide-03.png",
+        "social/instagram/2026-06-26/business/slide-04.png",
+        "social/instagram/2026-06-26/business/slide-05.png",
+        "social/instagram/2026-06-26/business/slide-06.png",
+        "social/instagram/2026-06-26/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-26/business/caption.txt",
+      "pdf": "social/instagram/2026-06-26/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-06-26/tech/slide-01.png",
+        "social/instagram/2026-06-26/tech/slide-02.png",
+        "social/instagram/2026-06-26/tech/slide-03.png",
+        "social/instagram/2026-06-26/tech/slide-04.png",
+        "social/instagram/2026-06-26/tech/slide-05.png",
+        "social/instagram/2026-06-26/tech/slide-06.png",
+        "social/instagram/2026-06-26/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-26/tech/caption.txt",
+      "pdf": "social/instagram/2026-06-26/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-26/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-26/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-06-26/national/slide-01.png",
+        "social/instagram/2026-06-26/national/slide-02.png",
+        "social/instagram/2026-06-26/national/slide-03.png",
+        "social/instagram/2026-06-26/national/slide-04.png",
+        "social/instagram/2026-06-26/national/slide-05.png",
+        "social/instagram/2026-06-26/national/slide-06.png",
+        "social/instagram/2026-06-26/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-26/national/caption.txt",
+      "pdf": "social/instagram/2026-06-26/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-06-26/ai/slide-01.png",
+        "social/instagram/2026-06-26/ai/slide-02.png",
+        "social/instagram/2026-06-26/ai/slide-03.png",
+        "social/instagram/2026-06-26/ai/slide-04.png",
+        "social/instagram/2026-06-26/ai/slide-05.png",
+        "social/instagram/2026-06-26/ai/slide-06.png",
+        "social/instagram/2026-06-26/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-26/ai/caption.txt",
+      "pdf": "social/instagram/2026-06-26/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-26/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-26/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-06-26/sports/slide-01.png",
+        "social/instagram/2026-06-26/sports/slide-02.png",
+        "social/instagram/2026-06-26/sports/slide-03.png",
+        "social/instagram/2026-06-26/sports/slide-04.png",
+        "social/instagram/2026-06-26/sports/slide-05.png",
+        "social/instagram/2026-06-26/sports/slide-06.png",
+        "social/instagram/2026-06-26/sports/slide-07.png",
+        "social/instagram/2026-06-26/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-06-26/sports/caption.txt",
+      "pdf": "social/instagram/2026-06-26/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-06-26/entertainment/slide-01.png",
+        "social/instagram/2026-06-26/entertainment/slide-02.png",
+        "social/instagram/2026-06-26/entertainment/slide-03.png",
+        "social/instagram/2026-06-26/entertainment/slide-04.png",
+        "social/instagram/2026-06-26/entertainment/slide-05.png",
+        "social/instagram/2026-06-26/entertainment/slide-06.png",
+        "social/instagram/2026-06-26/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-26/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-06-26/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-06-26/stories/story-01.png",
+      "headline": "Israel and Lebanon Sign Framework Peace Deal After US-Mediated Talks",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-26/stories/story-02.png",
+      "headline": "Ireland Stun India in T20 Opener at Stormont in Historic First Win",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-26/stories/story-03.png",
+      "headline": "India Top ISSF Junior World Championship Medal Tally in Germany",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-26/stories/story-04.png",
+      "headline": "India Loses Key Bangladesh Port Project to China in Diplomatic Setback",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-26/stories/story-05.png",
+      "headline": "Venezuela Earthquake Death Toll More Than Doubles to 589, Over 2,900 Injured",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-26/stories/story-06.png",
+      "headline": "Trump Admin Warns World 'Old Tariffs May Return' Even as India-US Trade Deal Talks Continue",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-26/stories/story-07.png",
+      "headline": "India lifts commercial LPG supply restrictions as US-Iran deal hopes ease energy fears",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-26/stories/story-08.png",
+      "headline": "No comparative tariff advantage, no US trade deal: Piyush Goyal draws India's red line",
+      "section": "world"
+    }
+  ]
+}
