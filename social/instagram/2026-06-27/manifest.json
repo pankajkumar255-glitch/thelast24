@@ -1,0 +1,175 @@
+{
+  "date": "2026-06-27",
+  "label": "Saturday, 27 June 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-06-27/world/slide-01.png",
+        "social/instagram/2026-06-27/world/slide-02.png",
+        "social/instagram/2026-06-27/world/slide-03.png",
+        "social/instagram/2026-06-27/world/slide-04.png",
+        "social/instagram/2026-06-27/world/slide-05.png",
+        "social/instagram/2026-06-27/world/slide-06.png",
+        "social/instagram/2026-06-27/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-27/world/caption.txt",
+      "pdf": "social/instagram/2026-06-27/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-27/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-27/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-06-27/business/slide-01.png",
+        "social/instagram/2026-06-27/business/slide-02.png",
+        "social/instagram/2026-06-27/business/slide-03.png",
+        "social/instagram/2026-06-27/business/slide-04.png",
+        "social/instagram/2026-06-27/business/slide-05.png",
+        "social/instagram/2026-06-27/business/slide-06.png",
+        "social/instagram/2026-06-27/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-27/business/caption.txt",
+      "pdf": "social/instagram/2026-06-27/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-06-27/tech/slide-01.png",
+        "social/instagram/2026-06-27/tech/slide-02.png",
+        "social/instagram/2026-06-27/tech/slide-03.png",
+        "social/instagram/2026-06-27/tech/slide-04.png",
+        "social/instagram/2026-06-27/tech/slide-05.png",
+        "social/instagram/2026-06-27/tech/slide-06.png",
+        "social/instagram/2026-06-27/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-27/tech/caption.txt",
+      "pdf": "social/instagram/2026-06-27/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-27/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-27/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-06-27/national/slide-01.png",
+        "social/instagram/2026-06-27/national/slide-02.png",
+        "social/instagram/2026-06-27/national/slide-03.png",
+        "social/instagram/2026-06-27/national/slide-04.png",
+        "social/instagram/2026-06-27/national/slide-05.png",
+        "social/instagram/2026-06-27/national/slide-06.png",
+        "social/instagram/2026-06-27/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-27/national/caption.txt",
+      "pdf": "social/instagram/2026-06-27/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-06-27/ai/slide-01.png",
+        "social/instagram/2026-06-27/ai/slide-02.png",
+        "social/instagram/2026-06-27/ai/slide-03.png",
+        "social/instagram/2026-06-27/ai/slide-04.png",
+        "social/instagram/2026-06-27/ai/slide-05.png",
+        "social/instagram/2026-06-27/ai/slide-06.png",
+        "social/instagram/2026-06-27/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-27/ai/caption.txt",
+      "pdf": "social/instagram/2026-06-27/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-27/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-27/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-06-27/sports/slide-01.png",
+        "social/instagram/2026-06-27/sports/slide-02.png",
+        "social/instagram/2026-06-27/sports/slide-03.png",
+        "social/instagram/2026-06-27/sports/slide-04.png",
+        "social/instagram/2026-06-27/sports/slide-05.png",
+        "social/instagram/2026-06-27/sports/slide-06.png",
+        "social/instagram/2026-06-27/sports/slide-07.png",
+        "social/instagram/2026-06-27/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-06-27/sports/caption.txt",
+      "pdf": "social/instagram/2026-06-27/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-06-27/entertainment/slide-01.png",
+        "social/instagram/2026-06-27/entertainment/slide-02.png",
+        "social/instagram/2026-06-27/entertainment/slide-03.png",
+        "social/instagram/2026-06-27/entertainment/slide-04.png",
+        "social/instagram/2026-06-27/entertainment/slide-05.png",
+        "social/instagram/2026-06-27/entertainment/slide-06.png",
+        "social/instagram/2026-06-27/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-27/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-06-27/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-06-27/stories/story-01.png",
+      "headline": "Explosion and Gunfire Near Rangers Offices in Karachi Kill Three Security Personnel",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-27/stories/story-02.png",
+      "headline": "India Among 35 Nations Backing US-Led 'AI Opportunity' Declaration at Pax Silica Summit",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-27/stories/story-03.png",
+      "headline": "Trump Thanks India After Hyderabad Road Named After Him, Calls It an 'Unprecedented Honour'",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-27/stories/story-04.png",
+      "headline": "Marco Rubio Says US Is 'Hoping' for Trump Visit to India 'Early Next Year'",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-27/stories/story-05.png",
+      "headline": "Ireland Stun World Champions India in T20 Opener at Stormont",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-27/stories/story-06.png",
+      "headline": "Oil Tanker Hit by 'Unknown Projectile' in Strait of Hormuz as Iran and US Exchange Fire",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-27/stories/story-07.png",
+      "headline": "PM Modi to Meet World's Oldest Living Land Animal During Seychelles Visit",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-27/stories/story-08.png",
+      "headline": "India Tops Global Paper Retraction Shame List: 6 Universities in Top 10",
+      "section": "world"
+    }
+  ]
+}
