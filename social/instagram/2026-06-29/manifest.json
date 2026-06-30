@@ -1,0 +1,175 @@
+{
+  "date": "2026-06-29",
+  "label": "Monday, 29 June 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-06-29/world/slide-01.png",
+        "social/instagram/2026-06-29/world/slide-02.png",
+        "social/instagram/2026-06-29/world/slide-03.png",
+        "social/instagram/2026-06-29/world/slide-04.png",
+        "social/instagram/2026-06-29/world/slide-05.png",
+        "social/instagram/2026-06-29/world/slide-06.png",
+        "social/instagram/2026-06-29/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-29/world/caption.txt",
+      "pdf": "social/instagram/2026-06-29/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-29/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-29/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-06-29/business/slide-01.png",
+        "social/instagram/2026-06-29/business/slide-02.png",
+        "social/instagram/2026-06-29/business/slide-03.png",
+        "social/instagram/2026-06-29/business/slide-04.png",
+        "social/instagram/2026-06-29/business/slide-05.png",
+        "social/instagram/2026-06-29/business/slide-06.png",
+        "social/instagram/2026-06-29/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-29/business/caption.txt",
+      "pdf": "social/instagram/2026-06-29/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-06-29/tech/slide-01.png",
+        "social/instagram/2026-06-29/tech/slide-02.png",
+        "social/instagram/2026-06-29/tech/slide-03.png",
+        "social/instagram/2026-06-29/tech/slide-04.png",
+        "social/instagram/2026-06-29/tech/slide-05.png",
+        "social/instagram/2026-06-29/tech/slide-06.png",
+        "social/instagram/2026-06-29/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-29/tech/caption.txt",
+      "pdf": "social/instagram/2026-06-29/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-29/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-29/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-06-29/national/slide-01.png",
+        "social/instagram/2026-06-29/national/slide-02.png",
+        "social/instagram/2026-06-29/national/slide-03.png",
+        "social/instagram/2026-06-29/national/slide-04.png",
+        "social/instagram/2026-06-29/national/slide-05.png",
+        "social/instagram/2026-06-29/national/slide-06.png",
+        "social/instagram/2026-06-29/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-29/national/caption.txt",
+      "pdf": "social/instagram/2026-06-29/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-06-29/ai/slide-01.png",
+        "social/instagram/2026-06-29/ai/slide-02.png",
+        "social/instagram/2026-06-29/ai/slide-03.png",
+        "social/instagram/2026-06-29/ai/slide-04.png",
+        "social/instagram/2026-06-29/ai/slide-05.png",
+        "social/instagram/2026-06-29/ai/slide-06.png",
+        "social/instagram/2026-06-29/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-29/ai/caption.txt",
+      "pdf": "social/instagram/2026-06-29/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-06-29/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-06-29/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-06-29/sports/slide-01.png",
+        "social/instagram/2026-06-29/sports/slide-02.png",
+        "social/instagram/2026-06-29/sports/slide-03.png",
+        "social/instagram/2026-06-29/sports/slide-04.png",
+        "social/instagram/2026-06-29/sports/slide-05.png",
+        "social/instagram/2026-06-29/sports/slide-06.png",
+        "social/instagram/2026-06-29/sports/slide-07.png",
+        "social/instagram/2026-06-29/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-06-29/sports/caption.txt",
+      "pdf": "social/instagram/2026-06-29/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-06-29/entertainment/slide-01.png",
+        "social/instagram/2026-06-29/entertainment/slide-02.png",
+        "social/instagram/2026-06-29/entertainment/slide-03.png",
+        "social/instagram/2026-06-29/entertainment/slide-04.png",
+        "social/instagram/2026-06-29/entertainment/slide-05.png",
+        "social/instagram/2026-06-29/entertainment/slide-06.png",
+        "social/instagram/2026-06-29/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-06-29/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-06-29/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-06-29/stories/story-01.png",
+      "headline": "India To End War-Time Petrol And Diesel Sale Restrictions From July 1",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-29/stories/story-02.png",
+      "headline": "Ireland Stun India to Claim T20 Series Win",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-29/stories/story-03.png",
+      "headline": "India Distances Itself from Track 2 Dialogue Reports with Pakistan",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-29/stories/story-04.png",
+      "headline": "Ireland Stun India in T20 Series, Defeat World Champions at Home",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-29/stories/story-05.png",
+      "headline": "India Rules Out Indus Waters Treaty Relief for Pakistan, Rejects Back-Channel Reports",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-29/stories/story-06.png",
+      "headline": "Ben Stokes Shocks Cricket World with Sudden Test Retirement Announcement",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-29/stories/story-07.png",
+      "headline": "Pakistan Suspends Geo News Licence for 15 Days Over Muharram Broadcast",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-06-29/stories/story-08.png",
+      "headline": "Ben Stokes Announces Shock Retirement from Test Cricket",
+      "section": "world"
+    }
+  ]
+}
