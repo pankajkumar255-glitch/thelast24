@@ -29,7 +29,7 @@ SECTION_QUERIES = {
     "World":              "world news OR geopolitics OR international",
     "Business & Markets": "India economy OR Sensex OR business OR trade",
     "Technology":         "India technology OR startup OR software",
-    "Artificial Intelligence": "artificial intelligence OR AI model OR OpenAI OR Anthropic OR Gemini",
+    "Artificial Intelligence": "artificial intelligence OR AI OR OpenAI OR Anthropic OR Google Gemini OR ChatGPT OR machine learning OR generative AI OR AI startup OR AI chip OR LLM",
     "Sports":             "India cricket OR sports",
     "Entertainment":      "Bollywood OR Indian entertainment OR OTT",
 }
