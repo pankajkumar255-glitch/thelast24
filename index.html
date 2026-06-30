@@ -265,7 +265,7 @@
   .meta-line .src .v{color:var(--green)}
   .meta-line .read{text-decoration:none;font-weight:600;margin-left:auto}
 
-  .ad-slot{margin:30px 0 0;border:1px dashed #D9DCD0;border-radius:16px;min-height:110px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--meta);background:rgba(255,255,255,.6)}
+  .ad-slot{display:none}
 
   /* ============ NEWSLETTER + COOKIE ============ */
   .nl{position:fixed;right:16px;bottom:16px;left:16px;max-width:392px;margin-left:auto;background:var(--dark);color:var(--paper-on-dark);border-radius:18px;box-shadow:0 18px 50px rgba(13,18,13,.4);padding:22px;z-index:50;transform:translateY(150%);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
@@ -345,8 +345,6 @@
 <nav><div class="wrap nav-fade"><div class="nav-inner" id="nav"></div></div></nav>
 
 <main class="wrap" id="main"></main>
-
-<div class="wrap"><div class="ad-slot"><!-- AD SLOT: home-footer. Paste your AdSense/ad-network snippet here. -->Ad space</div></div>
 
 <footer>
   <div class="f-inner">
@@ -846,8 +844,6 @@ window.BRIEF = window.BRIEF || {
     Object.keys(sectionEls).forEach(function(k){
       sectionEls[k].style.display = (id === 'all' || id === k) ? '' : 'none';
     });
-    var adMid = document.getElementById('ad-mid');
-    if(adMid) adMid.style.display = (id === 'all') ? '' : 'none';
     if(window.scrollY > 300) window.scrollTo({top: document.getElementById('main').offsetTop - 120, behavior: noMotion ? 'auto' : 'smooth'});
   }
   var allChip = makeChip('All', 'all', null); allChip.dataset.hue = 'var(--ink)';
@@ -905,12 +901,6 @@ window.BRIEF = window.BRIEF || {
     next.addEventListener('click', function(){ rail.scrollBy({left: step(), behavior: noMotion?'auto':'smooth'}); });
     main.appendChild(sec);
     sectionEls[s.id] = sec;
-    if(si === 1){
-      var ad = document.createElement('div');
-      ad.className = 'ad-slot'; ad.id = 'ad-mid';
-      ad.innerHTML = '<!-- AD SLOT: home-mid. Paste your AdSense/ad-network snippet here. -->Ad space';
-      main.appendChild(ad);
-    }
   });
   setFilter('all');
 
