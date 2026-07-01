@@ -1,0 +1,12 @@
+Here's what mattered in Artificial Intelligence today 📰
+
+→ Anthropic Launches Claude Sonnet 5 as a Cheaper Way to Run AI Agents — Anthropic has released Claude Sonnet 5, a new AI model positioned as a more affordable option for running AI agents — automated systems that can perform multi-step tasks with minimal human input.
+→ China's Meituan Launches Massive Open-Source AI Model Built With Zero Foreign Chips — Chinese food delivery giant Meituan has unveiled a large open-source AI model developed entirely without foreign semiconductor components, a significant milestone in China's push for technological self-sufficiency.
+→ San Diego School Unveils $500,000 ChatGPT-Powered Humanoid to Serve as Teacher, Counsellor and Translator — A school in San Diego has deployed a ChatGPT-powered humanoid robot costing $500,000 that is designed to function as teacher, counsellor, translator, and college planner for students.
+→ Fermac AI Systems and RockyEmbed Partner to Advance India's Embedded AI Future — Indian AI company Fermac AI Systems has announced a collaboration with RockyEmbed to push forward embedded artificial intelligence development in India — a segment focused on deploying AI directly on hardware devices rather than relying on cloud computing.
+→ With US AI off the table, India turns to Chinese models as alternatives to OpenAI and Anthropic — India is increasingly looking at Chinese AI models as substitutes for leading US platforms like OpenAI and Anthropic, according to a report in The Economic Times.
+
+Full brief 👉 thelast24.in
+Save this for later 📌
+
+#AI #ArtificialIntelligence #MachineLearning #TechNews #FutureTech #AINews #Innovation #TheLast24 #NewsIndia #5MinuteRead #StayInformed
