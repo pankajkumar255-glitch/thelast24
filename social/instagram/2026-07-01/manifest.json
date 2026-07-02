@@ -1,0 +1,175 @@
+{
+  "date": "2026-07-01",
+  "label": "Wednesday, 01 July 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-07-01/world/slide-01.png",
+        "social/instagram/2026-07-01/world/slide-02.png",
+        "social/instagram/2026-07-01/world/slide-03.png",
+        "social/instagram/2026-07-01/world/slide-04.png",
+        "social/instagram/2026-07-01/world/slide-05.png",
+        "social/instagram/2026-07-01/world/slide-06.png",
+        "social/instagram/2026-07-01/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-01/world/caption.txt",
+      "pdf": "social/instagram/2026-07-01/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-01/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-01/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-07-01/business/slide-01.png",
+        "social/instagram/2026-07-01/business/slide-02.png",
+        "social/instagram/2026-07-01/business/slide-03.png",
+        "social/instagram/2026-07-01/business/slide-04.png",
+        "social/instagram/2026-07-01/business/slide-05.png",
+        "social/instagram/2026-07-01/business/slide-06.png",
+        "social/instagram/2026-07-01/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-01/business/caption.txt",
+      "pdf": "social/instagram/2026-07-01/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-07-01/tech/slide-01.png",
+        "social/instagram/2026-07-01/tech/slide-02.png",
+        "social/instagram/2026-07-01/tech/slide-03.png",
+        "social/instagram/2026-07-01/tech/slide-04.png",
+        "social/instagram/2026-07-01/tech/slide-05.png",
+        "social/instagram/2026-07-01/tech/slide-06.png",
+        "social/instagram/2026-07-01/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-01/tech/caption.txt",
+      "pdf": "social/instagram/2026-07-01/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-01/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-01/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-07-01/national/slide-01.png",
+        "social/instagram/2026-07-01/national/slide-02.png",
+        "social/instagram/2026-07-01/national/slide-03.png",
+        "social/instagram/2026-07-01/national/slide-04.png",
+        "social/instagram/2026-07-01/national/slide-05.png",
+        "social/instagram/2026-07-01/national/slide-06.png",
+        "social/instagram/2026-07-01/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-01/national/caption.txt",
+      "pdf": "social/instagram/2026-07-01/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-07-01/ai/slide-01.png",
+        "social/instagram/2026-07-01/ai/slide-02.png",
+        "social/instagram/2026-07-01/ai/slide-03.png",
+        "social/instagram/2026-07-01/ai/slide-04.png",
+        "social/instagram/2026-07-01/ai/slide-05.png",
+        "social/instagram/2026-07-01/ai/slide-06.png",
+        "social/instagram/2026-07-01/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-01/ai/caption.txt",
+      "pdf": "social/instagram/2026-07-01/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-01/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-01/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-07-01/sports/slide-01.png",
+        "social/instagram/2026-07-01/sports/slide-02.png",
+        "social/instagram/2026-07-01/sports/slide-03.png",
+        "social/instagram/2026-07-01/sports/slide-04.png",
+        "social/instagram/2026-07-01/sports/slide-05.png",
+        "social/instagram/2026-07-01/sports/slide-06.png",
+        "social/instagram/2026-07-01/sports/slide-07.png",
+        "social/instagram/2026-07-01/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-07-01/sports/caption.txt",
+      "pdf": "social/instagram/2026-07-01/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-07-01/entertainment/slide-01.png",
+        "social/instagram/2026-07-01/entertainment/slide-02.png",
+        "social/instagram/2026-07-01/entertainment/slide-03.png",
+        "social/instagram/2026-07-01/entertainment/slide-04.png",
+        "social/instagram/2026-07-01/entertainment/slide-05.png",
+        "social/instagram/2026-07-01/entertainment/slide-06.png",
+        "social/instagram/2026-07-01/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-01/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-07-01/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-07-01/stories/story-01.png",
+      "headline": "Petrol and Diesel Get Cheaper at Nayara Energy Pumps as Global Oil Prices Ease",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-01/stories/story-02.png",
+      "headline": "US-Iran Nuclear Talks Conclude in Doha With Signs of Progress",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-01/stories/story-03.png",
+      "headline": "Ali Khamenei Is Dead: Who Really Runs Iran Now?",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-01/stories/story-04.png",
+      "headline": "Pakistan Insists Indus Waters Treaty Is 'Valid, Binding and Operative' as Tensions Simmer",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-01/stories/story-05.png",
+      "headline": "India Slams Pakistan's Airstrikes in Afghanistan as 'Blatant Act of Aggression'",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-01/stories/story-06.png",
+      "headline": "Europe's Deadly Heatwave: Roads Melt, Tram Tracks Buckle, 300 Excess Deaths in France",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-01/stories/story-07.png",
+      "headline": "Qatar Confirms No Direct US-Iran Talks in Doha; Witkoff and Kushner Meet Mediators",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-01/stories/story-08.png",
+      "headline": "Europe's Brutal Heatwave Melts Roads and Buckles Tram Tracks as Records Fall",
+      "section": "world"
+    }
+  ]
+}
