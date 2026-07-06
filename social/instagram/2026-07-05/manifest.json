@@ -1,0 +1,175 @@
+{
+  "date": "2026-07-05",
+  "label": "Sunday, 05 July 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-07-05/world/slide-01.png",
+        "social/instagram/2026-07-05/world/slide-02.png",
+        "social/instagram/2026-07-05/world/slide-03.png",
+        "social/instagram/2026-07-05/world/slide-04.png",
+        "social/instagram/2026-07-05/world/slide-05.png",
+        "social/instagram/2026-07-05/world/slide-06.png",
+        "social/instagram/2026-07-05/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-05/world/caption.txt",
+      "pdf": "social/instagram/2026-07-05/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-05/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-05/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-07-05/business/slide-01.png",
+        "social/instagram/2026-07-05/business/slide-02.png",
+        "social/instagram/2026-07-05/business/slide-03.png",
+        "social/instagram/2026-07-05/business/slide-04.png",
+        "social/instagram/2026-07-05/business/slide-05.png",
+        "social/instagram/2026-07-05/business/slide-06.png",
+        "social/instagram/2026-07-05/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-05/business/caption.txt",
+      "pdf": "social/instagram/2026-07-05/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-07-05/tech/slide-01.png",
+        "social/instagram/2026-07-05/tech/slide-02.png",
+        "social/instagram/2026-07-05/tech/slide-03.png",
+        "social/instagram/2026-07-05/tech/slide-04.png",
+        "social/instagram/2026-07-05/tech/slide-05.png",
+        "social/instagram/2026-07-05/tech/slide-06.png",
+        "social/instagram/2026-07-05/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-05/tech/caption.txt",
+      "pdf": "social/instagram/2026-07-05/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-05/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-05/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-07-05/national/slide-01.png",
+        "social/instagram/2026-07-05/national/slide-02.png",
+        "social/instagram/2026-07-05/national/slide-03.png",
+        "social/instagram/2026-07-05/national/slide-04.png",
+        "social/instagram/2026-07-05/national/slide-05.png",
+        "social/instagram/2026-07-05/national/slide-06.png",
+        "social/instagram/2026-07-05/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-05/national/caption.txt",
+      "pdf": "social/instagram/2026-07-05/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-07-05/ai/slide-01.png",
+        "social/instagram/2026-07-05/ai/slide-02.png",
+        "social/instagram/2026-07-05/ai/slide-03.png",
+        "social/instagram/2026-07-05/ai/slide-04.png",
+        "social/instagram/2026-07-05/ai/slide-05.png",
+        "social/instagram/2026-07-05/ai/slide-06.png",
+        "social/instagram/2026-07-05/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-05/ai/caption.txt",
+      "pdf": "social/instagram/2026-07-05/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-05/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-05/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-07-05/sports/slide-01.png",
+        "social/instagram/2026-07-05/sports/slide-02.png",
+        "social/instagram/2026-07-05/sports/slide-03.png",
+        "social/instagram/2026-07-05/sports/slide-04.png",
+        "social/instagram/2026-07-05/sports/slide-05.png",
+        "social/instagram/2026-07-05/sports/slide-06.png",
+        "social/instagram/2026-07-05/sports/slide-07.png",
+        "social/instagram/2026-07-05/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-07-05/sports/caption.txt",
+      "pdf": "social/instagram/2026-07-05/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-07-05/entertainment/slide-01.png",
+        "social/instagram/2026-07-05/entertainment/slide-02.png",
+        "social/instagram/2026-07-05/entertainment/slide-03.png",
+        "social/instagram/2026-07-05/entertainment/slide-04.png",
+        "social/instagram/2026-07-05/entertainment/slide-05.png",
+        "social/instagram/2026-07-05/entertainment/slide-06.png",
+        "social/instagram/2026-07-05/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-05/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-07-05/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-07-05/stories/story-01.png",
+      "headline": "Netanyahu Cites '1.4 Billion Indians' as He Pushes Back on Vance's 'US Is Israel's Only Ally' Claim",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-05/stories/story-02.png",
+      "headline": "Ukraine Accuses Russia of Burying 'Bioweapons' in Its Territory",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-05/stories/story-03.png",
+      "headline": "Khamenei Funeral: Three Sons Attend in Tehran as Successor Mojtaba Skips, US Pressure Kept Delegations Away",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-05/stories/story-04.png",
+      "headline": "Three Senior Ministers Fly to Brussels as India Accelerates EU Trade Mission",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-05/stories/story-05.png",
+      "headline": "India's Top Three Ministers Head to Brussels on Trade Mission as Goyal Updates on Canada, Israel and Peru",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-05/stories/story-06.png",
+      "headline": "Trump Reverses on India: Calls Economy 'Doing Very Well at 7-8%' After 'Dead Economy' Jibe",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-05/stories/story-07.png",
+      "headline": "India Opens Power Equipment Bids to Four China-Linked Firms",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-05/stories/story-08.png",
+      "headline": "India's Forex Reserves Fall $5.65 Billion Amid Iran War Impact",
+      "section": "world"
+    }
+  ]
+}
