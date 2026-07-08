@@ -1,0 +1,175 @@
+{
+  "date": "2026-07-07",
+  "label": "Tuesday, 07 July 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-07-07/world/slide-01.png",
+        "social/instagram/2026-07-07/world/slide-02.png",
+        "social/instagram/2026-07-07/world/slide-03.png",
+        "social/instagram/2026-07-07/world/slide-04.png",
+        "social/instagram/2026-07-07/world/slide-05.png",
+        "social/instagram/2026-07-07/world/slide-06.png",
+        "social/instagram/2026-07-07/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-07/world/caption.txt",
+      "pdf": "social/instagram/2026-07-07/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-07/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-07/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-07-07/business/slide-01.png",
+        "social/instagram/2026-07-07/business/slide-02.png",
+        "social/instagram/2026-07-07/business/slide-03.png",
+        "social/instagram/2026-07-07/business/slide-04.png",
+        "social/instagram/2026-07-07/business/slide-05.png",
+        "social/instagram/2026-07-07/business/slide-06.png",
+        "social/instagram/2026-07-07/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-07/business/caption.txt",
+      "pdf": "social/instagram/2026-07-07/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-07-07/tech/slide-01.png",
+        "social/instagram/2026-07-07/tech/slide-02.png",
+        "social/instagram/2026-07-07/tech/slide-03.png",
+        "social/instagram/2026-07-07/tech/slide-04.png",
+        "social/instagram/2026-07-07/tech/slide-05.png",
+        "social/instagram/2026-07-07/tech/slide-06.png",
+        "social/instagram/2026-07-07/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-07/tech/caption.txt",
+      "pdf": "social/instagram/2026-07-07/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-07/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-07/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-07-07/national/slide-01.png",
+        "social/instagram/2026-07-07/national/slide-02.png",
+        "social/instagram/2026-07-07/national/slide-03.png",
+        "social/instagram/2026-07-07/national/slide-04.png",
+        "social/instagram/2026-07-07/national/slide-05.png",
+        "social/instagram/2026-07-07/national/slide-06.png",
+        "social/instagram/2026-07-07/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-07/national/caption.txt",
+      "pdf": "social/instagram/2026-07-07/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-07-07/ai/slide-01.png",
+        "social/instagram/2026-07-07/ai/slide-02.png",
+        "social/instagram/2026-07-07/ai/slide-03.png",
+        "social/instagram/2026-07-07/ai/slide-04.png",
+        "social/instagram/2026-07-07/ai/slide-05.png",
+        "social/instagram/2026-07-07/ai/slide-06.png",
+        "social/instagram/2026-07-07/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-07/ai/caption.txt",
+      "pdf": "social/instagram/2026-07-07/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-07/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-07/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-07-07/sports/slide-01.png",
+        "social/instagram/2026-07-07/sports/slide-02.png",
+        "social/instagram/2026-07-07/sports/slide-03.png",
+        "social/instagram/2026-07-07/sports/slide-04.png",
+        "social/instagram/2026-07-07/sports/slide-05.png",
+        "social/instagram/2026-07-07/sports/slide-06.png",
+        "social/instagram/2026-07-07/sports/slide-07.png",
+        "social/instagram/2026-07-07/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-07-07/sports/caption.txt",
+      "pdf": "social/instagram/2026-07-07/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-07-07/entertainment/slide-01.png",
+        "social/instagram/2026-07-07/entertainment/slide-02.png",
+        "social/instagram/2026-07-07/entertainment/slide-03.png",
+        "social/instagram/2026-07-07/entertainment/slide-04.png",
+        "social/instagram/2026-07-07/entertainment/slide-05.png",
+        "social/instagram/2026-07-07/entertainment/slide-06.png",
+        "social/instagram/2026-07-07/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-07/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-07-07/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-07-07/stories/story-01.png",
+      "headline": "US Launches Strikes on Iran as Three Ships Hit in Strait of Hormuz Flare-Up",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-07/stories/story-02.png",
+      "headline": "F-35 Sale to Turkey Takes Centre Stage as Trump Visits Ankara; Netanyahu Openly Opposes Deal",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-07/stories/story-03.png",
+      "headline": "Pakistan Threatens War Over Indus Waters as Monsoon Tensions Rise",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-07/stories/story-04.png",
+      "headline": "Bilawal Bhutto Threatens India With War Over Indus Waters Treaty",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-07/stories/story-05.png",
+      "headline": "Trump Issues 'Finish The Job' Warning To Iran At Khamenei's Funeral",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-07/stories/story-06.png",
+      "headline": "Hamas Dissolves Its Gaza Government To Transfer Power To UN-Backed Committee",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-07/stories/story-07.png",
+      "headline": "Netanyahu Cites '1.4 Billion Indians' as He Pushes Back on Vance's 'US Is Israel's Only Ally' Claim",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-07/stories/story-08.png",
+      "headline": "Ukraine Accuses Russia of Burying 'Bioweapons' in Its Territory",
+      "section": "world"
+    }
+  ]
+}
