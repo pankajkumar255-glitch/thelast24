@@ -1,0 +1,175 @@
+{
+  "date": "2026-07-10",
+  "label": "Friday, 10 July 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-07-10/world/slide-01.png",
+        "social/instagram/2026-07-10/world/slide-02.png",
+        "social/instagram/2026-07-10/world/slide-03.png",
+        "social/instagram/2026-07-10/world/slide-04.png",
+        "social/instagram/2026-07-10/world/slide-05.png",
+        "social/instagram/2026-07-10/world/slide-06.png",
+        "social/instagram/2026-07-10/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-10/world/caption.txt",
+      "pdf": "social/instagram/2026-07-10/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-10/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-10/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-07-10/business/slide-01.png",
+        "social/instagram/2026-07-10/business/slide-02.png",
+        "social/instagram/2026-07-10/business/slide-03.png",
+        "social/instagram/2026-07-10/business/slide-04.png",
+        "social/instagram/2026-07-10/business/slide-05.png",
+        "social/instagram/2026-07-10/business/slide-06.png",
+        "social/instagram/2026-07-10/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-10/business/caption.txt",
+      "pdf": "social/instagram/2026-07-10/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-07-10/tech/slide-01.png",
+        "social/instagram/2026-07-10/tech/slide-02.png",
+        "social/instagram/2026-07-10/tech/slide-03.png",
+        "social/instagram/2026-07-10/tech/slide-04.png",
+        "social/instagram/2026-07-10/tech/slide-05.png",
+        "social/instagram/2026-07-10/tech/slide-06.png",
+        "social/instagram/2026-07-10/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-10/tech/caption.txt",
+      "pdf": "social/instagram/2026-07-10/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-10/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-10/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-07-10/national/slide-01.png",
+        "social/instagram/2026-07-10/national/slide-02.png",
+        "social/instagram/2026-07-10/national/slide-03.png",
+        "social/instagram/2026-07-10/national/slide-04.png",
+        "social/instagram/2026-07-10/national/slide-05.png",
+        "social/instagram/2026-07-10/national/slide-06.png",
+        "social/instagram/2026-07-10/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-10/national/caption.txt",
+      "pdf": "social/instagram/2026-07-10/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-07-10/ai/slide-01.png",
+        "social/instagram/2026-07-10/ai/slide-02.png",
+        "social/instagram/2026-07-10/ai/slide-03.png",
+        "social/instagram/2026-07-10/ai/slide-04.png",
+        "social/instagram/2026-07-10/ai/slide-05.png",
+        "social/instagram/2026-07-10/ai/slide-06.png",
+        "social/instagram/2026-07-10/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-10/ai/caption.txt",
+      "pdf": "social/instagram/2026-07-10/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-10/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-10/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-07-10/sports/slide-01.png",
+        "social/instagram/2026-07-10/sports/slide-02.png",
+        "social/instagram/2026-07-10/sports/slide-03.png",
+        "social/instagram/2026-07-10/sports/slide-04.png",
+        "social/instagram/2026-07-10/sports/slide-05.png",
+        "social/instagram/2026-07-10/sports/slide-06.png",
+        "social/instagram/2026-07-10/sports/slide-07.png",
+        "social/instagram/2026-07-10/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-07-10/sports/caption.txt",
+      "pdf": "social/instagram/2026-07-10/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-07-10/entertainment/slide-01.png",
+        "social/instagram/2026-07-10/entertainment/slide-02.png",
+        "social/instagram/2026-07-10/entertainment/slide-03.png",
+        "social/instagram/2026-07-10/entertainment/slide-04.png",
+        "social/instagram/2026-07-10/entertainment/slide-05.png",
+        "social/instagram/2026-07-10/entertainment/slide-06.png",
+        "social/instagram/2026-07-10/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-10/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-07-10/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-07-10/stories/story-01.png",
+      "headline": "Huge Crowds in Mashhad for Burial of Iran's Late Supreme Leader Khamenei",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-10/stories/story-02.png",
+      "headline": "US Strike Targeted Bushehr Nuclear Plant Perimeter as Iran-US War Escalates",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-10/stories/story-03.png",
+      "headline": "Air India Only Indian Airline in Global Top 10 for Punctuality in June",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-10/stories/story-04.png",
+      "headline": "Russia Bans Diesel Exports After Ukrainian Drone Strikes Target Fuel Infrastructure",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-10/stories/story-05.png",
+      "headline": "Iran Fires 10 Ballistic Missiles at US Military Base in Jordan as Ceasefire Collapses",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-10/stories/story-06.png",
+      "headline": "Trump declares Iran ceasefire 'over', launches fresh strikes and threatens civilian infrastructure",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-10/stories/story-07.png",
+      "headline": "PM Modi visits exhibition marking the Golden Jubilee of the 1965 India-Pakistan war",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-10/stories/story-08.png",
+      "headline": "Trump calls Spain a 'wasted cause', cuts off all trade with the NATO ally",
+      "section": "world"
+    }
+  ]
+}
