@@ -1045,6 +1045,25 @@ def masthead_css():
     matching the homepage band/brand/nav treatment (minus the ticker).
     Returns single-brace CSS (inserted as a variable, not inside an f-string)."""
     return """
+/* Fixes a Chromium quirk: without this, body's background gets promoted to
+   the page "canvas" layer and silently paints OVER any negative z-index
+   fixed content (like the bubble pattern below) even though it should sit
+   behind it. Painting html's background too keeps body's background as an
+   ordinary layer. */
+html{background:var(--paper)}
+/* ============ BUBBLE PATTERN — visible ambient background texture ============
+   Matches the homepage: a tiled SVG pattern of bubbles across the whole page
+   plus two soft glows for depth. Fixed behind everything, never scrolls. */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(39,185,124,.16) 0, rgba(39,185,124,0) 42%),
+    radial-gradient(circle at 88% 85%, rgba(12,110,73,.15) 0, rgba(12,110,73,0) 44%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Ccircle cx='30' cy='40' r='18' fill='%2327B97C' fill-opacity='0.16'/%3E%3Ccircle cx='120' cy='95' r='10' fill='%230C6E49' fill-opacity='0.15'/%3E%3Ccircle cx='205' cy='55' r='26' fill='%2327B97C' fill-opacity='0.13'/%3E%3Ccircle cx='70' cy='168' r='15' fill='%230C6E49' fill-opacity='0.16'/%3E%3Ccircle cx='188' cy='198' r='34' fill='%2327B97C' fill-opacity='0.11'/%3E%3Ccircle cx='237' cy='232' r='9' fill='%230C6E49' fill-opacity='0.19'/%3E%3Ccircle cx='18' cy='224' r='13' fill='%2327B97C' fill-opacity='0.16'/%3E%3Ccircle cx='142' cy='16' r='8' fill='%230C6E49' fill-opacity='0.20'/%3E%3C/svg%3E");
+  background-repeat:no-repeat,no-repeat,repeat;
+  background-size:auto,auto,260px 260px;
+}
+@media (max-width:600px){ body::before{ background-size:auto,auto,190px 190px } }
 .band{background:var(--dark);color:#F2F4EE;padding:20px 0}
 .band .wrap{max-width:var(--mw,920px);margin:0 auto;padding:0 20px}
 .brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
