@@ -15,6 +15,25 @@
 body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:980px;margin:0 auto;padding:0 20px}
 
+/* Fixes a Chromium quirk: without this, body's background gets promoted to
+   the page "canvas" layer and silently paints OVER any negative z-index
+   fixed content (like the bubble pattern below) even though it should sit
+   behind it. Painting html's background too keeps body's background as an
+   ordinary layer. */
+html{background:var(--paper)}
+/* ============ BUBBLE PATTERN — visible ambient background texture ============
+   Matches the homepage: a tiled SVG pattern of bubbles across the whole page
+   plus two soft glows for depth. Fixed behind everything, never scrolls. */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(39,185,124,.16) 0, rgba(39,185,124,0) 42%),
+    radial-gradient(circle at 88% 85%, rgba(12,110,73,.15) 0, rgba(12,110,73,0) 44%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Ccircle cx='30' cy='40' r='18' fill='%2327B97C' fill-opacity='0.16'/%3E%3Ccircle cx='120' cy='95' r='10' fill='%230C6E49' fill-opacity='0.15'/%3E%3Ccircle cx='205' cy='55' r='26' fill='%2327B97C' fill-opacity='0.13'/%3E%3Ccircle cx='70' cy='168' r='15' fill='%230C6E49' fill-opacity='0.16'/%3E%3Ccircle cx='188' cy='198' r='34' fill='%2327B97C' fill-opacity='0.11'/%3E%3Ccircle cx='237' cy='232' r='9' fill='%230C6E49' fill-opacity='0.19'/%3E%3Ccircle cx='18' cy='224' r='13' fill='%2327B97C' fill-opacity='0.16'/%3E%3Ccircle cx='142' cy='16' r='8' fill='%230C6E49' fill-opacity='0.20'/%3E%3C/svg%3E");
+  background-repeat:no-repeat,no-repeat,repeat;
+  background-size:auto,auto,260px 260px;
+}
+@media (max-width:600px){ body::before{ background-size:auto,auto,190px 190px } }
 .band{background:var(--dark);color:#F2F4EE;padding:20px 0}
 .band .wrap{max-width:var(--mw,920px);margin:0 auto;padding:0 20px}
 .brand-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
@@ -49,6 +68,26 @@ a{color:inherit}
 .tabs{display:flex;gap:8px;margin:26px 0 8px;flex-wrap:wrap}
 .tab{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:8px 14px;border:1px solid var(--hairline);border-radius:999px;background:#fff;cursor:pointer;color:var(--ink-soft)}
 .tab.active{background:var(--wc);color:#fff;border-color:var(--wc)}
+/* knockout bracket — flowchart of rounds, left to right */
+.bracket{display:flex;gap:22px;overflow-x:auto;padding:8px 2px 20px;-webkit-overflow-scrolling:touch}
+.b-round{flex:0 0 220px;min-width:200px}
+.b-round h4{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--wc);margin:0 0 10px;text-align:center}
+.b-round.b-third h4{color:var(--meta)}
+.b-col{display:flex;flex-direction:column;justify-content:space-around;height:100%}
+.b-match{background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:12px 14px;margin:7px 0;position:relative}
+.b-match.b-played{border-color:rgba(22,135,107,.35)}
+.b-round:not(:last-child):not(.b-third) .b-match::after{content:"";position:absolute;top:50%;right:-22px;width:20px;height:1px;background:var(--hairline)}
+.b-team{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:13.5px;font-weight:600;padding:3px 0;color:var(--ink-soft)}
+.b-team.b-win{color:var(--ink);font-weight:800}
+.b-team.b-win .b-tm::before{content:'●';color:var(--wc);font-size:7px;margin-right:6px;vertical-align:middle}
+.b-team .b-tm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b-team .b-sr{font-family:var(--mono);font-size:9px;color:var(--meta);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:104px}
+.b-sc{text-align:center;font-family:var(--display);font-weight:800;font-size:16px;color:var(--wc);padding:3px 0;border-top:1px dashed var(--hairline);border-bottom:1px dashed var(--hairline);margin:5px 0}
+.b-sc.b-tbd{font-family:var(--mono);font-weight:600;font-size:10px;color:var(--meta);letter-spacing:.03em;text-transform:none}
+.b-et,.b-pen{display:block;font-family:var(--mono);font-size:9px;color:var(--meta);font-weight:500;margin-top:1px}
+.b-meta{font-family:var(--mono);font-size:9.5px;color:var(--meta);text-align:center;margin-top:5px}
+.b-round.b-final .b-match{border-color:var(--wc);box-shadow:0 4px 14px rgba(22,135,107,.12)}
+@media(max-width:600px){.b-round{flex:0 0 172px;min-width:158px}.b-team{font-size:12px}.b-team .b-sr{max-width:76px}}
 .panel{display:none;padding:18px 0 60px}
 .panel.show{display:block}
 .section-title{font-family:var(--display);font-weight:800;font-size:18px;margin:22px 0 12px;letter-spacing:-.01em}
@@ -83,19 +122,21 @@ footer{border-top:1px solid var(--hairline);padding:28px 0;font-family:var(--mon
 </style>
 </head>
 <body>
-<div class="band"><div class="wrap"><div class="brand-row"><a class="brand" href="/">The Last <span>24</span></a><div class="brand-side"><div class="brand-nav"><a class="m-link" href="/trending.html">Trending</a><a class="m-link" href="/current-affairs.html">Current Affairs</a><a class="m-link" href="/archive.html">Archive</a><a class="m-link" href="/">Home</a></div><div class="brand-meta"><span class="v">✓ Verified publishers only</span><br>Friday, 10 July 2026</div></div></div></div></div>
+<div class="band"><div class="wrap"><div class="brand-row"><a class="brand" href="/">The Last <span>24</span></a><div class="brand-side"><div class="brand-nav"><a class="m-link" href="/trending.html">Trending</a><a class="m-link" href="/current-affairs.html">Current Affairs</a><a class="m-link" href="/archive.html">Archive</a><a class="m-link" href="/">Home</a></div><div class="brand-meta"><span class="v">✓ Verified publishers only</span><br>Sunday, 12 July 2026</div></div></div></div></div>
 <div class="wrap hero">
   <h1>FIFA <span>World Cup</span> 2026</h1>
   <p>Group standings, latest scores and upcoming fixtures — all kickoff times in IST, for Indian fans tracking the tournament.</p>
   <div class="updated" id="updated"></div>
   <div class="tabs">
-    <button class="tab active" data-tab="standings">Standings</button>
+    <button class="tab active" data-tab="bracket">Knockout</button>
+    <button class="tab" data-tab="standings">Standings</button>
     <button class="tab" data-tab="scores">Scores</button>
     <button class="tab" data-tab="fixtures">Fixtures</button>
   </div>
 </div>
 <div class="wrap">
-  <div class="panel show" id="standings"></div>
+  <div class="panel show" id="bracket"></div>
+  <div class="panel" id="standings"></div>
   <div class="panel" id="scores"></div>
   <div class="panel" id="fixtures"></div>
 </div>
@@ -105,6 +146,39 @@ footer{border-top:1px solid var(--hairline);padding:28px 0;font-family:var(--mon
 var W=window.WORLDCUP||{standings:{},recent:[],today:[],upcoming:[]};
 function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 document.getElementById('updated').innerHTML=W.updated_label?'Updated <b>'+esc(W.updated_label)+'</b>':'';
+
+// Knockout bracket — flowchart of rounds with winners, scores, goal scorers
+(function(){
+  var box=document.getElementById('bracket'); var B=W.bracket;
+  if(!box) return;
+  if(!B || !B.rounds || !B.rounds.length){
+    box.innerHTML='<div class="empty">The knockout bracket will appear once Round of 32 fixtures are set.</div>';
+    return;
+  }
+  function card(m){
+    var w1=m.played && m.winner===m.team1, w2=m.played && m.winner===m.team2;
+    var sc=m.played
+      ? '<div class="b-sc">'+esc(m.score)+(m.et?'<span class="b-et">'+esc(m.et)+'</span>':'')+(m.pens?'<span class="b-pen">'+esc(m.pens)+'</span>':'')+'</div>'
+      : '<div class="b-sc b-tbd">'+esc(m.ist?m.ist.split(',')[0]:'TBD')+'</div>';
+    return '<div class="b-match'+(m.played?' b-played':'')+'">'
+      +'<div class="b-team'+(w1?' b-win':'')+'"><span class="b-tm">'+esc(m.team1)+'</span>'+(m.scorers1?'<span class="b-sr">'+esc(m.scorers1)+'</span>':'')+'</div>'
+      +sc
+      +'<div class="b-team'+(w2?' b-win':'')+'"><span class="b-tm">'+esc(m.team2)+'</span>'+(m.scorers2?'<span class="b-sr">'+esc(m.scorers2)+'</span>':'')+'</div>'
+      +(m.ground?'<div class="b-meta">'+esc(m.ground)+'</div>':'')
+      +'</div>';
+  }
+  var maxCount=B.rounds[0].matches.length;
+  var html='<div class="bracket">'+B.rounds.map(function(r,i){
+    var isFinal=(i===B.rounds.length-1);
+    return '<div class="b-round'+(isFinal?' b-final':'')+'"><h4>'+esc(r.name)+'</h4>'
+      +'<div class="b-col" style="min-height:'+(maxCount*88)+'px">'+r.matches.map(card).join('')+'</div></div>';
+  }).join('');
+  if(B.third_place){
+    html+='<div class="b-round b-third"><h4>3rd place</h4><div class="b-col">'+card(B.third_place)+'</div></div>';
+  }
+  html+='</div>';
+  box.innerHTML=html+'<div class="note">Placeholder match-ups (e.g. "Winner: Team A v Team B") update automatically once the earlier round is decided. Times shown are kickoff, IST.</div>';
+})();
 
 // Standings
 (function(){
