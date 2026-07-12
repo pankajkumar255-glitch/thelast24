@@ -15,6 +15,10 @@ Time handling: openfootball times look like "20:00 UTC-6". We parse the UTC
 offset, convert to UTC, then to IST (UTC+5:30).
 
 Toggle: set WORLDCUP_ENABLED=0 to disable after the tournament (default on).
+Toggle: set BRACKET_ENABLED=0 to drop the knockout bracket tab once the
+tournament is over — it's a short-lived feature (roughly one week, through
+the final) and this makes it a one-line switch to turn off later without
+touching layout code.
 """
 import os, json, re
 import urllib.request
@@ -24,9 +28,18 @@ IST = timezone(timedelta(hours=5, minutes=30))
 NOW = datetime.now(IST)
 SITE_URL = os.environ.get("SITE_URL", "https://thelast24.in").rstrip("/")
 ENABLED = os.environ.get("WORLDCUP_ENABLED", "1").strip() not in ("0", "false", "")
+BRACKET_ENABLED = os.environ.get("BRACKET_ENABLED", "1").strip() not in ("0", "false", "")
 
 DATA_URL = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
 WC_HUE = "#16876B"   # World Cup accent (football green, harmonised with site)
+
+# Knockout rounds in bracket order. openfootball tags these matches with a
+# "round" field (not "group"); the Semi-final/Final entries reference earlier
+# matches by number as placeholder teams, e.g. "W97" (winner of match 97) or
+# "L101" (loser of match 101) — resolved to real team names as each round
+# completes (see _resolve_token / _compute_bracket below).
+KNOCKOUT_ORDER = ["Round of 32", "Round of 16", "Quarter-final", "Semi-final", "Final"]
+THIRD_PLACE_ROUND = "Match for third place"
 
 # Indian-relevant / marquee teams to surface first in "what to watch".
 MARQUEE = {"Brazil", "Argentina", "France", "England", "Spain", "Portugal",
@@ -142,6 +155,146 @@ def _matches_view(matches):
     return recent[:8], today, upcoming[:8]
 
 
+def _scorers_str(goals):
+    """Compact scorer list for a bracket card, e.g. 'Havertz 54\\', Kane 75\\'/86\\''
+    — groups repeated scorers, flags penalties/own goals. '' if no goals."""
+    by_name, order = {}, []
+    for g in goals or []:
+        nm = (g.get("name") or "").strip()
+        if not nm:
+            continue
+        mn = str(g.get("minute", "")).strip()
+        tag = " (pen)" if g.get("penalty") else (" (og)" if g.get("owngoal") else "")
+        mark = (f"{mn}'{tag}" if mn else tag.strip())
+        by_name.setdefault(nm, [])
+        if mark:
+            by_name[nm].append(mark)
+        if nm not in order:
+            order.append(nm)
+    return ", ".join(f"{nm} {'/'.join(by_name[nm])}".strip() for nm in order)
+
+
+def _ko_result(m):
+    """Winner/loser + score summary for a knockout match, accounting for
+    extra time and penalties. Returns None if not played / not yet decided."""
+    score = m.get("score", {}) or {}
+    ft = score.get("ft")
+    if not ft or len(ft) != 2:
+        return None
+    et, pk = score.get("et"), score.get("p")
+    t1, t2 = m.get("team1"), m.get("team2")
+    g1, g2 = ft
+    f1, f2 = (et[0], et[1]) if et else (g1, g2)
+    if pk and len(pk) == 2:
+        winner, loser = (t1, t2) if pk[0] > pk[1] else (t2, t1)
+    elif f1 > f2:
+        winner, loser = t1, t2
+    elif f2 > f1:
+        winner, loser = t2, t1
+    else:
+        return None  # shouldn't happen in a knockout match without penalties
+    return {
+        "winner": winner, "loser": loser,
+        "score": f"{g1}-{g2}",
+        "et": f"{et[0]}-{et[1]} AET" if et and len(et) == 2 else "",
+        "pens": f"{pk[0]}-{pk[1]} on pens" if pk and len(pk) == 2 else "",
+    }
+
+
+def _is_placeholder_name(s):
+    """True for an unresolved token ('W97') or an already-composed but still
+    undecided label ('Winner: Spain v Belgium') — i.e. not a real team name."""
+    s = str(s or "")
+    return bool(re.match(r"^[WL]\d+$", s)) or s.startswith(("Winner:", "Loser:", "Winner of", "Loser of"))
+
+
+def _round_label(src, by_num):
+    """'Semi-final 1' / 'Semi-final 2' when a round has multiple matches,
+    else just the round name — used as a stable fallback placeholder when
+    we can't show real team names without nesting two rounds deep."""
+    rname = src.get("round", "that match")
+    siblings = sorted(n for n, mm in by_num.items() if mm.get("round") == rname)
+    if len(siblings) > 1:
+        return f"{rname} {siblings.index(src['num']) + 1}"
+    return rname
+
+
+def _resolve_token(token, by_num):
+    """'W97' -> real team name once match 97 is decided. If undecided, use
+    that match's own team names IF they're already real ('Winner: Spain v
+    Belgium'); if those are themselves still placeholders (two rounds deep,
+    e.g. the Final referencing an undecided Semi-final), fall back to a
+    round label ('Winner of Semi-final 1') instead of compounding a nested
+    'Winner: Winner: A v B v C' string. Real team names pass through
+    unchanged."""
+    if not token or not re.match(r"^[WL]\d+$", str(token)):
+        return token
+    kind, num = token[0], int(token[1:])
+    src = by_num.get(num)
+    if not src:
+        return token
+    res = _ko_result(src)
+    if res:
+        return res["winner"] if kind == "W" else res["loser"]
+    label = "Winner" if kind == "W" else "Loser"
+    t1, t2 = src.get("team1"), src.get("team2")
+    if t1 and t2 and not _is_placeholder_name(t1) and not _is_placeholder_name(t2):
+        return f"{label}: {t1} v {t2}"
+    return f"{label} of {_round_label(src, by_num)}"
+
+
+def _compute_bracket(matches):
+    """Single-elimination bracket: Round of 32 -> ... -> Final, with the
+    third-place match alongside. Returns {rounds:[{name, matches:[...]}],
+    third_place: {...} | None}, or None if there's no knockout data yet.
+    Placeholder teams like 'W97'/'L101' are resolved to real team names (or a
+    friendly 'Winner: A v B' label) round by round, since later rounds can
+    only be resolved once the rounds that feed them are."""
+    by_num = {m["num"]: dict(m) for m in matches if m.get("round") and m.get("num") is not None}
+    if not by_num:
+        return None
+    by_round = {}
+    for num in sorted(by_num):
+        m = by_num[num]
+        by_round.setdefault(m.get("round"), []).append(m)
+
+    def build_card(m):
+        # Patch team1/team2 in place with resolved names so later rounds
+        # (which reference this match's winner/loser) see real names too.
+        t1 = _resolve_token(m.get("team1"), by_num)
+        t2 = _resolve_token(m.get("team2"), by_num)
+        m["team1"], m["team2"] = t1, t2
+        ist = _to_ist(m.get("date", ""), m.get("time", ""))
+        result = _ko_result(m)
+        return {
+            "num": m["num"], "team1": t1, "team2": t2,
+            "ground": m.get("ground", ""),
+            "ist": ist.strftime("%d %b, %I:%M %p IST") if ist else "",
+            "ist_sort": ist.strftime("%Y-%m-%d %H:%M") if ist else "",
+            "played": bool(result),
+            "winner": result["winner"] if result else "",
+            "score": result["score"] if result else "",
+            "et": result["et"] if result else "",
+            "pens": result["pens"] if result else "",
+            "scorers1": _scorers_str(m.get("goals1")),
+            "scorers2": _scorers_str(m.get("goals2")),
+        }
+
+    rounds = []
+    for rname in KNOCKOUT_ORDER:
+        ms = by_round.get(rname, [])
+        if not ms:
+            continue
+        rounds.append({"name": rname,
+                        "matches": [build_card(m) for m in sorted(ms, key=lambda x: x["num"])]})
+    if not rounds:
+        return None
+
+    third_ms = by_round.get(THIRD_PLACE_ROUND, [])
+    third = build_card(third_ms[0]) if third_ms else None
+    return {"rounds": rounds, "third_place": third}
+
+
 def build_worldcup(write_page=True):
     """Main entry: fetch, compute, write worldcup.js + worldcup.html.
     Returns the payload dict (also used by callers). No-op if disabled."""
@@ -157,20 +310,29 @@ def build_worldcup(write_page=True):
     standings = _compute_standings(matches)
     recent, today, upcoming = _matches_view(matches)
 
+    bracket = None
+    if BRACKET_ENABLED:
+        try:
+            bracket = _compute_bracket(matches)
+        except Exception as exc:
+            print(f"Knockout bracket build failed ({exc}); omitting bracket tab.")
+
     payload = {
         "updated_label": NOW.strftime("%d %b %Y, %H:%M IST"),
         "standings": standings,
         "recent": recent,
         "today": today,
         "upcoming": upcoming,
+        "bracket": bracket,
     }
     with open("worldcup.js", "w", encoding="utf-8") as f:
         f.write("window.WORLDCUP = " + json.dumps(payload, ensure_ascii=False) + ";")
 
     if write_page:
         _write_page(payload)
+    br_note = f", bracket: {len(bracket['rounds'])} rounds" if bracket else ""
     print(f"World Cup: {len(standings)} groups, {len(recent)} recent, "
-          f"{len(today)} today, {len(upcoming)} upcoming.")
+          f"{len(today)} today, {len(upcoming)} upcoming{br_note}.")
     return payload
 
 
@@ -330,6 +492,26 @@ a{color:inherit}
 .tabs{display:flex;gap:8px;margin:26px 0 8px;flex-wrap:wrap}
 .tab{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:8px 14px;border:1px solid var(--hairline);border-radius:999px;background:#fff;cursor:pointer;color:var(--ink-soft)}
 .tab.active{background:var(--wc);color:#fff;border-color:var(--wc)}
+/* knockout bracket — flowchart of rounds, left to right */
+.bracket{display:flex;gap:22px;overflow-x:auto;padding:8px 2px 20px;-webkit-overflow-scrolling:touch}
+.b-round{flex:0 0 220px;min-width:200px}
+.b-round h4{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--wc);margin:0 0 10px;text-align:center}
+.b-round.b-third h4{color:var(--meta)}
+.b-col{display:flex;flex-direction:column;justify-content:space-around;height:100%}
+.b-match{background:#fff;border:1px solid var(--hairline);border-radius:12px;padding:12px 14px;margin:7px 0;position:relative}
+.b-match.b-played{border-color:rgba(22,135,107,.35)}
+.b-round:not(:last-child):not(.b-third) .b-match::after{content:"";position:absolute;top:50%;right:-22px;width:20px;height:1px;background:var(--hairline)}
+.b-team{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:13.5px;font-weight:600;padding:3px 0;color:var(--ink-soft)}
+.b-team.b-win{color:var(--ink);font-weight:800}
+.b-team.b-win .b-tm::before{content:'●';color:var(--wc);font-size:7px;margin-right:6px;vertical-align:middle}
+.b-team .b-tm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b-team .b-sr{font-family:var(--mono);font-size:9px;color:var(--meta);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:104px}
+.b-sc{text-align:center;font-family:var(--display);font-weight:800;font-size:16px;color:var(--wc);padding:3px 0;border-top:1px dashed var(--hairline);border-bottom:1px dashed var(--hairline);margin:5px 0}
+.b-sc.b-tbd{font-family:var(--mono);font-weight:600;font-size:10px;color:var(--meta);letter-spacing:.03em;text-transform:none}
+.b-et,.b-pen{display:block;font-family:var(--mono);font-size:9px;color:var(--meta);font-weight:500;margin-top:1px}
+.b-meta{font-family:var(--mono);font-size:9.5px;color:var(--meta);text-align:center;margin-top:5px}
+.b-round.b-final .b-match{border-color:var(--wc);box-shadow:0 4px 14px rgba(22,135,107,.12)}
+@media(max-width:600px){.b-round{flex:0 0 172px;min-width:158px}.b-team{font-size:12px}.b-team .b-sr{max-width:76px}}
 .panel{display:none;padding:18px 0 60px}
 .panel.show{display:block}
 .section-title{font-family:var(--display);font-weight:800;font-size:18px;margin:22px 0 12px;letter-spacing:-.01em}
@@ -370,13 +552,15 @@ footer{border-top:1px solid var(--hairline);padding:28px 0;font-family:var(--mon
   <p>Group standings, latest scores and upcoming fixtures — all kickoff times in IST, for Indian fans tracking the tournament.</p>
   <div class="updated" id="updated"></div>
   <div class="tabs">
-    <button class="tab active" data-tab="standings">Standings</button>
+    <button class="tab active" data-tab="bracket">Knockout</button>
+    <button class="tab" data-tab="standings">Standings</button>
     <button class="tab" data-tab="scores">Scores</button>
     <button class="tab" data-tab="fixtures">Fixtures</button>
   </div>
 </div>
 <div class="wrap">
-  <div class="panel show" id="standings"></div>
+  <div class="panel show" id="bracket"></div>
+  <div class="panel" id="standings"></div>
   <div class="panel" id="scores"></div>
   <div class="panel" id="fixtures"></div>
 </div>
@@ -386,6 +570,39 @@ footer{border-top:1px solid var(--hairline);padding:28px 0;font-family:var(--mon
 var W=window.WORLDCUP||{standings:{},recent:[],today:[],upcoming:[]};
 function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 document.getElementById('updated').innerHTML=W.updated_label?'Updated <b>'+esc(W.updated_label)+'</b>':'';
+
+// Knockout bracket — flowchart of rounds with winners, scores, goal scorers
+(function(){
+  var box=document.getElementById('bracket'); var B=W.bracket;
+  if(!box) return;
+  if(!B || !B.rounds || !B.rounds.length){
+    box.innerHTML='<div class="empty">The knockout bracket will appear once Round of 32 fixtures are set.</div>';
+    return;
+  }
+  function card(m){
+    var w1=m.played && m.winner===m.team1, w2=m.played && m.winner===m.team2;
+    var sc=m.played
+      ? '<div class="b-sc">'+esc(m.score)+(m.et?'<span class="b-et">'+esc(m.et)+'</span>':'')+(m.pens?'<span class="b-pen">'+esc(m.pens)+'</span>':'')+'</div>'
+      : '<div class="b-sc b-tbd">'+esc(m.ist?m.ist.split(',')[0]:'TBD')+'</div>';
+    return '<div class="b-match'+(m.played?' b-played':'')+'">'
+      +'<div class="b-team'+(w1?' b-win':'')+'"><span class="b-tm">'+esc(m.team1)+'</span>'+(m.scorers1?'<span class="b-sr">'+esc(m.scorers1)+'</span>':'')+'</div>'
+      +sc
+      +'<div class="b-team'+(w2?' b-win':'')+'"><span class="b-tm">'+esc(m.team2)+'</span>'+(m.scorers2?'<span class="b-sr">'+esc(m.scorers2)+'</span>':'')+'</div>'
+      +(m.ground?'<div class="b-meta">'+esc(m.ground)+'</div>':'')
+      +'</div>';
+  }
+  var maxCount=B.rounds[0].matches.length;
+  var html='<div class="bracket">'+B.rounds.map(function(r,i){
+    var isFinal=(i===B.rounds.length-1);
+    return '<div class="b-round'+(isFinal?' b-final':'')+'"><h4>'+esc(r.name)+'</h4>'
+      +'<div class="b-col" style="min-height:'+(maxCount*88)+'px">'+r.matches.map(card).join('')+'</div></div>';
+  }).join('');
+  if(B.third_place){
+    html+='<div class="b-round b-third"><h4>3rd place</h4><div class="b-col">'+card(B.third_place)+'</div></div>';
+  }
+  html+='</div>';
+  box.innerHTML=html+'<div class="note">Placeholder match-ups (e.g. "Winner: Team A v Team B") update automatically once the earlier round is decided. Times shown are kickoff, IST.</div>';
+})();
 
 // Standings
 (function(){
