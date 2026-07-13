@@ -1,0 +1,175 @@
+{
+  "date": "2026-07-13",
+  "label": "Monday, 13 July 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-07-13/world/slide-01.png",
+        "social/instagram/2026-07-13/world/slide-02.png",
+        "social/instagram/2026-07-13/world/slide-03.png",
+        "social/instagram/2026-07-13/world/slide-04.png",
+        "social/instagram/2026-07-13/world/slide-05.png",
+        "social/instagram/2026-07-13/world/slide-06.png",
+        "social/instagram/2026-07-13/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-13/world/caption.txt",
+      "pdf": "social/instagram/2026-07-13/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-13/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-13/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-07-13/business/slide-01.png",
+        "social/instagram/2026-07-13/business/slide-02.png",
+        "social/instagram/2026-07-13/business/slide-03.png",
+        "social/instagram/2026-07-13/business/slide-04.png",
+        "social/instagram/2026-07-13/business/slide-05.png",
+        "social/instagram/2026-07-13/business/slide-06.png",
+        "social/instagram/2026-07-13/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-13/business/caption.txt",
+      "pdf": "social/instagram/2026-07-13/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-07-13/tech/slide-01.png",
+        "social/instagram/2026-07-13/tech/slide-02.png",
+        "social/instagram/2026-07-13/tech/slide-03.png",
+        "social/instagram/2026-07-13/tech/slide-04.png",
+        "social/instagram/2026-07-13/tech/slide-05.png",
+        "social/instagram/2026-07-13/tech/slide-06.png",
+        "social/instagram/2026-07-13/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-13/tech/caption.txt",
+      "pdf": "social/instagram/2026-07-13/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-13/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-13/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-07-13/national/slide-01.png",
+        "social/instagram/2026-07-13/national/slide-02.png",
+        "social/instagram/2026-07-13/national/slide-03.png",
+        "social/instagram/2026-07-13/national/slide-04.png",
+        "social/instagram/2026-07-13/national/slide-05.png",
+        "social/instagram/2026-07-13/national/slide-06.png",
+        "social/instagram/2026-07-13/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-13/national/caption.txt",
+      "pdf": "social/instagram/2026-07-13/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-07-13/ai/slide-01.png",
+        "social/instagram/2026-07-13/ai/slide-02.png",
+        "social/instagram/2026-07-13/ai/slide-03.png",
+        "social/instagram/2026-07-13/ai/slide-04.png",
+        "social/instagram/2026-07-13/ai/slide-05.png",
+        "social/instagram/2026-07-13/ai/slide-06.png",
+        "social/instagram/2026-07-13/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-13/ai/caption.txt",
+      "pdf": "social/instagram/2026-07-13/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-13/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-13/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-07-13/sports/slide-01.png",
+        "social/instagram/2026-07-13/sports/slide-02.png",
+        "social/instagram/2026-07-13/sports/slide-03.png",
+        "social/instagram/2026-07-13/sports/slide-04.png",
+        "social/instagram/2026-07-13/sports/slide-05.png",
+        "social/instagram/2026-07-13/sports/slide-06.png",
+        "social/instagram/2026-07-13/sports/slide-07.png",
+        "social/instagram/2026-07-13/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-07-13/sports/caption.txt",
+      "pdf": "social/instagram/2026-07-13/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-07-13/entertainment/slide-01.png",
+        "social/instagram/2026-07-13/entertainment/slide-02.png",
+        "social/instagram/2026-07-13/entertainment/slide-03.png",
+        "social/instagram/2026-07-13/entertainment/slide-04.png",
+        "social/instagram/2026-07-13/entertainment/slide-05.png",
+        "social/instagram/2026-07-13/entertainment/slide-06.png",
+        "social/instagram/2026-07-13/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-13/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-07-13/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-07-13/stories/story-01.png",
+      "headline": "Strait of Hormuz Remains Open, Maritime Group Says, Contradicting Iran's Claim",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-13/stories/story-02.png",
+      "headline": "Vietnam Police Arrest Speedboat Captain After Accident Kills 15 Indians",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-13/stories/story-03.png",
+      "headline": "HCLTech Q1FY27: Net profit rises 20% to ₹4,624 crore; dividend announced; workforce shrinks",
+      "section": "business"
+    },
+    {
+      "image": "social/instagram/2026-07-13/stories/story-04.png",
+      "headline": "Aditya Birla Group to acquire Shell's Sprng Energy for $1.8 billion",
+      "section": "business"
+    },
+    {
+      "image": "social/instagram/2026-07-13/stories/story-05.png",
+      "headline": "Nifty India Consumption Index outperforms Nifty 50 over 3, 5 and 10 years — top 5 ETFs to watch",
+      "section": "business"
+    },
+    {
+      "image": "social/instagram/2026-07-13/stories/story-06.png",
+      "headline": "Dhamaal 4 Crosses ₹65 Crore in Opening Weekend, Outpaces Welcome to the Jungle",
+      "section": "business"
+    },
+    {
+      "image": "social/instagram/2026-07-13/stories/story-07.png",
+      "headline": "India discusses agricultural collaboration with Taliban government of Afghanistan",
+      "section": "business"
+    },
+    {
+      "image": "social/instagram/2026-07-13/stories/story-08.png",
+      "headline": "Four top-10 firms add Rs 93,000 crore in market cap despite weak market; HDFC Bank and Airtel lead gains",
+      "section": "business"
+    }
+  ]
+}
