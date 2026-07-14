@@ -1,0 +1,175 @@
+{
+  "date": "2026-07-14",
+  "label": "Tuesday, 14 July 2026",
+  "sections": [
+    {
+      "id": "world",
+      "name": "World",
+      "slides": [
+        "social/instagram/2026-07-14/world/slide-01.png",
+        "social/instagram/2026-07-14/world/slide-02.png",
+        "social/instagram/2026-07-14/world/slide-03.png",
+        "social/instagram/2026-07-14/world/slide-04.png",
+        "social/instagram/2026-07-14/world/slide-05.png",
+        "social/instagram/2026-07-14/world/slide-06.png",
+        "social/instagram/2026-07-14/world/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-14/world/caption.txt",
+      "pdf": "social/instagram/2026-07-14/world/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-14/world/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-14/world/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "business",
+      "name": "Business & Markets",
+      "slides": [
+        "social/instagram/2026-07-14/business/slide-01.png",
+        "social/instagram/2026-07-14/business/slide-02.png",
+        "social/instagram/2026-07-14/business/slide-03.png",
+        "social/instagram/2026-07-14/business/slide-04.png",
+        "social/instagram/2026-07-14/business/slide-05.png",
+        "social/instagram/2026-07-14/business/slide-06.png",
+        "social/instagram/2026-07-14/business/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-14/business/caption.txt",
+      "pdf": "social/instagram/2026-07-14/business/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "tech",
+      "name": "Technology",
+      "slides": [
+        "social/instagram/2026-07-14/tech/slide-01.png",
+        "social/instagram/2026-07-14/tech/slide-02.png",
+        "social/instagram/2026-07-14/tech/slide-03.png",
+        "social/instagram/2026-07-14/tech/slide-04.png",
+        "social/instagram/2026-07-14/tech/slide-05.png",
+        "social/instagram/2026-07-14/tech/slide-06.png",
+        "social/instagram/2026-07-14/tech/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-14/tech/caption.txt",
+      "pdf": "social/instagram/2026-07-14/tech/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-14/tech/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-14/tech/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "national",
+      "name": "National",
+      "slides": [
+        "social/instagram/2026-07-14/national/slide-01.png",
+        "social/instagram/2026-07-14/national/slide-02.png",
+        "social/instagram/2026-07-14/national/slide-03.png",
+        "social/instagram/2026-07-14/national/slide-04.png",
+        "social/instagram/2026-07-14/national/slide-05.png",
+        "social/instagram/2026-07-14/national/slide-06.png",
+        "social/instagram/2026-07-14/national/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-14/national/caption.txt",
+      "pdf": "social/instagram/2026-07-14/national/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "slides": [
+        "social/instagram/2026-07-14/ai/slide-01.png",
+        "social/instagram/2026-07-14/ai/slide-02.png",
+        "social/instagram/2026-07-14/ai/slide-03.png",
+        "social/instagram/2026-07-14/ai/slide-04.png",
+        "social/instagram/2026-07-14/ai/slide-05.png",
+        "social/instagram/2026-07-14/ai/slide-06.png",
+        "social/instagram/2026-07-14/ai/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-14/ai/caption.txt",
+      "pdf": "social/instagram/2026-07-14/ai/carousel.pdf",
+      "linkedin_pdf": "social/linkedin/2026-07-14/ai/carousel.pdf",
+      "linkedin_caption_file": "social/linkedin/2026-07-14/ai/caption.txt",
+      "slide_count": 7
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "slides": [
+        "social/instagram/2026-07-14/sports/slide-01.png",
+        "social/instagram/2026-07-14/sports/slide-02.png",
+        "social/instagram/2026-07-14/sports/slide-03.png",
+        "social/instagram/2026-07-14/sports/slide-04.png",
+        "social/instagram/2026-07-14/sports/slide-05.png",
+        "social/instagram/2026-07-14/sports/slide-06.png",
+        "social/instagram/2026-07-14/sports/slide-07.png",
+        "social/instagram/2026-07-14/sports/slide-08.png"
+      ],
+      "caption_file": "social/instagram/2026-07-14/sports/caption.txt",
+      "pdf": "social/instagram/2026-07-14/sports/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 8
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slides": [
+        "social/instagram/2026-07-14/entertainment/slide-01.png",
+        "social/instagram/2026-07-14/entertainment/slide-02.png",
+        "social/instagram/2026-07-14/entertainment/slide-03.png",
+        "social/instagram/2026-07-14/entertainment/slide-04.png",
+        "social/instagram/2026-07-14/entertainment/slide-05.png",
+        "social/instagram/2026-07-14/entertainment/slide-06.png",
+        "social/instagram/2026-07-14/entertainment/slide-07.png"
+      ],
+      "caption_file": "social/instagram/2026-07-14/entertainment/caption.txt",
+      "pdf": "social/instagram/2026-07-14/entertainment/carousel.pdf",
+      "linkedin_pdf": null,
+      "linkedin_caption_file": null,
+      "slide_count": 7
+    }
+  ],
+  "stories": [
+    {
+      "image": "social/instagram/2026-07-14/stories/story-01.png",
+      "headline": "US Launches Fresh Airstrikes on Iran as Trump Claims Tehran 'Shot First'",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-14/stories/story-02.png",
+      "headline": "Trump Drops 20% Hormuz Ship Levy, Pivots to Gulf Trade Deals",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-14/stories/story-03.png",
+      "headline": "Trump Announces 20% Hormuz Toll on All Ships, Declares Iran Blockade",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-14/stories/story-04.png",
+      "headline": "Indian Sailor Killed in Iran Strike: MEA Summons Iranian Diplomats",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-14/stories/story-05.png",
+      "headline": "Strait of Hormuz Remains Open, Maritime Group Says, Contradicting Iran's Claim",
+      "section": "world"
+    },
+    {
+      "image": "social/instagram/2026-07-14/stories/story-06.png",
+      "headline": "India-UK Free Trade Agreement to Come Into Force on July 15",
+      "section": "business"
+    },
+    {
+      "image": "social/instagram/2026-07-14/stories/story-07.png",
+      "headline": "Sensex Closes 560 Points Lower as Oil Rally and West Asia Tensions Rattle Markets",
+      "section": "business"
+    },
+    {
+      "image": "social/instagram/2026-07-14/stories/story-08.png",
+      "headline": "HCLTech Q1FY27: Net profit rises 20% to ₹4,624 crore; dividend announced; workforce shrinks",
+      "section": "business"
+    }
+  ]
+}
