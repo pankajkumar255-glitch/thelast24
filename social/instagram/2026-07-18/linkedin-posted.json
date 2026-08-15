@@ -1,7 +1,7 @@
 {
   "sections": [
-    "world",
     "tech",
+    "world",
     "ai"
   ]
 }
