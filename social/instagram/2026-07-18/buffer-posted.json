@@ -1,11 +1,11 @@
 {
   "sections": [
-    "national",
     "entertainment",
+    "ai",
     "sports",
     "tech",
-    "world",
     "business",
-    "ai"
+    "world",
+    "national"
   ]
 }
