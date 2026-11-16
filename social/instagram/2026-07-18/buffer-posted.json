@@ -2,10 +2,10 @@
   "sections": [
     "business",
     "world",
-    "national",
     "sports",
+    "entertainment",
     "ai",
     "tech",
-    "entertainment"
+    "national"
   ]
 }
